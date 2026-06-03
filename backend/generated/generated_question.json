@@ -1,0 +1,43 @@
+{
+  "question_id": "2016_B_21",
+  "source": {
+    "exam": "NSAA",
+    "year": 2016,
+    "paper": "Part B Physics",
+    "section": "B",
+    "question_number": 21
+  },
+  "content": {
+    "subject": "physics",
+    "topic": null,
+    "subtopic": null,
+    "archetype": null,
+    "difficulty": 2
+  },
+  "prompt": {
+    "stem": "$X^2_6$ decays by a series of radioactive decays to become $Y^4_2$. Which of the following statements is/are correct?",
+    "options": [
+      {
+        "label": "A",
+        "text": "3 alpha"
+      },
+      {
+        "label": "B",
+        "text": "2 alpha and 1 beta"
+      },
+      {
+        "label": "C",
+        "text": "2 alpha and 2 beta"
+      },
+      {
+        "label": "D",
+        "text": "1 alpha and 2 beta"
+      },
+      {
+        "label": "E",
+        "text": "3 beta"
+      }
+    ]
+  },
+  "prompt_figures": []
+}

@@ -1,0 +1,6009 @@
+{
+  "source": "NSAA 2021",
+  "source_pdf": "raw/2021.pdf",
+  "extraction_version": "2.0",
+  "question_count": 80,
+  "questions": [
+    {
+      "question_id": "2021_A_01",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 1,
+        "page": 6,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Simplify fully $5xy^2 \\times (5x^2y)^{-3} \\times 5x^2y$ where $x$ and $y$ are positive.",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{1}{125x^7y^2}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{1}{125x^6y^2}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{1}{25x^6y}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{1}{25x^4y}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{1}{5x^3}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{1}{5x^2}$"
+          },
+          {
+            "label": "G",
+            "text": "$\\dfrac{y}{x^2}$"
+          },
+          {
+            "label": "H",
+            "text": "$5xy^2$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q001",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "$\\dfrac{1}{5x^3}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_02",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 2,
+        "page": 7,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Which of the following is a simplification of $2 - \\dfrac{x+3x^2}{12x^2+x-1}$ where $x > 1$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{7x-1}{4x-1}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{7x-2}{4x-1}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{7x+1}{4x+1}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{7x+2}{4x+1}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{9x-1}{4x-1}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{9x-2}{4x-1}$"
+          },
+          {
+            "label": "G",
+            "text": "$\\dfrac{9x+1}{4x+1}$"
+          },
+          {
+            "label": "H",
+            "text": "$\\dfrac{9x+2}{4x+1}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q002",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$\\dfrac{7x-2}{4x-1}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_03",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 3,
+        "page": 8,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Which of the following is a rearrangement of $\\dfrac{p}{2} + \\dfrac{3}{q} = \\dfrac{4}{r}$ so that $q$ is the subject?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$q = \\dfrac{2r}{24-3pr}$"
+          },
+          {
+            "label": "B",
+            "text": "$q = \\dfrac{3r}{2r-p}$"
+          },
+          {
+            "label": "C",
+            "text": "$q = \\dfrac{6r}{4-p}$"
+          },
+          {
+            "label": "D",
+            "text": "$q = \\dfrac{6r}{8-pr}$"
+          },
+          {
+            "label": "E",
+            "text": "$q = \\dfrac{r-2}{12p}$"
+          },
+          {
+            "label": "F",
+            "text": "$q = \\dfrac{3r-6}{4p}$"
+          },
+          {
+            "label": "G",
+            "text": "$q = \\dfrac{pr-8}{12p}$"
+          },
+          {
+            "label": "H",
+            "text": "$q = \\dfrac{3pr-24}{4p}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q003",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$q = \\dfrac{6r}{8-pr}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_04",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 4,
+        "page": 8,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A circle has its centre at $(0, 0)$. What is the equation of the tangent that touches the circle at the point $(4, 3)$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$3y + 4x = 25$"
+          },
+          {
+            "label": "B",
+            "text": "$3y - 4x = 25$"
+          },
+          {
+            "label": "C",
+            "text": "$3y - 4x = -7$"
+          },
+          {
+            "label": "D",
+            "text": "$3y - 4x = 7$"
+          },
+          {
+            "label": "E",
+            "text": "$4y + 3x = 24$"
+          },
+          {
+            "label": "F",
+            "text": "$4y - 3x = 24$"
+          },
+          {
+            "label": "G",
+            "text": "$3y + 4x = 24$"
+          },
+          {
+            "label": "H",
+            "text": "$3y - 4x = 24$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q004",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "$3y + 4x = 25$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_05",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 5,
+        "page": 9,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Two solid cylinders, P and Q, are shown, where $x > y$.\n\nCylinder P has diameter $x$ and height $y$.\n\nCylinder Q has diameter $y$ and height $x$.\n\nWhat is the positive difference between the total surface areas of P and Q?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$0$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{\\pi}{4}(x^2 - y^2)$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{\\pi}{2}(x^2 - y^2)$"
+          },
+          {
+            "label": "D",
+            "text": "$\\pi(x^2 - y^2)$"
+          },
+          {
+            "label": "E",
+            "text": "$2\\pi(x^2 - y^2)$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{\\pi}{4}xy(x-y)$"
+          },
+          {
+            "label": "G",
+            "text": "$\\pi xy(x-y)$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q05_figure",
+            "type": "figure",
+            "src": "images_2021/q05_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q005",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "$\\dfrac{\\pi}{2}(x^2 - y^2)$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_06",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 6,
+        "page": 10,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Given that $8^x + 27^x = \\dfrac{13}{36}$ and $8^x - 27^x = \\dfrac{5}{36}$, what is the value of $x$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$-4$"
+          },
+          {
+            "label": "B",
+            "text": "$-3$"
+          },
+          {
+            "label": "C",
+            "text": "$-2$"
+          },
+          {
+            "label": "D",
+            "text": "$-\\dfrac{3}{2}$"
+          },
+          {
+            "label": "E",
+            "text": "$-\\dfrac{2}{3}$"
+          },
+          {
+            "label": "F",
+            "text": "$-\\dfrac{1}{2}$"
+          },
+          {
+            "label": "G",
+            "text": "$-\\dfrac{1}{3}$"
+          },
+          {
+            "label": "H",
+            "text": "$-\\dfrac{1}{4}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q006",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "$-\\dfrac{2}{3}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_07",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 7,
+        "page": 10,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The price of item P is reduced by 10%. The next day, the new price is increased by 10%.\n\nThe price of item Q is increased by 10%. The next day, the new price is reduced by 10%.\n\nHow does the final price of each item compare to the original price of that item?\n\n| | item P | item Q |\n|---|---|---|\n| A | lower than original | lower than original |\n| B | lower than original | higher than original |\n| C | higher than original | lower than original |\n| D | higher than original | higher than original |\n| E | the same as original | the same as original |",
+        "options": [
+          {
+            "label": "A",
+            "text": "lower than original / lower than original"
+          },
+          {
+            "label": "B",
+            "text": "lower than original / higher than original"
+          },
+          {
+            "label": "C",
+            "text": "higher than original / lower than original"
+          },
+          {
+            "label": "D",
+            "text": "higher than original / higher than original"
+          },
+          {
+            "label": "E",
+            "text": "the same as original / the same as original"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q007",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "lower than original / lower than original",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_08",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 8,
+        "page": 11,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Here is a pattern of numbers:\n\n$$\\begin{array}{ccccccc}\n & & & 1 & & & \\\\\\\\\n & & 2 & 3 & 4 & & \\\\\\\\\n & 5 & 6 & 7 & 8 & 9 & \\\\\\\\\n10 & 11 & 12 & 13 & 14 & 15 & 16\n\\end{array}$$\n\nThe pattern of numbers is continued in the same way.\n\nWhat number will appear directly below 196?",
+        "options": [
+          {
+            "label": "A",
+            "text": "218"
+          },
+          {
+            "label": "B",
+            "text": "219"
+          },
+          {
+            "label": "C",
+            "text": "220"
+          },
+          {
+            "label": "D",
+            "text": "221"
+          },
+          {
+            "label": "E",
+            "text": "222"
+          },
+          {
+            "label": "F",
+            "text": "223"
+          },
+          {
+            "label": "G",
+            "text": "224"
+          },
+          {
+            "label": "H",
+            "text": "225"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q008",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "223",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_09",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 9,
+        "page": 12,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "$SQT$ is a right-angled triangle with the right angle at $Q$.\n\nThe point $R$ is on $SQ$ such that $SR:RQ = 1:3$\n\n$QRP$ is a right-angled triangle with the right angle at $Q$.\n\n$PR = ST = 8$ cm,  $QT = 4$ cm\n\n[diagram not to scale]\n\nWhat is the length of $PQ$, in cm?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$2\\sqrt{3}$"
+          },
+          {
+            "label": "B",
+            "text": "$4\\sqrt{3}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\sqrt{19}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\sqrt{37}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\sqrt{55}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\sqrt{61}$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q09_figure",
+            "type": "figure",
+            "src": "images_2021/q09_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q009",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$\\sqrt{37}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_10",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 10,
+        "page": 13,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Pat and Alex have a combined total of £63.\n\nThe ratio of Pat's money to Alex's money is $5:2$\n\nThey each spend an equal amount on sweets.\n\nThe ratio of Pat's money to Alex's money is now $3:1$\n\nHow much did Pat spend on sweets?",
+        "options": [
+          {
+            "label": "A",
+            "text": "£0.50"
+          },
+          {
+            "label": "B",
+            "text": "£2.00"
+          },
+          {
+            "label": "C",
+            "text": "£2.25"
+          },
+          {
+            "label": "D",
+            "text": "£3.00"
+          },
+          {
+            "label": "E",
+            "text": "£4.50"
+          },
+          {
+            "label": "F",
+            "text": "£6.75"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q010",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "£4.50",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_11",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 11,
+        "page": 13,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The curve with equation $y = x^2 - 4x + 5$ meets the straight line with equation $y = 2x + c$ at two points, which have $x$-coordinates $p$ and $q$, where $q > p$.\n\nGiven that $q - p = 8$, what is the value of the constant $c$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$-43$"
+          },
+          {
+            "label": "B",
+            "text": "$-12$"
+          },
+          {
+            "label": "C",
+            "text": "$-2$"
+          },
+          {
+            "label": "D",
+            "text": "$0$"
+          },
+          {
+            "label": "E",
+            "text": "$2$"
+          },
+          {
+            "label": "F",
+            "text": "$12$"
+          },
+          {
+            "label": "G",
+            "text": "$43$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q011",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "$12$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_12",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 12,
+        "page": 14,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "An online company sells storage containers.\n\nThe following items are available:\n\n| capacity of container | number available |\n|---|---|\n| 2 litres | 2 |\n| 3 litres | 3 |\n| 7 litres | 4 |\n| 8 litres | 1 |\n\nA customer orders two containers at random from those available.\n\nWhat is the probability that the two containers will have a combined capacity of exactly 10 litres?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{7}{25}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{14}{25}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{7}{45}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{14}{45}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{7}{50}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q012",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$\\dfrac{14}{45}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_13",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 13,
+        "page": 15,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Given that\n\n$$y = \\frac{\\sin 60^\\circ - 1}{\\cos 60^\\circ}$$\n\nwhat is the value of $y^3$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$-\\dfrac{\\sqrt{3}}{9}$"
+          },
+          {
+            "label": "B",
+            "text": "$-5\\sqrt{2}+10$"
+          },
+          {
+            "label": "C",
+            "text": "$3\\sqrt{3}-8$"
+          },
+          {
+            "label": "D",
+            "text": "$6\\sqrt{3}-10$"
+          },
+          {
+            "label": "E",
+            "text": "$14\\sqrt{2}-20$"
+          },
+          {
+            "label": "F",
+            "text": "$15\\sqrt{3}-26$"
+          },
+          {
+            "label": "G",
+            "text": "$21\\sqrt{3}-38$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q013",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "$15\\sqrt{3}-26$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_14",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 14,
+        "page": 16,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "$P$, $Q$ and $R$ are points on the circumference of a circle with centre $O$ as shown in the diagram.\n\n[diagram not to scale]\n\nAngle $PQR = 140°$\n\n$PR = 7$ cm\n\nWhich of the following expressions gives the radius of the circle, in cm?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$7\\sin 10°$"
+          },
+          {
+            "label": "B",
+            "text": "$3.5\\sin 55°$"
+          },
+          {
+            "label": "C",
+            "text": "$3.5\\sin 70°$"
+          },
+          {
+            "label": "D",
+            "text": "$7\\sin 55°$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{3.5}{\\sin 40°}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{7}{\\sin 80°}$"
+          },
+          {
+            "label": "G",
+            "text": "$\\dfrac{3.5}{\\sin 20°}$"
+          },
+          {
+            "label": "H",
+            "text": "$\\dfrac{7}{\\sin 40°}$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q14_figure",
+            "type": "figure",
+            "src": "images_2021/q14_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q014",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "$\\dfrac{3.5}{\\sin 40°}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_15",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 15,
+        "page": 17,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Charlie has a bowl containing red sweets and green sweets only. The sweets are identical in all respects except colour.\n\nThere are nine sweets in total in the bowl.\n\nCharlie eats two sweets from the bowl at random.\n\nThe probability of Charlie not eating any green sweets is $\\dfrac{5}{12}$\n\nWhat is the probability that Charlie eats two green sweets?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{2}{27}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{1}{12}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{1}{9}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{4}{27}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{1}{6}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{1}{4}$"
+          },
+          {
+            "label": "G",
+            "text": "$\\dfrac{7}{12}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q015",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$\\dfrac{1}{12}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_16",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 16,
+        "page": 18,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The following right-angled triangles have the same hypotenuse length.\n\n[diagram not to scale]\n\nWhich of the following is a correct expression for $y$ in terms of $x$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$y = \\sqrt{2}\\,x$"
+          },
+          {
+            "label": "B",
+            "text": "$y = \\dfrac{\\sqrt{2}\\,x}{2}$"
+          },
+          {
+            "label": "C",
+            "text": "$y = \\dfrac{\\sqrt{2}\\,x}{3}$"
+          },
+          {
+            "label": "D",
+            "text": "$y = \\dfrac{\\sqrt{2}\\,x}{6}$"
+          },
+          {
+            "label": "E",
+            "text": "$y = \\sqrt{6}\\,x$"
+          },
+          {
+            "label": "F",
+            "text": "$y = \\dfrac{\\sqrt{6}\\,x}{2}$"
+          },
+          {
+            "label": "G",
+            "text": "$y = \\dfrac{\\sqrt{6}\\,x}{3}$"
+          },
+          {
+            "label": "H",
+            "text": "$y = \\dfrac{\\sqrt{6}\\,x}{6}$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q16_figure",
+            "type": "figure",
+            "src": "images_2021/q16_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q016",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "G",
+        "answer_text": "$y = \\dfrac{\\sqrt{6}\\,x}{3}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_17",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 17,
+        "page": 19,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The greatest diagonal distance between the two vertices of a cuboid, as shown in the diagram, is $\\sqrt{77}$ cm.\n\nA similar cuboid has all its lengths exactly half the lengths of the original cuboid.\n\nThe sides of this smaller cuboid are 2 cm, 3 cm and $x$ cm.\n\nWhat is the value of $x$, in cm?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{5}{2}$"
+          },
+          {
+            "label": "B",
+            "text": "$5$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{5\\sqrt{2}}{2}$"
+          },
+          {
+            "label": "D",
+            "text": "$5\\sqrt{2}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{\\sqrt{102}}{2}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\sqrt{102}$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q17_figure",
+            "type": "figure",
+            "src": "images_2021/q17_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q017",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "$\\dfrac{5}{2}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_18",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 18,
+        "page": 20,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Alex, Cameron and Sam are all taking part in a 400 m race.\n\nThey are each running at a different constant speed.\n\nAlex is running 12% faster than Cameron, whilst Sam is running 2% slower than Cameron.\n\nWhen Alex crosses the finish line, how many metres is Sam from the finish line?",
+        "options": [
+          {
+            "label": "A",
+            "text": "9.6"
+          },
+          {
+            "label": "B",
+            "text": "14"
+          },
+          {
+            "label": "C",
+            "text": "24"
+          },
+          {
+            "label": "D",
+            "text": "25"
+          },
+          {
+            "label": "E",
+            "text": "28"
+          },
+          {
+            "label": "F",
+            "text": "50"
+          },
+          {
+            "label": "G",
+            "text": "56"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q018",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "50",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_19",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 19,
+        "page": 21,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A car journey is $m$ miles long.\n\nOne kilometre is equivalent to $x$ miles.\n\nThe car uses one litre of fuel to travel a distance of $f$ kilometres.\n\nFuel for the car costs $p$ pence per litre.\n\nWhich of the following expressions gives the cost of fuel for this journey, in pounds?\n\n(There are 100 pence in one pound.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "$100fmpx$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{100fmp}{x}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{100mpx}{f}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{100mp}{fx}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{fmpx}{100}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{fmp}{100x}$"
+          },
+          {
+            "label": "G",
+            "text": "$\\dfrac{mpx}{100f}$"
+          },
+          {
+            "label": "H",
+            "text": "$\\dfrac{mp}{100fx}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q019",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "H",
+        "answer_text": "$\\dfrac{mp}{100fx}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_A_20",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 20,
+        "page": 22,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "How many solutions are there to the equation\n\n$$\\tan x = 100x$$\n\nwhere $-360 \\leq x \\leq 360$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "0"
+          },
+          {
+            "label": "B",
+            "text": "1"
+          },
+          {
+            "label": "C",
+            "text": "2"
+          },
+          {
+            "label": "D",
+            "text": "3"
+          },
+          {
+            "label": "E",
+            "text": "4"
+          },
+          {
+            "label": "F",
+            "text": "5"
+          },
+          {
+            "label": "G",
+            "text": "infinitely many"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q020",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "5",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_21",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 21,
+        "page": 24,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A resistor has a constant voltage of 9.00 V across it. \n\n A total charge of 180 C passes through the resistor in 4.00 minutes. \n\n What is the power dissipated in the resistor?",
+        "options": [
+          {
+            "label": "A",
+            "text": "0.750 W"
+          },
+          {
+            "label": "B",
+            "text": "6.75 W"
+          },
+          {
+            "label": "C",
+            "text": "12.0 W"
+          },
+          {
+            "label": "D",
+            "text": "81.0 W"
+          },
+          {
+            "label": "E",
+            "text": "108 W"
+          },
+          {
+            "label": "F",
+            "text": "405 W"
+          },
+          {
+            "label": "G",
+            "text": "1620 W"
+          },
+          {
+            "label": "H",
+            "text": "6480 W 24"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q021",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "6.75 W",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_22",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 22,
+        "page": 25,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Air is trapped in a cylinder by a piston. The density of the air in the cylinder is ρ . trapped air The piston is moved so that the pressure of the trapped air increases by 20%. The temperature of the trapped air does not change. \n\n What is the new density of the trapped air? \n\n (Assume that air is an ideal gas.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "0.69 ρ"
+          },
+          {
+            "label": "B",
+            "text": "0.80 ρ"
+          },
+          {
+            "label": "C",
+            "text": "0.83 ρ"
+          },
+          {
+            "label": "D",
+            "text": "1.00 ρ"
+          },
+          {
+            "label": "E",
+            "text": "1.20 ρ"
+          },
+          {
+            "label": "F",
+            "text": "1.44 ρ 25"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q22_figure",
+            "type": "figure",
+            "src": "images_2021/q22_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q022",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "1.20 ρ",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_23",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 23,
+        "page": 26,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A non-ideal transformer has 100 turns on the primary coil and 25 turns on the secondary coil. \n\n It is provided with 3.0 kW of electrical power at a current of 12.5 A. \n\n The voltage output is the same as for an ideal transformer, but the current in the output coil is 40 A. \n\n What is the efficiency of the transformer?",
+        "options": [
+          {
+            "label": "A",
+            "text": "20%"
+          },
+          {
+            "label": "B",
+            "text": "25%"
+          },
+          {
+            "label": "C",
+            "text": "31%"
+          },
+          {
+            "label": "D",
+            "text": "69%"
+          },
+          {
+            "label": "E",
+            "text": "75%"
+          },
+          {
+            "label": "F",
+            "text": "80%"
+          },
+          {
+            "label": "G",
+            "text": "91%"
+          },
+          {
+            "label": "H",
+            "text": "100%"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q023",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "80%",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_24",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 24,
+        "page": 26,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A car of mass 1400 kg is towing a caravan of mass 1000 kg along a straight horizontal section of road at a constant speed. \n\n The driving force from the engine is increased by 3000 N, causing the car and caravan to accelerate. \n\n At one moment during this acceleration, the resistive force on the car has increased by 200 N and the resistive force on the caravan has increased by 400 N. \n\n What is the acceleration of the car and caravan at this moment?",
+        "options": [
+          {
+            "label": "A",
+            "text": "1.00 m s-2"
+          },
+          {
+            "label": "B",
+            "text": "1.25 m s-2"
+          },
+          {
+            "label": "C",
+            "text": "1.50 m s-2"
+          },
+          {
+            "label": "D",
+            "text": "2.00 m s-2"
+          },
+          {
+            "label": "E",
+            "text": "2.60 m s-2 26"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q024",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "1.00 m s-2",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_25",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 25,
+        "page": 27,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A star is moving away from a space telescope positioned above the Earth. The star emits light of frequency f and wavelength λ at the speed of light c . \n\n This light travels towards the space telescope through the vacuum of space until it is detected on the space telescope. \n\n The frequency, the wavelength and the speed of the light measured at the telescope are fT, λT and cT respectively. \n\n How do fT, λT and cT compare with f, λ and c ? \n\n fT λT c T",
+        "options": [
+          {
+            "label": "A",
+            "text": "equal to f equal to λ equal to c"
+          },
+          {
+            "label": "B",
+            "text": "equal to f equal to λ less than c"
+          },
+          {
+            "label": "C",
+            "text": "equal to f greater than λ equal to c"
+          },
+          {
+            "label": "D",
+            "text": "equal to f greater than λ less than c"
+          },
+          {
+            "label": "E",
+            "text": "less than f equal to λ equal to c"
+          },
+          {
+            "label": "F",
+            "text": "less than f equal to λ less than c"
+          },
+          {
+            "label": "G",
+            "text": "less than f greater than λ equal to c"
+          },
+          {
+            "label": "H",
+            "text": "less than f greater than λ less than c 27"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q025",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "G",
+        "answer_text": "less than f greater than λ equal to c",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_26",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 26,
+        "page": 28,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Q is an element with several isotopes. The nuclide Q ) ( - x x contains 6 neutrons more than the nuclide Q ) ( + x x . Another isotope of Q is the nuclide Q ) ( + x x . How many neutrons does the nuclide Q ) ( + x x contain?",
+        "options": [
+          {
+            "label": "A",
+            "text": "9"
+          },
+          {
+            "label": "B",
+            "text": "16"
+          },
+          {
+            "label": "C",
+            "text": "19"
+          },
+          {
+            "label": "D",
+            "text": "21"
+          },
+          {
+            "label": "E",
+            "text": "25"
+          },
+          {
+            "label": "F",
+            "text": "33"
+          },
+          {
+            "label": "G",
+            "text": "49"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q026",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "33",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_27",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 27,
+        "page": 28,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A light spring has an uncompressed length of 0.10 m. When an object of mass 0.5 kg rests in equilibrium on top of the spring, the length of the spring reduces to 0.08 m as shown. 0.10 m 0.08 m What is the energy stored in the spring due to the compression? \n\n (gravitational field strength = 10 N kg-1; the spring obeys Hooke’s law)",
+        "options": [
+          {
+            "label": "A",
+            "text": "0.005 J"
+          },
+          {
+            "label": "B",
+            "text": "0.02 J"
+          },
+          {
+            "label": "C",
+            "text": "0.05 J"
+          },
+          {
+            "label": "D",
+            "text": "0.1 J"
+          },
+          {
+            "label": "E",
+            "text": "0.2 J"
+          },
+          {
+            "label": "F",
+            "text": "0.4 J 28"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q27_figure",
+            "type": "figure",
+            "src": "images_2021/q27_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q027",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "0.05 J",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_28",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 28,
+        "page": 29,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A set of decorative lights consists of 20 lamps connected in series to a dc supply of constant voltage. \n\n The total power transferred by all the lamps is P. \n\n The set is designed so that if one of the lamps fails, that lamp becomes short-circuited and it then has zero resistance. The remaining lamps are still lit. \n\n If this happens, with the set connected to the same supply, what is the new total power transferred by the remaining 19 lamps? \n\n (Assume that the resistance of each functioning lamp remains constant.) 19 ⎟⎠ ⎞ ⎜⎝ ⎛",
+        "options": [
+          {
+            "label": "A",
+            "text": "P 20 19"
+          },
+          {
+            "label": "B",
+            "text": "P ⎟⎠ ⎞ ⎜⎝ ⎛"
+          },
+          {
+            "label": "C",
+            "text": "P 19 20"
+          },
+          {
+            "label": "D",
+            "text": "P ⎟⎠ ⎞ ⎜⎝ ⎛ 2 19 20 ⎟⎠ ⎞ ⎜⎝ ⎛"
+          },
+          {
+            "label": "E",
+            "text": "P 29"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q028",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "P ⎟⎠ ⎞ ⎜⎝ ⎛ 2 19 20 ⎟⎠ ⎞ ⎜⎝ ⎛",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_29",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 29,
+        "page": 30,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A train accelerates from rest along a straight, horizontal section of track. \n\n The force exerted on the train due to its motors is constant and there is a constant friction force of 1.8 \\times 107 N. \n\n The graph shows how the momentum of the train changes with time. momentum / 106 kg m s-1 time / s What is the force exerted on the train due to its motors?",
+        "options": [
+          {
+            "label": "A",
+            "text": "3.0 \\times 106 N"
+          },
+          {
+            "label": "B",
+            "text": "6.0 \\times 106 N"
+          },
+          {
+            "label": "C",
+            "text": "1.2 \\times 107 N"
+          },
+          {
+            "label": "D",
+            "text": "1.5 \\times 107 N"
+          },
+          {
+            "label": "E",
+            "text": "2.1 \\times 107 N"
+          },
+          {
+            "label": "F",
+            "text": "2.4 \\times 107 N"
+          },
+          {
+            "label": "G",
+            "text": "3.0 \\times 107 N"
+          },
+          {
+            "label": "H",
+            "text": "4.2 \\times 107 N 30"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q29_figure",
+            "type": "figure",
+            "src": "images_2021/q29_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q029",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "2.1 \\times 107 N",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_30",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 30,
+        "page": 31,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A ship travels into a wave that is travelling in the opposite direction to the ship. \n\n The ship has a horizontal speed of 8.0 m s-1. The speed of the wave is 3.0 m s-1. \n\n The front of the ship rises and falls with a time period of 8.0 s. \n\n What is the wavelength of the wave?",
+        "options": [
+          {
+            "label": "A",
+            "text": "8 3 m"
+          },
+          {
+            "label": "B",
+            "text": "8 5 m"
+          },
+          {
+            "label": "C",
+            "text": "1.0 m"
+          },
+          {
+            "label": "D",
+            "text": "8 11 m"
+          },
+          {
+            "label": "E",
+            "text": "24 m"
+          },
+          {
+            "label": "F",
+            "text": "40 m"
+          },
+          {
+            "label": "G",
+            "text": "64 m"
+          },
+          {
+            "label": "H",
+            "text": "88 m 31"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q030",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "H",
+        "answer_text": "88 m 31",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_31",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 31,
+        "page": 32,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A 6.0 V battery is connected to an 8.0 Ω resistor and a filament lamp as shown in the circuit diagram. 6.0 V 8.0 Ω",
+        "options": [
+          {
+            "label": "A",
+            "text": "The reading on the ammeter is 0.25 A. Which graph is a possible V-I graph for the filament lamp?"
+          },
+          {
+            "label": "C",
+            "text": "D V / V V / V 2.0 6.0 0 0 0 0.25 0 0.25 I / A I / A"
+          },
+          {
+            "label": "E",
+            "text": "F V / V V / V 4.0 6.0 0 0 0 0.25 0 0.25 I / A I / A 32"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q31_figure",
+            "type": "figure",
+            "src": "images_2021/q31_figure.png"
+          },
+          {
+            "figure_id": "q31_fig2",
+            "type": "figure",
+            "src": "images_2021/q31_fig2.png"
+          },
+          {
+            "figure_id": "q31_fig3",
+            "type": "figure",
+            "src": "images_2021/q31_fig3.png"
+          },
+          {
+            "figure_id": "q31_fig4",
+            "type": "figure",
+            "src": "images_2021/q31_fig4.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q031",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_32",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 32,
+        "page": 33,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A uniform, horizontal magnetic field has magnetic field strength 0.60 T and a direction from west to east. \n\n A horizontal wire is placed in a north-south direction, so that it is at 90° to the magnetic field. \n\n The wire carries a constant current. \n\n The wire has length 0.40 m and mass 0.018 kg. \n\n The resultant force acting vertically on the wire is zero. \n\n What are the magnitude and direction of the current in the wire? \n\n (gravitational field strength = 10 N kg-1) \n\n magnitude of current / A direction of current",
+        "options": [
+          {
+            "label": "A",
+            "text": "0.012 from north to south"
+          },
+          {
+            "label": "B",
+            "text": "0.012 from south to north"
+          },
+          {
+            "label": "C",
+            "text": "0.075 from north to south"
+          },
+          {
+            "label": "D",
+            "text": "0.075 from south to north"
+          },
+          {
+            "label": "E",
+            "text": "0.12 from north to south"
+          },
+          {
+            "label": "F",
+            "text": "0.12 from south to north"
+          },
+          {
+            "label": "G",
+            "text": "0.75 from north to south"
+          },
+          {
+            "label": "H",
+            "text": "0.75 from south to north 33"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q032",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "G",
+        "answer_text": "0.75 from north to south",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_33",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 33,
+        "page": 34,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The wavelength range of visible light is 400-700 nm. \n\n Light with a frequency of 6.0 \\times 1014 Hz is green. \n\n Microwaves used in cooking have a wavelength of 12 cm. \n\n Which of the following statements is/are correct? \n\n Light with a frequency of 7.5 \\times 1014 Hz is red. Microwaves used in cooking have a frequency of 2.5 \\times 109 Hz. Electromagnetic radiation with a frequency of 2.5 \\times 1015 Hz can be used in thermal imaging of a building. (speed of light = 3.0 \\times 108 m s-1)",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3 34"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q033",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "2 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_34",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 34,
+        "page": 35,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "There is a high-speed straight railway line between two cities that are 60 km apart. The train stops at both cities. \n\n The train accelerates at a uniform rate of 1.5 m s-2 to a maximum speed of 120 m s-1. \n\n When braking, it decelerates at a uniform rate of 2.0 m s-2. \n\n What is the minimum time taken by the train to travel from one city to the other?",
+        "options": [
+          {
+            "label": "A",
+            "text": "140 s"
+          },
+          {
+            "label": "B",
+            "text": "355 s"
+          },
+          {
+            "label": "C",
+            "text": "430 s"
+          },
+          {
+            "label": "D",
+            "text": "500 s"
+          },
+          {
+            "label": "E",
+            "text": "570 s"
+          },
+          {
+            "label": "F",
+            "text": "860 s"
+          },
+          {
+            "label": "G",
+            "text": "1000 s 35"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q034",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "570 s",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_35",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 35,
+        "page": 36,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A metal block has mass M. \n\n Heat is transferred to the block at a constant rate P. \n\n The graph shows how the change in temperature ∆T of the block from its initial temperature varies with time t . ∆T change in temperature time t \n\n The gradient of the line is k . \n\n Which expression gives the specific heat capacity of the metal from which the block is made? \n\n (Assume that no heat is transferred out of the block during the time interval shown by the graph.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "k MP 1"
+          },
+          {
+            "label": "B",
+            "text": "k P M"
+          },
+          {
+            "label": "C",
+            "text": "P Mk"
+          },
+          {
+            "label": "D",
+            "text": "k M P"
+          },
+          {
+            "label": "E",
+            "text": "k PM"
+          },
+          {
+            "label": "F",
+            "text": "M Pk"
+          },
+          {
+            "label": "G",
+            "text": "MP k"
+          },
+          {
+            "label": "H",
+            "text": "MPk 36"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q35_figure",
+            "type": "figure",
+            "src": "images_2021/q35_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q035",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "k M P",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_36",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 36,
+        "page": 37,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A skydiver of mass 80 kg is accelerating vertically downwards through the air. At one instant in time the skydiver has a speed of 5.0 m s-1. After travelling a further distance of 20 m downwards the skydiver’s speed has increased to 10 m s-1. \n\n What is the average force of air resistance acting on the skydiver over the 20 m? \n\n (gravitational field strength = 10 N kg-1)",
+        "options": [
+          {
+            "label": "A",
+            "text": "600 N"
+          },
+          {
+            "label": "B",
+            "text": "650 N"
+          },
+          {
+            "label": "C",
+            "text": "750 N"
+          },
+          {
+            "label": "D",
+            "text": "790 N"
+          },
+          {
+            "label": "E",
+            "text": "950 N"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q036",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "650 N",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_37",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 37,
+        "page": 37,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A radioactive nuclide X decays in a single stage to a stable nuclide R. \n\n A radioactive nuclide Y decays in a single stage to a stable nuclide S. \n\n When a rock formed it contained equal numbers of atoms of all four nuclides X, Y, R and S. \n\n The half-life of X is T years and the half-life of Y is 2T years. R of atoms of number at a time 4T years after the rock has formed? What is the value of S of atoms of number (Assume that no other processes add or remove X, Y, R or S from the rock during this time.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "4 1"
+          },
+          {
+            "label": "B",
+            "text": "20 17"
+          },
+          {
+            "label": "C",
+            "text": "28 31"
+          },
+          {
+            "label": "D",
+            "text": "5 6"
+          },
+          {
+            "label": "E",
+            "text": "4 5"
+          },
+          {
+            "label": "F",
+            "text": "2 37"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q037",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "28 31",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_38",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 38,
+        "page": 38,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A beaker containing 180 g of water at 25 °C has a 20 g ice cube at 0 °C added to it. \n\n No heat is transferred between the water and the surroundings (including the beaker). \n\n What is the final temperature of all the water in the beaker after all the ice has melted? \n\n (Take the specific heat capacity of water to be 4 J g-1 °C-1 and the specific latent heat of fusion of water to be 300 J g-1.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "2.5 °C"
+          },
+          {
+            "label": "B",
+            "text": "8.3 °C"
+          },
+          {
+            "label": "C",
+            "text": "10.0 °C"
+          },
+          {
+            "label": "D",
+            "text": "15.0 °C"
+          },
+          {
+            "label": "E",
+            "text": "16.7 °C"
+          },
+          {
+            "label": "F",
+            "text": "22.5 °C"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q038",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "15.0 °C",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_39",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 39,
+        "page": 38,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Liquid X has density 0.80 g cm-3 and liquid Y has density 1.0 g cm-3. \n\n 80 cm3 of liquid X and 100 cm3 of liquid Y are poured into a cylindrical container and allowed to settle. The two liquids do not mix or react. \n\n The internal cross-sectional area of the container is 20 cm2. The base of the container rests on a horizontal surface. \n\n What is the pressure due to the liquids at a height of 4.0 cm above the interior of the base of the container? \n\n (gravitational field strength = 10 N kg-1)",
+        "options": [
+          {
+            "label": "A",
+            "text": "10 Pa"
+          },
+          {
+            "label": "B",
+            "text": "40 Pa"
+          },
+          {
+            "label": "C",
+            "text": "42 Pa"
+          },
+          {
+            "label": "D",
+            "text": "50 Pa"
+          },
+          {
+            "label": "E",
+            "text": "100 Pa"
+          },
+          {
+            "label": "F",
+            "text": "400 Pa"
+          },
+          {
+            "label": "G",
+            "text": "420 Pa"
+          },
+          {
+            "label": "H",
+            "text": "500 Pa 38"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q039",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "G",
+        "answer_text": "420 Pa",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_B_40",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 40,
+        "page": 39,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A pulse of ultrasound travels from one end of a solid uniform rod of length L, starting at time t = 0. \n\n The pulse is partially reflected by a crack in the rod and partially by the far end of the rod. \n\n These two reflected pulses travel back along the rod, arriving at the end from which they started at times t1 and t2, where t2 > t1. \n\n What is the distance between the crack and the far end of the rod? t L t",
+        "options": [
+          {
+            "label": "A",
+            "text": "2 2 t t L"
+          },
+          {
+            "label": "B",
+            "text": "1 t L 1 2t"
+          },
+          {
+            "label": "C",
+            "text": "2 t L 2 2t"
+          },
+          {
+            "label": "D",
+            "text": "1 t t - L 1 2 ) ("
+          },
+          {
+            "label": "E",
+            "text": "t 2 t t - L ) ( 1 2"
+          },
+          {
+            "label": "F",
+            "text": "t 2 2 39"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q040",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "t 2 t t - L ) ( 1 2",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_41",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 41,
+        "page": 42,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The following equations represent the reactions of four metals M, Q, R and T: M(s) + HCl(aq) \\rightarrow no reaction \n\n R(s) + TSO4(aq) \\rightarrow RSO4(aq) + T(s) \n\n M(s) + QNO3(aq) \\rightarrow MNO3(aq) + Q(s) \n\n T(s) + 2HCl(aq) \\rightarrow TCl 2(aq) + H2(g) \n\n Which option lists the order of reactivity of the four metals, from the most to the least reactive?",
+        "options": [
+          {
+            "label": "A",
+            "text": "M, Q, R, T"
+          },
+          {
+            "label": "B",
+            "text": "M, R, T, Q"
+          },
+          {
+            "label": "C",
+            "text": "Q, M, T, R"
+          },
+          {
+            "label": "D",
+            "text": "Q, R, T, M"
+          },
+          {
+            "label": "E",
+            "text": "R, M, T, Q"
+          },
+          {
+            "label": "F",
+            "text": "R, T, M, Q"
+          },
+          {
+            "label": "G",
+            "text": "T, M, R, Q"
+          },
+          {
+            "label": "H",
+            "text": "T, R, Q, M 42"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q041",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "R, T, M, Q",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_42",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 42,
+        "page": 43,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Consider the following three ions of calcium observed in mass spectrometry: 40Ca2+ 42Ca2+ 43Ca+ Which of the following statements is/are correct? \n\n All three ions have the electron configuration 2,8,8 42Ca2+ has more neutrons than 40Ca2+ 42Ca2+ has more protons than 43Ca+",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q042",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "2 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_43",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 43,
+        "page": 43,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The relative isotopic abundances of a sample of magnesium are shown in the table. isotope percentage abundance 24Mg 25Mg 26Mg \n\n What is the relative atomic mass (Ar) of the magnesium?",
+        "options": [
+          {
+            "label": "A",
+            "text": "24.0"
+          },
+          {
+            "label": "B",
+            "text": "24.3"
+          },
+          {
+            "label": "C",
+            "text": "24.5"
+          },
+          {
+            "label": "D",
+            "text": "24.8"
+          },
+          {
+            "label": "E",
+            "text": "25.0 43"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q043",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "24.3",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_44",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 44,
+        "page": 44,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A portion of the Periodic Table is given:",
+        "options": [
+          {
+            "label": "A",
+            "text": "Boiling point: K > Na > Li"
+          },
+          {
+            "label": "B",
+            "text": "Electrical conductivity: NaCl(l) > NaCl(s) > Na(s)"
+          },
+          {
+            "label": "C",
+            "text": "O"
+          },
+          {
+            "label": "D",
+            "text": "Melting point: SiO2 > H2O > Na2O"
+          },
+          {
+            "label": "E",
+            "text": "Number of double bonds per molecule: CO2 > O2 > H2O 44"
+          },
+          {
+            "label": "F",
+            "text": "Na Si Cl K Br Which one of these trends is correct?"
+          },
+          {
+            "label": "H",
+            "text": "Li"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q044",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "Number of double bonds per molecule: CO2 > O2 > H2O 44",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_45",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 45,
+        "page": 45,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "1.0 mol dm-3 hydrochloric acid was slowly added from a burette into an insulated flask containing 50 cm3 of aqueous sodium hydroxide. The flask was gently swirled and the temperature of the resulting solution measured continuously. \n\n The two solutions had the same initial temperature and a graph was drawn of the temperature of the resulting solution against the volume of hydrochloric acid added. Which of the following statements explains the shape of the graph?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The reaction has reached a state of equilibrium."
+          },
+          {
+            "label": "B",
+            "text": "An endothermic reaction occurs after x cm3 of hydrochloric acid is added."
+          },
+          {
+            "label": "C",
+            "text": "The reaction rate decreases as the acid is used up."
+          },
+          {
+            "label": "D",
+            "text": "The sodium hydroxide has been neutralised by x cm3 hydrochloric acid."
+          },
+          {
+            "label": "E",
+            "text": "The sodium hydroxide becomes a weaker base as the volume of the resulting solution increases. 45"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q45_figure",
+            "type": "figure",
+            "src": "images_2021/q45_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "chemistry_q045",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "The sodium hydroxide has been neutralised by x cm3 hydrochloric acid.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_46",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 46,
+        "page": 46,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Which one of the following represents the repeating unit of poly(pent-2-ene)?",
+        "options": [
+          {
+            "label": "A",
+            "text": "B"
+          },
+          {
+            "label": "C",
+            "text": "D"
+          },
+          {
+            "label": "E",
+            "text": "F"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q46_figure",
+            "type": "figure",
+            "src": "images_2021/q46_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "chemistry_q046",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "F",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_47",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 47,
+        "page": 46,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "X is a gaseous element. X can react explosively with hydrogen to produce a single product. When dissolved in water, this product forms an acidic aqueous solution Y. When aqueous silver nitrate is added to solution Y, a white precipitate forms. \n\n Solution Y reacts with substance Z to form two products only. One of these products forms a white precipitate when aqueous sodium hydroxide is added to it. \n\n Which of the following could be X and Z? \n\n X Z",
+        "options": [
+          {
+            "label": "A",
+            "text": "Br2 CaCO3"
+          },
+          {
+            "label": "B",
+            "text": "Br2 CuO"
+          },
+          {
+            "label": "C",
+            "text": "Br2 Mg"
+          },
+          {
+            "label": "D",
+            "text": "Cl 2 CaCO3"
+          },
+          {
+            "label": "E",
+            "text": "Cl 2 CuO"
+          },
+          {
+            "label": "F",
+            "text": "Cl 2 Mg"
+          },
+          {
+            "label": "G",
+            "text": "O2 CaCO3"
+          },
+          {
+            "label": "H",
+            "text": "O2 Mg 46"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q047",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "Cl 2 Mg",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_48",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 48,
+        "page": 47,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Some students were trying to assign oxidation numbers to each of the four sulfur atoms in the tetrathionate ion, S4O6 2-. \n\n Which of the following lists gives the possible oxidation states of the four sulfur atoms present?",
+        "options": [
+          {
+            "label": "A",
+            "text": "0, 0, + 6, + 6"
+          },
+          {
+            "label": "B",
+            "text": "+ 3, + 3, + 3, + 3"
+          },
+          {
+            "label": "C",
+            "text": "0, + 2, + 6, + 6"
+          },
+          {
+            "label": "D",
+            "text": "0, 0, + 5, + 5"
+          },
+          {
+            "label": "E",
+            "text": "- 2, - 2, + 7, + 7"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q048",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "0, 0, + 5, + 5",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_49",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 49,
+        "page": 47,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The table shows the reagents in three organic reactions. \n\n Which of the rows correctly show(s) the product(s) obtained from the specified reactants? \n\n reactants product(s) CH3CH=CH2 and HBr 1,2-dibromopropane (only) C2H5COOH and CH3OH, in the presence of an H+(aq) catalyst methyl propanoate and water C2H5OH and Na sodium ethanoate and hydrogen",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3 47"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q049",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "2 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_50",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 50,
+        "page": 48,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Chlorine gas reacts with hot concentrated aqueous sodium hydroxide to form sodium chloride, sodium chlorate(V) and water. \n\n The unbalanced ionic equation for this reaction is: - + y H2O \n\n What is the simplest ratio of w : x in the balanced equation?",
+        "options": [
+          {
+            "label": "A",
+            "text": "1 : 1 u Cl 2 + v OH- \\rightarrow w Cl- + x Cl O3"
+          },
+          {
+            "label": "B",
+            "text": "1 : 2"
+          },
+          {
+            "label": "C",
+            "text": "2 : 1"
+          },
+          {
+            "label": "D",
+            "text": "1 : 5"
+          },
+          {
+            "label": "E",
+            "text": "5 : 1"
+          },
+          {
+            "label": "F",
+            "text": "1 : 7"
+          },
+          {
+            "label": "G",
+            "text": "7 : 1 48"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q050",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "5 : 1",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_51",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 51,
+        "page": 49,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "An experiment was carried out to separate the four amino acids present in a mixture of amino acids. \n\n A spot of this mixture was placed on chromatography paper. The bottom of the paper was placed in solvent 1 and left until the solvent nearly reached the top of the paper. \n\n The paper was then thoroughly dried and turned by 90°. The procedure was then repeated with solvent 2. \n\n The amino acids were then identified with reference to known Rf values in the respective solvents. \n\n The final positions of the amino acids on the chromatograph are shown on the following diagram. solvent front 2 Which of the following statements is correct?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Leucine travels further relative to the solvent front in solvent 2 than in solvent 1."
+          },
+          {
+            "label": "B",
+            "text": "Lysine has a greater Rf value in solvent 1 than it has in solvent 2."
+          },
+          {
+            "label": "C",
+            "text": "Solvent 1 alone could be used to separate all four amino acids."
+          },
+          {
+            "label": "D",
+            "text": "Solvent 2 alone could be used to separate all four amino acids."
+          },
+          {
+            "label": "E",
+            "text": "The Rf value of tyrosine in solvent 1 is 0.6 and in solvent 2 is 0.7. 49"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q051",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "Lysine has a greater Rf value in solvent 1 than it has in solvent 2.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_52",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 52,
+        "page": 50,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A reaction between copper and nitric acid produces a blue solution of copper(II) nitrate, water and substance X only. \n\n Substance X does not contain copper or hydrogen. \n\n The balanced equation for the reaction shows that 1 mole of copper reacts to produce 2 moles of water. \n\n What is the identity of substance X?",
+        "options": [
+          {
+            "label": "A",
+            "text": "N2"
+          },
+          {
+            "label": "B",
+            "text": "NO"
+          },
+          {
+            "label": "C",
+            "text": "NO2"
+          },
+          {
+            "label": "D",
+            "text": "NO3"
+          },
+          {
+            "label": "E",
+            "text": "N2O5"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q052",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "NO2",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_53",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 53,
+        "page": 50,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Ethanedioic acid, (COOH)2, is a weak diprotic acid. \n\n What is the minimum volume of a 2.50 mol dm-3 solution of ethanedioic acid required to neutralise 25.0 cm3 of 2.00 mol dm-3 sodium hydroxide solution?",
+        "options": [
+          {
+            "label": "A",
+            "text": "10.0 cm3"
+          },
+          {
+            "label": "B",
+            "text": "12.5 cm3"
+          },
+          {
+            "label": "C",
+            "text": "20.0 cm3"
+          },
+          {
+            "label": "D",
+            "text": "25.0 cm3"
+          },
+          {
+            "label": "E",
+            "text": "100 cm3 50"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q053",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "10.0 cm3",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_54",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 54,
+        "page": 51,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Propene burns in air. For each mole of propene burned, 2000 kJ of heat is released. \n\n 2.10 g of propene is burned to heat a 1000 g sample of olive oil. \n\n The olive oil has an initial temperature of 23.0 °C. It takes 2.00 J to heat one gram of olive oil by 1.0 °C. \n\n Assume that all heat is transferred to the olive oil and none is lost to the surroundings. \n\n What is the maximum temperature reached by the oil? \n\n (Mr value: C3H6 = 42.0)",
+        "options": [
+          {
+            "label": "A",
+            "text": "20.0 °C"
+          },
+          {
+            "label": "B",
+            "text": "43.0 °C"
+          },
+          {
+            "label": "C",
+            "text": "48.0 °C"
+          },
+          {
+            "label": "D",
+            "text": "50.0 °C"
+          },
+          {
+            "label": "E",
+            "text": "73.0 °C"
+          },
+          {
+            "label": "F",
+            "text": "100 °C"
+          },
+          {
+            "label": "G",
+            "text": "200 °C"
+          },
+          {
+            "label": "H",
+            "text": "223 °C 51"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q054",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "73.0 °C",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_55",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 55,
+        "page": 52,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "What is the calculated energy change for the following reaction using appropriate values from the data provided? CH4(g) + 2H2O(g) \\rightarrow CO2(g) + 4H2(g) bond bond energy / kJ mol-1 H - H 440 O - H 460 C - H 430 C - O 360 C=O 800 C≡O 1070",
+        "options": [
+          {
+            "label": "A",
+            "text": "+ 200 kJ mol-1"
+          },
+          {
+            "label": "B",
+            "text": "- 200 kJ mol-1"
+          },
+          {
+            "label": "C",
+            "text": "+ 720 kJ mol-1"
+          },
+          {
+            "label": "D",
+            "text": "- 720 kJ mol-1"
+          },
+          {
+            "label": "E",
+            "text": "+ 1080 kJ mol-1"
+          },
+          {
+            "label": "F",
+            "text": "- 1080 kJ mol-1"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q055",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "+ 200 kJ mol-1",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_56",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 56,
+        "page": 52,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The balanced equation for an oxidation of ammonia is: 4NH3(g) + 5O2(g) \\rightarrow 4NO(g) + 6H2O(g) \n\n 50.0 dm3 of ammonia and 50.0 dm3 of oxygen, both at 850 °C and 1 atmosphere pressure, are mixed and allowed to react to form the products shown in the equation. No other reactions occur. \n\n What is the maximum total volume of gases (at 850 °C and 1 atmosphere pressure) after the reaction? \n\n (Assume that all gases have the same volume at the given temperature and pressure.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "100 dm3"
+          },
+          {
+            "label": "B",
+            "text": "110 dm3"
+          },
+          {
+            "label": "C",
+            "text": "111 dm3"
+          },
+          {
+            "label": "D",
+            "text": "125 dm3"
+          },
+          {
+            "label": "E",
+            "text": "200 dm3 52"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q056",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "110 dm3",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_57",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 57,
+        "page": 53,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The electrolysis of molten potassium chloride in an inert atmosphere produces potassium at the negative electrode and chlorine at the positive electrode. \n\n The electrolysis of aqueous copper(II) sulfate solution deposits copper on the negative electrode. \n\n The masses of potassium, chlorine and copper produced or deposited in these experiments were recorded. \n\n Assume that the same number of electrons is transferred during the electrolysis of molten potassium chloride and aqueous copper(II) sulfate solution. \n\n Which of the following gives the elements arranged in order of the mass produced/deposited during these electrolysis experiments, from lowest mass to highest mass? \n\n (Ar values: Cl = 35.5; K = 39.0; Cu = 63.5)",
+        "options": [
+          {
+            "label": "A",
+            "text": "chlorine, copper, potassium"
+          },
+          {
+            "label": "B",
+            "text": "chlorine, potassium, copper"
+          },
+          {
+            "label": "C",
+            "text": "copper, chlorine, potassium"
+          },
+          {
+            "label": "D",
+            "text": "copper, potassium, chlorine"
+          },
+          {
+            "label": "E",
+            "text": "potassium, chlorine, copper"
+          },
+          {
+            "label": "F",
+            "text": "potassium, copper, chlorine 53"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q057",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "copper, chlorine, potassium",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_58",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 58,
+        "page": 54,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "0.500 g of magnesium (an excess) was added to dilute hydrochloric acid. \n\n The following graph shows the total volume of the gas released over time as the reaction progresses. All volumes were measured in cm3 at room temperature and pressure. What is the mass of magnesium remaining after two seconds? \n\n (Ar value: Mg = 24. Assume that the volume of one mole of gas at room temperature and pressure is 24.0 dm3.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "0.024 g"
+          },
+          {
+            "label": "B",
+            "text": "0.036 g"
+          },
+          {
+            "label": "C",
+            "text": "0.048 g"
+          },
+          {
+            "label": "D",
+            "text": "0.452 g"
+          },
+          {
+            "label": "E",
+            "text": "0.464 g"
+          },
+          {
+            "label": "F",
+            "text": "0.476 g 54"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q58_figure",
+            "type": "figure",
+            "src": "images_2021/q58_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "chemistry_q058",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "0.476 g 54",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_59",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 59,
+        "page": 55,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A mixture of both sodium nitrate and barium bromide solids, with a combined mass of 6.36 g, was stirred into water and completely dissolved. \n\n An excess of aqueous silver nitrate was added and a precipitate formed. The precipitate was filtered and dried. The mass of dry precipitate was 3.76 g. \n\n What was the mass of sodium nitrate in the original mixture? \n\n (Mr values: NaNO3 = 85; BaBr2 = 297; AgBr = 188)",
+        "options": [
+          {
+            "label": "A",
+            "text": "0.42 g"
+          },
+          {
+            "label": "B",
+            "text": "0.85 g"
+          },
+          {
+            "label": "C",
+            "text": "1.70 g"
+          },
+          {
+            "label": "D",
+            "text": "2.97 g"
+          },
+          {
+            "label": "E",
+            "text": "3.39 g"
+          },
+          {
+            "label": "F",
+            "text": "5.94 g"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q059",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "3.39 g",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_C_60",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 60,
+        "page": 55,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A spoonful of magnesium carbonate powder was added to excess hydrochloric acid in an open conical flask on an electronic balance. MgCO3(s) + 2HCl(aq) \\rightarrow MgCl 2(aq) + CO2(g) + H2O(l) \n\n The mass of the flask and its contents was measured initially and at 1-minute intervals. The total mass of gas produced was then calculated. \n\n The reaction stopped at 5 minutes. \n\n Which row in the following table could represent the total mass of gas calculated after each measurement? \n\n 1 minute 2 minutes 3 minutes 4 minutes 5 minutes",
+        "options": [
+          {
+            "label": "A",
+            "text": "5 g 9 g 12 g 14 g 15 g"
+          },
+          {
+            "label": "B",
+            "text": "1 g 3 g 6 g 10 g 15 g"
+          },
+          {
+            "label": "C",
+            "text": "3 g 6 g 9 g 12 g 15 g"
+          },
+          {
+            "label": "D",
+            "text": "11 g 12 g 13 g 14 g 15 g"
+          },
+          {
+            "label": "E",
+            "text": "6 g 10 g 13 g 15 g 15 g 55"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q060",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "5 g 9 g 12 g 14 g 15 g",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_61",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 61,
+        "page": 58,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A selection pressure is a biological or physical factor in an environment that may result in evolution. \n\n Which of the following situations result in selection pressures on one or more organisms? \n\n clearing rainforests to grow palm oil plantations introduction of a predator to islands with seabird colonies long-term use of antibiotics in hospital wards using an insecticide to kill the mosquitoes that spread malaria",
+        "options": [
+          {
+            "label": "A",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "B",
+            "text": "1 and 4 only"
+          },
+          {
+            "label": "C",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "D",
+            "text": "1, 2 and 3 only"
+          },
+          {
+            "label": "E",
+            "text": "2, 3 and 4 only"
+          },
+          {
+            "label": "F",
+            "text": "1, 2, 3 and 4"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q061",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "1, 2, 3 and 4",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_62",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 62,
+        "page": 58,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A particular cell has the following features: \n\n • a cell wall • a cell membrane • no mitochondria \n\n Which of the following statements about this cell is correct?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It may be an animal cell."
+          },
+          {
+            "label": "B",
+            "text": "It may have no nucleus."
+          },
+          {
+            "label": "C",
+            "text": "It may contain chloroplasts."
+          },
+          {
+            "label": "D",
+            "text": "It contains X and Y chromosomes."
+          },
+          {
+            "label": "E",
+            "text": "It is not able to respire. 58"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q062",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "It may have no nucleus.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_63",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 63,
+        "page": 59,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A cell is studied. The graph shows the concentration of a substance at different distances from the cell membrane. \n\n The concentrations shown are maintained over time. cell membrane concentration of substance outside cell inside cell distance from cell membrane Which of the following processes is/are responsible for maintaining the difference in the concentration of the substance across the membrane? \n\n active transport diffusion osmosis",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3 only 59"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q63_figure",
+            "type": "figure",
+            "src": "images_2021/q63_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q063",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "1 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_64",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 64,
+        "page": 60,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The diagram shows some of the ways in which glucose can be added to or removed from blood plasma in humans. glycogen in glycogen in glucose in blood plasma muscles liver \n\n Which hormones stimulate the processes shown by the arrows? \n\n process 1 process 2 process 3",
+        "options": [
+          {
+            "label": "A",
+            "text": "adrenaline glucagon insulin"
+          },
+          {
+            "label": "B",
+            "text": "adrenaline adrenaline glucagon glucagon"
+          },
+          {
+            "label": "C",
+            "text": "insulin adrenaline glucagon"
+          },
+          {
+            "label": "D",
+            "text": "insulin insulin adrenaline glucagon"
+          },
+          {
+            "label": "E",
+            "text": "glucagon insulin glucagon"
+          },
+          {
+            "label": "F",
+            "text": "glucagon glucagon insulin 60"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q64_figure",
+            "type": "figure",
+            "src": "images_2021/q64_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q064",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "insulin insulin adrenaline glucagon",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_65",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 65,
+        "page": 61,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The diagram shows two gametes, gamete P and gamete Q, fusing to form cell R in a healthy human. R divides to form two cells, S and T. \n\n S and T grow into two separate individuals. P Q R S T Which of the following statements is/are correct? \n\n The number of double strands of DNA is the same in gamete P and cell T. If gamete Q contains a Y chromosome, then both individuals that grow from cells S and T will be genetically male. A mutation in the DNA in cell R before mitosis will always change the phenotype of cell S.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3 61"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q65_figure",
+            "type": "figure",
+            "src": "images_2021/q65_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q065",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "2 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_66",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 66,
+        "page": 62,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The graph shows changes in population size (number of individuals) of a species of tortoise over the last century. These tortoises are only found on one small island in the Galapagos. Z population 160 size 140 120 100 time / years Which of the following could account for the change in population shown after time Z on the graph? \n\n reduced rainfall reduced availability of resources failure to adapt to competition from an introduced species",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3 62"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q66_figure",
+            "type": "figure",
+            "src": "images_2021/q66_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q066",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "H",
+        "answer_text": "1, 2 and 3 62",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_67",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 67,
+        "page": 63,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "An enzyme-catalysed reaction was studied and the mass of product formed was measured over time. \n\n The results are shown in the graph. total mass of product formed / g time / s Which of the following statements is/are correct? \n\n The enzymes may have been used up in the reaction. The initial rate of reaction is 120 g min-1. At high concentrations, the product formed may inhibit the enzymes.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3 63"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q67_figure",
+            "type": "figure",
+            "src": "images_2021/q67_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q067",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_68",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 68,
+        "page": 64,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A person ran on a treadmill for 360 seconds. Their rates of aerobic and anaerobic respiration were measured at the start and at the end of the time. The table shows the results. time = 0 seconds time = 360 seconds rate of aerobic respiration / arbitrary units 1.01 5.77 rate of anaerobic respiration / arbitrary units 0.01 3.67 Physiological changes occured in the person during this time. \n\n Which of the following statements is/are correct during the 360 seconds? \n\n There was an increase in pH that caused a change in the shape of the respiratory enzyme’s active sites. Part of the increase in the rate of cellular respiration may have been due to a temperature increase in the muscles. More carbon dioxide needed to be removed from the muscle cells.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3 64"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q068",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "G",
+        "answer_text": "2 and 3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_69",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 69,
+        "page": 65,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Coat colour variation in a particular population of mice is only affected by one gene with two alleles, R and r. This gene is not on a sex chromosome. \n\n Heterozygous mice have yellow fur. Embryos that are homozygous dominant do not survive. \n\n A yellow male and a yellow female mouse were mated several times and a large number of offspring were produced. Some of the offspring were grey in colour and others were yellow. \n\n Assuming that no new mutations have occurred, which of the following is correct?",
+        "options": [
+          {
+            "label": "A",
+            "text": "25% of the live offspring will be grey in colour."
+          },
+          {
+            "label": "B",
+            "text": "All grey mice have a homozygous genotype for coat colour."
+          },
+          {
+            "label": "C",
+            "text": "Offspring with XY chromosomes are all heterozygous for coat colour."
+          },
+          {
+            "label": "D",
+            "text": "The live offspring of a cross between a yellow and a grey mouse will always be yellow."
+          },
+          {
+            "label": "E",
+            "text": "There is a 3 : 1 ratio of dominant to recessive alleles for this gene in the live offspring."
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q069",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "All grey mice have a homozygous genotype for coat colour.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_70",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 70,
+        "page": 65,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "One strand of a section of DNA has the following sequence of bases: AATCGGTCTTGCGGCCAAGGCCCTT \n\n The complementary strand is not shown. \n\n The charts show the proportions of the four bases A, C, G and T. \n\n Which chart shows the correct proportions of bases for this section of double-stranded DNA? \n\n (Assume no mutations.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "B"
+          },
+          {
+            "label": "C",
+            "text": "T"
+          },
+          {
+            "label": "E",
+            "text": "F"
+          },
+          {
+            "label": "G",
+            "text": "A"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q70_figure",
+            "type": "figure",
+            "src": "images_2021/q70_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q070",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "B",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_71",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 71,
+        "page": 66,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Two identical plant cells were removed from a leaf. One was placed in a concentrated sugar solution and the other was placed in distilled water, and both were left for 2 hours. \n\n All other factors were kept constant during the experiment. The diagram shows the results, with regions of each cell labelled Q and S. cell in concentrated cell in distilled water sugar solution S Q Q Which of the following statements is/are correct? \n\n In the cell in distilled water, Q contains only distilled water. In the cell in concentrated sugar solution, the number of solute particles in Q increased over the two hours. S is a vacuum.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3 66"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q71_figure",
+            "type": "figure",
+            "src": "images_2021/q71_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q071",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "none of them",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_72",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 72,
+        "page": 67,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The diagram shows some chemical processes involved in the carbon cycle. Three of these multi-stage processes are labelled P, Q and R. R plants Q bacteria CO2 in air animals P \n\n Which of the following statements is/are correct? \n\n P requires the presence of mitochondria. Overall, Q releases heat. R is sensitive to changes in pH and temperature.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3 67"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q72_figure",
+            "type": "figure",
+            "src": "images_2021/q72_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q072",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_73",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 73,
+        "page": 68,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Two different cells, cell L and cell M, were studied using a microscope and then drawn. The drawings are not shown. \n\n Some of the data collected is shown in the table. cell L cell M actual maximum length of cell / μm 400 maximum length of cell in drawing / cm Which of the following statements is/are correct? \n\n Cell L has been magnified 50 times. Cell M has been magnified 5 times as much as cell L. Both cells could have a cell wall.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3 68"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q073",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "H",
+        "answer_text": "1, 2 and 3 68",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_74",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 74,
+        "page": 69,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The pedigree diagram shows the inheritance of a phenotypic feature caused by a recessive allele. Key affected male affected female unaffected male unaffected female ? \n\n What is the probability that individual 6 is an unaffected male?",
+        "options": [
+          {
+            "label": "A",
+            "text": "12.5% 5"
+          },
+          {
+            "label": "B",
+            "text": "25%"
+          },
+          {
+            "label": "C",
+            "text": "37.5%"
+          },
+          {
+            "label": "D",
+            "text": "50%"
+          },
+          {
+            "label": "E",
+            "text": "62.5%"
+          },
+          {
+            "label": "F",
+            "text": "75% 69"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q74_figure",
+            "type": "figure",
+            "src": "images_2021/q74_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q074",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "37.5%",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_75",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 75,
+        "page": 70,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The diagrams show the daughter cells produced when three different stem cells divide. Key stem cell specialised cell stem cell 1 stem cell 2 stem cell 3 Which of the following statements is correct?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Only stem cell 1 shows division by mitosis."
+          },
+          {
+            "label": "B",
+            "text": "Some cancers result from divisions like that shown for stem cell 1."
+          },
+          {
+            "label": "C",
+            "text": "The total number of stem cells increases if they divide like stem cell 2."
+          },
+          {
+            "label": "D",
+            "text": "Stem cells in adults divide like stem cell 3."
+          },
+          {
+            "label": "E",
+            "text": "The total number of stem cells is maintained if they divide like stem cell 3. 70"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q75_figure",
+            "type": "figure",
+            "src": "images_2021/q75_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q075",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "Some cancers result from divisions like that shown for stem cell 1.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_76",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 76,
+        "page": 71,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A fungus feeds by releasing amylase onto starchy food. The soluble products of the breakdown of starch are absorbed by the fungus. \n\n Test tubes were set up containing a mixture of starch solution and fungus. Each test tube was maintained at a different temperature between 5 °C and 45 °C. \n\n Samples of the mixture were removed early in the experiments to determine the initial rates of this enzyme-catalysed reaction. \n\n The results were plotted. \n\n All of the other variables were kept constant. \n\n Which graph shows the expected results?",
+        "options": [
+          {
+            "label": "A",
+            "text": "rate of reaction rate of reaction"
+          },
+          {
+            "label": "B",
+            "text": "05 45 05 45 temperature / °C temperature / °C"
+          },
+          {
+            "label": "C",
+            "text": "rate of reaction rate of reaction"
+          },
+          {
+            "label": "D",
+            "text": "05 45 05 45 temperature / °C temperature / °C"
+          },
+          {
+            "label": "E",
+            "text": "rate of reaction 05 45 temperature / °C 71"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q76_figure",
+            "type": "figure",
+            "src": "images_2021/q76_figure.png"
+          },
+          {
+            "figure_id": "q76_fig2",
+            "type": "figure",
+            "src": "images_2021/q76_fig2.png"
+          },
+          {
+            "figure_id": "q76_fig3",
+            "type": "figure",
+            "src": "images_2021/q76_fig3.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q076",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "rate of reaction 05 45 temperature / °C 71",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_77",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 77,
+        "page": 72,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Red blood cells are produced by stem cells in the bone marrow. \n\n A 1 mm3 sample of blood from a healthy person was found to contain 4 \\times 106 red blood cells. \n\n The person has a consistent average total blood volume of 0.006 m3. Their total red blood cell count does not change and, on average, red blood cells have a lifespan of 100 days. \n\n Which of the following statements is/are correct? \n\n Red blood cells are phagocytic cells. The average rate of production of red blood cells is 1 \\times 1010 cells per hour. The stem cells that produce red blood cells do not have nuclei.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3 72"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q077",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "2 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_78",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 78,
+        "page": 73,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The diagram shows the life cycle of one species of ant, in which males are haploid and females are diploid. S P egg adult female adult male R Q sperm zygote Which of the letters on the diagram represent(s) meiosis?",
+        "options": [
+          {
+            "label": "A",
+            "text": "P only"
+          },
+          {
+            "label": "B",
+            "text": "Q only"
+          },
+          {
+            "label": "C",
+            "text": "R only"
+          },
+          {
+            "label": "D",
+            "text": "S only"
+          },
+          {
+            "label": "E",
+            "text": "P and Q only"
+          },
+          {
+            "label": "F",
+            "text": "P and R only"
+          },
+          {
+            "label": "G",
+            "text": "P and S only"
+          },
+          {
+            "label": "H",
+            "text": "Q and R only 73"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q78_figure",
+            "type": "figure",
+            "src": "images_2021/q78_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q078",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "P only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_79",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 79,
+        "page": 74,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A student compared the properties of different cells from one healthy human. \n\n Which of the following statements is/are correct? \n\n (Assume that no mutations occur.) \n\n A cheek cell contains the same alleles as an embryonic stem cell. A sperm cell contains the same genome as a cheek cell. A white blood cell contains the same number of DNA bases as a mature red blood cell. An embryonic stem cell produces all of the same proteins as a white blood cell.",
+        "options": [
+          {
+            "label": "A",
+            "text": "1 only"
+          },
+          {
+            "label": "B",
+            "text": "2 only"
+          },
+          {
+            "label": "C",
+            "text": "3 only"
+          },
+          {
+            "label": "D",
+            "text": "4 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 4 only"
+          },
+          {
+            "label": "H",
+            "text": "3 and 4 only 74"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q079",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "1 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "2021_D_80",
+      "source": {
+        "exam": "NSAA",
+        "year": 2021,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 80,
+        "page": 75,
+        "source_pdf": "raw/2021.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The kite diagram shows the distribution of dandelions and daisies along a transect in a field. \n\n A quadrat with sides of 0.5 m was used to collect the data. \n\n Each square on the vertical axis represents 1 plant. For example, in the quadrat centred at 5 m there were 6 daisies. daisies 0 dandelions 0 distance / m Which of the following statements about the data is/are correct? \n\n Across the transect, the number of dandelions is proportional to the number of daisies. Repeating the experiment along a different transect would result in an identical pattern. The density of dandelions at 5 m is 36 plants per square metre.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3 75"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q80_figure",
+            "type": "figure",
+            "src": "images_2021/q80_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q080",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      },
+      "data_quality_notes": []
+    }
+  ]
+}

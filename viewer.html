@@ -474,13 +474,23 @@
   }
 
   async function loadManifest() {
-    const res = await fetch('data/processed/manifest.json');
+    const manifestUrl = new URL('data/processed/manifest.json', window.location.href);
+    const res = await fetch(manifestUrl);
+
+    if (!res.ok) {
+      throw new Error(`Manifest load failed: ${res.status} ${res.statusText}`);
+    }
+
     const manifest = await res.json();
+    const manifestDir = new URL('.', manifestUrl);
+
     const sel = document.getElementById('paper-select');
-    sel.innerHTML = manifest.map(p =>
-      `<option value="${p.file}">${p.exam} ${p.year} — ${p.count} questions</option>`
-    ).join('');
-    const defaultFile = manifest[manifest.length - 1].file;
+    sel.innerHTML = manifest.map(p => {
+      const fullPath = new URL(p.file, manifestDir).href;
+      return `<option value="${fullPath}">${p.exam} ${p.year} — ${p.count} questions</option>`;
+    }).join('');
+
+    const defaultFile = new URL(manifest[manifest.length - 1].file, manifestDir).href;
     sel.value = defaultFile;
     await loadPaper(defaultFile);
   }
@@ -501,8 +511,11 @@
     currentPaperFile = filename;
     document.getElementById('loading').style.display = 'flex';
     try {
-      const res = await fetch(filename);
-      const data = await res.json();
+const res = await fetch(filename);
+const text = await res.text();
+console.log("Fetching:", filename);
+console.log("Response starts with:", text.slice(0, 200));
+const data = JSON.parse(text);
       if (!Array.isArray(data.questions)) {
         throw new Error('Training file must contain a questions array.');
       }

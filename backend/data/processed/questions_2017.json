@@ -1,0 +1,6582 @@
+{
+  "source": "NSAA 2017",
+  "source_pdf": "raw/2017.pdf",
+  "extraction_version": "2.0",
+  "question_count": 90,
+  "questions": [
+    {
+      "question_id": "2017_A_1",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 1,
+        "page": 6,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Evaluate $\\dfrac{(\\sqrt{12}+\\sqrt{3})^2}{(\\sqrt{12}-\\sqrt{3})^2}$",
+        "options": [
+          {
+            "label": "A",
+            "text": "$1$"
+          },
+          {
+            "label": "B",
+            "text": "$3$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{5}{3}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{7}{3}$"
+          },
+          {
+            "label": "E",
+            "text": "$3\\sqrt{3}$"
+          },
+          {
+            "label": "F",
+            "text": "$9$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q001",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "$9$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_2",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 2,
+        "page": 6,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Solve fully the inequality $2x^2 \\geq 15 - x$",
+        "options": [
+          {
+            "label": "A",
+            "text": "$x \\leq -3$"
+          },
+          {
+            "label": "B",
+            "text": "$x \\geq 2.5$"
+          },
+          {
+            "label": "C",
+            "text": "$x \\leq -1.5,\\ x \\geq 5$"
+          },
+          {
+            "label": "D",
+            "text": "$-1.5 \\leq x \\leq 5$"
+          },
+          {
+            "label": "E",
+            "text": "$x \\leq -3,\\ x \\geq 2.5$"
+          },
+          {
+            "label": "F",
+            "text": "$-3 \\leq x \\leq 2.5$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q002",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "$x \\leq -3,\\ x \\geq 2.5$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_3",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 3,
+        "page": 7,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The equation gives $y$ in terms of $x$: $y = 3\\!\\left(\\dfrac{x}{2}-1\\right)^2 - 5$. Which one of the following is a rearrangement for $x$ in terms of $y$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$x = 2 \\pm 2\\sqrt{\\dfrac{y-5}{3}}$"
+          },
+          {
+            "label": "B",
+            "text": "$x = 2 \\pm 2\\sqrt{\\dfrac{y+5}{3}}$"
+          },
+          {
+            "label": "C",
+            "text": "$x = 2 \\pm 3\\sqrt{\\dfrac{y+5}{3}}$"
+          },
+          {
+            "label": "D",
+            "text": "$x = -2 \\pm 2\\sqrt{\\dfrac{y+5}{3}}$"
+          },
+          {
+            "label": "E",
+            "text": "$x = -2 \\pm 3\\sqrt{\\dfrac{y+5}{2}}$"
+          },
+          {
+            "label": "F",
+            "text": "$x = 2 + 2\\!\\left(\\dfrac{y+5}{3}\\right)^2$"
+          },
+          {
+            "label": "G",
+            "text": "$x = -2 + 2\\!\\left(\\dfrac{y+5}{3}\\right)^2$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q003",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$x = 2 \\pm 2\\sqrt{\\dfrac{y+5}{3}}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_4",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 4,
+        "page": 8,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A fruit stall sells apples costing £$x$ each, and pears costing £$y$ each. Sam bought 2 apples and 5 pears, and the total cost of these was £$P$. Lesley bought 3 apples and 2 pears, and the total cost of these was £$Q$. Which of the following is an expression for the cost, in pounds (£), of a pear?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{2Q-3P}{3}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{2Q-3P}{11}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{Q-P}{3}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{Q-P}{11}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{P-Q}{3}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{3P-2Q}{3}$"
+          },
+          {
+            "label": "G",
+            "text": "$\\dfrac{3P-2Q}{11}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q004",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "G",
+        "answer_text": "$\\dfrac{3P-2Q}{11}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_5",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 5,
+        "page": 9,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "$P$ is directly proportional to $Q$ squared. When $P$ is 2, $Q$ is 4. $Q$ is inversely proportional to $R$. When $Q$ is 2, $R$ is 5. What is $P$ in terms of $R$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$P = \\dfrac{5}{R}$"
+          },
+          {
+            "label": "B",
+            "text": "$P = \\dfrac{5}{4R}$"
+          },
+          {
+            "label": "C",
+            "text": "$P = \\dfrac{1}{800R^2}$"
+          },
+          {
+            "label": "D",
+            "text": "$P = \\dfrac{5}{4R^2}$"
+          },
+          {
+            "label": "E",
+            "text": "$P = \\dfrac{25}{2R^2}$"
+          },
+          {
+            "label": "F",
+            "text": "$P = \\dfrac{800}{R^2}$"
+          },
+          {
+            "label": "G",
+            "text": "$P = \\dfrac{R^2}{50}$"
+          },
+          {
+            "label": "H",
+            "text": "$P = \\dfrac{25R^2}{2}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q005",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "$P = \\dfrac{25}{2R^2}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_6",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 6,
+        "page": 10,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Two sequences are defined by the following rules: In sequence $S$ the $n^\\text{th}$ term is $7n+1$. In sequence $T$ the $n^\\text{th}$ term is $99-n^2$. What is the smallest value of $n$ for which the $n^\\text{th}$ term of sequence $S$ is greater than the $n^\\text{th}$ term of sequence $T$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$6$"
+          },
+          {
+            "label": "B",
+            "text": "$7$"
+          },
+          {
+            "label": "C",
+            "text": "$8$"
+          },
+          {
+            "label": "D",
+            "text": "$13$"
+          },
+          {
+            "label": "E",
+            "text": "$14$"
+          },
+          {
+            "label": "F",
+            "text": "$15$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q006",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "$8$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_7",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 7,
+        "page": 10,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Which one of the following is a simplification of $2 - \\dfrac{x^2(9x^2-4)}{x^3(2-3x)}$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$-1-\\dfrac{2}{x}$"
+          },
+          {
+            "label": "B",
+            "text": "$-1+\\dfrac{2}{x}$"
+          },
+          {
+            "label": "C",
+            "text": "$5-\\dfrac{2}{x}$"
+          },
+          {
+            "label": "D",
+            "text": "$5+\\dfrac{2}{x}$"
+          },
+          {
+            "label": "E",
+            "text": "$5-\\dfrac{3}{x}$"
+          },
+          {
+            "label": "F",
+            "text": "$5+\\dfrac{3}{x}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q007",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$5+\\dfrac{2}{x}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_8",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 8,
+        "page": 11,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The parallelogram $OPQR$, labelled clockwise, is in the first quadrant ($x \\geq 0,\\ y \\geq 0$) with $O$ at the origin. The point $R$ has coordinates $\\left(\\dfrac{3a}{2},0\\right)$ and the point $Q$ has coordinates $(2a,\\ a+1)$. The area of $OPQR$ is 9 square units. What are the coordinates of point $P$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\left(\\dfrac{\\sqrt{3}}{2},\\ 1+\\sqrt{3}\\right)$"
+          },
+          {
+            "label": "B",
+            "text": "$(1,\\ 3)$"
+          },
+          {
+            "label": "C",
+            "text": "$(1.5,\\ 4)$"
+          },
+          {
+            "label": "D",
+            "text": "$(2,\\ 3)$"
+          },
+          {
+            "label": "E",
+            "text": "$(3,\\ 4)$"
+          },
+          {
+            "label": "F",
+            "text": "$(2\\sqrt{3},\\ 1+\\sqrt{3})$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q008",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$(1,\\ 3)$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_9",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 9,
+        "page": 11,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "What is the value of $x$ that makes the following expression correct? $2^{3+2x} \\cdot 4^x \\cdot 8^{-x} = 4\\sqrt{2}$",
+        "options": [
+          {
+            "label": "A",
+            "text": "$-2.25$"
+          },
+          {
+            "label": "B",
+            "text": "$-1.75$"
+          },
+          {
+            "label": "C",
+            "text": "$-1.5$"
+          },
+          {
+            "label": "D",
+            "text": "$-0.5$"
+          },
+          {
+            "label": "E",
+            "text": "$-0.25$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q009",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$-0.5$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_10",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 10,
+        "page": 12,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "There are 100 students in Year 10. Each student studies exactly one of French, German, and Spanish. $X$ girls study French and there are $3X$ girls in total. $2Y$ boys study German. There are 35 students studying Spanish of which $Y$ are boys. Which of the following is an expression for the total number of students studying German?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$X+2Y$"
+          },
+          {
+            "label": "B",
+            "text": "$X+Y+35$"
+          },
+          {
+            "label": "C",
+            "text": "$X+3Y-35$"
+          },
+          {
+            "label": "D",
+            "text": "$2X+2Y$"
+          },
+          {
+            "label": "E",
+            "text": "$2X+Y-35$"
+          },
+          {
+            "label": "F",
+            "text": "$2X+3Y-35$"
+          },
+          {
+            "label": "G",
+            "text": "$2X+Y+35$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q010",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "$2X+3Y-35$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_11",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 11,
+        "page": 12,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "An exterior angle of a regular polygon with $n$ sides is $4^\\circ$ larger than an exterior angle of a regular polygon with $(n+3)$ sides. What is the value of $n$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$10$"
+          },
+          {
+            "label": "B",
+            "text": "$12$"
+          },
+          {
+            "label": "C",
+            "text": "$15$"
+          },
+          {
+            "label": "D",
+            "text": "$18$"
+          },
+          {
+            "label": "E",
+            "text": "$21$"
+          },
+          {
+            "label": "F",
+            "text": "$24$"
+          },
+          {
+            "label": "G",
+            "text": "$27$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q011",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "$15$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_12",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 12,
+        "page": 13,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The bearing of a ship $R$ from a lighthouse $L$ is 220°. A canoe $C$ is due North of $R$. $C$ is the same distance from the ship and the lighthouse. What is the bearing of $L$ from $C$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$070^\\circ$"
+          },
+          {
+            "label": "B",
+            "text": "$080^\\circ$"
+          },
+          {
+            "label": "C",
+            "text": "$090^\\circ$"
+          },
+          {
+            "label": "D",
+            "text": "$100^\\circ$"
+          },
+          {
+            "label": "E",
+            "text": "$140^\\circ$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q012",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$080^\\circ$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_13",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 13,
+        "page": 13,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The hands of a 12-hour analogue clock move continuously. When the time on the clock is 4:00, the angle between the minute hand and the hour hand is 120°. What is the angle between the two hands at 4:40?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$80^\\circ$"
+          },
+          {
+            "label": "B",
+            "text": "$100^\\circ$"
+          },
+          {
+            "label": "C",
+            "text": "$110^\\circ$"
+          },
+          {
+            "label": "D",
+            "text": "$120^\\circ$"
+          },
+          {
+            "label": "E",
+            "text": "$140^\\circ$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q013",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$100^\\circ$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_14",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 14,
+        "page": 14,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The cost of manufacturing a cake is directly proportional to the volume of the cake. The baker makes a 70% profit when he sells a large rectangular cake. The baker sells a large rectangular cake for £6.80. The baker decides to sell smaller rectangular cakes. The length, width, and height of the smaller cakes are all half of those of the large rectangular cake. He sells a pack of 6 of the smaller cakes for £6.50. How much profit does he make on the pack of smaller cakes?",
+        "options": [
+          {
+            "label": "A",
+            "text": "£0.50"
+          },
+          {
+            "label": "B",
+            "text": "£2.93"
+          },
+          {
+            "label": "C",
+            "text": "£3.00"
+          },
+          {
+            "label": "D",
+            "text": "£3.50"
+          },
+          {
+            "label": "E",
+            "text": "£4.97"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q014",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "£3.50",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_15",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 15,
+        "page": 14,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A pet shop has 4 female rabbits and $x$ male rabbits for sale. A customer buys 2 of the rabbits, chosen at random, and each rabbit is equally likely to be chosen. The probability that both the chosen rabbits are male is $\\dfrac{1}{3}$. What is the value of $x$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$2$"
+          },
+          {
+            "label": "B",
+            "text": "$4$"
+          },
+          {
+            "label": "C",
+            "text": "$6$"
+          },
+          {
+            "label": "D",
+            "text": "$8$"
+          },
+          {
+            "label": "E",
+            "text": "$9$"
+          },
+          {
+            "label": "F",
+            "text": "$11$"
+          },
+          {
+            "label": "G",
+            "text": "$12$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q015",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "$6$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_16",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 16,
+        "page": 15,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The diagram shows a square with side of length $x$ cm. A circle is drawn with centre O which lies at the mid-point of one of the sides of the square. This side forms part of a diameter of the circle. The circle passes through two corners of the square as shown. What is the area, in cm$^2$, of the shaded part of the semi-circle?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$(\\pi-1)x^2$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{\\pi-2}{2}\\,x^2$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{3\\pi-2}{2}\\,x^2$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{3\\pi-4}{4}\\,x^2$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{5\\pi-4}{4}\\,x^2$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{5\\pi-8}{8}\\,x^2$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q16_figure",
+            "type": "figure",
+            "src": "images_2017/q16_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "mathematics_q016",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "$\\dfrac{5\\pi-8}{8}\\,x^2$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_17",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 17,
+        "page": 16,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A cylindrical hollow metal pipe is 16 cm long. It has an external diameter of 10 cm and an internal diameter of 8 cm. The density of the metal from which the pipe is made is 8 grams per cm$^3$. [diagram not to scale] What is the mass of the pipe in grams?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$8\\pi$"
+          },
+          {
+            "label": "B",
+            "text": "$16\\pi$"
+          },
+          {
+            "label": "C",
+            "text": "$18\\pi$"
+          },
+          {
+            "label": "D",
+            "text": "$72\\pi$"
+          },
+          {
+            "label": "E",
+            "text": "$128\\pi$"
+          },
+          {
+            "label": "F",
+            "text": "$512\\pi$"
+          },
+          {
+            "label": "G",
+            "text": "$1152\\pi$"
+          },
+          {
+            "label": "H",
+            "text": "$4608\\pi$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q17_figure",
+            "type": "figure",
+            "src": "images_2017/q17_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "mathematics_q017",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "G",
+        "answer_text": "$1152\\pi$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_A_18",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part A Mathematics",
+        "section": "A",
+        "question_number": 18,
+        "page": 17,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The shortest distance between two opposite sides of a regular hexagon is 12 cm. Find the area, in cm$^2$, of the regular hexagon.",
+        "options": [
+          {
+            "label": "A",
+            "text": "$36\\sqrt{3}$"
+          },
+          {
+            "label": "B",
+            "text": "$72$"
+          },
+          {
+            "label": "C",
+            "text": "$54\\sqrt{3}$"
+          },
+          {
+            "label": "D",
+            "text": "$108$"
+          },
+          {
+            "label": "E",
+            "text": "$72\\sqrt{3}$"
+          },
+          {
+            "label": "F",
+            "text": "$144$"
+          },
+          {
+            "label": "G",
+            "text": "$144\\sqrt{3}$"
+          },
+          {
+            "label": "H",
+            "text": "$288\\sqrt{3}$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q18_figure",
+            "type": "figure",
+            "src": "images_2017/q18_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "mathematics_q018",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "$72\\sqrt{3}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_19",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 19,
+        "page": 20,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A car is travelling along a horizontal road in a straight line. The graph is a velocity–time graph for part of the car's journey. During this part of the journey, what is the total distance that the car travels while it is decelerating?",
+        "options": [
+          {
+            "label": "A",
+            "text": "400 m"
+          },
+          {
+            "label": "B",
+            "text": "500 m"
+          },
+          {
+            "label": "C",
+            "text": "550 m"
+          },
+          {
+            "label": "D",
+            "text": "600 m"
+          },
+          {
+            "label": "E",
+            "text": "750 m"
+          },
+          {
+            "label": "F",
+            "text": "1400 m"
+          },
+          {
+            "label": "G",
+            "text": "1800 m"
+          },
+          {
+            "label": "H",
+            "text": "1900 m"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q19_figure",
+            "type": "figure",
+            "src": "images_2017/q19_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q019",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "500 m",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_20",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 20,
+        "page": 21,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "When a saucepan of water is heated from below, convection currents form and transfer heat through the liquid. Here are three statements about the water as it is heated:\n1. The mass of a fixed volume of the water increases.\n2. The density of a fixed mass of the water decreases.\n3. The volume of a fixed mass of the water increases.\nWhich of these statements help(s) to explain how convection currents are formed?",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q020",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "G",
+        "answer_text": "2 and 3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_21",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 21,
+        "page": 22,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Table 1 gives the approximate frequency ranges of sections of the electromagnetic spectrum. Table 2 gives information about two different types of wave in air. Waves 1 to 3 are longitudinal waves formed by an object vibrating. Waves 4 to 6 are electromagnetic waves. The speed of sound in air is 300 m s$^{-1}$. The speed of light in air is $3.0 \\times 10^8$ m s$^{-1}$. A person detects only two of these waves unaided, using just their eyes and ears. Which two waves does the person detect?",
+        "options": [
+          {
+            "label": "A",
+            "text": "wave 1 and wave 4"
+          },
+          {
+            "label": "B",
+            "text": "wave 1 and wave 5"
+          },
+          {
+            "label": "C",
+            "text": "wave 2 and wave 5"
+          },
+          {
+            "label": "D",
+            "text": "wave 2 and wave 6"
+          },
+          {
+            "label": "E",
+            "text": "wave 3 and wave 4"
+          },
+          {
+            "label": "F",
+            "text": "wave 3 and wave 6"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q21_tables",
+            "type": "figure",
+            "src": "images_2017/q21_tables.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q021",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "wave 3 and wave 4",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_22",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 22,
+        "page": 23,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A charge of 60 C passes through an electrical component when a steady voltage of 10 V is applied across it for 30 seconds. The resistance of the component remains constant throughout. What is the resistance of the component?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$0.050\\ \\Omega$"
+          },
+          {
+            "label": "B",
+            "text": "$0.20\\ \\Omega$"
+          },
+          {
+            "label": "C",
+            "text": "$0.50\\ \\Omega$"
+          },
+          {
+            "label": "D",
+            "text": "$2.0\\ \\Omega$"
+          },
+          {
+            "label": "E",
+            "text": "$5.0\\ \\Omega$"
+          },
+          {
+            "label": "F",
+            "text": "$20\\ \\Omega$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q022",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "$5.0\\ \\Omega$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_23",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 23,
+        "page": 24,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "An electric motor is used to pull a broken-down car slowly from the road up a ramp on to the back of a breakdown truck. The car has a mass of 1200 kg and is lifted through a vertical height of 1.0 m. The total input energy to the motor is 28 kJ and it is 75% efficient. In the process of lifting the car, energy is lost to the surroundings from the motor and from other causes. What is the total energy lost to the surroundings? (gravitational field strength = 10 N kg$^{-1}$)",
+        "options": [
+          {
+            "label": "A",
+            "text": "7.0 kJ"
+          },
+          {
+            "label": "B",
+            "text": "9.0 kJ"
+          },
+          {
+            "label": "C",
+            "text": "12 kJ"
+          },
+          {
+            "label": "D",
+            "text": "16 kJ"
+          },
+          {
+            "label": "E",
+            "text": "21 kJ"
+          },
+          {
+            "label": "F",
+            "text": "33 kJ"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q23_figure",
+            "type": "figure",
+            "src": "images_2017/q23_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q023",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "16 kJ",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_24",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 24,
+        "page": 25,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "In one type of medical scanner a source is placed inside a patient's body. This source causes pairs of gamma-rays to be emitted simultaneously in opposite directions. Detectors on each side of the patient are used to detect the gamma-rays. The distance between the two detectors is 3.0 m. When the source is at Q, half-way between the detectors, the two gamma-rays arrive at the same time. In a particular scan the gamma-rays arrive at the two detectors with a time difference of $4.0 \\times 10^{-10}$ s. Assume that, inside the patient, the gamma-rays travel at a speed of $3.0 \\times 10^8$ m s$^{-1}$. How far from Q, half-way between the detectors, is the gamma-ray source?",
+        "options": [
+          {
+            "label": "A",
+            "text": "6.0 mm"
+          },
+          {
+            "label": "B",
+            "text": "12 mm"
+          },
+          {
+            "label": "C",
+            "text": "24 mm"
+          },
+          {
+            "label": "D",
+            "text": "6.0 cm"
+          },
+          {
+            "label": "E",
+            "text": "12 cm"
+          },
+          {
+            "label": "F",
+            "text": "24 cm"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q024",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "6.0 cm",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_25",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 25,
+        "page": 25,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "When a plutonium-239 nucleus absorbs a neutron it undergoes nuclear fission. One particular fission reaction results in the creation of xenon and zirconium as daughter nuclei. The nuclear equation for this reaction is shown but with some non-zero integers replaced by the letters $w$, $x$, $y$ and $z$: $^{239}_{94}\\text{Pu} + ^1_0\\text{n} \\to {}^{w}_{x}\\text{Xe} + {}^{y}_{z}\\text{Zr} + Q\\cdot{}^{1}_{0}\\text{n}$ Which equation is correct?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$w+y=240$"
+          },
+          {
+            "label": "B",
+            "text": "$z=240-(w+y)$"
+          },
+          {
+            "label": "C",
+            "text": "$x=40-z$"
+          },
+          {
+            "label": "D",
+            "text": "$94=54+x+1$"
+          },
+          {
+            "label": "E",
+            "text": "$240=54+x$"
+          },
+          {
+            "label": "F",
+            "text": "$94=w+y+1$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q025",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$z=240-(w+y)$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_26",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 26,
+        "page": 26,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "An electric motor is connected to a constant 12 V d.c. supply. The motor is used to lift a mass of 20 kg by means of a rope and pulley. The mass is lifted vertically through a height of 6.0 m in a time of 5.0 s. The complete lifting system (motor, rope and pulley) is 80% efficient. What is the current in the electric motor? (gravitational field strength = 10 N kg$^{-1}$)",
+        "options": [
+          {
+            "label": "A",
+            "text": "1.6 A"
+          },
+          {
+            "label": "B",
+            "text": "2.0 A"
+          },
+          {
+            "label": "C",
+            "text": "2.5 A"
+          },
+          {
+            "label": "D",
+            "text": "16 A"
+          },
+          {
+            "label": "E",
+            "text": "20 A"
+          },
+          {
+            "label": "F",
+            "text": "25 A"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q26_figure",
+            "type": "figure",
+            "src": "images_2017/q26_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q026",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "25 A",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_27",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 27,
+        "page": 27,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "The nuclide ${}^P_Q\\text{X}$ decays to the stable nuclide Y. During this process four particles are emitted: an $\\alpha$-particle and three $\\beta^-$ particles. Which of the following is not a nuclide that could be formed at any stage during this process?",
+        "options": [
+          {
+            "label": "A",
+            "text": "atomic mass $P$, atomic number $Q-1$"
+          },
+          {
+            "label": "B",
+            "text": "atomic mass $P$, atomic number $Q+1$"
+          },
+          {
+            "label": "C",
+            "text": "atomic mass $P$, atomic number $Q+2$"
+          },
+          {
+            "label": "D",
+            "text": "atomic mass $P$, atomic number $Q+3$"
+          },
+          {
+            "label": "E",
+            "text": "atomic mass $P-4$, atomic number $Q-2$"
+          },
+          {
+            "label": "F",
+            "text": "atomic mass $P-4$, atomic number $Q-1$"
+          },
+          {
+            "label": "G",
+            "text": "atomic mass $P-4$, atomic number $Q$"
+          },
+          {
+            "label": "H",
+            "text": "atomic mass $P-4$, atomic number $Q+1$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q027",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "atomic mass $P$, atomic number $Q-1$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_28",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 28,
+        "page": 27,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The radius of an iron-56 atom is $3.0 \\times 10^4$ times greater than the radius of an iron-56 nucleus. What is the value of $\\dfrac{\\text{density of an iron atom}}{\\text{density of an iron nucleus}}$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$(3.0\\times10^4)^{-3}$"
+          },
+          {
+            "label": "B",
+            "text": "$(3.0\\times10^4)^{-2}$"
+          },
+          {
+            "label": "C",
+            "text": "$(3.0\\times10^4)^{-1}$"
+          },
+          {
+            "label": "D",
+            "text": "$(3.0\\times10^4)^{1}$"
+          },
+          {
+            "label": "E",
+            "text": "$(3.0\\times10^4)^{2}$"
+          },
+          {
+            "label": "F",
+            "text": "$(3.0\\times10^4)^{3}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q028",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "$(3.0\\times10^4)^{-3}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_29",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 29,
+        "page": 28,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Graph 1 shows how the displacement of one of the particles of a medium varies with time in seconds as a wave travels through the medium. Graph 2 shows how the displacement varies with distance in metres at one time for the same wave. Which expression gives the speed in m s$^{-1}$ of the wave?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{4(x_2-x_1)}{3(t_2-t_1)}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{3(x_2-x_1)}{2(t_2-t_1)}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{2(x_2-x_1)}{t_2-t_1}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{8(x_2-x_1)}{3(t_2-t_1)}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{3(x_2-x_1)}{t_2-t_1}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{6(x_2-x_1)}{t_2-t_1}$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q29_figure",
+            "type": "figure",
+            "src": "images_2017/q29_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q029",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "$\\dfrac{3(x_2-x_1)}{t_2-t_1}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_30",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 30,
+        "page": 29,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A kettle is designed to work from a car's power socket. The kettle has a power rating of 150 W when a constant voltage of 12.0 V d.c. is applied across its element. How much charge passes through the element of this kettle when the voltage of 12.0 V is applied across it for 20 minutes?",
+        "options": [
+          {
+            "label": "A",
+            "text": "96 C"
+          },
+          {
+            "label": "B",
+            "text": "250 C"
+          },
+          {
+            "label": "C",
+            "text": "15 000 C"
+          },
+          {
+            "label": "D",
+            "text": "36 000 C"
+          },
+          {
+            "label": "E",
+            "text": "900 000 C"
+          },
+          {
+            "label": "F",
+            "text": "2 160 000 C"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q030",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "15 000 C",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_31",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 31,
+        "page": 29,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A freight train travelling on a straight horizontal track at 2.0 m s$^{-1}$ collides with a passenger train travelling at 5.0 m s$^{-1}$ in the opposite direction. Both trains immediately come to a complete stop on the track. The freight train has three locomotives of 130 tonnes each and seven container wagons of 30 tonnes each. The passenger train has two locomotives of 70 tonnes each and a number of passenger carriages of 10 tonnes each. How many passenger carriages does the passenger train have?",
+        "options": [
+          {
+            "label": "A",
+            "text": "7"
+          },
+          {
+            "label": "B",
+            "text": "9"
+          },
+          {
+            "label": "C",
+            "text": "10"
+          },
+          {
+            "label": "D",
+            "text": "24"
+          },
+          {
+            "label": "E",
+            "text": "46"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q031",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "10",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_32",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 32,
+        "page": 30,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Consider the following four calculations:\n1. (200 kg m s⁻¹) ÷ (5 m s⁻¹)\n2. (200 J) ÷ (5 m)\n3. (200 kg m⁻³) ÷ (5 m³)\\n4. (200 N) $\\div$ (5 m s$^{-2}$)\nWhich two calculations result in the answer 40 kg?",
+        "options": [
+          {
+            "label": "A",
+            "text": "1 and 2"
+          },
+          {
+            "label": "B",
+            "text": "1 and 3"
+          },
+          {
+            "label": "C",
+            "text": "1 and 4"
+          },
+          {
+            "label": "D",
+            "text": "2 and 3"
+          },
+          {
+            "label": "E",
+            "text": "2 and 4"
+          },
+          {
+            "label": "F",
+            "text": "3 and 4"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q032",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "1 and 4",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_33",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 33,
+        "page": 31,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Consider the following three statements about a parachutist of mass 72 kg falling vertically at a constant velocity of 5.0 m s$^{-1}$ after the parachute has opened:\n1. The parachutist has a constant kinetic energy of 1800 J.\n2. The parachutist is losing gravitational potential energy at a rate of 3600 J s⁻¹.\\n3. Air resistance and the force of gravity acting on the parachutist are a Newton's third law pair of forces.\\nWhich of the statements is/are correct? (gravitational field strength = 10 N kg$^{-1}$)",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q033",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "2 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_34",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 34,
+        "page": 32,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Two radioactive sources X and Y have half-lives of 3.0 hours and 2.0 hours respectively. The product of the decay of both of the sources is a stable isotope of the element Z. Six hours ago a mixture contained the same number of atoms of both X and Y, and no other atoms. What fraction of the mixture is now made up of atoms of Z?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{10}{16}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{11}{16}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{12}{16}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{13}{16}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{14}{16}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{15}{16}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q034",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$\\dfrac{13}{16}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_35",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 35,
+        "page": 32,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Car X passes car Y on a motorway. Car X is travelling at 1.5 times the speed of car Y. The mass of car X is $\\dfrac{4}{5}$ of the mass of car Y. How do the kinetic energies of the two cars compare?",
+        "options": [
+          {
+            "label": "A",
+            "text": "kinetic energy of car X = 0.90 × kinetic energy of car Y"
+          },
+          {
+            "label": "B",
+            "text": "kinetic energy of car X = 0.96 × kinetic energy of car Y"
+          },
+          {
+            "label": "C",
+            "text": "kinetic energy of car X = 1.20 × kinetic energy of car Y"
+          },
+          {
+            "label": "D",
+            "text": "kinetic energy of car X = 1.44 × kinetic energy of car Y"
+          },
+          {
+            "label": "E",
+            "text": "kinetic energy of car X = 1.80 × kinetic energy of car Y"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q035",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "kinetic energy of car X = 1.80 × kinetic energy of car Y",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_B_36",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part B Physics",
+        "section": "B",
+        "question_number": 36,
+        "page": 33,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "In the following circuit the ammeter shows a reading of 4.0 A. The power dissipated in the 12 $\\Omega$ resistor is 12 W. What is the power dissipated in the 4.0 $\\Omega$ resistor?",
+        "options": [
+          {
+            "label": "A",
+            "text": "3.0 W"
+          },
+          {
+            "label": "B",
+            "text": "4.0 W"
+          },
+          {
+            "label": "C",
+            "text": "12 W"
+          },
+          {
+            "label": "D",
+            "text": "16 W"
+          },
+          {
+            "label": "E",
+            "text": "36 W"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q36_figure",
+            "type": "figure",
+            "src": "images_2017/q36_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q036",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "36 W",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_37",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 37,
+        "page": 36,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Consider the atoms/ions below: ${}^{24}_{12}\\text{Mg}^{2+}$, ${}^{16}_{8}\\text{O}^{2-}$, ${}^{18}_{8}\\text{O}$, ${}^{32}_{16}\\text{S}^{2-}$. Which of the following statements is/are correct?\\n1. Both ${}^{16}_{8}\\text{O}^{2-}$ and ${}^{24}_{12}\\text{Mg}^{2+}$ have the same electronic configuration.\\n2. ${}^{32}_{16}\\text{S}^{2-}$ has double the number of neutrons that are in ${}^{18}_{8}\\text{O}$.\\n3. The sum of the numbers of electrons in ${}^{16}_{8}\\text{O}^{2-}$ and ${}^{18}_{8}\\text{O}$ is equal to the number of electrons in ${}^{32}_{16}\\text{S}^{2-}$.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q037",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "1 and 3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_38",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 38,
+        "page": 37,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Which two of the following reactions involve oxidation?\\n1. $\\text{Ca} \\to \\text{Ca}^{2+} + 2e^-$\\n2. $\\text{Cl}_2 + 2e^- \\to 2\\text{Cl}^-$\\n3. $\\text{Fe}_2\\text{O}_3 + 3\\text{CO} \\to 2\\text{Fe} + 3\\text{CO}_2$\\n4. $\\text{MgCO}_3 + 2\\text{HCl} \\to \\text{MgCl}_2 + \\text{CO}_2 + \\text{H}_2\\text{O}$",
+        "options": [
+          {
+            "label": "A",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "B",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "C",
+            "text": "1 and 4 only"
+          },
+          {
+            "label": "D",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "E",
+            "text": "2 and 4 only"
+          },
+          {
+            "label": "F",
+            "text": "3 and 4 only"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q038",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "1 and 3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_39",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 39,
+        "page": 38,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Hydrochloric acid (HCl) is a strong acid. Properties of a solution of 1.00 mol dm$^{-3}$ hydrochloric acid include:\n1. It turns blue litmus indicator red.\\n2. On reaction with sodium carbonate gaseous carbon dioxide is evolved.\\n3. 25.0 cm$^3$ of this acid solution neutralises 25.0 cm$^3$ of 1.00 mol dm$^{-3}$ sodium hydroxide solution.\\nEthanoic acid (CH$_3$COOH) is a weak acid. Which of the three properties is/are also correct for a 1.00 mol dm$^{-3}$ solution of ethanoic acid?",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q039",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "H",
+        "answer_text": "1, 2 and 3",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_40",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 40,
+        "page": 39,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Consider the following reactions:\\nReaction Q: $\\text{CH}_2\\text{=CH}_2\\text{(g)} + \\text{H}_2\\text{O(g)} \\rightleftharpoons \\text{CH}_3\\text{CH}_2\\text{OH(g)}$, $\\Delta H$ is $-$ve\\nReaction R: $\\text{PCl}_5\\text{(g)} \\rightleftharpoons \\text{PCl}_3\\text{(g)} + \\text{Cl}_2\\text{(g)}$, $\\Delta H$ is $+$ve\nThe following actions could be applied independently to each reaction (Q and R):\n1. increase the pressure\n2. increase the temperature\n3. use a suitable catalyst\nAssuming that all other conditions remain constant, which of these actions will increase the initial rate of reaction and increase the yield of products for both reactions Q and R?",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "1 or 2 only"
+          },
+          {
+            "label": "D",
+            "text": "1 or 3 only"
+          },
+          {
+            "label": "E",
+            "text": "2 only"
+          },
+          {
+            "label": "F",
+            "text": "2 or 3 only"
+          },
+          {
+            "label": "G",
+            "text": "3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 or 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q040",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "none of them",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_41",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 41,
+        "page": 40,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Study the chromatogram below showing the spots obtained, labelled (i) to (v), from two sweets and pure samples of the food additives, labelled Q, R and S. Which of the following statements about the chromatogram is/are correct?\n1. Both sweet 1 and 2 contain additives R and S.\n2. The $R_f$ value for spot (iv) is half that for spot (iii).\n3. The $R_f$ value for spot (v) is 0.7.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q41_figure",
+            "type": "figure",
+            "src": "images_2017/q41_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "chemistry_q041",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_42",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 42,
+        "page": 41,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Element X has atomic number 20. Consider only the simple oxide of X. Which of the following options identifies the formula, the type of bonding and the acid-base character of the oxide of element X?",
+        "options": [
+          {
+            "label": "A",
+            "text": "formula $X_2$O, ionic bonding, basic"
+          },
+          {
+            "label": "B",
+            "text": "formula $X_2$O, covalent bonding, basic"
+          },
+          {
+            "label": "C",
+            "text": "formula $X$O, ionic bonding, basic"
+          },
+          {
+            "label": "D",
+            "text": "formula $X$O, covalent bonding, acidic"
+          },
+          {
+            "label": "E",
+            "text": "formula $X$O$_2$, ionic bonding, acidic"
+          },
+          {
+            "label": "F",
+            "text": "formula $X$O$_2$, covalent bonding, acidic"
+          },
+          {
+            "label": "G",
+            "text": "formula $X_2$O$_3$, ionic bonding, basic"
+          },
+          {
+            "label": "H",
+            "text": "formula $X_2$O$_3$, covalent bonding, acidic"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q042",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "formula $X$O, ionic bonding, basic",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_43",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 43,
+        "page": 41,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Solid copper(II) chloride contains Cu$^{2+}$ ions and Cl$^-$ ions only. Solid lithium phosphate(V) contains Li$^+$ ions and PO$_4^{3-}$ ions only. Aqueous solutions of copper(II) chloride and lithium phosphate(V) are mixed to produce a precipitate of copper(II) phosphate(V) and an aqueous solution of lithium chloride. Which of the following represents the balanced ionic equation for this process?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\text{Cu}^{2+}\\text{(aq)} + 2e^- \\to \\text{Cu(s)}$"
+          },
+          {
+            "label": "B",
+            "text": "$2\\text{Cu}^{2+}\\text{(aq)} + 3\\text{PO}_4^{3-}\\text{(aq)} \\to \\text{Cu}_2(\\text{PO}_4)_3\\text{(s)}$"
+          },
+          {
+            "label": "C",
+            "text": "$2\\text{Cu}^{2+}\\text{(aq)} + 5\\text{PO}_4^{3-}\\text{(aq)} \\to \\text{Cu}_2(\\text{PO}_4)_5\\text{(s)}$"
+          },
+          {
+            "label": "D",
+            "text": "$3\\text{Cu}^{2+}\\text{(aq)} + 2\\text{PO}_4^{3-}\\text{(aq)} \\to \\text{Cu}_3(\\text{PO}_4)_2\\text{(s)}$"
+          },
+          {
+            "label": "E",
+            "text": "$3\\text{Cu}^{2+}\\text{(aq)} + 6\\text{Cl}^-\\text{(aq)} + 6\\text{Li}^+\\text{(aq)} + 2\\text{PO}_4^{3-}\\text{(aq)} \\to \\text{Cu}_3(\\text{PO}_4)_2\\text{(s)} + 6\\text{LiCl(aq)}$"
+          },
+          {
+            "label": "F",
+            "text": "$3\\text{CuCl}_2\\text{(aq)} + 2\\text{Li}_3\\text{PO}_4\\text{(aq)} \\to \\text{Cu}_3(\\text{PO}_4)_2\\text{(s)} + 6\\text{LiCl(aq)}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q043",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$3\\text{Cu}^{2+}\\text{(aq)} + 2\\text{PO}_4^{3-}\\text{(aq)} \\to \\text{Cu}_3(\\text{PO}_4)_2\\text{(s)}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_44",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 44,
+        "page": 42,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Which of the following statements about the reaction of lithium with water are correct?\n1. The reaction is a redox reaction.\n2. 7 g of lithium will react with excess water to produce 2 g of hydrogen gas.\n3. The reaction produces a solution with a pH greater than that of water.\n4. 14 g of lithium will exactly react with 36 g of water.\n($A_r$ values: H = 1; Li = 7; O = 16)",
+        "options": [
+          {
+            "label": "A",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "B",
+            "text": "1 and 4 only"
+          },
+          {
+            "label": "C",
+            "text": "1, 2 and 3 only"
+          },
+          {
+            "label": "D",
+            "text": "1, 3 and 4 only"
+          },
+          {
+            "label": "E",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "F",
+            "text": "3 and 4 only"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q044",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "1, 3 and 4 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_45",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 45,
+        "page": 43,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Consider this electrochemical cell containing an aqueous copper(II) chloride electrolyte (2 mol dm$^{-3}$ CuCl$_2$(aq), 9 V d.c., pure copper cathode (negative electrode), graphite anode (positive electrode)). Which row in the following table identifies the reactions occurring at the electrodes?",
+        "options": [
+          {
+            "label": "A",
+            "text": "cathode: $\\text{Cu}^{2+}\\text{(aq)} + 2e^- \\to \\text{Cu(s)}$; anode: $\\text{Cu(s)} \\to \\text{Cu}^{2+}\\text{(aq)} + 2e^-$"
+          },
+          {
+            "label": "B",
+            "text": "cathode: $\\text{Cu(s)} \\to \\text{Cu}^{2+}\\text{(aq)} + 2e^-$; anode: $\\text{Cu}^{2+}\\text{(aq)} + 2e^- \\to \\text{Cu(s)}$"
+          },
+          {
+            "label": "C",
+            "text": "cathode: $2\\text{Cl}^-\\text{(aq)} \\to \\text{Cl}_2\\text{(g)} + 2e^-$; anode: $\\text{Cu}^{2+}\\text{(aq)} + 2e^- \\to \\text{Cu(s)}$"
+          },
+          {
+            "label": "D",
+            "text": "cathode: $\\text{Cu}^{2+}\\text{(aq)} + 2e^- \\to \\text{Cu(s)}$; anode: $2\\text{Cl}^-\\text{(aq)} \\to \\text{Cl}_2\\text{(g)} + 2e^-$"
+          },
+          {
+            "label": "E",
+            "text": "cathode: $\\text{Cu(s)} \\to \\text{Cu}^{2+}\\text{(aq)} + 2e^-$; anode: $2\\text{OH}^-\\text{(aq)} \\to \\text{H}_2\\text{(g)} + \\text{O}_2\\text{(g)} + 2e^-$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q45_figure",
+            "type": "figure",
+            "src": "images_2017/q45_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "chemistry_q045",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "cathode: $\\text{Cu}^{2+}\\text{(aq)} + 2e^- \\to \\text{Cu(s)}$; anode: $2\\text{Cl}^-\\text{(aq)} \\to \\text{Cl}_2\\text{(g)} + 2e^-$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_46",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 46,
+        "page": 43,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A fluorocarbon has a relative molecular mass which is twice that of its empirical formula mass. 81 g of the compound contains 57 g of fluorine. What is the molecular formula of the compound? ($A_r$ values: C = 12; F = 19)",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\text{C}_2\\text{F}_3$"
+          },
+          {
+            "label": "B",
+            "text": "$\\text{C}_2\\text{F}_5$"
+          },
+          {
+            "label": "C",
+            "text": "$\\text{C}_3\\text{F}_6$"
+          },
+          {
+            "label": "D",
+            "text": "$\\text{C}_3\\text{F}_8$"
+          },
+          {
+            "label": "E",
+            "text": "$\\text{C}_4\\text{F}_6$"
+          },
+          {
+            "label": "F",
+            "text": "$\\text{C}_4\\text{F}_{10}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q046",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "$\\text{C}_4\\text{F}_6$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_47",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 47,
+        "page": 44,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "In which of the following reactions is there a change in volume of 24 dm$^3$, when measured at room temperature and pressure?\\n1. 56 g of carbon monoxide completely reacts with an excess of oxygen: $2\\text{CO(g)} + \\text{O}_2\\text{(g)} \\to 2\\text{CO}_2\\text{(g)}$\\n2. 36 g of steam is fully decomposed: $2\\text{H}_2\\text{O(g)} \\to 2\\text{H}_2\\text{(g)} + \\text{O}_2\\text{(g)}$\\n3. 30 g of nitrogen monoxide completely reacts with an excess of oxygen: $2\\text{NO(g)} + \\text{O}_2\\text{(g)} \\to 2\\text{NO}_2\\text{(g)}$\\n($A_r$ values: C = 12; O = 16; H = 1.0; N = 14. Assume that one mole of gas occupies a volume of 24 dm$^3$ at room temperature and pressure.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q047",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "1 and 2 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_48",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 48,
+        "page": 45,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Magnesium reacts with sulfuric acid according to the following chemical equation: $\\text{Mg(s)} + \\text{H}_2\\text{SO}_4\\text{(aq)} \\to \\text{MgSO}_4\\text{(aq)} + \\text{H}_2\\text{(g)}$. Line P on each graph shows how the volume of hydrogen formed changes with time when 1.2 g of magnesium reacts with 40 cm$^3$ of 1.0 mol dm$^{-3}$ sulfuric acid at 20 °C. ($A_r$ value: Mg = 24) Two further experiments were carried out: Experiment Q: 1.2 g of magnesium + 40 cm$^3$ of 2.0 mol dm$^{-3}$ sulfuric acid at 20 °C; Experiment R: 1.2 g of magnesium + 40 cm$^3$ of 0.5 mol dm$^{-3}$ sulfuric acid at 20 °C. Which lines show how the volume of hydrogen formed will change with time in each experiment?",
+        "options": [
+          {
+            "label": "A",
+            "text": "experiment Q: line 1, experiment R: line 4"
+          },
+          {
+            "label": "B",
+            "text": "experiment Q: line 1, experiment R: line 5"
+          },
+          {
+            "label": "C",
+            "text": "experiment Q: line 2, experiment R: line 4"
+          },
+          {
+            "label": "D",
+            "text": "experiment Q: line 2, experiment R: line 5"
+          },
+          {
+            "label": "E",
+            "text": "experiment Q: line 3, experiment R: line 4"
+          },
+          {
+            "label": "F",
+            "text": "experiment Q: line 3, experiment R: line 5"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q48_figure",
+            "type": "figure",
+            "src": "images_2017/q48_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "chemistry_q048",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "experiment Q: line 2, experiment R: line 5",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_49",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 49,
+        "page": 46,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Nitrogen and hydrogen react together to form ammonia as shown below: $\\text{N}_2\\text{(g)} + 3\\text{H}_2\\text{(g)} \\to 2\\text{NH}_3\\text{(g)}$. The energy released by this reaction is 93 kJ mol$^{-1}$. What is the bond energy in the nitrogen molecule? (Bond energies: H–H = 436 kJ mol$^{-1}$; N–H = 391 kJ mol$^{-1}$)",
+        "options": [
+          {
+            "label": "A",
+            "text": "315 kJ mol$^{-1}$"
+          },
+          {
+            "label": "B",
+            "text": "513 kJ mol$^{-1}$"
+          },
+          {
+            "label": "C",
+            "text": "644 kJ mol$^{-1}$"
+          },
+          {
+            "label": "D",
+            "text": "864 kJ mol$^{-1}$"
+          },
+          {
+            "label": "E",
+            "text": "945 kJ mol$^{-1}$"
+          },
+          {
+            "label": "F",
+            "text": "1131 kJ mol$^{-1}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q049",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "945 kJ mol$^{-1}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_50",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 50,
+        "page": 47,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Consider the following two electrolytic processes: electrolysis of molten lead(II) chloride; electrolysis of brine (sodium chloride solution). Which of the following statements is/are correct?\n1. In both processes, reduction takes place at the negative electrode.\n2. If 20.0 g of product is formed at the negative electrode in each process, then both processes produce the same volume of chlorine gas, measured at room temperature and pressure.\n3. In both processes, a metal is produced at the negative electrode.\\n($A_r$ values: Cl = 35.5; H = 1.00; Na = 23.0; Pb = 207. Assume that one mole of gas occupies 24.0 dm$^3$ at room temperature and pressure.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q050",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "1 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_51",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 51,
+        "page": 48,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Silver nitrate solution reacts with zinc powder in an exothermic reaction: $2\\text{AgNO}_3\\text{(aq)} + \\text{Zn(s)} \\to 2\\text{Ag(s)} + \\text{Zn(NO}_3)_2\\text{(aq)}$. The graph shows the maximum temperature rise as different masses of zinc react with separate 50.0 cm$^3$ samples of 0.100 mol dm$^{-3}$ silver nitrate solution. What is the mass of zinc at the position labelled Y? ($A_r$ value: Zn = 65)",
+        "options": [
+          {
+            "label": "A",
+            "text": "0.163 g"
+          },
+          {
+            "label": "B",
+            "text": "0.325 g"
+          },
+          {
+            "label": "C",
+            "text": "0.650 g"
+          },
+          {
+            "label": "D",
+            "text": "1.63 g"
+          },
+          {
+            "label": "E",
+            "text": "3.25 g"
+          },
+          {
+            "label": "F",
+            "text": "6.50 g"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q51_figure",
+            "type": "figure",
+            "src": "images_2017/q51_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "chemistry_q051",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "0.163 g",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_52",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 52,
+        "page": 49,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Natural samples of copper contain two isotopes: $^{63}$Cu which has a relative isotopic mass of 62.93, and $^{65}$Cu which has a relative isotopic mass of 64.93. The relative atomic mass of a sample of elemental copper is 63.55. What is the percentage abundance of each of the two isotopes to the nearest whole number?",
+        "options": [
+          {
+            "label": "A",
+            "text": "27% $^{63}$Cu and 73% $^{65}$Cu"
+          },
+          {
+            "label": "B",
+            "text": "73% $^{63}$Cu and 27% $^{65}$Cu"
+          },
+          {
+            "label": "C",
+            "text": "31% $^{63}$Cu and 69% $^{65}$Cu"
+          },
+          {
+            "label": "D",
+            "text": "69% $^{63}$Cu and 31% $^{65}$Cu"
+          },
+          {
+            "label": "E",
+            "text": "36% $^{63}$Cu and 64% $^{65}$Cu"
+          },
+          {
+            "label": "F",
+            "text": "64% $^{63}$Cu and 36% $^{65}$Cu"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q052",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "69% $^{63}$Cu and 31% $^{65}$Cu",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_53",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 53,
+        "page": 50,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The reaction between calcium carbonate and hydrochloric acid was used to measure the effect of changing conditions on the mass of CO$_2$ produced and the rate of CO$_2$ production. $\\text{CaCO}_3\\text{(s)} + 2\\text{HCl(aq)} \\to \\text{CaCl}_2\\text{(aq)} + \\text{H}_2\\text{O(l)} + \\text{CO}_2\\text{(g)}$. The experiment was carried out five times with different conditions at a constant temperature. Which experiment (A–E) will produce 8.8 g of carbon dioxide in the shortest time? ($M_r$ values: CaCO$_3$ = 100; CO$_2$ = 44)",
+        "options": [
+          {
+            "label": "A",
+            "text": "chips, 10 g CaCO$_3$, 400 cm$^3$, 2.0 mol dm$^{-3}$ HCl"
+          },
+          {
+            "label": "B",
+            "text": "powder, 20 g CaCO$_3$, 100 cm$^3$, 2.0 mol dm$^{-3}$ HCl"
+          },
+          {
+            "label": "C",
+            "text": "chips, 20 g CaCO$_3$, 200 cm$^3$, 2.0 mol dm$^{-3}$ HCl"
+          },
+          {
+            "label": "D",
+            "text": "powder, 10 g CaCO$_3$, 200 cm$^3$, 2.0 mol dm$^{-3}$ HCl"
+          },
+          {
+            "label": "E",
+            "text": "chips, 20 g CaCO$_3$, 400 cm$^3$, 1.0 mol dm$^{-3}$ HCl"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q053",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "chips, 20 g CaCO$_3$, 200 cm$^3$, 2.0 mol dm$^{-3}$ HCl",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_C_54",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part C Chemistry",
+        "section": "C",
+        "question_number": 54,
+        "page": 51,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "chemistry",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "An atom of ${}^1_1\\text{H}$ has a radius of 0.05 nanometres. The radius of the nucleus of this atom is approximately 50 000 times smaller. What is the approximate radius of the nucleus in femtometres? (1 femtometre = $10^{-15}$ m)",
+        "options": [
+          {
+            "label": "A",
+            "text": "1000"
+          },
+          {
+            "label": "B",
+            "text": "100"
+          },
+          {
+            "label": "C",
+            "text": "10"
+          },
+          {
+            "label": "D",
+            "text": "1"
+          },
+          {
+            "label": "E",
+            "text": "0.1"
+          },
+          {
+            "label": "F",
+            "text": "0.01"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "chemistry_q054",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "1",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_55",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 55,
+        "page": 54,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "The graph shows the concentration of lactic acid in the blood of two students at rest, then carrying out the same level of exercise for 15 minutes, and then at rest again. Which of the following statements correctly describe(s) the two students?\n1. Student P's oxygen debt is repaid much quicker than student Q's.\n2. Student P has a lower oxygen debt than student Q.\n3. Student P has a higher level of fitness than student Q.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q55_figure",
+            "type": "figure",
+            "src": "images_2017/q55_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q055",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "none of them",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_56",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 56,
+        "page": 55,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Spontaneous mutations occur in the genetic material of all living organisms. Which pie chart best represents the proportion of mutations that are beneficial, mutations that are harmful, and mutations that have no effect?",
+        "options": [
+          {
+            "label": "A",
+            "text": "A"
+          },
+          {
+            "label": "B",
+            "text": "B"
+          },
+          {
+            "label": "C",
+            "text": "C"
+          },
+          {
+            "label": "D",
+            "text": "D"
+          },
+          {
+            "label": "E",
+            "text": "E"
+          },
+          {
+            "label": "F",
+            "text": "F"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q56_figure",
+            "type": "figure",
+            "src": "images_2017/q56_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q056",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "B",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_57",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 57,
+        "page": 56,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Ten randomly placed quadrats were used to estimate the frequency of occurrence of three plant species in a field. The table shows the number of individuals of species X, Y and Z in each of 10 quadrats. What was the correct lowest frequency of occurrence calculated from X or Y or Z?",
+        "options": [
+          {
+            "label": "A",
+            "text": "0"
+          },
+          {
+            "label": "B",
+            "text": "0.2"
+          },
+          {
+            "label": "C",
+            "text": "0.7"
+          },
+          {
+            "label": "D",
+            "text": "1.0"
+          },
+          {
+            "label": "E",
+            "text": "1.4"
+          },
+          {
+            "label": "F",
+            "text": "5.2"
+          },
+          {
+            "label": "G",
+            "text": "52.0"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q057",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "0.7",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_58",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 58,
+        "page": 57,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Which of the following statements about stem cells in a healthy human female is/are correct?\n1. An adult stem cell contains the same genes as an epithelial cell from that organism.\n2. Stem cells from this human will all contain two X chromosomes.\n3. When a stem cell divides it produces a new stem cell plus two specialised body cells.\n(Assume that no mutations have occurred.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q058",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "1 and 2 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_59",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 59,
+        "page": 57,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Which of the following will always lead to an increase in the size of a population?\n1. removal of intraspecific competitors\n2. supplying more of the nutrient that is at the lowest concentration\n3. change in the organism's rate of reproduction",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q059",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "none of them",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_60",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 60,
+        "page": 58,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "The diagram shows three features which are used to group organisms: (i) cell has an external wall forming a layer that gives it a defined shape; (ii) within the cell is a membrane-bound structure that contains DNA; (iii) cell uses enzymes to release energy for cell processes. Fungi, bacteria and animals can each be placed in one of the regions labelled P, Q, R or S on the diagram. Which row in the following table is correct?",
+        "options": [
+          {
+            "label": "A",
+            "text": "fungi: P, bacteria: S, animals: R"
+          },
+          {
+            "label": "B",
+            "text": "fungi: P, bacteria: R, animals: S"
+          },
+          {
+            "label": "C",
+            "text": "fungi: Q, bacteria: R, animals: P"
+          },
+          {
+            "label": "D",
+            "text": "fungi: S, bacteria: Q, animals: R"
+          },
+          {
+            "label": "E",
+            "text": "fungi: S, bacteria: S, animals: S"
+          },
+          {
+            "label": "F",
+            "text": "fungi: R, bacteria: P, animals: Q"
+          },
+          {
+            "label": "G",
+            "text": "fungi: R, bacteria: Q, animals: P"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q60_figure",
+            "type": "figure",
+            "src": "images_2017/q60_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q060",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "fungi: S, bacteria: Q, animals: R",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_61",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 61,
+        "page": 59,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A desert food chain is shown below: cactus → rat → rattlesnake → hawk. Assume that 10% of the energy from each stage in the food chain is passed on. If 150 000 units of energy are contained in the producer, how much energy will be lost in the transfer between the primary and secondary consumers?",
+        "options": [
+          {
+            "label": "A",
+            "text": "1500"
+          },
+          {
+            "label": "B",
+            "text": "13 500"
+          },
+          {
+            "label": "C",
+            "text": "15 000"
+          },
+          {
+            "label": "D",
+            "text": "135 000"
+          },
+          {
+            "label": "E",
+            "text": "148 500"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q061",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "13 500",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_62",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 62,
+        "page": 59,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Which of the following statements about bacterial cell division is/are correct?\n1. Daughter cells show a large degree of genetic difference to the parent cell.\n2. After each division, two daughter cells are produced by mitosis.\n3. Chromosome replication occurs in the cytoplasm of the bacteria.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q062",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_63",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 63,
+        "page": 60,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Young plant roots show a similar positive response to the direction of gravity as their shoots do to the direction of light. A clinostat can be used to counter the effects of gravity on a plant. It has a motor which slowly rotates the plant. Two clinostats were set up using identical seedlings for two days: Clinostat 1, with the motor running; Clinostat 2, with the motor stationary. In which direction would the root grow in each clinostat?",
+        "options": [
+          {
+            "label": "A",
+            "text": "⇓ and ⇓"
+          },
+          {
+            "label": "B",
+            "text": "⇓ and ←"
+          },
+          {
+            "label": "C",
+            "text": "⇓ and ⇑"
+          },
+          {
+            "label": "D",
+            "text": "⇑ and ←"
+          },
+          {
+            "label": "E",
+            "text": "⇑ and ⇓"
+          },
+          {
+            "label": "F",
+            "text": "← and ⇓"
+          },
+          {
+            "label": "G",
+            "text": "← and ⇑"
+          },
+          {
+            "label": "H",
+            "text": "← and ←"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q63_figure",
+            "type": "figure",
+            "src": "images_2017/q63_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q063",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "G",
+        "answer_text": "← and ⇑",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_64",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 64,
+        "page": 61,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "An inherited condition is caused by a recessive allele. The family tree shows the inheritance of this condition in one family. One of the daughters in this family tree has children with a man who does not have the condition. For the two situations described in the table, which row shows the probability that their first child will be a girl who has the condition? (Assume no new mutations.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "father homozygous dominant: 0; father heterozygous: 0"
+          },
+          {
+            "label": "B",
+            "text": "father homozygous dominant: 0; father heterozygous: 0.125"
+          },
+          {
+            "label": "C",
+            "text": "father homozygous dominant: 0; father heterozygous: 0.25"
+          },
+          {
+            "label": "D",
+            "text": "father homozygous dominant: 0.5; father heterozygous: 0"
+          },
+          {
+            "label": "E",
+            "text": "father homozygous dominant: 0.5; father heterozygous: 0.125"
+          },
+          {
+            "label": "F",
+            "text": "father homozygous dominant: 0.5; father heterozygous: 0.25"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q64_figure",
+            "type": "figure",
+            "src": "images_2017/q64_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q064",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "father homozygous dominant: 0; father heterozygous: 0.125",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_65",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 65,
+        "page": 62,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "The diagram shows the apparatus used to investigate the movement of molecules across a partially permeable membrane. Sucrose is unable to cross the partially permeable membrane. The apparatus contains concentrated sucrose solution on one side and water on the other side separated by the membrane. Which graph correctly shows how the height of solution in the capillary tube changes over 15 minutes?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Graph A"
+          },
+          {
+            "label": "B",
+            "text": "Graph B"
+          },
+          {
+            "label": "C",
+            "text": "Graph C"
+          },
+          {
+            "label": "D",
+            "text": "Graph D"
+          },
+          {
+            "label": "E",
+            "text": "Graph E"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q65_figure",
+            "type": "figure",
+            "src": "images_2017/q65_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q065",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "Graph C",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_66",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 66,
+        "page": 63,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "The diagram shows the life cycle of a simple type of plant with adult plant stage P (haploid), spores (haploid), female gamete (haploid), male gamete (haploid), adult plant stage Q (diploid), connected by stages 1, 2, 3, 4. At which two of the numbered stages does only mitosis occur?",
+        "options": [
+          {
+            "label": "A",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "B",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "C",
+            "text": "1 and 4 only"
+          },
+          {
+            "label": "D",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "E",
+            "text": "2 and 4 only"
+          },
+          {
+            "label": "F",
+            "text": "3 and 4 only"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q66_figure",
+            "type": "figure",
+            "src": "images_2017/q66_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q066",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "1 and 4 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_67",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 67,
+        "page": 64,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "Three different coloured leaves were collected: a dark green leaf, a light green leaf and a yellow leaf. Each leaf had 16 discs of 1 cm diameter cut from it. The discs were treated with sodium hydrogen carbonate solution and then illuminated for 30 minutes. The number of floating leaf discs was counted every minute for 15 minutes. The graph shows the results. Which of the following statements is/are correct?\n1. The average rate of photosynthesis was highest in the darkest leaves.\n2. At 5 minutes 25% of the light green discs remained at the bottom of the beaker.\n3. The reciprocal of the time taken for a quarter of the discs of a particular colour to float can be a measure of the relative rate of photosynthesis.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q67_figure",
+            "type": "figure",
+            "src": "images_2017/q67_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q067",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "1 and 3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_68",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 68,
+        "page": 65,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "A student carried out an experiment to investigate the effect of enzyme concentration on the rate of an enzyme-controlled reaction. The student used a starch agar plate with five identically sized small wells filled with different concentrations of amylase solution (1%, 0.1%, 0.01%, 0.001%, 0.0001%). After overnight incubation and flooding with iodine solution, a clear area formed around each well. Which of the following factors could have affected the diameter of the clear area around the wells containing amylase?\n1. pH of the starch agar\n2. concentration of the amylase solution\n3. temperature at which the plates were incubated",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q68_figure",
+            "type": "figure",
+            "src": "images_2017/q68_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q068",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "H",
+        "answer_text": "1, 2 and 3",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_69",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 69,
+        "page": 66,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "The diagram shows the start of an experiment on the effect of light direction on young shoots. Three treatments: P (control), Q (tip of shoot removed), R (shoot covered with opaque sheath, tip exposed). All shoots were continually exposed to light from one side for 24 hours. Every six hours, the distance between the light source and the top of each shoot was measured. Which row represents the responses of the shoots to the light over 24 hours?",
+        "options": [
+          {
+            "label": "A",
+            "text": "P: graph 1, Q: graph 2, R: graph 1"
+          },
+          {
+            "label": "B",
+            "text": "P: graph 1, Q: graph 3, R: graph 1"
+          },
+          {
+            "label": "C",
+            "text": "P: graph 1, Q: graph 3, R: graph 2"
+          },
+          {
+            "label": "D",
+            "text": "P: graph 2, Q: graph 1, R: graph 3"
+          },
+          {
+            "label": "E",
+            "text": "P: graph 2, Q: graph 2, R: graph 1"
+          },
+          {
+            "label": "F",
+            "text": "P: graph 3, Q: graph 1, R: graph 3"
+          },
+          {
+            "label": "G",
+            "text": "P: graph 3, Q: graph 2, R: graph 2"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q69_figure",
+            "type": "figure",
+            "src": "images_2017/q69_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q069",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "P: graph 1, Q: graph 2, R: graph 1",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_70",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 70,
+        "page": 67,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "The table shows some of the genetic codes for amino acids. The base sequence below shows the middle part of a gene coding for a protein: ATG CGA GAC ATG TTA AGG TGG GAC CCC CGA GTC. Mutations took place in both the 4th and 20th base in this sequence. Using only the information provided and reading the sequence from left to right, which of the following statements could be correct for the resulting amino acid sequence after the two mutations took place?\n1. This sequence could be only six amino acids long.\n2. The second amino acid in this sequence could be unaffected by the mutation.\n3. This amino acid sequence could contain seven different amino acids.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q070",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "H",
+        "answer_text": "1, 2 and 3",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_71",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 71,
+        "page": 68,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "A power station released warm water into a river. A student studied two graphs: Graph 1 showed the oxygen required by the pollution indicator species for survival vs temperature; Graph 2 showed the effect of temperature on the oxygen dissolved in the water. The student wrote the following statements:\n1. As the oxygen required by the pollution indicator species for survival increases, the water temperature rises.\n2. There is less dissolved oxygen available to the pollution indicator species as the water temperature rises.\n3. The pollution indicator species will survive better in water at 30 °C than at 5 °C because it has a greater oxygen uptake at 30 °C.\nWhich of the student's conclusions could be correct using only the information provided?",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q71_figure",
+            "type": "figure",
+            "src": "images_2017/q71_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "biology_q071",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "2 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_D_72",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part D Biology",
+        "section": "D",
+        "question_number": 72,
+        "page": 69,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "biology",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "In a monohybrid cross, two heterozygotes were allowed to mate and the resulting offspring showed a 2:1 phenotypic ratio. Which of the following statements could explain this ratio?\n1. The number of offspring produced was small.\n2. The recessive condition was lethal prior to birth.\n3. Being homozygous dominant was lethal prior to birth.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none of them"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "biology_q072",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "1 and 3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "biology"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_73",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 73,
+        "page": 72,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Which one of the following is a simplification of $1 - \\left(\\dfrac{3+\\sqrt{3}}{6-2\\sqrt{3}}\\right)^2$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$-\\dfrac{3}{4}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{3}{4}$"
+          },
+          {
+            "label": "C",
+            "text": "$-\\dfrac{3}{4}-\\dfrac{\\sqrt{3}}{7}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{3}{4}-\\dfrac{\\sqrt{3}}{7}$"
+          },
+          {
+            "label": "E",
+            "text": "$-\\dfrac{3}{4}-\\sqrt{3}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{3}{4}-\\sqrt{3}$"
+          },
+          {
+            "label": "G",
+            "text": "$-\\dfrac{\\sqrt{3}}{2}$"
+          },
+          {
+            "label": "H",
+            "text": "$\\dfrac{\\sqrt{3}}{2}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q073",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "$-\\dfrac{3}{4}-\\sqrt{3}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_74",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 74,
+        "page": 73,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The diagram shows a crane being used on a building site. The crane is perfectly balanced about P. The load is now moved to the left by 5.0 m. To keep the crane perfectly balanced about P, how far does the counterweight have to move, and in which direction? (gravitational field strength = 10 N kg$^{-1}$)",
+        "options": [
+          {
+            "label": "A",
+            "text": "1.0 m to the left"
+          },
+          {
+            "label": "B",
+            "text": "1.0 m to the right"
+          },
+          {
+            "label": "C",
+            "text": "3.0 m to the left"
+          },
+          {
+            "label": "D",
+            "text": "3.0 m to the right"
+          },
+          {
+            "label": "E",
+            "text": "4.0 m to the left"
+          },
+          {
+            "label": "F",
+            "text": "4.0 m to the right"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q74_figure",
+            "type": "figure",
+            "src": "images_2017/q74_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q074",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "1.0 m to the right",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_75",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 75,
+        "page": 74,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "$k$ is the smallest positive value of $x$ which is a solution to both the equations $2\\sin x + 1 = 0$ and $2\\cos 2x = 1$. How many values of $x$ in the range $0 \\leq x \\leq k$ are solutions to at least one of these equations?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$0$"
+          },
+          {
+            "label": "B",
+            "text": "$2$"
+          },
+          {
+            "label": "C",
+            "text": "$3$"
+          },
+          {
+            "label": "D",
+            "text": "$4$"
+          },
+          {
+            "label": "E",
+            "text": "$8$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q075",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "$3$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_76",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 76,
+        "page": 74,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": false
+      },
+      "prompt": {
+        "stem": "An aircraft is climbing at constant speed in a straight line at an angle of 10° to the horizontal. Which statement about the resultant force on the aircraft is correct?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It is parallel to its motion."
+          },
+          {
+            "label": "B",
+            "text": "It is perpendicular to its motion."
+          },
+          {
+            "label": "C",
+            "text": "It is zero."
+          },
+          {
+            "label": "D",
+            "text": "It is equal to its weight."
+          },
+          {
+            "label": "E",
+            "text": "It is equal to the drag acting on the aircraft."
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q076",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "It is zero.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_77",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 77,
+        "page": 74,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Which of the following is a solution to the equation $3^{(2x+1)} - 6(3^x) = 0$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\log_2 3$"
+          },
+          {
+            "label": "B",
+            "text": "$\\log_3 2$"
+          },
+          {
+            "label": "C",
+            "text": "$2$"
+          },
+          {
+            "label": "D",
+            "text": "$\\log_{10} 2$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{2}{3}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q077",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$\\log_3 2$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_78",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 78,
+        "page": 75,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A ball starts at a speed of 40.0 m s$^{-1}$. The ball is subject to a constant deceleration of 14.4 m s$^{-2}$ as it travels a distance of 20.0 m in a straight line. What is the final speed of the ball?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$16.0\\ \\text{m s}^{-1}$"
+          },
+          {
+            "label": "B",
+            "text": "$20.0\\ \\text{m s}^{-1}$"
+          },
+          {
+            "label": "C",
+            "text": "$25.6\\ \\text{m s}^{-1}$"
+          },
+          {
+            "label": "D",
+            "text": "$32.0\\ \\text{m s}^{-1}$"
+          },
+          {
+            "label": "E",
+            "text": "$36.2\\ \\text{m s}^{-1}$"
+          },
+          {
+            "label": "F",
+            "text": "$39.3\\ \\text{m s}^{-1}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q078",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$32.0\\ \\text{m s}^{-1}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_79",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 79,
+        "page": 75,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The graph of the function $y = x^3 + px^2 + qx + 6$, where $p$ and $q$ are real constants, has a local maximum when $x = 2$ and a local minimum when $x = 4$. What are the values of $p$ and $q$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$p=-3$ and $q=-8$"
+          },
+          {
+            "label": "B",
+            "text": "$p=-3$ and $q=8$"
+          },
+          {
+            "label": "C",
+            "text": "$p=3$ and $q=-8$"
+          },
+          {
+            "label": "D",
+            "text": "$p=-9$ and $q=24$"
+          },
+          {
+            "label": "E",
+            "text": "$p=9$ and $q=24$"
+          },
+          {
+            "label": "F",
+            "text": "$p=9$ and $q=-24$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q079",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$p=-9$ and $q=24$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_80",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 80,
+        "page": 76,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A block of mass 1.0 kg is at rest on a rough horizontal surface. The block is attached by a light inextensible string to a force meter. The other end of the force meter is attached by another light inextensible string via a frictionless pulley to a load of mass 1.0 kg. The block remains stationary. What is the reading on the force meter? (gravitational field strength = 10 N kg$^{-1}$)",
+        "options": [
+          {
+            "label": "A",
+            "text": "0.0 N"
+          },
+          {
+            "label": "B",
+            "text": "0.5 N"
+          },
+          {
+            "label": "C",
+            "text": "1.0 N"
+          },
+          {
+            "label": "D",
+            "text": "2.0 N"
+          },
+          {
+            "label": "E",
+            "text": "5.0 N"
+          },
+          {
+            "label": "F",
+            "text": "10 N"
+          },
+          {
+            "label": "G",
+            "text": "20 N"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q80_figure",
+            "type": "figure",
+            "src": "images_2017/q80_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q080",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "10 N",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_81",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 81,
+        "page": 76,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Given that $y = (2+3x)^6$, what is the coefficient of $x^3$ in $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "240"
+          },
+          {
+            "label": "B",
+            "text": "4320"
+          },
+          {
+            "label": "C",
+            "text": "4860"
+          },
+          {
+            "label": "D",
+            "text": "12 960"
+          },
+          {
+            "label": "E",
+            "text": "19 440"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q081",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "19 440",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_82",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 82,
+        "page": 77,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "An apple of mass 100 g, growing on a tree, falls vertically from a height of 4.0 m above the ground. It hits the ground with a speed of 8.0 m s$^{-1}$. How much work does the apple do against resistive forces during its descent, before it hits the ground? (gravitational field strength = 10 N kg$^{-1}$)",
+        "options": [
+          {
+            "label": "A",
+            "text": "0.80 J"
+          },
+          {
+            "label": "B",
+            "text": "3.6 J"
+          },
+          {
+            "label": "C",
+            "text": "4.0 J"
+          },
+          {
+            "label": "D",
+            "text": "7.2 J"
+          },
+          {
+            "label": "E",
+            "text": "8.0 J"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "physics_q082",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "0.80 J",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_83",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 83,
+        "page": 77,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A geometric progression has first term equal to 1 and common ratio $\\dfrac{1}{2}\\sin 2x$. The sum to infinity of the series is $\\dfrac{4}{3}$. Find the possible values of $x$ in the range $\\pi \\leq x \\leq 2\\pi$.",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{13}{12}\\pi,\\ \\dfrac{17}{12}\\pi$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{7}{6}\\pi,\\ \\dfrac{4}{3}\\pi$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{7}{6}\\pi,\\ \\dfrac{11}{6}\\pi$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{5}{4}\\pi,\\ \\dfrac{7}{4}\\pi$"
+          },
+          {
+            "label": "E",
+            "text": "there are no values of $x$ in this range"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q083",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "$\\dfrac{13}{12}\\pi,\\ \\dfrac{17}{12}\\pi$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_84",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 84,
+        "page": 78,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A stone is fired vertically upwards at a speed of 13 m s$^{-1}$ on a still day from the top of a 6.0 m high cliff. It then falls down and lands at the bottom of the cliff. [diagram not to scale] From when the stone passes the top of the cliff on the way down, how long does it take to reach the ground at the bottom of the cliff? (air resistance can be ignored; gravitational field strength = 10 N kg$^{-1}$)",
+        "options": [
+          {
+            "label": "A",
+            "text": "0.40 s"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{6.0}{6.5}$ s"
+          },
+          {
+            "label": "C",
+            "text": "0.60 s"
+          },
+          {
+            "label": "D",
+            "text": "$\\sqrt{1.2}$ s"
+          },
+          {
+            "label": "E",
+            "text": "1.3 s"
+          },
+          {
+            "label": "F",
+            "text": "2.0 s"
+          },
+          {
+            "label": "G",
+            "text": "2.5 s"
+          },
+          {
+            "label": "H",
+            "text": "3.0 s"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q84_figure",
+            "type": "figure",
+            "src": "images_2017/q84_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q084",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "0.40 s",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_85",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 85,
+        "page": 79,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The sequence of numbers $u_1, u_2, u_3, \\ldots, u_n, \\ldots$ is given by $u_1 = 2$ and $u_{n+1} = pu_n + 3$, where $p$ is an integer. The fourth term, $u_4$, is equal to $-7$. What is the value of $u_1 + u_2 + u_3 + u_4$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$-10$"
+          },
+          {
+            "label": "B",
+            "text": "$-2$"
+          },
+          {
+            "label": "C",
+            "text": "$-1$"
+          },
+          {
+            "label": "D",
+            "text": "$8$"
+          },
+          {
+            "label": "E",
+            "text": "$26$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q085",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "$-1$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_86",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 86,
+        "page": 80,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "An archer fires an arrow of mass 0.024 kg vertically upwards from a bow. The graph shows how the force of the bowstring on the arrow varies with distance as the arrow moves upwards. The work done by the force of the bowstring is given by the area under the force-distance graph. When the arrow leaves the bow, what is the kinetic energy of the arrow, and what is the maximum height that it gains from this point? (Air resistance can be ignored. The effect of gravity as the arrow is fired is negligible compared to the force of the bowstring. The gravitational field strength = 10 N kg$^{-1}$.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "kinetic energy: 38.4 J, height: 16 m"
+          },
+          {
+            "label": "B",
+            "text": "kinetic energy: 38.4 J, height: 160 m"
+          },
+          {
+            "label": "C",
+            "text": "kinetic energy: 38.4 J, height: 1600 m"
+          },
+          {
+            "label": "D",
+            "text": "kinetic energy: 38.4 J, height: 16 000 m"
+          },
+          {
+            "label": "E",
+            "text": "kinetic energy: 76.8 J, height: 32 m"
+          },
+          {
+            "label": "F",
+            "text": "kinetic energy: 76.8 J, height: 320 m"
+          },
+          {
+            "label": "G",
+            "text": "kinetic energy: 76.8 J, height: 3200 m"
+          },
+          {
+            "label": "H",
+            "text": "kinetic energy: 76.8 J, height: 32 000 m"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q86_figure",
+            "type": "figure",
+            "src": "images_2017/q86_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q086",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "kinetic energy: 38.4 J, height: 160 m",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_87",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 87,
+        "page": 81,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Find the complete set of values of $x$ for which $\\dfrac{x^3-6x^2+9x-4}{x} > 0$.",
+        "options": [
+          {
+            "label": "A",
+            "text": "$x<0,\\ x>4$"
+          },
+          {
+            "label": "B",
+            "text": "$0<x<4$"
+          },
+          {
+            "label": "C",
+            "text": "$0<x<1,\\ x>4$"
+          },
+          {
+            "label": "D",
+            "text": "$x<0,\\ 1<x<4$"
+          },
+          {
+            "label": "E",
+            "text": "$x<1,\\ x>4$"
+          },
+          {
+            "label": "F",
+            "text": "$1<x<4$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q087",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "$x<0,\\ x>4$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_88",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 88,
+        "page": 81,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A book of mass $m$ rests on a rough horizontal surface. The surface is now tilted as shown. When the angle of tilt $\\theta$ is 20°, the book slides down the slope at a constant speed. What is the acceleration of the book down the slope when the angle of tilt is 25°? (gravitational field strength = $g$)",
+        "options": [
+          {
+            "label": "A",
+            "text": "$g(\\cos 20^\\circ - \\sin 20^\\circ \\tan 5^\\circ)$"
+          },
+          {
+            "label": "B",
+            "text": "$g(\\cos 20^\\circ - \\sin 20^\\circ \\tan 25^\\circ)$"
+          },
+          {
+            "label": "C",
+            "text": "$g(\\cos 25^\\circ - \\sin 5^\\circ \\tan 20^\\circ)$"
+          },
+          {
+            "label": "D",
+            "text": "$g(\\cos 25^\\circ - \\sin 25^\\circ \\tan 20^\\circ)$"
+          },
+          {
+            "label": "E",
+            "text": "$g(\\sin 20^\\circ - \\cos 20^\\circ \\tan 5^\\circ)$"
+          },
+          {
+            "label": "F",
+            "text": "$g(\\sin 20^\\circ - \\cos 20^\\circ \\tan 25^\\circ)$"
+          },
+          {
+            "label": "G",
+            "text": "$g(\\sin 25^\\circ - \\cos 5^\\circ \\tan 20^\\circ)$"
+          },
+          {
+            "label": "H",
+            "text": "$g(\\sin 25^\\circ - \\cos 25^\\circ \\tan 20^\\circ)$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q88_figure",
+            "type": "figure",
+            "src": "images_2017/q88_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q088",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "H",
+        "answer_text": "$g(\\sin 25^\\circ - \\cos 25^\\circ \\tan 20^\\circ)$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_89",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 89,
+        "page": 82,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "mathematics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The equations of two straight lines are $y = 3 + (2p^2-p)x$ and $y = 7 + (p-2)x$, where $p$ is a real constant. For certain values of $p$, the two lines are perpendicular. Which of the following numbers is closest to the greatest such value of $p$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "2.00"
+          },
+          {
+            "label": "B",
+            "text": "1.75"
+          },
+          {
+            "label": "C",
+            "text": "1.50"
+          },
+          {
+            "label": "D",
+            "text": "1.00"
+          },
+          {
+            "label": "E",
+            "text": "$-0.25$"
+          },
+          {
+            "label": "F",
+            "text": "$-0.50$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "mathematics_q089",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "1.75",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "mathematics"
+        ]
+      }
+    },
+    {
+      "question_id": "2017_E_90",
+      "source": {
+        "exam": "NSAA",
+        "year": 2017,
+        "paper": "Part E Advanced Mathematics and Advanced Physics",
+        "section": "E",
+        "question_number": 90,
+        "page": 82,
+        "source_pdf": "raw/2017.pdf"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": null,
+        "subtopic": null,
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The graph shows how the horizontal force on a tennis ball of mass $m$ varies during a shot in a tennis match. The ball is initially travelling horizontally toward the racket with speed $u$ and leaves the racket horizontally travelling in the opposite direction with speed $v$. Which expression gives the magnitude of the momentum of the ball as it leaves the racket?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$F(t_2-t_1)$"
+          },
+          {
+            "label": "B",
+            "text": "$F(t_2-t_1)-mu$"
+          },
+          {
+            "label": "C",
+            "text": "$F(t_2-t_1)+mu$"
+          },
+          {
+            "label": "D",
+            "text": "$mv-mu$"
+          },
+          {
+            "label": "E",
+            "text": "$Ft_2-mu$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q90_figure",
+            "type": "figure",
+            "src": "images_2017/q90_figure.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "physics_q090",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$F(t_2-t_1)-mu$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "physics"
+        ]
+      }
+    }
+  ]
+}

@@ -61,21 +61,15 @@
   },
   "validation": {
     "status": "unverified",
-    "answer_label": null,
-    "answer_text": null,
-    "source": {
-      "exam": "NSAA",
-      "year": 2020,
-      "paper": "Part B Physics",
-      "section": "B",
-      "question_number": 38
-    },
-    "metadata": {
-      "estimated_time_seconds": null,
-      "tags": [
-        "physics",
-        "mechanics"
-      ]
-    }
+    "source": null,
+    "content": null,
+    "data_quality_notes": []
+  },
+  "metadata": {
+    "estimated_time_seconds": null,
+    "tags": [
+      "physics",
+      "mechanics"
+    ]
   }
 }

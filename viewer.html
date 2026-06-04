@@ -736,8 +736,14 @@ const data = JSON.parse(text);
       </div>
     `;
 
-    if (window.MathJax?.typesetPromise) {
-      MathJax.typesetPromise([document.getElementById('content')]).catch(console.error);
+    if (window.MathJax) {
+      const content = document.getElementById('content');
+      (MathJax.startup?.promise ?? Promise.resolve())
+        .then(() => {
+          if (MathJax.typesetClear) MathJax.typesetClear([content]);
+          return MathJax.typesetPromise([content]);
+        })
+        .catch(console.error);
     }
     document.getElementById('main').scrollTop = 0;
   }

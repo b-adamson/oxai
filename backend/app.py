@@ -147,6 +147,14 @@ def generate_question_endpoint(req: GenerateRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.get("/generated-question")
+def get_generated_question():
+    out_path = GENERATED_DIR / "generated_question.json"
+    if not out_path.exists():
+        raise HTTPException(status_code=404, detail="No generated question found")
+    return json.loads(out_path.read_text(encoding="utf-8"))
+
+
 @app.get("/papers/{paper_id}")
 def get_paper(paper_id: str):
     papers = load_manifest()

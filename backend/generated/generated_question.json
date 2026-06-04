@@ -1,42 +1,43 @@
 {
-  "question_id": "2016_B_21",
+  "question_id": "2016_D_57",
   "source": {
     "exam": "NSAA",
     "year": 2016,
-    "paper": "Part B Physics",
-    "section": "B",
-    "question_number": 21
+    "paper": "Part D Biology",
+    "section": "D",
+    "question_number": 57
   },
   "content": {
-    "subject": "physics",
+    "subject": "biology",
     "topic": null,
     "subtopic": null,
     "archetype": null,
     "difficulty": 2
   },
   "prompt": {
-    "stem": "$\\dfrac{3}{4}$ of the light from a star is absorbed and reflected by a cloud of interstellar gas. The remaining light is refracted by the gas and travels on to the next layer of interstellar gas. Which of the following statements is/are correct?",
+    "stem": "$\\dfrac{3}{2} \\times \\left(\\dfrac{1}{2}\\right)^2 \\times \\left(\\dfrac{1}{3}\\right)^1 = \\text{?}$",
     "options": [
       {
         "label": "A",
-        "text": "The next layer of interstellar gas is denser than the cloud of interstellar gas."
+        "text": "$1$"
       },
       {
         "label": "B",
-        "text": "The cloud of interstellar gas is hotter than the next layer of interstellar gas."
+        "text": "$2$"
       },
       {
         "label": "C",
-        "text": "The next layer of interstellar gas is hotter than the cloud of interstellar gas."
+        "text": "$3$"
       },
       {
         "label": "D",
-        "text": "The cloud of interstellar gas is colder than the next layer of interstellar gas."
+        "text": "$4$"
       },
       {
         "label": "E",
-        "text": "The next layer of interstellar gas is colder than the cloud of interstellar gas."
+        "text": "$5$"
       }
     ]
-  }
+  },
+  "prompt_figures": []
 }

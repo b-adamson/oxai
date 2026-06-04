@@ -1,33 +1,30 @@
+// app/api/generate/route.ts
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
+  console.log("API GENERATE ROUTE HIT");
+console.log("BACKEND_URL =", process.env.BACKEND_URL);
   try {
     const body = await request.json();
 
-    const response = await fetch(
-      `${process.env.BACKEND_URL}/generate-question`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      }
-    );
+    const response = await fetch(`${process.env.BACKEND_URL}/generate-question`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+
+    const data = await response.json().catch(() => null);
 
     if (!response.ok) {
       return NextResponse.json(
-        { error: "Failed to generate question" },
+        { error: data?.detail || "Failed to generate question" },
         { status: response.status }
       );
     }
 
-    const data = await response.json();
-
     return NextResponse.json(data);
   } catch (error) {
     console.error(error);
-
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

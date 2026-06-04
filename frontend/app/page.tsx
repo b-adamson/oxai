@@ -133,9 +133,7 @@ export default function Home() {
   const [papersLoading, setPapersLoading] = useState(true);
   const [contentLoading, setContentLoading] = useState(true);
   const [error, setError] = useState("");
-  const [generatedPath, setGeneratedPath] = useState(
-    "/output/generated/generated_question.json"
-  );
+  const [generatedPath, setGeneratedPath] = useState("/api/generated");
   const [uploadLabel, setUploadLabel] = useState("");
   const [genSubject, setGenSubject] = useState("physics");
   const [genTopic, setGenTopic] = useState("");
@@ -228,6 +226,10 @@ export default function Home() {
         setUploadLabel("");
 
         const res = await fetch(generatedPath, { cache: "no-store" });
+        if (res.status === 404) {
+          setQuestionSet(null);
+          return;
+        }
         if (!res.ok) {
           throw new Error(`Failed to load generated file: ${res.status}`);
         }
@@ -578,7 +580,7 @@ export default function Home() {
                         value={generatedPath}
                         onChange={(e) => setGeneratedPath(e.target.value)}
                       >
-                        <option value="/output/generated/generated_question.json">
+                        <option value="/api/generated">
                           generated_question.json
                         </option>
                         <option value="">Upload a JSON file…</option>

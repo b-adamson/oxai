@@ -4,3 +4,9 @@ __pycache__/
 .vscode/
 viewer.html
 vercel.json
+
+# Windows Zone.Identifier alternate data streams (WSL artefact)
+*:Zone.Identifier*
+
+# Model checkpoint weights (large binaries)
+backend/checkpoints/

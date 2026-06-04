@@ -515,10 +515,7 @@ class QuestionGenerationService:
 
         for attempt in range(1, max_attempts + 1):
             temperature = self.settings.temperature + (0.03 * (attempt - 1))
-            generator = None
-            if self.device.type == "cuda":
-                generator = torch.Generator(device=self.device)
-                generator.manual_seed(torch.seed())
+            torch.manual_seed(torch.seed())
 
             try:
                 with torch.inference_mode():
@@ -534,7 +531,6 @@ class QuestionGenerationService:
                         eos_token_id=self.tokenizer.eos_token_id,
                         pad_token_id=self.tokenizer.pad_token_id,
                         use_cache=True,
-                        generator=generator,
                     )
 
                 candidates = self._decode_candidates(output, input_len)

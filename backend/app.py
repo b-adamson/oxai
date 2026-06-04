@@ -29,7 +29,7 @@ ADAPTER_DIR = BASE_DIR / "checkpoints" / "qwen-nsaa-lora"
 BASE_MODEL = "Qwen/Qwen3-0.6B"
 
 PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
-GENERATED_DIR.mkdir(parents=True, exist_ok=True)
+GENERATED_DIR.mkdir(parents=True, exist_ok=True)  # still needed for RecentQuestionStore
 
 
 class GenerateRequest(BaseModel):
@@ -159,27 +159,11 @@ def generate_question_endpoint(req: GenerateRequest):
             difficulty=req.difficulty,
             examples=req.examples,
         )
-        question = normalise_options(question)
-
-        out_path = GENERATED_DIR / "generated_question.json"
-        out_path.write_text(
-            json.dumps(question, indent=2, ensure_ascii=False),
-            encoding="utf-8",
-        )
-
-        return question
+        return normalise_options(question)
 
     except Exception as e:
         LOGGER.exception("ERROR IN /generate-question")
         raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.get("/generated-question")
-def get_generated_question():
-    out_path = GENERATED_DIR / "generated_question.json"
-    if not out_path.exists():
-        raise HTTPException(status_code=404, detail="No generated question found")
-    return json.loads(out_path.read_text(encoding="utf-8"))
 
 
 @app.get("/papers/{paper_id}")

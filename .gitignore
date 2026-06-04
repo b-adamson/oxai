@@ -8,5 +8,9 @@ vercel.json
 # Windows Zone.Identifier alternate data streams (WSL artefact)
 *:Zone.Identifier*
 
-# Model checkpoint weights (large binaries)
-backend/checkpoints/
+# Runtime state (deduplication signatures, etc) — created at startup
+backend/generated/
+backend/output/
+
+# Windows Zone.Identifier alternate data streams (WSL artefact)
+*Zone.Identifier*

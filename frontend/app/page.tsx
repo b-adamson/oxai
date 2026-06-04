@@ -124,7 +124,7 @@ function mdTableToHtml(block: string) {
 }
 
 export default function Home() {
-  const [mode, setMode] = useState<Mode>("training");
+  const [mode, setMode] = useState<Mode>("generated");
   const [papers, setPapers] = useState<PaperMeta[]>([]);
   const [paperId, setPaperId] = useState("");
   const [questionSet, setQuestionSet] = useState<QuestionSet | null>(null);
@@ -133,7 +133,6 @@ export default function Home() {
   const [papersLoading, setPapersLoading] = useState(true);
   const [contentLoading, setContentLoading] = useState(true);
   const [error, setError] = useState("");
-  const [generatedPath, setGeneratedPath] = useState("/api/generated");
   const [uploadLabel, setUploadLabel] = useState("");
   const [genSubject, setGenSubject] = useState("physics");
   const [genTopic, setGenTopic] = useState("");
@@ -217,53 +216,13 @@ export default function Home() {
   }, [paperId, mode]);
 
   useEffect(() => {
-    async function loadGeneratedFile() {
-      if (mode !== "generated") return;
-
-      try {
-        setContentLoading(true);
-        setError("");
-        setUploadLabel("");
-
-        const res = await fetch(generatedPath, { cache: "no-store" });
-        if (res.status === 404) {
-          setQuestionSet(null);
-          return;
-        }
-        if (!res.ok) {
-          throw new Error(`Failed to load generated file: ${res.status}`);
-        }
-
-        const data = await res.json();
-
-        let questions: Question[] = [];
-        if (Array.isArray(data.questions)) {
-          questions = data.questions;
-        } else if (data.question_id) {
-          questions = [data];
-        } else {
-          throw new Error(
-            "Generated JSON must contain either questions[] or a single question object."
-          );
-        }
-
-        setQuestionSet({
-          questions,
-          sourceLabel: generatedPath,
-        });
-
-        setSelectedSection(questions[0]?.source?.section || "A");
-        setSelectedIndex(0);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Could not load generated file.");
-        setQuestionSet(null);
-      } finally {
-        setContentLoading(false);
-      }
+    if (mode === "generated") {
+      setQuestionSet(null);
+      setError("");
+      setUploadLabel("");
+      setContentLoading(false);
     }
-
-    loadGeneratedFile();
-  }, [mode, generatedPath]);
+  }, [mode]);
 
   useEffect(() => {
     if (selectedIndex >= sectionQuestions.length && sectionQuestions.length > 0) {
@@ -576,17 +535,6 @@ export default function Home() {
                       <label className="text-[10px] uppercase tracking-widest text-slate-400">
                         Load saved JSON
                       </label>
-                      <select
-                        className="mt-2 w-full rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm"
-                        value={generatedPath}
-                        onChange={(e) => setGeneratedPath(e.target.value)}
-                      >
-                        <option value="/api/generated">
-                          generated_question.json
-                        </option>
-                        <option value="">Upload a JSON file…</option>
-                      </select>
-
                       <input
                         type="file"
                         accept=".json"

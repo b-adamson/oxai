@@ -1,4 +1,6 @@
 backend/.venv
+backend/.env
 __pycache__/
 .vscode/
 viewer.html
+vercel.json

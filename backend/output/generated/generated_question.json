@@ -1,0 +1,81 @@
+{
+  "question_id": "2020_B_38",
+  "source": {
+    "exam": "NSAA",
+    "year": 2020,
+    "paper": "Part B Physics",
+    "section": "B",
+    "question_number": 38
+  },
+  "content": {
+    "subject": "physics",
+    "topic": "mechanics",
+    "subtopic": "terminal velocity",
+    "archetype": "derivation",
+    "difficulty": 3
+  },
+  "prompt": {
+    "stem": "A solid uniform sphere of metal density $\\rho_S$, radius $r$, volume $V$ falls through a viscous liquid of density $\\rho_L$. Drag force $D = krv$ where $v$ is speed and $k$ is a constant. What is the terminal speed?",
+    "options": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{\\rho_L g}{Vrk}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{\\rho_S g}{Vrk}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{g(\\rho_S-\\rho_L)}{Vrk}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{g(\\rho_S+\\rho_L)}{Vrk}$"
+      },
+      {
+        "label": "E",
+        "text": "$\\dfrac{V\\rho_L g}{rk}$"
+      },
+      {
+        "label": "F",
+        "text": "$\\dfrac{V\\rho_S g}{rk}$"
+      },
+      {
+        "label": "G",
+        "text": "$\\dfrac{Vg(\\rho_S-\\rho_L)}{rk}$"
+      },
+      {
+        "label": "H",
+        "text": "$\\dfrac{Vg(\\rho_S+\\rho_L)}{rk}$"
+      }
+    ],
+    "figures": []
+  },
+  "generation": {
+    "template_id": "physics_mechanics_038",
+    "template_version": "1.0",
+    "parameters": {},
+    "solution_steps": [],
+    "distractor_strategy": []
+  },
+  "validation": {
+    "status": "unverified",
+    "answer_label": null,
+    "answer_text": null,
+    "source": {
+      "exam": "NSAA",
+      "year": 2020,
+      "paper": "Part B Physics",
+      "section": "B",
+      "question_number": 38
+    },
+    "metadata": {
+      "estimated_time_seconds": null,
+      "tags": [
+        "physics",
+        "mechanics"
+      ]
+    }
+  }
+}

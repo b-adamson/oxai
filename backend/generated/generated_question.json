@@ -15,29 +15,28 @@
     "difficulty": 2
   },
   "prompt": {
-    "stem": "$X^2_6$ decays by a series of radioactive decays to become $Y^4_2$. Which of the following statements is/are correct?",
+    "stem": "$\\dfrac{3}{4}$ of the light from a star is absorbed and reflected by a cloud of interstellar gas. The remaining light is refracted by the gas and travels on to the next layer of interstellar gas. Which of the following statements is/are correct?",
     "options": [
       {
         "label": "A",
-        "text": "3 alpha"
+        "text": "The next layer of interstellar gas is denser than the cloud of interstellar gas."
       },
       {
         "label": "B",
-        "text": "2 alpha and 1 beta"
+        "text": "The cloud of interstellar gas is hotter than the next layer of interstellar gas."
       },
       {
         "label": "C",
-        "text": "2 alpha and 2 beta"
+        "text": "The next layer of interstellar gas is hotter than the cloud of interstellar gas."
       },
       {
         "label": "D",
-        "text": "1 alpha and 2 beta"
+        "text": "The cloud of interstellar gas is colder than the next layer of interstellar gas."
       },
       {
         "label": "E",
-        "text": "3 beta"
+        "text": "The next layer of interstellar gas is colder than the cloud of interstellar gas."
       }
     ]
-  },
-  "prompt_figures": []
+  }
 }

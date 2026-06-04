@@ -4,8 +4,16 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from pathlib import Path
 from typing import Optional
+from contextlib import contextmanager
 import json
 import sys
+import traceback
+
+# Make sure local imports work
+BASE_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(BASE_DIR))
+
+from core import generate_question as gen  # noqa: E402
 
 app = FastAPI(title="oxAI Backend")
 
@@ -17,7 +25,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-BASE_DIR = Path(__file__).resolve().parent
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
 MANIFEST_PATH = PROCESSED_DIR / "manifest.json"
 GENERATED_DIR = BASE_DIR / "generated"
@@ -25,35 +32,6 @@ ADAPTER_DIR = BASE_DIR / "checkpoints" / "qwen-nsaa-lora"
 BASE_MODEL = "Qwen/Qwen3-0.6B"
 
 app.mount("/images", StaticFiles(directory=str(PROCESSED_DIR)), name="images")
-
-# Lazy-loaded model state
-_model = None
-_tokenizer = None
-
-sys.path.insert(0, str(BASE_DIR))
-
-
-def get_model():
-    global _model, _tokenizer
-    if _model is None:
-        import torch
-        from transformers import AutoModelForCausalLM, AutoTokenizer
-        from peft import PeftModel
-
-        _tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, trust_remote_code=True)
-        if _tokenizer.pad_token is None:
-            _tokenizer.pad_token = _tokenizer.eos_token
-
-        _model = AutoModelForCausalLM.from_pretrained(
-            BASE_MODEL,
-            trust_remote_code=True,
-            device_map="auto",
-            torch_dtype="auto",
-        )
-        if ADAPTER_DIR.exists():
-            _model = PeftModel.from_pretrained(_model, str(ADAPTER_DIR))
-
-    return _model, _tokenizer
 
 
 class GenerateRequest(BaseModel):
@@ -73,7 +51,6 @@ def normalise_options(question: dict) -> dict:
     if not isinstance(options, list):
         options = []
 
-    # Re-label whatever the model produced to A, B, C, D, E
     fixed = []
     for i, opt in enumerate(options):
         if i >= len(OPTION_LABELS):
@@ -109,6 +86,16 @@ def load_manifest():
     return papers
 
 
+@contextmanager
+def temp_argv(args):
+    old = sys.argv[:]
+    sys.argv = args
+    try:
+        yield
+    finally:
+        sys.argv = old
+
+
 @app.get("/papers")
 def list_papers():
     return {"papers": load_manifest()}
@@ -116,61 +103,48 @@ def list_papers():
 
 @app.post("/generate-question")
 def generate_question_endpoint(req: GenerateRequest):
-    import torch
-    from core.generate_question import (
-        load_questions,
-        choose_examples,
-        build_prompt,
-        extract_json_object,
-    )
-
     try:
-        model, tokenizer = get_model()
-    except Exception as e:
-        raise HTTPException(status_code=503, detail=f"Model unavailable: {e}")
+        out_path = GENERATED_DIR / "generated_question.json"
 
-    questions = load_questions(PROCESSED_DIR)
-    chosen = choose_examples(questions, req.subject, req.topic, req.difficulty, req.examples)
-    prompt = build_prompt(req.subject, req.topic, req.difficulty, chosen)
+        argv = [
+            "generate_question.py",
+            "--base-model",
+            BASE_MODEL,
+            "--adapter-dir",
+            str(ADAPTER_DIR),
+            "--processed-dir",
+            str(PROCESSED_DIR),
+            "--subject",
+            req.subject,
+            "--difficulty",
+            str(req.difficulty),
+            "--examples",
+            str(req.examples),
+            "--out",
+            str(out_path),
+        ]
 
-    messages = [
-        {"role": "system", "content": "You generate clean exam-style JSON questions."},
-        {"role": "user", "content": prompt},
-    ]
+        if req.topic:
+            argv.extend(["--topic", req.topic])
 
-    if hasattr(tokenizer, "apply_chat_template"):
-        text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-    else:
-        text = prompt
+        with temp_argv(argv):
+            gen.main()
 
-    inputs = tokenizer([text], return_tensors="pt").to(model.device)
-    input_len = inputs["input_ids"].shape[1]
+        question = json.loads(out_path.read_text(encoding="utf-8"))
+        question = normalise_options(question)
 
-    with torch.no_grad():
-        output = model.generate(
-            **inputs,
-            max_new_tokens=1500,
-            do_sample=True,
-            temperature=0.7,
-            top_p=0.9,
-            eos_token_id=tokenizer.eos_token_id,
+        GENERATED_DIR.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(
+            json.dumps(question, indent=2, ensure_ascii=False),
+            encoding="utf-8",
         )
 
-    decoded = tokenizer.decode(output[0][input_len:], skip_special_tokens=True).strip()
+        return question
 
-    try:
-        question = extract_json_object(decoded)
-    except ValueError as e:
-        raise HTTPException(status_code=500, detail=f"Model output was not valid JSON: {e}")
-
-    question = normalise_options(question)
-
-    GENERATED_DIR.mkdir(parents=True, exist_ok=True)
-    (GENERATED_DIR / "generated_question.json").write_text(
-        json.dumps(question, indent=2, ensure_ascii=False)
-    )
-
-    return question
+    except Exception as e:
+        print("ERROR IN /generate-question")
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.get("/papers/{paper_id}")

@@ -116,10 +116,10 @@ async def lifespan(app: FastAPI):
         adapter_dir=ADAPTER_DIR if ADAPTER_DIR.exists() else None,
         processed_dir=PROCESSED_DIR,
         generated_dir=GENERATED_DIR,
-        max_new_tokens=1500,
-        candidate_batch_size=4,
-        max_attempts=6,
-        examples=3,
+        max_new_tokens=350,
+        candidate_batch_size=2,
+        max_attempts=3,
+        examples=2,
     )
 
     LOGGER.info("Starting model service...")

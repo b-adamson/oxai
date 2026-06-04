@@ -9,8 +9,3 @@ vercel.json
 *:Zone.Identifier*
 
 # Runtime state (deduplication signatures, etc) — created at startup
-backend/generated/
-backend/output/
-
-# Windows Zone.Identifier alternate data streams (WSL artefact)
-*Zone.Identifier*

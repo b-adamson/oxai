@@ -279,23 +279,24 @@ export default function Home() {
     if (content) content.scrollTop = 0;
   }, [selectedIndex, selectedSection, sectionQuestions]);
 
+  const currentQuestionKey =
+    currentQuestion?.question_id ?? `${selectedSection}-${selectedIndex}`;
+
   useEffect(() => {
-    async function typeset() {
-      if (!mathJaxReady || !contentRef.current || !currentQuestion) return;
+    if (!contentRef.current || !currentQuestion) return;
 
-      const mj = (window as any).MathJax;
-      if (mj?.typesetPromise) {
-        try {
-          mj.typesetClear([contentRef.current]);
-          await mj.typesetPromise([contentRef.current]);
-        } catch (err) {
-          console.error("MathJax typeset failed:", err);
-        }
-      }
+    // Set innerHTML manually so React never touches this div during re-renders
+    contentRef.current.innerHTML = renderQuestion(currentQuestion, selectedIndex);
+
+    if (!mathJaxReady) return;
+
+    const mj = (window as any).MathJax;
+    if (mj?.typesetPromise) {
+      mj.typesetPromise([contentRef.current]).catch((err: unknown) => {
+        console.error("MathJax typeset failed:", err);
+      });
     }
-
-    typeset();
-  }, [mathJaxReady, currentQuestion, selectedIndex, selectedSection]);
+  }, [currentQuestionKey, mathJaxReady]);
 
   function renderQuestion(q: Question, idx: number) {
     const subject = normalizeSubject(q.content?.subject);
@@ -671,9 +672,6 @@ export default function Home() {
                   <div
                     id="question-content"
                     ref={contentRef}
-                    dangerouslySetInnerHTML={{
-                      __html: renderQuestion(currentQuestion, selectedIndex),
-                    }}
                   />
 
                   <div className="mt-6 flex gap-3">

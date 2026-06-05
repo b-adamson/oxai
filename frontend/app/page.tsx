@@ -2,6 +2,18 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Script from "next/script";
+import { TutorChat } from "./components/TutorChat";
+import {
+  ChatMessage,
+  getSession,
+  HintRecord,
+  listSessions,
+  QuestionRecord,
+  SolutionRecord,
+  updateHints,
+  updateSolution,
+  upsertSession,
+} from "./lib/session";
 
 type Mode = "training" | "generated";
 
@@ -14,20 +26,6 @@ type PaperMeta = {
   file: string;
 };
 
-function getOptionLayout(options?: { label: string; text: string }[]) {
-  return (
-    options
-      ?.map(
-        (opt) => `
-          <div class="option-card">
-            <div class="option-badge">${opt.label}</div>
-            <div class="option-text">${opt.text}</div>
-          </div>
-        `
-      )
-      .join("") || ""
-  );
-}
 
 type Question = {
   question_id?: string;
@@ -38,15 +36,22 @@ type Question = {
     subtopic?: string;
     archetype?: string;
     difficulty?: number;
+    requires_diagram?: boolean;
   };
   prompt?: {
     stem?: string;
     options?: { label: string; text: string }[];
-    figures?: { figure_id?: string; type?: string; src?: string }[];
+    figures?: { figure_id?: string; type?: string; src?: string; kind?: string; caption?: string }[];
   };
   validation?: {
     answer_label?: string;
     answer_text?: string;
+  };
+  metadata?: {
+    diagram_url?: string | null;
+    diagram_required?: boolean;
+    tags?: string[];
+    estimated_time_seconds?: number | null;
   };
 };
 
@@ -123,6 +128,63 @@ function mdTableToHtml(block: string) {
   return `<table class="md-table"><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table>`;
 }
 
+function solutionToHtml(text: string): string {
+  return text
+    .split("\n\n")
+    .map((block) => {
+      const t = block.trim();
+      if (!t) return "";
+      if (t.startsWith("$$")) return `<div class="math-block">${t}</div>`;
+      if (t.startsWith("|")) return mdTableToHtml(t);
+      // bold **text**
+      const inline = t
+        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\n/g, "<br>");
+      return `<p>${inline}</p>`;
+    })
+    .join("");
+}
+
+function SolutionBody({
+  text,
+  diagramUrl,
+  mathJaxReady,
+}: {
+  text: string;
+  diagramUrl: string | null;
+  mathJaxReady: boolean;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    ref.current.innerHTML = solutionToHtml(text);
+    if (!mathJaxReady) return;
+    const mj = (window as any).MathJax;
+    if (mj?.typesetPromise) {
+      mj.typesetPromise([ref.current]).catch((err: unknown) =>
+        console.error("MathJax typeset failed:", err)
+      );
+    }
+  }, [text, mathJaxReady]);
+
+  return (
+    <div>
+      <div
+        ref={ref}
+        className="prose prose-slate max-w-none text-sm leading-relaxed"
+      />
+      {diagramUrl && (
+        <img
+          src={diagramUrl}
+          alt="Solution diagram"
+          className="mt-4 max-w-full rounded-lg border border-slate-200"
+        />
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
   const [mode, setMode] = useState<Mode>("generated");
   const [papers, setPapers] = useState<PaperMeta[]>([]);
@@ -137,8 +199,17 @@ export default function Home() {
   const [genSubject, setGenSubject] = useState("physics");
   const [genTopic, setGenTopic] = useState("");
   const [genDifficulty, setGenDifficulty] = useState(2);
+  const [genForceDiagram, setGenForceDiagram] = useState(false);
   const [generating, setGenerating] = useState(false);
   const [generateError, setGenerateError] = useState("");
+  const [hints, setHints] = useState<HintRecord[]>([]);
+  const [hintLoading, setHintLoading] = useState(false);
+  const [hintError, setHintError] = useState("");
+  const [solution, setSolution] = useState<SolutionRecord | null>(null);
+  const [solutionLoading, setSolutionLoading] = useState(false);
+  const [solutionError, setSolutionError] = useState("");
+  const [sessionChat, setSessionChat] = useState<ChatMessage[]>([]);
+  const [recentSessions, setRecentSessions] = useState<QuestionRecord[]>([]);
 
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [mathJaxReady, setMathJaxReady] = useState(false);
@@ -173,6 +244,19 @@ export default function Home() {
     }
 
     loadPapers();
+  }, []);
+
+  // Restore recent sessions from localStorage on mount
+  useEffect(() => {
+    const sessions = listSessions();
+    setRecentSessions(sessions.map((s) => s.question));
+    if (sessions.length > 0 && mode === "generated") {
+      const latest = sessions[0];
+      setQuestionSet({ questions: [latest.question], sourceLabel: "Generated" });
+      setSelectedSection(latest.question.source?.section || "A");
+      setSelectedIndex(0);
+      setContentLoading(false);
+    }
   }, []);
 
   useEffect(() => {
@@ -242,6 +326,16 @@ export default function Home() {
     currentQuestion?.question_id ?? `${selectedSection}-${selectedIndex}`;
 
   useEffect(() => {
+    const qid = currentQuestion?.question_id;
+    const session = qid ? getSession(qid) : null;
+    setHints(session?.hints ?? []);
+    setSolution(session?.solution ?? null);
+    setSessionChat(session?.chat ?? []);
+    setHintError("");
+    setSolutionError("");
+  }, [currentQuestionKey]);
+
+  useEffect(() => {
     if (!contentRef.current || !currentQuestion) return;
 
     // Set innerHTML manually so React never touches this div during re-renders
@@ -273,30 +367,33 @@ export default function Home() {
         )
         .join("") || "";
 
-    const figuresHtml =
-      q.prompt?.figures
-        ?.map((fig) => {
-          if (fig.src) {
-            return `
-              <div class="figure-box">
-                <div class="figure-label">${fig.type || "Figure"} — ${
-              fig.figure_id || ""
-            }</div>
-                <img src="${fig.src}" alt="${fig.figure_id || "figure"}" />
-              </div>
-            `;
-          }
+    const diagramUrl = q.metadata?.diagram_url
+      ? q.metadata.diagram_url.replace(/^\/diagrams\//, "/api/diagrams/")
+      : null;
 
-          return `
-            <div class="figure-box">
-              <div class="figure-label">${fig.type || "Figure"} — ${
-            fig.figure_id || ""
-          }</div>
-              <div class="figure-placeholder-text">Image not available</div>
-            </div>
-          `;
-        })
-        .join("") || "";
+    const figuresHtml = diagramUrl
+      ? `<div class="figure-box"><img src="${diagramUrl}" alt="Question diagram" style="max-width:100%;border-radius:0.5rem;" /></div>`
+      : q.prompt?.figures
+          ?.map((fig) => {
+            if (fig.src) {
+              return `
+                <div class="figure-box">
+                  <div class="figure-label">${fig.type || fig.kind || "Figure"} — ${fig.figure_id || fig.caption || ""}</div>
+                  <img src="${fig.src}" alt="${fig.figure_id || "figure"}" />
+                </div>
+              `;
+            }
+            if (fig.caption || fig.kind) {
+              return `
+                <div class="figure-box">
+                  <div class="figure-label">${fig.type || fig.kind || "Figure"}${fig.caption ? ` — ${fig.caption}` : ""}</div>
+                  <div class="figure-placeholder-text">Image not available</div>
+                </div>
+              `;
+            }
+            return "";
+          })
+          .join("") || "";
 
     const validationText = q.validation?.answer_label
       ? `${q.validation.answer_label}${
@@ -348,6 +445,8 @@ export default function Home() {
           subject: genSubject,
           topic: genTopic || null,
           difficulty: genDifficulty,
+          want_diagram: genForceDiagram,
+          force_diagram: genForceDiagram,
         }),
       });
 
@@ -357,6 +456,11 @@ export default function Home() {
       }
 
       const question = await res.json();
+
+      if (question.question_id) {
+        upsertSession({ question_id: question.question_id, question });
+        setRecentSessions(listSessions().map((s) => s.question));
+      }
 
       setQuestionSet({
         questions: [question],
@@ -368,6 +472,90 @@ export default function Home() {
       setGenerateError(err instanceof Error ? err.message : "Generation failed.");
     } finally {
       setGenerating(false);
+    }
+  }
+
+  async function handleHint() {
+    if (!currentQuestion) return;
+    const nextLevel = hints.length + 1;
+    if (nextLevel > 3) return;
+
+    try {
+      setHintLoading(true);
+      setHintError("");
+
+      const res = await fetch("/api/hint", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          stem: currentQuestion.prompt?.stem ?? "",
+          options: currentQuestion.prompt?.options ?? [],
+          subject: currentQuestion.content?.subject ?? "math",
+          topic: currentQuestion.content?.topic ?? null,
+          level: nextLevel,
+        }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `Hint failed (${res.status})`);
+      }
+
+      const data = await res.json();
+      const newHints = [...hints, { level: data.level, hint: data.hint }];
+      setHints(newHints);
+      const qid = currentQuestion?.question_id;
+      if (qid) {
+        if (!getSession(qid)) upsertSession({ question_id: qid, question: currentQuestion });
+        updateHints(qid, newHints);
+      }
+    } catch (err) {
+      setHintError(err instanceof Error ? err.message : "Failed to get hint.");
+    } finally {
+      setHintLoading(false);
+    }
+  }
+
+  async function handleSolution() {
+    if (!currentQuestion || solution) return;
+    const v = currentQuestion.validation;
+    if (!v?.answer_label) return;
+
+    try {
+      setSolutionLoading(true);
+      setSolutionError("");
+
+      const res = await fetch("/api/solution", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          question_id: currentQuestion.question_id ?? null,
+          stem: currentQuestion.prompt?.stem ?? "",
+          options: currentQuestion.prompt?.options ?? [],
+          subject: currentQuestion.content?.subject ?? "math",
+          topic: currentQuestion.content?.topic ?? null,
+          subtopic: currentQuestion.content?.subtopic ?? null,
+          verified_answer_label: v.answer_label,
+          verified_answer_text: v.answer_text ?? null,
+        }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `Solution failed (${res.status})`);
+      }
+
+      const sol: SolutionRecord = await res.json();
+      setSolution(sol);
+      const qid = currentQuestion?.question_id;
+      if (qid) {
+        if (!getSession(qid)) upsertSession({ question_id: qid, question: currentQuestion });
+        updateSolution(qid, sol);
+      }
+    } catch (err) {
+      setSolutionError(err instanceof Error ? err.message : "Failed to get solution.");
+    } finally {
+      setSolutionLoading(false);
     }
   }
 
@@ -519,6 +707,16 @@ export default function Home() {
                       className="w-full accent-blue-500"
                     />
 
+                    <label className="flex items-center gap-2 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        checked={genForceDiagram}
+                        onChange={(e) => setGenForceDiagram(e.target.checked)}
+                        className="accent-blue-500"
+                      />
+                      <span className="text-xs text-slate-300">Force diagram</span>
+                    </label>
+
                     <button
                       className="mt-1 rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white disabled:opacity-50"
                       disabled={generating}
@@ -529,6 +727,29 @@ export default function Home() {
 
                     {generateError && (
                       <p className="text-xs text-red-400">{generateError}</p>
+                    )}
+
+                    {recentSessions.length > 0 && (
+                      <div className="mt-2 border-t border-slate-700 pt-3">
+                        <label className="text-[10px] uppercase tracking-widest text-slate-400">
+                          Recent
+                        </label>
+                        <div className="mt-2 flex flex-col gap-1">
+                          {recentSessions.slice(0, 5).map((q, i) => (
+                            <button
+                              key={q.question_id || i}
+                              className="rounded-md bg-slate-800 px-3 py-2 text-left text-xs text-slate-300 hover:bg-slate-700 truncate"
+                              onClick={() => {
+                                setQuestionSet({ questions: [q], sourceLabel: "Generated" });
+                                setSelectedSection(q.source?.section || "A");
+                                setSelectedIndex(0);
+                              }}
+                            >
+                              {q.content?.subject} · {q.content?.topic || "No topic"} · ★{q.content?.difficulty ?? "?"}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
                     )}
 
                     <div className="mt-2 border-t border-slate-700 pt-3">
@@ -638,6 +859,87 @@ export default function Home() {
                       Next
                     </button>
                   </div>
+
+                  {solution && (
+                    <div className="mt-6 border-t border-slate-100 pt-5">
+                      <div className="mb-2 text-[11px] font-semibold uppercase tracking-widest text-emerald-600">
+                        Worked Solution
+                        {solution.status === "needs_revision" && (
+                          <span className="ml-2 text-amber-500">(unverified)</span>
+                        )}
+                      </div>
+                      <SolutionBody
+                        text={solution.worked_solution}
+                        diagramUrl={
+                          solution.diagram_url
+                            ? solution.diagram_url.replace(/^\/diagrams\//, "/api/diagrams/")
+                            : null
+                        }
+                        mathJaxReady={mathJaxReady}
+                      />
+                    </div>
+                  )}
+
+                  <div className="mt-6 border-t border-slate-100 pt-5">
+                    {hints.map((h) => (
+                      <div
+                        key={h.level}
+                        className="mb-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3"
+                      >
+                        <div className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-amber-600">
+                          Hint {h.level} / 3
+                        </div>
+                        <div className="text-sm leading-relaxed text-slate-700">
+                          {h.hint}
+                        </div>
+                      </div>
+                    ))}
+
+                    {hintError && (
+                      <p className="mb-3 text-xs text-red-500">{hintError}</p>
+                    )}
+
+                    {hints.length < 3 && (
+                      <button
+                        className="rounded-md border border-amber-300 bg-amber-50 px-4 py-2 text-sm font-medium text-amber-700 hover:bg-amber-100 disabled:opacity-40"
+                        disabled={hintLoading}
+                        onClick={handleHint}
+                      >
+                        {hintLoading
+                          ? "Getting hint…"
+                          : hints.length === 0
+                          ? "Get a hint"
+                          : `Next hint (${hints.length + 1} / 3)`}
+                      </button>
+                    )}
+
+                    {!solution && currentQuestion?.validation?.answer_label && (
+                      <div className="mt-4">
+                        {solutionError && (
+                          <p className="mb-2 text-xs text-red-500">{solutionError}</p>
+                        )}
+                        <button
+                          className="rounded-md border border-emerald-300 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700 hover:bg-emerald-100 disabled:opacity-40"
+                          disabled={solutionLoading}
+                          onClick={handleSolution}
+                        >
+                          {solutionLoading ? "Generating solution…" : "Show worked solution"}
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
+                  {currentQuestion && (
+                    <TutorChat
+                      key={currentQuestionKey}
+                      questionId={currentQuestion.question_id ?? currentQuestionKey}
+                      question={currentQuestion}
+                      hints={hints}
+                      solution={solution}
+                      initialChat={sessionChat}
+                      mathJaxReady={mathJaxReady}
+                    />
+                  )}
                 </div>
               ) : (
                 <div className="text-slate-500">No paper selected.</div>

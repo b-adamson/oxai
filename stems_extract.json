@@ -1,0 +1,2202 @@
+[
+ {
+  "id": "2016_A_01",
+  "subject": "math",
+  "stem": "Find the complete set of solutions to $\\frac{x-8}{2} < 6$"
+ },
+ {
+  "id": "2016_A_02",
+  "subject": "math",
+  "stem": "Which one of the following is a simplification of $(\\sqrt{2}-\\sqrt{3})^2$?"
+ },
+ {
+  "id": "2016_A_03",
+  "subject": "math",
+  "stem": "The ratio of Q:R is 5:2 and the ratio of R:S is 3:10. Which one of the following gives the ratio Q:S in its simplest form?"
+ },
+ {
+  "id": "2016_A_04",
+  "subject": "math",
+  "stem": "The mean age of the twenty members of a running club is exactly 28. The mean age increases by exactly 2 years when two new members join. What is the mean age of the two new members?"
+ },
+ {
+  "id": "2016_A_05",
+  "subject": "math",
+  "stem": "A medical scanner is bought for £15 000. The value of the scanner depreciates by 20% every year. By how much has the scanner reduced in value after 2 years?"
+ },
+ {
+  "id": "2016_A_06",
+  "subject": "math",
+  "stem": "The point A is 4 km due East of the point B. The bearing of the point C from A is 330° and the bearing of C from B is 060°. Find the distance BC."
+ },
+ {
+  "id": "2016_A_07",
+  "subject": "math",
+  "stem": "The quantities x and y are positive. x is inversely proportional to the square root of y. When x = 8, y = 9. What is the value of y when x = 6?"
+ },
+ {
+  "id": "2016_A_08",
+  "subject": "math",
+  "stem": "In a trapezium PQRS, the parallel sides are PQ and RS. PQ = $(x-1)$ cm, RS = $(x+5)$ cm and the vertical height QR = $x$ cm. [diagram not to scale] The area of the trapezium is 120 cm². What is the le"
+ },
+ {
+  "id": "2016_A_09",
+  "subject": "math",
+  "stem": "Make $b$ the subject of the formula: $a^2 = \\frac{2b^2 + 3}{b^2 - 1}$"
+ },
+ {
+  "id": "2016_A_10",
+  "subject": "math",
+  "stem": "A thin rectangular sheet of metal 10 m by 5 m is made into an open ended cylinder by joining the edges PS and QR. The height of the cylinder is 10 m. [diagram not to scale] What is the volume, in cubi"
+ },
+ {
+  "id": "2016_A_11",
+  "subject": "math",
+  "stem": "Which one of the following is a simplification of $\\dfrac{x^2 + 4x + 4}{2x^2 - 4x}$?"
+ },
+ {
+  "id": "2016_A_12",
+  "subject": "math",
+  "stem": "During summer activities week 120 students each chose one activity from swimming, archery, and tennis. 46 of the students were girls. 36 of the students chose tennis, and $\\frac{2}{3}$ of these were b"
+ },
+ {
+  "id": "2016_A_13",
+  "subject": "math",
+  "stem": "Which one of the following expressions is equivalent to $\\dfrac{9^{4-n} \\times 3^{1+2n}}{27^{n-2}}$?"
+ },
+ {
+  "id": "2016_A_14",
+  "subject": "math",
+  "stem": "In the diagram below, PQRS is part of a regular polygon with $n$ sides. The side PQ is extended to T such that PQT is a straight line. The length of RQ equals the length of RT. [diagram not to scale] "
+ },
+ {
+  "id": "2016_A_15",
+  "subject": "math",
+  "stem": "In a population, $\\frac{3}{5}$ of the adults are overweight. The probability of an overweight adult having Type 2 diabetes is $\\frac{9}{50}$; this probability is 6 times the probability of a non-overw"
+ },
+ {
+  "id": "2016_A_16",
+  "subject": "math",
+  "stem": "The graph of $y = x^2 + ax + b$ meets the straight line $y = x + 1$ when $x = 2$ and $x = 4$. Find $a$ and $b$."
+ },
+ {
+  "id": "2016_A_17",
+  "subject": "math",
+  "stem": "A rhombus has diagonals of length 5 cm and 3 cm. An enlargement of the rhombus has sides of length $\\sqrt{68}$ cm. What is the scale factor of the enlargement?"
+ },
+ {
+  "id": "2016_A_18",
+  "subject": "math",
+  "stem": "A straight line is drawn joining the points with coordinates $(7p-1,\\ p)$ and $(p+1,\\ -2p+1)$, where $p$ is a constant. What is the complete set of values of $p$ for which the gradient of this line is"
+ },
+ {
+  "id": "2016_B_19",
+  "subject": "physics",
+  "stem": "In the 1920s scientists discovered that the universe is expanding. One consequence of this expansion is that intense gamma-ray radiation from the early universe has now been shifted to the microwave r"
+ },
+ {
+  "id": "2016_B_20",
+  "subject": "physics",
+  "stem": "A nuclide $^{214}_{82}$Pb changes by radioactive decay into the nuclide $^{210}_{82}$Pb.\n\nWhich combination of emissions produces this change?"
+ },
+ {
+  "id": "2016_B_21",
+  "subject": "physics",
+  "stem": "A cylindrical copper bar X of length $l$ has cross-sectional area $A$. The colder end is kept at temperature $T_1$ and the hotter end at $T_2$. The curved surface is perfectly insulated and thermal en"
+ },
+ {
+  "id": "2016_B_22",
+  "subject": "physics",
+  "stem": "The graph shown of quantity $y$ against quantity $x$ represents the motion of a body. (The scales on both axes are in the appropriate S.I. units, and $g = 10$ N kg⁻¹.)\n\nWhich two of the following coul"
+ },
+ {
+  "id": "2016_B_23",
+  "subject": "physics",
+  "stem": "A uranium-235 nucleus can undergo fission to produce two smaller nuclei.\n\nWhich of the diagrams, if any, could represent this process?\n\nDiagram 1: $^{235}_{92}$U + $^1_0$n → $^{144}_{56}$Ba + $^{89}_{"
+ },
+ {
+  "id": "2016_B_24",
+  "subject": "physics",
+  "stem": "A circuit consists of a 5.0 Ω resistor and a variable resistor connected in series with a 24 V battery. The variable resistor has a minimum resistance of 3.0 Ω and a maximum resistance of 15 Ω. The ba"
+ },
+ {
+  "id": "2016_B_25",
+  "subject": "physics",
+  "stem": "The diagram shows a 12 V battery, a switch and three resistors. Each resistor has a resistance of 30 Ω. Initially the switch is open.\n\nWhat happens to the reading on the ammeter when the switch is clo"
+ },
+ {
+  "id": "2016_B_26",
+  "subject": "physics",
+  "stem": "The total power $P$ radiated by a star is given by $P = kR^2T^4$, where $R$ is the radius of the star, $T$ is its surface temperature and $k$ is a constant.\n\nThe power currently radiated by the Sun is"
+ },
+ {
+  "id": "2016_B_27",
+  "subject": "physics",
+  "stem": "A transverse wave travelling through a medium has a frequency of 5.0 Hz, a wavelength of 4.0 cm and an amplitude of 3.0 cm.\n\nWhat is the total distance travelled by a particle of the medium in one min"
+ },
+ {
+  "id": "2016_B_28",
+  "subject": "physics",
+  "stem": "A motor is used to lift a mass of 5.0 kg using a pulley system as shown in the diagram. The pulley is secured to the roof using a coupling.\n\nThe motor needs to cause the mass to accelerate upwards at "
+ },
+ {
+  "id": "2016_B_29",
+  "subject": "physics",
+  "stem": "A heater is connected in series with a resistor and a 6.0 V battery in the circuit shown. The total resistance of the circuit is 15 Ω. In 3.0 minutes, 180 J of electrical energy is transferred into ot"
+ },
+ {
+  "id": "2016_B_30",
+  "subject": "physics",
+  "stem": "A cubic block has a hole through it with a square cross-section. The dimensions are shown on the diagram (10 cm cube, 5.0 cm square hole). The weight of the block is 30 N.\n\nWhat is the density of the "
+ },
+ {
+  "id": "2016_B_31",
+  "subject": "physics",
+  "stem": "The diagram shows four solid steel balls P, Q, R and S which are of identical size. Balls P and R have shiny surfaces. Balls Q and S have dull surfaces. Balls P and Q are in a room at 20 °C. Balls R a"
+ },
+ {
+  "id": "2016_B_32",
+  "subject": "physics",
+  "stem": "The diagram shows the velocity–time graph for an object travelling in a straight line over a period of 30 s.\n\nWhat total distance did the object travel in the 30 s, how far from its starting position "
+ },
+ {
+  "id": "2016_B_33",
+  "subject": "physics",
+  "stem": "A sample of a radioactive isotope X decays to one other radioactive isotope Y. Y has a half-life that is double that of X. Initially only X is present.\n\nWhich graph could represent how the numbers of "
+ },
+ {
+  "id": "2016_B_34",
+  "subject": "physics",
+  "stem": "Bronze is a mixture of tin and copper. A particular sample of bronze contains 10% tin by volume. (Density of tin = $Y$, density of copper = $X$.)\n\nWhat percentage of the mass of the sample is tin?"
+ },
+ {
+  "id": "2016_B_35",
+  "subject": "physics",
+  "stem": "When a stationary uranium-238 nucleus decays by alpha emission it forms a nucleus of thorium-234. The total kinetic energy produced by the decay is $E$.\n\nWhat is the kinetic energy of the alpha partic"
+ },
+ {
+  "id": "2016_B_36",
+  "subject": "physics",
+  "stem": "A student carries out an experiment to measure the speed of sound. A loudspeaker is placed between two buildings 128 m apart. The student and loudspeaker are 48 m from one building. The loudspeaker em"
+ },
+ {
+  "id": "2016_C_37",
+  "subject": "chemistry",
+  "stem": "Which one of the following atoms or ions contains the same number of neutrons and electrons as $^{40}_{20}$Ca²⁺?"
+ },
+ {
+  "id": "2016_C_38",
+  "subject": "chemistry",
+  "stem": "Solid titanium oxide does not conduct electricity. When molten, titanium oxide is a conductor. During electrolysis 7.2 g of titanium are formed for every 3.6 dm³ of oxygen at RTP.\n\nWhich of the follow"
+ },
+ {
+  "id": "2016_C_39",
+  "subject": "chemistry",
+  "stem": "In which, if any, of the following reactions are covalent bonds both broken and formed?\n\n1  burning sodium in oxygen\n2  electrolysis of aqueous sodium chloride\n3  displacement of iron from iron oxide "
+ },
+ {
+  "id": "2016_C_40",
+  "subject": "chemistry",
+  "stem": "In a reversible reaction, gaseous reactants P and Q form gaseous products R and S.\n\nAn increase in temperature was found to increase both the rate of reaction and the yield at equilibrium. An increase"
+ },
+ {
+  "id": "2016_C_41",
+  "subject": "chemistry",
+  "stem": "Several oxides of bromine have been identified. Analysis of 2.4 g of one of these compounds showed it to contain 1.6 g of bromine.\n\nWhat is the empirical formula of this compound?\n\n(Ar: Br = 80; O = 1"
+ },
+ {
+  "id": "2016_C_42",
+  "subject": "chemistry",
+  "stem": "The most common ion of antimony, Sb³⁺, has 48 electrons. Antimony has two isotopes: one with 70 neutrons (abundance 60%) and one with 72 neutrons (abundance 40%).\n\nWhat is the relative atomic mass of "
+ },
+ {
+  "id": "2016_C_43",
+  "subject": "chemistry",
+  "stem": "A chromatogram was produced for 4 separate dyes (W, X, Y and Z) using filter paper and a water solvent. A second chromatogram was produced using a mixture of two of the dyes. [diagram not to scale]\n\nW"
+ },
+ {
+  "id": "2016_C_44",
+  "subject": "chemistry",
+  "stem": "The graphs show results of two experiments (W and Z) involving the catalytic decomposition of hydrogen peroxide.\n\nAssuming all other conditions are kept constant, which one of the following options wo"
+ },
+ {
+  "id": "2016_C_45",
+  "subject": "chemistry",
+  "stem": "Two of the following equations represent redox reactions:\n\n1  Cl₂ + 2KI → I₂ + 2KCl\n2  Cl₂ + 2e⁻ → 2Cl⁻\n3  HCl + AgNO₃ → AgCl + HNO₃\n4  Cl₂ + H₂O → HCl + HClO\n\nWhich two equations represent redox reac"
+ },
+ {
+  "id": "2016_C_46",
+  "subject": "chemistry",
+  "stem": "Copper, Cu, reacts with concentrated nitric acid, HNO₃, to produce a solution of copper(II) nitrate, water and compound X. Compound X does not contain copper or hydrogen. The balanced equation shows 3"
+ },
+ {
+  "id": "2016_C_47",
+  "subject": "chemistry",
+  "stem": "During the electrolysis of a saturated solution of sodium chloride, 2.4 dm³ of hydrogen gas was collected in time $t$ at one of the electrodes.\n\nAssuming no products dissolve, which row correctly give"
+ },
+ {
+  "id": "2016_C_48",
+  "subject": "chemistry",
+  "stem": "The heat energy change for a reaction is −100 kJ mol⁻¹, and the activation energy is +150 kJ mol⁻¹.\n\nWhat is the activation energy for the reverse reaction?"
+ },
+ {
+  "id": "2016_C_49",
+  "subject": "chemistry",
+  "stem": "The following tests were carried out on two monoprotic acids HX (strong) and HY (weak), both at 1 mol dm⁻³:\n\n1  Measure the time taken for a 1 cm strip of magnesium to react completely when added to 2"
+ },
+ {
+  "id": "2016_C_50",
+  "subject": "chemistry",
+  "stem": "A 1.50 g sample of impure anhydrous sodium carbonate was added to 100 cm³ of excess dilute hydrochloric acid. The impurity is unreactive. The volume of gas released was 240 cm³ at RTP.\n\nWhat is the ma"
+ },
+ {
+  "id": "2016_C_51",
+  "subject": "chemistry",
+  "stem": "0.35 g of lithium metal reacts with excess water at room temperature. Any gas produced is collected and its volume measured at RTP.\n\nAssuming 1 mole of gas occupies 24.0 dm³ at RTP, what is the volume"
+ },
+ {
+  "id": "2016_C_52",
+  "subject": "chemistry",
+  "stem": "Sodium sulfate was prepared by neutralising 25.0 cm³ of 0.1 mol dm⁻³ sodium hydroxide with exactly 50.0 cm³ of sulfuric acid.\n\nWhat is the concentration of the sulfuric acid in g dm⁻³?\n\n(Mr: H₂SO₄ = 9"
+ },
+ {
+  "id": "2016_C_53",
+  "subject": "chemistry",
+  "stem": "During electrolysis of aqueous sodium sulfate the half equations are:\n\nAnode: 2H₂O(l) → O₂(g) + 4H⁺(aq) + 4e⁻\nCathode: 2H₂O(l) + 2e⁻ → H₂(g) + 2OH⁻(aq)\n\nWhich of the following deductions, if any, can "
+ },
+ {
+  "id": "2016_C_54",
+  "subject": "chemistry",
+  "stem": "The structure of ethanol is given below.\n\nGiven the equation:\nH₂C═CH₂(g) + H₂O(g) → C₂H₅OH(g)   ΔH = −45 kJ mol⁻¹\n\nMean bond energies (kJ mol⁻¹): H–H = +436; C–C = +346; C–H = +413; O–H = +464; C═C = "
+ },
+ {
+  "id": "2016_D_55",
+  "subject": "biology",
+  "stem": "Between 1954 and 1971 a mine in Northern Australia was releasing excess copper into the nearby Finnis River. Copper ions are poisonous and most of the types of fish living in the river died. The river"
+ },
+ {
+  "id": "2016_D_56",
+  "subject": "biology",
+  "stem": "The diagram shows a plant cell. Arrows 1, 2, 3 and 4 indicate different directions.\n\nWhich of the arrows on the diagram show the net movement of water molecules, by osmosis, when the cell is surrounde"
+ },
+ {
+  "id": "2016_D_57",
+  "subject": "biology",
+  "stem": "A student described a population of organisms as having the following features:\n\n1  single celled\n2  chloroplasts present\n3  cell wall present\n\nUsing this information, which type of organism could thi"
+ },
+ {
+  "id": "2016_D_58",
+  "subject": "biology",
+  "stem": "A student investigated how temperature affects the rate of activity of an enzyme found in potatoes. This enzyme breaks down hydrogen peroxide to produce water and oxygen. The student counted bubbles o"
+ },
+ {
+  "id": "2016_D_59",
+  "subject": "biology",
+  "stem": "Albinism is a recessive genetic condition causing absence of melanin. In a population of 580 000 people there were 29 albinos and 81 200 symptomless carriers. One living cheek cell was collected from "
+ },
+ {
+  "id": "2016_D_60",
+  "subject": "biology",
+  "stem": "A student set up apparatus at 25 °C and pH 7 with a human enzyme solution added to a protein solution. After 15 minutes the solution became clear.\n\nWhat could the student change so that it would take "
+ },
+ {
+  "id": "2016_D_61",
+  "subject": "biology",
+  "stem": "The diagram shows the apparatus used by a student to investigate the rate of photosynthesis in pondweed. The student measured the distance the gas bubble moved along the capillary tube in 3 minutes as"
+ },
+ {
+  "id": "2016_D_62",
+  "subject": "biology",
+  "stem": "A student used a light microscope at a magnification of 40× to observe a slide of a stained non-dividing tissue. In the cells of this tissue, the student noted the presence of a large central vacuole "
+ },
+ {
+  "id": "2016_D_63",
+  "subject": "biology",
+  "stem": "The diagram shows the tip of a plant shoot, with two areas labelled P and Q.\n\nA student wrote the following statements:\n\n1  Cells at P are smaller than the cells at Q.\n2  Concentration of plant hormon"
+ },
+ {
+  "id": "2016_D_64",
+  "subject": "biology",
+  "stem": "In an investigation, a molecule of DNA was extracted and separated into its single strands 1 and 2.\n\nStrand 1: A = 26%, C = ?, G = 28%, T = 14%\n\nP, Q, R and S are the percentages of bases A, C, G, T i"
+ },
+ {
+  "id": "2016_D_65",
+  "subject": "biology",
+  "stem": "Cystic fibrosis is a recessive genetic condition. A female carrier has a child with a male who is also a carrier. What are the probabilities of the child having the characteristics described below?\n\n("
+ },
+ {
+  "id": "2016_D_66",
+  "subject": "biology",
+  "stem": "Organisms interact with each other in many different ways:\n\n1  a tapeworm absorbing nutrients from a sheep intestine\n2  a bacterial cell breaking down undigested food in a human gut\n3  a leopard and a"
+ },
+ {
+  "id": "2016_D_67",
+  "subject": "biology",
+  "stem": "A diploid cell from a type of fly that contains 8 chromosomes divides to form sperm cells.\n\nWhich row is correct for the number of strands of DNA in each sperm cell and the number of sperm cells produ"
+ },
+ {
+  "id": "2016_D_68",
+  "subject": "biology",
+  "stem": "A healthy human is running a race over a distance of 1500 metres as fast as possible.\n\nWhich row shows molecules that would be in a higher concentration in a vein carrying blood away from an actively "
+ },
+ {
+  "id": "2016_D_69",
+  "subject": "biology",
+  "stem": "The sex of species Q is controlled by two chromosomes X and Y. The sex of females of species Q is controlled by inheriting the same combination of sex chromosomes as healthy male humans. The sex of ma"
+ },
+ {
+  "id": "2016_D_70",
+  "subject": "biology",
+  "stem": "The graph shows how a number of factors vary with the distance down a river, after a source of pollution flowed in. (Assume the oxygen concentration is changing only based on the species present in th"
+ },
+ {
+  "id": "2016_D_71",
+  "subject": "biology",
+  "stem": "The graph shows the effect of increasing the substrate concentration on an enzyme-controlled reaction when all the other variables were kept constant.\n\nWhich of the following labels, if any, could be "
+ },
+ {
+  "id": "2016_D_72",
+  "subject": "biology",
+  "stem": "The table shows the DNA base triplet codes:\nCGT/CGC/CGA/CGG → arginine; CTG → leucine; CCG → proline; CAG → glutamine; CAT → histidine; AGT → serine\n\nConsider the DNA sequence: … CGC AGT …\n\nTwo mutati"
+ },
+ {
+  "id": "2016_E_73",
+  "subject": "math",
+  "stem": "When $x = 2$ is substituted in the expression $\\dfrac{x^3 + px^2 + qx + p}{2}$ the result is 0. When $x = 1$ is substituted into the same expression, the result is $-3.5$. Find all possible value(s) o"
+ },
+ {
+  "id": "2016_E_74",
+  "subject": "physics",
+  "stem": "A parachutist is falling at terminal speed with his parachute open. The diagrams show, separately, the vertical forces acting on the parachute and the vertical forces acting on the parachutist. The le"
+ },
+ {
+  "id": "2016_E_75",
+  "subject": "math",
+  "stem": "A square PQRS is drawn above the x-axis with the side PQ on the x-axis. P is the point $(−5, 0)$ and Q is the point $(1, 0)$. A circle is drawn inside the square with diameter equal in length to the s"
+ },
+ {
+  "id": "2016_E_76",
+  "subject": "physics",
+  "stem": "A shopper pushes a supermarket trolley a distance of 15 m in a straight line across a level, horizontal surface. The shopper applies a constant force of 50 N at an angle of 37° below the horizontal. T"
+ },
+ {
+  "id": "2016_E_77",
+  "subject": "math",
+  "stem": "The first term of a convergent geometric series is 8. The fifth term is 2. The sixth term is real and positive. What is the sum to infinity of this series?\n\n(Sum to infinity: $S_\\infty = \\dfrac{a}{1-r"
+ },
+ {
+  "id": "2016_E_78",
+  "subject": "physics",
+  "stem": "A plank of non-uniform density which has a mass of 15 kg is used to make a see-saw. A pivot is placed under the centre of the plank. A boy of mass 35 kg sits at one end with his centre of gravity 1.20"
+ },
+ {
+  "id": "2016_E_79",
+  "subject": "math",
+  "stem": "Tangents are drawn from a point P to a circle of radius 10 cm. The centre of the circle is C and the distance PC is 20 cm. [diagram not to scale]\n\nWhich one of the following is an expression for the s"
+ },
+ {
+  "id": "2016_E_80",
+  "subject": "physics",
+  "stem": "A car of mass 200 kg on a fairground ride travels at a speed of 5.0 m s⁻¹ at point X (height 8.0 m above ground). The car is allowed to move down a sloping section of track without any energy input. W"
+ },
+ {
+  "id": "2016_E_81",
+  "subject": "math",
+  "stem": "Given that $1 = \\sin\\theta \\cdot 7\\tan\\theta - 3\\cos\\theta$, which one of the following is true?"
+ },
+ {
+  "id": "2016_E_82",
+  "subject": "physics",
+  "stem": "The diagram shows a uniform, solid, heavy cube with side $d$. The cube rests with one of its edges in contact with a table that is perfectly level. A horizontal force $P$ acts on another edge of the c"
+ },
+ {
+  "id": "2016_E_83",
+  "subject": "math",
+  "stem": "The complete set of values of $a$ for which the equation $x^2 = a(x+3) - 2$ has two real distinct roots is"
+ },
+ {
+  "id": "2016_E_84",
+  "subject": "physics",
+  "stem": "An object is fired vertically upwards from the ground at $t = 0$ s in still air at a speed of 8.0 m s⁻¹.\n\nOn the way up, what is the height of the object above the ground when it has a speed of 2.0 m "
+ },
+ {
+  "id": "2016_E_85",
+  "subject": "math",
+  "stem": "The straight line with equation $y = mx + 3$, where $m > 0$, $m \\neq 1$, is perpendicular to the line with equation $y = px + 2$. The lines cut the x-axis at the points L and M respectively. The lengt"
+ },
+ {
+  "id": "2016_E_86",
+  "subject": "physics",
+  "stem": "The diagram shows a ball P, of mass 4.0 kg, moving to the right at 10 m s⁻¹ directly towards a stationary ball Q, of mass 2.0 kg. The balls collide but do not join together. Immediately after the coll"
+ },
+ {
+  "id": "2016_E_87",
+  "subject": "math",
+  "stem": "$f(x) = x^3 - ax^2$, where $a$ is a positive constant. Find the complete set of values of $x$ for which $f(x)$ is an increasing function."
+ },
+ {
+  "id": "2016_E_88",
+  "subject": "physics",
+  "stem": "A point object of mass 2.0 kg is at rest on a level, horizontal surface. The coefficient of friction between the object and the surface is 0.25. Two horizontal forces at right-angles to each other, wi"
+ },
+ {
+  "id": "2016_E_89",
+  "subject": "math",
+  "stem": "The curve $y = x^2$ is translated by the vector $\\dbinom{4}{3}$ and then reflected in the line $y = -1$.\n\nWhich one of the following is an equation of the resulting curve?"
+ },
+ {
+  "id": "2016_E_90",
+  "subject": "physics",
+  "stem": "An object of mass 20 kg is pulled up a rough plane inclined at 30° to the horizontal by a light, inextensible cable attached via a frictionless pulley to a freely-falling 30 kg mass. The acceleration "
+ },
+ {
+  "id": "2017_A_1",
+  "subject": "mathematics",
+  "stem": "Evaluate $\\dfrac{(\\sqrt{12}+\\sqrt{3})^2}{(\\sqrt{12}-\\sqrt{3})^2}$"
+ },
+ {
+  "id": "2017_A_2",
+  "subject": "mathematics",
+  "stem": "Solve fully the inequality $2x^2 \\geq 15 - x$"
+ },
+ {
+  "id": "2017_A_3",
+  "subject": "mathematics",
+  "stem": "The equation gives $y$ in terms of $x$: $y = 3\\!\\left(\\dfrac{x}{2}-1\\right)^2 - 5$. Which one of the following is a rearrangement for $x$ in terms of $y$?"
+ },
+ {
+  "id": "2017_A_4",
+  "subject": "mathematics",
+  "stem": "A fruit stall sells apples costing £$x$ each, and pears costing £$y$ each. Sam bought 2 apples and 5 pears, and the total cost of these was £$P$. Lesley bought 3 apples and 2 pears, and the total cost"
+ },
+ {
+  "id": "2017_A_5",
+  "subject": "mathematics",
+  "stem": "$P$ is directly proportional to $Q$ squared. When $P$ is 2, $Q$ is 4. $Q$ is inversely proportional to $R$. When $Q$ is 2, $R$ is 5. What is $P$ in terms of $R$?"
+ },
+ {
+  "id": "2017_A_6",
+  "subject": "mathematics",
+  "stem": "Two sequences are defined by the following rules: In sequence $S$ the $n^\\text{th}$ term is $7n+1$. In sequence $T$ the $n^\\text{th}$ term is $99-n^2$. What is the smallest value of $n$ for which the "
+ },
+ {
+  "id": "2017_A_7",
+  "subject": "mathematics",
+  "stem": "Which one of the following is a simplification of $2 - \\dfrac{x^2(9x^2-4)}{x^3(2-3x)}$?"
+ },
+ {
+  "id": "2017_A_8",
+  "subject": "mathematics",
+  "stem": "The parallelogram $OPQR$, labelled clockwise, is in the first quadrant ($x \\geq 0,\\ y \\geq 0$) with $O$ at the origin. The point $R$ has coordinates $\\left(\\dfrac{3a}{2},0\\right)$ and the point $Q$ ha"
+ },
+ {
+  "id": "2017_A_9",
+  "subject": "mathematics",
+  "stem": "What is the value of $x$ that makes the following expression correct? $2^{3+2x} \\cdot 4^x \\cdot 8^{-x} = 4\\sqrt{2}$"
+ },
+ {
+  "id": "2017_A_10",
+  "subject": "mathematics",
+  "stem": "There are 100 students in Year 10. Each student studies exactly one of French, German, and Spanish. $X$ girls study French and there are $3X$ girls in total. $2Y$ boys study German. There are 35 stude"
+ },
+ {
+  "id": "2017_A_11",
+  "subject": "mathematics",
+  "stem": "An exterior angle of a regular polygon with $n$ sides is $4^\\circ$ larger than an exterior angle of a regular polygon with $(n+3)$ sides. What is the value of $n$?"
+ },
+ {
+  "id": "2017_A_12",
+  "subject": "mathematics",
+  "stem": "The bearing of a ship $R$ from a lighthouse $L$ is 220°. A canoe $C$ is due North of $R$. $C$ is the same distance from the ship and the lighthouse. What is the bearing of $L$ from $C$?"
+ },
+ {
+  "id": "2017_A_13",
+  "subject": "mathematics",
+  "stem": "The hands of a 12-hour analogue clock move continuously. When the time on the clock is 4:00, the angle between the minute hand and the hour hand is 120°. What is the angle between the two hands at 4:4"
+ },
+ {
+  "id": "2017_A_14",
+  "subject": "mathematics",
+  "stem": "The cost of manufacturing a cake is directly proportional to the volume of the cake. The baker makes a 70% profit when he sells a large rectangular cake. The baker sells a large rectangular cake for £"
+ },
+ {
+  "id": "2017_A_15",
+  "subject": "mathematics",
+  "stem": "A pet shop has 4 female rabbits and $x$ male rabbits for sale. A customer buys 2 of the rabbits, chosen at random, and each rabbit is equally likely to be chosen. The probability that both the chosen "
+ },
+ {
+  "id": "2017_A_16",
+  "subject": "mathematics",
+  "stem": "The diagram shows a square with side of length $x$ cm. A circle is drawn with centre O which lies at the mid-point of one of the sides of the square. This side forms part of a diameter of the circle. "
+ },
+ {
+  "id": "2017_A_17",
+  "subject": "mathematics",
+  "stem": "A cylindrical hollow metal pipe is 16 cm long. It has an external diameter of 10 cm and an internal diameter of 8 cm. The density of the metal from which the pipe is made is 8 grams per cm$^3$. [diagr"
+ },
+ {
+  "id": "2017_A_18",
+  "subject": "mathematics",
+  "stem": "The shortest distance between two opposite sides of a regular hexagon is 12 cm. Find the area, in cm$^2$, of the regular hexagon."
+ },
+ {
+  "id": "2017_B_19",
+  "subject": "physics",
+  "stem": "A car is travelling along a horizontal road in a straight line. The graph is a velocity–time graph for part of the car's journey. During this part of the journey, what is the total distance that the c"
+ },
+ {
+  "id": "2017_B_20",
+  "subject": "physics",
+  "stem": "When a saucepan of water is heated from below, convection currents form and transfer heat through the liquid. Here are three statements about the water as it is heated:\n1. The mass of a fixed volume o"
+ },
+ {
+  "id": "2017_B_21",
+  "subject": "physics",
+  "stem": "Table 1 gives the approximate frequency ranges of sections of the electromagnetic spectrum. Table 2 gives information about two different types of wave in air. Waves 1 to 3 are longitudinal waves form"
+ },
+ {
+  "id": "2017_B_22",
+  "subject": "physics",
+  "stem": "A charge of 60 C passes through an electrical component when a steady voltage of 10 V is applied across it for 30 seconds. The resistance of the component remains constant throughout. What is the resi"
+ },
+ {
+  "id": "2017_B_23",
+  "subject": "physics",
+  "stem": "An electric motor is used to pull a broken-down car slowly from the road up a ramp on to the back of a breakdown truck. The car has a mass of 1200 kg and is lifted through a vertical height of 1.0 m. "
+ },
+ {
+  "id": "2017_B_24",
+  "subject": "physics",
+  "stem": "In one type of medical scanner a source is placed inside a patient's body. This source causes pairs of gamma-rays to be emitted simultaneously in opposite directions. Detectors on each side of the pat"
+ },
+ {
+  "id": "2017_B_25",
+  "subject": "physics",
+  "stem": "When a plutonium-239 nucleus absorbs a neutron it undergoes nuclear fission. One particular fission reaction results in the creation of xenon and zirconium as daughter nuclei. The nuclear equation for"
+ },
+ {
+  "id": "2017_B_26",
+  "subject": "physics",
+  "stem": "An electric motor is connected to a constant 12 V d.c. supply. The motor is used to lift a mass of 20 kg by means of a rope and pulley. The mass is lifted vertically through a height of 6.0 m in a tim"
+ },
+ {
+  "id": "2017_B_27",
+  "subject": "physics",
+  "stem": "The nuclide ${}^P_Q\\text{X}$ decays to the stable nuclide Y. During this process four particles are emitted: an $\\alpha$-particle and three $\\beta^-$ particles. Which of the following is not a nuclide"
+ },
+ {
+  "id": "2017_B_28",
+  "subject": "physics",
+  "stem": "The radius of an iron-56 atom is $3.0 \\times 10^4$ times greater than the radius of an iron-56 nucleus. What is the value of $\\dfrac{\\text{density of an iron atom}}{\\text{density of an iron nucleus}}$"
+ },
+ {
+  "id": "2017_B_29",
+  "subject": "physics",
+  "stem": "Graph 1 shows how the displacement of one of the particles of a medium varies with time in seconds as a wave travels through the medium. Graph 2 shows how the displacement varies with distance in metr"
+ },
+ {
+  "id": "2017_B_30",
+  "subject": "physics",
+  "stem": "A kettle is designed to work from a car's power socket. The kettle has a power rating of 150 W when a constant voltage of 12.0 V d.c. is applied across its element. How much charge passes through the "
+ },
+ {
+  "id": "2017_B_31",
+  "subject": "physics",
+  "stem": "A freight train travelling on a straight horizontal track at 2.0 m s$^{-1}$ collides with a passenger train travelling at 5.0 m s$^{-1}$ in the opposite direction. Both trains immediately come to a co"
+ },
+ {
+  "id": "2017_B_32",
+  "subject": "physics",
+  "stem": "Consider the following four calculations:\n1. (200 kg m s⁻¹) ÷ (5 m s⁻¹)\n2. (200 J) ÷ (5 m)\n3. (200 kg m⁻³) ÷ (5 m³)\\n4. (200 N) $\\div$ (5 m s$^{-2}$)\nWhich two calculations result in the answer 40 kg?"
+ },
+ {
+  "id": "2017_B_33",
+  "subject": "physics",
+  "stem": "Consider the following three statements about a parachutist of mass 72 kg falling vertically at a constant velocity of 5.0 m s$^{-1}$ after the parachute has opened:\n1. The parachutist has a constant "
+ },
+ {
+  "id": "2017_B_34",
+  "subject": "physics",
+  "stem": "Two radioactive sources X and Y have half-lives of 3.0 hours and 2.0 hours respectively. The product of the decay of both of the sources is a stable isotope of the element Z. Six hours ago a mixture c"
+ },
+ {
+  "id": "2017_B_35",
+  "subject": "physics",
+  "stem": "Car X passes car Y on a motorway. Car X is travelling at 1.5 times the speed of car Y. The mass of car X is $\\dfrac{4}{5}$ of the mass of car Y. How do the kinetic energies of the two cars compare?"
+ },
+ {
+  "id": "2017_B_36",
+  "subject": "physics",
+  "stem": "In the following circuit the ammeter shows a reading of 4.0 A. The power dissipated in the 12 $\\Omega$ resistor is 12 W. What is the power dissipated in the 4.0 $\\Omega$ resistor?"
+ },
+ {
+  "id": "2017_C_37",
+  "subject": "chemistry",
+  "stem": "Consider the atoms/ions below: ${}^{24}_{12}\\text{Mg}^{2+}$, ${}^{16}_{8}\\text{O}^{2-}$, ${}^{18}_{8}\\text{O}$, ${}^{32}_{16}\\text{S}^{2-}$. Which of the following statements is/are correct?\\n1. Both "
+ },
+ {
+  "id": "2017_C_38",
+  "subject": "chemistry",
+  "stem": "Which two of the following reactions involve oxidation?\\n1. $\\text{Ca} \\to \\text{Ca}^{2+} + 2e^-$\\n2. $\\text{Cl}_2 + 2e^- \\to 2\\text{Cl}^-$\\n3. $\\text{Fe}_2\\text{O}_3 + 3\\text{CO} \\to 2\\text{Fe} + 3\\t"
+ },
+ {
+  "id": "2017_C_39",
+  "subject": "chemistry",
+  "stem": "Hydrochloric acid (HCl) is a strong acid. Properties of a solution of 1.00 mol dm$^{-3}$ hydrochloric acid include:\n1. It turns blue litmus indicator red.\\n2. On reaction with sodium carbonate gaseous"
+ },
+ {
+  "id": "2017_C_40",
+  "subject": "chemistry",
+  "stem": "Consider the following reactions:\\nReaction Q: $\\text{CH}_2\\text{=CH}_2\\text{(g)} + \\text{H}_2\\text{O(g)} \\rightleftharpoons \\text{CH}_3\\text{CH}_2\\text{OH(g)}$, $\\Delta H$ is $-$ve\\nReaction R: $\\tex"
+ },
+ {
+  "id": "2017_C_41",
+  "subject": "chemistry",
+  "stem": "Study the chromatogram below showing the spots obtained, labelled (i) to (v), from two sweets and pure samples of the food additives, labelled Q, R and S. Which of the following statements about the c"
+ },
+ {
+  "id": "2017_C_42",
+  "subject": "chemistry",
+  "stem": "Element X has atomic number 20. Consider only the simple oxide of X. Which of the following options identifies the formula, the type of bonding and the acid-base character of the oxide of element X?"
+ },
+ {
+  "id": "2017_C_43",
+  "subject": "chemistry",
+  "stem": "Solid copper(II) chloride contains Cu$^{2+}$ ions and Cl$^-$ ions only. Solid lithium phosphate(V) contains Li$^+$ ions and PO$_4^{3-}$ ions only. Aqueous solutions of copper(II) chloride and lithium "
+ },
+ {
+  "id": "2017_C_44",
+  "subject": "chemistry",
+  "stem": "Which of the following statements about the reaction of lithium with water are correct?\n1. The reaction is a redox reaction.\n2. 7 g of lithium will react with excess water to produce 2 g of hydrogen g"
+ },
+ {
+  "id": "2017_C_45",
+  "subject": "chemistry",
+  "stem": "Consider this electrochemical cell containing an aqueous copper(II) chloride electrolyte (2 mol dm$^{-3}$ CuCl$_2$(aq), 9 V d.c., pure copper cathode (negative electrode), graphite anode (positive ele"
+ },
+ {
+  "id": "2017_C_46",
+  "subject": "chemistry",
+  "stem": "A fluorocarbon has a relative molecular mass which is twice that of its empirical formula mass. 81 g of the compound contains 57 g of fluorine. What is the molecular formula of the compound? ($A_r$ va"
+ },
+ {
+  "id": "2017_C_47",
+  "subject": "chemistry",
+  "stem": "In which of the following reactions is there a change in volume of 24 dm$^3$, when measured at room temperature and pressure?\\n1. 56 g of carbon monoxide completely reacts with an excess of oxygen: $2"
+ },
+ {
+  "id": "2017_C_48",
+  "subject": "chemistry",
+  "stem": "Magnesium reacts with sulfuric acid according to the following chemical equation: $\\text{Mg(s)} + \\text{H}_2\\text{SO}_4\\text{(aq)} \\to \\text{MgSO}_4\\text{(aq)} + \\text{H}_2\\text{(g)}$. Line P on each "
+ },
+ {
+  "id": "2017_C_49",
+  "subject": "chemistry",
+  "stem": "Nitrogen and hydrogen react together to form ammonia as shown below: $\\text{N}_2\\text{(g)} + 3\\text{H}_2\\text{(g)} \\to 2\\text{NH}_3\\text{(g)}$. The energy released by this reaction is 93 kJ mol$^{-1}$"
+ },
+ {
+  "id": "2017_C_50",
+  "subject": "chemistry",
+  "stem": "Consider the following two electrolytic processes: electrolysis of molten lead(II) chloride; electrolysis of brine (sodium chloride solution). Which of the following statements is/are correct?\n1. In b"
+ },
+ {
+  "id": "2017_C_51",
+  "subject": "chemistry",
+  "stem": "Silver nitrate solution reacts with zinc powder in an exothermic reaction: $2\\text{AgNO}_3\\text{(aq)} + \\text{Zn(s)} \\to 2\\text{Ag(s)} + \\text{Zn(NO}_3)_2\\text{(aq)}$. The graph shows the maximum temp"
+ },
+ {
+  "id": "2017_C_52",
+  "subject": "chemistry",
+  "stem": "Natural samples of copper contain two isotopes: $^{63}$Cu which has a relative isotopic mass of 62.93, and $^{65}$Cu which has a relative isotopic mass of 64.93. The relative atomic mass of a sample o"
+ },
+ {
+  "id": "2017_C_53",
+  "subject": "chemistry",
+  "stem": "The reaction between calcium carbonate and hydrochloric acid was used to measure the effect of changing conditions on the mass of CO$_2$ produced and the rate of CO$_2$ production. $\\text{CaCO}_3\\text"
+ },
+ {
+  "id": "2017_C_54",
+  "subject": "chemistry",
+  "stem": "An atom of ${}^1_1\\text{H}$ has a radius of 0.05 nanometres. The radius of the nucleus of this atom is approximately 50 000 times smaller. What is the approximate radius of the nucleus in femtometres?"
+ },
+ {
+  "id": "2017_D_55",
+  "subject": "biology",
+  "stem": "The graph shows the concentration of lactic acid in the blood of two students at rest, then carrying out the same level of exercise for 15 minutes, and then at rest again. Which of the following state"
+ },
+ {
+  "id": "2017_D_56",
+  "subject": "biology",
+  "stem": "Spontaneous mutations occur in the genetic material of all living organisms. Which pie chart best represents the proportion of mutations that are beneficial, mutations that are harmful, and mutations "
+ },
+ {
+  "id": "2017_D_57",
+  "subject": "biology",
+  "stem": "Ten randomly placed quadrats were used to estimate the frequency of occurrence of three plant species in a field. The table shows the number of individuals of species X, Y and Z in each of 10 quadrats"
+ },
+ {
+  "id": "2017_D_58",
+  "subject": "biology",
+  "stem": "Which of the following statements about stem cells in a healthy human female is/are correct?\n1. An adult stem cell contains the same genes as an epithelial cell from that organism.\n2. Stem cells from "
+ },
+ {
+  "id": "2017_D_59",
+  "subject": "biology",
+  "stem": "Which of the following will always lead to an increase in the size of a population?\n1. removal of intraspecific competitors\n2. supplying more of the nutrient that is at the lowest concentration\n3. cha"
+ },
+ {
+  "id": "2017_D_60",
+  "subject": "biology",
+  "stem": "The diagram shows three features which are used to group organisms: (i) cell has an external wall forming a layer that gives it a defined shape; (ii) within the cell is a membrane-bound structure that"
+ },
+ {
+  "id": "2017_D_61",
+  "subject": "biology",
+  "stem": "A desert food chain is shown below: cactus → rat → rattlesnake → hawk. Assume that 10% of the energy from each stage in the food chain is passed on. If 150 000 units of energy are contained in the pro"
+ },
+ {
+  "id": "2017_D_62",
+  "subject": "biology",
+  "stem": "Which of the following statements about bacterial cell division is/are correct?\n1. Daughter cells show a large degree of genetic difference to the parent cell.\n2. After each division, two daughter cel"
+ },
+ {
+  "id": "2017_D_63",
+  "subject": "biology",
+  "stem": "Young plant roots show a similar positive response to the direction of gravity as their shoots do to the direction of light. A clinostat can be used to counter the effects of gravity on a plant. It ha"
+ },
+ {
+  "id": "2017_D_64",
+  "subject": "biology",
+  "stem": "An inherited condition is caused by a recessive allele. The family tree shows the inheritance of this condition in one family. One of the daughters in this family tree has children with a man who does"
+ },
+ {
+  "id": "2017_D_65",
+  "subject": "biology",
+  "stem": "The diagram shows the apparatus used to investigate the movement of molecules across a partially permeable membrane. Sucrose is unable to cross the partially permeable membrane. The apparatus contains"
+ },
+ {
+  "id": "2017_D_66",
+  "subject": "biology",
+  "stem": "The diagram shows the life cycle of a simple type of plant with adult plant stage P (haploid), spores (haploid), female gamete (haploid), male gamete (haploid), adult plant stage Q (diploid), connecte"
+ },
+ {
+  "id": "2017_D_67",
+  "subject": "biology",
+  "stem": "Three different coloured leaves were collected: a dark green leaf, a light green leaf and a yellow leaf. Each leaf had 16 discs of 1 cm diameter cut from it. The discs were treated with sodium hydroge"
+ },
+ {
+  "id": "2017_D_68",
+  "subject": "biology",
+  "stem": "A student carried out an experiment to investigate the effect of enzyme concentration on the rate of an enzyme-controlled reaction. The student used a starch agar plate with five identically sized sma"
+ },
+ {
+  "id": "2017_D_69",
+  "subject": "biology",
+  "stem": "The diagram shows the start of an experiment on the effect of light direction on young shoots. Three treatments: P (control), Q (tip of shoot removed), R (shoot covered with opaque sheath, tip exposed"
+ },
+ {
+  "id": "2017_D_70",
+  "subject": "biology",
+  "stem": "The table shows some of the genetic codes for amino acids. The base sequence below shows the middle part of a gene coding for a protein: ATG CGA GAC ATG TTA AGG TGG GAC CCC CGA GTC. Mutations took pla"
+ },
+ {
+  "id": "2017_D_71",
+  "subject": "biology",
+  "stem": "A power station released warm water into a river. A student studied two graphs: Graph 1 showed the oxygen required by the pollution indicator species for survival vs temperature; Graph 2 showed the ef"
+ },
+ {
+  "id": "2017_D_72",
+  "subject": "biology",
+  "stem": "In a monohybrid cross, two heterozygotes were allowed to mate and the resulting offspring showed a 2:1 phenotypic ratio. Which of the following statements could explain this ratio?\n1. The number of of"
+ },
+ {
+  "id": "2017_E_73",
+  "subject": "mathematics",
+  "stem": "Which one of the following is a simplification of $1 - \\left(\\dfrac{3+\\sqrt{3}}{6-2\\sqrt{3}}\\right)^2$?"
+ },
+ {
+  "id": "2017_E_74",
+  "subject": "physics",
+  "stem": "The diagram shows a crane being used on a building site. The crane is perfectly balanced about P. The load is now moved to the left by 5.0 m. To keep the crane perfectly balanced about P, how far does"
+ },
+ {
+  "id": "2017_E_75",
+  "subject": "mathematics",
+  "stem": "$k$ is the smallest positive value of $x$ which is a solution to both the equations $2\\sin x + 1 = 0$ and $2\\cos 2x = 1$. How many values of $x$ in the range $0 \\leq x \\leq k$ are solutions to at leas"
+ },
+ {
+  "id": "2017_E_76",
+  "subject": "physics",
+  "stem": "An aircraft is climbing at constant speed in a straight line at an angle of 10° to the horizontal. Which statement about the resultant force on the aircraft is correct?"
+ },
+ {
+  "id": "2017_E_77",
+  "subject": "mathematics",
+  "stem": "Which of the following is a solution to the equation $3^{(2x+1)} - 6(3^x) = 0$?"
+ },
+ {
+  "id": "2017_E_78",
+  "subject": "physics",
+  "stem": "A ball starts at a speed of 40.0 m s$^{-1}$. The ball is subject to a constant deceleration of 14.4 m s$^{-2}$ as it travels a distance of 20.0 m in a straight line. What is the final speed of the bal"
+ },
+ {
+  "id": "2017_E_79",
+  "subject": "mathematics",
+  "stem": "The graph of the function $y = x^3 + px^2 + qx + 6$, where $p$ and $q$ are real constants, has a local maximum when $x = 2$ and a local minimum when $x = 4$. What are the values of $p$ and $q$?"
+ },
+ {
+  "id": "2017_E_80",
+  "subject": "physics",
+  "stem": "A block of mass 1.0 kg is at rest on a rough horizontal surface. The block is attached by a light inextensible string to a force meter. The other end of the force meter is attached by another light in"
+ },
+ {
+  "id": "2017_E_81",
+  "subject": "mathematics",
+  "stem": "Given that $y = (2+3x)^6$, what is the coefficient of $x^3$ in $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$?"
+ },
+ {
+  "id": "2017_E_82",
+  "subject": "physics",
+  "stem": "An apple of mass 100 g, growing on a tree, falls vertically from a height of 4.0 m above the ground. It hits the ground with a speed of 8.0 m s$^{-1}$. How much work does the apple do against resistiv"
+ },
+ {
+  "id": "2017_E_83",
+  "subject": "mathematics",
+  "stem": "A geometric progression has first term equal to 1 and common ratio $\\dfrac{1}{2}\\sin 2x$. The sum to infinity of the series is $\\dfrac{4}{3}$. Find the possible values of $x$ in the range $\\pi \\leq x "
+ },
+ {
+  "id": "2017_E_84",
+  "subject": "physics",
+  "stem": "A stone is fired vertically upwards at a speed of 13 m s$^{-1}$ on a still day from the top of a 6.0 m high cliff. It then falls down and lands at the bottom of the cliff. [diagram not to scale] From "
+ },
+ {
+  "id": "2017_E_85",
+  "subject": "mathematics",
+  "stem": "The sequence of numbers $u_1, u_2, u_3, \\ldots, u_n, \\ldots$ is given by $u_1 = 2$ and $u_{n+1} = pu_n + 3$, where $p$ is an integer. The fourth term, $u_4$, is equal to $-7$. What is the value of $u_"
+ },
+ {
+  "id": "2017_E_86",
+  "subject": "physics",
+  "stem": "An archer fires an arrow of mass 0.024 kg vertically upwards from a bow. The graph shows how the force of the bowstring on the arrow varies with distance as the arrow moves upwards. The work done by t"
+ },
+ {
+  "id": "2017_E_87",
+  "subject": "mathematics",
+  "stem": "Find the complete set of values of $x$ for which $\\dfrac{x^3-6x^2+9x-4}{x} > 0$."
+ },
+ {
+  "id": "2017_E_88",
+  "subject": "physics",
+  "stem": "A book of mass $m$ rests on a rough horizontal surface. The surface is now tilted as shown. When the angle of tilt $\\theta$ is 20°, the book slides down the slope at a constant speed. What is the acce"
+ },
+ {
+  "id": "2017_E_89",
+  "subject": "mathematics",
+  "stem": "The equations of two straight lines are $y = 3 + (2p^2-p)x$ and $y = 7 + (p-2)x$, where $p$ is a real constant. For certain values of $p$, the two lines are perpendicular. Which of the following numbe"
+ },
+ {
+  "id": "2017_E_90",
+  "subject": "physics",
+  "stem": "The graph shows how the horizontal force on a tennis ball of mass $m$ varies during a shot in a tennis match. The ball is initially travelling horizontally toward the racket with speed $u$ and leaves "
+ },
+ {
+  "id": "2018_A_01",
+  "subject": "math",
+  "stem": "A group of drivers, consisting of 200 women and 300 men, was asked if they passed their driving test at the first attempt. Altogether 167 of the group said they passed at the first attempt. Of the wom"
+ },
+ {
+  "id": "2018_A_02",
+  "subject": "math",
+  "stem": "A cuboid has sides of length $x$, $x\\sqrt{2}$ and $2x$, measured in cm.\n\nThe volume, in cm$^3$, of the cuboid is numerically equal to twice the total surface area, in cm$^2$, of the cuboid.\n\nWhat is t"
+ },
+ {
+  "id": "2018_A_03",
+  "subject": "math",
+  "stem": "The line joining the points with coordinates $(p,\\, p-1)$ and $(1-p,\\, 2p)$ is parallel to the line with equation $2x + 3y + 1 = 0$.\n\nWhat is the value of $p$?"
+ },
+ {
+  "id": "2018_A_04",
+  "subject": "math",
+  "stem": "A rectangle PQRS is drawn inside a circle, with its vertices on the circumference of the circle.\n\n[diagram not to scale]\n\nThe ratio of the length of PQ to the length of QR is 2 : 1\n\nThe area of the re"
+ },
+ {
+  "id": "2018_A_05",
+  "subject": "math",
+  "stem": "The expected number of bottles of water sold in a day at a sports ground is directly proportional to the square of the average outside temperature, in degrees Celsius, for that day.\n\nOn a day when the"
+ },
+ {
+  "id": "2018_A_06",
+  "subject": "math",
+  "stem": "At a cinema, drinks are sold in regular and large sizes. The cups for these are mathematically similar. The ratio of the heights of the cups and the ratio of the depths of the drinks are both 4 : 5\n\nT"
+ },
+ {
+  "id": "2018_A_07",
+  "subject": "math",
+  "stem": "The mean of $n$ numbers is $p$\n\nThe mean of two of these numbers is $q$\n\nThe mean of the remaining numbers is 10\n\nWhich of the following is a correct expression for $n$ in terms of $p$ and $q$?"
+ },
+ {
+  "id": "2018_A_08",
+  "subject": "math",
+  "stem": "The straight lines\n\n$5x + 2y = 20$\n\n$y = 3x - 23$\n\n$x = 0$\n\nenclose a region with area $K$ square units. What is the value of $K$?"
+ },
+ {
+  "id": "2018_A_09",
+  "subject": "math",
+  "stem": "A scale model of a cylindrical pillar is to be made.\n\nThe full-sized pillar has a volume of $12\\pi$ m$^3$.\n\nThe model will use a length scale of 1 : 40\n\nThe model is to be a solid cylinder made of a p"
+ },
+ {
+  "id": "2018_A_10",
+  "subject": "math",
+  "stem": "PQRST is a regular pentagon. RSU is an equilateral triangle.\n\n[diagram not to scale]\n\nWhat is the size of angle STU?"
+ },
+ {
+  "id": "2018_A_11",
+  "subject": "math",
+  "stem": "The original price of an item is $p$\n\nThe price is increased by 125%\n\nThe increased price is then decreased by 40% to $q$\n\nThe relationship between $p$ and $q$ can be expressed as $mp = q$\n\nWhat is th"
+ },
+ {
+  "id": "2018_A_12",
+  "subject": "math",
+  "stem": "80% of a number is equal to two-thirds of a second number.\n\nThe whole number ratio of the first number to the second number in its lowest terms is $x : y$\n\nWhat is the value of $x - y$?"
+ },
+ {
+  "id": "2018_A_13",
+  "subject": "math",
+  "stem": "Q is 5 km away from P on a bearing of 065°\n\nR is 5 km away from Q on a bearing of 155°\n\nWhat is the bearing of P from R?"
+ },
+ {
+  "id": "2018_A_14",
+  "subject": "math",
+  "stem": "With school lunch, students can select tomato sauce, or mayonnaise, or both, or neither.\n\n$n$ students selected both. $3n + 1$ students selected tomato sauce. $3n - 1$ students selected only mayonnais"
+ },
+ {
+  "id": "2018_A_15",
+  "subject": "math",
+  "stem": "The line segment RT is a tangent at the point S to a circle with centre O. Q and P are points on the circumference of the circle such that QS = QP. Angle PST = 75°\n\n[diagram not to scale]\n\nWhat is the"
+ },
+ {
+  "id": "2018_A_16",
+  "subject": "math",
+  "stem": "The vertical height $h$ cm of an isosceles triangle is 3 cm longer than the base length of $b$ cm. The sloping side is of length $s$ cm. The area of the triangle is 14 cm$^2$.\n\nThere is one value of $"
+ },
+ {
+  "id": "2018_A_17",
+  "subject": "math",
+  "stem": "The first five terms of a sequence in order are:\n\n2  17  42  77  122\n\nThe $n$th term of this sequence is $pn^2 + q$ where $p$ and $q$ are integers.\n\nWhat is the value of $\\dfrac{p - q}{p + q}$?"
+ },
+ {
+  "id": "2018_A_18",
+  "subject": "math",
+  "stem": "A bag contains 6 red and 6 green sweets. The sweets are identical apart from their colour.\n\nA child takes a sweet at random from the bag. If the sweet is red, the child stops taking sweets. If the swe"
+ },
+ {
+  "id": "2018_B_19",
+  "subject": "physics",
+  "stem": "An unstable nucleus X becomes a stable nucleus Y after a succession of decays, during which a total of 5 alpha particles and 2 beta (β⁻) particles are emitted.\n\nHow many fewer protons does nucleus Y c"
+ },
+ {
+  "id": "2018_B_20",
+  "subject": "physics",
+  "stem": "The diagram shows three resistors R₁, R₂ and R₃ connected in series with a battery of constant voltage. The resistance of each resistor and the corresponding current are also shown.\n\nR₁ = 12 Ω, R₂ = 1"
+ },
+ {
+  "id": "2018_B_21",
+  "subject": "physics",
+  "stem": "When travelling in a vacuum, visible light has a wavelength between 400 nm and 700 nm. The speed of light in a vacuum is $3.0 \\times 10^8$ m s$^{-1}$.\n\nWhat can be concluded about ultraviolet radiatio"
+ },
+ {
+  "id": "2018_B_22",
+  "subject": "physics",
+  "stem": "The graph is the speed–time graph for a bus travelling in a straight line between two stops.\n\nWhat is the average speed of the bus during this time?"
+ },
+ {
+  "id": "2018_B_23",
+  "subject": "physics",
+  "stem": "A filament lamp working at its operating voltage converts electrical energy at a rate of 100 W. The lamp has an efficiency of 5.0%.\n\nHow much energy is wasted by the lamp in 10 minutes?"
+ },
+ {
+  "id": "2018_B_24",
+  "subject": "physics",
+  "stem": "A student is investigating heat flow along a solid uniform metal bar. The bar has length $l$, cross-sectional area $A$, and has its ends maintained at temperatures $T_1$ and $T_2$ (where $T_1 > T_2$)."
+ },
+ {
+  "id": "2018_B_25",
+  "subject": "physics",
+  "stem": "The potential difference across the motor in an electric car is 400 V and the current in the motor is 1250 A. The car accelerates along a horizontal road from rest for 4.0 s. The efficiency of the ove"
+ },
+ {
+  "id": "2018_B_26",
+  "subject": "physics",
+  "stem": "The momentum of a small object moving in a straight line is 24 kg m s$^{-1}$ and its kinetic energy is 96 J. What is the mass of the object?"
+ },
+ {
+  "id": "2018_B_27",
+  "subject": "physics",
+  "stem": "A radioactive isotope decays in a single step to a stable isotope. A radiation detector is placed very near to a sample of the radioactive isotope in a laboratory. The count rate on the detector chang"
+ },
+ {
+  "id": "2018_B_28",
+  "subject": "physics",
+  "stem": "A rock falling vertically experiences an air resistance force of 12 N at an instant when its acceleration is 2.0 m s$^{-2}$ downwards.\n\nWhat is the mass of the rock?\n\n(gravitational field strength = 1"
+ },
+ {
+  "id": "2018_B_29",
+  "subject": "physics",
+  "stem": "A transverse wave with an amplitude of 4.0 cm and a frequency of 10 Hz travels along a rope at a speed of 2.4 m s$^{-1}$.\n\nWhat is the total distance travelled by a particle in the rope in a time of 2"
+ },
+ {
+  "id": "2018_B_30",
+  "subject": "physics",
+  "stem": "A student places a measuring cylinder on a balance. She pours a volume $V$ of water into the measuring cylinder, and finds that the mass of the measuring cylinder and water together is 290 g. She then"
+ },
+ {
+  "id": "2018_B_31",
+  "subject": "physics",
+  "stem": "A skydiver of weight 1000 N falls vertically. The distance–time graph for the skydiver is shown below.\n\nThe air resistance $F$ (in N) acting on the skydiver travelling at velocity $v$ (in m s$^{-1}$) "
+ },
+ {
+  "id": "2018_B_32",
+  "subject": "physics",
+  "stem": "A source generates water waves of fixed frequency that have a wavelength of 1.5 cm. As they cross a boundary into shallower water their frequency does not change, but their speed is reduced by 18 cm s"
+ },
+ {
+  "id": "2018_B_33",
+  "subject": "physics",
+  "stem": "A neutron is absorbed by a uranium-235 ($^{235}_{92}$U) nuclide. The resulting nuclide undergoes fission to produce a bromine-88 ($^{88}_{35}$Br) nuclide, a lanthanum-145 nuclide and some neutrons. Th"
+ },
+ {
+  "id": "2018_B_34",
+  "subject": "physics",
+  "stem": "The diagram shows a circuit containing a battery and three identical resistors X, Y and Z.\n\nThe total power supplied by the battery is 18 W. What is the power dissipated as heat in resistor X?"
+ },
+ {
+  "id": "2018_B_35",
+  "subject": "physics",
+  "stem": "A filament lamp and a 0–10 Ω variable resistor are connected in series with a power supply of constant voltage. The graph shows the voltage–current (V–I) characteristic of the filament lamp.\n\nWhen the"
+ },
+ {
+  "id": "2018_B_36",
+  "subject": "physics",
+  "stem": "Three detectors X, Y and Z are separated by large distances. Each of the detectors records a seismic wave from the same earthquake whose epicentre (source) is very close to the surface of the Earth. T"
+ },
+ {
+  "id": "2018_C_37",
+  "subject": "chemistry",
+  "stem": "Which row in the following table gives the numbers of protons, neutrons and electrons in $^{64}_{29}$Cu$^{2+}$?"
+ },
+ {
+  "id": "2018_C_38",
+  "subject": "chemistry",
+  "stem": "The following exothermic reaction reaches equilibrium at room temperature.\n\nC$_2$H$_5$OH(l) + CH$_3$COOH(l) $\\rightleftharpoons$ CH$_3$COOC$_2$H$_5$(l) + H$_2$O(l)\n\nWhich of the following changes, whe"
+ },
+ {
+  "id": "2018_C_39",
+  "subject": "chemistry",
+  "stem": "What is the overall process that takes place at the cathode (negative electrode) in the electrolysis of dilute aqueous sodium sulfate?"
+ },
+ {
+  "id": "2018_C_40",
+  "subject": "chemistry",
+  "stem": "A mass spectrum of a sample of element X with atomic number 5 is shown.\n\nUsing the data, which row in the following table best describes the position of X in the Periodic Table and the relative atomic"
+ },
+ {
+  "id": "2018_C_41",
+  "subject": "chemistry",
+  "stem": "The gases nitrogen, oxygen and argon can be separated from liquefied air by fractional distillation. Given the data in the table, in which order would the gases be collected?\n\nnitrogen: mp −210°C, bp "
+ },
+ {
+  "id": "2018_C_42",
+  "subject": "chemistry",
+  "stem": "Concentrated aqueous sodium chloride was electrolysed. After a few minutes, the remaining electrolyte solution was tested with a pH probe at 25°C. The gases produced at the electrodes were collected a"
+ },
+ {
+  "id": "2018_C_43",
+  "subject": "chemistry",
+  "stem": "The following equations show the main reactions in a blast furnace:\n\nC + O$_2$ $\\rightarrow$ CO$_2$\nCO$_2$ + C $\\rightarrow$ 2CO\nFe$_2$O$_3$ + 3CO $\\rightarrow$ 2Fe + 3CO$_2$\nCaCO$_3$ $\\rightarrow$ Ca"
+ },
+ {
+  "id": "2018_C_44",
+  "subject": "chemistry",
+  "stem": "X, Y and Z have the same electron configuration. X is an atom, Y is a monatomic anion and Z is a monatomic cation.\n\nWhich of the following statements is always correct?"
+ },
+ {
+  "id": "2018_C_45",
+  "subject": "chemistry",
+  "stem": "In the Contact process, sulfur dioxide reacts with oxygen to make sulfur trioxide in a reversible reaction.\n\nSO$_2$(g) + $\\dfrac{1}{2}$O$_2$(g) $\\rightleftharpoons$ SO$_3$(g)\n\nWhen 5.00 mol of SO$_2$ "
+ },
+ {
+  "id": "2018_C_46",
+  "subject": "chemistry",
+  "stem": "The non-metallic element phosphorus forms two stable chlorides: PCl$_3$ (boiling point 76°C) and PCl$_5$ (boiling point 161°C).\n\nWhich of the following statements explain(s) the difference in boiling "
+ },
+ {
+  "id": "2018_C_47",
+  "subject": "chemistry",
+  "stem": "A student calculated the mass of anhydrous copper(II) sulfate (CuSO$_4$) required to make 250 cm$^3$ of an aqueous solution of concentration 0.200 mol dm$^{-3}$. However, the student mistakenly made t"
+ },
+ {
+  "id": "2018_C_48",
+  "subject": "chemistry",
+  "stem": "Bromine is an element in Group 17 of the Periodic Table.\n\nWhich of the following statements is/are correct about the element bromine?\n\n1 Bromine will oxidise chloride ions in aqueous solution to form "
+ },
+ {
+  "id": "2018_C_49",
+  "subject": "chemistry",
+  "stem": "Paper chromatography was used to separate three mixtures of amino acids. The mixtures were labelled P, Q and R.\n\nEach mixture contains some of the five amino acids in the following table. The R$_f$ va"
+ },
+ {
+  "id": "2018_C_50",
+  "subject": "chemistry",
+  "stem": "Dilute hydrochloric acid and magnesium were mixed and the total volume of gas released was measured over time.\n\nWhat is the average rate of reaction, in g s$^{-1}$, with respect to the magnesium over "
+ },
+ {
+  "id": "2018_C_51",
+  "subject": "chemistry",
+  "stem": "Copper can react with concentrated nitric acid to form the gas nitrogen monoxide.\n\n3Cu + $a$HNO$_3$ $\\rightarrow$ $b$Cu(NO$_3$)$_2$ + $c$H$_2$O + $d$NO\n\nWhat is the value of $a$ when the equation is b"
+ },
+ {
+  "id": "2018_C_52",
+  "subject": "chemistry",
+  "stem": "A small amount of a solid mixture, containing calcium carbonate and an inert substance, was added to 50.00 cm$^3$ dilute hydrochloric acid of concentration 0.1000 mol dm$^{-3}$.\n\nCaCO$_3$ + 2HCl $\\rig"
+ },
+ {
+  "id": "2018_C_53",
+  "subject": "chemistry",
+  "stem": "2.80 g of lithium metal is placed in a closed system with 1.20 dm$^3$ of pure oxygen gas (volume measured at room temperature and pressure).\n\nIf a complete reaction occurs between the lithium and the "
+ },
+ {
+  "id": "2018_C_54",
+  "subject": "chemistry",
+  "stem": "The following reaction between nitrogen oxide and oxygen releases 116 kJ of energy as heat for each mole of oxygen that reacts.\n\n2NO(g) + O$_2$(g) $\\rightleftharpoons$ 2NO$_2$(g)\n\nAn excess of NO and "
+ },
+ {
+  "id": "2018_D_55",
+  "subject": "biology",
+  "stem": "The graph shows how four variables change with the distance down a river, after a source of pollution flowed in.\n\nWhich indicator species could be expected to be found in large numbers at positions 1,"
+ },
+ {
+  "id": "2018_D_56",
+  "subject": "biology",
+  "stem": "Sickle cell anaemia is a recessive genetic condition that results in abnormally-shaped red blood cells due to the production of a faulty type of haemoglobin. Children born with sickle cell anaemia rar"
+ },
+ {
+  "id": "2018_D_57",
+  "subject": "biology",
+  "stem": "A student studied this photograph of part of an organ.\n\nThe student drew the following conclusions about the two cells labelled X and Y.\n\n1 Both cells X and Y are found in the same tissue.\n2 Both cell"
+ },
+ {
+  "id": "2018_D_58",
+  "subject": "biology",
+  "stem": "A student investigated the tadpole population in a large pond. A net with a rectangular opening measuring 0.1 m × 0.2 m was swept through the water for a fixed distance of 1 m. This was repeated 10 ti"
+ },
+ {
+  "id": "2018_D_59",
+  "subject": "biology",
+  "stem": "A breeding experiment was carried out using rats. A pair of rats has eight offspring per litter. The offspring breed freely amongst each other within the same generation. Each female is only allowed t"
+ },
+ {
+  "id": "2018_D_60",
+  "subject": "biology",
+  "stem": "The diagram shows four steps in the process of human sperm production. For each step only one complete division takes place.\n\nearly spermatogonium → (mitosis) → intermediate spermatogonium → (mitosis)"
+ },
+ {
+  "id": "2018_D_61",
+  "subject": "biology",
+  "stem": "Which of the following conditions is/are required by the cells near the tip of a plant shoot in order for the tip to grow towards light from one direction?\n\n1 sufficient glucose\n2 uneven distribution "
+ },
+ {
+  "id": "2018_D_62",
+  "subject": "biology",
+  "stem": "A cell from the epithelium of an animal was removed. The cytoplasm of this cell can be considered as a 2% sugar solution. The living cell was placed in a 4% sugar solution.\n\nWhich of the following sta"
+ },
+ {
+  "id": "2018_D_63",
+  "subject": "biology",
+  "stem": "A piece of DNA is made up of two complementary strands, each 25 bases long. 14% of the bases are adenine.\n\nWhich two statements are correct?\n\n1 Adenine and cytosine together make up 25 bases.\n2 Adenin"
+ },
+ {
+  "id": "2018_D_64",
+  "subject": "biology",
+  "stem": "In a laboratory, the activity of two lipase enzymes on the same type of lipid was studied. One lipase enzyme was produced from a mutation in the gene that coded for the original enzyme. The mutation o"
+ },
+ {
+  "id": "2018_D_65",
+  "subject": "biology",
+  "stem": "The family tree shows a family affected by a dominant genetic condition. All people who carry the mutation show symptoms of the condition.\n\nWhich of the following statements could explain the presence"
+ },
+ {
+  "id": "2018_D_66",
+  "subject": "biology",
+  "stem": "Dolly the sheep was born in 1996. She was unusual because she had no biological father. The diagram shows how she was produced.\n\nWhich of the following processes had to occur to produce Dolly?\n\n1 gene"
+ },
+ {
+  "id": "2018_D_67",
+  "subject": "biology",
+  "stem": "A student investigated the rate of oxygen bubble release from a pondweed plant at different temperatures. The rates are shown below, with two sections of the graph marked X and Y. In each investigatio"
+ },
+ {
+  "id": "2018_D_68",
+  "subject": "biology",
+  "stem": "The diagram below shows a circular piece of bacterial DNA called a plasmid that has been made recombinant by the insertion of a plant gene for herbicide resistance. The original plasmid contained a ge"
+ },
+ {
+  "id": "2018_D_69",
+  "subject": "biology",
+  "stem": "A student analysed a gene sequence that had been identified in four different types of organism. The gene codes for a functional protein. A section of the gene’s DNA is shown below:\n\nhuman: ACG CCT CG"
+ },
+ {
+  "id": "2018_D_70",
+  "subject": "biology",
+  "stem": "The graphs represent the changes in the mass of a healthy human body cell and in the mass of the DNA of that cell over time.\n\nUsing the graph, which of the following statements is/are correct?\n\n1 Mito"
+ },
+ {
+  "id": "2018_D_71",
+  "subject": "biology",
+  "stem": "Bt pesticide is used by farmers to kill insect pests. However, widespread use has resulted in the evolution of resistance to this pesticide. A recessive allele causes resistance.\n\nScientists have sugg"
+ },
+ {
+  "id": "2018_D_72",
+  "subject": "biology",
+  "stem": "A diploid plant cell divides by mitosis. After mitosis of this cell, a mutation occurs that changes the genotype of one of the daughter cells. This mutant daughter cell produces a non-functional enzym"
+ },
+ {
+  "id": "2018_E_73",
+  "subject": "advanced_math_physics",
+  "stem": "Curve C has equation $y = 9 - x^2$\n\nLine L has equation $y = 5$\n\nWhat is the area enclosed between C and L?"
+ },
+ {
+  "id": "2018_E_74",
+  "subject": "advanced_math_physics",
+  "stem": "An aircraft moves from rest with uniform acceleration along a horizontal runway. After travelling 1600 m it reaches a speed of 80 m s$^{-1}$.\n\nWhat is the acceleration of the aircraft?"
+ },
+ {
+  "id": "2018_E_75",
+  "subject": "advanced_math_physics",
+  "stem": "How many solutions of the equation $2\\sin^3\\theta = \\sin\\theta$ lie in the interval $-\\dfrac{\\pi}{2} \\leq \\theta \\leq \\pi$?"
+ },
+ {
+  "id": "2018_E_76",
+  "subject": "advanced_math_physics",
+  "stem": "The diagram represents a mass that is moving in a straight line at constant speed up a slope of constant gradient.\n\nWhich statement about the forces acting on the mass must be correct?"
+ },
+ {
+  "id": "2018_E_77",
+  "subject": "advanced_math_physics",
+  "stem": "The line $y = x + k$, where $k$ is a constant, is a tangent to the curve $y = 3x^2 - 2x + 1$\n\nWhat is the value of $k$?"
+ },
+ {
+  "id": "2018_E_78",
+  "subject": "advanced_math_physics",
+  "stem": "The diagram shows four objects W, X, Y and Z, of masses 3.0 kg, 4.0 kg, 6.0 kg and 2.0 kg respectively, connected by light, inextensible rods. The objects are pulled along a smooth, horizontal surface"
+ },
+ {
+  "id": "2018_E_79",
+  "subject": "advanced_math_physics",
+  "stem": "In a particular arithmetic progression:\n• the 13th term is six times the 1st term\n• the 11th term is 1 less than twice the 5th term\n\nWhat is the 3rd term of the progression?"
+ },
+ {
+  "id": "2018_E_80",
+  "subject": "advanced_math_physics",
+  "stem": "An object of mass 40 kg is placed on a uniform, horizontal plank of mass 10 kg between two supports X and Y as shown in the diagram. The object is placed 1.0 m from X and 1.0 m from the centre of the "
+ },
+ {
+  "id": "2018_E_81",
+  "subject": "advanced_math_physics",
+  "stem": "Evaluate $\\log_2\\!\\left(\\dfrac{5}{4}\\right) + \\log_2\\!\\left(\\dfrac{6}{5}\\right) + \\log_2\\!\\left(\\dfrac{7}{6}\\right) + \\cdots + \\log_2\\!\\left(\\dfrac{64}{63}\\right)$"
+ },
+ {
+  "id": "2018_E_82",
+  "subject": "advanced_math_physics",
+  "stem": "An object X of mass 2.0 kg is initially moving at a speed of 4.5 m s$^{-1}$ on a smooth, horizontal surface. A 5.0 N force is applied to X in the direction of its motion for 3.0 seconds. A short time "
+ },
+ {
+  "id": "2018_E_83",
+  "subject": "advanced_math_physics",
+  "stem": "Circle C has equation $(x + 3)^2 + (y - 2)^2 = 5$\n\nThe length of the tangent from the circle C to the point P is $5\\sqrt{3}$\n\nWhat is the shortest distance from P to C?"
+ },
+ {
+  "id": "2018_E_84",
+  "subject": "advanced_math_physics",
+  "stem": "Two solid spheres X and Y have masses $m$ and $2m$ respectively. They travel in opposite directions towards each other along the same line with speeds $v$ and $2v$ respectively and collide head on.\n\nT"
+ },
+ {
+  "id": "2018_E_85",
+  "subject": "advanced_math_physics",
+  "stem": "What is the coefficient of $x^3$ in the expansion of $(1 - 2x)^5(1 + 2x)^5$?"
+ },
+ {
+  "id": "2018_E_86",
+  "subject": "advanced_math_physics",
+  "stem": "A metal ball suspended from a steel cable is held at rest by a horizontal force P. The cable makes an angle of 30° to the vertical as shown in the diagram. The cable exerts a force T on the ball.\n\nWha"
+ },
+ {
+  "id": "2018_E_87",
+  "subject": "advanced_math_physics",
+  "stem": "Given that $\\displaystyle\\int_0^2 x^m\\,\\mathrm{d}x = \\dfrac{16}{7}$ and $\\displaystyle\\int_0^2 x^{m+1}\\,\\mathrm{d}x = \\dfrac{32}{9}$, what is the value of $m$?"
+ },
+ {
+  "id": "2018_E_88",
+  "subject": "advanced_math_physics",
+  "stem": "A pendulum bob of mass 10 g is suspended by a light, inextensible string of length 50 cm. The bob is released from rest at position X.\n\nWhat is the speed of the bob as it passes through position Y?\n\n("
+ },
+ {
+  "id": "2018_E_89",
+  "subject": "advanced_math_physics",
+  "stem": "The dimensions of a solid cuboid, in cm, are $x$, $2x$ and $y$.\n\nThe volume of the cuboid is 576 cm$^3$. At this volume, the surface area of the cuboid has its minimum value.\n\nWhat is the area, in cm$"
+ },
+ {
+  "id": "2018_E_90",
+  "subject": "advanced_math_physics",
+  "stem": "An object is thrown vertically upwards from ground level with an initial velocity of 40 m s$^{-1}$. 2.0 seconds later another object is released from a height above the ground and falls vertically fro"
+ },
+ {
+  "id": "2019_A_01",
+  "subject": "math",
+  "stem": "Evaluate $\\left(\\sqrt{7}+\\sqrt{3}\\right)^2 - \\left(\\sqrt{7}-\\sqrt{3}\\right)^2$"
+ },
+ {
+  "id": "2019_A_02",
+  "subject": "math",
+  "stem": "Find the complete set of values of $x$ which satisfy the inequality $\\dfrac{1}{2}(3x-2) - \\dfrac{2}{3}(x-4) < x$"
+ },
+ {
+  "id": "2019_A_03",
+  "subject": "math",
+  "stem": "The equation gives $y$ in terms of $x$: $y = 3 - 4\\left(1 - \\dfrac{x}{2}\\right)^2$. Which one of the following is a rearrangement for $x$ in terms of $y$?"
+ },
+ {
+  "id": "2019_A_04",
+  "subject": "math",
+  "stem": "The resistance to the motion of a car is directly proportional to the square of the speed of the car. The car increases its speed by 20%. What is the percentage increase in the resistance to the motio"
+ },
+ {
+  "id": "2019_A_05",
+  "subject": "math",
+  "stem": "The equation of a curve is $y = px^2 + qx$ where $p$ and $q$ are constants. The curve passes through the points $(2, 6)$ and $(4, -4)$. What is the value of $q - p$?"
+ },
+ {
+  "id": "2019_A_06",
+  "subject": "math",
+  "stem": "Which of the following is a simplification of $4 - \\dfrac{x(3x+1)}{x^2(3x^2-2x-1)}$?"
+ },
+ {
+  "id": "2019_A_07",
+  "subject": "math",
+  "stem": "The ball for a garden game is a solid sphere of volume 192 cm$^3$. For the children's version of the game the ball is a solid sphere made of the same material, but the radius is reduced by 25%. What i"
+ },
+ {
+  "id": "2019_A_08",
+  "subject": "math",
+  "stem": "The diagram shows a right-angled triangle, with sides of length $x+4$, $2x+2$ and $3x$, all in cm [diagram not to scale]. What is the area, in cm$^2$, of the triangle?"
+ },
+ {
+  "id": "2019_A_09",
+  "subject": "math",
+  "stem": "Given that $9^{2x-1} \\times \\dfrac{1}{27^x} = 81^x$, what is the value of $x$?"
+ },
+ {
+  "id": "2019_A_10",
+  "subject": "math",
+  "stem": "$PR$ and $QS$ are the diagonals of a rhombus $PQRS$. $PR = (3x+2)\\,\\text{cm}$, $QS = (8-2x)\\,\\text{cm}$. The area of $PQRS$ is 11 cm$^2$. What is the difference, in cm, between the two possible length"
+ },
+ {
+  "id": "2019_A_11",
+  "subject": "math",
+  "stem": "The diagram shows two congruent right-angled triangles $PQR$ and $TSR$ with right angles at $Q$ and $S$ respectively. $PQ = TS = 3\\,\\text{cm}$, $QR = SR = 4\\,\\text{cm}$. $PRT$ is a straight line. What"
+ },
+ {
+  "id": "2019_A_12",
+  "subject": "math",
+  "stem": "The total of three numbers $p$, $q$ and $r$ is 375. The ratio $p:q$ is $5:7$. The ratio $q:r$ is $4:11$. What is the value of $p + r$?"
+ },
+ {
+  "id": "2019_A_13",
+  "subject": "math",
+  "stem": "The straight line $P$ has equation $3y - 2x = 12$ and intercepts the $y$-axis at the point $(0, p)$. The straight line $Q$ is parallel to $P$, passes through the point $(6, -1)$ and intercepts the $y$"
+ },
+ {
+  "id": "2019_A_14",
+  "subject": "math",
+  "stem": "The vertices of a rectangle have coordinates: $P(4,5)$, $Q(4,8)$, $R(10,8)$, $S(10,5)$. $PQRS$ is transformed by a clockwise rotation of $90°$ about $P$ followed by a reflection in the $x$-axis. What "
+ },
+ {
+  "id": "2019_A_15",
+  "subject": "math",
+  "stem": "Box A contains exactly 10 balls, of which 6 are red and 4 are blue. Box B contains exactly 15 balls, of which 3 are red and 12 are blue. One of the two boxes is chosen at random by tossing two fair co"
+ },
+ {
+  "id": "2019_A_16",
+  "subject": "math",
+  "stem": "Three towns Ryeton, Tonbridge and Uphampton are represented on the diagram by the points labelled R, T and U respectively. The distance from Tonbridge to Ryeton is the same as the distance from Tonbri"
+ },
+ {
+  "id": "2019_A_17",
+  "subject": "math",
+  "stem": "A list of five numbers has mean $x$, median $y$ and range $z$. A sixth number is added to the list. This sixth number is greater than $x$. Which of the following statements must be true?\n1. The median"
+ },
+ {
+  "id": "2019_A_18",
+  "subject": "math",
+  "stem": "A solid pyramid has a square base of side length 12 cm and a vertical height of $h$ cm. The volume of the pyramid, in cm$^3$, is equal to the total surface area of the pyramid, in cm$^2$. What is the "
+ },
+ {
+  "id": "2019_B_19",
+  "subject": "physics",
+  "stem": "A transverse wave is travelling through a medium. The distance between successive wave peaks is 8.4 cm and the total distance travelled by a particle during one complete oscillation is 5.6 cm. What is"
+ },
+ {
+  "id": "2019_B_20",
+  "subject": "physics",
+  "stem": "A builder lifts bags of cement onto the back of a lorry. Each bag has a mass of 25 kg. It takes the builder 2.5 minutes to load ten bags. The bags are lifted through a height of 1.5 m. (gravitational "
+ },
+ {
+  "id": "2019_B_21",
+  "subject": "physics",
+  "stem": "The current-voltage graph for a diode is shown. The diode is connected in series with a resistor and a 6.0 V battery. The current in the circuit is 8.0 mA. What is the resistance of the resistor? (Ass"
+ },
+ {
+  "id": "2019_B_22",
+  "subject": "physics",
+  "stem": "Two electromagnetic waves P and Q travel in a vacuum and the ratio of their wavelengths is: $\\dfrac{\\text{wavelength of P}}{\\text{wavelength of Q}} = 1.0 \\times 10^8$. Which row shows the ratio of the"
+ },
+ {
+  "id": "2019_B_23",
+  "subject": "physics",
+  "stem": "A block of aluminium of mass 0.80 kg, initially at a temperature of $-21\\,°\\text{C}$, is supplied with 54 000 J of thermal energy. The specific heat capacity of aluminium is 900 J kg$^{-1}$ °C$^{-1}$."
+ },
+ {
+  "id": "2019_B_24",
+  "subject": "physics",
+  "stem": "A light spring is used to support a range of loads. The spring obeys Hooke's law. The system is in equilibrium. Which of the following statements is/are correct?\n1. The tension in the spring is direct"
+ },
+ {
+  "id": "2019_B_25",
+  "subject": "physics",
+  "stem": "A water-tight cylinder with a thin, freely moving piston contains $2.0 \\times 10^{-3}\\,\\text{m}^3$ of trapped air at atmospheric pressure of $1.0 \\times 10^5\\,\\text{Pa}$. When the cylinder is submerge"
+ },
+ {
+  "id": "2019_B_26",
+  "subject": "physics",
+  "stem": "The secondary coil of an ideal, 100% efficient transformer is connected to a resistor by cables of total resistance 1500 Ω. The current in the primary coil is 4.0 A. There are 240 turns in the primary"
+ },
+ {
+  "id": "2019_B_27",
+  "subject": "physics",
+  "stem": "Heat is supplied to an initially solid substance at a rate of 60 W. The graph shows the variation of the temperature of the substance with time. What is the mass of the substance? (specific latent hea"
+ },
+ {
+  "id": "2019_B_28",
+  "subject": "physics",
+  "stem": "Two tanks of water are connected by a solid cylindrical copper bar of length $l$ and diameter $d$. The bar is insulated. One tank contains water at 90 °C and the other at temperature $\\theta$. For whi"
+ },
+ {
+  "id": "2019_B_29",
+  "subject": "physics",
+  "stem": "A U-shaped permanent magnet rests on a balance. A straight, horizontal wire of length 5.0 cm is fixed in position between the poles of the magnet, perpendicular to the horizontal magnetic field. There"
+ },
+ {
+  "id": "2019_B_30",
+  "subject": "physics",
+  "stem": "The radioactive isotope X becomes the stable isotope Y after a succession of decays involving only alpha and beta ($\\beta^-$) particles. A total of seven particles are emitted and more are alpha parti"
+ },
+ {
+  "id": "2019_B_31",
+  "subject": "physics",
+  "stem": "The kinetic energy of an object of mass 4.0 kg, travelling in a straight line, increases from 32 J to 200 J in 3.0 seconds due to a constant resultant force. What is the value of this resultant force?"
+ },
+ {
+  "id": "2019_B_32",
+  "subject": "physics",
+  "stem": "In the following circuit, all five resistors have the same resistance. The reading on the voltmeter is 1.0 V. What is the voltage across the battery?"
+ },
+ {
+  "id": "2019_B_33",
+  "subject": "physics",
+  "stem": "Two hovercraft travel horizontally in opposite directions along the same straight line. Hovercraft M: mass 1000 kg, speed 20 m s$^{-1}$; hovercraft N: mass 2000 kg, speed 10 m s$^{-1}$. Horizontal res"
+ },
+ {
+  "id": "2019_B_34",
+  "subject": "physics",
+  "stem": "The graph shows how a car's velocity changes in 85 seconds. What proportion of the total distance is travelled at constant velocity?"
+ },
+ {
+  "id": "2019_B_35",
+  "subject": "physics",
+  "stem": "A block is 100 cm long with a square cross-section of side 22.0 cm and a cylindrical hole of diameter 14.0 cm in the middle. The density of the material is 0.100 g cm$^{-3}$. What is the mass of the b"
+ },
+ {
+  "id": "2019_B_36",
+  "subject": "physics",
+  "stem": "A sample initially contains equal numbers of atoms of radioactive isotope X and stable isotope Y. Isotope X has a half-life of 3 years and decays in a single stage to stable isotope Y. What is the rat"
+ },
+ {
+  "id": "2019_C_37",
+  "subject": "chemistry",
+  "stem": "HBr reacts with pent-2-ene in an addition reaction. Which of the following products is/are formed in the reaction?\n1. $\\text{CH}_3\\text{CHBrCH}_2\\text{CH}_2\\text{CH}_3$\n2. $\\text{CH}_2\\text{BrCH}_2\\te"
+ },
+ {
+  "id": "2019_C_38",
+  "subject": "chemistry",
+  "stem": "In which of the following solids does the bonding consist of single covalent bonds only?\n1. graphite\n2. $\\text{SiO}_2$\n3. $\\text{Al}_2\\text{O}_3$"
+ },
+ {
+  "id": "2019_C_39",
+  "subject": "chemistry",
+  "stem": "Four samples W, X, Y and Z were investigated using paper chromatography; the solvent front reached 10 cm. What is the $R_f$ value of the spot with the strongest attraction to the mobile phase relative"
+ },
+ {
+  "id": "2019_C_40",
+  "subject": "chemistry",
+  "stem": "The charts indicate the relative mass and percentage abundance for lithium atoms, carbon atoms and oxygen atoms found in a sample taken from a nuclear reactor. Using this data, what is the largest pos"
+ },
+ {
+  "id": "2019_C_41",
+  "subject": "chemistry",
+  "stem": "The following information about metals labelled P, Q, R and S is given.\n- Metals P and S can be extracted by electrolysis, but not by reaction with carbon.\n- Metals Q and R can be extracted by reactio"
+ },
+ {
+  "id": "2019_C_42",
+  "subject": "chemistry",
+  "stem": "A simple ion of an element with atomic number $x$ has a mass number of $(2x + 2)$. The ion has a charge of $-2$. How many protons, neutrons and electrons are present in this ion?"
+ },
+ {
+  "id": "2019_C_43",
+  "subject": "chemistry",
+  "stem": "A 116 g sample of an oxide of iron contains 84 g of iron. Which of the following is the empirical formula of this oxide of iron? ($A_r$ values: O = 16; Fe = 56)"
+ },
+ {
+  "id": "2019_C_44",
+  "subject": "chemistry",
+  "stem": "Which of the following chemical equations represent(s) a redox reaction?\n1. $2\\text{Cu}^{2+} + 4\\text{I}^- \\rightarrow 2\\text{CuI} + \\text{I}_2$\n2. $\\text{Al}^{3+} + 3\\text{e}^- \\rightarrow \\text{Al}$"
+ },
+ {
+  "id": "2019_C_45",
+  "subject": "chemistry",
+  "stem": "X is an anhydrous salt of iron containing one type of cation and one type of anion. An aqueous solution of X gives a white precipitate when aqueous barium chloride is added in the presence of hydrochl"
+ },
+ {
+  "id": "2019_C_46",
+  "subject": "chemistry",
+  "stem": "In the electrolysis of dilute sulfuric acid, hydrogen gas is formed at the cathode and oxygen gas is formed at the anode. If 100 g of hydrogen gas is formed, what mass of oxygen gas is also formed? ($"
+ },
+ {
+  "id": "2019_C_47",
+  "subject": "chemistry",
+  "stem": "0.005 mol of a chloride of element X was dissolved in water and then reacted with excess silver nitrate solution to form a precipitate of silver chloride, AgCl. The mass of the precipitate was 1.435 g"
+ },
+ {
+  "id": "2019_C_48",
+  "subject": "chemistry",
+  "stem": "A chemical equation that represents the reaction of phosphorus with concentrated nitric acid is: $\\text{P}_4 + w\\text{HNO}_3 + \\text{H}_2\\text{O} \\rightarrow x\\text{H}_3\\text{PO}_4 + y\\text{NO} + z\\te"
+ },
+ {
+  "id": "2019_C_49",
+  "subject": "chemistry",
+  "stem": "A 2.40 g lump of magnesium was added to 500 cm$^3$ of a 2.00 mol dm$^{-3}$ solution of HCl. The mass of hydrogen released was plotted against time, giving line 1 on the graph. ($A_r$ value: Mg = 24.0)"
+ },
+ {
+  "id": "2019_C_50",
+  "subject": "chemistry",
+  "stem": "A technician needs to separate three liquids (X, Y and Z) which have been accidentally mixed together. None of the liquids react with each other. X: bp 65 °C, density 0.79 g cm$^{-3}$; Y: bp 51 °C, de"
+ },
+ {
+  "id": "2019_C_51",
+  "subject": "chemistry",
+  "stem": "In each of the following procedures an excess of the metal is added to 1.0 dm$^3$ of a 1.0 mol dm$^{-3}$ solution of the acid: copper + sulfuric acid; iron + hydrochloric acid; magnesium + sulfuric ac"
+ },
+ {
+  "id": "2019_C_52",
+  "subject": "chemistry",
+  "stem": "3.4 g of an impure sample of silicon tetrachloride is reacted with water. The mixture is filtered and the solution made up to 250 cm$^3$. $\\text{SiCl}_4(l) + 2\\text{H}_2\\text{O}(l) \\rightarrow \\text{S"
+ },
+ {
+  "id": "2019_C_53",
+  "subject": "chemistry",
+  "stem": "The Haber process: $\\text{N}_2 + 3\\text{H}_2 \\rightarrow 2\\text{NH}_3$. What is the overall enthalpy change for the reaction? (Bond enthalpies: $\\text{N}\\equiv\\text{N}$ = 945 kJ mol$^{-1}$; H–H = 435 "
+ },
+ {
+  "id": "2019_C_54",
+  "subject": "chemistry",
+  "stem": "The diagram shows the electrolysis of molten lead(II) bromide, PbBr$_2$, using graphite electrodes. Which of the following statements about this electrolysis is/are correct?\n1. Lead is formed at the n"
+ },
+ {
+  "id": "2019_D_55",
+  "subject": "biology",
+  "stem": "Which of the following statements is/are correct for both bacterial cells and sperm cells?\n1. The cell can divide.\n2. The cell contains DNA.\n3. The cell has a cell wall.\n4. The cell has a nucleus.\n5. "
+ },
+ {
+  "id": "2019_D_56",
+  "subject": "biology",
+  "stem": "Which one of the following statements about cells or tissues is correct?"
+ },
+ {
+  "id": "2019_D_57",
+  "subject": "biology",
+  "stem": "The diagram represents a section of DNA with parts labelled 1, 2 and 3. What do the parts labelled 1, 2 and 3 represent, and what do 1 and 2 and 3 together form?"
+ },
+ {
+  "id": "2019_D_58",
+  "subject": "biology",
+  "stem": "Using the information in the table, which animal (A–F) is most at risk of extinction? A: restricted range, broad habitat tolerance, large population. B: extensive, broad, large. C: restricted, narrow,"
+ },
+ {
+  "id": "2019_D_59",
+  "subject": "biology",
+  "stem": "An ecologist used a 50 cm × 50 cm square quadrat to estimate the number of meadow buttercups in a field with area 50 m$^2$. The quadrat was placed randomly on ten occasions. The counts were: 3, 10, 0,"
+ },
+ {
+  "id": "2019_D_60",
+  "subject": "biology",
+  "stem": "The photomicrograph shows a section through the wall of a human bronchus. A student annotated two layers: one layer has goblet cells (synthesising and secreting protein in mucus) and ciliated cells; t"
+ },
+ {
+  "id": "2019_D_61",
+  "subject": "biology",
+  "stem": "A student investigated diffusion of an alkaline gas along a tube using damp litmus paper at 2 cm intervals, recording the time for each piece to change colour. The apparatus and results graph are show"
+ },
+ {
+  "id": "2019_D_62",
+  "subject": "biology",
+  "stem": "A bacterium was genetically modified by inserting a human gene into a plasmid. The gene contains a unique base sequence found in every allele. Assuming no mutations occur, how many copies of this base"
+ },
+ {
+  "id": "2019_D_63",
+  "subject": "biology",
+  "stem": "A student set up an experiment to measure the rate of photosynthesis using pond weed in pond water with a light source, collecting gas in a measuring cylinder. If plotted, which of the following varia"
+ },
+ {
+  "id": "2019_D_64",
+  "subject": "biology",
+  "stem": "Bacteria reproduce asexually by dividing into two by binary fission. Which of the following statements is/are correct about binary fission in bacteria?\n1. As it is a form of asexual reproduction, ther"
+ },
+ {
+  "id": "2019_D_65",
+  "subject": "biology",
+  "stem": "Which of the following may stay the same when a mutation occurs in a human gene that codes for a protein?\n1. the genotype of the organism's offspring\n2. the phenotype of the organism\n3. the sequence o"
+ },
+ {
+  "id": "2019_D_66",
+  "subject": "biology",
+  "stem": "A child is affected by a dominant genetic condition. All of his cells have the same genotype. The allele associated with this condition is not present in either of his parents. Which of the following "
+ },
+ {
+  "id": "2019_D_67",
+  "subject": "biology",
+  "stem": "Phosphatase enzymes break the bond between a phosphate group and the rest of a molecule. Phenolphthalein phosphate (PPP) is colourless and a substrate for phosphatase enzymes; the phosphate group can "
+ },
+ {
+  "id": "2019_D_68",
+  "subject": "biology",
+  "stem": "A gene found on the X chromosome in humans has two alleles, dominant and recessive. Individuals who have only recessive alleles have a condition that affects their eyesight. The inheritance of the con"
+ },
+ {
+  "id": "2019_D_69",
+  "subject": "biology",
+  "stem": "The graphs show the oxygen uptake before, during and after a period of strenuous physical exercise. Which shaded area correctly represents the additional oxygen taken in to repay the oxygen debt acqui"
+ },
+ {
+  "id": "2019_D_70",
+  "subject": "biology",
+  "stem": "An investigation was carried out using clones of one plant grown at four different temperatures for six months. The bar chart shows mean plant height after six months. Which of the following statement"
+ },
+ {
+  "id": "2019_D_71",
+  "subject": "biology",
+  "stem": "An investigation was carried out on the effect of substrate concentration on an enzyme-controlled reaction. Four different concentrations of substrate were tested (0.25, 0.50, 1.0 and 5.0 mmol dm$^{-3"
+ },
+ {
+  "id": "2019_D_72",
+  "subject": "biology",
+  "stem": "The sequence of a coding section of DNA is shown below:\n\nCTAGTCTGGTGGCTACGTCCTCCTCTACTATGGCTAGTCGTCTGGTGGCTA\n\nThe number of each type of amino acid coded for by this sequence is: Arg = 1, Leu = 6, Pro"
+ },
+ {
+  "id": "2019_E_73",
+  "subject": "math",
+  "stem": "Find the area of the shape bounded by the four lines: $2y + x = 4$, $x = -6$, $x = 0$, $y = 0$."
+ },
+ {
+  "id": "2019_E_74",
+  "subject": "physics",
+  "stem": "A hydroelectric power station uses water falling through a vertical height of 150 m to power generators. The efficiency is 90% and the output power is 1800 MW. (g = 10 N kg$^{-1}$; density of water = "
+ },
+ {
+  "id": "2019_E_75",
+  "subject": "math",
+  "stem": "The curve $y = x^3 + px^2 + qx + r$ has a local maximum when $x = -1$ and a local minimum when $x = 3$. What is the value of $p$?"
+ },
+ {
+  "id": "2019_E_76",
+  "subject": "physics",
+  "stem": "A car P of mass 1000 kg is travelling north at 30 m s$^{-1}$ along a straight, horizontal road when it hits another car Q directly ahead, travelling in the same direction. Car Q has a mass of 500 kg a"
+ },
+ {
+  "id": "2019_E_77",
+  "subject": "math",
+  "stem": "It is given that $7\\cos x + \\tan x \\sin x = 5$ where $0° < x < 90°$. What are the possible values of $\\tan x$?"
+ },
+ {
+  "id": "2019_E_78",
+  "subject": "physics",
+  "stem": "A metal wire of length 0.50 m has a uniform cross-sectional area of $4.0 \\times 10^{-7}\\,\\text{m}^2$. There is a current of 4.0 A in the wire. (resistivity = $1.6 \\times 10^{-7}\\,\\Omega\\,\\text{m}$) Wh"
+ },
+ {
+  "id": "2019_E_79",
+  "subject": "math",
+  "stem": "An equilateral triangle of side 8 cm is drawn so that its vertices lie on the circumference of a circle, as shown in the diagram. What is the total of the three areas shaded in the diagram, in cm$^2$?"
+ },
+ {
+  "id": "2019_E_80",
+  "subject": "physics",
+  "stem": "A uniform square trap door of side 0.80 m and mass 14 kg has a smooth hinge at one edge and is held open at an angle of 30° to the horizontal. It is supported by a single rigid rod placed so that it m"
+ },
+ {
+  "id": "2019_E_81",
+  "subject": "math",
+  "stem": "Which one of the following is the real solution of the equation $3 \\times 5^{2x+1} - 5^x - 2 = 0$?"
+ },
+ {
+  "id": "2019_E_82",
+  "subject": "physics",
+  "stem": "Two small loudspeakers are placed side by side 30 cm apart. They emit sound of frequency 400 Hz in phase with one another. A microphone is placed 40 cm directly in front of one of the two loudspeakers"
+ },
+ {
+  "id": "2019_E_83",
+  "subject": "math",
+  "stem": "For a particular function $f(x)$, it is given that: $\\displaystyle\\int_{-2}^{2} 2f(x)\\,\\mathrm{d}x + \\int_{2}^{4} f(x)\\,\\mathrm{d}x = 4$ and also: $\\displaystyle\\int_{-2}^{2} 5f(x)\\,\\mathrm{d}x - \\int"
+ },
+ {
+  "id": "2019_E_84",
+  "subject": "physics",
+  "stem": "An astronaut on the Moon throws a ball vertically upwards. The ball has a mass of 2.0 g and is thrown upwards at 80 m s$^{-1}$. What is the maximum height gained by the ball? (gravitational field stre"
+ },
+ {
+  "id": "2019_E_85",
+  "subject": "math",
+  "stem": "Given that $f(x) = \\displaystyle\\int_0^x (3 + 2t)^7\\,\\mathrm{d}t$, what is the coefficient of $x^4$ in the expansion of $f(x)$ in powers of $x$?"
+ },
+ {
+  "id": "2019_E_86",
+  "subject": "physics",
+  "stem": "A student has one 300 Ω resistor and another resistor of resistance $R$. The student plots a graph of current $I$ against potential difference $V$ for the 300 Ω resistor and then for both resistors co"
+ },
+ {
+  "id": "2019_E_87",
+  "subject": "math",
+  "stem": "The three internal angles in a triangle are $\\alpha$, $\\beta$ and $\\theta$, and $3\\tan\\alpha - 2\\sin\\beta = 2$, $5\\tan\\alpha + 6\\sin\\beta = 8$. What is the value of $\\theta$ in degrees?"
+ },
+ {
+  "id": "2019_E_88",
+  "subject": "physics",
+  "stem": "A light, vertical, copper wire of length 2.4 m and uniform cross-sectional area $2.0 \\times 10^{-6}\\,\\text{m}^2$ supports a load of mass 4.0 kg. The Young modulus of copper is $1.2 \\times 10^{11}\\,\\te"
+ },
+ {
+  "id": "2019_E_89",
+  "subject": "math",
+  "stem": "Find the complete set of values of $x$ for which $x^3 - 2x^2 - 7x - 4 > 0$."
+ },
+ {
+  "id": "2019_E_90",
+  "subject": "physics",
+  "stem": "The velocity-time graph is for an 80 kg person in a lift that is moving vertically upwards. What is the magnitude of the contact force between the person and the lift floor at the time corresponding t"
+ },
+ {
+  "id": "2021_A_01",
+  "subject": "math",
+  "stem": "Simplify fully $5xy^2 \\times (5x^2y)^{-3} \\times 5x^2y$ where $x$ and $y$ are positive."
+ },
+ {
+  "id": "2021_A_02",
+  "subject": "math",
+  "stem": "Which of the following is a simplification of $2 - \\dfrac{x+3x^2}{12x^2+x-1}$ where $x > 1$?"
+ },
+ {
+  "id": "2021_A_03",
+  "subject": "math",
+  "stem": "Which of the following is a rearrangement of $\\dfrac{p}{2} + \\dfrac{3}{q} = \\dfrac{4}{r}$ so that $q$ is the subject?"
+ },
+ {
+  "id": "2021_A_04",
+  "subject": "math",
+  "stem": "A circle has its centre at $(0, 0)$. What is the equation of the tangent that touches the circle at the point $(4, 3)$?"
+ },
+ {
+  "id": "2021_A_05",
+  "subject": "math",
+  "stem": "Two solid cylinders, P and Q, are shown, where $x > y$.\n\nCylinder P has diameter $x$ and height $y$.\n\nCylinder Q has diameter $y$ and height $x$.\n\nWhat is the positive difference between the total sur"
+ },
+ {
+  "id": "2021_A_06",
+  "subject": "math",
+  "stem": "Given that $8^x + 27^x = \\dfrac{13}{36}$ and $8^x - 27^x = \\dfrac{5}{36}$, what is the value of $x$?"
+ },
+ {
+  "id": "2021_A_07",
+  "subject": "math",
+  "stem": "The price of item P is reduced by 10%. The next day, the new price is increased by 10%.\n\nThe price of item Q is increased by 10%. The next day, the new price is reduced by 10%.\n\nHow does the final pri"
+ },
+ {
+  "id": "2021_A_08",
+  "subject": "math",
+  "stem": "Here is a pattern of numbers:\n\n$$\\begin{array}{ccccccc}\n & & & 1 & & & \\\\\\\\\n & & 2 & 3 & 4 & & \\\\\\\\\n & 5 & 6 & 7 & 8 & 9 & \\\\\\\\\n10 & 11 & 12 & 13 & 14 & 15 & 16\n\\end{array}$$\n\nThe pattern of numbers i"
+ },
+ {
+  "id": "2021_A_09",
+  "subject": "math",
+  "stem": "$SQT$ is a right-angled triangle with the right angle at $Q$.\n\nThe point $R$ is on $SQ$ such that $SR:RQ = 1:3$\n\n$QRP$ is a right-angled triangle with the right angle at $Q$.\n\n$PR = ST = 8$ cm,  $QT ="
+ },
+ {
+  "id": "2021_A_10",
+  "subject": "math",
+  "stem": "Pat and Alex have a combined total of £63.\n\nThe ratio of Pat's money to Alex's money is $5:2$\n\nThey each spend an equal amount on sweets.\n\nThe ratio of Pat's money to Alex's money is now $3:1$\n\nHow mu"
+ },
+ {
+  "id": "2021_A_11",
+  "subject": "math",
+  "stem": "The curve with equation $y = x^2 - 4x + 5$ meets the straight line with equation $y = 2x + c$ at two points, which have $x$-coordinates $p$ and $q$, where $q > p$.\n\nGiven that $q - p = 8$, what is the"
+ },
+ {
+  "id": "2021_A_12",
+  "subject": "math",
+  "stem": "An online company sells storage containers.\n\nThe following items are available:\n\n| capacity of container | number available |\n|---|---|\n| 2 litres | 2 |\n| 3 litres | 3 |\n| 7 litres | 4 |\n| 8 litres | "
+ },
+ {
+  "id": "2021_A_13",
+  "subject": "math",
+  "stem": "Given that\n\n$$y = \\frac{\\sin 60^\\circ - 1}{\\cos 60^\\circ}$$\n\nwhat is the value of $y^3$?"
+ },
+ {
+  "id": "2021_A_14",
+  "subject": "math",
+  "stem": "$P$, $Q$ and $R$ are points on the circumference of a circle with centre $O$ as shown in the diagram.\n\n[diagram not to scale]\n\nAngle $PQR = 140°$\n\n$PR = 7$ cm\n\nWhich of the following expressions gives"
+ },
+ {
+  "id": "2021_A_15",
+  "subject": "math",
+  "stem": "Charlie has a bowl containing red sweets and green sweets only. The sweets are identical in all respects except colour.\n\nThere are nine sweets in total in the bowl.\n\nCharlie eats two sweets from the b"
+ },
+ {
+  "id": "2021_A_16",
+  "subject": "math",
+  "stem": "The following right-angled triangles have the same hypotenuse length.\n\n[diagram not to scale]\n\nWhich of the following is a correct expression for $y$ in terms of $x$?"
+ },
+ {
+  "id": "2021_A_17",
+  "subject": "math",
+  "stem": "The greatest diagonal distance between the two vertices of a cuboid, as shown in the diagram, is $\\sqrt{77}$ cm.\n\nA similar cuboid has all its lengths exactly half the lengths of the original cuboid.\n"
+ },
+ {
+  "id": "2021_A_18",
+  "subject": "math",
+  "stem": "Alex, Cameron and Sam are all taking part in a 400 m race.\n\nThey are each running at a different constant speed.\n\nAlex is running 12% faster than Cameron, whilst Sam is running 2% slower than Cameron."
+ },
+ {
+  "id": "2021_A_19",
+  "subject": "math",
+  "stem": "A car journey is $m$ miles long.\n\nOne kilometre is equivalent to $x$ miles.\n\nThe car uses one litre of fuel to travel a distance of $f$ kilometres.\n\nFuel for the car costs $p$ pence per litre.\n\nWhich "
+ },
+ {
+  "id": "2021_A_20",
+  "subject": "math",
+  "stem": "How many solutions are there to the equation\n\n$$\\tan x = 100x$$\n\nwhere $-360 \\leq x \\leq 360$?"
+ },
+ {
+  "id": "2021_B_21",
+  "subject": "physics",
+  "stem": "A resistor has a constant voltage of 9.00 V across it. \n\n A total charge of 180 C passes through the resistor in 4.00 minutes. \n\n What is the power dissipated in the resistor?"
+ },
+ {
+  "id": "2021_B_22",
+  "subject": "physics",
+  "stem": "Air is trapped in a cylinder by a piston. The density of the air in the cylinder is ρ . trapped air The piston is moved so that the pressure of the trapped air increases by 20%. The temperature of the"
+ },
+ {
+  "id": "2021_B_23",
+  "subject": "physics",
+  "stem": "A non-ideal transformer has 100 turns on the primary coil and 25 turns on the secondary coil. \n\n It is provided with 3.0 kW of electrical power at a current of 12.5 A. \n\n The voltage output is the sam"
+ },
+ {
+  "id": "2021_B_24",
+  "subject": "physics",
+  "stem": "A car of mass 1400 kg is towing a caravan of mass 1000 kg along a straight horizontal section of road at a constant speed. \n\n The driving force from the engine is increased by 3000 N, causing the car "
+ },
+ {
+  "id": "2021_B_25",
+  "subject": "physics",
+  "stem": "A star is moving away from a space telescope positioned above the Earth. The star emits light of frequency f and wavelength λ at the speed of light c . \n\n This light travels towards the space telescop"
+ },
+ {
+  "id": "2021_B_26",
+  "subject": "physics",
+  "stem": "Q is an element with several isotopes. The nuclide Q ) ( - x x contains 6 neutrons more than the nuclide Q ) ( + x x . Another isotope of Q is the nuclide Q ) ( + x x . How many neutrons does the nucl"
+ },
+ {
+  "id": "2021_B_27",
+  "subject": "physics",
+  "stem": "A light spring has an uncompressed length of 0.10 m. When an object of mass 0.5 kg rests in equilibrium on top of the spring, the length of the spring reduces to 0.08 m as shown. 0.10 m 0.08 m What is"
+ },
+ {
+  "id": "2021_B_28",
+  "subject": "physics",
+  "stem": "A set of decorative lights consists of 20 lamps connected in series to a dc supply of constant voltage. \n\n The total power transferred by all the lamps is P. \n\n The set is designed so that if one of t"
+ },
+ {
+  "id": "2021_B_29",
+  "subject": "physics",
+  "stem": "A train accelerates from rest along a straight, horizontal section of track. \n\n The force exerted on the train due to its motors is constant and there is a constant friction force of 1.8 \\times 107 N."
+ },
+ {
+  "id": "2021_B_30",
+  "subject": "physics",
+  "stem": "A ship travels into a wave that is travelling in the opposite direction to the ship. \n\n The ship has a horizontal speed of 8.0 m s-1. The speed of the wave is 3.0 m s-1. \n\n The front of the ship rises"
+ },
+ {
+  "id": "2021_B_31",
+  "subject": "physics",
+  "stem": "A 6.0 V battery is connected to an 8.0 Ω resistor and a filament lamp as shown in the circuit diagram. 6.0 V 8.0 Ω"
+ },
+ {
+  "id": "2021_B_32",
+  "subject": "physics",
+  "stem": "A uniform, horizontal magnetic field has magnetic field strength 0.60 T and a direction from west to east. \n\n A horizontal wire is placed in a north-south direction, so that it is at 90° to the magnet"
+ },
+ {
+  "id": "2021_B_33",
+  "subject": "physics",
+  "stem": "The wavelength range of visible light is 400-700 nm. \n\n Light with a frequency of 6.0 \\times 1014 Hz is green. \n\n Microwaves used in cooking have a wavelength of 12 cm. \n\n Which of the following state"
+ },
+ {
+  "id": "2021_B_34",
+  "subject": "physics",
+  "stem": "There is a high-speed straight railway line between two cities that are 60 km apart. The train stops at both cities. \n\n The train accelerates at a uniform rate of 1.5 m s-2 to a maximum speed of 120 m"
+ },
+ {
+  "id": "2021_B_35",
+  "subject": "physics",
+  "stem": "A metal block has mass M. \n\n Heat is transferred to the block at a constant rate P. \n\n The graph shows how the change in temperature ∆T of the block from its initial temperature varies with time t . ∆"
+ },
+ {
+  "id": "2021_B_36",
+  "subject": "physics",
+  "stem": "A skydiver of mass 80 kg is accelerating vertically downwards through the air. At one instant in time the skydiver has a speed of 5.0 m s-1. After travelling a further distance of 20 m downwards the s"
+ },
+ {
+  "id": "2021_B_37",
+  "subject": "physics",
+  "stem": "A radioactive nuclide X decays in a single stage to a stable nuclide R. \n\n A radioactive nuclide Y decays in a single stage to a stable nuclide S. \n\n When a rock formed it contained equal numbers of a"
+ },
+ {
+  "id": "2021_B_38",
+  "subject": "physics",
+  "stem": "A beaker containing 180 g of water at 25 °C has a 20 g ice cube at 0 °C added to it. \n\n No heat is transferred between the water and the surroundings (including the beaker). \n\n What is the final tempe"
+ },
+ {
+  "id": "2021_B_39",
+  "subject": "physics",
+  "stem": "Liquid X has density 0.80 g cm-3 and liquid Y has density 1.0 g cm-3. \n\n 80 cm3 of liquid X and 100 cm3 of liquid Y are poured into a cylindrical container and allowed to settle. The two liquids do no"
+ },
+ {
+  "id": "2021_B_40",
+  "subject": "physics",
+  "stem": "A pulse of ultrasound travels from one end of a solid uniform rod of length L, starting at time t = 0. \n\n The pulse is partially reflected by a crack in the rod and partially by the far end of the rod"
+ },
+ {
+  "id": "2021_C_41",
+  "subject": "chemistry",
+  "stem": "The following equations represent the reactions of four metals M, Q, R and T: M(s) + HCl(aq) \\rightarrow no reaction \n\n R(s) + TSO4(aq) \\rightarrow RSO4(aq) + T(s) \n\n M(s) + QNO3(aq) \\rightarrow MNO3("
+ },
+ {
+  "id": "2021_C_42",
+  "subject": "chemistry",
+  "stem": "Consider the following three ions of calcium observed in mass spectrometry: 40Ca2+ 42Ca2+ 43Ca+ Which of the following statements is/are correct? \n\n All three ions have the electron configuration 2,8,"
+ },
+ {
+  "id": "2021_C_43",
+  "subject": "chemistry",
+  "stem": "The relative isotopic abundances of a sample of magnesium are shown in the table. isotope percentage abundance 24Mg 25Mg 26Mg \n\n What is the relative atomic mass (Ar) of the magnesium?"
+ },
+ {
+  "id": "2021_C_44",
+  "subject": "chemistry",
+  "stem": "A portion of the Periodic Table is given:"
+ },
+ {
+  "id": "2021_C_45",
+  "subject": "chemistry",
+  "stem": "1.0 mol dm-3 hydrochloric acid was slowly added from a burette into an insulated flask containing 50 cm3 of aqueous sodium hydroxide. The flask was gently swirled and the temperature of the resulting "
+ },
+ {
+  "id": "2021_C_46",
+  "subject": "chemistry",
+  "stem": "Which one of the following represents the repeating unit of poly(pent-2-ene)?"
+ },
+ {
+  "id": "2021_C_47",
+  "subject": "chemistry",
+  "stem": "X is a gaseous element. X can react explosively with hydrogen to produce a single product. When dissolved in water, this product forms an acidic aqueous solution Y. When aqueous silver nitrate is adde"
+ },
+ {
+  "id": "2021_C_48",
+  "subject": "chemistry",
+  "stem": "Some students were trying to assign oxidation numbers to each of the four sulfur atoms in the tetrathionate ion, S4O6 2-. \n\n Which of the following lists gives the possible oxidation states of the fou"
+ },
+ {
+  "id": "2021_C_49",
+  "subject": "chemistry",
+  "stem": "The table shows the reagents in three organic reactions. \n\n Which of the rows correctly show(s) the product(s) obtained from the specified reactants? \n\n reactants product(s) CH3CH=CH2 and HBr 1,2-dibr"
+ },
+ {
+  "id": "2021_C_50",
+  "subject": "chemistry",
+  "stem": "Chlorine gas reacts with hot concentrated aqueous sodium hydroxide to form sodium chloride, sodium chlorate(V) and water. \n\n The unbalanced ionic equation for this reaction is: - + y H2O \n\n What is th"
+ },
+ {
+  "id": "2021_C_51",
+  "subject": "chemistry",
+  "stem": "An experiment was carried out to separate the four amino acids present in a mixture of amino acids. \n\n A spot of this mixture was placed on chromatography paper. The bottom of the paper was placed in "
+ },
+ {
+  "id": "2021_C_52",
+  "subject": "chemistry",
+  "stem": "A reaction between copper and nitric acid produces a blue solution of copper(II) nitrate, water and substance X only. \n\n Substance X does not contain copper or hydrogen. \n\n The balanced equation for t"
+ },
+ {
+  "id": "2021_C_53",
+  "subject": "chemistry",
+  "stem": "Ethanedioic acid, (COOH)2, is a weak diprotic acid. \n\n What is the minimum volume of a 2.50 mol dm-3 solution of ethanedioic acid required to neutralise 25.0 cm3 of 2.00 mol dm-3 sodium hydroxide solu"
+ },
+ {
+  "id": "2021_C_54",
+  "subject": "chemistry",
+  "stem": "Propene burns in air. For each mole of propene burned, 2000 kJ of heat is released. \n\n 2.10 g of propene is burned to heat a 1000 g sample of olive oil. \n\n The olive oil has an initial temperature of "
+ },
+ {
+  "id": "2021_C_55",
+  "subject": "chemistry",
+  "stem": "What is the calculated energy change for the following reaction using appropriate values from the data provided? CH4(g) + 2H2O(g) \\rightarrow CO2(g) + 4H2(g) bond bond energy / kJ mol-1 H - H 440 O - "
+ },
+ {
+  "id": "2021_C_56",
+  "subject": "chemistry",
+  "stem": "The balanced equation for an oxidation of ammonia is: 4NH3(g) + 5O2(g) \\rightarrow 4NO(g) + 6H2O(g) \n\n 50.0 dm3 of ammonia and 50.0 dm3 of oxygen, both at 850 °C and 1 atmosphere pressure, are mixed a"
+ },
+ {
+  "id": "2021_C_57",
+  "subject": "chemistry",
+  "stem": "The electrolysis of molten potassium chloride in an inert atmosphere produces potassium at the negative electrode and chlorine at the positive electrode. \n\n The electrolysis of aqueous copper(II) sulf"
+ },
+ {
+  "id": "2021_C_58",
+  "subject": "chemistry",
+  "stem": "0.500 g of magnesium (an excess) was added to dilute hydrochloric acid. \n\n The following graph shows the total volume of the gas released over time as the reaction progresses. All volumes were measure"
+ },
+ {
+  "id": "2021_C_59",
+  "subject": "chemistry",
+  "stem": "A mixture of both sodium nitrate and barium bromide solids, with a combined mass of 6.36 g, was stirred into water and completely dissolved. \n\n An excess of aqueous silver nitrate was added and a prec"
+ },
+ {
+  "id": "2021_C_60",
+  "subject": "chemistry",
+  "stem": "A spoonful of magnesium carbonate powder was added to excess hydrochloric acid in an open conical flask on an electronic balance. MgCO3(s) + 2HCl(aq) \\rightarrow MgCl 2(aq) + CO2(g) + H2O(l) \n\n The ma"
+ },
+ {
+  "id": "2021_D_61",
+  "subject": "biology",
+  "stem": "A selection pressure is a biological or physical factor in an environment that may result in evolution. \n\n Which of the following situations result in selection pressures on one or more organisms? \n\n "
+ },
+ {
+  "id": "2021_D_62",
+  "subject": "biology",
+  "stem": "A particular cell has the following features: \n\n • a cell wall • a cell membrane • no mitochondria \n\n Which of the following statements about this cell is correct?"
+ },
+ {
+  "id": "2021_D_63",
+  "subject": "biology",
+  "stem": "A cell is studied. The graph shows the concentration of a substance at different distances from the cell membrane. \n\n The concentrations shown are maintained over time. cell membrane concentration of "
+ },
+ {
+  "id": "2021_D_64",
+  "subject": "biology",
+  "stem": "The diagram shows some of the ways in which glucose can be added to or removed from blood plasma in humans. glycogen in glycogen in glucose in blood plasma muscles liver \n\n Which hormones stimulate th"
+ },
+ {
+  "id": "2021_D_65",
+  "subject": "biology",
+  "stem": "The diagram shows two gametes, gamete P and gamete Q, fusing to form cell R in a healthy human. R divides to form two cells, S and T. \n\n S and T grow into two separate individuals. P Q R S T Which of "
+ },
+ {
+  "id": "2021_D_66",
+  "subject": "biology",
+  "stem": "The graph shows changes in population size (number of individuals) of a species of tortoise over the last century. These tortoises are only found on one small island in the Galapagos. Z population 160"
+ },
+ {
+  "id": "2021_D_67",
+  "subject": "biology",
+  "stem": "An enzyme-catalysed reaction was studied and the mass of product formed was measured over time. \n\n The results are shown in the graph. total mass of product formed / g time / s Which of the following "
+ },
+ {
+  "id": "2021_D_68",
+  "subject": "biology",
+  "stem": "A person ran on a treadmill for 360 seconds. Their rates of aerobic and anaerobic respiration were measured at the start and at the end of the time. The table shows the results. time = 0 seconds time "
+ },
+ {
+  "id": "2021_D_69",
+  "subject": "biology",
+  "stem": "Coat colour variation in a particular population of mice is only affected by one gene with two alleles, R and r. This gene is not on a sex chromosome. \n\n Heterozygous mice have yellow fur. Embryos tha"
+ },
+ {
+  "id": "2021_D_70",
+  "subject": "biology",
+  "stem": "One strand of a section of DNA has the following sequence of bases: AATCGGTCTTGCGGCCAAGGCCCTT \n\n The complementary strand is not shown. \n\n The charts show the proportions of the four bases A, C, G and"
+ },
+ {
+  "id": "2021_D_71",
+  "subject": "biology",
+  "stem": "Two identical plant cells were removed from a leaf. One was placed in a concentrated sugar solution and the other was placed in distilled water, and both were left for 2 hours. \n\n All other factors we"
+ },
+ {
+  "id": "2021_D_72",
+  "subject": "biology",
+  "stem": "The diagram shows some chemical processes involved in the carbon cycle. Three of these multi-stage processes are labelled P, Q and R. R plants Q bacteria CO2 in air animals P \n\n Which of the following"
+ },
+ {
+  "id": "2021_D_73",
+  "subject": "biology",
+  "stem": "Two different cells, cell L and cell M, were studied using a microscope and then drawn. The drawings are not shown. \n\n Some of the data collected is shown in the table. cell L cell M actual maximum le"
+ },
+ {
+  "id": "2021_D_74",
+  "subject": "biology",
+  "stem": "The pedigree diagram shows the inheritance of a phenotypic feature caused by a recessive allele. Key affected male affected female unaffected male unaffected female ? \n\n What is the probability that i"
+ },
+ {
+  "id": "2021_D_75",
+  "subject": "biology",
+  "stem": "The diagrams show the daughter cells produced when three different stem cells divide. Key stem cell specialised cell stem cell 1 stem cell 2 stem cell 3 Which of the following statements is correct?"
+ },
+ {
+  "id": "2021_D_76",
+  "subject": "biology",
+  "stem": "A fungus feeds by releasing amylase onto starchy food. The soluble products of the breakdown of starch are absorbed by the fungus. \n\n Test tubes were set up containing a mixture of starch solution and"
+ },
+ {
+  "id": "2021_D_77",
+  "subject": "biology",
+  "stem": "Red blood cells are produced by stem cells in the bone marrow. \n\n A 1 mm3 sample of blood from a healthy person was found to contain 4 \\times 106 red blood cells. \n\n The person has a consistent averag"
+ },
+ {
+  "id": "2021_D_78",
+  "subject": "biology",
+  "stem": "The diagram shows the life cycle of one species of ant, in which males are haploid and females are diploid. S P egg adult female adult male R Q sperm zygote Which of the letters on the diagram represe"
+ },
+ {
+  "id": "2021_D_79",
+  "subject": "biology",
+  "stem": "A student compared the properties of different cells from one healthy human. \n\n Which of the following statements is/are correct? \n\n (Assume that no mutations occur.) \n\n A cheek cell contains the same"
+ },
+ {
+  "id": "2021_D_80",
+  "subject": "biology",
+  "stem": "The kite diagram shows the distribution of dandelions and daisies along a transect in a field. \n\n A quadrat with sides of 0.5 m was used to collect the data. \n\n Each square on the vertical axis repres"
+ }
+]

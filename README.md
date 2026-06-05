@@ -10,14 +10,13 @@ OxAI generates NSAA-style multiple-choice questions using a model trained on a d
 * Control question subject, topic, and difficulty
 * Retrieve similar examples from the training dataset for style consistency
 * Export questions as structured JSON
-* Support for LoRA fine-tuned adapters
+* Support for LoRA fine-tuned adapter
 
 ## Installation
 
 ```bash
-pip install torch transformers peft
+pip install -r requirements.txt
 ```
-
 ## Usage
 
 ### Web UI
@@ -27,16 +26,6 @@ Launch the UI and generate questions interactively or browse the training data.
 ### Command Line
 
 Generate a question directly from the terminal:
-
-```bash
-python generate_question.py \
-  --base-model Qwen/Qwen2.5-7B-Instruct \
-  --subject Physics \
-  --topic Mechanics \
-  --difficulty 3
-```
-
-### Using a Fine-Tuned Adapter
 
 ```bash
 python generate_question.py \
@@ -52,7 +41,7 @@ python generate_question.py \
 | Parameter          | Description                                    |
 | ------------------ | ---------------------------------------------- |
 | `--base-model`     | Base language model to use                     |
-| `--adapter-dir`    | Optional LoRA adapter checkpoint               |
+| `--adapter-dir`    | LoRA adapter checkpoint               |
 | `--subject`        | Subject area (e.g. Physics, Mathematics)       |
 | `--topic`          | Topic within the subject                       |
 | `--difficulty`     | Target difficulty level                        |

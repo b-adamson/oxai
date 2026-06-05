@@ -1,66 +1,46 @@
 # OxAI
 
-OxAI generates NSAA-style multiple-choice questions using a model trained on a dataset of over **500 historical NSAA questions**.
+Generate NSAA-style multiple-choice questions using a model trained on 500+ historical NSAA questions.
 
-> **Version:** v0.0.1
+> Version: v0.0.1
+
+## Run
+
+### Backend
+
+Start the API:
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn app:app --host 127.0.0.1 --port 8000
+```
+
+### Frontend
+
+Install frontend dependencies:
+
+```bash
+cd frontend
+npm install
+```
+
+Start the frontend:
+
+```bash
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
 
 ## Features
 
-* Generate new NSAA-style multiple-choice questions
-* Control question subject, topic, and difficulty
-* Retrieve similar examples from the training dataset for style consistency
-* Export questions as structured JSON
-* Support for LoRA fine-tuned adapter
-
-## Installation
-
-```bash
-pip install -r requirements.txt
-```
-## Usage
-
-### Web UI
-
-Launch the UI and generate questions interactively or browse the training data.
-
-### Command Line
-
-Generate a question directly from the terminal:
-
-```bash
-python generate_question.py \
-  --base-model Qwen/Qwen2.5-7B-Instruct \
-  --adapter-dir checkpoints/lora \
-  --subject Physics \
-  --topic Mechanics \
-  --difficulty 3
-```
-
-## Parameters
-
-| Parameter          | Description                                    |
-| ------------------ | ---------------------------------------------- |
-| `--base-model`     | Base language model to use                     |
-| `--adapter-dir`    | LoRA adapter checkpoint               |
-| `--subject`        | Subject area (e.g. Physics, Mathematics)       |
-| `--topic`          | Topic within the subject                       |
-| `--difficulty`     | Target difficulty level                        |
-| `--examples`       | Number of retrieved examples used in prompting |
-| `--out`            | Output file location                           |
-| `--max-new-tokens` | Maximum generation length                      |
-
-## Output
-
-Generated questions are written as structured JSON containing:
-
-* Question metadata
-* Subject and topic information
-* Question stem
-* Answer options
-* Validation fields
-* Generation metadata
-
-## Project Status
-
-OxAI is currently an early-stage prototype and remains under active development. Generated questions should be reviewed before use in teaching, revision materials, or assessments.
-
+* Generate NSAA-style multiple-choice questions
+* Select subject, topic, and difficulty
+* Retrieve similar training examples
+* Export questions as JSON
+* LoRA adapter support

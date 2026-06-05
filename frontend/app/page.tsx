@@ -210,6 +210,7 @@ export default function Home() {
   const [solutionError, setSolutionError] = useState("");
   const [sessionChat, setSessionChat] = useState<ChatMessage[]>([]);
   const [recentSessions, setRecentSessions] = useState<QuestionRecord[]>([]);
+  const [genArchetype, setGenArchetype] = useState("");
 
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [mathJaxReady, setMathJaxReady] = useState(false);
@@ -444,6 +445,7 @@ export default function Home() {
         body: JSON.stringify({
           subject: genSubject,
           topic: genTopic || null,
+          archetype: genArchetype || null,
           difficulty: genDifficulty,
           want_diagram: genForceDiagram,
           force_diagram: genForceDiagram,

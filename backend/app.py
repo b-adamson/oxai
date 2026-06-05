@@ -4,7 +4,7 @@ import json
 import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
-from typing import Optional
+from typing import Any, Dict, List, Optional
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
@@ -14,7 +14,7 @@ from pydantic import BaseModel, Field
 
 from core.ask_tutor import TutorService, TutorSettings
 from core.generate_hint import HintGenerationService, HintSettings
-from core.generate_question import GenerationSettings, QuestionGenerationService
+from core.generate_question import GenerationSettings, QuestionGenerationService, load_questions
 from core.generate_solution import SolutionGenerationService, SolutionSettings
 
 load_dotenv()
@@ -44,6 +44,7 @@ class GenerateRequest(BaseModel):
     want_solution: bool = True
     want_diagram: bool = False
     force_diagram: bool = False
+    archetype: Optional[str] = None
 
 
 class HintOption(BaseModel):
@@ -96,6 +97,31 @@ class SolutionRequest(BaseModel):
     subtopic: Optional[str] = None
     verified_answer_label: str = Field(..., min_length=1)
     verified_answer_text: Optional[str] = None
+
+
+class SimilarOption(BaseModel):
+    label: str
+    text: str
+
+
+class GenerateSimilarRequest(BaseModel):
+    original_question_id: str
+    stem: str = Field(..., min_length=1)
+    options: list[SimilarOption] = Field(default_factory=list)
+    subject: str = Field(..., min_length=1)
+    topic: Optional[str] = None
+    subtopic: Optional[str] = None
+    difficulty: int = Field(2, ge=1, le=5)
+    want_solution: bool = True
+    want_diagram: bool = False
+
+
+class BankQueryRequest(BaseModel):
+    subject: Optional[str] = None
+    topic: Optional[str] = None
+    difficulty: Optional[int] = Field(None, ge=1, le=5)
+    limit: int = Field(20, ge=1, le=100)
+    exclude_ids: list[str] = Field(default_factory=list)
 
 
 def paper_id_from_file(file_path: str) -> str:
@@ -183,6 +209,7 @@ def generate_question_endpoint(req: GenerateRequest):
             want_solution=req.want_solution,
             want_diagram=req.want_diagram,
             force_diagram=req.force_diagram,
+            archetype=req.archetype,
         )
         return question
     except HTTPException:
@@ -275,3 +302,133 @@ def get_paper(paper_id: str):
         raise HTTPException(status_code=500, detail=f'Paper file is invalid JSON: {exc}') from exc
 
     return {'paper': paper, 'meta': paper_meta}
+
+
+@app.post('/generate-similar')
+def generate_similar_endpoint(req: GenerateSimilarRequest):
+    """Generate a question similar to an existing one — same concept, different surface form."""
+    try:
+        service: QuestionGenerationService = app.state.question_service
+
+        options_text = '\n'.join(f'{o.label}. {o.text}' for o in req.options)
+        similar_context = (
+            'IMPORTANT: Generate a question that tests the SAME underlying concept as the reference question below, '
+            'but use completely different numbers, context, wording, and scenario. '
+            'Do NOT paraphrase or copy the original. '
+            f'Reference question topic: {req.topic or "general"}. '
+            f'Reference stem (for concept reference only): {req.stem[:300]}...\n'
+            f'Reference options: {options_text[:200]}'
+        )
+
+        question = service.generate_question(
+            subject=req.subject,
+            topic=req.topic,
+            difficulty=req.difficulty,
+            examples=3,
+            want_solution=req.want_solution,
+            want_diagram=req.want_diagram,
+            force_diagram=False,
+            similar_to_context=similar_context,
+        )
+        return question
+    except HTTPException:
+        raise
+    except Exception as exc:
+        LOGGER.exception('ERROR IN /generate-similar')
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+@app.post('/bank-questions')
+def bank_questions_endpoint(req: BankQueryRequest):
+    """Return matching questions from the bank without generating new ones."""
+    try:
+        questions = load_questions(PROCESSED_DIR)
+
+        filtered: List[Dict[str, Any]] = []
+        for q in questions:
+            if q.get('question_id') in req.exclude_ids:
+                continue
+            c = q.get('content', {})
+            if req.subject and str(c.get('subject', '')).lower() != req.subject.lower():
+                continue
+            if req.topic and str(c.get('topic', '')).lower() != req.topic.lower():
+                continue
+            if req.difficulty is not None:
+                try:
+                    if abs(int(c.get('difficulty', 0)) - req.difficulty) > 1:
+                        continue
+                except Exception:
+                    pass
+            filtered.append(q)
+            if len(filtered) >= req.limit:
+                break
+
+        return {'questions': filtered, 'total': len(filtered)}
+    except HTTPException:
+        raise
+    except Exception as exc:
+        LOGGER.exception('ERROR IN /bank-questions')
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+@app.get('/inventory')
+def inventory_endpoint():
+    """Return a topic/difficulty inventory of the processed question bank."""
+    try:
+        questions = load_questions(PROCESSED_DIR)
+        subjects: Dict[str, Any] = {}
+
+        for q in questions:
+            c = q.get('content', {})
+            subj = str(c.get('subject', 'unknown')).lower()
+            topic = str(c.get('topic', '')) or 'general'
+            subtopic = c.get('subtopic')
+            difficulty = c.get('difficulty')
+            has_diagram = bool(c.get('requires_diagram', False))
+            archetype = c.get('archetype')
+
+            if subj not in subjects:
+                subjects[subj] = {'subject': subj, 'total': 0, 'topics': {}, 'difficulty_distribution': {}}
+
+            subj_data = subjects[subj]
+            subj_data['total'] += 1
+
+            diff_key = str(difficulty) if difficulty is not None else 'unknown'
+            subj_data['difficulty_distribution'][diff_key] = subj_data['difficulty_distribution'].get(diff_key, 0) + 1
+
+            if topic not in subj_data['topics']:
+                subj_data['topics'][topic] = {
+                    'topic': topic,
+                    'subtopics': {},
+                    'count': 0,
+                    'difficulty_counts': {},
+                    'has_diagrams': False,
+                    'archetypes': [],
+                }
+
+            topic_data = subj_data['topics'][topic]
+            topic_data['count'] += 1
+            if has_diagram:
+                topic_data['has_diagrams'] = True
+            if difficulty is not None:
+                dk = str(difficulty)
+                topic_data['difficulty_counts'][dk] = topic_data['difficulty_counts'].get(dk, 0) + 1
+            if archetype and archetype not in topic_data['archetypes']:
+                topic_data['archetypes'].append(archetype)
+            if subtopic:
+                topic_data['subtopics'][subtopic] = topic_data['subtopics'].get(subtopic, 0) + 1
+
+        # Flatten topics from dict to list for JSON
+        for subj_data in subjects.values():
+            subj_data['topics'] = list(subj_data['topics'].values())
+
+        return {
+            'subjects': subjects,
+            'total': len(questions),
+            'scanned_at': None,
+        }
+    except HTTPException:
+        raise
+    except Exception as exc:
+        LOGGER.exception('ERROR IN /inventory')
+        raise HTTPException(status_code=500, detail=str(exc)) from exc

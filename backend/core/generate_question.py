@@ -84,6 +84,8 @@ def choose_examples(
     topic: Optional[str],
     difficulty: int,
     k: int,
+    archetype: Optional[str] = None,
+    want_diagram: bool = False,
 ) -> List[Dict[str, Any]]:
     scored: List[Tuple[int, Dict[str, Any]]] = []
     for q in questions:
@@ -94,6 +96,13 @@ def choose_examples(
             score += 3
         if topic and str(c.get('topic', '')).lower() == topic.lower():
             score += 3
+        if archetype and str(c.get('archetype', '')).lower() == archetype.lower():
+            score += 2
+        has_diagram = bool(c.get('requires_diagram'))
+        if want_diagram and has_diagram:
+            score += 2
+        elif not want_diagram and not has_diagram:
+            score += 1
 
         if c.get('difficulty') is not None:
             try:
@@ -413,7 +422,7 @@ class QuestionGenerationService:
             },
         }
 
-    def _draft_instructions(self, want_solution: bool, want_diagram: bool, force_diagram: bool = False) -> str:
+    def _draft_instructions(self, want_solution: bool, want_diagram: bool, force_diagram: bool = False, similar_to_context: Optional[str] = None) -> str:
         extra = self.settings.extra_instructions or ''
         base = (
             'You are generating a fresh NSAA-style multiple-choice question. '
@@ -421,8 +430,14 @@ class QuestionGenerationService:
             'Return only data that matches the JSON schema. '
             'Keep the question realistic, concise, and solvable. '
             'Always provide exactly five options labeled A-E. '
-            'Do not include the answer in the draft. '
-            f'Need solution: {str(want_solution).lower()}. Need diagram: {str(want_diagram).lower()}. '
+            'IMPORTANT: After writing the question and options, solve it step by step to confirm which answer is correct. '
+            'Set validation.answer_label to the letter of the correct option, '
+            'validation.answer_text to the text of that option, '
+            'and validation.status to "verified" once you have confirmed the answer. '
+            'Record your solution steps in generation.solution_steps. '
+            'Only set validation.status to "needs_revision" if the question is structurally broken '
+            '(no correct answer exists among the options, or two options are equally correct). '
+            f'Need diagram: {str(want_diagram).lower()}. '
         )
         if force_diagram:
             base += (
@@ -432,14 +447,21 @@ class QuestionGenerationService:
                 'Include at least one figure spec in prompt.figures with a detailed description of what to draw. '
                 'The question stem must explicitly reference the figure (e.g. "In the diagram below…"). '
             )
+        if similar_to_context:
+            base += '\n\n' + similar_to_context
         return base + (extra if extra else '')
 
     def _review_instructions(self) -> str:
         return (
-            'You are checking a drafted NSAA-style multiple-choice question for correctness. '
-            'Solve the question carefully. '
-            'Return the answer label and matching answer text, plus concise solution steps. '
-            'If the question is flawed or ambiguous, mark status as needs_revision and explain why. '
+            'You are independently verifying a drafted NSAA-style multiple-choice question. '
+            'Solve the question from scratch. '
+            'Return the correct answer label and its option text, plus concise solution steps. '
+            'Set status to "verified" if exactly one option is unambiguously correct — this should be the common case. '
+            'Set status to "needs_revision" ONLY if: '
+            '(1) none of the five options is mathematically/logically correct, or '
+            '(2) two or more options are equally correct, or '
+            '(3) the question stem is so garbled it cannot be parsed. '
+            'Minor imprecision, awkward wording, or a question you personally find too easy/hard are NOT grounds for needs_revision. '
             'Return only data that matches the JSON schema.'
         )
 
@@ -561,9 +583,17 @@ class QuestionGenerationService:
 
         draft.setdefault('metadata', {})['diagram_url'] = f'/diagrams/{diagram_path.name}'
 
-    def _generate_draft(self, subject: str, topic: Optional[str], difficulty: int, examples: int, want_solution: bool, want_diagram: bool, force_diagram: bool) -> Dict[str, Any]:
+    def _generate_draft(self, subject: str, topic: Optional[str], difficulty: int, examples: int, want_solution: bool, want_diagram: bool, force_diagram: bool, archetype: Optional[str] = None, similar_to_context: Optional[str] = None) -> Dict[str, Any]:
         all_questions = self._get_questions()
-        chosen = choose_examples(all_questions, subject, topic, difficulty, examples)
+        chosen = choose_examples(
+            all_questions,
+            subject,
+            topic,
+            difficulty,
+            examples,
+            archetype=archetype,
+            want_diagram=want_diagram or force_diagram,
+        )
         request_nonce = uuid.uuid4().hex
 
         payload = {
@@ -581,14 +611,14 @@ class QuestionGenerationService:
                 "labels": OPTION_LABELS,
                 "stem_contains_no_answer_choices": True,
                 "diagram_if_needed": True,
-                "solution_not_filled_yet": True,
+                "solve_and_verify_answer": True,
                 "must_require_diagram": force_diagram,
             },
         }
 
         draft = self._call_structured(
             model=self.settings.openai_model_draft,
-            instructions=self._draft_instructions(want_solution=want_solution, want_diagram=want_diagram, force_diagram=force_diagram),
+            instructions=self._draft_instructions(want_solution=want_solution, want_diagram=want_diagram, force_diagram=force_diagram, similar_to_context=similar_to_context),
             payload=payload,
             schema=self._base_question_schema(),
             max_output_tokens=self.settings.max_output_tokens,
@@ -628,6 +658,8 @@ class QuestionGenerationService:
         want_solution: bool = True,
         want_diagram: bool = False,
         force_diagram: bool = False,
+        archetype: Optional[str] = None,
+        similar_to_context: Optional[str] = None,
     ) -> Dict[str, Any]:
         max_rounds = 3
         last_error: Optional[Exception] = None
@@ -642,26 +674,37 @@ class QuestionGenerationService:
                     want_solution=want_solution,
                     want_diagram=want_diagram,
                     force_diagram=force_diagram,
+                    archetype=archetype,
+                    similar_to_context=similar_to_context,
                 )
 
-                review = self._review_question(draft) if want_solution else {
-                    'answer_label': None,
-                    'answer_text': None,
-                    'status': 'unverified',
-                    'solution_steps': [],
-                    'notes': [],
-                }
+                draft = self._normalize_question(draft)
 
-                draft['validation']['answer_label'] = review.get('answer_label')
-                draft['validation']['answer_text'] = review.get('answer_text')
-                draft['validation']['status'] = review.get('status', 'unverified')
-                draft['generation']['solution_steps'] = review.get('solution_steps', [])
-                draft.setdefault('data_quality_notes', [])
+                # Happy path: draft already self-verified — skip the review call entirely
+                draft_status = draft['validation'].get('status')
+                draft_label = draft['validation'].get('answer_label')
+                already_verified = (
+                    draft_status == 'verified' and draft_label in OPTION_LABELS
+                )
+
+                if already_verified:
+                    self.logger.info('Draft self-verified (round %d); skipping review call', round_idx)
+                    review: Dict[str, Any] = {'notes': []}
+                elif want_solution:
+                    self.logger.info('Draft not self-verified (status=%s); running review (round %d)', draft_status, round_idx)
+                    review = self._review_question(draft)
+                    draft['validation']['answer_label'] = review.get('answer_label')
+                    draft['validation']['answer_text'] = review.get('answer_text')
+                    draft['validation']['status'] = review.get('status', 'unverified')
+                    draft['generation']['solution_steps'] = review.get('solution_steps', [])
+                    draft = self._normalize_question(draft)
+                else:
+                    review = {'notes': []}
+
                 for note in review.get('notes', []):
                     if note not in draft['data_quality_notes']:
                         draft['data_quality_notes'].append(note)
 
-                draft = self._normalize_question(draft)
                 sig = question_signature(draft)
                 if self.recent_questions.contains(sig):
                     self.logger.info('Rejected duplicate draft signature=%s', sig[:12])
@@ -669,21 +712,17 @@ class QuestionGenerationService:
                         continue
                     raise ValueError('Duplicate question draft')
 
-                if draft['validation'].get('status') == 'verified' and draft['validation'].get('answer_label') in OPTION_LABELS:
-                    if not self.recent_questions.add(sig):
-                        self.logger.info('Signature already stored by another concurrent request: %s', sig[:12])
-                        if round_idx < max_rounds:
-                            continue
-                    self._maybe_generate_diagram(draft, want_diagram=want_diagram, force_diagram=force_diagram)
-                    draft = self._normalize_question(draft)
-                    return draft
-
-                if round_idx < max_rounds:
-                    self.logger.info('Review requested revision; retrying round %d/%d', round_idx, max_rounds)
+                final_status = draft['validation'].get('status')
+                final_label = draft['validation'].get('answer_label')
+                if final_status == 'needs_revision' and round_idx < max_rounds:
+                    self.logger.info('Revision requested; retrying round %d/%d', round_idx, max_rounds)
                     continue
 
                 if not self.recent_questions.add(sig):
                     self.logger.info('Signature already stored by another concurrent request: %s', sig[:12])
+                    if final_status == 'verified' and final_label in OPTION_LABELS and round_idx < max_rounds:
+                        continue
+
                 self._maybe_generate_diagram(draft, want_diagram=want_diagram, force_diagram=force_diagram)
                 draft = self._normalize_question(draft)
                 return draft

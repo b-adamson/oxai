@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { MathText } from './MathText';
+import { FigureRenderer } from './FigureRenderer';
 import { HintPanel } from './HintPanel';
 import { SolutionPanel } from './SolutionPanel';
 import { TutorChat } from './TutorChat';
@@ -15,6 +16,8 @@ interface QuestionCardProps {
   submittedAnswer: string | null;
   solutionRevealed: boolean;
   hideSolution?: boolean;
+  hideHints?: boolean;
+  hideTutor?: boolean;
 
   onAnswer: (label: string, timeTaken: number) => void;
   onHintAdded: (h: HintRecord) => void;
@@ -39,6 +42,8 @@ export function QuestionCard({
   submittedAnswer,
   solutionRevealed,
   hideSolution = true,
+  hideHints = false,
+  hideTutor = false,
   onAnswer,
   onHintAdded,
   onSolutionRevealed,
@@ -57,7 +62,9 @@ export function QuestionCard({
   const correct = question.answer_label;
 
   function handleOptionClick(label: string) {
-    if (answered) return;
+    // In paper mode (hideFeedback=true), options stay interactive so the user
+    // can change or deselect their answer before final submission.
+    if (answered && !hideFeedback) return;
     const timeTaken = startTime ? Math.floor((Date.now() - startTime) / 1000) : 0;
     onAnswer(label, timeTaken);
   }
@@ -81,8 +88,15 @@ export function QuestionCard({
       }`;
     }
     if (hideFeedback) {
-      if (label === submittedAnswer) return `${base} border-gray-400 bg-gray-100`;
-      return `${base} border-gray-200 bg-white opacity-50`;
+      // Paper mode — options stay interactive; selected is highlighted, others remain clickable
+      if (label === submittedAnswer) {
+        return `${base} border-accent bg-blue-50 cursor-pointer`;
+      }
+      return `${base} ${
+        hoveredOption === label
+          ? 'border-accent bg-blue-50 cursor-pointer'
+          : 'border-gray-200 bg-white hover:border-blue-300 cursor-pointer'
+      }`;
     }
     if (label === correct) return `${base} border-emerald-500 bg-emerald-50`;
     if (label === submittedAnswer && label !== correct) return `${base} border-red-400 bg-red-50`;
@@ -128,8 +142,13 @@ export function QuestionCard({
           className="text-base leading-relaxed text-gray-900 font-serif"
         />
 
-        {/* Figures — only render if there is an actual image URL */}
-        {question.diagram_url && (
+        {/* Structured figures (AI-generated questions) */}
+        {question.figures.length > 0 && question.figures.map((fig, i) => (
+          <FigureRenderer key={i} spec={fig} />
+        ))}
+
+        {/* Fallback image URL for bank questions without structured figures */}
+        {question.figures.length === 0 && question.diagram_url && (
           <div className="mt-4">
             <img
               src={question.diagram_url}
@@ -145,10 +164,10 @@ export function QuestionCard({
             <button
               key={opt.label}
               onClick={() => handleOptionClick(opt.label)}
-              onMouseEnter={() => !answered && setHoveredOption(opt.label)}
+              onMouseEnter={() => (!answered || hideFeedback) && setHoveredOption(opt.label)}
               onMouseLeave={() => setHoveredOption(null)}
               className={getOptionStyle(opt.label)}
-              disabled={answered}
+              disabled={answered && !hideFeedback}
             >
               <div className={`
                 flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold
@@ -185,13 +204,15 @@ export function QuestionCard({
 
       {/* Action bar */}
       <div className="flex flex-wrap items-center gap-2 px-5 py-3 border-t border-gray-100 bg-gray-50">
-        <ActionButton
-          active={panel === 'hints'}
-          onClick={() => togglePanel('hints')}
-          icon="💡"
-          label={hints.length > 0 ? `Hints (${hints.length})` : 'Hints'}
-        />
-        {(!hideSolution || answered) && (
+        {!hideHints && (
+          <ActionButton
+            active={panel === 'hints'}
+            onClick={() => togglePanel('hints')}
+            icon="💡"
+            label={hints.length > 0 ? `Hints (${hints.length})` : 'Hints'}
+          />
+        )}
+        {!hideSolution && (
           <ActionButton
             active={panel === 'solution' && solutionRevealed}
             onClick={handleRevealSolution}
@@ -199,12 +220,14 @@ export function QuestionCard({
             label="Solution"
           />
         )}
-        <ActionButton
-          active={panel === 'tutor'}
-          onClick={() => togglePanel('tutor')}
-          icon="🎓"
-          label={tutorMessages.length > 0 ? `Tutor (${Math.ceil(tutorMessages.length / 2)})` : 'Ask Tutor'}
-        />
+        {!hideTutor && (
+          <ActionButton
+            active={panel === 'tutor'}
+            onClick={() => togglePanel('tutor')}
+            icon="🎓"
+            label={tutorMessages.length > 0 ? `Tutor (${Math.ceil(tutorMessages.length / 2)})` : 'Ask Tutor'}
+          />
+        )}
         {onSimilarQuestion && answered && (
           <ActionButton
             active={false}

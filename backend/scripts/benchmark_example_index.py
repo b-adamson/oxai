@@ -9,8 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from core.example_index import QuestionExampleIndex
-from core.generate_question import choose_examples, load_questions
+from src.services.example_index import QuestionExampleIndex
+from src.services.generate_question import choose_examples, load_questions
 
 PROCESSED_DIR = ROOT / 'data' / 'processed'
 

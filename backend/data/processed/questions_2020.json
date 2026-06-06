@@ -1060,13 +1060,7 @@
             "text": "$\\dfrac{\\sqrt{y^2-x^2}}{\\cos 61^\\circ}$"
           }
         ],
-        "figures": [
-          {
-            "figure_id": "q15_diagram",
-            "type": "figure",
-            "src": "images_2020/q15_diagram.png"
-          }
-        ]
+        "figures": []
       },
       "generation": {
         "template_id": "math_diagram_001",
@@ -1082,6 +1076,7 @@
       },
       "metadata": {
         "estimated_time_seconds": null,
+        "diagram_url": "/images/images_2020/q15_diagram.png",
         "tags": [
           "math",
           "geometry"

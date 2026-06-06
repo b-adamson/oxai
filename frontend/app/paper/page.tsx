@@ -119,6 +119,9 @@ export default function PaperModePage() {
   const [customTimerEnabled, setCustomTimerEnabled] = useState(true);
   const [customTimerMinutes, setCustomTimerMinutes] = useState(120);
   const [customLiveSolution, setCustomLiveSolution] = useState(false);
+  const [customEnableSolution, setCustomEnableSolution] = useState(false);
+  const [customEnableHints, setCustomEnableHints] = useState(false);
+  const [customEnableTutor, setCustomEnableTutor] = useState(false);
 
   // Paper session state (mirrors store)
   const [phase, setPhase] = useState<Phase>('config');
@@ -131,8 +134,12 @@ export default function PaperModePage() {
   const [paperStartTime, setPaperStartTime] = useState<number | null>(null);
   const [paperTimerSeconds, setPaperTimerSeconds] = useState<number | null>(null);
   const [paperLiveSolution, setPaperLiveSolution] = useState(false);
+  const [paperEnableSolution, setPaperEnableSolution] = useState(false);
+  const [paperEnableHints, setPaperEnableHints] = useState(false);
+  const [paperEnableTutor, setPaperEnableTutor] = useState(false);
   const [reviewQuestionIdx, setReviewQuestionIdx] = useState<number | null>(null);
   const [timedOut, setTimedOut] = useState(false);
+  const [showSubmitWarning, setShowSubmitWarning] = useState(false);
 
   const stopGenRef = useRef<(() => void) | null>(null);
   const didAutoSubmitRef = useRef(false);
@@ -200,27 +207,42 @@ export default function PaperModePage() {
     [updatePaperSession]
   );
 
+  const pageRetriesRef = useRef<Map<string, number>>(new Map());
+
   function launchGeneration(newSlots: PaperSlot[], sessionId: string) {
     slotsRef.current = newSlots;
-    const stop = startBackgroundGeneration(newSlots, CONCURRENCY, {
-      onSlotGenerating: (s) => {
+
+    const onSlotGenerating = (s: PaperSlot) => {
+      const next = slotsRef.current.map((x) => (x.slot_id === s.slot_id ? s : x));
+      slotsRef.current = next;
+      setSlots(next);
+    };
+
+    const onSlotReady = (s: PaperSlot, q: import('@/lib/types').QuestionRecord) => {
+      addQuestion(q);
+      const next = slotsRef.current.map((x) => (x.slot_id === s.slot_id ? s : x));
+      slotsRef.current = next;
+      setSlots(next);
+      syncSession({ slots: next }, sessionId);
+    };
+
+    const onSlotFailed = (s: PaperSlot, _error: string) => {
+      const retries = pageRetriesRef.current.get(s.slot_id) ?? 0;
+      if (retries < 1) {
+        pageRetriesRef.current.set(s.slot_id, retries + 1);
+        const resetSlot: PaperSlot = { ...s, status: 'planned', error: null, retry_count: 0 };
+        const next = slotsRef.current.map((x) => (x.slot_id === s.slot_id ? resetSlot : x));
+        slotsRef.current = next;
+        setSlots(next);
+        startBackgroundGeneration([resetSlot], 1, { onSlotGenerating, onSlotReady, onSlotFailed });
+      } else {
         const next = slotsRef.current.map((x) => (x.slot_id === s.slot_id ? s : x));
         slotsRef.current = next;
         setSlots(next);
-      },
-      onSlotReady: (s, q) => {
-        addQuestion(q);
-        const next = slotsRef.current.map((x) => (x.slot_id === s.slot_id ? s : x));
-        slotsRef.current = next;
-        setSlots(next);
-        syncSession({ slots: next }, sessionId);
-      },
-      onSlotFailed: (s) => {
-        const next = slotsRef.current.map((x) => (x.slot_id === s.slot_id ? s : x));
-        slotsRef.current = next;
-        setSlots(next);
-      },
-    });
+      }
+    };
+
+    const stop = startBackgroundGeneration(newSlots, CONCURRENCY, { onSlotGenerating, onSlotReady, onSlotFailed });
     stopGenRef.current?.();
     stopGenRef.current = stop;
   }
@@ -237,6 +259,9 @@ export default function PaperModePage() {
       ? customTimerMinutes * 60
       : null;
     const liveSOL = examMode ? false : customLiveSolution;
+    const enableSolution = examMode ? false : customEnableSolution;
+    const enableHints = examMode ? false : customEnableHints;
+    const enableTutor = examMode ? false : customEnableTutor;
 
     const session: PaperSession = {
       session_id: sessionId,
@@ -253,6 +278,9 @@ export default function PaperModePage() {
       revealed_solutions: [],
       timer_duration_seconds: timerSec,
       live_solution: liveSOL,
+      enable_solution: enableSolution,
+      enable_hints: enableHints,
+      enable_tutor: enableTutor,
       submitted: false,
       created_at: now,
       updated_at: now,
@@ -269,6 +297,9 @@ export default function PaperModePage() {
     setPaperStartTime(null);
     setPaperTimerSeconds(timerSec);
     setPaperLiveSolution(liveSOL);
+    setPaperEnableSolution(enableSolution);
+    setPaperEnableHints(enableHints);
+    setPaperEnableTutor(enableTutor);
     setTimedOut(false);
     didAutoSubmitRef.current = false;
     launchGeneration(allSlots, sessionId);
@@ -292,6 +323,9 @@ export default function PaperModePage() {
     setRevealedSolutions(session.revealed_solutions ?? []);
     setPaperTimerSeconds(session.timer_duration_seconds ?? null);
     setPaperLiveSolution(session.live_solution ?? false);
+    setPaperEnableSolution(session.enable_solution ?? false);
+    setPaperEnableHints(session.enable_hints ?? false);
+    setPaperEnableTutor(session.enable_tutor ?? false);
     setPaperStartTime(session.start_time);
     setTimedOut(false);
     didAutoSubmitRef.current = false;
@@ -343,7 +377,20 @@ export default function PaperModePage() {
     setModules([]);
   }
 
+  function handleSubmitRequest() {
+    const readySlotIds = new Set(
+      slots.filter((s) => s.question_id).map((s) => s.slot_id)
+    );
+    const unanswered = [...readySlotIds].filter((id) => !submittedAnswers[id]);
+    if (unanswered.length > 0) {
+      setShowSubmitWarning(true);
+      return;
+    }
+    handleSubmit();
+  }
+
   function handleSubmit(autoFromTimer = false) {
+    setShowSubmitWarning(false);
     if (phase !== 'paper' && !autoFromTimer) return;
     stopGenRef.current?.();
     const endTime = Date.now();
@@ -379,12 +426,29 @@ export default function PaperModePage() {
     const q = questions[slot.question_id];
     if (!q) return;
 
+    const currentAnswer = submittedAnswers[slot.slot_id];
+
+    // Clicking the already-selected option deselects it
+    if (label === currentAnswer) {
+      const newAnswers = { ...submittedAnswers };
+      delete newAnswers[slot.slot_id];
+      const newSlots = slots.map((s, i) =>
+        i === currentIdx ? { ...s, status: 'shown' as const } : s
+      );
+      setSubmittedAnswers(newAnswers);
+      setSlots(newSlots);
+      slotsRef.current = newSlots;
+      if (activeSessionId) syncSession({ submitted_answers: newAnswers, slots: newSlots }, activeSessionId);
+      return;
+    }
+
     const newAnswers = { ...submittedAnswers, [slot.slot_id]: label };
     const newSlots = slots.map((s, i) =>
       i === currentIdx ? { ...s, status: 'answered' as const } : s
     );
     setSubmittedAnswers(newAnswers);
     setSlots(newSlots);
+    slotsRef.current = newSlots;
 
     if (activeSessionId) {
       syncSession({ submitted_answers: newAnswers, slots: newSlots }, activeSessionId);
@@ -698,7 +762,7 @@ export default function PaperModePage() {
                             onChange={(e) =>
                               setCustomTimerMinutes(Math.max(5, Math.min(300, Number(e.target.value))))
                             }
-                            className="w-16 border border-gray-300 rounded px-2 py-1 text-sm text-center"
+                            className="w-16 border border-gray-300 rounded px-2 py-1 text-sm text-center text-gray-800"
                           />
                           <span className="text-xs text-gray-400">minutes</span>
                         </div>
@@ -733,6 +797,66 @@ export default function PaperModePage() {
                       <span
                         className={`inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform ${
                           customLiveSolution ? 'translate-x-6' : 'translate-x-1'
+                        }`}
+                      />
+                    </button>
+                  </div>
+
+                  {/* Enable solutions */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm text-gray-700">Solutions</div>
+                      <div className="text-xs text-gray-400">Allow generating worked solutions</div>
+                    </div>
+                    <button
+                      onClick={() => setCustomEnableSolution((v) => !v)}
+                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                        customEnableSolution ? 'bg-accent' : 'bg-gray-200'
+                      }`}
+                    >
+                      <span
+                        className={`inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform ${
+                          customEnableSolution ? 'translate-x-6' : 'translate-x-1'
+                        }`}
+                      />
+                    </button>
+                  </div>
+
+                  {/* Enable hints */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm text-gray-700">Hints</div>
+                      <div className="text-xs text-gray-400">Allow requesting hints during the paper</div>
+                    </div>
+                    <button
+                      onClick={() => setCustomEnableHints((v) => !v)}
+                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                        customEnableHints ? 'bg-accent' : 'bg-gray-200'
+                      }`}
+                    >
+                      <span
+                        className={`inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform ${
+                          customEnableHints ? 'translate-x-6' : 'translate-x-1'
+                        }`}
+                      />
+                    </button>
+                  </div>
+
+                  {/* Enable tutor */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm text-gray-700">AI Tutor</div>
+                      <div className="text-xs text-gray-400">Allow asking the tutor for guidance</div>
+                    </div>
+                    <button
+                      onClick={() => setCustomEnableTutor((v) => !v)}
+                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                        customEnableTutor ? 'bg-accent' : 'bg-gray-200'
+                      }`}
+                    >
+                      <span
+                        className={`inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform ${
+                          customEnableTutor ? 'translate-x-6' : 'translate-x-1'
                         }`}
                       />
                     </button>
@@ -923,6 +1047,8 @@ export default function PaperModePage() {
                 solutionRevealed={revealedSolutions.includes(slot?.slot_id ?? '')}
                 hideSolution={false}
                 hideFeedback={false}
+                hideHints={!paperEnableHints}
+                hideTutor={!paperEnableTutor}
                 onAnswer={() => {}}
                 onHintAdded={(h) => addHint(h)}
                 onSolutionRevealed={() => {
@@ -1143,7 +1269,7 @@ export default function PaperModePage() {
             <QueueStatus slots={slots} compact />
 
             <button
-              onClick={() => handleSubmit()}
+              onClick={handleSubmitRequest}
               className="px-3 py-1.5 bg-accent hover:bg-accent-light text-white text-xs font-semibold rounded-lg transition-colors"
             >
               Submit Paper
@@ -1246,8 +1372,10 @@ export default function PaperModePage() {
             tutorMessages={currentTutorMessages}
             submittedAnswer={currentAnswer}
             solutionRevealed={currentRevealed}
-            hideSolution={!paperLiveSolution}
+            hideSolution={!paperEnableSolution}
             hideFeedback={!paperLiveSolution}
+            hideHints={!paperEnableHints}
+            hideTutor={!paperEnableTutor}
             onAnswer={handleAnswer}
             onHintAdded={(h) => addHint(h)}
             onSolutionRevealed={() => {
@@ -1277,7 +1405,7 @@ export default function PaperModePage() {
             </button>
             {isLastQuestion ? (
               <button
-                onClick={() => handleSubmit()}
+                onClick={handleSubmitRequest}
                 className="flex-1 py-2.5 bg-accent hover:bg-accent-light text-white rounded-xl text-sm font-semibold transition-colors"
               >
                 Submit
@@ -1293,6 +1421,54 @@ export default function PaperModePage() {
           </div>
         )}
       </div>
+
+      {/* Unanswered questions warning modal */}
+      {showSubmitWarning && (() => {
+        const unansweredSlots = slots
+          .map((s, i) => ({ slot: s, idx: i }))
+          .filter(({ slot }) => slot.question_id && !submittedAnswers[slot.slot_id]);
+        const firstUnanswered = unansweredSlots[0]?.idx ?? null;
+        return (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+            <div className="bg-white rounded-2xl shadow-xl max-w-sm w-full p-6">
+              <h3 className="text-base font-bold text-gray-900 mb-1">
+                {unansweredSlots.length} question{unansweredSlots.length !== 1 ? 's' : ''} unanswered
+              </h3>
+              <p className="text-sm text-gray-500 mb-4">
+                You haven&apos;t answered questions:{' '}
+                <span className="font-medium text-gray-700">
+                  {unansweredSlots.map(({ idx }) => idx + 1).join(', ')}
+                </span>
+              </p>
+              <div className="flex flex-col gap-2">
+                {firstUnanswered !== null && (
+                  <button
+                    onClick={() => {
+                      setShowSubmitWarning(false);
+                      handleNavigate(firstUnanswered);
+                    }}
+                    className="w-full py-2.5 border-2 border-accent text-accent rounded-xl text-sm font-semibold hover:bg-blue-50 transition-colors"
+                  >
+                    Go to Q{firstUnanswered + 1} (first unanswered)
+                  </button>
+                )}
+                <button
+                  onClick={() => handleSubmit()}
+                  className="w-full py-2.5 bg-accent hover:bg-accent-light text-white rounded-xl text-sm font-semibold transition-colors"
+                >
+                  Submit anyway
+                </button>
+                <button
+                  onClick={() => setShowSubmitWarning(false)}
+                  className="w-full py-2 text-sm text-gray-500 hover:text-gray-700 transition-colors"
+                >
+                  Go back
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }

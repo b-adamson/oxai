@@ -2721,7 +2721,7 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "A neutral atom $Q$ of a particular element contains a total of 20 particles (protons, neutrons and electrons).\n\nThe table shows information about the number of particles and relative charges of four atoms or ions W, X, Y and Z.\n\n| atom or ion | number of particles | relative charge |\n|---|---|---|\n| W | 21 | 0 |\n| X | 21 | -1 |\n| Y | 20 | +1 |\n| Z | 22 | 0 |\n\nWhich of these atoms or ions could be of a different isotope to $Q$ but of the same element as $Q$?",
+        "stem": "A neutral atom $Q$ of a particular element contains a total of 20 particles (protons, neutrons and electrons).\n\nThe table shows information about the number of particles and relative charges of four atoms or ions W, X, Y and Z.\n\nWhich of these atoms or ions could be of a different isotope to $Q$ but of the same element as $Q$?",
         "options": [
           {
             "label": "A",
@@ -2756,7 +2756,27 @@
             "text": "X, Y and Z only"
           }
         ],
-        "figures": []
+        "figures": [
+          {
+            "figure_type": "table",
+            "caption": "",
+            "diagram_prompt": null,
+            "table_headers": ["atom or ion", "number of particles", "relative charge"],
+            "table_rows": [["W", "21", "0"], ["X", "21", "−1"], ["Y", "20", "+1"], ["Z", "22", "0"]],
+            "table_row_labels": [],
+            "graph_type": null,
+            "graph_title": null,
+            "graph_x_label": null,
+            "graph_y_label": null,
+            "graph_x_labels": null,
+            "graph_series": null,
+            "graph_x_min": null,
+            "graph_x_max": null,
+            "graph_y_min": null,
+            "graph_y_max": null,
+            "url": null
+          }
+        ]
       },
       "generation": {
         "template_id": "physics_electricity_033",
@@ -2971,31 +2991,67 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "A bar magnet is placed at position X close to one end of a coil and on the axis of the coil as shown.\n\nThe graph shows how the velocity of the magnet varies as it is then moved rapidly to position Y and back to position X.\n\nThe magnetic field of the bar magnet still affects the coil when the magnet is at position Y.\n\nWhich graph represents how the induced voltage in the coil changes as the magnet moves?",
+        "stem": "A bar magnet is placed at position X close to one end of a coil and on the axis of the coil as shown.\n\nThe graph shows how the velocity of the magnet varies as it is then moved rapidly to position Y and back to position X.\n\nThe magnetic field of the bar magnet still affects the coil when the magnet is at position Y.\n\nWhich graph (A–F, shown in the figure below) represents how the induced voltage in the coil changes as the magnet moves?",
         "options": [
           {
             "label": "A",
-            "text": "B induced induced voltage voltage \\dfrac{0}{0} time time"
+            "text": "Diagram A"
+          },
+          {
+            "label": "B",
+            "text": "Diagram B"
           },
           {
             "label": "C",
-            "text": "D induced induced voltage voltage \\dfrac{0}{0} time time"
+            "text": "Diagram C"
+          },
+          {
+            "label": "D",
+            "text": "Diagram D"
           },
           {
             "label": "E",
-            "text": "F induced induced voltage voltage \\dfrac{0}{0} time time 31"
+            "text": "Diagram E or F"
           }
         ],
         "figures": [
           {
-            "figure_id": "q36_setup",
-            "type": "diagram",
-            "src": "images_2022/q36_setup.png"
+            "figure_type": "complex_diagram",
+            "caption": "Coil and magnet setup with velocity–time graph",
+            "url": "/images/images_2022/q36_setup.png",
+            "diagram_prompt": null,
+            "table_headers": null,
+            "table_rows": null,
+            "table_row_labels": null,
+            "graph_type": null,
+            "graph_title": null,
+            "graph_x_label": null,
+            "graph_y_label": null,
+            "graph_x_labels": null,
+            "graph_series": null,
+            "graph_x_min": null,
+            "graph_x_max": null,
+            "graph_y_min": null,
+            "graph_y_max": null
           },
           {
-            "figure_id": "q36_options",
-            "type": "diagram",
-            "src": "images_2022/q36_options.png"
+            "figure_type": "complex_diagram",
+            "caption": "Options A–F: candidate induced voltage–time graphs",
+            "url": "/images/images_2022/q36_options.png",
+            "diagram_prompt": null,
+            "table_headers": null,
+            "table_rows": null,
+            "table_row_labels": null,
+            "graph_type": null,
+            "graph_title": null,
+            "graph_x_label": null,
+            "graph_y_label": null,
+            "graph_x_labels": null,
+            "graph_series": null,
+            "graph_x_min": null,
+            "graph_x_max": null,
+            "graph_y_min": null,
+            "graph_y_max": null
           }
         ]
       },
@@ -3016,8 +3072,8 @@
       },
       "validation": {
         "answer_label": "D",
-        "answer_text": null,
-        "status": "unverified"
+        "answer_text": "Diagram D",
+        "status": "verified"
       },
       "metadata": {
         "estimated_time_seconds": null,

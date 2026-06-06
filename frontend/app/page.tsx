@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Script from "next/script";
 import { TutorChat } from "@/components/TutorChat";
+import { AccountChip } from "@/components/AccountChip";
 import { useStore, normaliseQuestion } from "@/lib/store";
 import { migrateLegacySessions } from "@/lib/migrateLegacy";
 import type {
@@ -729,6 +730,7 @@ export default function Home() {
               <p className="mt-1 text-xs text-slate-400">
                 Training data and question generation
               </p>
+              <AccountChip />
 
               <div className="mt-4 grid gap-3">
                 <label className="text-[10px] uppercase tracking-widest text-slate-400">

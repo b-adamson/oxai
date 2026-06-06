@@ -9,3 +9,7 @@ vercel.json
 *:Zone.Identifier*
 
 # Runtime state (deduplication signatures, etc) — created at startup
+
+# Supabase CLI local artifacts
+supabase/.temp/
+supabase/.branches/

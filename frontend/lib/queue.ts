@@ -45,6 +45,8 @@ const MAX_RETRIES = 2;
  * bankFraction controls what proportion come from the question bank
  * (0.0 = all fresh AI, 1.0 = all bank). Bank slots are placed first
  * within each module so they generate quickly; AI slots follow.
+ * Diagrams are capped at ~15% of questions per module to prevent
+ * geometry from dominating the paper.
  */
 export function planEsatPaperSlots(
   modules: string[],
@@ -54,6 +56,8 @@ export function planEsatPaperSlots(
 ): PaperSlot[] {
   const range = ESAT_DIFFICULTY_RANGES[difficultyPreset] ?? [2, 4];
   const bankPerModule = Math.round(Math.max(0, Math.min(1, bankFraction)) * QUESTIONS_PER_MODULE);
+  // ~15% of slots allow diagrams — model decides whether to include one for those slots
+  const diagPerModule = Math.round(0.15 * QUESTIONS_PER_MODULE);
 
   const slots: PaperSlot[] = [];
   modules.forEach((module, moduleIdx) => {
@@ -67,6 +71,14 @@ export function planEsatPaperSlots(
       [sourceTypes[k], sourceTypes[j]] = [sourceTypes[j], sourceTypes[k]];
     }
 
+    // Assign diagram slots spaced evenly, not front-loaded
+    const diagReqs: ('never' | 'allowed')[] = Array(QUESTIONS_PER_MODULE).fill('never');
+    const step = QUESTIONS_PER_MODULE / (diagPerModule + 1);
+    for (let d = 0; d < diagPerModule; d++) {
+      const pos = Math.round(step * (d + 1)) % QUESTIONS_PER_MODULE;
+      diagReqs[pos] = 'allowed';
+    }
+
     for (let i = 0; i < QUESTIONS_PER_MODULE; i++) {
       const difficulty = blueprintDifficulty(i, QUESTIONS_PER_MODULE, range) as Difficulty;
       const sourceType: SourceType = sourceTypes[i];
@@ -77,7 +89,7 @@ export function planEsatPaperSlots(
         topic: null,
         subtopic: null,
         difficulty,
-        diagram_requirement: 'allowed',
+        diagram_requirement: diagReqs[i],
         source_type: sourceType,
         status: 'planned',
         question_id: null,
@@ -195,6 +207,7 @@ export async function generateForSlot(
     // If slot was strictly 'bank' but nothing found, generate fresh AI as fallback
   }
 
+  // 'required' → must have diagram; 'allowed' → model decides; 'never' → no diagram.
   const want_diagram = slot.diagram_requirement !== 'never';
   const raw = await api.generateQuestion({
     subject: slot.subject,

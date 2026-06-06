@@ -43,10 +43,9 @@ class DiagramGenerationService:
         prompt = question.get('prompt', {}) if isinstance(question.get('prompt', {}), dict) else {}
         figures = prompt.get('figures', []) if isinstance(prompt.get('figures', []), list) else []
 
-        stem = str(prompt.get('stem', '')).strip()
-        subject = str(content.get('subject', '')).strip()
         topic = str(content.get('topic', '') or '').strip()
-        subtopic = str(content.get('subtopic', '') or '').strip()
+        raw_stem = str(prompt.get('stem', '')).strip()
+        stem_excerpt = raw_stem[:400] + ('...' if len(raw_stem) > 400 else '')
 
         figure_text = ''
         if figures:
@@ -55,17 +54,28 @@ class DiagramGenerationService:
                 if isinstance(fig, dict):
                     kind = str(fig.get('kind', 'diagram')).strip()
                     caption = str(fig.get('caption', '')).strip()
-                    pieces.append(f'- {kind}: {caption}')
+                    fig_prompt = fig.get('prompt') or ''
+                    line = f'- [{kind}] {caption}'
+                    if fig_prompt:
+                        line += f': {fig_prompt}'
+                    pieces.append(line)
             figure_text = '\n'.join(pieces)
 
         return (
-            'Create a clean educational diagram for an NSAA-style exam question. '
-            'Rules: no question text, no answer text, no working, no labels that quote the question stem, no sentences. '
-            'Only draw the geometric/physical/graphical elements described below. '
-            'Use black lines on a white background, minimal clean style, exam-appropriate. '
-            'Short axis labels and dimension markers are allowed, but no prose. '
-            f'Subject: {subject}. Topic: {topic}. Subtopic: {subtopic}. '
-            f'Figure notes:\n{figure_text or "- none"}'
+            'Draw a precise, exam-quality geometry/maths diagram. '
+            'This is a STRICT GEOMETRY CONTRACT — every rule below is mandatory:\n\n'
+            'MANDATORY RULES:\n'
+            '1. LABEL every named point (A, B, C, D, O, P, Q, etc.) that appears in the question. Missing a label is an error.\n'
+            '2. STRAIGHT segments must be drawn with perfectly straight lines — no curves, bends, or arcs unless the figure explicitly calls for a curve.\n'
+            '3. TANGENTS must touch the circle at exactly one point. The tangent line must be visually flush with the circle at that point, not cutting through it.\n'
+            '4. ANGLE MARKS must use exactly 3 points (vertex + two arms). Never draw a 4-point or multi-arc angle mark. A right-angle box uses exactly the corner vertex.\n'
+            '5. INTERSECTIONS: lines must actually cross where the question says they meet. Do not let lines miss each other.\n'
+            '6. DRAW ONLY what is described. Do not add extra lines, points, arcs, or annotations not specified in the figure notes.\n'
+            '7. STYLE: black lines on pure white background, no shading, no colour, no prose text, no question text, no answer choices, no working.\n'
+            '8. Short single-letter labels at named points are required. Axis tick labels and dimension values are allowed. No sentences.\n\n'
+            f'Question topic: {topic}\n'
+            f'Question stem (for context only — do NOT copy text into the diagram): {stem_excerpt}\n\n'
+            f'Figure specification:\n{figure_text or "- Draw a clean minimal diagram appropriate for the topic above."}'
         )
 
     def _save_b64_png(self, b64_json: str, output_path: Path) -> Path:

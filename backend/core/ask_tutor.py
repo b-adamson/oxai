@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import time
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 
@@ -143,6 +144,8 @@ class TutorService:
             input_messages.append({'role': api_role, 'content': msg.get('text', '')})
 
         schema = self._schema()
+        self.logger.info('[openai] responses.create  model=%s  schema=tutor_response  history_len=%d', self.settings.model, len(chat_history))
+        t0 = time.perf_counter()
         response = self.client.responses.create(
             model=self.settings.model,
             input=input_messages,
@@ -154,8 +157,8 @@ class TutorService:
                     'strict': True,
                 }
             },
-            temperature=self.settings.temperature,
             max_output_tokens=self.settings.max_output_tokens,
         )
+        self.logger.info('[openai] responses.create done  schema=tutor_response  elapsed=%.2fs', time.perf_counter() - t0)
 
         return json.loads(self._response_text(response))

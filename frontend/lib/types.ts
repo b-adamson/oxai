@@ -27,6 +27,7 @@ export interface QuestionRecord {
   subject: Subject;
   topic: string | null;
   subtopic: string | null;
+  archetype?: string | null;
   difficulty: Difficulty;
   stem: string;
   options: AnswerOption[];
@@ -45,6 +46,7 @@ export interface HintRecord { question_id: string; level: 1 | 2 | 3; hint: strin
 
 export interface SolutionRecord {
   question_id: string;
+  status?: string;
   worked_solution: string;
   final_answer_label: string;
   requires_diagram: boolean;

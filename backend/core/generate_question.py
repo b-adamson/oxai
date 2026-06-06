@@ -849,6 +849,36 @@ class QuestionGenerationService:
         label = result.get('label')
         return label if label in OPTION_LABELS else None
 
+    def _log_verification_failure(
+        self,
+        draft: Dict[str, Any],
+        reason: str,
+        computed_value: Optional[str] = None,
+        match_tier: Optional[str] = None,
+    ) -> None:
+        """Append a rejected draft to verification_failures.jsonl for offline
+        analysis (prompt tuning, matcher gaps, deciding whether an independent
+        solver is needed). Best-effort: never blocks generation."""
+        record = {
+            'logged_at': time.strftime('%Y-%m-%dT%H:%M:%S%z'),
+            'reason': reason,
+            'computed_value': computed_value,
+            'match_tier': match_tier,
+            'subject': draft.get('content', {}).get('subject'),
+            'topic': draft.get('content', {}).get('topic'),
+            'difficulty': draft.get('content', {}).get('difficulty'),
+            'stem': draft.get('prompt', {}).get('stem'),
+            'options': draft.get('prompt', {}).get('options'),
+            'claimed_label': draft.get('validation', {}).get('answer_label'),
+            'solution_code': draft.get('generation', {}).get('solution_code'),
+        }
+        try:
+            path = self.settings.generated_dir / 'verification_failures.jsonl'
+            with path.open('a', encoding='utf-8') as fh:
+                fh.write(_safe_json_dumps(record) + '\n')
+        except OSError as exc:
+            self.logger.warning('Could not write verification failure log: %s', exc)
+
     def _verify_by_code(self, draft: Dict[str, Any]) -> None:
         """Execute the draft's solution_code and require its result to equal the
         claimed answer option. Raises VerificationError on any failure."""
@@ -865,6 +895,7 @@ class QuestionGenerationService:
                 max_code_len=self.settings.code_exec_max_code_len,
             )
         if not result.ok:
+            self._log_verification_failure(draft, f'execution: {result.error}')
             raise VerificationError(f'solution_code execution failed: {result.error}')
 
         fallback = self._llm_match_fallback if self.settings.enable_llm_match_fallback else None
@@ -880,12 +911,14 @@ class QuestionGenerationService:
                 'Verification mismatch (%s): computed=%r claimed=%s options=%s',
                 match.tier, result.value, claimed, [o.get('text') for o in options],
             )
+            self._log_verification_failure(draft, f'no_match:{match.tier}', result.value, match.tier)
             raise VerificationError(f'computed value matched no single option ({match.tier})')
         if match.matched_label != claimed:
             self.logger.info(
                 'Verification disagreement: computed=%r matches option %s but draft claims %s',
                 result.value, match.matched_label, claimed,
             )
+            self._log_verification_failure(draft, f'disagreement:matched_{match.matched_label}', result.value, match.tier)
             raise VerificationError(
                 f'computed answer is option {match.matched_label}, but draft claims {claimed}'
             )
@@ -947,7 +980,9 @@ class QuestionGenerationService:
         similar_to_context: Optional[str] = None,
     ) -> Dict[str, Any]:
         last_error: Optional[Exception] = None
-        max_rounds = 2
+        # 3 rounds: the extra attempt only fires when a draft fails
+        # verification — exactly when one more try is worth the cost.
+        max_rounds = 3
 
         for round_idx in range(1, max_rounds + 1):
             try:

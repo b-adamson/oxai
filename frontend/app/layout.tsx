@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { SyncManager } from "@/components/SyncManager";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,6 +30,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <SyncManager />
         <nav className="bg-white border-b border-gray-200 px-4 py-2.5 flex items-center gap-6 sticky top-0 z-20">
           <Link href="/" className="text-sm font-bold text-gray-900 hover:text-accent transition-colors">
             OxAI

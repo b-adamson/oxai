@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { recordUsage } from "@/lib/usage";
 
 export async function POST(request: Request) {
   try {
@@ -19,6 +20,7 @@ export async function POST(request: Request) {
       );
     }
 
+    await recordUsage("tutor_messages");
     return NextResponse.json(data);
   } catch (error) {
     console.error(error);

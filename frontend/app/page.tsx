@@ -2,18 +2,16 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Script from "next/script";
-import { TutorChat } from "./components/TutorChat";
-import {
-  ChatMessage,
-  getSession,
+import { TutorChat } from "@/components/TutorChat";
+import { AccountChip } from "@/components/AccountChip";
+import { useStore, normaliseQuestion } from "@/lib/store";
+import { migrateLegacySessions } from "@/lib/migrateLegacy";
+import type {
   HintRecord,
-  listSessions,
   QuestionRecord,
   SolutionRecord,
-  updateHints,
-  updateSolution,
-  upsertSession,
-} from "./lib/session";
+  TutorChatMessage,
+} from "@/lib/types";
 
 type Mode = "training" | "generated";
 
@@ -67,6 +65,62 @@ type QuestionSet = {
   questions: Question[];
   sourceLabel: string;
 };
+
+// ── Store adapters ───────────────────────────────────────────────────────────
+// This page renders the raw backend question shape (nested prompt/content/…),
+// while the Zustand store persists the flattened QuestionRecord used by the
+// quick/paper pages. These helpers convert between the two.
+
+function recordToQuestion(rec: QuestionRecord): Question {
+  return {
+    question_id: rec.question_id,
+    source: rec.paper_source
+      ? {
+          section: rec.paper_source.section,
+          question_number: rec.paper_source.question_number,
+        }
+      : undefined,
+    content: {
+      subject: rec.subject,
+      topic: rec.topic ?? undefined,
+      subtopic: rec.subtopic ?? undefined,
+      archetype: rec.archetype ?? undefined,
+      difficulty: rec.difficulty,
+    },
+    prompt: {
+      stem: rec.stem,
+      options: rec.options,
+      figures: rec.figures as unknown as NonNullable<Question["prompt"]>["figures"],
+    },
+    validation: {
+      answer_label: rec.answer_label ?? undefined,
+      answer_text: rec.answer_text ?? undefined,
+    },
+    metadata: { diagram_url: rec.diagram_url },
+  };
+}
+
+/** Add a raw question to the store if it isn't there yet. Returns its id, or null if it has none. */
+function ensureQuestionStored(q: Question | undefined): string | null {
+  const qid = q?.question_id;
+  if (!q || !qid) return null;
+  const store = useStore.getState();
+  if (!store.getQuestion(qid)) {
+    const sourceType = q.source && "year" in q.source ? "bank" : "fresh_ai";
+    const rec = normaliseQuestion(q as Record<string, unknown>, null, sourceType);
+    rec.question_id = qid;
+    store.addQuestion(rec);
+  }
+  return qid;
+}
+
+function listRecentGenerated(limit = 10): Question[] {
+  return Object.values(useStore.getState().questions)
+    .filter((q) => q.source_type === "fresh_ai")
+    .sort((a, b) => b.created_at - a.created_at)
+    .slice(0, limit)
+    .map(recordToQuestion);
+}
 
 function normalizeSubject(subject?: string) {
   const s = String(subject || "").toLowerCase();
@@ -208,8 +262,9 @@ export default function Home() {
   const [solution, setSolution] = useState<SolutionRecord | null>(null);
   const [solutionLoading, setSolutionLoading] = useState(false);
   const [solutionError, setSolutionError] = useState("");
-  const [sessionChat, setSessionChat] = useState<ChatMessage[]>([]);
-  const [recentSessions, setRecentSessions] = useState<QuestionRecord[]>([]);
+  const [sessionChat, setSessionChat] = useState<TutorChatMessage[]>([]);
+  const [recentSessions, setRecentSessions] = useState<Question[]>([]);
+  const [tutorOpen, setTutorOpen] = useState(false);
   const [genArchetype, setGenArchetype] = useState("");
 
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -247,14 +302,15 @@ export default function Home() {
     loadPapers();
   }, []);
 
-  // Restore recent sessions from localStorage on mount
+  // Migrate any legacy localStorage sessions, then restore recents from the store
   useEffect(() => {
-    const sessions = listSessions();
-    setRecentSessions(sessions.map((s) => s.question));
-    if (sessions.length > 0 && mode === "generated") {
-      const latest = sessions[0];
-      setQuestionSet({ questions: [latest.question], sourceLabel: "Generated" });
-      setSelectedSection(latest.question.source?.section || "A");
+    migrateLegacySessions();
+    const recents = listRecentGenerated();
+    setRecentSessions(recents);
+    if (recents.length > 0 && mode === "generated") {
+      const latest = recents[0];
+      setQuestionSet({ questions: [latest], sourceLabel: "Generated" });
+      setSelectedSection(latest.source?.section || "A");
       setSelectedIndex(0);
       setContentLoading(false);
     }
@@ -326,14 +382,30 @@ export default function Home() {
   const currentQuestionKey =
     currentQuestion?.question_id ?? `${selectedSection}-${selectedIndex}`;
 
+  // Flattened view of the current question for the shared TutorChat component
+  const tutorQuestion = useMemo(
+    () =>
+      currentQuestion
+        ? normaliseQuestion(currentQuestion as Record<string, unknown>, null, "fresh_ai")
+        : null,
+    [currentQuestion]
+  );
+
   useEffect(() => {
     const qid = currentQuestion?.question_id;
-    const session = qid ? getSession(qid) : null;
-    setHints(session?.hints ?? []);
-    setSolution(session?.solution ?? null);
-    setSessionChat(session?.chat ?? []);
+    if (qid) {
+      const store = useStore.getState();
+      setHints(store.getHints(qid));
+      setSolution(store.getSolution(qid) ?? null);
+      setSessionChat(store.getTutorThread(qid));
+    } else {
+      setHints([]);
+      setSolution(null);
+      setSessionChat([]);
+    }
     setHintError("");
     setSolutionError("");
+    setTutorOpen(false);
   }, [currentQuestionKey]);
 
   useEffect(() => {
@@ -460,8 +532,8 @@ export default function Home() {
       const question = await res.json();
 
       if (question.question_id) {
-        upsertSession({ question_id: question.question_id, question });
-        setRecentSessions(listSessions().map((s) => s.question));
+        useStore.getState().addQuestion(normaliseQuestion(question, null, "fresh_ai"));
+        setRecentSessions(listRecentGenerated());
       }
 
       setQuestionSet({
@@ -504,13 +576,15 @@ export default function Home() {
       }
 
       const data = await res.json();
-      const newHints = [...hints, { level: data.level, hint: data.hint }];
-      setHints(newHints);
-      const qid = currentQuestion?.question_id;
-      if (qid) {
-        if (!getSession(qid)) upsertSession({ question_id: qid, question: currentQuestion });
-        updateHints(qid, newHints);
-      }
+      const qid = ensureQuestionStored(currentQuestion);
+      const hint: HintRecord = {
+        question_id: qid ?? currentQuestionKey,
+        level: data.level,
+        hint: data.hint,
+        generated_at: Date.now(),
+      };
+      setHints([...hints, hint]);
+      if (qid) useStore.getState().addHint(hint);
     } catch (err) {
       setHintError(err instanceof Error ? err.message : "Failed to get hint.");
     } finally {
@@ -547,18 +621,36 @@ export default function Home() {
         throw new Error(err.error || `Solution failed (${res.status})`);
       }
 
-      const sol: SolutionRecord = await res.json();
+      const data = await res.json();
+      const qid = ensureQuestionStored(currentQuestion);
+      const sol: SolutionRecord = {
+        question_id: qid ?? currentQuestionKey,
+        status: data.status,
+        worked_solution: data.worked_solution,
+        final_answer_label: data.final_answer_label,
+        requires_diagram: data.requires_diagram ?? false,
+        diagram_url: data.diagram_url ?? null,
+        generated_at: Date.now(),
+      };
       setSolution(sol);
-      const qid = currentQuestion?.question_id;
-      if (qid) {
-        if (!getSession(qid)) upsertSession({ question_id: qid, question: currentQuestion });
-        updateSolution(qid, sol);
-      }
+      if (qid) useStore.getState().addSolution(sol);
     } catch (err) {
       setSolutionError(err instanceof Error ? err.message : "Failed to get solution.");
     } finally {
       setSolutionLoading(false);
     }
+  }
+
+  function handleTutorMessage(msg: TutorChatMessage) {
+    setSessionChat((prev) => [...prev, msg]);
+    const qid = ensureQuestionStored(currentQuestion);
+    if (qid) useStore.getState().addTutorMessage(qid, msg);
+  }
+
+  function handleClearChat() {
+    setSessionChat([]);
+    const qid = currentQuestion?.question_id;
+    if (qid) useStore.getState().clearTutorThread(qid);
   }
 
   function navigate(dir: number) {
@@ -607,9 +699,13 @@ export default function Home() {
 
   return (
     <>
+      {/* Inline config must execute before the MathJax lib below finishes
+          loading. afterInteractive inline scripts run synchronously at
+          insertion, while the lib still has to download — so order holds.
+          (beforeInteractive is only allowed in the root layout in Next 16.) */}
       <Script
         id="mathjax-config"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             window.MathJax = {
@@ -638,6 +734,7 @@ export default function Home() {
               <p className="mt-1 text-xs text-slate-400">
                 Training data and question generation
               </p>
+              <AccountChip />
 
               <div className="mt-4 grid gap-3">
                 <label className="text-[10px] uppercase tracking-widest text-slate-400">
@@ -931,16 +1028,37 @@ export default function Home() {
                     )}
                   </div>
 
-                  {currentQuestion && (
-                    <TutorChat
-                      key={currentQuestionKey}
-                      questionId={currentQuestion.question_id ?? currentQuestionKey}
-                      question={currentQuestion}
-                      hints={hints}
-                      solution={solution}
-                      initialChat={sessionChat}
-                      mathJaxReady={mathJaxReady}
-                    />
+                  {tutorQuestion && (
+                    <div className="mt-6 border-t border-slate-100 pt-5">
+                      <button
+                        className="flex w-full items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+                        onClick={() => setTutorOpen((o) => !o)}
+                      >
+                        <span>Ask Tutor</span>
+                        <span className="text-slate-400">{tutorOpen ? "▲" : "▼"}</span>
+                      </button>
+
+                      {tutorOpen && (
+                        <div className="mt-3">
+                          <TutorChat
+                            key={currentQuestionKey}
+                            question={tutorQuestion}
+                            messages={sessionChat}
+                            hints={hints}
+                            solution={solution ?? undefined}
+                            onMessage={handleTutorMessage}
+                          />
+                          {sessionChat.length > 0 && (
+                            <button
+                              className="mt-2 rounded-lg border border-slate-200 px-3 py-1.5 text-xs text-slate-500 hover:bg-slate-100"
+                              onClick={handleClearChat}
+                            >
+                              Clear conversation
+                            </button>
+                          )}
+                        </div>
+                      )}
+                    </div>
                   )}
                 </div>
               ) : (

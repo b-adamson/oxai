@@ -282,6 +282,56 @@ export async function hydrateFromServer(): Promise<void> {
   });
 }
 
+// ── One-time import of guest data into an account (Phase 4) ─────────────────
+
+const IMPORT_FLAG_PREFIX = 'oxai-import-prompted-';
+
+export function wasImportPrompted(userId: string): boolean {
+  if (typeof window === 'undefined') return true;
+  return localStorage.getItem(IMPORT_FLAG_PREFIX + userId) !== null;
+}
+
+export function markImportPrompted(userId: string): void {
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.setItem(IMPORT_FLAG_PREFIX + userId, String(Date.now()));
+  } catch {
+    // ignore
+  }
+}
+
+/** Counts local data that could be pushed to the account. Call BEFORE
+ *  hydration so server-merged data isn't counted as "local". */
+export function countImportableData(): { attempts: number; questionStates: number; sessions: number } {
+  const s = useStore.getState();
+  const qids = new Set([
+    ...Object.keys(s.hints),
+    ...Object.keys(s.solutions),
+    ...Object.keys(s.tutorThreads),
+  ]);
+  return {
+    attempts: s.attempts.length,
+    questionStates: qids.size,
+    sessions: s.paperSessions.length + (s.quickSession ? 1 : 0),
+  };
+}
+
+/** Enqueue all local state into the outbox. Server upserts are idempotent,
+ *  so re-importing is harmless. */
+export function importLocalData(): void {
+  const s = useStore.getState();
+  for (const a of s.attempts) enqueue({ kind: 'attempt', id: a.attempt_id });
+  const qids = new Set([
+    ...Object.keys(s.hints),
+    ...Object.keys(s.solutions),
+    ...Object.keys(s.tutorThreads),
+  ]);
+  for (const qid of qids) enqueue({ kind: 'qstate', id: qid });
+  for (const p of s.paperSessions) enqueue({ kind: 'session', id: p.session_id, sessionKind: 'paper' });
+  if (s.quickSession) enqueue({ kind: 'session', id: s.quickSession.session_id, sessionKind: 'quick' });
+  scheduleFlush(0);
+}
+
 // ── Auth wiring (called by SyncManager) ──────────────────────────────────────
 
 export function setSyncAuthed(value: boolean): void {

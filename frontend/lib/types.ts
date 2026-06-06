@@ -10,7 +10,35 @@ export type SlotStatus = 'planned' | 'generating' | 'ready' | 'shown' | 'answere
 export type PaperStatus = 'planning' | 'loading' | 'ready' | 'in_progress' | 'complete' | 'abandoned';
 
 export interface AnswerOption { label: string; text: string; }
-export interface FigureSpec { kind: string; caption: string; prompt: string | null; }
+
+export interface GraphSeries {
+  name: string;
+  x_values: number[];
+  y_values: number[];
+}
+
+export interface FigureSpec {
+  figure_type: 'table' | 'simple_graph' | 'complex_diagram';
+  caption: string;
+  diagram_prompt: string | null;
+  // table fields
+  table_headers: string[] | null;
+  table_rows: string[][] | null;
+  table_row_labels: string[] | null;
+  // graph fields
+  graph_type: 'line' | 'bar' | 'scatter' | null;
+  graph_title: string | null;
+  graph_x_label: string | null;
+  graph_y_label: string | null;
+  graph_x_labels: string[] | null;
+  graph_series: GraphSeries[] | null;
+  graph_x_min: number | null;
+  graph_x_max: number | null;
+  graph_y_min: number | null;
+  graph_y_max: number | null;
+  // set by backend for complex_diagram after image generation
+  url?: string | null;
+}
 
 export interface PaperSource {
   exam?: string;
@@ -141,6 +169,9 @@ export interface PaperSession {
   revealed_solutions: string[];
   timer_duration_seconds: number | null;
   live_solution: boolean;
+  enable_solution: boolean;
+  enable_hints: boolean;
+  enable_tutor: boolean;
   submitted: boolean;
   created_at: number;
   updated_at: number;

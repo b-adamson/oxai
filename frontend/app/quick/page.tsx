@@ -40,11 +40,52 @@ function makeConfig(
   };
 }
 
+function useCountdown(targetMs: number | null): number {
+  const [remaining, setRemaining] = useState(() =>
+    targetMs ? Math.max(0, targetMs - Date.now()) : Infinity
+  );
+  useEffect(() => {
+    if (!targetMs) { setRemaining(Infinity); return; }
+    const tick = () => setRemaining(Math.max(0, targetMs - Date.now()));
+    tick();
+    const id = setInterval(tick, 500);
+    return () => clearInterval(id);
+  }, [targetMs]);
+  return remaining;
+}
+
+function formatTime(ms: number): string {
+  if (ms === Infinity || ms < 0) return '--:--';
+  const totalSec = Math.ceil(ms / 1000);
+  const h = Math.floor(totalSec / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+  if (h > 0) return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+  return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+}
+
+function timerColor(ms: number): string {
+  if (ms === Infinity) return 'text-gray-700';
+  if (ms < 5 * 60 * 1000) return 'text-red-600 font-bold animate-pulse';
+  if (ms < 30 * 60 * 1000) return 'text-amber-600 font-semibold';
+  return 'text-gray-700';
+}
+
+type Phase = 'config' | 'active' | 'report';
+
 export default function QuickModePage() {
-  const [phase, setPhase] = useState<'config' | 'active'>('config');
+  // Config options
   const [subject, setSubject] = useState('Mathematics');
   const [topicMode, setTopicMode] = useState<TopicMode>('all_topics');
   const [difficultyPreset, setDifficultyPreset] = useState<DifficultyPreset>('realistic');
+  const [timerEnabled, setTimerEnabled] = useState(true);
+  const [timerMinutes, setTimerMinutes] = useState(120);
+  const [enableSolution, setEnableSolution] = useState(true);
+  const [enableHints, setEnableHints] = useState(true);
+  const [enableTutor, setEnableTutor] = useState(true);
+
+  // Phase
+  const [phase, setPhase] = useState<Phase>('config');
 
   // Active session state
   const [slots, setSlots] = useState<PaperSlot[]>([]);
@@ -59,7 +100,17 @@ export default function QuickModePage() {
   const [bestStreak, setBestStreak] = useState(0);
   const [configRef, setConfigRef] = useState<QuickModeConfig | null>(null);
 
+  // Session options (captured at handleStart so config changes mid-session don't affect active session)
+  const [sessionTimerEnabled, setSessionTimerEnabled] = useState(false);
+  const [sessionTimerTargetMs, setSessionTimerTargetMs] = useState<number | null>(null);
+  const [sessionEnableSolution, setSessionEnableSolution] = useState(true);
+  const [sessionEnableHints, setSessionEnableHints] = useState(true);
+  const [sessionEnableTutor, setSessionEnableTutor] = useState(true);
+  const [sessionSubject, setSessionSubject] = useState('Mathematics');
+  const [sessionStartMs, setSessionStartMs] = useState<number | null>(null);
+
   const stopGenRef = useRef<(() => void) | null>(null);
+  const didAutoEndRef = useRef(false);
 
   // Store selectors
   const questions = useStore((s) => s.questions);
@@ -77,6 +128,24 @@ export default function QuickModePage() {
   useEffect(() => {
     return () => { stopGenRef.current?.(); };
   }, []);
+
+  // Timer countdown
+  const timerRemaining = useCountdown(sessionTimerTargetMs);
+
+  // Auto-end when timer expires
+  useEffect(() => {
+    if (
+      phase === 'active' &&
+      sessionTimerEnabled &&
+      sessionTimerTargetMs !== null &&
+      timerRemaining === 0 &&
+      !didAutoEndRef.current
+    ) {
+      didAutoEndRef.current = true;
+      stopGenRef.current?.();
+      setPhase('report');
+    }
+  }, [timerRemaining, phase, sessionTimerEnabled, sessionTimerTargetMs]);
 
   function launchGeneration(newSlots: PaperSlot[]) {
     const stop = startBackgroundGeneration(newSlots, CONCURRENCY, {
@@ -97,6 +166,8 @@ export default function QuickModePage() {
     const config = makeConfig(subject, topicMode, difficultyPreset);
     const mastery = computeMastery(attempts);
     const initial = planQuickSlots(config, mastery, inventory, PRELOAD, 0);
+    const now = Date.now();
+
     setConfigRef(config);
     setSlots(initial);
     setCurrentPos(0);
@@ -106,16 +177,32 @@ export default function QuickModePage() {
     setTotalCorrect(0);
     setStreak(0);
     setBestStreak(0);
-    setStartTime(Date.now());
+    setStartTime(now);
+    setSessionStartMs(now);
+
+    // Capture session options
+    setSessionSubject(subject);
+    setSessionTimerEnabled(timerEnabled);
+    setSessionTimerTargetMs(timerEnabled ? now + timerMinutes * 60 * 1000 : null);
+    setSessionEnableSolution(enableSolution);
+    setSessionEnableHints(enableHints);
+    setSessionEnableTutor(enableTutor);
+    didAutoEndRef.current = false;
+
     launchGeneration(initial);
     setPhase('active');
   }
 
   function handleEnd() {
     stopGenRef.current?.();
+    setPhase('report');
+  }
+
+  function handleRestart() {
     setPhase('config');
     setSlots([]);
     setConfigRef(null);
+    setSessionTimerTargetMs(null);
   }
 
   function handleAnswer(label: string, timeTaken: number) {
@@ -223,7 +310,7 @@ export default function QuickModePage() {
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 w-full max-w-md">
           <h1 className="text-2xl font-bold text-gray-900 mb-1">Quick Mode</h1>
           <p className="text-sm text-gray-500 mb-6">
-            Endless adaptive questions. No time pressure.
+            Endless adaptive questions.
           </p>
 
           <div className="space-y-5">
@@ -247,11 +334,124 @@ export default function QuickModePage() {
               }
             />
 
+            {/* Options */}
+            <div className="border border-gray-200 rounded-xl overflow-hidden">
+              <div className="px-4 py-2.5 bg-gray-50 border-b border-gray-200">
+                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Options</span>
+              </div>
+              <div className="divide-y divide-gray-100">
+                {/* Timer */}
+                <div className="px-4 py-3 flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-sm text-gray-800">Timer</div>
+                    {timerEnabled && (
+                      <div className="flex items-center gap-1.5 mt-1">
+                        <input
+                          type="number"
+                          min={5}
+                          max={300}
+                          value={timerMinutes}
+                          onChange={(e) =>
+                            setTimerMinutes(Math.max(5, Math.min(300, Number(e.target.value))))
+                          }
+                          className="w-16 border border-gray-300 rounded px-2 py-1 text-sm text-center text-gray-800"
+                        />
+                        <span className="text-xs text-gray-500">minutes</span>
+                      </div>
+                    )}
+                  </div>
+                  <Toggle value={timerEnabled} onChange={setTimerEnabled} />
+                </div>
+
+                {/* Solutions */}
+                <div className="px-4 py-3 flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-sm text-gray-800">Solutions</div>
+                    <div className="text-xs text-gray-400">Worked solution button</div>
+                  </div>
+                  <Toggle value={enableSolution} onChange={setEnableSolution} />
+                </div>
+
+                {/* Hints */}
+                <div className="px-4 py-3 flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-sm text-gray-800">Hints</div>
+                    <div className="text-xs text-gray-400">Step-by-step hints</div>
+                  </div>
+                  <Toggle value={enableHints} onChange={setEnableHints} />
+                </div>
+
+                {/* Tutor */}
+                <div className="px-4 py-3 flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-sm text-gray-800">AI Tutor</div>
+                    <div className="text-xs text-gray-400">Ask the tutor for guidance</div>
+                  </div>
+                  <Toggle value={enableTutor} onChange={setEnableTutor} />
+                </div>
+              </div>
+            </div>
+
             <button
               onClick={handleStart}
               className="w-full bg-accent hover:bg-accent-light text-white font-semibold py-3 rounded-xl transition-colors"
             >
               Start Practising
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Report screen ──────────────────────────────────────────────
+  if (phase === 'report') {
+    const accuracy = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
+    const elapsedSec = sessionStartMs ? Math.floor((Date.now() - sessionStartMs) / 1000) : 0;
+    const elapsedMin = Math.floor(elapsedSec / 60);
+    const elapsedS = elapsedSec % 60;
+    const timeStr = elapsedMin > 0
+      ? `${elapsedMin}m ${elapsedS}s`
+      : `${elapsedSec}s`;
+
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 w-full max-w-sm">
+          <div className="text-center mb-6">
+            <div className="text-4xl mb-2">
+              {accuracy >= 80 ? '🎉' : accuracy >= 60 ? '👍' : '📚'}
+            </div>
+            <h2 className="text-xl font-bold text-gray-900">Session complete</h2>
+            <p className="text-sm text-gray-500 mt-1">{sessionSubject}</p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            <StatBox label="Answered" value={String(totalAnswered)} />
+            <StatBox label="Correct" value={String(totalCorrect)} />
+            <StatBox
+              label="Accuracy"
+              value={`${accuracy}%`}
+              valueClass={accuracy >= 80 ? 'text-emerald-600' : accuracy >= 60 ? 'text-amber-600' : 'text-red-500'}
+            />
+            <StatBox label="Best streak" value={String(bestStreak)} />
+          </div>
+
+          <div className="text-center text-xs text-gray-400 mb-6">
+            Time: {timeStr}
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={handleRestart}
+              className="w-full bg-accent hover:bg-accent-light text-white font-semibold py-3 rounded-xl transition-colors"
+            >
+              Practice Again
+            </button>
+            <button
+              onClick={handleRestart}
+              className="w-full text-sm text-gray-500 hover:text-gray-700 transition-colors py-2"
+            >
+              Back to config
             </button>
           </div>
         </div>
@@ -270,8 +470,13 @@ export default function QuickModePage() {
       <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-4 py-2.5 flex items-center gap-3">
         <span className="font-semibold text-gray-800 text-sm">Quick Mode</span>
         <span className="text-gray-300">·</span>
-        <span className="text-sm text-gray-500">{subject}</span>
+        <span className="text-sm text-gray-500">{sessionSubject}</span>
         <div className="ml-auto flex items-center gap-4">
+          {sessionTimerEnabled && sessionTimerTargetMs !== null && (
+            <span className={`text-sm font-mono ${timerColor(timerRemaining)}`}>
+              {formatTime(timerRemaining)}
+            </span>
+          )}
           <div className="text-sm text-gray-600">
             <span className="font-semibold text-emerald-600">{totalCorrect}</span>
             <span className="text-gray-400">/{totalAnswered}</span>
@@ -313,7 +518,9 @@ export default function QuickModePage() {
               tutorMessages={currentTutorMessages}
               submittedAnswer={submittedAnswer}
               solutionRevealed={solutionRevealed}
-              hideSolution={false}
+              hideSolution={!sessionEnableSolution}
+              hideHints={!sessionEnableHints}
+              hideTutor={!sessionEnableTutor}
               onAnswer={handleAnswer}
               onHintAdded={(h) => addHint(h)}
               onSolutionRevealed={() => setSolutionRevealed(true)}
@@ -335,6 +542,23 @@ export default function QuickModePage() {
         ) : null}
       </div>
     </div>
+  );
+}
+
+function Toggle({ value, onChange }: { value: boolean; onChange: (v: boolean) => void }) {
+  return (
+    <button
+      onClick={() => onChange(!value)}
+      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors ${
+        value ? 'bg-accent' : 'bg-gray-200'
+      }`}
+    >
+      <span
+        className={`inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform ${
+          value ? 'translate-x-6' : 'translate-x-1'
+        }`}
+      />
+    </button>
   );
 }
 
@@ -367,6 +591,23 @@ function PickerGroup({
           </button>
         ))}
       </div>
+    </div>
+  );
+}
+
+function StatBox({
+  label,
+  value,
+  valueClass = 'text-gray-900',
+}: {
+  label: string;
+  value: string;
+  valueClass?: string;
+}) {
+  return (
+    <div className="bg-gray-50 rounded-xl p-3 text-center">
+      <div className={`text-2xl font-bold ${valueClass}`}>{value}</div>
+      <div className="text-xs text-gray-500 mt-0.5">{label}</div>
     </div>
   );
 }

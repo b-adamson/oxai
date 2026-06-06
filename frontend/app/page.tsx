@@ -788,7 +788,7 @@ export default function Home() {
                     <input
                       type="text"
                       placeholder="e.g. mechanics, optics…"
-                      className="rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm placeholder:text-slate-600"
+                      className="rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500"
                       value={genTopic}
                       onChange={(e) => setGenTopic(e.target.value)}
                     />

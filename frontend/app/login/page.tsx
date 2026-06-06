@@ -112,7 +112,7 @@ function LoginForm() {
               <input
                 type="text"
                 placeholder="Name (optional)"
-                className="rounded-md border border-slate-300 px-3 py-2 text-sm"
+                className="rounded-md border border-slate-300 px-3 py-2 text-sm text-gray-800"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
               />
@@ -121,7 +121,7 @@ function LoginForm() {
               type="email"
               required
               placeholder="Email"
-              className="rounded-md border border-slate-300 px-3 py-2 text-sm"
+              className="rounded-md border border-slate-300 px-3 py-2 text-sm text-gray-800"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -130,7 +130,7 @@ function LoginForm() {
               required
               minLength={6}
               placeholder="Password"
-              className="rounded-md border border-slate-300 px-3 py-2 text-sm"
+              className="rounded-md border border-slate-300 px-3 py-2 text-sm text-gray-800"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />

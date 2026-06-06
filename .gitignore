@@ -1,5 +1,6 @@
 backend/.venv
 backend/.env
+pytest_cache/
 __pycache__/
 .vscode/
 viewer.html
@@ -9,7 +10,8 @@ boot.sh
 # Windows Zone.Identifier alternate data streams (WSL artefact)
 *:Zone.Identifier*
 
-# Runtime state (deduplication signatures, etc) — created at startup
+# Runtime state — created at startup, not versioned
+backend/generated/
 
 # Supabase CLI local artifacts
 supabase/.temp/

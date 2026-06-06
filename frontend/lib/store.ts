@@ -38,16 +38,31 @@ export function normaliseQuestion(raw: Record<string, any>, mode: 'quick' | 'pap
     difficulty: content.difficulty ?? 2,
     stem: prompt.stem ?? '',
     options: prompt.options ?? [],
-    figures: prompt.figures ?? [],
+    figures: (prompt.figures ?? [])
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .filter((f: any) => !f.type || f.type !== 'figure')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .map((f: any) => {
+        const url: string | null = f.url ?? null;
+        if (!url) return f;
+        if (url.startsWith('/diagrams/')) return { ...f, url: url.replace('/diagrams/', '/api/diagrams/') };
+        if (url.startsWith('/images/')) return { ...f, url: url.replace('/images/', '/api/images/') };
+        return f;
+      }),
     answer_label: validation.answer_label ?? null,
     answer_text: validation.answer_text ?? null,
     has_diagram: Boolean(content.requires_diagram || metadata.diagram_required),
     diagram_url: (() => {
-      const raw = metadata.diagram_url ?? null;
-      if (!raw) return null;
-      if (raw.startsWith('/diagrams/')) return raw.replace('/diagrams/', '/api/diagrams/');
-      if (raw.startsWith('/images/')) return raw.replace('/images/', '/api/images/');
-      return raw;
+      // Check metadata first
+      const metaUrl: string | null = metadata.diagram_url ?? null;
+      // Fallback: extract from legacy figure format {type:"figure", src:"..."}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const legacyFig = (prompt.figures ?? []).find((f: any) => f.type === 'figure' && f.src);
+      const rawUrl = metaUrl ?? (legacyFig ? `/images/${legacyFig.src}` : null);
+      if (!rawUrl) return null;
+      if (rawUrl.startsWith('/diagrams/')) return rawUrl.replace('/diagrams/', '/api/diagrams/');
+      if (rawUrl.startsWith('/images/')) return rawUrl.replace('/images/', '/api/images/');
+      return rawUrl;
     })(),
     tags: metadata.tags ?? [],
     estimated_time_seconds: metadata.estimated_time_seconds ?? null,

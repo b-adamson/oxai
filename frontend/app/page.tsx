@@ -699,9 +699,13 @@ export default function Home() {
 
   return (
     <>
+      {/* Inline config must execute before the MathJax lib below finishes
+          loading. afterInteractive inline scripts run synchronously at
+          insertion, while the lib still has to download — so order holds.
+          (beforeInteractive is only allowed in the root layout in Next 16.) */}
       <Script
         id="mathjax-config"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             window.MathJax = {

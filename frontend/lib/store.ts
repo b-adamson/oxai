@@ -2,6 +2,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { v4 as uuidv4 } from 'uuid';
+import { queueAttempt, queueQuestionState, queueSession } from './sync';
 import type {
   AppState,
   QuestionRecord,
@@ -132,22 +133,26 @@ export const useStore = create<Store>()(
 
       getQuestion: (id) => get().questions[id],
 
-      addHint: (h) =>
+      addHint: (h) => {
         set((s) => {
           const prev = s.hints[h.question_id] ?? [];
           const existing = prev.find((x) => x.level === h.level);
           if (existing) return s;
           return { hints: { ...s.hints, [h.question_id]: [...prev, h] } };
-        }),
+        });
+        queueQuestionState(h.question_id);
+      },
 
       getHints: (questionId) => get().hints[questionId] ?? [],
 
-      addSolution: (sol) =>
-        set((s) => ({ solutions: { ...s.solutions, [sol.question_id]: sol } })),
+      addSolution: (sol) => {
+        set((s) => ({ solutions: { ...s.solutions, [sol.question_id]: sol } }));
+        queueQuestionState(sol.question_id);
+      },
 
       getSolution: (questionId) => get().solutions[questionId],
 
-      addTutorMessage: (questionId, msg) =>
+      addTutorMessage: (questionId, msg) => {
         set((s) => {
           const thread = s.tutorThreads[questionId] ?? { question_id: questionId, messages: [] };
           return {
@@ -156,19 +161,25 @@ export const useStore = create<Store>()(
               [questionId]: { ...thread, messages: [...thread.messages, msg] },
             },
           };
-        }),
+        });
+        queueQuestionState(questionId);
+      },
 
       getTutorThread: (questionId) =>
         (get().tutorThreads[questionId]?.messages ?? []),
 
-      clearTutorThread: (questionId) =>
+      clearTutorThread: (questionId) => {
         set((s) => {
           const { [questionId]: _, ...rest } = s.tutorThreads;
           return { tutorThreads: rest };
-        }),
+        });
+        queueQuestionState(questionId);
+      },
 
-      recordAttempt: (a) =>
-        set((s) => ({ attempts: [...s.attempts, a] })),
+      recordAttempt: (a) => {
+        set((s) => ({ attempts: [...s.attempts, a] }));
+        queueAttempt(a.attempt_id);
+      },
 
       getAttempts: (questionId) => {
         const all = get().attempts;
@@ -194,22 +205,32 @@ export const useStore = create<Store>()(
 
       getQuestionSession: (questionId) => get().questionSessions[questionId],
 
-      setQuickSession: (session) => set({ quickSession: session }),
+      setQuickSession: (session) => {
+        set({ quickSession: session });
+        if (session) queueSession('quick', session.session_id);
+      },
 
-      updateQuickSession: (update) =>
+      updateQuickSession: (update) => {
         set((s) => ({
           quickSession: s.quickSession ? { ...s.quickSession, ...update } : null,
-        })),
+        }));
+        const q = get().quickSession;
+        if (q) queueSession('quick', q.session_id);
+      },
 
-      addPaperSession: (session) =>
-        set((s) => ({ paperSessions: [...s.paperSessions, session] })),
+      addPaperSession: (session) => {
+        set((s) => ({ paperSessions: [...s.paperSessions, session] }));
+        queueSession('paper', session.session_id);
+      },
 
-      updatePaperSession: (sessionId, update) =>
+      updatePaperSession: (sessionId, update) => {
         set((s) => ({
           paperSessions: s.paperSessions.map((p) =>
             p.session_id === sessionId ? { ...p, ...update, updated_at: Date.now() } : p
           ),
-        })),
+        }));
+        queueSession('paper', sessionId);
+      },
 
       setActivePaperSession: (id) => set({ activePaperSessionId: id }),
 

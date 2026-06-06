@@ -1,9 +1,8 @@
 // app/api/generate/route.ts
 import { NextResponse } from "next/server";
+import { upsertGeneratedQuestion } from "@/lib/questionPool";
 
 export async function POST(request: Request) {
-  console.log("API GENERATE ROUTE HIT");
-console.log("BACKEND_URL =", process.env.BACKEND_URL);
   try {
     const body = await request.json();
 
@@ -22,6 +21,7 @@ console.log("BACKEND_URL =", process.env.BACKEND_URL);
       );
     }
 
+    await upsertGeneratedQuestion(data);
     return NextResponse.json(data);
   } catch (error) {
     console.error(error);

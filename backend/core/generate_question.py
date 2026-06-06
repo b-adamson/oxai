@@ -5,6 +5,7 @@ import json
 import logging
 import os
 import sqlite3
+import threading
 import time
 import uuid
 from dataclasses import dataclass, field
@@ -13,11 +14,26 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from openai import OpenAI
 
+from core.answer_match import match_value_to_options
+from core.code_sandbox import execute_verification_code
 from core.example_index import QuestionExampleIndex, corpus_fingerprint
 from core.generate_diagram import DiagramGenerationService, DiagramSettings
 
 LOGGER = logging.getLogger('oxai.generate_question')
 OPTION_LABELS = ['A', 'B', 'C', 'D', 'E']
+
+
+class VerificationError(ValueError):
+    """A calculation question failed code-execution verification."""
+
+
+def _is_uuid4(value: Any) -> bool:
+    if not isinstance(value, str):
+        return False
+    try:
+        return str(uuid.UUID(value, version=4)) == value.lower()
+    except (ValueError, AttributeError):
+        return False
 
 
 def _safe_json_dumps(obj: Any) -> str:
@@ -142,9 +158,18 @@ class GenerationSettings:
     openai_model_draft: str = os.getenv('OPENAI_MODEL_DRAFT', 'gpt-5.5')
     openai_model_image: str = os.getenv('OPENAI_IMAGE_MODEL', 'gpt-image-2')
     temperature: float = 0.7
-    max_output_tokens: int = 1600
-    repair_max_output_tokens: int = 900
+    # Drafts now include generation.solution_code — 1600 caused truncated JSON.
+    max_output_tokens: int = 2400
+    repair_max_output_tokens: int = 1200
     examples: int = 3
+    # Code-execution verification of calculation questions
+    enable_code_verification: bool = os.getenv('ENABLE_CODE_VERIFICATION', '1').lower() not in ('0', 'false')
+    code_exec_timeout_s: float = float(os.getenv('CODE_EXEC_TIMEOUT_S', '5'))
+    code_exec_max_mem_mb: int = int(os.getenv('CODE_EXEC_MAX_MEM_MB', '512'))
+    code_exec_max_code_len: int = int(os.getenv('CODE_EXEC_MAX_CODE_LEN', '4000'))
+    code_exec_concurrency: int = int(os.getenv('CODE_EXEC_CONCURRENCY', '4'))
+    match_rel_tol: float = float(os.getenv('MATCH_REL_TOL', '1e-3'))
+    enable_llm_match_fallback: bool = os.getenv('ENABLE_LLM_MATCH_FALLBACK', '1').lower() not in ('0', 'false')
     recent_signature_limit: int = 1000
     cache_examples: bool = True
     enable_image_generation: bool = True
@@ -250,6 +275,9 @@ class QuestionGenerationService:
         self.settings.diagram_dir.mkdir(parents=True, exist_ok=True)
         self._example_index: Optional[QuestionExampleIndex] = None
         self._index_fingerprint: Optional[str] = None
+        # Bounds concurrent verification subprocesses (each can hold up to
+        # code_exec_max_mem_mb of address space).
+        self._exec_semaphore = threading.BoundedSemaphore(max(1, self.settings.code_exec_concurrency))
 
     def _get_questions(self) -> List[Dict[str, Any]]:
         if self.settings.cache_examples and self.settings._cached_questions is not None:
@@ -401,12 +429,13 @@ class QuestionGenerationService:
                     'generation': {
                         'type': 'object',
                         'additionalProperties': False,
-                        'required': ['template_id', 'template_version', 'solution_steps', 'distractor_strategy'],
+                        'required': ['template_id', 'template_version', 'solution_steps', 'distractor_strategy', 'solution_code'],
                         'properties': {
                             'template_id': {'type': ['string', 'null']},
                             'template_version': {'type': ['string', 'null']},
                             'solution_steps': {'type': 'array', 'items': {'type': 'string'}},
                             'distractor_strategy': {'type': 'array', 'items': {'type': 'string'}},
+                            'solution_code': {'type': ['string', 'null']},
                         },
                     },
                     'validation': {
@@ -459,6 +488,16 @@ class QuestionGenerationService:
             'Provide exactly five options labeled A-E. '
             'Solve the question internally before answering so the correct option is genuinely right. '
             'If you include a solution, keep it concise and stepwise. '
+            'If content.requires_calculation is true, you MUST provide generation.solution_code: '
+            'a self-contained Python 3 snippet that computes the answer purely from the data given in the stem. '
+            'The code must NOT reference the answer options, the letters A-E, or your chosen answer in any way. '
+            'Allowed imports ONLY: math, sympy, fractions, decimal, statistics, itertools, cmath, numbers. '
+            'No file, network, OS access, eval/exec, or dunder attributes. '
+            'End the code by assigning the computed answer to a variable named RESULT. '
+            'For numeric answers assign a plain number without units, expressed in the same unit the options use. '
+            'For exact symbolic answers (surds, fractions, pi) assign a sympy expression. '
+            'The value of RESULT must equal the option you mark in validation.answer_label. '
+            'If content.requires_calculation is false, set generation.solution_code to null. '
             f'Rotate broadly across the subject syllabus: {topic_list}. '
             'Avoid repeatedly defaulting to the same topic or question shape. '
             'For Mathematics, do not use calculus, integration, or differentiation unless the topic explicitly calls for advanced math. '
@@ -493,7 +532,18 @@ class QuestionGenerationService:
         if not isinstance(question, dict):
             raise ValueError('Generated output was not a JSON object.')
 
-        question.setdefault('question_id', str(uuid.uuid4()))
+        # Always use our own uuid4 ids — model-chosen ids (e.g.
+        # "physics_mech_d2_001") collide across generations (issue #1).
+        # Idempotent: normalize runs several times per question, so an id we
+        # already assigned is kept; only model-chosen ids are replaced.
+        existing_id = question.get('question_id')
+        if not _is_uuid4(existing_id):
+            question['question_id'] = str(uuid.uuid4())
+            if isinstance(existing_id, str) and existing_id.strip():
+                metadata = question.get('metadata')
+                if isinstance(metadata, dict) and isinstance(metadata.get('tags'), list):
+                    metadata['tags'].append(f'model_question_id:{existing_id}')
+
         for key in ('source', 'content', 'prompt', 'generation', 'validation', 'metadata'):
             if not isinstance(question.get(key), dict):
                 question[key] = {}
@@ -544,6 +594,11 @@ class QuestionGenerationService:
         if not isinstance(metadata.get('diagram_url'), (str, type(None))):
             metadata['diagram_url'] = None
 
+        generation = question['generation']
+        if not isinstance(generation.get('solution_code'), (str, type(None))):
+            generation['solution_code'] = None
+        generation.setdefault('solution_code', None)
+
         return question
 
     def _add_hint_fields(self, draft: Dict[str, Any], subject: str, topic: Optional[str], difficulty: int) -> None:
@@ -576,6 +631,7 @@ class QuestionGenerationService:
         generation.setdefault('template_version', None)
         generation.setdefault('solution_steps', [])
         generation.setdefault('distractor_strategy', [])
+        generation.setdefault('solution_code', None)
 
         validation = draft.setdefault('validation', {})
         validation.setdefault('answer_label', None)
@@ -767,6 +823,87 @@ class QuestionGenerationService:
         self._add_hint_fields(draft, subject, effective_topic, difficulty)
         return self._normalize_question(draft)
 
+    def _llm_match_fallback(self, computed: str, options: List[Dict[str, str]]) -> Optional[str]:
+        """Last-resort option matching for values the tiered matcher can't parse."""
+        schema = {
+            'name': 'option_match',
+            'schema': {
+                'type': 'object',
+                'additionalProperties': False,
+                'required': ['label'],
+                'properties': {'label': {'type': 'string', 'enum': OPTION_LABELS + ['NONE']}},
+            },
+        }
+        result = self._call_structured(
+            model=self.settings.openai_model_draft,
+            instructions=(
+                'You compare a computed answer value against five multiple-choice options. '
+                'Reply with the letter of the single option that is mathematically equal to the value '
+                '(allowing formatting, units, and reasonable rounding differences), or NONE. '
+                'If two or more options are equal to the value, reply NONE. Do not guess.'
+            ),
+            payload={'computed_value': computed, 'options': options},
+            schema=schema,
+            max_output_tokens=200,
+        )
+        label = result.get('label')
+        return label if label in OPTION_LABELS else None
+
+    def _verify_by_code(self, draft: Dict[str, Any]) -> None:
+        """Execute the draft's solution_code and require its result to equal the
+        claimed answer option. Raises VerificationError on any failure."""
+        generation = draft.get('generation', {})
+        validation = draft.get('validation', {})
+        options = draft.get('prompt', {}).get('options', [])
+        claimed = validation.get('answer_label')
+
+        with self._exec_semaphore:
+            result = execute_verification_code(
+                generation.get('solution_code'),
+                timeout_s=self.settings.code_exec_timeout_s,
+                max_mem_mb=self.settings.code_exec_max_mem_mb,
+                max_code_len=self.settings.code_exec_max_code_len,
+            )
+        if not result.ok:
+            raise VerificationError(f'solution_code execution failed: {result.error}')
+
+        fallback = self._llm_match_fallback if self.settings.enable_llm_match_fallback else None
+        match = match_value_to_options(
+            result.value,
+            options,
+            rel_tol=self.settings.match_rel_tol,
+            llm_fallback=fallback,
+        )
+
+        if match.matched_label is None:
+            self.logger.info(
+                'Verification mismatch (%s): computed=%r claimed=%s options=%s',
+                match.tier, result.value, claimed, [o.get('text') for o in options],
+            )
+            raise VerificationError(f'computed value matched no single option ({match.tier})')
+        if match.matched_label != claimed:
+            self.logger.info(
+                'Verification disagreement: computed=%r matches option %s but draft claims %s',
+                result.value, match.matched_label, claimed,
+            )
+            raise VerificationError(
+                f'computed answer is option {match.matched_label}, but draft claims {claimed}'
+            )
+
+        validation['status'] = 'verified'
+        validation['verified_by'] = 'code_execution'
+        generation['verification'] = {
+            'method': 'code_execution',
+            'computed_value': result.value,
+            'matched_label': match.matched_label,
+            'match_tier': match.tier,
+            'duration_s': round(result.duration_s, 3),
+        }
+        self.logger.info(
+            'Code verification passed: %r == option %s (tier=%s, %.2fs)',
+            result.value, match.matched_label, match.tier, result.duration_s,
+        )
+
     def _finalize_question(self, draft: Dict[str, Any], want_diagram: bool, force_diagram: bool) -> Dict[str, Any]:
         draft = self._normalize_question(draft)
         issues = self._validate_question(draft)
@@ -781,11 +918,18 @@ class QuestionGenerationService:
             raise ValueError('Generated question still failed validation: ' + '; '.join(issues))
 
         validation = draft.setdefault('validation', {})
-        validation['status'] = 'verified'
         if validation.get('answer_label') not in OPTION_LABELS:
             raise ValueError('Finalized question is missing a valid answer label.')
         idx = OPTION_LABELS.index(validation['answer_label'])
         validation['answer_text'] = draft['prompt']['options'][idx]['text']
+
+        if bool(draft.get('content', {}).get('requires_calculation')) and self.settings.enable_code_verification:
+            # Sets status='verified' + verified_by + evidence, or raises
+            # VerificationError -> outer retry loop drafts afresh. No repair:
+            # a wrong computed answer means the whole question is suspect.
+            self._verify_by_code(draft)
+        else:
+            validation['status'] = 'verified'
 
         self._maybe_generate_diagram(draft, want_diagram=want_diagram, force_diagram=force_diagram)
         return self._normalize_question(draft)

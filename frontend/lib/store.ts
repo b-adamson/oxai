@@ -33,6 +33,7 @@ export function normaliseQuestion(raw: Record<string, any>, mode: 'quick' | 'pap
     subject: content.subject ?? 'math',
     topic: content.topic ?? null,
     subtopic: content.subtopic ?? null,
+    archetype: content.archetype ?? null,
     difficulty: content.difficulty ?? 2,
     stem: prompt.stem ?? '',
     options: prompt.options ?? [],

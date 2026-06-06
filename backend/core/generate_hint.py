@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import time
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 
@@ -84,6 +85,8 @@ class HintGenerationService:
             },
         }
 
+        self.logger.info('[openai] responses.create  model=%s  schema=hint_response  level=%d', self.settings.model, level)
+        t0 = time.perf_counter()
         response = self.client.responses.create(
             model=self.settings.model,
             input=[
@@ -104,9 +107,9 @@ class HintGenerationService:
                     'strict': True,
                 }
             },
-            temperature=self.settings.temperature,
             max_output_tokens=self.settings.max_output_tokens,
         )
+        self.logger.info('[openai] responses.create done  schema=hint_response  elapsed=%.2fs', time.perf_counter() - t0)
 
         raw = self._response_text(response)
         result = json.loads(raw)

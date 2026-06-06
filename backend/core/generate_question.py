@@ -5,6 +5,7 @@ import json
 import logging
 import os
 import sqlite3
+import time
 import uuid
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -12,6 +13,7 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from openai import OpenAI
 
+from core.example_index import QuestionExampleIndex, corpus_fingerprint
 from core.generate_diagram import DiagramGenerationService, DiagramSettings
 
 LOGGER = logging.getLogger('oxai.generate_question')
@@ -102,7 +104,9 @@ def choose_examples(
         if want_diagram and has_diagram:
             score += 2
         elif not want_diagram and not has_diagram:
-            score += 1
+            score += 4
+        elif not want_diagram and has_diagram:
+            score -= 2
 
         if c.get('difficulty') is not None:
             try:
@@ -135,12 +139,11 @@ class GenerationSettings:
     processed_dir: Path
     generated_dir: Path
     diagram_dir: Path
-    openai_model_draft: str = os.getenv('OPENAI_MODEL_DRAFT', 'gpt-5.2')
-    openai_model_verify: str = os.getenv('OPENAI_MODEL_VERIFY', 'gpt-5.2')
+    openai_model_draft: str = os.getenv('OPENAI_MODEL_DRAFT', 'gpt-5.5')
     openai_model_image: str = os.getenv('OPENAI_IMAGE_MODEL', 'gpt-image-2')
     temperature: float = 0.7
     max_output_tokens: int = 1600
-    verify_max_output_tokens: int = 1200
+    repair_max_output_tokens: int = 900
     examples: int = 3
     recent_signature_limit: int = 1000
     cache_examples: bool = True
@@ -212,6 +215,25 @@ class RecentQuestionStore:
 
 
 class QuestionGenerationService:
+    """Generate fresh questions from the bank plus GPT, with one draft and optional repair."""
+
+    _TOPIC_LIST: Dict[str, str] = {
+        'math': (
+            'algebra, functions and graphs, coordinate geometry, geometry, trigonometry, '
+            'exponentials and logarithms, sequences and series, vectors, probability, statistics'
+        ),
+        'physics': (
+            'mechanics, electricity, waves, thermal physics, radioactivity, electromagnetism, atomic physics'
+        ),
+        'chemistry': (
+            'atomic structure, bonding, stoichiometry, energetics, kinetics, equilibrium, acids and bases, '
+            'organic chemistry, electrochemistry'
+        ),
+        'biology': (
+            'cell biology, biochemistry, genetics, physiology, ecology'
+        ),
+    }
+
     def __init__(self, settings: GenerationSettings, logger: Optional[logging.Logger] = None) -> None:
         self.settings = settings
         self.logger = logger or LOGGER
@@ -226,6 +248,8 @@ class QuestionGenerationService:
         )
         self.settings.generated_dir.mkdir(parents=True, exist_ok=True)
         self.settings.diagram_dir.mkdir(parents=True, exist_ok=True)
+        self._example_index: Optional[QuestionExampleIndex] = None
+        self._index_fingerprint: Optional[str] = None
 
     def _get_questions(self) -> List[Dict[str, Any]]:
         if self.settings.cache_examples and self.settings._cached_questions is not None:
@@ -234,6 +258,16 @@ class QuestionGenerationService:
         if self.settings.cache_examples:
             self.settings._cached_questions = questions
         return questions
+
+    def _get_example_index(self) -> QuestionExampleIndex:
+        questions = self._get_questions()
+        fp = corpus_fingerprint(questions)
+        if self._example_index is None or self._index_fingerprint != fp:
+            self.logger.info('Building QuestionExampleIndex (corpus fingerprint %s)', fp)
+            self._example_index = QuestionExampleIndex(questions)
+            self._index_fingerprint = fp
+            self.logger.info('Index ready: %s', self._example_index.stats())
+        return self._example_index
 
     def _response_text(self, response: Any) -> str:
         text = getattr(response, 'output_text', None)
@@ -255,18 +289,22 @@ class QuestionGenerationService:
 
         raise ValueError('OpenAI response did not contain any text output.')
 
-    def _call_structured(self, *, model: str, instructions: str, payload: Dict[str, Any], schema: Dict[str, Any], max_output_tokens: int) -> Dict[str, Any]:
+    def _call_structured(
+        self,
+        *,
+        model: str,
+        instructions: str,
+        payload: Dict[str, Any],
+        schema: Dict[str, Any],
+        max_output_tokens: int,
+    ) -> Dict[str, Any]:
+        self.logger.info('[openai] responses.create  model=%s  schema=%s  max_tokens=%d', model, schema['name'], max_output_tokens)
+        t0 = time.perf_counter()
         response = self.client.responses.create(
             model=model,
             input=[
-                {
-                    'role': 'developer',
-                    'content': instructions,
-                },
-                {
-                    'role': 'user',
-                    'content': json.dumps(payload, ensure_ascii=False, indent=2),
-                },
+                {'role': 'developer', 'content': instructions},
+                {'role': 'user', 'content': json.dumps(payload, ensure_ascii=False, indent=2)},
             ],
             text={
                 'format': {
@@ -276,11 +314,16 @@ class QuestionGenerationService:
                     'strict': True,
                 }
             },
-            temperature=self.settings.temperature,
             max_output_tokens=max_output_tokens,
         )
-        raw = self._response_text(response)
-        return json.loads(raw)
+        usage = getattr(response, 'usage', None)
+        out_tokens = getattr(usage, 'output_tokens', '?')
+        in_tokens = getattr(usage, 'input_tokens', '?')
+        self.logger.info(
+            '[openai] responses.create done  schema=%s  elapsed=%.2fs  tokens=in:%s/out:%s/max:%d',
+            schema['name'], time.perf_counter() - t0, in_tokens, out_tokens, max_output_tokens,
+        )
+        return json.loads(self._response_text(response))
 
     def _base_question_schema(self) -> Dict[str, Any]:
         return {
@@ -289,14 +332,7 @@ class QuestionGenerationService:
                 'type': 'object',
                 'additionalProperties': False,
                 'required': [
-                    'question_id',
-                    'source',
-                    'content',
-                    'prompt',
-                    'generation',
-                    'validation',
-                    'metadata',
-                    'data_quality_notes',
+                    'question_id', 'source', 'content', 'prompt', 'generation', 'validation', 'metadata', 'data_quality_notes',
                 ],
                 'properties': {
                     'question_id': {'type': 'string'},
@@ -365,16 +401,10 @@ class QuestionGenerationService:
                     'generation': {
                         'type': 'object',
                         'additionalProperties': False,
-                        'required': ['template_id', 'template_version', 'parameters', 'solution_steps', 'distractor_strategy'],
+                        'required': ['template_id', 'template_version', 'solution_steps', 'distractor_strategy'],
                         'properties': {
                             'template_id': {'type': ['string', 'null']},
                             'template_version': {'type': ['string', 'null']},
-                            'parameters': {
-                                'type': 'object',
-                                'additionalProperties': False,
-                                'required': [],
-                                'properties': {},
-                            },
                             'solution_steps': {'type': 'array', 'items': {'type': 'string'}},
                             'distractor_strategy': {'type': 'array', 'items': {'type': 'string'}},
                         },
@@ -405,64 +435,58 @@ class QuestionGenerationService:
             },
         }
 
-    def _review_schema(self) -> Dict[str, Any]:
-        return {
-            'name': 'question_review',
-            'schema': {
-                'type': 'object',
-                'additionalProperties': False,
-                'required': ['answer_label', 'answer_text', 'status', 'solution_steps', 'notes'],
-                'properties': {
-                    'answer_label': {'type': ['string', 'null'], 'enum': OPTION_LABELS + [None]},
-                    'answer_text': {'type': ['string', 'null']},
-                    'status': {'type': 'string', 'enum': ['verified', 'needs_revision']},
-                    'solution_steps': {'type': 'array', 'items': {'type': 'string'}},
-                    'notes': {'type': 'array', 'items': {'type': 'string'}},
-                },
-            },
-        }
+    def _repair_schema(self) -> Dict[str, Any]:
+        schema = self._base_question_schema()
+        schema['name'] = 'question_repair'
+        return schema
 
-    def _draft_instructions(self, want_solution: bool, want_diagram: bool, force_diagram: bool = False, similar_to_context: Optional[str] = None) -> str:
+    def _draft_instructions(
+        self,
+        *,
+        subject: str,
+        want_solution: bool,
+        want_diagram: bool,
+        force_diagram: bool = False,
+        similar_to_context: Optional[str] = None,
+    ) -> str:
+        topic_list = self._TOPIC_LIST.get(subject.lower().strip(), 'the relevant syllabus topics')
         extra = self.settings.extra_instructions or ''
         base = (
-            'You are generating a fresh NSAA-style multiple-choice question. '
-            'Use the provided examples only for style and structure, not as source material to paraphrase. '
-            'Return only data that matches the JSON schema. '
-            'Keep the question realistic, concise, and solvable. '
-            'Always provide exactly five options labeled A-E. '
-            'IMPORTANT: After writing the question and options, solve it step by step to confirm which answer is correct. '
-            'Set validation.answer_label to the letter of the correct option, '
-            'validation.answer_text to the text of that option, '
-            'and validation.status to "verified" once you have confirmed the answer. '
-            'Record your solution steps in generation.solution_steps. '
-            'Only set validation.status to "needs_revision" if the question is structurally broken '
-            '(no correct answer exists among the options, or two options are equally correct). '
-            f'Need diagram: {str(want_diagram).lower()}. '
+            'You are generating a brand new NSAA/ESAT-style multiple-choice question. '
+            'Use the provided examples only for style, tone, and level. Do not copy their wording or structure too closely. '
+            'Return only JSON that matches the schema. '
+            'Make the question concise, on-topic, and realistically exam-like. '
+            'Provide exactly five options labeled A-E. '
+            'Solve the question internally before answering so the correct option is genuinely right. '
+            'If you include a solution, keep it concise and stepwise. '
+            f'Rotate broadly across the subject syllabus: {topic_list}. '
+            'Avoid repeatedly defaulting to the same topic or question shape. '
+            'For Mathematics, do not use calculus, integration, or differentiation unless the topic explicitly calls for advanced math. '
         )
         if force_diagram:
             base += (
-                'MANDATORY: This question MUST require a diagram to solve. '
-                'Do NOT produce a text-only question. '
-                'Set content.requires_diagram=true. '
-                'Include at least one figure spec in prompt.figures with a detailed description of what to draw. '
-                'The question stem must explicitly reference the figure (e.g. "In the diagram below…"). '
+                'This question must require a diagram to solve. '
+                'Set content.requires_diagram=true and include at least one figure spec in prompt.figures. '
+                'The stem must refer to the figure. '
+            )
+        elif not want_diagram:
+            base += (
+                'Do not include a required diagram. '
+                'Set content.requires_diagram=false and prompt.figures=[]. '
             )
         if similar_to_context:
             base += '\n\n' + similar_to_context
-        return base + (extra if extra else '')
+        return base + extra
 
-    def _review_instructions(self) -> str:
+    def _repair_instructions(self) -> str:
         return (
-            'You are independently verifying a drafted NSAA-style multiple-choice question. '
-            'Solve the question from scratch. '
-            'Return the correct answer label and its option text, plus concise solution steps. '
-            'Set status to "verified" if exactly one option is unambiguously correct — this should be the common case. '
-            'Set status to "needs_revision" ONLY if: '
-            '(1) none of the five options is mathematically/logically correct, or '
-            '(2) two or more options are equally correct, or '
-            '(3) the question stem is so garbled it cannot be parsed. '
-            'Minor imprecision, awkward wording, or a question you personally find too easy/hard are NOT grounds for needs_revision. '
-            'Return only data that matches the JSON schema.'
+            'You are repairing a drafted multiple-choice question. '
+            'Preserve the same subject, topic, difficulty, and general idea. '
+            'Fix only the listed issues. '
+            'Return a fully valid JSON object matching the schema. '
+            'Keep exactly five labeled options A-E. '
+            'If the answer label is wrong or missing, correct it. '
+            'Do not invent a different question unless the original is irreparable.'
         )
 
     def _normalize_question(self, question: Dict[str, Any]) -> Dict[str, Any]:
@@ -470,19 +494,14 @@ class QuestionGenerationService:
             raise ValueError('Generated output was not a JSON object.')
 
         question.setdefault('question_id', str(uuid.uuid4()))
-
         for key in ('source', 'content', 'prompt', 'generation', 'validation', 'metadata'):
             if not isinstance(question.get(key), dict):
                 question[key] = {}
-
         if not isinstance(question.get('data_quality_notes'), list):
             question['data_quality_notes'] = []
 
         prompt = question['prompt']
-        options = prompt.get('options', [])
-        if not isinstance(options, list):
-            options = []
-
+        options = prompt.get('options', []) if isinstance(prompt.get('options', []), list) else []
         fixed_options: List[Dict[str, str]] = []
         for i, label in enumerate(OPTION_LABELS):
             text = ''
@@ -495,11 +514,10 @@ class QuestionGenerationService:
             fixed_options.append({'label': label, 'text': text})
         prompt['options'] = fixed_options
 
-        if not isinstance(prompt.get('figures'), list):
-            prompt['figures'] = []
-        else:
-            cleaned_figures: List[Dict[str, Any]] = []
-            for fig in prompt['figures']:
+        figures = prompt.get('figures', [])
+        cleaned_figures: List[Dict[str, Any]] = []
+        if isinstance(figures, list):
+            for fig in figures:
                 if isinstance(fig, dict):
                     cleaned_figures.append(
                         {
@@ -508,7 +526,7 @@ class QuestionGenerationService:
                             'prompt': fig.get('prompt', None) if fig.get('prompt', None) is None else str(fig.get('prompt')),
                         }
                     )
-            prompt['figures'] = cleaned_figures
+        prompt['figures'] = cleaned_figures
 
         validation = question['validation']
         if validation.get('status') not in {'verified', 'needs_revision', 'unverified'}:
@@ -553,21 +571,98 @@ class QuestionGenerationService:
         metadata.setdefault('diagram_required', bool(content.get('requires_diagram', False)))
         metadata.setdefault('diagram_url', None)
 
-        draft.setdefault('generation', {})
-        draft['generation'].setdefault('template_id', None)
-        draft['generation'].setdefault('template_version', None)
-        draft['generation'].setdefault('parameters', {})
-        draft['generation'].setdefault('solution_steps', [])
-        draft['generation'].setdefault('distractor_strategy', [])
+        generation = draft.setdefault('generation', {})
+        generation.setdefault('template_id', None)
+        generation.setdefault('template_version', None)
+        generation.setdefault('solution_steps', [])
+        generation.setdefault('distractor_strategy', [])
 
-        draft.setdefault('validation', {})
-        draft['validation'].setdefault('answer_label', None)
-        draft['validation'].setdefault('answer_text', None)
-        draft['validation'].setdefault('status', 'unverified')
+        validation = draft.setdefault('validation', {})
+        validation.setdefault('answer_label', None)
+        validation.setdefault('answer_text', None)
+        validation.setdefault('status', 'unverified')
 
         draft.setdefault('data_quality_notes', [])
         draft.setdefault('prompt', {})
         draft['prompt'].setdefault('figures', [])
+
+    def _validate_question(self, question: Dict[str, Any]) -> List[str]:
+        issues: List[str] = []
+        content = question.get('content', {}) if isinstance(question.get('content', {}), dict) else {}
+        prompt = question.get('prompt', {}) if isinstance(question.get('prompt', {}), dict) else {}
+        validation = question.get('validation', {}) if isinstance(question.get('validation', {}), dict) else {}
+        generation = question.get('generation', {}) if isinstance(question.get('generation', {}), dict) else {}
+
+        if not question.get('question_id'):
+            issues.append('missing question_id')
+        for key in ('subject', 'topic', 'difficulty', 'requires_diagram', 'requires_calculation'):
+            if key not in content:
+                issues.append(f'missing content.{key}')
+        stem = prompt.get('stem')
+        if not isinstance(stem, str) or not stem.strip():
+            issues.append('empty prompt.stem')
+
+        options = prompt.get('options', [])
+        if not isinstance(options, list) or len(options) != 5:
+            issues.append('prompt.options must contain exactly five items')
+            options = []
+
+        labels = []
+        texts = []
+        for idx, opt in enumerate(options):
+            if not isinstance(opt, dict):
+                issues.append(f'option {idx} is not an object')
+                continue
+            label = opt.get('label')
+            text = opt.get('text')
+            labels.append(label)
+            texts.append(str(text) if text is not None else '')
+            if label != OPTION_LABELS[idx]:
+                issues.append(f'option {idx} label should be {OPTION_LABELS[idx]}')
+            if not isinstance(text, str) or not text.strip():
+                issues.append(f'option {label or idx} has empty text')
+
+        if len(set(texts)) != len(texts):
+            issues.append('duplicate option texts')
+
+        ans_label = validation.get('answer_label')
+        ans_text = validation.get('answer_text')
+        if ans_label not in OPTION_LABELS:
+            issues.append('validation.answer_label missing or invalid')
+        else:
+            idx = OPTION_LABELS.index(ans_label)
+            if idx >= len(options):
+                issues.append('validation.answer_label points outside options')
+            else:
+                expected = str(options[idx].get('text', ''))
+                if not isinstance(ans_text, str) or ans_text.strip() != expected.strip():
+                    issues.append('validation.answer_text does not match answer_label')
+
+        if validation.get('status') not in {'verified', 'unverified', 'needs_revision'}:
+            issues.append('validation.status invalid')
+
+        if not isinstance(generation.get('solution_steps', []), list):
+            issues.append('generation.solution_steps must be a list')
+
+        if content.get('requires_diagram') and not isinstance(prompt.get('figures', []), list):
+            issues.append('figures missing for diagram question')
+
+        return issues
+
+    def _repair_question(self, draft: Dict[str, Any], issues: List[str]) -> Dict[str, Any]:
+        repair_payload = {
+            'task': 'repair_question',
+            'issues': issues,
+            'draft_question': draft,
+        }
+        repaired = self._call_structured(
+            model=self.settings.openai_model_draft,
+            instructions=self._repair_instructions(),
+            payload=repair_payload,
+            schema=self._repair_schema(),
+            max_output_tokens=self.settings.repair_max_output_tokens,
+        )
+        return repaired
 
     def _maybe_generate_diagram(self, draft: Dict[str, Any], want_diagram: bool, force_diagram: bool = False) -> None:
         if not self.settings.enable_image_generation:
@@ -575,79 +670,125 @@ class QuestionGenerationService:
         if not self.diagram_service.should_generate(draft, want_diagram=want_diagram or force_diagram):
             return
 
+        self.logger.info('[openai] images.generate  (diagram for question_id=%s)', draft.get('question_id'))
+        t0 = time.perf_counter()
         diagram_path = self.diagram_service.generate(draft, want_diagram=want_diagram or force_diagram)
+        self.logger.info('[openai] images.generate done  elapsed=%.2fs', time.perf_counter() - t0)
         if diagram_path is None:
             draft.setdefault('data_quality_notes', []).append('Diagram generation failed or was skipped.')
             draft.setdefault('metadata', {})['diagram_url'] = None
             return
-
         draft.setdefault('metadata', {})['diagram_url'] = f'/diagrams/{diagram_path.name}'
 
-    def _generate_draft(self, subject: str, topic: Optional[str], difficulty: int, examples: int, want_solution: bool, want_diagram: bool, force_diagram: bool, archetype: Optional[str] = None, similar_to_context: Optional[str] = None) -> Dict[str, Any]:
-        all_questions = self._get_questions()
-        chosen = choose_examples(
-            all_questions,
+    def _build_generation_payload(
+        self,
+        *,
+        subject: str,
+        topic: Optional[str],
+        difficulty: int,
+        examples: int,
+        want_solution: bool,
+        want_diagram: bool,
+        force_diagram: bool,
+        archetype: Optional[str],
+        similar_to_context: Optional[str],
+    ) -> Tuple[Dict[str, Any], str, List[Dict[str, Any]]]:
+        index = self._get_example_index()
+        effective_topic = topic if topic is not None else index.sample_topic(subject)
+        if effective_topic != topic:
+            self.logger.info('topic=None -> sampled effective_topic=%r for subject=%r', effective_topic, subject)
+
+        chosen = index.get_examples(
             subject,
-            topic,
+            effective_topic,
             difficulty,
             examples,
             archetype=archetype,
             want_diagram=want_diagram or force_diagram,
         )
-        request_nonce = uuid.uuid4().hex
-
         payload = {
-            "request_nonce": request_nonce,
-            "task": "draft_question",
-            "subject": subject,
-            "topic": topic,
-            "difficulty": difficulty,
-            "want_solution": want_solution,
-            "want_diagram": want_diagram,
-            "force_diagram": force_diagram,
-            "style_examples": [compact_example(q) for q in chosen],
-            "output_rules": {
-                "exactly_five_options": True,
-                "labels": OPTION_LABELS,
-                "stem_contains_no_answer_choices": True,
-                "diagram_if_needed": True,
-                "solve_and_verify_answer": True,
-                "must_require_diagram": force_diagram,
+            'request_nonce': uuid.uuid4().hex,
+            'task': 'draft_question',
+            'subject': subject,
+            'topic': effective_topic,
+            'difficulty': difficulty,
+            'want_solution': want_solution,
+            'want_diagram': want_diagram,
+            'force_diagram': force_diagram,
+            'style_examples': [compact_example(q) for q in chosen],
+            'output_rules': {
+                'exactly_five_options': True,
+                'labels': OPTION_LABELS,
+                'stem_contains_no_answer_choices': True,
+                'diagram_if_needed': True,
+                'must_require_diagram': force_diagram,
             },
         }
+        if similar_to_context:
+            payload['similar_to_context'] = similar_to_context
+        return payload, effective_topic, chosen
 
+    def _generate_draft(
+        self,
+        subject: str,
+        topic: Optional[str],
+        difficulty: int,
+        examples: int,
+        want_solution: bool,
+        want_diagram: bool,
+        force_diagram: bool,
+        archetype: Optional[str] = None,
+        similar_to_context: Optional[str] = None,
+    ) -> Dict[str, Any]:
+        payload, effective_topic, _chosen = self._build_generation_payload(
+            subject=subject,
+            topic=topic,
+            difficulty=difficulty,
+            examples=examples,
+            want_solution=want_solution,
+            want_diagram=want_diagram,
+            force_diagram=force_diagram,
+            archetype=archetype,
+            similar_to_context=similar_to_context,
+        )
         draft = self._call_structured(
             model=self.settings.openai_model_draft,
-            instructions=self._draft_instructions(want_solution=want_solution, want_diagram=want_diagram, force_diagram=force_diagram, similar_to_context=similar_to_context),
+            instructions=self._draft_instructions(
+                subject=subject,
+                want_solution=want_solution,
+                want_diagram=want_diagram,
+                force_diagram=force_diagram,
+                similar_to_context=similar_to_context,
+            ),
             payload=payload,
             schema=self._base_question_schema(),
             max_output_tokens=self.settings.max_output_tokens,
         )
+        self._add_hint_fields(draft, subject, effective_topic, difficulty)
+        return self._normalize_question(draft)
 
-        self._add_hint_fields(draft, subject, topic, difficulty)
+    def _finalize_question(self, draft: Dict[str, Any], want_diagram: bool, force_diagram: bool) -> Dict[str, Any]:
         draft = self._normalize_question(draft)
+        issues = self._validate_question(draft)
 
-        if force_diagram:
-            if not draft['content'].get('requires_diagram', False):
-                raise ValueError('Draft did not set requires_diagram=true despite force_diagram.')
-            if not draft['prompt'].get('figures'):
-                raise ValueError('Draft did not include any figure specs despite force_diagram.')
+        if issues:
+            self.logger.info('Draft validation issues: %s', '; '.join(issues))
+            repaired = self._repair_question(draft, issues)
+            draft = self._normalize_question(repaired)
+            issues = self._validate_question(draft)
 
-        return draft
+        if issues:
+            raise ValueError('Generated question still failed validation: ' + '; '.join(issues))
 
-    def _review_question(self, draft: Dict[str, Any]) -> Dict[str, Any]:
-        review_payload = {
-            'task': 'review_question',
-            'draft_question': draft,
-        }
-        review = self._call_structured(
-            model=self.settings.openai_model_verify,
-            instructions=self._review_instructions(),
-            payload=review_payload,
-            schema=self._review_schema(),
-            max_output_tokens=self.settings.verify_max_output_tokens,
-        )
-        return review
+        validation = draft.setdefault('validation', {})
+        validation['status'] = 'verified'
+        if validation.get('answer_label') not in OPTION_LABELS:
+            raise ValueError('Finalized question is missing a valid answer label.')
+        idx = OPTION_LABELS.index(validation['answer_label'])
+        validation['answer_text'] = draft['prompt']['options'][idx]['text']
+
+        self._maybe_generate_diagram(draft, want_diagram=want_diagram, force_diagram=force_diagram)
+        return self._normalize_question(draft)
 
     def generate_question(
         self,
@@ -661,8 +802,8 @@ class QuestionGenerationService:
         archetype: Optional[str] = None,
         similar_to_context: Optional[str] = None,
     ) -> Dict[str, Any]:
-        max_rounds = 3
         last_error: Optional[Exception] = None
+        max_rounds = 2
 
         for round_idx in range(1, max_rounds + 1):
             try:
@@ -677,33 +818,7 @@ class QuestionGenerationService:
                     archetype=archetype,
                     similar_to_context=similar_to_context,
                 )
-
-                draft = self._normalize_question(draft)
-
-                # Happy path: draft already self-verified — skip the review call entirely
-                draft_status = draft['validation'].get('status')
-                draft_label = draft['validation'].get('answer_label')
-                already_verified = (
-                    draft_status == 'verified' and draft_label in OPTION_LABELS
-                )
-
-                if already_verified:
-                    self.logger.info('Draft self-verified (round %d); skipping review call', round_idx)
-                    review: Dict[str, Any] = {'notes': []}
-                elif want_solution:
-                    self.logger.info('Draft not self-verified (status=%s); running review (round %d)', draft_status, round_idx)
-                    review = self._review_question(draft)
-                    draft['validation']['answer_label'] = review.get('answer_label')
-                    draft['validation']['answer_text'] = review.get('answer_text')
-                    draft['validation']['status'] = review.get('status', 'unverified')
-                    draft['generation']['solution_steps'] = review.get('solution_steps', [])
-                    draft = self._normalize_question(draft)
-                else:
-                    review = {'notes': []}
-
-                for note in review.get('notes', []):
-                    if note not in draft['data_quality_notes']:
-                        draft['data_quality_notes'].append(note)
+                draft = self._finalize_question(draft, want_diagram=want_diagram, force_diagram=force_diagram)
 
                 sig = question_signature(draft)
                 if self.recent_questions.contains(sig):
@@ -712,19 +827,11 @@ class QuestionGenerationService:
                         continue
                     raise ValueError('Duplicate question draft')
 
-                final_status = draft['validation'].get('status')
-                final_label = draft['validation'].get('answer_label')
-                if final_status == 'needs_revision' and round_idx < max_rounds:
-                    self.logger.info('Revision requested; retrying round %d/%d', round_idx, max_rounds)
-                    continue
-
                 if not self.recent_questions.add(sig):
                     self.logger.info('Signature already stored by another concurrent request: %s', sig[:12])
-                    if final_status == 'verified' and final_label in OPTION_LABELS and round_idx < max_rounds:
+                    if round_idx < max_rounds:
                         continue
 
-                self._maybe_generate_diagram(draft, want_diagram=want_diagram, force_diagram=force_diagram)
-                draft = self._normalize_question(draft)
                 return draft
             except Exception as exc:
                 last_error = exc

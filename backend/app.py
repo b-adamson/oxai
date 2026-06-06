@@ -25,6 +25,21 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger('oxai.backend')
 
+_SUBJECT_ALIASES: Dict[str, str] = {
+    'mathematics': 'math',
+    'advanced mathematics': 'math',
+    'advanced math': 'math',
+    'physics': 'physics',
+    'chemistry': 'chemistry',
+    'biology': 'biology',
+    'math': 'math',
+}
+
+
+def _normalise_subject(s: str) -> str:
+    return _SUBJECT_ALIASES.get(s.lower().strip(), s.lower().strip())
+
+
 BASE_DIR = Path(__file__).resolve().parent
 PROCESSED_DIR = BASE_DIR / 'data' / 'processed'
 MANIFEST_PATH = PROCESSED_DIR / 'manifest.json'
@@ -61,7 +76,7 @@ class HintRequest(BaseModel):
 
 
 class TutorChatMessage(BaseModel):
-    role: str  # "user" or "tutor"
+    role: str
     text: str
 
 
@@ -122,6 +137,7 @@ class BankQueryRequest(BaseModel):
     difficulty: Optional[int] = Field(None, ge=1, le=5)
     limit: int = Field(20, ge=1, le=100)
     exclude_ids: list[str] = Field(default_factory=list)
+    excluded_years: list[int] = Field(default_factory=list)
 
 
 def paper_id_from_file(file_path: str) -> str:
@@ -159,7 +175,11 @@ async def lifespan(app: FastAPI):
     LOGGER.info('Starting OpenAI-backed question service...')
     service = QuestionGenerationService(settings=settings, logger=LOGGER)
     app.state.question_service = service
-    LOGGER.info('Question service ready.')
+    try:
+        service._get_example_index()
+        LOGGER.info('Question example index warmed.')
+    except Exception:
+        LOGGER.exception('Failed to warm question example index; continuing with lazy rebuild.')
 
     hint_service = HintGenerationService(settings=HintSettings(), logger=LOGGER)
     app.state.hint_service = hint_service
@@ -192,6 +212,11 @@ app.mount('/images', StaticFiles(directory=str(PROCESSED_DIR)), name='images')
 app.mount('/diagrams', StaticFiles(directory=str(DIAGRAM_DIR)), name='diagrams')
 
 
+def _bank_questions() -> list[dict]:
+    service: QuestionGenerationService = app.state.question_service
+    return service._get_questions()
+
+
 @app.get('/papers')
 def list_papers():
     return {'papers': load_manifest()}
@@ -202,7 +227,7 @@ def generate_question_endpoint(req: GenerateRequest):
     try:
         service: QuestionGenerationService = app.state.question_service
         question = service.generate_question(
-            subject=req.subject,
+            subject=_normalise_subject(req.subject),
             topic=req.topic,
             difficulty=req.difficulty,
             examples=req.examples,
@@ -292,7 +317,7 @@ def get_paper(paper_id: str):
     if not paper_meta:
         raise HTTPException(status_code=404, detail='Paper not found')
 
-    paper_path = (BASE_DIR / str(paper_meta['file']))
+    paper_path = BASE_DIR / str(paper_meta['file'])
     if not paper_path.exists():
         raise HTTPException(status_code=404, detail='Paper file missing')
 
@@ -306,18 +331,15 @@ def get_paper(paper_id: str):
 
 @app.post('/generate-similar')
 def generate_similar_endpoint(req: GenerateSimilarRequest):
-    """Generate a question similar to an existing one — same concept, different surface form."""
     try:
         service: QuestionGenerationService = app.state.question_service
-
         options_text = '\n'.join(f'{o.label}. {o.text}' for o in req.options)
         similar_context = (
-            'IMPORTANT: Generate a question that tests the SAME underlying concept as the reference question below, '
-            'but use completely different numbers, context, wording, and scenario. '
-            'Do NOT paraphrase or copy the original. '
-            f'Reference question topic: {req.topic or "general"}. '
-            f'Reference stem (for concept reference only): {req.stem[:300]}...\n'
-            f'Reference options: {options_text[:200]}'
+            'Generate a question that tests the same underlying concept as the reference question below, '
+            'but use different numbers, wording, and scenario. Do not paraphrase the original. '
+            f'Reference topic: {req.topic or "general"}. '\
+            f'Original stem: {req.stem[:300]}...\n'
+            f'Original options: {options_text[:200]}'
         )
 
         question = service.generate_question(
@@ -340,16 +362,15 @@ def generate_similar_endpoint(req: GenerateSimilarRequest):
 
 @app.post('/bank-questions')
 def bank_questions_endpoint(req: BankQueryRequest):
-    """Return matching questions from the bank without generating new ones."""
     try:
-        questions = load_questions(PROCESSED_DIR)
-
+        questions = _bank_questions()
+        req_subject = _normalise_subject(req.subject) if req.subject else None
         filtered: List[Dict[str, Any]] = []
         for q in questions:
             if q.get('question_id') in req.exclude_ids:
                 continue
             c = q.get('content', {})
-            if req.subject and str(c.get('subject', '')).lower() != req.subject.lower():
+            if req_subject and _normalise_subject(str(c.get('subject', ''))) != req_subject:
                 continue
             if req.topic and str(c.get('topic', '')).lower() != req.topic.lower():
                 continue
@@ -359,6 +380,14 @@ def bank_questions_endpoint(req: BankQueryRequest):
                         continue
                 except Exception:
                     pass
+            if req.excluded_years:
+                src = q.get('source', {})
+                try:
+                    q_year = int(src.get('year') or 0)
+                except Exception:
+                    q_year = 0
+                if q_year and q_year in req.excluded_years:
+                    continue
             filtered.append(q)
             if len(filtered) >= req.limit:
                 break
@@ -373,9 +402,8 @@ def bank_questions_endpoint(req: BankQueryRequest):
 
 @app.get('/inventory')
 def inventory_endpoint():
-    """Return a topic/difficulty inventory of the processed question bank."""
     try:
-        questions = load_questions(PROCESSED_DIR)
+        questions = _bank_questions()
         subjects: Dict[str, Any] = {}
 
         for q in questions:
@@ -418,15 +446,10 @@ def inventory_endpoint():
             if subtopic:
                 topic_data['subtopics'][subtopic] = topic_data['subtopics'].get(subtopic, 0) + 1
 
-        # Flatten topics from dict to list for JSON
         for subj_data in subjects.values():
             subj_data['topics'] = list(subj_data['topics'].values())
 
-        return {
-            'subjects': subjects,
-            'total': len(questions),
-            'scanned_at': None,
-        }
+        return {'subjects': subjects, 'total': len(questions), 'scanned_at': None}
     except HTTPException:
         raise
     except Exception as exc:

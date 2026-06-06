@@ -4,6 +4,7 @@ import base64
 import json
 import logging
 import os
+import time
 import uuid
 from dataclasses import dataclass
 from pathlib import Path
@@ -62,6 +63,8 @@ class SolutionGenerationService:
         schema: Dict[str, Any],
         max_output_tokens: int,
     ) -> Dict[str, Any]:
+        self.logger.info('[openai] responses.create  model=%s  schema=%s  max_tokens=%d', self.settings.model, schema['name'], max_output_tokens)
+        t0 = time.perf_counter()
         response = self.client.responses.create(
             model=self.settings.model,
             input=[
@@ -76,9 +79,9 @@ class SolutionGenerationService:
                     'strict': True,
                 }
             },
-            temperature=self.settings.temperature,
             max_output_tokens=max_output_tokens,
         )
+        self.logger.info('[openai] responses.create done  schema=%s  elapsed=%.2fs', schema['name'], time.perf_counter() - t0)
         return json.loads(self._response_text(response))
 
     # ------------------------------------------------------------------
@@ -152,6 +155,8 @@ class SolutionGenerationService:
     def _generate_diagram(self, diagram_prompt: str, question_id: str) -> Optional[str]:
         output_path = self.settings.diagram_dir / f'{question_id}_solution.png'
         try:
+            self.logger.info('[openai] images.generate  model=%s  (solution diagram for question_id=%s)', self.settings.image_model, question_id)
+            t0 = time.perf_counter()
             response = self.client.images.generate(
                 model=self.settings.image_model,
                 prompt=(
@@ -164,6 +169,7 @@ class SolutionGenerationService:
                 n=1,
                 size='1024x1024',
             )
+            self.logger.info('[openai] images.generate done  elapsed=%.2fs', time.perf_counter() - t0)
             b64_json = None
             if getattr(response, 'data', None):
                 b64_json = getattr(response.data[0], 'b64_json', None)

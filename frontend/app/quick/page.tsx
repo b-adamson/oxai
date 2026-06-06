@@ -20,7 +20,7 @@ import type {
 const SUBJECTS = ['Mathematics', 'Physics', 'Chemistry', 'Biology'];
 const PRELOAD = 4;
 const BUFFER = 2;
-const CONCURRENCY = 2;
+const CONCURRENCY = 1;
 
 function makeConfig(
   subject: string,

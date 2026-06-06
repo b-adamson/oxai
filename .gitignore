@@ -4,6 +4,7 @@ __pycache__/
 .vscode/
 viewer.html
 vercel.json
+boot.sh
 
 # Windows Zone.Identifier alternate data streams (WSL artefact)
 *:Zone.Identifier*

@@ -21,7 +21,7 @@ import type {
 const OPTIONAL_MODULES = ['Physics', 'Chemistry', 'Biology', 'Advanced Mathematics'] as const;
 const QUESTIONS_PER_MODULE = 20;
 const PRELOAD_COUNT = 10;
-const CONCURRENCY = 3;
+const CONCURRENCY = 1;
 const MAX_ACTIVE_JOBS = 2;
 
 const SOURCE_OPTIONS = [
@@ -136,6 +136,8 @@ export default function PaperModePage() {
 
   const stopGenRef = useRef<(() => void) | null>(null);
   const didAutoSubmitRef = useRef(false);
+  // Tracks latest slots synchronously so generation callbacks don't use stale state
+  const slotsRef = useRef<PaperSlot[]>([]);
 
   // Store
   const questions = useStore((s) => s.questions);
@@ -199,19 +201,25 @@ export default function PaperModePage() {
   );
 
   function launchGeneration(newSlots: PaperSlot[], sessionId: string) {
+    slotsRef.current = newSlots;
     const stop = startBackgroundGeneration(newSlots, CONCURRENCY, {
-      onSlotGenerating: (s) =>
-        setSlots((prev) => prev.map((x) => (x.slot_id === s.slot_id ? s : x))),
+      onSlotGenerating: (s) => {
+        const next = slotsRef.current.map((x) => (x.slot_id === s.slot_id ? s : x));
+        slotsRef.current = next;
+        setSlots(next);
+      },
       onSlotReady: (s, q) => {
         addQuestion(q);
-        setSlots((prev) => {
-          const next = prev.map((x) => (x.slot_id === s.slot_id ? s : x));
-          syncSession({ slots: next }, sessionId);
-          return next;
-        });
+        const next = slotsRef.current.map((x) => (x.slot_id === s.slot_id ? s : x));
+        slotsRef.current = next;
+        setSlots(next);
+        syncSession({ slots: next }, sessionId);
       },
-      onSlotFailed: (s) =>
-        setSlots((prev) => prev.map((x) => (x.slot_id === s.slot_id ? s : x))),
+      onSlotFailed: (s) => {
+        const next = slotsRef.current.map((x) => (x.slot_id === s.slot_id ? s : x));
+        slotsRef.current = next;
+        setSlots(next);
+      },
     });
     stopGenRef.current?.();
     stopGenRef.current = stop;
@@ -253,6 +261,7 @@ export default function PaperModePage() {
     addPaperSession(session);
     setActiveSessionId(sessionId);
     setModules(mods);
+    slotsRef.current = allSlots;
     setSlots(allSlots);
     setCurrentIdx(0);
     setSubmittedAnswers({});
@@ -276,6 +285,7 @@ export default function PaperModePage() {
 
     setActiveSessionId(sessionId);
     setModules(mods);
+    slotsRef.current = fixedSlots;
     setSlots(fixedSlots);
     setCurrentIdx(session.current_slot_index ?? 0);
     setSubmittedAnswers(session.submitted_answers ?? {});

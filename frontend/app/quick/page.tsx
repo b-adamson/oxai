@@ -2,19 +2,17 @@
 import { useState, useEffect, useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useStore } from '@/lib/store';
-import { computeMastery } from '@/lib/analytics';
-import { planQuickSlots, startBackgroundGeneration, slotCounts } from '@/lib/queue';
+import { planMultiSubjectQuickSlots, startBackgroundGeneration } from '@/lib/queue';
 import { QuestionCard } from '@/components/QuestionCard';
 import { QueueStatus } from '@/components/QueueStatus';
 import type {
   PaperSlot,
-  QuickModeConfig,
   DifficultyPreset,
-  TopicMode,
   HintRecord,
   SolutionRecord,
   TutorChatMessage,
   AttemptRecord,
+  SubjectTopicConfig,
 } from '@/lib/types';
 
 const SUBJECTS = ['Mathematics', 'Physics', 'Chemistry', 'Biology'];
@@ -22,23 +20,29 @@ const PRELOAD = 4;
 const BUFFER = 2;
 const CONCURRENCY = 1;
 
-function makeConfig(
-  subject: string,
-  topicMode: TopicMode,
-  difficultyPreset: DifficultyPreset
-): QuickModeConfig {
-  return {
-    topic_mode: topicMode,
-    custom_topics: [],
-    diagram_policy: 'sometimes',
-    difficulty_preset: difficultyPreset,
-    custom_difficulty: 3,
-    min_preload_count: PRELOAD,
-    solution_hidden: false,
-    timer_enabled: false,
-    target_subject: subject,
-  };
-}
+// Topics per subject — each name is unique within its subject context
+const SUBJECT_TOPICS: Record<string, string[]> = {
+  Mathematics: [
+    'Algebra', 'Calculus', 'Geometry', 'Trigonometry',
+    'Statistics & Probability', 'Mechanics', 'Complex Numbers', 'Number Theory',
+  ],
+  Physics: [
+    'Mechanics', 'Electricity & Magnetism', 'Waves & Optics',
+    'Thermodynamics', 'Quantum Physics', 'Fields & Gravity', 'Modern Physics',
+  ],
+  Chemistry: [
+    'Atomic Structure & Bonding', 'Energetics', 'Kinetics',
+    'Equilibria', 'Organic Chemistry', 'Electrochemistry', 'Acids & Bases',
+  ],
+  Biology: [
+    'Cell Biology', 'Genetics & Evolution', 'Biochemistry',
+    'Ecology', 'Physiology', 'Microbiology',
+  ],
+};
+
+const DIFFICULTY_LABELS: Record<DifficultyPreset, string> = {
+  easy: 'Easy', realistic: 'Realistic', hard: 'Hard', olympiad: 'Olympiad', custom: 'Custom',
+};
 
 function useCountdown(targetMs: number | null): number {
   const [remaining, setRemaining] = useState(() =>
@@ -75,9 +79,10 @@ type Phase = 'config' | 'active' | 'report';
 
 export default function QuickModePage() {
   // Config options
-  const [subject, setSubject] = useState('Mathematics');
-  const [topicMode, setTopicMode] = useState<TopicMode>('all_topics');
-  const [difficultyPreset, setDifficultyPreset] = useState<DifficultyPreset>('realistic');
+  const [subjectConfigs, setSubjectConfigs] = useState<SubjectTopicConfig[]>([
+    { subject: 'Mathematics', difficulty: 'realistic', topics: null },
+  ]);
+  const [bankFraction, setBankFraction] = useState(0.5);
   const [timerEnabled, setTimerEnabled] = useState(true);
   const [timerMinutes, setTimerMinutes] = useState(120);
   const [enableSolution, setEnableSolution] = useState(true);
@@ -98,9 +103,8 @@ export default function QuickModePage() {
   const [totalCorrect, setTotalCorrect] = useState(0);
   const [streak, setStreak] = useState(0);
   const [bestStreak, setBestStreak] = useState(0);
-  const [configRef, setConfigRef] = useState<QuickModeConfig | null>(null);
 
-  // Session options (captured at handleStart so config changes mid-session don't affect active session)
+  // Session options captured at handleStart
   const [sessionTimerEnabled, setSessionTimerEnabled] = useState(false);
   const [sessionTimerTargetMs, setSessionTimerTargetMs] = useState<number | null>(null);
   const [sessionEnableSolution, setSessionEnableSolution] = useState(true);
@@ -109,16 +113,17 @@ export default function QuickModePage() {
   const [sessionSubject, setSessionSubject] = useState('Mathematics');
   const [sessionStartMs, setSessionStartMs] = useState<number | null>(null);
 
+  // Refs — used in callbacks to avoid stale closures
   const stopGenRef = useRef<(() => void) | null>(null);
   const didAutoEndRef = useRef(false);
+  const sessionSubjectConfigsRef = useRef<SubjectTopicConfig[]>([]);
+  const sessionBankFractionRef = useRef(0.5);
 
   // Store selectors
   const questions = useStore((s) => s.questions);
   const hints = useStore((s) => s.hints);
   const solutions = useStore((s) => s.solutions);
   const tutorThreads = useStore((s) => s.tutorThreads);
-  const attempts = useStore((s) => s.attempts);
-  const inventory = useStore((s) => s.inventory);
   const addQuestion = useStore((s) => s.addQuestion);
   const recordAttempt = useStore((s) => s.recordAttempt);
   const addHint = useStore((s) => s.addHint);
@@ -129,10 +134,8 @@ export default function QuickModePage() {
     return () => { stopGenRef.current?.(); };
   }, []);
 
-  // Timer countdown
   const timerRemaining = useCountdown(sessionTimerTargetMs);
 
-  // Auto-end when timer expires
   useEffect(() => {
     if (
       phase === 'active' &&
@@ -163,12 +166,12 @@ export default function QuickModePage() {
   }
 
   function handleStart() {
-    const config = makeConfig(subject, topicMode, difficultyPreset);
-    const mastery = computeMastery(attempts);
-    const initial = planQuickSlots(config, mastery, inventory, PRELOAD, 0);
+    sessionSubjectConfigsRef.current = [...subjectConfigs];
+    sessionBankFractionRef.current = bankFraction;
+
+    const initial = planMultiSubjectQuickSlots(subjectConfigs, bankFraction, PRELOAD, 0);
     const now = Date.now();
 
-    setConfigRef(config);
     setSlots(initial);
     setCurrentPos(0);
     setSubmittedAnswer(null);
@@ -180,8 +183,7 @@ export default function QuickModePage() {
     setStartTime(now);
     setSessionStartMs(now);
 
-    // Capture session options
-    setSessionSubject(subject);
+    setSessionSubject(subjectConfigs.map((c) => c.subject).join(' · '));
     setSessionTimerEnabled(timerEnabled);
     setSessionTimerTargetMs(timerEnabled ? now + timerMinutes * 60 * 1000 : null);
     setSessionEnableSolution(enableSolution);
@@ -201,7 +203,6 @@ export default function QuickModePage() {
   function handleRestart() {
     setPhase('config');
     setSlots([]);
-    setConfigRef(null);
     setSessionTimerTargetMs(null);
   }
 
@@ -255,9 +256,13 @@ export default function QuickModePage() {
       .slice(nextPos)
       .filter((s) => s.status !== 'answered' && s.status !== 'failed');
 
-    if (remaining.length < BUFFER && configRef) {
-      const mastery = computeMastery(attempts);
-      const more = planQuickSlots(configRef, mastery, inventory, PRELOAD, slots.length);
+    if (remaining.length < BUFFER && sessionSubjectConfigsRef.current.length > 0) {
+      const more = planMultiSubjectQuickSlots(
+        sessionSubjectConfigsRef.current,
+        sessionBankFractionRef.current,
+        PRELOAD,
+        slots.length,
+      );
       setSlots((prev) => [...prev, ...more]);
       launchGeneration(more);
     }
@@ -307,29 +312,25 @@ export default function QuickModePage() {
   if (phase === 'config') {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 w-full max-w-md">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 w-full max-w-lg">
           <h1 className="text-2xl font-bold text-gray-900 mb-1">Quick Mode</h1>
-          <p className="text-sm text-gray-500 mb-6">
-            Endless adaptive questions.
-          </p>
+          <p className="text-sm text-gray-500 mb-6">Endless adaptive questions.</p>
 
           <div className="space-y-5">
-            <PickerGroup label="Subject" options={SUBJECTS} value={subject} onChange={setSubject} />
+            <SubjectTopicSelector configs={subjectConfigs} onChange={setSubjectConfigs} />
 
             <PickerGroup
-              label="Topic focus"
-              options={['All topics', 'Focus on weak']}
-              value={topicMode === 'all_topics' ? 'All topics' : 'Focus on weak'}
-              onChange={(v) => setTopicMode(v === 'All topics' ? 'all_topics' : 'weak_topics')}
-            />
-
-            <PickerGroup
-              label="Difficulty"
-              options={['Easy', 'Realistic', 'Hard', 'Olympiad']}
-              value={({ easy: 'Easy', realistic: 'Realistic', hard: 'Hard', olympiad: 'Olympiad', custom: 'Realistic' } as Record<string, string>)[difficultyPreset] ?? 'Realistic'}
+              label="Question source"
+              options={['All AI', 'Mostly AI', 'Mostly Past Papers', 'All Past Papers']}
+              value={
+                bankFraction === 0 ? 'All AI'
+                  : bankFraction <= 0.3 ? 'Mostly AI'
+                    : bankFraction <= 0.7 ? 'Mostly Past Papers'
+                      : 'All Past Papers'
+              }
               onChange={(v) =>
-                setDifficultyPreset(
-                  { Easy: 'easy', Realistic: 'realistic', Hard: 'hard', Olympiad: 'olympiad' }[v] as DifficultyPreset ?? 'realistic'
+                setBankFraction(
+                  ({ 'All AI': 0, 'Mostly AI': 0.25, 'Mostly Past Papers': 0.75, 'All Past Papers': 1 } as Record<string, number>)[v] ?? 0.5
                 )
               }
             />
@@ -340,7 +341,6 @@ export default function QuickModePage() {
                 <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Options</span>
               </div>
               <div className="divide-y divide-gray-100">
-                {/* Timer */}
                 <div className="px-4 py-3 flex items-center justify-between gap-3">
                   <div>
                     <div className="text-sm text-gray-800">Timer</div>
@@ -362,8 +362,6 @@ export default function QuickModePage() {
                   </div>
                   <Toggle value={timerEnabled} onChange={setTimerEnabled} />
                 </div>
-
-                {/* Solutions */}
                 <div className="px-4 py-3 flex items-center justify-between gap-3">
                   <div>
                     <div className="text-sm text-gray-800">Solutions</div>
@@ -371,8 +369,6 @@ export default function QuickModePage() {
                   </div>
                   <Toggle value={enableSolution} onChange={setEnableSolution} />
                 </div>
-
-                {/* Hints */}
                 <div className="px-4 py-3 flex items-center justify-between gap-3">
                   <div>
                     <div className="text-sm text-gray-800">Hints</div>
@@ -380,8 +376,6 @@ export default function QuickModePage() {
                   </div>
                   <Toggle value={enableHints} onChange={setEnableHints} />
                 </div>
-
-                {/* Tutor */}
                 <div className="px-4 py-3 flex items-center justify-between gap-3">
                   <div>
                     <div className="text-sm text-gray-800">AI Tutor</div>
@@ -410,9 +404,7 @@ export default function QuickModePage() {
     const elapsedSec = sessionStartMs ? Math.floor((Date.now() - sessionStartMs) / 1000) : 0;
     const elapsedMin = Math.floor(elapsedSec / 60);
     const elapsedS = elapsedSec % 60;
-    const timeStr = elapsedMin > 0
-      ? `${elapsedMin}m ${elapsedS}s`
-      : `${elapsedSec}s`;
+    const timeStr = elapsedMin > 0 ? `${elapsedMin}m ${elapsedS}s` : `${elapsedSec}s`;
 
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
@@ -424,7 +416,6 @@ export default function QuickModePage() {
             <h2 className="text-xl font-bold text-gray-900">Session complete</h2>
             <p className="text-sm text-gray-500 mt-1">{sessionSubject}</p>
           </div>
-
           <div className="grid grid-cols-2 gap-3 mb-6">
             <StatBox label="Answered" value={String(totalAnswered)} />
             <StatBox label="Correct" value={String(totalCorrect)} />
@@ -435,11 +426,7 @@ export default function QuickModePage() {
             />
             <StatBox label="Best streak" value={String(bestStreak)} />
           </div>
-
-          <div className="text-center text-xs text-gray-400 mb-6">
-            Time: {timeStr}
-          </div>
-
+          <div className="text-center text-xs text-gray-400 mb-6">Time: {timeStr}</div>
           <div className="flex flex-col gap-3">
             <button
               onClick={handleRestart}
@@ -466,11 +453,10 @@ export default function QuickModePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Top bar */}
       <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-4 py-2.5 flex items-center gap-3">
         <span className="font-semibold text-gray-800 text-sm">Quick Mode</span>
         <span className="text-gray-300">·</span>
-        <span className="text-sm text-gray-500">{sessionSubject}</span>
+        <span className="text-sm text-gray-500 truncate max-w-[180px]">{sessionSubject}</span>
         <div className="ml-auto flex items-center gap-4">
           {sessionTimerEnabled && sessionTimerTargetMs !== null && (
             <span className={`text-sm font-mono ${timerColor(timerRemaining)}`}>
@@ -494,7 +480,6 @@ export default function QuickModePage() {
         </div>
       </div>
 
-      {/* Content */}
       <div className="max-w-2xl mx-auto p-4 space-y-4 pb-8">
         {isWaiting ? (
           <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
@@ -544,6 +529,182 @@ export default function QuickModePage() {
     </div>
   );
 }
+
+// ── SubjectTopicSelector ───────────────────────────────────────
+
+function SubjectTopicSelector({
+  configs,
+  onChange,
+}: {
+  configs: SubjectTopicConfig[];
+  onChange: (configs: SubjectTopicConfig[]) => void;
+}) {
+  const [expandedTopics, setExpandedTopics] = useState<Set<string>>(new Set());
+  const active = new Set(configs.map((c) => c.subject));
+
+  function toggleSubject(subject: string) {
+    if (active.has(subject)) {
+      if (configs.length === 1) return; // keep at least one
+      onChange(configs.filter((c) => c.subject !== subject));
+    } else {
+      onChange([...configs, { subject, difficulty: 'realistic', topics: null }]);
+    }
+  }
+
+  function updateConfig(subject: string, patch: Partial<SubjectTopicConfig>) {
+    onChange(configs.map((c) => c.subject === subject ? { ...c, ...patch } : c));
+  }
+
+  function toggleTopicExpand(subject: string) {
+    setExpandedTopics((prev) => {
+      const next = new Set(prev);
+      if (next.has(subject)) next.delete(subject); else next.add(subject);
+      return next;
+    });
+  }
+
+  function toggleTopic(subject: string, topic: string) {
+    const config = configs.find((c) => c.subject === subject);
+    if (!config) return;
+    const allTopics = SUBJECT_TOPICS[subject] ?? [];
+    const current = config.topics ?? allTopics;
+    const next = current.includes(topic)
+      ? current.filter((t) => t !== topic)
+      : [...current, topic];
+    if (next.length === 0) return; // keep at least one topic
+    updateConfig(subject, { topics: next.length === allTopics.length ? null : next });
+  }
+
+  return (
+    <div className="space-y-3">
+      {/* Subject chips */}
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1.5">Subjects</label>
+        <div className="grid grid-cols-2 gap-2">
+          {SUBJECTS.map((subject) => (
+            <button
+              key={subject}
+              onClick={() => toggleSubject(subject)}
+              className={`py-2 px-3 rounded-lg border text-sm font-medium transition-colors text-left flex items-center gap-2 ${
+                active.has(subject)
+                  ? 'bg-accent text-white border-accent'
+                  : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
+              }`}
+            >
+              {active.has(subject) && <span className="text-xs opacity-80">✓</span>}
+              {subject}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Per-subject config cards */}
+      {configs.map((config) => {
+        const allTopics = SUBJECT_TOPICS[config.subject] ?? [];
+        const selectedTopics = config.topics ?? allTopics;
+        const isExpanded = expandedTopics.has(config.subject);
+        const allSelected = config.topics === null;
+
+        return (
+          <div key={config.subject} className="border border-gray-200 rounded-xl overflow-hidden">
+            <div className="px-4 py-2 bg-gray-50 border-b border-gray-100 flex items-center">
+              <span className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
+                {config.subject}
+              </span>
+            </div>
+
+            <div className="px-4 py-3 space-y-3">
+              {/* Difficulty row */}
+              <div>
+                <div className="text-xs text-gray-500 mb-1.5">Difficulty</div>
+                <div className="flex gap-1.5 flex-wrap">
+                  {(['easy', 'realistic', 'hard', 'olympiad'] as DifficultyPreset[]).map((d) => (
+                    <button
+                      key={d}
+                      onClick={() => updateConfig(config.subject, { difficulty: d })}
+                      className={`flex-1 min-w-0 py-1 rounded text-xs font-medium border transition-colors ${
+                        config.difficulty === d
+                          ? 'bg-accent text-white border-accent'
+                          : 'bg-white text-gray-600 border-gray-300 hover:border-gray-400'
+                      }`}
+                    >
+                      {DIFFICULTY_LABELS[d]}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Topics */}
+              <div>
+                <button
+                  onClick={() => toggleTopicExpand(config.subject)}
+                  className="flex items-center gap-1 text-xs text-gray-500 hover:text-gray-800 transition-colors"
+                >
+                  <span
+                    className="inline-block transition-transform duration-150"
+                    style={{ transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)' }}
+                  >
+                    ›
+                  </span>
+                  <span>
+                    Topics:{' '}
+                    <span className={allSelected ? 'text-gray-400' : 'text-accent font-medium'}>
+                      {allSelected
+                        ? 'All'
+                        : `${selectedTopics.length} of ${allTopics.length} selected`}
+                    </span>
+                  </span>
+                </button>
+
+                {isExpanded && (
+                  <div className="mt-2">
+                    <div className="flex items-center gap-2 mb-2">
+                      <button
+                        onClick={() => updateConfig(config.subject, { topics: null })}
+                        className="text-xs text-accent hover:underline"
+                      >
+                        Select all
+                      </button>
+                      <span className="text-gray-300 text-xs">·</span>
+                      <button
+                        onClick={() =>
+                          updateConfig(config.subject, { topics: [allTopics[0]] })
+                        }
+                        className="text-xs text-gray-400 hover:text-gray-600 hover:underline"
+                      >
+                        Clear
+                      </button>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {allTopics.map((topic) => {
+                        const selected = selectedTopics.includes(topic);
+                        return (
+                          <button
+                            key={topic}
+                            onClick={() => toggleTopic(config.subject, topic)}
+                            className={`px-2.5 py-1 rounded-full border text-xs transition-colors ${
+                              selected
+                                ? 'bg-blue-50 border-accent/40 text-accent font-medium'
+                                : 'bg-white border-gray-200 text-gray-500 hover:border-gray-400'
+                            }`}
+                          >
+                            {topic}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// ── Shared UI primitives ───────────────────────────────────────
 
 function Toggle({ value, onChange }: { value: boolean; onChange: (v: boolean) => void }) {
   return (

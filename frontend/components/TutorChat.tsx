@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import { MathText } from './MathText';
-import type { TutorChatMessage, QuestionRecord, HintRecord, SolutionRecord } from '@/lib/types';
+import type { TutorAnnotation, TutorChatMessage, QuestionRecord, HintRecord, SolutionRecord, WhiteboardStroke } from '@/lib/types';
 import { api } from '@/lib/api';
 
 interface TutorChatProps {
@@ -10,16 +10,39 @@ interface TutorChatProps {
   hints: HintRecord[];
   solution: SolutionRecord | undefined;
   onMessage: (msg: TutorChatMessage) => void;
+  /** When truthy the tutor will receive whiteboard context with every message. */
+  whiteboardEnabled?: boolean;
+  /** Called just before sending — should return a base64 PNG snapshot or null. */
+  getWhiteboardSnapshot?: () => string | null;
+  /** Current number of strokes, used as a density signal for the backend. */
+  whiteboardStrokeCount?: number;
+  /** Called when the tutor returns annotations to render on the board. */
+  onAnnotations?: (annotations: TutorAnnotation[]) => void;
 }
 
-export function TutorChat({ question, messages, hints, solution, onMessage }: TutorChatProps) {
+export function TutorChat({
+  question,
+  messages,
+  hints,
+  solution,
+  onMessage,
+  whiteboardEnabled = false,
+  getWhiteboardSnapshot,
+  whiteboardStrokeCount = 0,
+  onAnnotations,
+}: TutorChatProps) {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const prevLengthRef = useRef(messages.length);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (messages.length > prevLengthRef.current && messagesContainerRef.current) {
+      const el = messagesContainerRef.current;
+      el.scrollTop = el.scrollHeight;
+    }
+    prevLengthRef.current = messages.length;
   }, [messages]);
 
   async function send() {
@@ -31,6 +54,11 @@ export function TutorChat({ question, messages, hints, solution, onMessage }: Tu
     onMessage(userMsg);
     setLoading(true);
     setError(null);
+
+    // Capture snapshot at send time (not on every stroke)
+    const snapshot = whiteboardEnabled && getWhiteboardSnapshot
+      ? getWhiteboardSnapshot()
+      : null;
 
     try {
       const result = await api.askTutor({
@@ -44,7 +72,13 @@ export function TutorChat({ question, messages, hints, solution, onMessage }: Tu
         solution_available: Boolean(solution),
         worked_solution: solution?.worked_solution ?? null,
         hints_shown: hints.length,
+        ...(whiteboardEnabled && {
+          whiteboard_enabled: true,
+          whiteboard_snapshot: snapshot,
+          whiteboard_stroke_count: whiteboardStrokeCount,
+        }),
       });
+
       const tutorMsg: TutorChatMessage = {
         role: 'tutor',
         text: result.response,
@@ -52,6 +86,11 @@ export function TutorChat({ question, messages, hints, solution, onMessage }: Tu
         timestamp: Date.now(),
       };
       onMessage(tutorMsg);
+
+      // Forward any annotations the tutor returned
+      if (result.annotations && result.annotations.length > 0 && onAnnotations) {
+        onAnnotations(result.annotations);
+      }
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Tutor unavailable');
     } finally {
@@ -75,16 +114,23 @@ export function TutorChat({ question, messages, hints, solution, onMessage }: Tu
 
   return (
     <div className="flex flex-col bg-slate-50 border border-slate-200 rounded-lg overflow-hidden">
-      <div className="px-3 py-2 bg-slate-100 border-b border-slate-200">
+      <div className="px-3 py-2 bg-slate-100 border-b border-slate-200 flex items-center gap-2">
         <span className="text-xs font-semibold text-slate-600 uppercase tracking-wide">
           Ask the Tutor
         </span>
+        {whiteboardEnabled && (
+          <span className="text-xs bg-amber-100 text-amber-700 border border-amber-200 px-1.5 py-0.5 rounded font-medium">
+            Board context on
+          </span>
+        )}
       </div>
 
-      <div className="flex-1 overflow-y-auto p-3 space-y-3 max-h-80 min-h-24">
+      <div ref={messagesContainerRef} className="flex-1 overflow-y-auto p-3 space-y-3 max-h-80 min-h-24">
         {messages.length === 0 && (
           <p className="text-xs text-gray-400 italic text-center mt-4">
-            Ask any question about this problem. The tutor won't reveal the answer directly.
+            {whiteboardEnabled
+              ? "Ask the tutor — your whiteboard will be shared with each message."
+              : "Ask any question about this problem. The tutor won't reveal the answer directly."}
           </p>
         )}
         {messages.map((msg, i) => (
@@ -108,11 +154,14 @@ export function TutorChat({ question, messages, hints, solution, onMessage }: Tu
         {loading && (
           <div className="flex justify-start">
             <div className="bg-white border border-slate-200 rounded-lg px-3 py-2 text-sm text-gray-400">
-              <span className="animate-pulse">Thinking…</span>
+              <span className="animate-pulse">
+                {whiteboardEnabled && whiteboardStrokeCount > 0
+                  ? 'Reading whiteboard…'
+                  : 'Thinking…'}
+              </span>
             </div>
           </div>
         )}
-        <div ref={bottomRef} />
       </div>
 
       {error && <div className="px-3 py-1 text-xs text-red-500 bg-red-50 border-t border-red-100">{error}</div>}
@@ -122,9 +171,13 @@ export function TutorChat({ question, messages, hints, solution, onMessage }: Tu
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKey}
-          placeholder="Ask about this question… (Enter to send)"
+          placeholder={
+            whiteboardEnabled
+              ? "Ask about this problem or your working… (Enter to send)"
+              : "Ask about this question… (Enter to send)"
+          }
           rows={2}
-          className="flex-1 text-sm border border-slate-300 rounded px-2 py-1 resize-none focus:outline-none focus:ring-1 focus:ring-accent"
+          className="flex-1 text-sm border border-slate-300 rounded px-2 py-1 resize-none focus:outline-none focus:ring-1 focus:ring-accent text-gray-900 placeholder:text-gray-400"
         />
         <button
           onClick={send}

@@ -177,6 +177,13 @@ export interface PaperSession {
   updated_at: number;
 }
 
+export interface SubjectTopicConfig {
+  subject: string;
+  difficulty: DifficultyPreset;
+  /** null = all topics; array = specific topics */
+  topics: string[] | null;
+}
+
 export interface QuickModeConfig {
   topic_mode: TopicMode;
   custom_topics: string[];
@@ -187,6 +194,8 @@ export interface QuickModeConfig {
   solution_hidden: boolean;
   timer_enabled: boolean;
   target_subject: Subject;
+  /** 0 = all AI, 1 = all past papers */
+  bank_fraction: number;
 }
 
 export interface QuickModeStats {
@@ -264,6 +273,35 @@ export interface AdaptivePolicy {
   source_type: SourceType;
 }
 
+// ── Whiteboard types ──────────────────────────────────────────
+
+export interface WhiteboardPoint { x: number; y: number; }
+
+export interface WhiteboardStroke {
+  points: WhiteboardPoint[];
+  color: string;
+  width: number;
+  tool: 'pen' | 'eraser';
+}
+
+export type TutorAnnotationType = 'circle' | 'highlight' | 'arrow' | 'question_mark' | 'cross' | 'checkmark';
+
+export interface TutorAnnotation {
+  type: TutorAnnotationType;
+  /** Normalized 0-1 coordinates relative to canvas dimensions */
+  x: number;
+  y: number;
+  x2?: number;
+  y2?: number;
+  label?: string;
+  color: string;
+}
+
+export interface WhiteboardState {
+  strokes: WhiteboardStroke[];
+  annotations: TutorAnnotation[];
+}
+
 export interface AppState {
   questions: Record<string, QuestionRecord>;
   hints: Record<string, HintRecord[]>;
@@ -277,4 +315,5 @@ export interface AppState {
   inventory: BankInventory | null;
   lastSubject: Subject;
   lastTopic: string | null;
+  whiteboards: Record<string, WhiteboardState>;
 }

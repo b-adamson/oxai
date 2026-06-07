@@ -15,6 +15,7 @@ import type {
   PaperSlot,
   PaperBlueprint,
   QuickModeConfig,
+  SubjectTopicConfig,
   BankInventory,
   MasteryStats,
   Difficulty,
@@ -102,6 +103,49 @@ export function planEsatPaperSlots(
   return slots;
 }
 
+// ── Multi-subject quick slot planner ─────────────────────────
+
+/**
+ * Plan slots distributed randomly across the given subject configs.
+ * Each config carries its own difficulty preset and optional topic list.
+ * bankFraction controls the bank vs AI ratio (0 = all AI, 1 = all bank).
+ */
+export function planMultiSubjectQuickSlots(
+  subjectConfigs: SubjectTopicConfig[],
+  bankFraction: number,
+  count: number,
+  startPosition = 0,
+): PaperSlot[] {
+  if (subjectConfigs.length === 0) return [];
+  return Array.from({ length: count }, (_, i) => {
+    const config = subjectConfigs[Math.floor(Math.random() * subjectConfigs.length)];
+    const [lo, hi] = ESAT_DIFFICULTY_RANGES[config.difficulty] ?? [2, 4];
+    const difficulty = (lo + Math.floor(Math.random() * (hi - lo + 1))) as Difficulty;
+    const topic = config.topics && config.topics.length > 0
+      ? config.topics[Math.floor(Math.random() * config.topics.length)]
+      : null;
+    const source_type: SourceType = bankFraction === 0
+      ? 'fresh_ai'
+      : bankFraction === 1
+        ? 'bank'
+        : Math.random() < bankFraction ? 'bank' : 'fresh_ai';
+    return {
+      slot_id: uuidv4(),
+      position: startPosition + i,
+      subject: config.subject,
+      topic,
+      subtopic: null,
+      difficulty,
+      diagram_requirement: 'never' as const,
+      source_type,
+      status: 'planned' as const,
+      question_id: null,
+      retry_count: 0,
+      error: null,
+    };
+  });
+}
+
 // ── Slot planning ─────────────────────────────────────────────
 
 export function planQuickSlots(
@@ -111,8 +155,14 @@ export function planQuickSlots(
   count: number,
   startPosition = 0
 ): PaperSlot[] {
+  const bankFraction = config.bank_fraction ?? 0.5;
   return Array.from({ length: count }, (_, i) => {
     const policy = computeAdaptivePolicy(config, mastery, inventory);
+    const source_type: SourceType = bankFraction === 0
+      ? 'fresh_ai'
+      : bankFraction === 1
+        ? 'bank'
+        : Math.random() < bankFraction ? 'bank' : 'fresh_ai';
     return {
       slot_id: uuidv4(),
       position: startPosition + i,
@@ -121,7 +171,7 @@ export function planQuickSlots(
       subtopic: policy.subtopic,
       difficulty: policy.difficulty as Difficulty,
       diagram_requirement: policy.diagram_policy === 'never' ? 'never' : 'allowed',
-      source_type: 'either',
+      source_type,
       status: 'planned',
       question_id: null,
       retry_count: 0,

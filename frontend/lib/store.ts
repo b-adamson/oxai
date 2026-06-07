@@ -9,11 +9,14 @@ import type {
   HintRecord,
   SolutionRecord,
   TutorChatMessage,
+  TutorAnnotation,
   AttemptRecord,
   QuestionSession,
   QuickModeSession,
   PaperSession,
   BankInventory,
+  WhiteboardStroke,
+  WhiteboardState,
 } from './types';
 
 // ── Raw question from backend → QuestionRecord ────────────────
@@ -117,6 +120,12 @@ interface StoreActions {
   setLastSubject: (s: string) => void;
   setLastTopic: (t: string | null) => void;
 
+  // Whiteboard
+  setWhiteboardStrokes: (questionId: string, strokes: WhiteboardStroke[]) => void;
+  addWhiteboardAnnotations: (questionId: string, annotations: TutorAnnotation[]) => void;
+  clearWhiteboardAnnotations: (questionId: string) => void;
+  getWhiteboardState: (questionId: string) => WhiteboardState;
+
   // Reset
   clearSession: () => void;
 }
@@ -136,6 +145,7 @@ const INITIAL_STATE: AppState = {
   inventory: null,
   lastSubject: 'math',
   lastTopic: null,
+  whiteboards: {},
 };
 
 export const useStore = create<Store>()(
@@ -259,6 +269,40 @@ export const useStore = create<Store>()(
       setLastSubject: (subject) => set({ lastSubject: subject }),
       setLastTopic: (topic) => set({ lastTopic: topic }),
 
+      setWhiteboardStrokes: (questionId, strokes) =>
+        set((s) => ({
+          whiteboards: {
+            ...s.whiteboards,
+            [questionId]: { strokes, annotations: s.whiteboards[questionId]?.annotations ?? [] },
+          },
+        })),
+
+      addWhiteboardAnnotations: (questionId, annotations) =>
+        set((s) => {
+          const existing = s.whiteboards[questionId] ?? { strokes: [], annotations: [] };
+          return {
+            whiteboards: {
+              ...s.whiteboards,
+              [questionId]: { ...existing, annotations: [...existing.annotations, ...annotations] },
+            },
+          };
+        }),
+
+      clearWhiteboardAnnotations: (questionId) =>
+        set((s) => {
+          const existing = s.whiteboards[questionId];
+          if (!existing) return s;
+          return {
+            whiteboards: {
+              ...s.whiteboards,
+              [questionId]: { ...existing, annotations: [] },
+            },
+          };
+        }),
+
+      getWhiteboardState: (questionId) =>
+        get().whiteboards[questionId] ?? { strokes: [], annotations: [] },
+
       clearSession: () =>
         set({ quickSession: null, questionSessions: {} }),
     }),
@@ -288,6 +332,7 @@ export const useStore = create<Store>()(
         inventory: s.inventory,
         lastSubject: s.lastSubject,
         lastTopic: s.lastTopic,
+        whiteboards: s.whiteboards,
       }),
     }
   )

@@ -1,3 +1,5 @@
+import type { TutorAnnotation } from './types';
+
 const BASE = process.env.NEXT_PUBLIC_API_BASE ?? '/api';
 
 async function post<T>(path: string, body: unknown): Promise<T> {
@@ -73,6 +75,12 @@ export interface TutorParams {
   solution_available: boolean;
   worked_solution?: string | null;
   hints_shown: number;
+  /** Whiteboard context — only sent when whiteboard is open */
+  whiteboard_enabled?: boolean;
+  /** Base64 PNG snapshot of current board state */
+  whiteboard_snapshot?: string | null;
+  /** Number of strokes on the board (lightweight signal of content density) */
+  whiteboard_stroke_count?: number;
 }
 
 export interface BankQueryParams {
@@ -92,7 +100,12 @@ export type SolutionResponse = {
   diagram_url: string | null;
 };
 
-export type TutorResponse = { response: string; response_type: string };
+export type TutorResponse = {
+  response: string;
+  response_type: string;
+  /** Structured annotations the tutor wants to render on the whiteboard */
+  annotations?: TutorAnnotation[];
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyRecord = Record<string, any>;

@@ -104,6 +104,9 @@ class TutorRequest(BaseModel):
     solution_available: bool = False
     worked_solution: Optional[str] = None
     hints_shown: int = Field(0, ge=0)
+    whiteboard_enabled: bool = False
+    whiteboard_snapshot: Optional[str] = None  # base64 PNG data URL
+    whiteboard_stroke_count: int = 0
 
 
 class SolutionOption(BaseModel):
@@ -347,6 +350,8 @@ def ask_tutor_endpoint(req: TutorRequest):
             solution_available=req.solution_available,
             worked_solution=req.worked_solution,
             hints_shown=req.hints_shown,
+            whiteboard_enabled=req.whiteboard_enabled,
+            whiteboard_snapshot=req.whiteboard_snapshot,
         )
         return result
     except HTTPException:

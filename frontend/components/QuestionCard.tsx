@@ -1,12 +1,16 @@
 'use client';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { MathText } from './MathText';
 import { FigureRenderer } from './FigureRenderer';
 import { HintPanel } from './HintPanel';
 import { SolutionPanel } from './SolutionPanel';
 import { TutorChat } from './TutorChat';
-import type { QuestionRecord, HintRecord, SolutionRecord, TutorChatMessage } from '@/lib/types';
+import { WhiteboardCanvas, type WhiteboardHandle } from './WhiteboardCanvas';
+import type { QuestionRecord, HintRecord, SolutionRecord, TutorChatMessage, TutorAnnotation, WhiteboardState } from '@/lib/types';
 import { difficultyLabel, subjectColor } from '@/lib/questionUtils';
+import { useStore } from '@/lib/store';
+
+const EMPTY_WHITEBOARD: WhiteboardState = { strokes: [], annotations: [] };
 
 interface QuestionCardProps {
   question: QuestionRecord;
@@ -57,13 +61,20 @@ export function QuestionCard({
 }: QuestionCardProps) {
   const [panel, setPanel] = useState<Panel>('none');
   const [hoveredOption, setHoveredOption] = useState<string | null>(null);
+  const [whiteboardOpen, setWhiteboardOpen] = useState(false);
+
+  // Select the stored entry directly — avoids returning a new object reference each render
+  const whiteboardState = useStore((s) => s.whiteboards[question.question_id] ?? EMPTY_WHITEBOARD);
+  const setWhiteboardStrokes = useStore((s) => s.setWhiteboardStrokes);
+  const addWhiteboardAnnotations = useStore((s) => s.addWhiteboardAnnotations);
+
+  // Ref to the canvas imperative handle for snapshotting
+  const whiteboardRef = useRef<WhiteboardHandle>(null);
 
   const answered = submittedAnswer !== null;
   const correct = question.answer_label;
 
   function handleOptionClick(label: string) {
-    // In paper mode (hideFeedback=true), options stay interactive so the user
-    // can change or deselect their answer before final submission.
     if (answered && !hideFeedback) return;
     const timeTaken = startTime ? Math.floor((Date.now() - startTime) / 1000) : 0;
     onAnswer(label, timeTaken);
@@ -78,6 +89,18 @@ export function QuestionCard({
     setPanel('solution');
   }
 
+  function handleToggleWhiteboard() {
+    setWhiteboardOpen((o) => !o);
+    // If the solution panel is open and we're opening the whiteboard, keep the
+    // solution visible — it'll switch to the overlay mode automatically.
+  }
+
+  function handleAnnotations(annotations: TutorAnnotation[]) {
+    addWhiteboardAnnotations(question.question_id, annotations);
+    // Make sure the whiteboard is open so the user sees the annotations
+    if (!whiteboardOpen) setWhiteboardOpen(true);
+  }
+
   function getOptionStyle(label: string): string {
     const base = 'flex items-start gap-3 p-3 rounded-lg border-2 transition-all text-left w-full text-gray-900';
     if (!answered) {
@@ -88,10 +111,7 @@ export function QuestionCard({
       }`;
     }
     if (hideFeedback) {
-      // Paper mode — options stay interactive; selected is highlighted, others remain clickable
-      if (label === submittedAnswer) {
-        return `${base} border-accent bg-blue-50 cursor-pointer`;
-      }
+      if (label === submittedAnswer) return `${base} border-accent bg-blue-50 cursor-pointer`;
       return `${base} ${
         hoveredOption === label
           ? 'border-accent bg-blue-50 cursor-pointer'
@@ -102,6 +122,46 @@ export function QuestionCard({
     if (label === submittedAnswer && label !== correct) return `${base} border-red-400 bg-red-50`;
     return `${base} border-gray-200 bg-white opacity-60`;
   }
+
+  // Build the solution overlay node — used inside the whiteboard when both are active
+  const solutionOverlayContent =
+    whiteboardOpen && panel === 'solution' ? (
+      <div className="p-4">
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-xs font-semibold text-indigo-600 uppercase tracking-wide">
+            Worked Solution
+          </span>
+          <button
+            onClick={() => setPanel('none')}
+            className="text-gray-400 hover:text-gray-600 text-xl leading-none"
+            aria-label="Close solution overlay"
+          >
+            ×
+          </button>
+        </div>
+        {solution ? (
+          <div className="space-y-3">
+            <div className="text-sm text-emerald-700 font-semibold">
+              Answer: {solution.final_answer_label}
+            </div>
+            <MathText
+              text={solution.worked_solution}
+              block
+              className="text-sm text-gray-800 leading-relaxed prose prose-sm max-w-none"
+            />
+            {solution.diagram_url && (
+              <img
+                src={solution.diagram_url}
+                alt="Solution diagram"
+                className="max-w-full max-h-48 rounded border border-indigo-200"
+              />
+            )}
+          </div>
+        ) : (
+          <p className="text-sm text-gray-500">Generating solution…</p>
+        )}
+      </div>
+    ) : undefined;
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
@@ -126,8 +186,12 @@ export function QuestionCard({
             {[
               question.paper_source.exam,
               question.paper_source.year,
-              question.paper_source.question_number != null ? `Q${question.paper_source.question_number}` : null,
-            ].filter(Boolean).join(' · ')}
+              question.paper_source.question_number != null
+                ? `Q${question.paper_source.question_number}`
+                : null,
+            ]
+              .filter(Boolean)
+              .join(' · ')}
           </span>
         ) : question.source_type === 'bank' ? (
           <span className="text-xs bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded">Past paper</span>
@@ -142,12 +206,9 @@ export function QuestionCard({
           className="text-base leading-relaxed text-gray-900 font-serif"
         />
 
-        {/* Structured figures (AI-generated questions) */}
-        {question.figures.length > 0 && question.figures.map((fig, i) => (
-          <FigureRenderer key={i} spec={fig} />
-        ))}
+        {question.figures.length > 0 &&
+          question.figures.map((fig, i) => <FigureRenderer key={i} spec={fig} />)}
 
-        {/* Fallback image URL for bank questions without structured figures */}
         {question.figures.length === 0 && question.diagram_url && (
           <div className="mt-4">
             <img
@@ -169,12 +230,14 @@ export function QuestionCard({
               className={getOptionStyle(opt.label)}
               disabled={answered && !hideFeedback}
             >
-              <div className={`
+              <div
+                className={`
                 flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold
                 ${!hideFeedback && answered && opt.label === correct ? 'bg-emerald-500 text-white' : ''}
                 ${!hideFeedback && answered && opt.label === submittedAnswer && opt.label !== correct ? 'bg-red-400 text-white' : ''}
-                ${(hideFeedback || !answered || (opt.label !== correct && opt.label !== submittedAnswer)) ? 'bg-gray-100 text-gray-600' : ''}
-              `}>
+                ${hideFeedback || !answered || (opt.label !== correct && opt.label !== submittedAnswer) ? 'bg-gray-100 text-gray-600' : ''}
+              `}
+              >
                 {opt.label}
               </div>
               <MathText text={opt.text} className="text-sm leading-relaxed pt-0.5 text-gray-900" />
@@ -188,22 +251,49 @@ export function QuestionCard({
           ))}
         </div>
 
-        {/* Answer result — hidden when feedback is suppressed */}
         {answered && !hideFeedback && (
-          <div className={`mt-4 p-3 rounded-lg text-sm font-medium ${
-            submittedAnswer === correct
-              ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
-              : 'bg-red-50 text-red-800 border border-red-200'
-          }`}>
-            {submittedAnswer === correct
-              ? '✓ Correct!'
-              : `✗ Incorrect. The answer is ${correct}.`}
+          <div
+            className={`mt-4 p-3 rounded-lg text-sm font-medium ${
+              submittedAnswer === correct
+                ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                : 'bg-red-50 text-red-800 border border-red-200'
+            }`}
+          >
+            {submittedAnswer === correct ? '✓ Correct!' : `✗ Incorrect. The answer is ${correct}.`}
           </div>
         )}
       </div>
 
+      {/* Whiteboard — sits between question content and the expandable panels */}
+      {whiteboardOpen && (
+        <div className="px-5 pb-4 border-t border-gray-100">
+          <div className="mt-3">
+            <WhiteboardCanvas
+              key={question.question_id}
+              ref={whiteboardRef}
+              strokes={whiteboardState.strokes}
+              annotations={whiteboardState.annotations}
+              onStrokesChange={(strokes) =>
+                setWhiteboardStrokes(question.question_id, strokes)
+              }
+              // The solution overlay is rendered inside the canvas container so it
+              // floats cleanly above strokes without mixing with user content
+              solutionOverlay={solutionOverlayContent}
+            />
+          </div>
+        </div>
+      )}
+
       {/* Action bar */}
       <div className="flex flex-wrap items-center gap-2 px-5 py-3 border-t border-gray-100 bg-gray-50">
+        {/* Whiteboard toggle */}
+        <ActionButton
+          active={whiteboardOpen}
+          onClick={handleToggleWhiteboard}
+          icon="✏️"
+          label={whiteboardOpen ? 'Board' : 'Whiteboard'}
+        />
+
         {!hideHints && (
           <ActionButton
             active={panel === 'hints'}
@@ -225,7 +315,11 @@ export function QuestionCard({
             active={panel === 'tutor'}
             onClick={() => togglePanel('tutor')}
             icon="🎓"
-            label={tutorMessages.length > 0 ? `Tutor (${Math.ceil(tutorMessages.length / 2)})` : 'Ask Tutor'}
+            label={
+              tutorMessages.length > 0
+                ? `Tutor (${Math.ceil(tutorMessages.length / 2)})`
+                : 'Ask Tutor'
+            }
           />
         )}
         {onSimilarQuestion && answered && (
@@ -244,15 +338,34 @@ export function QuestionCard({
           {panel === 'hints' && (
             <HintPanel question={question} hints={hints} onHintAdded={onHintAdded} />
           )}
+
           {panel === 'solution' && (
-            <SolutionPanel
-              question={question}
-              solution={solution}
-              revealed={solutionRevealed}
-              onReveal={onSolutionRevealed}
-              onSolutionGenerated={onSolutionGenerated}
-            />
+            <>
+              {whiteboardOpen && (
+                <div className="flex items-center gap-2 text-sm text-indigo-600 bg-indigo-50 border border-indigo-200 rounded-lg px-3 py-2 mb-2">
+                  <span>📋</span>
+                  <span>Solution shown on whiteboard above.</span>
+                  <button
+                    onClick={() => setPanel('none')}
+                    className="ml-auto text-indigo-400 hover:text-indigo-600"
+                  >
+                    Dismiss
+                  </button>
+                </div>
+              )}
+              {/* Always rendered so its useEffect can drive the fetch; hidden when whiteboard shows the overlay */}
+              <div className={whiteboardOpen ? 'hidden' : ''}>
+                <SolutionPanel
+                  question={question}
+                  solution={solution}
+                  revealed={solutionRevealed}
+                  onReveal={onSolutionRevealed}
+                  onSolutionGenerated={onSolutionGenerated}
+                />
+              </div>
+            </>
           )}
+
           {panel === 'tutor' && (
             <TutorChat
               question={question}
@@ -260,6 +373,10 @@ export function QuestionCard({
               hints={hints}
               solution={solutionRevealed ? solution : undefined}
               onMessage={onTutorMessage}
+              whiteboardEnabled={whiteboardOpen}
+              getWhiteboardSnapshot={() => whiteboardRef.current?.getSnapshot() ?? null}
+              whiteboardStrokeCount={whiteboardState.strokes.length}
+              onAnnotations={handleAnnotations}
             />
           )}
         </div>

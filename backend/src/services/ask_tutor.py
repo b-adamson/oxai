@@ -60,7 +60,7 @@ class TutorService:
             },
         }
 
-    def _instructions(self, solution_available: bool, hints_shown: int) -> str:
+    def _instructions(self, solution_available: bool, hints_shown: int, whiteboard_enabled: bool = False) -> str:
         base = (
             'You are an expert NSAA tutor helping a student work through a multiple-choice exam question. '
             'Strict rules you must always follow:\n'
@@ -71,6 +71,14 @@ class TutorService:
             '5. Use LaTeX for all mathematics — $...$ for inline, $$...$$ for display equations.\n'
             '6. Be concise. Do not pad responses.\n'
         )
+
+        if whiteboard_enabled:
+            base += (
+                'The student has a whiteboard open. An image of their current working is attached '
+                'to their message. Analyse what they have written — identify equations, steps, '
+                'diagrams, and any visible errors — and reference specific parts of their working '
+                'in your response.\n'
+            )
 
         if hints_shown > 0:
             base += f'The student has already seen {hints_shown} pre-generated hint(s) — do not simply repeat them.\n'
@@ -110,6 +118,8 @@ class TutorService:
         solution_available: bool,
         worked_solution: Optional[str],
         hints_shown: int,
+        whiteboard_enabled: bool = False,
+        whiteboard_snapshot: Optional[str] = None,
     ) -> Dict[str, Any]:
         context: Dict[str, Any] = {
             'question': {
@@ -124,13 +134,19 @@ class TutorService:
         if solution_available and worked_solution:
             context['worked_solution'] = worked_solution
 
+        # Strip data URL prefix from snapshot so we have raw base64
+        image_b64: Optional[str] = None
+        if whiteboard_enabled and whiteboard_snapshot:
+            image_b64 = whiteboard_snapshot.split(',', 1)[-1] if ',' in whiteboard_snapshot else whiteboard_snapshot
+
         # Build input: system instructions + question context + interleaved chat history
-        input_messages: List[Dict[str, str]] = [
+        input_messages: List[Dict] = [
             {
                 'role': 'developer',
                 'content': self._instructions(
                     solution_available=solution_available,
                     hints_shown=hints_shown,
+                    whiteboard_enabled=whiteboard_enabled,
                 ),
             },
             {
@@ -139,9 +155,27 @@ class TutorService:
             },
         ]
 
-        for msg in chat_history:
+        for i, msg in enumerate(chat_history):
             api_role = 'assistant' if msg.get('role') == 'tutor' else 'user'
-            input_messages.append({'role': api_role, 'content': msg.get('text', '')})
+            is_last = i == len(chat_history) - 1
+
+            if is_last and image_b64 and api_role == 'user':
+                # Attach the whiteboard snapshot to the student's latest message
+                input_messages.append({
+                    'role': 'user',
+                    'content': [
+                        {
+                            'type': 'input_image',
+                            'image_url': f'data:image/png;base64,{image_b64}',
+                        },
+                        {
+                            'type': 'input_text',
+                            'text': msg.get('text', ''),
+                        },
+                    ],
+                })
+            else:
+                input_messages.append({'role': api_role, 'content': msg.get('text', '')})
 
         schema = self._schema()
         self.logger.info('[openai] responses.create  model=%s  schema=tutor_response  history_len=%d', self.settings.model, len(chat_history))

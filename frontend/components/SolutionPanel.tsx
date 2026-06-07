@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MathText } from './MathText';
 import type { SolutionRecord, QuestionRecord } from '@/lib/types';
 import { api } from '@/lib/api';
@@ -15,6 +15,14 @@ interface SolutionPanelProps {
 export function SolutionPanel({ question, solution, revealed, onReveal, onSolutionGenerated }: SolutionPanelProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Auto-fetch when revealed externally (e.g. via action bar) before fetchSolution is called
+  useEffect(() => {
+    if (revealed && !solution && !loading) {
+      fetchSolution();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [revealed]);
 
   async function handleReveal() {
     onReveal();

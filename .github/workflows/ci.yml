@@ -18,6 +18,10 @@ jobs:
         run: pip install sympy
       - name: Run verification checks (offline)
         run: python backend/scripts/check_code_verification.py
+      - name: Check bank integrity (advisory)
+        # Report-only while the known 2022 corruption is repaired in batches
+        # (issue #8). Flip to strict (drop --report) once the bank is clean.
+        run: python backend/scripts/check_bank_integrity.py --report
 
   frontend:
     name: Frontend typecheck + build

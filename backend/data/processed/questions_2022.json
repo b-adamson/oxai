@@ -1691,39 +1691,39 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "1.5 minutes. An 18 cm straight section of this wire lies in a uniform magnetic field. This section of wire is perpendicular to the direction of the field. The magnetic field strength is 0.15 T. What is the magnitude of the magnetic force on this section of wire? 0.0060 N",
+        "stem": "There is a constant current in a conducting wire. A charge of 20 C passes through the wire in 1.5 minutes.\n\nAn 18 cm straight section of this wire lies in a uniform magnetic field. This section of wire is perpendicular to the direction of the field. The magnetic field strength is 0.15 T.\n\nWhat is the magnitude of the magnetic force on this section of wire?",
         "options": [
           {
             "label": "A",
-            "text": "0.36 N"
+            "text": "0.0060 N"
           },
           {
             "label": "B",
-            "text": "0.60 N"
+            "text": "0.36 N"
           },
           {
             "label": "C",
-            "text": "0.81 N"
+            "text": "0.60 N"
           },
           {
             "label": "D",
-            "text": "36 N"
+            "text": "0.81 N"
           },
           {
             "label": "E",
-            "text": "49 N"
+            "text": "36 N"
           },
           {
             "label": "F",
-            "text": "81 N"
+            "text": "49 N"
           },
           {
             "label": "G",
-            "text": "4900 N"
+            "text": "81 N"
           },
           {
             "label": "H",
-            "text": "A rider on a rollercoaster moves very quickly towards a solid wall. While moving, the rider"
+            "text": "4900 N"
           }
         ],
         "figures": []
@@ -1745,7 +1745,7 @@
       },
       "validation": {
         "answer_label": "A",
-        "answer_text": "0.36 N",
+        "answer_text": "0.0060 N",
         "status": "verified"
       },
       "metadata": {
@@ -1963,35 +1963,35 @@
         "options": [
           {
             "label": "A",
-            "text": "0.050 C"
+            "text": "0.025 C"
           },
           {
             "label": "B",
-            "text": "0.15 C"
+            "text": "0.050 C"
           },
           {
             "label": "C",
-            "text": "0.30 C"
+            "text": "0.15 C"
           },
           {
             "label": "D",
-            "text": "0.75 C"
+            "text": "0.30 C"
           },
           {
             "label": "E",
-            "text": "1.5 C"
+            "text": "0.75 C"
           },
           {
             "label": "F",
-            "text": "9.0 C"
+            "text": "1.5 C"
           },
           {
             "label": "G",
-            "text": "18 C"
+            "text": "9.0 C"
           },
           {
             "label": "H",
-            "text": "A small piece of space debris of mass 0.10 g strikes the International Space Station at a"
+            "text": "18 C"
           }
         ],
         "figures": []
@@ -2013,7 +2013,7 @@
       },
       "validation": {
         "answer_label": "G",
-        "answer_text": "18 C",
+        "answer_text": "9.0 C",
         "status": "verified"
       },
       "metadata": {
@@ -2127,31 +2127,31 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "8.0 N. The block accelerates uniformly from rest. After 4.0 s its velocity is 2.0 m s^{-1}. How much work is done against resistive forces during this 4.0 s? 12 J",
+        "stem": "A block of mass 6.0 kg is pushed along a rough horizontal surface by a constant force of 8.0 N. The block accelerates uniformly from rest. After 4.0 s its velocity is 2.0 m s$^{-1}$.\n\nHow much work is done against resistive forces during this 4.0 s?",
         "options": [
           {
             "label": "A",
-            "text": "20 J"
+            "text": "12 J"
           },
           {
             "label": "B",
-            "text": "24 J"
+            "text": "20 J"
           },
           {
             "label": "C",
-            "text": "32 J"
+            "text": "24 J"
           },
           {
             "label": "D",
-            "text": "40 J"
+            "text": "32 J"
           },
           {
             "label": "E",
-            "text": "64 J"
+            "text": "40 J"
           },
           {
             "label": "F",
-            "text": "23"
+            "text": "64 J"
           }
         ],
         "figures": []
@@ -2173,7 +2173,7 @@
       },
       "validation": {
         "answer_label": "B",
-        "answer_text": "24 J",
+        "answer_text": "20 J",
         "status": "verified"
       },
       "metadata": {
@@ -2761,8 +2761,33 @@
             "figure_type": "table",
             "caption": "",
             "diagram_prompt": null,
-            "table_headers": ["atom or ion", "number of particles", "relative charge"],
-            "table_rows": [["W", "21", "0"], ["X", "21", "−1"], ["Y", "20", "+1"], ["Z", "22", "0"]],
+            "table_headers": [
+              "atom or ion",
+              "number of particles",
+              "relative charge"
+            ],
+            "table_rows": [
+              [
+                "W",
+                "21",
+                "0"
+              ],
+              [
+                "X",
+                "21",
+                "−1"
+              ],
+              [
+                "Y",
+                "20",
+                "+1"
+              ],
+              [
+                "Z",
+                "22",
+                "0"
+              ]
+            ],
             "table_row_labels": [],
             "graph_type": null,
             "graph_title": null,
@@ -2829,31 +2854,31 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "A sample consists only of X and Y. The graph shows how the mass of Y present in the sample varies with time. After a long time, the mass of Y in the sample becomes a constant 50 g. 60 mass of Y / g \\dfrac{50}{40} \\dfrac{30}{20} \\dfrac{10}{0} \\dfrac{0}{1} \\dfrac{2}{3} \\dfrac{4}{5} \\dfrac{6}{7} 8 time / min What is the half-life of X? 0.6 minutes",
+        "stem": "Radioactive isotope X undergoes a single beta ($\\beta^-$) decay to form the stable isotope Y.\n\nA sample consists only of X and Y. The graph shows how the mass of Y present in the sample varies with time. After a long time, the mass of Y in the sample becomes a constant 50 g.\n\nWhat is the half-life of X?",
         "options": [
           {
             "label": "A",
-            "text": "1.2 minutes"
+            "text": "0.6 minutes"
           },
           {
             "label": "B",
-            "text": "2.0 minutes"
+            "text": "1.2 minutes"
           },
           {
             "label": "C",
-            "text": "3.2 minutes"
+            "text": "2.0 minutes"
           },
           {
             "label": "D",
-            "text": "4.0 minutes"
+            "text": "3.2 minutes"
           },
           {
             "label": "E",
-            "text": "5.2 minutes"
+            "text": "4.0 minutes"
           },
           {
             "label": "F",
-            "text": "29"
+            "text": "5.2 minutes"
           }
         ],
         "figures": [
@@ -2881,7 +2906,7 @@
       },
       "validation": {
         "answer_label": "C",
-        "answer_text": "3.2 minutes",
+        "answer_text": "2.0 minutes",
         "status": "verified"
       },
       "metadata": {
@@ -3196,27 +3221,27 @@
         "options": [
           {
             "label": "A",
-            "text": "1.20 kg m-3"
+            "text": "0.960 kg m$^{-3}$"
           },
           {
             "label": "B",
-            "text": "1.25 kg m-3"
+            "text": "1.20 kg m$^{-3}$"
           },
           {
             "label": "C",
-            "text": "1.28 kg m-3"
+            "text": "1.25 kg m$^{-3}$"
           },
           {
             "label": "D",
-            "text": "1.50 kg m-3"
+            "text": "1.28 kg m$^{-3}$"
           },
           {
             "label": "E",
-            "text": "4.80 kg m-3"
+            "text": "1.50 kg m$^{-3}$"
           },
           {
             "label": "F",
-            "text": "There are two types of earthquake waves, called P-waves and S-waves."
+            "text": "4.80 kg m$^{-3}$"
           }
         ],
         "figures": []
@@ -3238,7 +3263,7 @@
       },
       "validation": {
         "answer_label": "E",
-        "answer_text": "4.80 kg m-3",
+        "answer_text": "1.50 kg m$^{-3}$",
         "status": "verified"
       },
       "metadata": {
@@ -3272,27 +3297,27 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "When an earthquake occurs, both types of wave are produced at the same time and follow the same path. The P-waves travel outwards from the source at 5.0 km s^{-1} and the S-waves travel out at 3.0 km s^{-1}. A seismic monitoring station detects the P-waves 30 s before the S-waves. How far have the waves travelled from the source of the earthquake to reach the seismic monitoring station? 60 km",
+        "stem": "There are two types of earthquake waves, called P-waves and S-waves.\n\nWhen an earthquake occurs, both types of wave are produced at the same time and follow the same path.\n\nThe P-waves travel outwards from the source at 5.0 km s$^{-1}$ and the S-waves travel out at 3.0 km s$^{-1}$.\n\nA seismic monitoring station detects the P-waves 30 s before the S-waves.\n\nHow far have the waves travelled from the source of the earthquake to reach the seismic monitoring station?",
         "options": [
           {
             "label": "A",
-            "text": "90 km"
+            "text": "60 km"
           },
           {
             "label": "B",
-            "text": "135 km"
+            "text": "90 km"
           },
           {
             "label": "C",
-            "text": "150 km"
+            "text": "135 km"
           },
           {
             "label": "D",
-            "text": "225 km"
+            "text": "150 km"
           },
           {
             "label": "E",
-            "text": "33"
+            "text": "225 km"
           }
         ],
         "figures": []
@@ -3314,7 +3339,7 @@
       },
       "validation": {
         "answer_label": "E",
-        "answer_text": "33",
+        "answer_text": "225 km",
         "status": "verified"
       },
       "metadata": {
@@ -3424,39 +3449,39 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "AgNO3(aq) with NaI(aq) 1 Cl 2(aq) with NaI(aq) 2 HCl (aq) with NaOH(aq) 3 MgCl 2(aq) with NaBr(aq) 4 Which pair(s) of solutions, when mixed, would produce a visible chemical change? 1 only",
+        "stem": "The following pairs of 0.1 mol dm$^{-3}$ solutions are mixed separately in test tubes.\n\n1 AgNO$_3$(aq) with NaI(aq)\n2 Cl$_2$(aq) with NaI(aq)\n3 HCl(aq) with NaOH(aq)\n4 MgCl$_2$(aq) with NaBr(aq)\n\nWhich pair(s) of solutions, when mixed, would produce a visible chemical change?",
         "options": [
           {
             "label": "A",
-            "text": "2 only"
+            "text": "1 only"
           },
           {
             "label": "B",
-            "text": "3 only"
+            "text": "2 only"
           },
           {
             "label": "C",
-            "text": "4 only"
+            "text": "3 only"
           },
           {
             "label": "D",
-            "text": "1 and 2 only"
+            "text": "4 only"
           },
           {
             "label": "E",
-            "text": "1 and 3 only"
+            "text": "1 and 2 only"
           },
           {
             "label": "F",
-            "text": "2 and 4 only"
+            "text": "1 and 3 only"
           },
           {
             "label": "G",
-            "text": "3 and 4 only"
+            "text": "2 and 4 only"
           },
           {
             "label": "H",
-            "text": "36"
+            "text": "3 and 4 only"
           }
         ],
         "figures": []
@@ -3478,7 +3503,7 @@
       },
       "validation": {
         "answer_label": "E",
-        "answer_text": "1 and 3 only",
+        "answer_text": "1 and 2 only",
         "status": "verified"
       },
       "metadata": {
@@ -3670,39 +3695,39 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "During the electrolysis of a molten binary compound the ions attracted to the cathode 1 (negative electrode) lose electrons at that electrode. Descending Group 1 of the Periodic Table from lithium to caesium, the atoms of the 2 elements lose electrons more easily. When a substance is acting as a reducing agent it loses electrons. 3 none of them",
+        "stem": "Which of the following statements about losing electrons is/are correct?\n\n1 During the electrolysis of a molten binary compound the ions attracted to the cathode (negative electrode) lose electrons at that electrode.\n2 Descending Group 1 of the Periodic Table from lithium to caesium, the atoms of the elements lose electrons more easily.\n3 When a substance is acting as a reducing agent it loses electrons.",
         "options": [
           {
             "label": "A",
-            "text": "1 only"
+            "text": "none of them"
           },
           {
             "label": "B",
-            "text": "2 only"
+            "text": "1 only"
           },
           {
             "label": "C",
-            "text": "3 only"
+            "text": "2 only"
           },
           {
             "label": "D",
-            "text": "1 and 2 only"
+            "text": "3 only"
           },
           {
             "label": "E",
-            "text": "1 and 3 only"
+            "text": "1 and 2 only"
           },
           {
             "label": "F",
-            "text": "2 and 3 only"
+            "text": "1 and 3 only"
           },
           {
             "label": "G",
-            "text": "1, 2 and 3"
+            "text": "2 and 3 only"
           },
           {
             "label": "H",
-            "text": "Which of the following chemical reactions is/are redox reactions?"
+            "text": "1, 2 and 3"
           }
         ],
         "figures": []
@@ -3724,7 +3749,7 @@
       },
       "validation": {
         "answer_label": "G",
-        "answer_text": "1, 2 and 3",
+        "answer_text": "2 and 3 only",
         "status": "verified"
       },
       "metadata": {
@@ -3936,39 +3961,39 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "The constituent elements of which of the following compounds may be collected using this process? 1 copper(II) bromide hydrogen chloride 2 potassium chloride 3 none of them",
+        "stem": "Concentrated aqueous solutions of three compounds are electrolysed with inert electrodes.\n\nThe constituent elements of which of the following compounds may be collected using this process?\n\n1 copper(II) bromide\n2 hydrogen chloride\n3 potassium chloride",
         "options": [
           {
             "label": "A",
-            "text": "1 only"
+            "text": "none of them"
           },
           {
             "label": "B",
-            "text": "2 only"
+            "text": "1 only"
           },
           {
             "label": "C",
-            "text": "3 only"
+            "text": "2 only"
           },
           {
             "label": "D",
-            "text": "1 and 2 only"
+            "text": "3 only"
           },
           {
             "label": "E",
-            "text": "1 and 3 only"
+            "text": "1 and 2 only"
           },
           {
             "label": "F",
-            "text": "2 and 3 only"
+            "text": "1 and 3 only"
           },
           {
             "label": "G",
-            "text": "1, 2 and 3"
+            "text": "2 and 3 only"
           },
           {
             "label": "H",
-            "text": "50 cm$^3$ of 0.100 mol dm-3 hydrochloric acid has a pH of 1.0."
+            "text": "1, 2 and 3"
           }
         ],
         "figures": []
@@ -3990,7 +4015,7 @@
       },
       "validation": {
         "answer_label": "E",
-        "answer_text": "1 and 3 only",
+        "answer_text": "1 and 2 only",
         "status": "verified"
       },
       "metadata": {
@@ -4280,31 +4305,31 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "The test was repeated with the same mixtures, paper and solvent but this time the distance travelled by the common component of the mixtures was 7.5 cm. How far did the most mobile component of mixture Q travel in the second test? 6.0 cm",
+        "stem": "Three mixtures (P, Q and R) of amino acids were separated using paper chromatography.\n\nThe test was repeated with the same mixtures, paper and solvent but this time the distance travelled by the common component of the mixtures was 7.5 cm.\n\nHow far did the most mobile component of mixture Q travel in the second test?",
         "options": [
           {
             "label": "A",
-            "text": "8.5 cm"
+            "text": "6.0 cm"
           },
           {
             "label": "B",
-            "text": "9.0 cm"
+            "text": "8.5 cm"
           },
           {
             "label": "C",
-            "text": "9.6 cm"
+            "text": "9.0 cm"
           },
           {
             "label": "D",
-            "text": "10.5 cm"
+            "text": "9.6 cm"
           },
           {
             "label": "E",
-            "text": "12.0 cm"
+            "text": "10.5 cm"
           },
           {
             "label": "F",
-            "text": "42"
+            "text": "12.0 cm"
           }
         ],
         "figures": [
@@ -4332,7 +4357,7 @@
       },
       "validation": {
         "answer_label": "C",
-        "answer_text": "9.6 cm",
+        "answer_text": "9.0 cm",
         "status": "verified"
       },
       "metadata": {
@@ -4366,31 +4391,31 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "A typical sample of dry air is at room temperature and pressure. There is a total of 25.0 mol of gas in this sample.\n\nOne of the gases in the sample, X, contributes $1.50 \\times 10^{23}$ separate particles to the mixture.\n\nA second gas in the sample, Y, would, if alone, occupy a volume of 468 dm$^3$ at room temperature and pressure.\n\nWhat are the identities of gases X and Y, and what would be the total amount of all of the remaining gases in the sample?\n\n(Take Avogadro's number as $6.00 \\times 10^{23}$. Assume that one mole of any gas occupies a volume of 24.0 dm$^3$ at room temperature and pressure.)",
+        "stem": "A typical sample of dry air is at room temperature and pressure. There is a total of 25.0 mol of gas in this sample.\n\nOne of the gases in the sample, X, contributes $1.50 \\times 10^{23}$ separate particles to the mixture.\n\nA second gas in the sample, Y, would, if alone, occupy a volume of 468 dm$^3$ at room temperature and pressure.\n\nWhat are the identities of gases X and Y, and what would be the total amount of all of the remaining gases in the sample?\n\n(Take Avogadro’s number as $6.00 \\times 10^{23}$. Assume that one mole of any gas occupies a volume of 24.0 dm$^3$ at room temperature and pressure.)",
         "options": [
           {
             "label": "A",
-            "text": "$\\text{X} = \\text{Ar}$,  $\\text{Y} = \\text{N}_2$,  total = 5.250 mol"
+            "text": "X = Ar, Y = N$_2$, total = 5.250 mol"
           },
           {
             "label": "B",
-            "text": "$\\text{X} = \\text{O}_2$,  $\\text{Y} = \\text{N}_2$,  total = 5.250 mol"
+            "text": "X = O$_2$, Y = N$_2$, total = 5.250 mol"
           },
           {
             "label": "C",
-            "text": "$\\text{X} = \\text{O}_2$,  $\\text{Y} = \\text{Ar}$,  total = 5.250 mol"
+            "text": "X = O$_2$, Y = Ar, total = 5.250 mol"
           },
           {
             "label": "D",
-            "text": "$\\text{X} = \\text{Ar}$,  $\\text{Y} = \\text{O}_2$,  total = 5.375 mol"
+            "text": "X = Ar, Y = O$_2$, total = 5.375 mol"
           },
           {
             "label": "E",
-            "text": "$\\text{X} = \\text{Ar}$,  $\\text{Y} = \\text{N}_2$,  total = 5.375 mol"
+            "text": "X = Ar, Y = N$_2$, total = 5.375 mol"
           },
           {
             "label": "F",
-            "text": "$\\text{X} = \\text{O}_2$,  $\\text{Y} = \\text{N}_2$,  total = 5.375 mol"
+            "text": "X = O$_2$, Y = N$_2$, total = 5.375 mol"
           }
         ],
         "figures": []
@@ -4412,7 +4437,7 @@
       },
       "validation": {
         "answer_label": "A",
-        "answer_text": "$\\text{X} = \\text{Ar}$,  $\\text{Y} = \\text{N}_2$,  total = 5.250 mol",
+        "answer_text": "X = Ar, Y = N$_2$, total = 5.250 mol",
         "status": "verified"
       },
       "metadata": {
@@ -4446,39 +4471,39 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "An element X forms a fluoride with the formula XF3. Each molecule of XF3 has 32 electrons in total. Element X has two isotopes. One isotope has the same number of neutrons as protons and the other isotope has a number of neutrons one greater than the number of protons. The relative abundance of the heavier isotope is 0.80 (80%). What is the relative atomic mass of element X? 5.2",
+        "stem": "The atomic number of fluorine is 9.\n\nAn element X forms a fluoride with the formula XF$_3$. Each molecule of XF$_3$ has 32 electrons in total.\n\nElement X has two isotopes. One isotope has the same number of neutrons as protons and the other isotope has a number of neutrons one greater than the number of protons.\n\nThe relative abundance of the heavier isotope is 0.80 (80%).\n\nWhat is the relative atomic mass of element X?",
         "options": [
           {
             "label": "A",
-            "text": "5.8"
+            "text": "5.2"
           },
           {
             "label": "B",
-            "text": "10.2"
+            "text": "5.8"
           },
           {
             "label": "C",
-            "text": "10.8"
+            "text": "10.2"
           },
           {
             "label": "D",
-            "text": "14.2"
+            "text": "10.8"
           },
           {
             "label": "E",
-            "text": "14.8"
+            "text": "14.2"
           },
           {
             "label": "F",
-            "text": "16.2"
+            "text": "14.8"
           },
           {
             "label": "G",
-            "text": "16.8"
+            "text": "16.2"
           },
           {
             "label": "H",
-            "text": "44"
+            "text": "16.8"
           }
         ],
         "figures": []
@@ -4500,7 +4525,7 @@
       },
       "validation": {
         "answer_label": "D",
-        "answer_text": "14.2",
+        "answer_text": "10.8",
         "status": "verified"
       },
       "metadata": {
@@ -4534,19 +4559,27 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "(measured at room temperature and pressure). 1 mol of X can also undergo an addition reaction with 1 mol of hydrogen to form a saturated compound that has one branch. X undergoes addition polymerisation. A section of the addition polymer containing three repeating units has an Mr value greater than 200 but less than 300. Which one of the following structural formulae could be that of compound X? (Ar values: C = 12; H = 1; F = 19. Assume that one mole of any gas occupies a volume of 24 dm$^3$ at room temperature and pressure.)",
+        "stem": "1 mol of compound X undergoes complete combustion to produce 144 dm$^3$ of carbon dioxide (measured at room temperature and pressure).\n\n1 mol of X can also undergo an addition reaction with 1 mol of hydrogen to form a saturated compound that has one branch.\n\nX undergoes addition polymerisation. A section of the addition polymer containing three repeating units has an $M_r$ value greater than 200 but less than 300.\n\nWhich one of the following structural formulae could be that of compound X?\n\n($A_r$ values: C = 12; H = 1; F = 19. Assume that one mole of any gas occupies a volume of 24 dm$^3$ at room temperature and pressure.)",
         "options": [
           {
             "label": "A",
-            "text": "B"
+            "text": "structural formula A (see original paper)"
+          },
+          {
+            "label": "B",
+            "text": "structural formula B (see original paper)"
           },
           {
             "label": "C",
-            "text": "D"
+            "text": "structural formula C (see original paper)"
+          },
+          {
+            "label": "D",
+            "text": "structural formula D (see original paper)"
           },
           {
             "label": "E",
-            "text": "The equation shows the complete combustion of an alkane."
+            "text": "structural formula E (see original paper)"
           }
         ],
         "figures": []
@@ -4568,7 +4601,7 @@
       },
       "validation": {
         "answer_label": "E",
-        "answer_text": "The equation shows the complete combustion of an alkane.",
+        "answer_text": "structural formula E (see original paper)",
         "status": "verified"
       },
       "metadata": {
@@ -4579,7 +4612,9 @@
           "mixed chemistry"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [
+        "Option structural-formula diagrams were not extracted; option text is a placeholder. Answer label is correct per the official key."
+      ]
     },
     {
       "question_id": "2022_C_55",
@@ -4602,31 +4637,31 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "alkane + aO2 ĺ bCO2 + cH2O 100 cm$^3$ of a gaseous alkane requires 650 cm$^3$ of oxygen for complete combustion. The volumes of both gases were measured at the same temperature and pressure. What is the value of a + b + c ? 10.5",
+        "stem": "The equation shows the complete combustion of an alkane.\n\nalkane $+\\ a$O$_2 \\rightarrow b$CO$_2 + c$H$_2$O\n\n100 cm$^3$ of a gaseous alkane requires 650 cm$^3$ of oxygen for complete combustion. The volumes of both gases were measured at the same temperature and pressure.\n\nWhat is the value of $a + b + c$?",
         "options": [
           {
             "label": "A",
-            "text": "12"
+            "text": "10.5"
           },
           {
             "label": "B",
-            "text": "14"
+            "text": "12"
           },
           {
             "label": "C",
-            "text": "15.5"
+            "text": "14"
           },
           {
             "label": "D",
-            "text": "17.5"
+            "text": "15.5"
           },
           {
             "label": "E",
-            "text": "19"
+            "text": "17.5"
           },
           {
             "label": "F",
-            "text": "45"
+            "text": "19"
           }
         ],
         "figures": []
@@ -4648,7 +4683,7 @@
       },
       "validation": {
         "answer_label": "D",
-        "answer_text": "17.5",
+        "answer_text": "15.5",
         "status": "verified"
       },
       "metadata": {
@@ -4682,31 +4717,31 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "0.10 mol dm-3 hydrochloric acid, which is an excess. The remaining hydrochloric acid was titrated with 0.20 mol dm-3 sodium hydroxide solution. 5.0 cm$^3$ of sodium hydroxide was required for complete neutralisation. What was the original mass of magnesium carbonate used, in mg? (Mr value: MgCO3 = 84) 42 mg",
+        "stem": "A sample of magnesium carbonate, MgCO$_3$, was reacted completely with 50 cm$^3$ of 0.10 mol dm$^{-3}$ hydrochloric acid, which is an excess.\n\nThe remaining hydrochloric acid was titrated with 0.20 mol dm$^{-3}$ sodium hydroxide solution. 5.0 cm$^3$ of sodium hydroxide was required for complete neutralisation.\n\nWhat was the original mass of magnesium carbonate used, in mg?\n\n($M_r$ value: MgCO$_3$ = 84)",
         "options": [
           {
             "label": "A",
-            "text": "84 mg"
+            "text": "42 mg"
           },
           {
             "label": "B",
-            "text": "168 mg"
+            "text": "84 mg"
           },
           {
             "label": "C",
-            "text": "210 mg"
+            "text": "168 mg"
           },
           {
             "label": "D",
-            "text": "336 mg"
+            "text": "210 mg"
           },
           {
             "label": "E",
-            "text": "420 mg"
+            "text": "336 mg"
           },
           {
             "label": "F",
-            "text": "A student mixed together 30.0 cm$^3$ of 3.0 mol dm-3 hydrochloric acid and 20.0 cm$^3$ of"
+            "text": "420 mg"
           }
         ],
         "figures": []
@@ -4728,7 +4763,7 @@
       },
       "validation": {
         "answer_label": "C",
-        "answer_text": "210 mg",
+        "answer_text": "168 mg",
         "status": "verified"
       },
       "metadata": {
@@ -4850,31 +4885,31 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "The other products of the reaction are copper(II) nitrate and water. 0.060 mol of copper reacted exactly with 40.0 cm$^3$ of 4.00 mol dm-3 nitric acid. What is the empirical formula of the oxide of nitrogen produced in the reaction? NO",
+        "stem": "An oxide of nitrogen can be prepared by the reaction of copper with hot nitric acid.\n\nThe other products of the reaction are copper(II) nitrate and water.\n\n0.060 mol of copper reacted exactly with 40.0 cm$^3$ of 4.00 mol dm$^{-3}$ nitric acid.\n\nWhat is the empirical formula of the oxide of nitrogen produced in the reaction?",
         "options": [
           {
             "label": "A",
-            "text": "NO2"
+            "text": "NO"
           },
           {
             "label": "B",
-            "text": "NO3"
+            "text": "NO$_2$"
           },
           {
             "label": "C",
-            "text": "N_2O"
+            "text": "NO$_3$"
           },
           {
             "label": "D",
-            "text": "N_2O3"
+            "text": "N$_2$O"
           },
           {
             "label": "E",
-            "text": "N_2O5"
+            "text": "N$_2$O$_3$"
           },
           {
             "label": "F",
-            "text": "One mole of an unsaturated hydrocarbon reacts with exactly one mole of bromine to form a"
+            "text": "N$_2$O$_5$"
           }
         ],
         "figures": []
@@ -4896,7 +4931,7 @@
       },
       "validation": {
         "answer_label": "A",
-        "answer_text": "NO2",
+        "answer_text": "NO",
         "status": "verified"
       },
       "metadata": {
@@ -5106,39 +5141,39 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "The ribcage moves up and out because air enters the lungs. 1 The volume of the thorax decreases and the thoracic pressure increases. 2 Energy is required to contract the intercostal muscles but not the diaphragm. 3 none of them",
+        "stem": "Which of the following statements about breathing in is/are correct?\n\n1 The ribcage moves up and out because air enters the lungs.\n2 The volume of the thorax decreases and the thoracic pressure increases.\n3 Energy is required to contract the intercostal muscles but not the diaphragm.",
         "options": [
           {
             "label": "A",
-            "text": "1 only"
+            "text": "none of them"
           },
           {
             "label": "B",
-            "text": "2 only"
+            "text": "1 only"
           },
           {
             "label": "C",
-            "text": "3 only"
+            "text": "2 only"
           },
           {
             "label": "D",
-            "text": "1 and 2 only"
+            "text": "3 only"
           },
           {
             "label": "E",
-            "text": "1 and 3 only"
+            "text": "1 and 2 only"
           },
           {
             "label": "F",
-            "text": "2 and 3 only"
+            "text": "1 and 3 only"
           },
           {
             "label": "G",
-            "text": "1, 2 and 3"
+            "text": "2 and 3 only"
           },
           {
             "label": "H",
-            "text": "Which of the following statements about the cardiovascular system in a healthy individual is/are"
+            "text": "1, 2 and 3"
           }
         ],
         "figures": []
@@ -5160,7 +5195,7 @@
       },
       "validation": {
         "answer_label": "A",
-        "answer_text": "1 only",
+        "answer_text": "none of them",
         "status": "verified"
       },
       "metadata": {
@@ -5376,27 +5411,27 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "comparison both are tissues that are alveoli bronchi",
+        "stem": "Which one of the following comparisons is correct?",
         "options": [
           {
             "label": "A",
-            "text": "specialised for gas exchange both are organs that function as pancreas ovary"
+            "text": "alveoli, bronchi — both are tissues that are specialised for gas exchange"
           },
           {
             "label": "B",
-            "text": "endocrine glands both are organs that transport liquids phloem xylem"
+            "text": "pancreas, ovary — both are organs that function as endocrine glands"
           },
           {
             "label": "C",
-            "text": "from leaves to roots in plants both are tissues that are stimulated sensory neurone motor neurone"
+            "text": "phloem, xylem — both are organs that transport liquids from leaves to roots in plants"
           },
           {
             "label": "D",
-            "text": "by a relay neurone both are organs that have tissues small intestine trachea"
+            "text": "sensory neurone, motor neurone — both are tissues that are stimulated by a relay neurone"
           },
           {
             "label": "E",
-            "text": "with cilia 51"
+            "text": "small intestine, trachea — both are organs that have tissues with cilia"
           }
         ],
         "figures": []
@@ -5418,7 +5453,7 @@
       },
       "validation": {
         "answer_label": "B",
-        "answer_text": "endocrine glands both are organs that transport liquids phloem xylem",
+        "answer_text": "pancreas, ovary — both are organs that function as endocrine glands",
         "status": "verified"
       },
       "metadata": {
@@ -5546,8 +5581,29 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "arc. The diagram shows a student’s drawing of part of this reflex arc. Which label (A-E) is correct? electrical impulse jumps across the gap between the two neurones B sensory neurone C motor neurone A STIMULUS MUSCLE D hormone E chemical receptors present on the membrane 53",
-        "options": [],
+        "stem": "When a person touches a hot object, they rapidly pull their hand away as a result of a reflex arc.\n\nThe diagram shows a student’s drawing of part of this reflex arc.\n\nWhich label (A-E) is correct?",
+        "options": [
+          {
+            "label": "A",
+            "text": "motor neurone"
+          },
+          {
+            "label": "B",
+            "text": "electrical impulse jumps across the gap between the two neurones"
+          },
+          {
+            "label": "C",
+            "text": "sensory neurone"
+          },
+          {
+            "label": "D",
+            "text": "hormone"
+          },
+          {
+            "label": "E",
+            "text": "chemical receptors present on the membrane"
+          }
+        ],
         "figures": [
           {
             "figure_id": "q66_diagram",
@@ -5573,8 +5629,8 @@
       },
       "validation": {
         "answer_label": "E",
-        "answer_text": null,
-        "status": "unverified"
+        "answer_text": "chemical receptors present on the membrane",
+        "status": "verified"
       },
       "metadata": {
         "estimated_time_seconds": null,
@@ -5785,27 +5841,27 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "thousands 6.0 of live bacteria 5.0 per mm^\\dfrac{3}{4}.\\dfrac{0}{3}.\\dfrac{0}{2}.\\dfrac{0}{1}.\\dfrac{0}{0}.\\dfrac{0}{0} \\dfrac{5}{10} \\dfrac{15}{20} \\dfrac{25}{30} \\dfrac{35}{40} \\dfrac{45}{50} \\dfrac{55}{60} time / hours Which statement is correct? If there were no limiting factors, the number of live bacteria in the population would be",
+        "stem": "The graph shows how the number of live bacteria in a population changes over time.\n\nWhich statement is correct?",
         "options": [
           {
             "label": "A",
-            "text": "directly proportional to time. At 40 hours, there are on average 4.6 live bacteria per mm$^3$."
+            "text": "If there were no limiting factors, the number of live bacteria in the population would be directly proportional to time."
           },
           {
             "label": "B",
-            "text": "At 60 hours, the number of bacteria dying is greater than the number being produced."
+            "text": "At 40 hours, there are on average 4.6 live bacteria per mm$^3$."
           },
           {
             "label": "C",
-            "text": "Some of the live bacteria in the population at 60 hours could be genetically different to the"
+            "text": "At 60 hours, the number of bacteria dying is greater than the number being produced."
           },
           {
             "label": "D",
-            "text": "bacteria in the population at 5 hours. There is no limiting factor affecting the population of live bacteria over the 60 hour period."
+            "text": "Some of the live bacteria in the population at 60 hours could be genetically different to the bacteria in the population at 5 hours."
           },
           {
             "label": "E",
-            "text": "56"
+            "text": "There is no limiting factor affecting the population of live bacteria over the 60 hour period."
           }
         ],
         "figures": [
@@ -5833,7 +5889,7 @@
       },
       "validation": {
         "answer_label": "D",
-        "answer_text": "bacteria in the population at 5 hours. There is no limiting factor affecting the population of live bacteria over the 60 hour period.",
+        "answer_text": "Some of the live bacteria in the population at 60 hours could be genetically different to the bacteria in the population at 5 hours.",
         "status": "verified"
       },
       "metadata": {
@@ -6055,7 +6111,7 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "The diagram summarises the homeostatic control of blood glucose concentration.\n\nWhich row is correct?\n\n| | gland V | hormone W | hormone X | process Y | process Z |\n|---|---|---|---|---|---|",
+        "stem": "The diagram shows how blood glucose concentration is controlled.\n\nWhich row is correct?",
         "options": [
           {
             "label": "A",

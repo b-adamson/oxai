@@ -34,9 +34,9 @@ sys.path.insert(0, str(ROOT))
 
 from dotenv import load_dotenv
 
-from core.answer_match import match_value_to_options
-from core.code_sandbox import execute_verification_code
-from core.generate_question import load_questions
+from src.services.answer_match import match_value_to_options
+from src.services.code_sandbox import execute_verification_code
+from src.services.generate_question import load_questions
 
 BOLD = '\033[1m'
 GREEN = '\033[32m'
@@ -178,7 +178,7 @@ class Calibrator:
         return record
 
 
-def eligible_questions(subject: Optional[str]) -> List[Dict[str, Any]]:
+def eligible_questions(subject: Optional[str], year: Optional[int] = None) -> List[Dict[str, Any]]:
     questions = load_questions(ROOT / 'data' / 'processed')
     out = []
     for q in questions:
@@ -191,6 +191,8 @@ def eligible_questions(subject: Optional[str]) -> List[Dict[str, Any]]:
             continue
         if subject and str(c.get('subject', '')).lower() != subject.lower():
             continue
+        if year and q.get('source', {}).get('year') != year:
+            continue
         out.append(q)
     return out
 
@@ -200,6 +202,7 @@ def main() -> None:
     parser.add_argument('--n', type=int, default=50)
     parser.add_argument('--seed', type=int, default=7)
     parser.add_argument('--subject', default=None)
+    parser.add_argument('--year', type=int, default=None)
     parser.add_argument('--rel-tol', type=float, default=1e-3)
     parser.add_argument('--no-llm-fallback', action='store_true')
     args = parser.parse_args()
@@ -209,7 +212,7 @@ def main() -> None:
         print(f'{RED}OPENAI_API_KEY required (backend/.env){RESET}')
         sys.exit(2)
 
-    pool = eligible_questions(args.subject)
+    pool = eligible_questions(args.subject, args.year)
     if not pool:
         print(f'{RED}No eligible bank questions found{RESET}')
         sys.exit(2)

@@ -17,8 +17,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from core.answer_match import match_value_to_options
-from core.code_sandbox import execute_verification_code
+from src.services.answer_match import match_value_to_options
+from src.services.code_sandbox import execute_verification_code
 
 BOLD = '\033[1m'
 GREEN = '\033[32m'
@@ -173,7 +173,7 @@ def run_live(n: int) -> None:
 
     logging.basicConfig(level=logging.INFO, format='%(levelname)s %(name)s: %(message)s')
 
-    from core.generate_question import GenerationSettings, QuestionGenerationService
+    from src.services.generate_question import GenerationSettings, QuestionGenerationService
 
     settings = GenerationSettings(
         processed_dir=ROOT / 'data' / 'processed',

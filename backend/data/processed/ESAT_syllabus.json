@@ -1,0 +1,4790 @@
+{
+  "type": "document",
+  "children": [
+    {
+      "type": "front_matter",
+      "children": [
+        {
+          "type": "paragraph",
+          "text": "© UAT-UK 2024\nENGINEERING AND SCIENCE ADMISSIONS TEST\n(ESAT)\nContent Specification\nFor assessment in October 2024 and January 2025"
+        },
+        {
+          "type": "page_marker",
+          "value": 2
+        },
+        {
+          "type": "section",
+          "title": "Overview",
+          "children": [
+            {
+              "type": "paragraph",
+              "text": "The purpose of the Engineering and Science Admissions Test is to determine a candidate’s\npotential to achieve in an academically demanding undergraduate degree course. Questions draw\nupon a candidate’s ability to use and apply their scientific and mathematical knowledge. The test is\ndesigned to be challenging in order to differentiate effectively between able applicants, including\nthose who might have achieved the highest possible grades in school examinations."
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Format",
+          "children": [
+            {
+              "type": "paragraph",
+              "text": "The test consists of five parts:"
+            },
+            {
+              "type": "list_item",
+              "text": "Mathematics 1"
+            },
+            {
+              "type": "list_item",
+              "text": "Biology"
+            },
+            {
+              "type": "list_item",
+              "text": "Chemistry"
+            },
+            {
+              "type": "list_item",
+              "text": "Physics"
+            },
+            {
+              "type": "list_item",
+              "text": "Mathematics 2\nMost courses will require candidates to answer Mathematics 1 and two further parts.\nCandidates should carefully check the requirements of the course(s) to which they are\napplying.\nThere are 27 multiple-choice questions in each part. The time allowed to complete each part is\n40 minutes. Each part is separately timed. If a candidate finishes a part early, the time will not be\ncarried over to the next part, so candidates should be careful to manage their time accordingly.\nThe ESAT is a computer-based test. Candidates will be provided with an erasable booklet for\nworking. Calculators may NOT be used."
+            }
+          ]
+        },
+        {
+          "type": "page_marker",
+          "value": 3
+        },
+        {
+          "type": "section",
+          "title": "Content",
+          "children": [
+            {
+              "type": "paragraph",
+              "text": "Questions will draw upon the topics listed for each part in Appendix 1. All parts will assume\nknowledge of the content of Mathematics 1. The knowledge assumed for each part is summarised:\nPart Knowledge assumed\nMathematics 1 topics labelled ‘M’ in Appendix 1\nBiology topics labelled ‘B’, and topics labelled ‘M’, in Appendix 1\nChemistry topics labelled ‘C’, and topics labelled ‘M’, in Appendix 1\nPhysics topics labelled ‘P’, and topics labelled ‘M’, in Appendix 1\nMathematics 2 topics labelled ‘M’, and topics labelled ‘MM’, in Appendix 1\nCandidates are expected to apply conceptual knowledge to solve problems. Some questions\ninvolve the straightforward application of this knowledge, but others require more creative thinking\nand the application of principles in less familiar contexts."
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Scoring",
+          "children": [
+            {
+              "type": "paragraph",
+              "text": "In all parts, each correct answer will score 1 mark. No marks are deducted for incorrect answers.\nResults for each part will be reported separately."
+            }
+          ]
+        },
+        {
+          "type": "page_marker",
+          "value": 4
+        },
+        {
+          "type": "section",
+          "title": "Scientific Quantities and Units",
+          "children": [
+            {
+              "type": "paragraph",
+              "text": "Throughout this specification, it should be assumed that, where mention is made of a particular\nquantity, knowledge of the SI unit of that quantity is also expected (including the relationship of the\nunit to other SI units through the equations linking their quantities).\nCandidates will be expected to be familiar with the following SI prefixes when used in connection\nwith any SI unit:\nnano- 10–9\nmicro- 10–6\nmilli- 10–3\ncenti- 10–2\ndeci- 10–1\nkilo- 103\nmega- 106\ngiga- 109\nCandidates are expected to be familiar with the use of negative indices in units, for example m s–1\nfor velocity.\nThe material that follows outlines the scientific and mathematical knowledge assessed in the\nEngineering and Science Admissions Test."
+            }
+          ]
+        },
+        {
+          "type": "page_marker",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "appendix",
+      "title": "APPENDIX 1: KNOWLEDGE ASSUMED",
+      "children": [
+        {
+          "type": "page_marker",
+          "value": 6
+        },
+        {
+          "type": "section",
+          "title": "MATHEMATICS 1",
+          "children": [
+            {
+              "type": "paragraph",
+              "text": "M1. Units"
+            },
+            {
+              "type": "topic",
+              "code": "M1.1",
+              "title": "Use standard units of mass, length, time, money and other measures.",
+              "children": [],
+              "text": "Use compound units such as speed, rates of pay, unit pricing, density and pressure,\nincluding using decimal quantities where appropriate."
+            },
+            {
+              "type": "topic",
+              "code": "M1.2",
+              "title": "Change freely between related standard units (e.g. time, length, area, volume/capacity,",
+              "children": [],
+              "text": "mass) and compound units (e.g. speed, rates of pay, prices, density, pressure) in\nnumerical and algebraic contexts.\nM2. Number"
+            },
+            {
+              "type": "topic",
+              "code": "M2.1",
+              "title": "Order positive and negative integers, decimals and fractions.",
+              "children": [],
+              "text": "Understand and use the symbols: = , ≠ , < , > , ≤ , ≥ ."
+            },
+            {
+              "type": "topic",
+              "code": "M2.2",
+              "title": "Apply the four operations (addition, subtraction, multiplication and division) to integers,",
+              "children": [],
+              "text": "decimals, simple fractions (proper and improper) and mixed numbers – any of which\ncould be positive and negative.\nUnderstand and use place value."
+            },
+            {
+              "type": "topic",
+              "code": "M2.3",
+              "title": "Use the concepts and vocabulary of prime numbers, factors (divisors), multiples, common",
+              "children": [],
+              "text": "factors, common multiples, highest common factor, lowest common multiple, and prime\nfactorisation (including use of product notation and the unique factorisation theorem)."
+            },
+            {
+              "type": "topic",
+              "code": "M2.4",
+              "title": "Recognise and use relationships between operations, including inverse operations.",
+              "children": [],
+              "text": "Use cancellation to simplify calculations and expressions.\nUnderstand and use the convention for priority of operations, including brackets, powers,\nroots and reciprocals."
+            },
+            {
+              "type": "topic",
+              "code": "M2.5",
+              "title": "Apply systematic listing strategies. (For instance, if there are m ways of doing one task",
+              "children": [],
+              "text": "and for each of these tasks there are n ways of doing another task, then the total number\nof ways the two tasks can be done in order is m× n ways.)"
+            },
+            {
+              "type": "topic",
+              "code": "M2.6",
+              "title": "Use and understand the terms: square, positive and negative square root, cube and",
+              "children": [],
+              "text": "cube root."
+            },
+            {
+              "type": "topic",
+              "code": "M2.7",
+              "title": "Use index laws to simplify numerical expressions, and for multiplication and division of",
+              "children": [],
+              "text": "integer, fractional and negative powers."
+            },
+            {
+              "type": "topic",
+              "code": "M2.8",
+              "title": "Interpret, order and calculate with numbers written in standard index form (standard",
+              "children": [],
+              "text": "form); numbers are written in standard form as a ×10n, where 1 ≤ a < 10 and n is an\ninteger."
+            },
+            {
+              "type": "topic",
+              "code": "M2.9",
+              "title": "Convert between terminating decimals, percentages and fractions.",
+              "children": [],
+              "text": "Convert between recurring decimals and their corresponding fractions."
+            },
+            {
+              "type": "topic",
+              "code": "M2.10",
+              "title": "Use fractions, decimals and percentages interchangeably in calculations.",
+              "children": [],
+              "text": "Understand equivalent fractions."
+            },
+            {
+              "type": "topic",
+              "code": "M2.11",
+              "title": "Calculate exactly with fractions, surds and multiples of π.",
+              "children": [],
+              "text": "Simplify surd expressions involving squares, e.g. 12 = 4 3 × = 4 3 = 2 3 , and\nrationalise denominators; for example, candidates could be asked to rationalise\nexpressions such as: 3\n7 , +\n3 25 , −\n2 3 , −\n5 2"
+            },
+            {
+              "type": "topic",
+              "code": "M2.12",
+              "title": "Calculate with upper and lower bounds, and use in contextual problems.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "M2.13",
+              "title": "Round numbers and measures to an appropriate degree of accuracy, e.g. to a specified",
+              "children": [],
+              "text": "number of decimal places or significant figures.\nUse inequality notation to specify simple error intervals due to truncation or rounding."
+            },
+            {
+              "type": "topic",
+              "code": "M2.14",
+              "title": "Use approximation to produce estimates of calculations, including expressions involving π",
+              "children": [],
+              "text": "or surds.\nM3. Ratio and proportion"
+            },
+            {
+              "type": "topic",
+              "code": "M3.1",
+              "title": "Understand and use scale factors, scale diagrams and maps.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "M3.2",
+              "title": "Express a quantity as a fraction of another, where the fraction is less than 1 or greater",
+              "children": [],
+              "text": "than 1."
+            },
+            {
+              "type": "topic",
+              "code": "M3.3",
+              "title": "Understand and use ratio notation.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "M3.4",
+              "title": "Divide a given quantity into two (or more) parts in a given part:part ratio.",
+              "children": [],
+              "text": "Express the division of a quantity into two parts as a ratio."
+            },
+            {
+              "type": "topic",
+              "code": "M3.5",
+              "title": "Apply ratio to real contexts and problems, such as those involving conversion,",
+              "children": [],
+              "text": "comparison, scaling, mixing and concentrations.\nExpress a multiplicative relationship between two quantities as a ratio or a fraction."
+            },
+            {
+              "type": "topic",
+              "code": "M3.6",
+              "title": "Understand and use proportion.",
+              "children": [],
+              "text": "Relate ratios to fractions and to linear functions."
+            },
+            {
+              "type": "topic",
+              "code": "M3.7",
+              "title": "Identify and work with fractions in ratio problems.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "M3.8",
+              "title": "Define percentage as ‘number of parts per hundred’.",
+              "children": [],
+              "text": "Interpret percentages and percentage changes as a fraction or a decimal, and interpret\nthese multiplicatively.\nExpress one quantity as a percentage of another.\nCompare two quantities using percentages.\nWork with percentages greater than 100%.\nSolve problems involving percentage change, including percentage increase/decrease,\noriginal value problems and simple interest calculations."
+            },
+            {
+              "type": "topic",
+              "code": "M3.9",
+              "title": "Understand and use direct and inverse proportion, including algebraic representations.",
+              "children": [],
+              "text": "Recognise and interpret graphs that illustrate direct and inverse proportion.\nSet up, use and interpret equations to solve problems involving direct and inverse\nproportion (including questions involving integer and fractional powers).\nUnderstand that x is inversely proportional to y is equivalent to x is proportional to\ny\n1 ."
+            },
+            {
+              "type": "topic",
+              "code": "M3.10",
+              "title": "Compare lengths, areas and volumes using ratio notation.",
+              "children": [],
+              "text": "Understand and make links to similarity (including trigonometric ratios) and scale factors."
+            },
+            {
+              "type": "topic",
+              "code": "M3.11",
+              "title": "Set up, solve and interpret the answers in growth and decay problems, including",
+              "children": [],
+              "text": "compound interest, and work with general iterative processes.\nM4. Algebra"
+            },
+            {
+              "type": "topic",
+              "code": "M4.1",
+              "title": "Understand, use and interpret algebraic notation; for instance: ab in place of a×b ;",
+              "children": [],
+              "text": "3y in place of y +y+y and 3 ×y ; a2 in place of a×a ; a3 in place of a×a×a ;\na2b in place of a×a×b ; b\na in place of a ÷ b ."
+            },
+            {
+              "type": "topic",
+              "code": "M4.2",
+              "title": "Use index laws in algebra for multiplication and division of integer, fractional, and",
+              "children": [],
+              "text": "negative powers."
+            },
+            {
+              "type": "topic",
+              "code": "M4.3",
+              "title": "Substitute numerical values into formulae and expressions, including scientific formulae.",
+              "children": [],
+              "text": "Understand and use the concepts and vocabulary: expressions, equations, formulae,\nidentities, inequalities, terms and factors."
+            },
+            {
+              "type": "topic",
+              "code": "M4.4",
+              "title": "Collect like terms, multiply a single term over a bracket, take out common factors, and",
+              "children": [],
+              "text": "expand products of two or more binomials."
+            },
+            {
+              "type": "topic",
+              "code": "M4.5",
+              "title": "Factorise quadratic expressions of the form x2 +bx +c, including the difference of two",
+              "children": [],
+              "text": "squares.\nFactorise quadratic expressions of the form ax2 +bx +c, including the difference of two\nsquares."
+            },
+            {
+              "type": "topic",
+              "code": "M4.6",
+              "title": "Simplify expressions involving sums, products and powers, including the laws of indices.",
+              "children": [],
+              "text": "Simplify rational expressions by cancelling, or factorising and cancelling.\nUse the four rules on algebraic rational expressions."
+            },
+            {
+              "type": "topic",
+              "code": "M4.7",
+              "title": "Rearrange formulae to change the subject.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "M4.8",
+              "title": "Understand the difference between an equation and an identity.",
+              "children": [],
+              "text": "Argue mathematically to show that algebraic expressions are equivalent."
+            },
+            {
+              "type": "topic",
+              "code": "M4.9",
+              "title": "Work with coordinates in all four quadrants.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "M4.10",
+              "title": "Identify and interpret gradients and intercepts of linear functions ( y = mx + c ) graphically",
+              "children": [],
+              "text": "and algebraically.\nIdentify pairs of parallel lines and identify pairs of perpendicular lines, including the\nrelationships between gradients.\nFind the equation of the line through two given points, or through one point with a given\ngradient."
+            },
+            {
+              "type": "topic",
+              "code": "M4.11",
+              "title": "Identify and interpret roots, intercepts and turning points of quadratic functions",
+              "children": [],
+              "text": "graphically.\nDeduce roots algebraically, and turning points by completing the square."
+            },
+            {
+              "type": "topic",
+              "code": "M4.12",
+              "title": "Recognise, sketch and interpret graphs of:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "linear functions",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "quadratic functions",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "simple cubic functions",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "the reciprocal function: y = x\n1 with x≠0",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "the exponential function: y = kx\nfor positive values of k",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "trigonometric functions (with arguments in degrees): y = sin x, y = cos x, y = tanx\nfor angles of any size",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "M4.13",
+              "title": "Interpret graphs (including reciprocal graphs and exponential graphs) and graphs of",
+              "children": [],
+              "text": "non-standard functions in real contexts to find approximate solutions to problems, such as\nsimple kinematic problems involving distance, speed and acceleration."
+            },
+            {
+              "type": "topic",
+              "code": "M4.14",
+              "title": "Calculate or estimate gradients of graphs and areas under graphs (including quadratic",
+              "children": [],
+              "text": "and other non-linear graphs), and interpret results in cases such as distance–time graphs,\nspeed–time graphs and graphs in financial contexts."
+            },
+            {
+              "type": "topic",
+              "code": "M4.15",
+              "title": "Set up and solve, both algebraically and graphically, simple equations including",
+              "children": [],
+              "text": "simultaneous equations involving two unknowns; this may include one linear and one\nquadratic equation.\nSolve two simultaneous equations in two variables (linear/linear or linear/quadratic)\nalgebraically.\nFind approximate solutions using a graph.\nTranslate simple situations or procedures into algebraic expressions or formulae; for\nexample, derive an equation (or two simultaneous equations), solve the equation(s) and\ninterpret the solution."
+            },
+            {
+              "type": "topic",
+              "code": "M4.16",
+              "title": "Solve quadratic equations (including those that require rearrangement) algebraically by",
+              "children": [],
+              "text": "factorising, by completing the square, and by using the quadratic formula.\nKnow the quadratic formula:\na\nb b ac\nx\n4 2 − ± − =\nFind approximate solutions of quadratic equations using a graph."
+            },
+            {
+              "type": "topic",
+              "code": "M4.17",
+              "title": "Solve linear inequalities in one or two variables.",
+              "children": [],
+              "text": "Represent the solution set on a number line, or on a graph, or in words."
+            },
+            {
+              "type": "topic",
+              "code": "M4.18",
+              "title": "Generate terms of a sequence using term-to-term or position-to-term rules.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "M4.19",
+              "title": "Deduce expressions to calculate the nth term of linear or quadratic sequences.",
+              "children": [],
+              "text": "M5. Geometry"
+            },
+            {
+              "type": "topic",
+              "code": "M5.1",
+              "title": "Use conventional terms and notation: points, lines, line segments, vertices, edges,",
+              "children": [],
+              "text": "planes, parallel lines, perpendicular lines, right angles, subtended angles, polygons,\nregular polygons and polygons with reflection and/or rotational symmetries."
+            },
+            {
+              "type": "topic",
+              "code": "M5.2",
+              "title": "Recall and use the properties of angles at a point, angles on a straight line, perpendicular",
+              "children": [],
+              "text": "lines and opposite angles at a vertex.\nUnderstand and use the angle properties of parallel lines, intersecting lines, triangles and\nquadrilaterals.\nCalculate and use the sum of the interior angles, and the sum of the exterior angles, of\npolygons."
+            },
+            {
+              "type": "topic",
+              "code": "M5.3",
+              "title": "Derive and apply the properties and definitions of special types of quadrilaterals, including",
+              "children": [],
+              "text": "square, rectangle, parallelogram, trapezium, kite and rhombus.\nDerive and apply the properties and definitions of various types of triangle and other\nplane figures using appropriate language."
+            },
+            {
+              "type": "topic",
+              "code": "M5.4",
+              "title": "Understand and use the basic congruence criteria for triangles (SSS, SAS, ASA, RHS).",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "M5.5",
+              "title": "Apply angle facts, triangle congruence, similarity, and properties of quadrilaterals to",
+              "children": [],
+              "text": "results about angles and sides."
+            },
+            {
+              "type": "topic",
+              "code": "M5.6",
+              "title": "Identify, describe and construct congruent and similar shapes, including on coordinate",
+              "children": [],
+              "text": "axes, by considering rotation, reflection, translation and enlargement (including fractional\nand negative scale factors).\nDescribe the changes and invariance achieved by combinations of rotations, reflections\nand translations.\nDescribe translations as 2-dimensional vectors."
+            },
+            {
+              "type": "topic",
+              "code": "M5.7",
+              "title": "Know and use the formula for Pythagoras’ theorem: a2 + b2 = c2",
+              "children": [],
+              "text": "Use Pythagoras’ theorem in both 2 and 3 dimensions."
+            },
+            {
+              "type": "topic",
+              "code": "M5.8",
+              "title": "Identify and use conventional circle terms: centre, radius, chord, diameter, circumference,",
+              "children": [],
+              "text": "tangent, arc, sector and segment (including the use of the terms minor and major for arcs,\nsectors and segments)."
+            },
+            {
+              "type": "topic",
+              "code": "M5.9",
+              "title": "Apply the standard circle theorems concerning angles, radii, tangents and chords, and",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "angle subtended at the centre is twice the angle subtended at the circumference",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "angle in a semicircle is 90°",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "angles in the same segment are equal",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "angle between a tangent and a chord (alternate segment theorem)",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "angle between a radius and a tangent is 90°",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "properties of cyclic quadrilaterals",
+                  "children": []
+                }
+              ],
+              "text": "use them to prove related results:"
+            },
+            {
+              "type": "topic",
+              "code": "M5.10",
+              "title": "Solve geometrical problems on 2-dimensional coordinate axes.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "M5.11",
+              "title": "Know the terminology faces, surfaces, edges and vertices when applied to cubes,",
+              "children": [],
+              "text": "cuboids, prisms, cylinders, pyramids, cones, spheres and hemispheres."
+            },
+            {
+              "type": "topic",
+              "code": "M5.12",
+              "title": "Interpret plans and elevations of 3-dimensional shapes.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "M5.13",
+              "title": "Use and interpret maps and scale drawings.",
+              "children": [],
+              "text": "Understand and use three-figure bearings."
+            },
+            {
+              "type": "topic",
+              "code": "M5.14",
+              "title": "Know and apply formulae to calculate:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "the area of triangles, parallelograms, trapezia",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "the volume of cuboids and other right prisms.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "M5.15",
+              "title": "Know the formulae:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "circumference of a circle = 2πr = πd",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "area of a circle = πr2",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "volume of a right circular cylinder = πr2h\nFormulae relating to spheres, pyramids and cones will be given if needed.\nUse formulae to calculate:",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "perimeters of 2-dimensional shapes, including circles",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "areas of circles and composite shapes",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "surface area and volume of spheres, pyramids, cones and composite solids",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "M5.16",
+              "title": "Calculate arc lengths, angles and areas of sectors of circles.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "M5.17",
+              "title": "Apply the concepts of congruence and similarity in simple figures, including the",
+              "children": [],
+              "text": "relationships between lengths, areas and volumes."
+            },
+            {
+              "type": "topic",
+              "code": "M5.18",
+              "title": "Know and use the trigonometric ratios:",
+              "children": [],
+              "text": "sinθ = hypotenuse\nopposite cosθ = hypotenuse\nadjacent tanθ = adjacent\nopposite\nApply these to find angles and lengths in right-angled triangles and, where possible,\ngeneral triangles in 2- and 3-dimensional figures.\nKnow the exact values of sinθ and cosθ for θ = 0°, 30°, 45°, 60°, 90°.\nKnow the exact values of tanθ for θ = 0°, 30°, 45°, 60°.\nCandidates are not expected to recall or use the sine or cosine rules."
+            },
+            {
+              "type": "topic",
+              "code": "M5.19",
+              "title": "Apply addition and subtraction of vectors, multiplication of vectors by a scalar, and",
+              "children": [],
+              "text": "diagrammatic and column representations of vectors.\nUse vectors to construct geometric arguments and proofs.\nM6. Statistics"
+            },
+            {
+              "type": "topic",
+              "code": "M6.1",
+              "title": "Interpret and construct tables, charts and diagrams, including:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "two-way tables, frequency tables, bar charts, pie charts and pictograms for\ncategorical data",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "vertical line charts for ungrouped discrete numerical data",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "tables and line graphs for time series data\nKnow the appropriate use of each of these representations.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "M6.2",
+              "title": "Interpret and construct diagrams for grouped discrete data and continuous data:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "histograms with equal and unequal class intervals",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "cumulative frequency graphs\nKnow the appropriate use of each of these diagrams.\nUnderstand and use the term frequency density.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "M6.3",
+              "title": "Calculate the mean, mode, median and range for ungrouped data.",
+              "children": [],
+              "text": "Find the modal class; calculate estimates of the range, mean and median for grouped\ndata, and understand why these are estimates.\nDescribe a population using statistics.\nMake simple comparisons.\nCompare data sets using like-for-like summary values.\nUnderstand the advantages and disadvantages of summary values.\nCalculate estimates of mean, median, mode, range, quartiles and interquartile range from\ngraphical representation of grouped data.\nUse the median and interquartile range to compare distributions."
+            },
+            {
+              "type": "topic",
+              "code": "M6.4",
+              "title": "Use and interpret scatter graphs of bivariate data.",
+              "children": [],
+              "text": "Recognise correlation, and know that it does not indicate causation.\nDraw estimated lines of best fit.\nInterpolate and extrapolate apparent trends whilst knowing the dangers of so doing.\nM7. Probability"
+            },
+            {
+              "type": "topic",
+              "code": "M7.1",
+              "title": "Analyse the frequency of outcomes of probability experiments using tables and frequency",
+              "children": [],
+              "text": "trees."
+            },
+            {
+              "type": "topic",
+              "code": "M7.2",
+              "title": "Apply ideas of randomness, fairness and equally likely events to calculate expected",
+              "children": [],
+              "text": "outcomes of multiple future experiments.\nUnderstand that if an experiment is repeated, the outcome may be different."
+            },
+            {
+              "type": "topic",
+              "code": "M7.3",
+              "title": "Relate relative expected frequencies to theoretical probability, using appropriate language",
+              "children": [],
+              "text": "and the ‘0 to 1’ probability scale."
+            },
+            {
+              "type": "topic",
+              "code": "M7.4",
+              "title": "Apply the property that the probabilities of an exhaustive set of outcomes sum to one.",
+              "children": [],
+              "text": "Apply the property that the probabilities of an exhaustive set of mutually exclusive events\nsum to one."
+            },
+            {
+              "type": "topic",
+              "code": "M7.5",
+              "title": "Enumerate sets and combinations of sets systematically, using tables, grids, Venn",
+              "children": [],
+              "text": "diagrams and tree diagrams. Candidates are not expected to know formal set theory\nnotation."
+            },
+            {
+              "type": "topic",
+              "code": "M7.6",
+              "title": "Construct theoretical possibility spaces for single and combined experiments with equally",
+              "children": [],
+              "text": "likely outcomes, and use these to calculate theoretical probabilities."
+            },
+            {
+              "type": "topic",
+              "code": "M7.7",
+              "title": "Know when to add or multiply two probabilities, and understand conditional probability.",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "when the probabilities are independent of the previous outcome",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "when the probabilities are dependent on the previous outcome.",
+                  "children": []
+                }
+              ],
+              "text": "Calculate and interpret conditional probabilities through representation using expected\nfrequencies with two-way tables, tree diagrams and Venn diagrams.\nUnderstand the use of tree diagrams to represent outcomes of combined events:"
+            }
+          ],
+          "topic_count": 76
+        },
+        {
+          "type": "page_marker",
+          "value": 7
+        },
+        {
+          "type": "page_marker",
+          "value": 5
+        },
+        {
+          "type": "page_marker",
+          "value": 7
+        },
+        {
+          "type": "page_marker",
+          "value": 3
+        },
+        {
+          "type": "page_marker",
+          "value": 8
+        },
+        {
+          "type": "page_marker",
+          "value": 9
+        },
+        {
+          "type": "page_marker",
+          "value": 2
+        },
+        {
+          "type": "page_marker",
+          "value": 10
+        },
+        {
+          "type": "page_marker",
+          "value": 11
+        },
+        {
+          "type": "page_marker",
+          "value": 12
+        },
+        {
+          "type": "page_marker",
+          "value": 13
+        },
+        {
+          "type": "page_marker",
+          "value": 14
+        },
+        {
+          "type": "section",
+          "title": "BIOLOGY",
+          "children": [
+            {
+              "type": "paragraph",
+              "text": "B1. Cells"
+            },
+            {
+              "type": "topic",
+              "code": "B1.1",
+              "title": "Know and understand the structure and function of the main sub-cellular components of",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "cell membrane",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "cytoplasm",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "nucleus",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "mitochondrion",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "cell wall (plant only)",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "chloroplast (plant only)",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "g",
+                  "text": "vacuole (plant only)",
+                  "children": []
+                }
+              ],
+              "text": "eukaryotic cells (both animal and plant) including:"
+            },
+            {
+              "type": "topic",
+              "code": "B1.2",
+              "title": "Know and understand the structure and function of the main sub-cellular components of",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "cell membrane",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "cytoplasm",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "cell wall",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "chromosomal DNA/no ‘true’ nucleus",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "plasmid DNA",
+                  "children": []
+                }
+              ],
+              "text": "prokaryotic cells (bacteria) including:"
+            },
+            {
+              "type": "topic",
+              "code": "B1.3",
+              "title": "Know and understand the levels of organisation within organisms as: cells to tissues to",
+              "children": [],
+              "text": "organs to organ systems.\nB2. Movement across membranes"
+            },
+            {
+              "type": "topic",
+              "code": "B2.1",
+              "title": "Know and understand the processes of diffusion, osmosis (in terms of water potential),",
+              "children": [],
+              "text": "and active transport, including examples in living and non-living systems.\nB3. Cell division and sex determination"
+            },
+            {
+              "type": "topic",
+              "code": "B3.1",
+              "title": "Mitosis and the cell cycle:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand that the mitotic cell cycle includes interphase (involving\ncell growth and DNA replication) and mitosis (involving one cell division leading\nto two daughter cells which are genetically identical to each other and to the\nparental cell).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand the importance of mitosis in the growth of an organism:\nspecifically, its roles in increasing the number of cells, repairing tissues, replacing\ncells and asexual reproduction.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand that cancer is the result of changes in cells, including\nmutations, that lead to uncontrolled cell division.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B3.2",
+              "title": "Meiosis and the cell cycle:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand that the meiotic cell cycle includes interphase (involving\ncell growth and DNA replication) and meiosis (involving two cell divisions leading\nto four daughter cells, each with a single copy of each chromosome).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand the role of meiosis in producing genetically different\nhaploid gametes so that the zygote (fertilised egg cell) produced at fertilisation is\ndiploid.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B3.3",
+              "title": "Asexual and sexual reproduction:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand that asexual reproduction involves one parent and that\noffspring are genetically identical when no mutations occur.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand that sexual reproduction involves two parents and that\noffspring are genetically different in relation to each other and the parents,\nleading to (increased) variation.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B3.4",
+              "title": "Sex determination:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know that, in most mammals including humans, females are XX and males\nare XY.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Analyse genetic data and diagrams to establish the sex and ratio of offspring.\nB4. Inheritance",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B4.1",
+              "title": "Know and understand the nucleus as a site of genetic material in eukaryotic cells.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "B4.2",
+              "title": "Know and understand the following genetic terms:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "gene",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "allele",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "dominant",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "recessive",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "heterozygous",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "homozygous",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "g",
+                  "text": "phenotype",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "h",
+                  "text": "genotype",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "chromosome",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet",
+                  "label": "j",
+                  "text": "autosome",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B4.3",
+              "title": "Monohybrid crosses:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Use and interpret genetic data and diagrams involving monohybrid (single gene)\ncrosses.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Use and interpret family trees/pedigrees and express outcomes as ratios,\nnumbers, probabilities or percentages.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Understand the concept of inherited conditions.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know that most phenotypes are the result of multiple genes and only some result\nfrom single gene inheritance.\nB5. DNA",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B5.1",
+              "title": "Know and understand that",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "the genome is the full set of genetic material (DNA) of an organism.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "this DNA is contained within chromosomes.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B5.2",
+              "title": "Know and understand the structure of DNA:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand that single-stranded DNA (ssDNA) is a polymer made up\nof nucleotides joined together to form one strand of DNA.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand that double-stranded DNA (dsDNA) is a polymer made up\nof two strands of DNA forming a double helix.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand that the structure of each nucleotide consists of a common\nsugar and phosphate group as well as one of four different nitrogenous bases.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know the complementary pairs of DNA nitrogenous bases – adenine (A) pairs\nwith thymine (T) and guanine (G) pairs with cytosine (C) – and that the sequence\nof these bases is the genetic code.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B5.3",
+              "title": "Protein synthesis:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand that protein synthesis involves producing chains of amino\nacids called polypeptides.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand that one or more polypeptide(s) can form a functional\nprotein.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand that the three-dimensional shape of a protein is\ndetermined by the sequence of its amino acids.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and understand that the sequence of nucleotide bases in a gene\ndetermines the sequence of amino acids in the polypeptide the gene codes for.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Know and understand that the sequence of nucleotides in a gene is ‘read’ as\ntriplets, and that each triplet codes for an amino acid.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B5.4",
+              "title": "Gene mutations:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand that a mutation changes the sequence of nucleotides in the DNA.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know that most mutations have no effect on the phenotype, some will have a\nsmall effect, whilst occasionally others will determine the phenotype.\nB6. Gene technologies",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B6.1",
+              "title": "Genetic engineering:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand the process of genetic engineering to include:",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "taking a copy of a gene from the DNA of one organism",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "insertion of that gene into the DNA of another organism",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "iii",
+                      "text": "the roles of restriction enzymes and ligases in recombining DNA.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Recall and interpret examples of genetic engineering in different cell types.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Explain the benefits and risks of using genetic engineering in medical\napplications.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B6.2",
+              "title": "Stem cells:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand that some early embryonic cells are totipotent and have\nthe potential to develop into a complete multicellular organism.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand that most embryonic stem cells are pluripotent and can\ndifferentiate into any cell type.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand that adult stem cells are multipotent and can differentiate\ninto a limited number of different cell types.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and understand the likely benefits and risks of using stem cells in medical\napplications.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B6.3",
+              "title": "Selective breeding:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand the differences and similarities between natural selection\nand selective breeding.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand the impact of selective breeding on populations.\nB7. Variation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B7.1",
+              "title": "Natural selection and evolution:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know that there is usually extensive genetic variation within a population of a\nspecies.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Describe evolution as a change in the inherited characteristics of a population\nover time through a process of natural selection which may result in the\nformation of a new species.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand how evolution can occur through natural selection of\nvariants that give rise to phenotypes best suited to their environment.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and understand that antibiotic resistance in bacteria is an example of\nevolution through natural selection.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B7.2",
+              "title": "Sources of variation:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand that variation can be genetic/inherited, resulting in a range of\nphenotypes.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand that variation can also be environmental, which affects a range of\nphenotypes.\nB8. Enzymes",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B8.1",
+              "title": "Know and understand that enzymes are primarily proteins that function as biological",
+              "children": [],
+              "text": "catalysts."
+            },
+            {
+              "type": "topic",
+              "code": "B8.2",
+              "title": "Know and understand the general mechanism of enzyme action, including the role of the",
+              "children": [],
+              "text": "active site and enzyme specificity."
+            },
+            {
+              "type": "topic",
+              "code": "B8.3",
+              "title": "Know and understand how the factors of temperature and pH can affect the rate of",
+              "children": [],
+              "text": "enzyme action."
+            },
+            {
+              "type": "topic",
+              "code": "B8.4",
+              "title": "Know the role of amylases, proteases and lipases in the digestion of carbohydrates,",
+              "children": [],
+              "text": "proteins and fats.\nB9. Animal physiology"
+            },
+            {
+              "type": "topic",
+              "code": "B9.1",
+              "title": "Respiration:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand the process of cellular respiration in living cells.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand the process of aerobic respiration in living cells, including\nthe word equation.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand the process of anaerobic respiration in animal cells,\nincluding the word equation.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B9.2",
+              "title": "Organ systems:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Nervous system:",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "Know and understand that the central nervous system comprises the brain\nand spinal cord.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "Know and understand the structure and function of sensory neurones,\nrelay neurones, motor neurones, synapses and the reflex arc.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Respiratory system:",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "Know and understand the structure and function of the respiratory\n(breathing) system, including the structure of the thorax.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "Understand the processes of ventilation and gas exchange.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "iii",
+                      "text": "Know and understand the importance of a high surface area: volume ratio\nfor the gas exchange process.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Circulatory system:",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "Know and understand the structure and function of the circulatory system,\nincluding the structure of the heart, characteristics of heart rate, ECGs, and\nthe main types of blood vessel (arteries, veins and capillaries).",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "Know and understand the composition and function of the blood (red blood\ncells carry oxygen; white blood cells are involved in antibody production\nand phagocytosis; platelets are involved in blood clotting; and plasma is\ninvolved both in the transport of blood components and other dissolved\nsubstances including hormones, antibodies, urea and carbon dioxide, and\nin the distribution of heat).",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "iii",
+                      "text": "Know and understand the relationship with the gaseous exchange system.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "iv",
+                      "text": "Know and understand the need for exchange surfaces and a transport\nsystem in multicellular organisms in terms of surface area: volume ratio.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Digestive system:",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "Know and understand the structure and function of the digestive system.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "Know and understand the processes of peristalsis, digestion, absorption\nand egestion.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Excretory system:",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "Know and understand the structure and function of the excretory system,\nincluding the kidney and the main components of the nephron.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "Understand the role of the kidneys in homeostasis.",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B9.3",
+              "title": "Homeostasis:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know that homeostasis is the maintenance of a constant internal environment,\nand appreciate its importance in multicellular animals.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand the concept of negative feedback in the context of homeostasis.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand the regulation of blood glucose levels, including the role of\ninsulin and glucagon.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Understand the main features of type 1 and type 2 diabetes, and how type 1\ndiabetes can be treated.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Know and understand the regulation of water content (including the role of ADH)\nand the regulation of body temperature.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B9.4",
+              "title": "Hormones:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand that hormones are released from specific endocrine\nglands and travel via the blood to their target structures.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand the main role of adrenaline in the body.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand the roles of hormones in human reproduction including:",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "those involved in the menstrual cycle (FSH, LH, oestrogen and\nprogesterone).",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "those used for contraception, and the differences between hormonal and\nnon-hormonal forms of contraception.",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B9.5",
+              "title": "Disease and body defence:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Communicable diseases:",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "Know that communicable diseases are caused by pathogenic bacteria,\nviruses, protists and fungi.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "Understand the transmission routes of sexually transmitted infections,\nincluding the effect on the immune system of HIV which results in AIDS.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "iii",
+                      "text": "Understand the treatment of disease, including the use of antibiotics,\nvaccines (role of dead and inactive pathogens, antibody production and\nformation of memory cells) and techniques to prevent the spread of\npathogens including HIV.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "iv",
+                      "text": "Understand the process of discovery and development of new medicines\nand vaccines, including pre-clinical and clinical testing.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Non-communicable diseases:",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "Know that the following diseases are caused by the interaction of many\nfactors: cardiovascular disease, many forms of cancer, some lung and liver\ndiseases and diseases influenced by nutrition, including type 2 diabetes.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "Know that cardiovascular disease can be treated/managed using lifelong\nmedication (including statins, anti-coagulants and anti-hypertensive drugs),\nsurgical procedures (including stents and bypass for coronary heart\ndisease), and lifestyle changes (including reducing smoking, more exercise\nand a balanced diet).\nB10. Ecosystems",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B10.1",
+              "title": "Levels of organisation in an ecosystem:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand the organisation of levels within an ecosystem from\nindividuals through to populations, and from communities through to ecosystems.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand how communities can be affected by abiotic and biotic\nfactors.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand the factors that can cause a population to change in size.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Understand the importance of interdependence in ecosystems (relating to\npredation, mutualism and parasitism) and of competition in a community.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Know and understand that photosynthetic organisms are the primary producers\nof food in an ecosystem, and therefore biomass.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B10.2",
+              "title": "Material cycling:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand the carbon cycle, including the importance of the following\nprocesses:",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "photosynthesis",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "respiration",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "iii",
+                      "text": "combustion",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "iv",
+                      "text": "decomposition",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand the importance of the water cycle to living organisms.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B10.3",
+              "title": "Biodiversity:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand how quadrats and belt transects are used to investigate\nthe distribution and abundance of organisms in a habitat, and interpret data from\ntheir use.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand how to determine the number of organisms in a given\narea.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand the positive and negative human interactions in an\necosystem, including fish farming, acid rain and eutrophication, and explain their\nimpact on biodiversity.\nB11. Plant physiology",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B11.1",
+              "title": "Importance of photosynthesis:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand the process of photosynthesis as an endothermic reaction\nthat uses light energy to react carbon dioxide and water to produce glucose and\noxygen.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand the effect of temperature, light intensity and carbon dioxide\nconcentration as limiting factors on the rate of photosynthesis.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "B11.2",
+              "title": "Transport systems in plants:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand how the structures of xylem and phloem are adapted to\ntheir functions in plants, including the role of:",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "lignified dead cells in xylem tissue in the transport of water and mineral\nions from the roots to the stems and leaves.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "living cells in phloem tissue in the transport of dissolved sugars from the\nleaves to the rest of the plant for immediate use or storage.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand how water and mineral ions are taken up by plants, and\nrelate the structure of root hair cells to their function in this.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand the processes of transpiration and translocation, including\nthe structure and function of the stomata.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and understand the effect of environmental factors on the rate of water\nuptake by a plant, including light intensity, air movement, humidity and\ntemperature.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Calculate the rate of transpiration as:\nrate of transpiration =\nvolume of water\ntime taken",
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "topic_count": 34
+        },
+        {
+          "type": "page_marker",
+          "value": 15
+        },
+        {
+          "type": "page_marker",
+          "value": 16
+        },
+        {
+          "type": "page_marker",
+          "value": 17
+        },
+        {
+          "type": "page_marker",
+          "value": 18
+        },
+        {
+          "type": "page_marker",
+          "value": 19
+        },
+        {
+          "type": "page_marker",
+          "value": 20
+        },
+        {
+          "type": "page_marker",
+          "value": 21
+        },
+        {
+          "type": "page_marker",
+          "value": 22
+        },
+        {
+          "type": "page_marker",
+          "value": 23
+        },
+        {
+          "type": "section",
+          "title": "CHEMISTRY",
+          "children": [
+            {
+              "type": "paragraph",
+              "text": "C1. Atomic structure"
+            },
+            {
+              "type": "topic",
+              "code": "C1.1",
+              "title": "Describe the structure of the atom as a central nucleus (containing protons and neutrons)",
+              "children": [],
+              "text": "surrounded by electrons moving in shells/energy levels."
+            },
+            {
+              "type": "topic",
+              "code": "C1.2",
+              "title": "Know the relative masses and charges of protons, neutrons and electrons, and recognise",
+              "children": [],
+              "text": "that most of the mass of an atom is in the nucleus."
+            },
+            {
+              "type": "topic",
+              "code": "C1.3",
+              "title": "Know and be able to use the terms atomic number and mass number, together with",
+              "children": [],
+              "text": "standard notation (e.g. C12\n6 ), and so be able to calculate the number of protons, neutrons\nand electrons in any atom or ion."
+            },
+            {
+              "type": "topic",
+              "code": "C1.4",
+              "title": "Use the atomic number to write the electron configurations of the first 20 elements in the",
+              "children": [],
+              "text": "Periodic Table (H to Ca) in comma-separated format (e.g. 2,8,8,1 for a potassium atom)."
+            },
+            {
+              "type": "topic",
+              "code": "C1.5",
+              "title": "Know the definition of isotopes as atoms of an element with the same number of protons",
+              "children": [],
+              "text": "but different numbers of neutrons (so having different mass numbers). Use data, including\nthat from a mass spectrometer, to identify the number and abundances of different\nisotopes of elements."
+            },
+            {
+              "type": "topic",
+              "code": "C1.6",
+              "title": "Know and use the concept of relative atomic mass, Ar, including calculating values from",
+              "children": [],
+              "text": "given data.\nC2. The Periodic Table (IUPAC conventions, Groups are labelled as 1-18)"
+            },
+            {
+              "type": "topic",
+              "code": "C2.1",
+              "title": "Know that Periods are horizontal rows and Groups are vertical columns.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C2.2",
+              "title": "Know that the elements are arranged in the order of increasing atomic number.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C2.3",
+              "title": "Recall the position of metals and non-metals in the Periodic Table: alkali metals",
+              "children": [],
+              "text": "(Group 1), alkaline earth metals (Group 2), common non-metals in Group 16, the\nhalogens (Group 17), the noble gases (Group 18) and the transition metals."
+            },
+            {
+              "type": "topic",
+              "code": "C2.4",
+              "title": "Know and use the relationship between the position of an atom in the Periodic Table",
+              "children": [],
+              "text": "(Group and Period) and the electron configuration of the atom."
+            },
+            {
+              "type": "topic",
+              "code": "C2.5",
+              "title": "Understand that elements in the same Group have similar chemical properties and that",
+              "children": [],
+              "text": "down a metal Group, reactivity increases and down a non-metal Group, reactivity\ndecreases.\nC3. Chemical reactions, formulae and equations"
+            },
+            {
+              "type": "topic",
+              "code": "C3.1",
+              "title": "Understand that in a chemical reaction, new substances are formed by the rearrangement",
+              "children": [],
+              "text": "of atoms and their electrons, but no nuclei are destroyed or created."
+            },
+            {
+              "type": "topic",
+              "code": "C3.2",
+              "title": "Know the chemical formulae of simple, common ionic and covalent compounds.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C3.3",
+              "title": "Know and use state symbols: solid (s), liquid (l), gas (g), aqueous solution (aq).",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C3.4",
+              "title": "Be able to construct and balance a chemical equation, including ionic and half-equations.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C3.5",
+              "title": "Understand that often chemical reactions can be reversible and do not go to completion.",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know the factors that can affect the position of an equilibrium (concentration of\nreactants/products, temperature, overall pressure).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Predict the effect of changing these factors on the position of equilibrium.\nC4. Quantitative chemistry",
+                  "children": []
+                }
+              ],
+              "text": "All of the reactants do not turn fully into the products but the reaction reaches a state of\nequilibrium in a closed system."
+            },
+            {
+              "type": "topic",
+              "code": "C4.1",
+              "title": "Use Ar values to calculate the relative molar mass, Mr.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C4.2",
+              "title": "Know that Avogadro’s number gives the number of particles in one mole of a substance.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C4.3",
+              "title": "Know that one mole of a substance is the Ar or Mr in grams, and perform conversions of",
+              "children": [],
+              "text": "grams to moles and vice versa (including working in tonnes and kilograms). Know that the\namount of a substance corresponds to the number of moles of a substance."
+            },
+            {
+              "type": "topic",
+              "code": "C4.4",
+              "title": "Calculate the percentage composition by mass of a compound using given Ar values.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C4.5",
+              "title": "Know that the empirical formula is the simplest integer ratio of atoms in a compound. Find",
+              "children": [],
+              "text": "the empirical formula of a compound from a variety of data, such as the percentage\ncomposition by mass of the elements present or reacting masses. Find the molecular\nformula from the empirical formula if given the Mr value."
+            },
+            {
+              "type": "topic",
+              "code": "C4.6",
+              "title": "Use balanced chemical equations to calculate the masses of reactants and products,",
+              "children": [],
+              "text": "including if there is a limiting reactant present."
+            },
+            {
+              "type": "topic",
+              "code": "C4.7",
+              "title": "Be able to construct balanced chemical equations from reacting masses or gas volumes",
+              "children": [],
+              "text": "data."
+            },
+            {
+              "type": "topic",
+              "code": "C4.8",
+              "title": "Understand that (for an ideal gas) one mole of a gas occupies a set volume at a given",
+              "children": [],
+              "text": "temperature and pressure (for example, 24 dm3 at room temperature and pressure (rtp)),\nand perform conversions of volumes to number of moles, and vice versa."
+            },
+            {
+              "type": "topic",
+              "code": "C4.9",
+              "title": "Solutions:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand that concentration can be measured in mol dm–3 or g dm–3, and be\nable to calculate the concentration given the number of moles (or mass) of solute\nand the volume of solution.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know the term saturated solution, be able to calculate solubility and interpret\nsolubility data.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C4.10",
+              "title": "Use the concentrations of solutions (or find the concentrations from given data) and the",
+              "children": [],
+              "text": "reacting ratio of reactants from the balanced equation to perform titration calculations."
+            },
+            {
+              "type": "topic",
+              "code": "C4.11",
+              "title": "Calculate the percentage yield of a reaction using the balanced chemical equation and",
+              "children": [],
+              "text": "the equation: percentage yield=\npredicted yield (g)\nactual yield (g) ×100\nC5. Oxidation, reduction and redox"
+            },
+            {
+              "type": "topic",
+              "code": "C5.1",
+              "title": "Know that on a basic level, oxidation is the gain of oxygen and that reduction is the",
+              "children": [],
+              "text": "removal of oxygen."
+            },
+            {
+              "type": "topic",
+              "code": "C5.2",
+              "title": "Know and be able to use the concept that oxidation and reduction are the transfer of",
+              "children": [],
+              "text": "electrons, i.e. reduction is the gain of electrons and oxidation is the loss of electrons."
+            },
+            {
+              "type": "topic",
+              "code": "C5.3",
+              "title": "Determine and use the oxidation states of atoms in simple inorganic compounds.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C5.4",
+              "title": "Identify any chemical equation that involves: oxidation only, reduction only, redox (both",
+              "children": [],
+              "text": "oxidation and reduction taking place), or no oxidation/reduction."
+            },
+            {
+              "type": "topic",
+              "code": "C5.5",
+              "title": "Understand the concept of disproportionation and recognise reactions (or species) where",
+              "children": [],
+              "text": "this occurs."
+            },
+            {
+              "type": "topic",
+              "code": "C5.6",
+              "title": "Understand the terms oxidising agent and reducing agent, and be able to identify them in",
+              "children": [],
+              "text": "reactions.\nC6. Chemical bonding, structure and properties"
+            },
+            {
+              "type": "topic",
+              "code": "C6.1",
+              "title": "Define and understand the differences between elements, compounds and mixtures.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C6.2",
+              "title": "Understand that atoms often react to form compounds which have the electron",
+              "children": [],
+              "text": "configuration of a noble gas (Group 18). Understand that the type of bonding taking place\ndepends on the atoms involved in the reaction."
+            },
+            {
+              "type": "topic",
+              "code": "C6.3",
+              "title": "Ionic bonding:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know that ions are formed by transfer of electrons from atoms of metals to atoms\nof non-metals, and that these ions (of opposite charge) attract to form ionic\ncompounds.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Predict the charge of the most stable ions formed from elements in Groups 1, 2,\n16 and 17 and aluminium by consideration of their electron configuration.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know the chemical formulae of common compound ions, e.g. CO3\n2– and OH–.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know that when an element can exist in more than one oxidation state, e.g. Cu,\nFe, then Roman numerals are used to denote the one present, e.g. iron(III)\nchloride for FeCl3.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Determine the formulae of ionic compounds from their constituent ions.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Understand the general physical properties of ionic compounds, such as melting\npoint and conductivity.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C6.4",
+              "title": "Covalent bonding:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know that a covalent bond is formed when atoms share one (or more) pair(s) of\nelectrons, generally between non-metals.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand that covalently bonded substances can be small molecules (e.g.\nwater, ammonia, methane) or giant structures (e.g. diamond, graphite, silicon\ndioxide).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Understand the general physical properties of substances composed of small\nmolecules or of those that exist as giant covalent structures.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C6.5",
+              "title": "Metallic bonding:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand that solid metals exist as a giant structure of positively charged ions\nsurrounded by delocalised (free) electrons.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand the general physical properties of metals, such as melting point and\nconductivity.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C6.6",
+              "title": "Understand that intermolecular forces can exist between molecules, and that these forces",
+              "children": [],
+              "text": "must be overcome in melting and boiling."
+            },
+            {
+              "type": "topic",
+              "code": "C6.7",
+              "title": "Be able to relate structure and bonding to physical properties, such as melting point and",
+              "children": [],
+              "text": "conductivity.\nC7. Group chemistry"
+            },
+            {
+              "type": "topic",
+              "code": "C7.1",
+              "title": "Know the physical and chemical properties of the alkali metals (Group 1), the halogens",
+              "children": [],
+              "text": "(Group 17) and the noble gases (Group 18)."
+            },
+            {
+              "type": "topic",
+              "code": "C7.2",
+              "title": "Describe the trends in chemical reactivity and physical properties of the alkali metals",
+              "children": [],
+              "text": "(Group 1) and make predictions based on those trends. This includes knowledge of the\nrelative positions of lithium, sodium and potassium in Group 1."
+            },
+            {
+              "type": "topic",
+              "code": "C7.3",
+              "title": "The halogens (Group 17):",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Describe the trends in chemical reactivity and physical properties of the halogens\nand make predictions based on those trends. This includes knowledge of the\nrelative positions of fluorine, chlorine, bromine and iodine in Group 17.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Explain what is meant by a displacement reaction, in terms of reactivity\ncompetition, between halogens and halide ions.\nC8. Separation techniques",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C8.1",
+              "title": "Know that chemical processes are required to displace constituent elements from their",
+              "children": [],
+              "text": "compounds."
+            },
+            {
+              "type": "topic",
+              "code": "C8.2",
+              "title": "Know that physical processes are required to separate mixtures, including",
+              "children": [],
+              "text": "miscible/immiscible liquids and dissolved/insoluble solids."
+            },
+            {
+              "type": "topic",
+              "code": "C8.3",
+              "title": "Know when to apply the following separation techniques: simple/fractional distillation,",
+              "children": [],
+              "text": "paper chromatography (including use of Rf values), use of a separating funnel,\ncentrifugation, dissolving, filtration, evaporation and crystallisation."
+            },
+            {
+              "type": "topic",
+              "code": "C8.4",
+              "title": "Know how to establish the purity of a substance using chromatography.",
+              "children": [],
+              "text": "C9. Acids, bases and salts"
+            },
+            {
+              "type": "topic",
+              "code": "C9.1",
+              "title": "Acids:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Define an acid as a substance that can form H+(aq) ions or that is an H+ donor.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Describe reactions with metals, carbonates, metal hydroxides and metal oxides\nin which salts are formed.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Understand the terms strong, weak, dilute and concentrated.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know that some oxides of non-metals react with water to form acidic solutions.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Recall that pH is a measure of H+ ion concentration, and recall that a change of 1\non the pH scale corresponds to a change by a factor of 10 in H+ ion\nconcentration.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Know that one mole of some acidic substances is able to form/donate more than\none mole of H+ ions, including the use of the terms mono-, di-, tri-, and polyprotic.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C9.2",
+              "title": "Bases:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Define a base as a substance that can form OH–(aq) ions or that is an H+\nacceptor.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand the terms strong, weak, dilute and concentrated.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know that some oxides and hydroxides of metals react with water to form\nalkaline solutions.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C9.3",
+              "title": "Know that the reaction of an acid with a base can lead to neutralisation and is often",
+              "children": [],
+              "text": "exothermic.\nC10. Rates of reaction"
+            },
+            {
+              "type": "topic",
+              "code": "C10.1",
+              "title": "Describe the qualitative effects on a rate of reaction of concentration, temperature,",
+              "children": [],
+              "text": "particle size, a catalyst and, for gases, pressure."
+            },
+            {
+              "type": "topic",
+              "code": "C10.2",
+              "title": "Know that the rate of reaction can be found by measuring the loss of a reactant or the",
+              "children": [],
+              "text": "gain of a product, or by measurement of a physical property over time, and be able to\nidentify which of these measurements can be used in a given situation."
+            },
+            {
+              "type": "topic",
+              "code": "C10.3",
+              "title": "Interpret data in graphical form concerning the rate of a reaction.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C10.4",
+              "title": "Use collision theory to explain changes in the rate of a reaction.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C10.5",
+              "title": "Understand that particles must have sufficient energy when they collide to react, and that",
+              "children": [],
+              "text": "this energy is called the activation energy (Ea). Identify the activation energy on an energy\nlevel diagram."
+            },
+            {
+              "type": "topic",
+              "code": "C10.6",
+              "title": "Know that catalysts:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "are not used up in a reaction.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "are chemically unchanged at the end of a reaction.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "provide an alternative route (reaction mechanism) with a lower activation energy,\nand interpret this effect on an energy level diagram.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "do not affect the position of an equilibrium.\nC11. Energetics",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C11.1",
+              "title": "Understand the concepts of an exothermic reaction, for which ΔH is negative (negative",
+              "children": [],
+              "text": "enthalpy change), and an endothermic reaction, for which ΔH is positive (positive\nenthalpy change)."
+            },
+            {
+              "type": "topic",
+              "code": "C11.2",
+              "title": "Know that if a reversible reaction is exothermic in one direction, it is endothermic in the",
+              "children": [],
+              "text": "other direction."
+            },
+            {
+              "type": "topic",
+              "code": "C11.3",
+              "title": "Be able to interpret energy level diagrams.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C11.4",
+              "title": "Be able to calculate energy changes from specific heat capacities and changes in",
+              "children": [],
+              "text": "temperature in calorimetry experiments."
+            },
+            {
+              "type": "topic",
+              "code": "C11.5",
+              "title": "Know that bond breaking is endothermic and bond formation is exothermic, and be able",
+              "children": [],
+              "text": "to use bond energy data to calculate energy changes.\nC12. Electrolysis"
+            },
+            {
+              "type": "topic",
+              "code": "C12.1",
+              "title": "Understand the terms electrode, cathode (negative electrode), anode (positive electrode)",
+              "children": [],
+              "text": "and electrolyte."
+            },
+            {
+              "type": "topic",
+              "code": "C12.2",
+              "title": "Understand why direct current (dc), and not alternating current (ac), is used in",
+              "children": [],
+              "text": "electrolysis."
+            },
+            {
+              "type": "topic",
+              "code": "C12.3",
+              "title": "Understand that in electrolysis at the cathode, the cations (positively charged ions)",
+              "children": [],
+              "text": "receive electrons (reduction) to change into atoms or molecules, and at the anode, the\nanions (negatively charged ions) lose electrons to form atoms or molecules (oxidation)."
+            },
+            {
+              "type": "topic",
+              "code": "C12.4",
+              "title": "Understand and be able to predict the products of the electrolysis of the following:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "aqueous solutions (including those of salts), including situations where more than\none ion/molecule is attracted to a single electrode",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "molten binary compounds",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C12.5",
+              "title": "Be able to write half-equations for the processes taking place at each electrode.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C12.6",
+              "title": "Explain how electrolysis is used to electroplate objects.",
+              "children": [],
+              "text": "C13. Carbon/Organic chemistry"
+            },
+            {
+              "type": "topic",
+              "code": "C13.1",
+              "title": "General concepts:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know that crude oil is the main source of hydrocarbons and that it is separated\ninto fractions by fractional distillation (names and uses of specific fractions not\nexpected).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand the link between carbon chain length and the following trends in\nphysical properties of hydrocarbons: boiling points, viscosity, flammability.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know the use of longer chain alkanes in cracking to form shorter chain alkanes\nand alkenes, and be able to write balanced chemical equations for these\nreactions.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Understand structural isomerism and be able to recognise examples.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Understand and be able to use the following terms: molecular formula,\nfull structural formula (displayed structure) and condensed structural formula.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Understand and be able to use the terms complete combustion and incomplete\ncombustion, and be able to write balanced chemical equations for such\nreactions.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "g",
+                  "text": "Know the IUPAC guidelines for the systematic naming of carbon compounds,\nand apply the guidelines in order to be able to name all the compounds in this\nsection of the specification.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "h",
+                  "text": "Know and understand the terms homologous series and functional group.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C13.2",
+              "title": "Alkanes (saturated hydrocarbons):",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Describe alkanes as a homologous series with the general formula of CnH2n +2.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Be able to name, or recognise from the name, the C1 to C6 straight-chain\nalkanes.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C13.3",
+              "title": "Alkenes (unsaturated hydrocarbons):",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Describe alkenes as a homologous series with a double bond and the general\nformula CnH2n.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Be able to name, or recognise from the name, C2 to C6 straight-chain alkenes,\nincluding the position of the double bond.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Recognise and be able to use the test for unsaturation with bromine water.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know that addition reactions take place with the following substances: hydrogen,\nhalogens, hydrogen halides and steam. Be able to write the balanced chemical\nequations for these reactions and recognise the formulae of the products formed.\n(Mechanisms and consideration of carbocation stability are not required.)",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C13.4",
+              "title": "Polymers:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Addition polymerisation, polyalkenes:",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "Know that alkenes or other molecules with a C=C bond may react with\neach other to form long-chain saturated molecules called polymers by\naddition reactions called polymerisation, and that the unsaturated\nmolecules are called monomers.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "If given an unsaturated monomer molecule, be able to recognise the\nstructure of the polymer and vice versa.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "iii",
+                      "text": "Be able to recognise the repeating unit of these polymers.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Condensation polymerisation, polyesters and polyamides (to include amino acids\nforming proteins):",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "If given the monomer molecules, be able to recognise the structure of the\npolymer and vice versa.",
+                      "children": []
+                    },
+                    {
+                      "type": "bullet",
+                      "label": "ii",
+                      "text": "Be able to recognise the repeating unit of these polymers.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Understand the terms biodegradable and non-biodegradable when applied to\npolymers.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C13.5",
+              "title": "Alcohols:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Describe alcohols as a homologous series with the general formula CnH2n +1OH.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Be able to name, or recognise from the name, C1 to C6 straight-chain alcohols,\nincluding the position of the -OH group.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Describe the reaction of alcohols with sodium metal.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C13.6",
+              "title": "Carboxylic acids:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Describe carboxylic acids as a homologous series with the general formula\nCnH2n +1COOH.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Be able to name, or recognise from the name, C1 to C6 straight-chain carboxylic\nacids.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Describe the chemical properties of carboxylic acids as those of weak acids, and\nso be able to predict their reactions and determine the formulae of their salts.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know that carboxylic acids react with alcohols in the presence of an acid catalyst\nto produce esters.\nC14. Metals",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C14.1",
+              "title": "Understand that the reactivity of a metal is linked to its tendency to form positive ions and",
+              "children": [],
+              "text": "the ease of extraction of the metal."
+            },
+            {
+              "type": "topic",
+              "code": "C14.2",
+              "title": "Be able to use displacement reactions to establish the order of reactivity of metals and",
+              "children": [],
+              "text": "vice versa."
+            },
+            {
+              "type": "topic",
+              "code": "C14.3",
+              "title": "Describe how the uses of metals are related to their physical and chemical properties,",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "g. Al, Fe, Cu, Ag, Au, Ti, and understand that alloys can be formed to produce materials\nwith specific properties.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C14.4",
+              "title": "Know that most metal ores are the oxides of the metal, and that the extraction of metals",
+              "children": [],
+              "text": "always involves reduction processes."
+            },
+            {
+              "type": "topic",
+              "code": "C14.5",
+              "title": "Know that common properties of transition metals include:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "they are able to form stable ions in different oxidation states",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "they often form coloured compounds",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "they are often used as catalysts (as ions or atoms)\nC15. Kinetic/Particle theory",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C15.1",
+              "title": "Be able to describe the packing and movement of particles in the three states of matter:",
+              "children": [],
+              "text": "solid, liquid and gas."
+            },
+            {
+              "type": "topic",
+              "code": "C15.2",
+              "title": "Understand the changes to the packing and movement of particles in the following",
+              "children": [],
+              "text": "changes of state: freezing, melting, boiling/evaporating, and condensing. Understand that\nthe energy required for these processes is related to the bonding and structure of the\nsubstance, including a consideration of intermolecular forces.\nC16. Chemical tests"
+            },
+            {
+              "type": "topic",
+              "code": "C16.1",
+              "title": "Know and recognise the following tests for gases:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "hydrogen – explodes with a ‘squeaky pop’ when a burning splint is held at the\nopen end of a test tube",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "oxygen – relights a glowing splint",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "carbon dioxide – limewater turns cloudy when shaken with the gas",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "chlorine – damp blue litmus paper turns red and then is bleached (paper turns\nwhite)",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C16.2",
+              "title": "Know, recognise and describe the following tests for the anions:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "carbonates – using a dilute acid",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "halides – using an aqueous solution of silver nitrate in the presence of dilute\nnitric acid (chlorides form a white precipitate; bromides form a cream precipitate;\niodides form a yellow precipitate)",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "sulfates – using an aqueous solution of barium chloride in the presence of dilute\nhydrochloric acid",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "C16.3",
+              "title": "Know and recognise the test for the following metal cations using aqueous sodium",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Al\n3+, Ca2+ and Mg2+ each form a white precipitate.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Cu2+ forms a blue precipitate.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Fe2+ forms a green precipitate.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Fe3+ forms a brown precipitate.",
+                  "children": []
+                }
+              ],
+              "text": "hydroxide:"
+            },
+            {
+              "type": "topic",
+              "code": "C16.4",
+              "title": "Recall and recognise the flame test for the cations of the following metals:",
+              "children": [],
+              "text": "Li (crimson red), Na (yellow-orange), K (lilac), Ca (red-orange), Cu (green)"
+            },
+            {
+              "type": "topic",
+              "code": "C16.5",
+              "title": "Know and recognise the test for the presence of water using anhydrous copper(II) sulfate",
+              "children": [],
+              "text": "(colour change from white to blue).\nC17. Air and water"
+            },
+            {
+              "type": "topic",
+              "code": "C17.1",
+              "title": "Know and be able to use the composition of dry air, and understand that fractional",
+              "children": [],
+              "text": "distillation can be used to separate the components of air."
+            },
+            {
+              "type": "topic",
+              "code": "C17.2",
+              "title": "Know the origins and describe the effects of greenhouse gases such as CO2 and CH4.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C17.3",
+              "title": "Know the origins and effects of gaseous pollutants such as CO, CO2, SO2 and NOx.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "C17.4",
+              "title": "Know the purpose of chlorine and fluoride ions in the treatment of drinking water.",
+              "children": []
+            }
+          ],
+          "topic_count": 89
+        },
+        {
+          "type": "page_marker",
+          "value": 24
+        },
+        {
+          "type": "page_marker",
+          "value": 25
+        },
+        {
+          "type": "page_marker",
+          "value": 26
+        },
+        {
+          "type": "page_marker",
+          "value": 27
+        },
+        {
+          "type": "page_marker",
+          "value": 28
+        },
+        {
+          "type": "page_marker",
+          "value": 29
+        },
+        {
+          "type": "page_marker",
+          "value": 30
+        },
+        {
+          "type": "page_marker",
+          "value": 31
+        },
+        {
+          "type": "page_marker",
+          "value": 32
+        },
+        {
+          "type": "page_marker",
+          "value": 33
+        },
+        {
+          "type": "section",
+          "title": "PHYSICS",
+          "children": [
+            {
+              "type": "paragraph",
+              "text": "P1. Electricity"
+            },
+            {
+              "type": "topic",
+              "code": "P1.1",
+              "title": "Electrostatics:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand that insulators can be charged by friction.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand that charging is caused by gain or loss of electrons.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand that like charges repel and unlike charges attract.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Understand applications and hazards associated with electrostatics, including the\nrole of earthing.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P1.2",
+              "title": "Electric circuits:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and recognise the basic circuit symbols and diagrams, including: cell,\nbattery, light source, resistor, variable resistor, ammeter, voltmeter, switch,\ndiode.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand the difference between alternating current (ac) and direct current\n(dc).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Understand the difference between conductors and insulators, and recall\nexamples of each type.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and be able to apply: current =\ncharge\ntime , I = Q\nt",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Know and understand the use of voltmeters and ammeters.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Know and be able to apply: resistance =\nvoltage\ncurrent , R = I\nV",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "g",
+                  "text": "Recall and interpret V–I graphs for a fixed resistor and a filament lamp.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "h",
+                  "text": "Know the properties of NTC (negative temperature coefficient) thermistors, LDRs\n(light-dependent resistors) and ideal diodes.",
+                  "children": [
+                    {
+                      "type": "bullet",
+                      "label": "i",
+                      "text": "Know and understand the current and voltage rules for series and parallel\ncircuits.",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet",
+                  "label": "j",
+                  "text": "Calculate the total resistance for resistor combinations in series.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "k",
+                  "text": "Understand that the total resistance of a parallel combination is less than that of\nany individual resistor.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "l",
+                  "text": "Know and be able to apply: voltage = charge\nenergy , V = E\nQ",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "m",
+                  "text": "Know and be able to apply: power = current × voltage, P = IV = I2R",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "n",
+                  "text": "Know and be able to apply: energy transfer = power × time, E =VIt\nP2. Magnetism",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P2.1",
+              "title": "Properties of magnets:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and be able to use the terms north pole, south pole, attraction and\nrepulsion.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know the magnetic field pattern around a bar magnet (including direction).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Understand the difference between soft and hard magnetic materials (e.g. iron\nand steel).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Qualitatively understand induced magnetism.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P2.2",
+              "title": "Magnetic field due to an electric current:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand the magnetic effect of a current.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know the magnetic field patterns around current-carrying wires (including\ndirection) for straight wires and coils/solenoids.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand the factors affecting magnetic field strength around a wire.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Understand the difference between permanent magnets and electromagnets.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P2.3",
+              "title": "The motor effect:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know that a wire carrying a current in a magnetic field can experience a force.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know the factors affecting the direction of a force on a wire in a magnetic field\n(including the left-hand rule).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know the factors affecting the magnitude of the force on a wire in a magnetic\nfield.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and be able to apply F=BIL for a straight wire at right angles to a uniform\nmagnetic field.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Know and understand the construction and operation of a dc motor, including\nfactors affecting the magnitude of the force produced.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Understand applications of electromagnets.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P2.4",
+              "title": "Electromagnetic induction:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand that a voltage is induced when a wire cuts magnetic field\nlines, or when a magnetic field changes.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know the factors affecting the magnitude of an induced voltage.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know the factors affecting the direction of an induced voltage.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Understand the operation of an ac generator, including factors affecting the\noutput voltage.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Interpret the graphical representation of the output voltage of a simple ac\ngenerator.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Understand applications of electromagnetic induction.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P2.5",
+              "title": "Transformers:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand the terms step-up transformer and step-down transformer.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and use the relationship between the number of turns on the primary and\nsecondary coils, and the voltage ratio:\ns\np\nV\nV =\ns\np\nn\nn",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know that a consequence of 100% efficiency is total transfer of electrical power,\nand that this gives rise to the following relationship: VpIp = VsIs. Know and use\nthis relationship to solve problems.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Understand power transmission, including calculating losses during transmission\nand the need for high voltage.\nP3. Mechanics",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P3.1",
+              "title": "Kinematics:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand the difference between scalar and vector quantities.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand the difference between distance and displacement and\nbetween speed and velocity.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and be able to apply: speed = distance\ntime ,\nvelocity = change in displacement\ntime",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and be able to apply: acceleration = change in velocity\ntime",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Interpret distance–time, displacement–time, speed–time and velocity–time\ngraphs.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Perform calculations using gradients and areas under graphs.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "g",
+                  "text": "Know and be able to apply: average speed = total distance\ntime",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "h",
+                  "text": "Know and be able to apply the equation of motion: v2 – u2 = 2as",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P3.2",
+              "title": "Forces:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand that there are different types of force, including weight, normal\ncontact, drag (including air resistance), friction, magnetic, electrostatic, thrust,\nupthrust, lift and tension.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand the factors that can affect the magnitude and direction of\nthe forces in 3.2a.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Draw and interpret force diagrams.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Qualitatively understand resultant force, with calculations in one dimension.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P3.3",
+              "title": "Force and extension:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Interpret force–extension graphs.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand elastic and inelastic extension, and elastic limits.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and be able to apply Hooke’s law (F = kx), and understand the meaning of\nthe limit of proportionality.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Understand energy stored in a stretched spring as: E = F x 2\n1 = 2\n1 k x",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P3.4",
+              "title": "Newton’s laws:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand Newton’s first law as: ‘a body will remain at rest or in a\nstate of uniform motion in a straight line unless acted on by a resultant external\nforce’.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand mass as a property that resists change in motion (inertia).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand Newton’s second law as: force = mass × acceleration",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and understand Newton’s third law as: ‘if body A exerts a force on body B\nthen body B exerts an equal and opposite force of the same type on body A’.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P3.5",
+              "title": "Mass and weight:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand the difference between mass and weight.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and be able to apply gravitational field strength, g, approximated as\n10Nkg–1 on Earth.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and be able to apply the relationship between mass and weight: w = mg",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Understand free-fall acceleration.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Know the factors affecting air resistance.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Understand terminal velocity and the forces involved.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P3.6",
+              "title": "Momentum:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and be able to apply: momentum = mass × velocity, p = mv",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and be able to use the law of conservation of momentum in calculations in\none dimension.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and be able to apply: force = rate of change of momentum",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P3.7",
+              "title": "Energy:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and be able to apply: work = force × distance moved (in direction of force)",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand work done as a transfer of energy.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and be able to apply: gravitational potential energy = mgh, where h is the\ndifference in height of the object.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and be able to apply: kinetic energy = 2\n1 mv",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Know and be able to apply: power = energy transfer\ntime",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Know and be able to use in calculations the law of conservation of energy.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "g",
+                  "text": "Understand the concepts of useful energy and wasted energy.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "h",
+                  "text": "Know and be able to apply: percentage efficiency = useful output\ntotal input × 100\nP4. Thermal physics",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P4.1",
+              "title": "Conduction:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand thermal conductors and insulators, with examples.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and be able to apply factors affecting rate of conduction.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P4.2",
+              "title": "Convection:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand and be able to apply the effect of temperature on density of fluid.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand and be able to apply fluid flow caused by differences in density.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P4.3",
+              "title": "Thermal radiation:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand thermal radiation as electromagnetic waves in the infrared region.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and be able to apply absorption and emission of radiation.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and be able to apply factors affecting rate of absorption and emission of\nthermal radiation.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P4.4",
+              "title": "Heat capacity:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand the effect of energy transferred to or from an object on its\ntemperature.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and be able to apply: specific heat capacity = ×\nthermal energy\nmass temperature change\nwhere temperature is measured in °C and specific heat capacity, c, is measured\nin J kg–1 °C–1.\nP5. Matter",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P5.1",
+              "title": "States of matter:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know the characteristic properties of solids, liquids and gases.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and be able to apply particle models of solids, liquids and gases.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and be able to explain properties of solids, liquids and gases in terms of\nparticle motion and the forces and distances between the particles.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P5.2",
+              "title": "Ideal gases:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Be able to explain pressure and temperature in terms of the behaviour of\nparticles.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand and be able to apply the effect of pressure (P) on gas volume (V) at\nconstant temperature, i.e. PV = constant.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P5.3",
+              "title": "State changes:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand the terms melting point and boiling point.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand the terms latent heat of fusion and latent heat of\nvaporisation.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and be able to apply specific latent heat calculations.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P5.4",
+              "title": "Density:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and be able to apply: density = volume\nmass , ρ = V\nm",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand the experimental determination of densities.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Be able to compare the densities of solids, liquids and gases.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P5.5",
+              "title": "Pressure:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and be able to apply: pressure = area\nforce",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and be able to apply: hydrostatic pressure = hρg, where h is the height, or\ndepth, of the liquid.\nP6. Waves",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P6.1",
+              "title": "Wave properties:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand the transfer of energy without net movement of matter.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand transverse and longitudinal waves.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand the terms: peak, trough, compression and rarefaction.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Recall examples of waves, including electromagnetic waves and sound.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Know and be able to use the terms: amplitude, wavelength, frequency and\nperiod.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Know and be able to apply: frequency = 1\nperiod , f = T",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "g",
+                  "text": "Know and be able to apply: wave speed = distance\ntime",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "h",
+                  "text": "Know and be able to apply: wave speed = frequency × wavelength, v = fλ",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P6.2",
+              "title": "Wave behaviour:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand reflection at a surface.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand refraction at a boundary.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand the effect of reflection and refraction on the speed,\nfrequency, wavelength and direction of waves.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and understand the analogy of reflection and refraction of light with that of\nwater waves.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Know and understand the Doppler effect.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P6.3",
+              "title": "Optics:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Draw and interpret ray diagrams to describe reflection in plane mirrors.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and be able to apply: angle of incidence = angle of reflection",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Draw and interpret ray diagrams for refraction at a planar boundary.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and be able to interpret angle of incidence and angle of refraction.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Know and understand the effect of refraction on wave direction (away from or\ntowards the normal) and speed (increasing or decreasing).",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P6.4",
+              "title": "Sound waves:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand the production of sound waves by a vibrating source.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand the need for a medium.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Understand qualitatively the relation of loudness to amplitude and pitch to\nfrequency.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and understand longitudinal waves.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Understand that reflection causes echoes.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Recall that the range of human hearing is 20 Hz to 20 kHz.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "g",
+                  "text": "Know and understand ultrasound and its uses (sonar and medical scanning).",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P6.5",
+              "title": "Electromagnetic spectrum:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand the nature and properties of electromagnetic waves (they\nare transverse waves and travel at the speed of light in a vacuum).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Recall the component parts of the spectrum (radio waves, microwaves, IR,\nvisible light, UV, X-rays, gamma).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Understand the distinction of the component parts by different wavelengths\nand/or frequencies.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Recall the order of the component parts by wavelength and/or frequency.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Understand applications and hazards of the component parts of the\nelectromagnetic spectrum.\nP7. Radioactivity",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P7.1",
+              "title": "Atomic structure:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Understand the atom in terms of protons, neutrons and electrons.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and be able to apply the nuclear model of atomic structure.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know the relative charges and masses of protons, neutrons and electrons.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Understand and be able to use the terms atomic number and mass number.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Know and understand the term isotope.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Know and understand the term nuclide, and use nuclide notation.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "g",
+                  "text": "Understand that ionisation is caused by the gain/loss of electrons.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P7.2",
+              "title": "Radioactive decay:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know and understand that emissions arise from an unstable nucleus.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know and understand the random nature of emissions.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Know and understand the differences between alpha, beta and gamma emission.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and understand the nature of alpha and beta particles, and gamma\nradiation.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Be able to use and interpret nuclear equations.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "Know the effect of decay on atomic number and mass number.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P7.3",
+              "title": "Ionising radiation:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Know the relative penetrating abilities of alpha, beta and gamma radiation.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Know the relative ionising abilities of alpha, beta and gamma radiation.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Understand qualitatively the deflection of alpha, beta and gamma radiation in\nelectric or magnetic fields.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "Know and appreciate the existence of background radiation.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Understand the applications and hazards of ionising radiation.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "P7.4",
+              "title": "Half-life:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Be able to interpret graphical representations of radioactive decay (including\nconsideration of decay products).",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Understand the meaning of the term half-life.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Understand and be able to apply half-life calculations.",
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "topic_count": 32
+        },
+        {
+          "type": "page_marker",
+          "value": 34
+        },
+        {
+          "type": "page_marker",
+          "value": 35
+        },
+        {
+          "type": "page_marker",
+          "value": 36
+        },
+        {
+          "type": "page_marker",
+          "value": 2
+        },
+        {
+          "type": "page_marker",
+          "value": 37
+        },
+        {
+          "type": "page_marker",
+          "value": 2
+        },
+        {
+          "type": "page_marker",
+          "value": 38
+        },
+        {
+          "type": "page_marker",
+          "value": 39
+        },
+        {
+          "type": "page_marker",
+          "value": 1
+        },
+        {
+          "type": "page_marker",
+          "value": 40
+        },
+        {
+          "type": "page_marker",
+          "value": 41
+        },
+        {
+          "type": "page_marker",
+          "value": 42
+        },
+        {
+          "type": "section",
+          "title": "MATHEMATICS 2",
+          "children": [
+            {
+              "type": "paragraph",
+              "text": "MM1. Algebra and functions"
+            },
+            {
+              "type": "topic",
+              "code": "MM1.1",
+              "title": "Laws of indices for all rational exponents.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "MM1.2",
+              "title": "Use and manipulation of surds.",
+              "children": [],
+              "text": "Simplifying expressions that contain surds, including rationalising the denominator.\nFor example: simplifying\n+\n3 25\nand −\n7 23"
+            },
+            {
+              "type": "topic",
+              "code": "MM1.3",
+              "title": "Quadratic functions and their graphs; the discriminant of a quadratic function; completing",
+              "children": [],
+              "text": "the square; solution of quadratic equations."
+            },
+            {
+              "type": "topic",
+              "code": "MM1.4",
+              "title": "Simultaneous equations: analytical solution by substitution, e.g. of one linear and one",
+              "children": [],
+              "text": "quadratic equation."
+            },
+            {
+              "type": "topic",
+              "code": "MM1.5",
+              "title": "Solution of linear and quadratic inequalities.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "MM1.6",
+              "title": "Algebraic manipulation of polynomials, including:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "expanding brackets and collecting like terms",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "factorisation and simple algebraic division (by a linear polynomial, including\nthose of the form ax + b, and by quadratics, including those of the form\nax2 + bx + c)",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "use of the Factor Theorem and the Remainder Theorem",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "MM1.7",
+              "title": "Qualitative understanding that a function is a many-to-one (or sometimes just a one-toone) mapping.",
+              "children": [],
+              "text": "Familiarity with the properties of common functions, including f x( )= x (which always\nmeans the ‘positive square root’) and f( )x x =\nMM2. Sequences and series"
+            },
+            {
+              "type": "topic",
+              "code": "MM2.1",
+              "title": "Sequences, including those given by a formula for the nth term and those generated by a",
+              "children": [],
+              "text": "simple recurrence relation of the form xn+1 = f(xn)"
+            },
+            {
+              "type": "topic",
+              "code": "MM2.2",
+              "title": "Arithmetic series, including the formula for the sum of the first n natural numbers.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "MM2.3",
+              "title": "The sum of a finite geometric series.",
+              "children": [],
+              "text": "The sum to infinity of a convergent geometric series, including the use of r <1"
+            },
+            {
+              "type": "topic",
+              "code": "MM2.4",
+              "title": "Binomial expansion of (1 + x)",
+              "children": [],
+              "text": "n for positive integer n, and for expressions of the form\n( a + f(x))\nn\nfor positive integer n and simple f(x).\nThe notations n! and \n\n \n\n\nr\nn .\nMM3. Coordinate geometry in the (x, y)-plane"
+            },
+            {
+              "type": "topic",
+              "code": "MM3.1",
+              "title": "Equation of a straight line, including:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "y – y1 = m(x – x1)",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "ax + by + c = 0\nConditions for two straight lines to be parallel or perpendicular to each other.\nFinding equations of straight lines given information in various forms.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "MM3.2",
+              "title": "Coordinate geometry of the circle, using the equation of a circle in the forms:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "(x – a)2 + (y – b)2 = r2",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "x2 + y2 + cx + dy + e = 0",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "MM3.3",
+              "title": "Use of the following circle properties:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "The perpendicular from the centre to a chord bisects the chord.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "The tangent at any point on a circle is perpendicular to the radius at that point.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "The angle subtended by an arc at the centre of a circle is twice the angle\nsubtended by the arc at any point on the circumference.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "The angle in a semicircle is a right angle.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "Angles in the same segment are equal.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "The opposite angles in a cyclic quadrilateral add to 180°.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "g",
+                  "text": "The angle between the tangent and chord at the point of contact is equal to the\nangle in the alternate segment.\nMM4. Trigonometry",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "MM4.1",
+              "title": "The sine and cosine rules, and the area of a triangle in the form ab sin C 2",
+              "children": [],
+              "text": "1 .\nThe sine rule includes an understanding of the ‘ambiguous’ case (angle–side–side).\nProblems might be set in 2 or 3 dimensions."
+            },
+            {
+              "type": "topic",
+              "code": "MM4.2",
+              "title": "Radian measure, including use for arc length and area of sector and segment.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "MM4.3",
+              "title": "The values of sine, cosine and tangent for the angles: 0°, 30°, 45°, 60°, 90°.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "MM4.4",
+              "title": "The sine, cosine and tangent functions; their graphs, symmetries, and periodicity.",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "MM4.5",
+              "title": "Knowledge and use of the equations:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "tanθ = θ\nθ\ncos\nsin",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "sin2 θ + cos2 θ = 1",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "MM4.6",
+              "title": "Solution of simple trigonometric equations in a given interval (this may involve the use of",
+              "children": [],
+              "text": "the identities in 4.5).\nFor example: tanx = 3\n1 − for –π < x < π sin2 (2x +\nπ ) = 2\n1 for –2π < x < 2π\n12cos2 x + 6sinx – 10 = 2 for 0° < x < 360°\nMM5. Exponentials and logarithms"
+            },
+            {
+              "type": "topic",
+              "code": "MM5.1",
+              "title": "y = ax",
+              "children": [],
+              "text": "and its graph, for simple positive values of a."
+            },
+            {
+              "type": "topic",
+              "code": "MM5.2",
+              "title": "Laws of logarithms:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "ab = c ⇔ b = loga c",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "loga x + loga y = loga (xy)",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "loga x – loga y = loga \n\n\n\n\n\n\n\ny\nx",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "kloga x = loga (xk )\nincluding the special cases:",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "e",
+                  "text": "loga \n\n \n\n\nx\n1 = – loga x",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "f",
+                  "text": "loga a = 1\nQuestions requiring knowledge of the change of base formula will not be set.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "MM5.3",
+              "title": "The solution of equations of the form ax = b, and equations which can be reduced to this",
+              "children": [],
+              "text": "form, including those that need prior algebraic manipulation.\nFor example: 32x = 4 and 25x – 3 ×5x + 2 = 0\nMM6. Differentiation"
+            },
+            {
+              "type": "topic",
+              "code": "MM6.1",
+              "title": "The derivative of f(x) as the gradient of the tangent to the graph y = f(x) at a point.",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "Interpretation of a derivative as a rate of change.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "Second-order derivatives.",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "Knowledge of notation: d\nd\ny\nx , d\nd\ny\nx\n2 , f ′(x), and f ″(x)\nDifferentiation from first principles is excluded.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "MM6.2",
+              "title": "Differentiation of xn for rational n, and related sums and differences. This might require",
+              "children": [],
+              "text": "some simplification before differentiating.\nFor example, the ability to differentiate an expression such as x\nx\n+\n2 (3 2)"
+            },
+            {
+              "type": "topic",
+              "code": "MM6.3",
+              "title": "Applications of differentiation to gradients, tangents, normals, stationary points (maxima",
+              "children": [],
+              "text": "and minima only), strictly increasing functions [ if f ′(x) > 0 ] and strictly decreasing\nfunctions [ if f ′(x) < 0 ]. Points of inflexion will not be examined, although a qualitative\nunderstanding of points of inflexion in the curves of simple polynomial functions is\nexpected.\nMM7. Integration"
+            },
+            {
+              "type": "topic",
+              "code": "MM7.1",
+              "title": "Definite integration as related to the ‘area between a curve and an axis’. The difference",
+              "children": [],
+              "text": "between finding a definite integral and finding the area between a curve and an axis is\nexpected to be understood."
+            },
+            {
+              "type": "topic",
+              "code": "MM7.2",
+              "title": "Finding definite and indefinite integrals of xn for n rational, n ≠ 1, and related sums and",
+              "children": [],
+              "text": "differences, including expressions which require simplification prior to integrating.\nFor example: x+ dx  2 ( 2) and x\nx\nx d  −\n2 (3 5 )"
+            },
+            {
+              "type": "topic",
+              "code": "MM7.3",
+              "title": "An understanding of the Fundamental Theorem of Calculus and its significance to",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "d b\na f x x  ( ) = F(b) – F(a), where F′(x) = f(x)",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "d d\nd\nx\na f x x\nx  ( ) = f(x)",
+                  "children": []
+                }
+              ],
+              "text": "integration. Simple examples of its use may be required in the forms:"
+            },
+            {
+              "type": "topic",
+              "code": "MM7.4",
+              "title": "Combining integrals with either equal or contiguous ranges.",
+              "children": [],
+              "text": "For example: \n2 f (x)dx + \ng(x)dx =  +\n[ f ( x) g( x)]dx\n\n2 f (x)dx + \n4 f (x)dx = \n2 f (x)dx"
+            },
+            {
+              "type": "topic",
+              "code": "MM7.5",
+              "title": "Approximation of the area under a curve using the trapezium rule; determination of",
+              "children": [],
+              "text": "whether this constitutes an overestimate or an underestimate."
+            },
+            {
+              "type": "topic",
+              "code": "MM7.6",
+              "title": "Solving differential equations of the form d",
+              "children": [],
+              "text": "d\ny\nx = f(x)\nMM8. Graphs of functions"
+            },
+            {
+              "type": "topic",
+              "code": "MM8.1",
+              "title": "Recognise and be able to sketch the graphs of common functions that appear in this",
+              "children": [],
+              "text": "specification: these include lines, quadratics, cubics, trigonometric functions, logarithmic\nfunctions, exponential functions, square roots, and the modulus function."
+            },
+            {
+              "type": "topic",
+              "code": "MM8.2",
+              "title": "Knowledge of the effect of simple transformations on the graph of y = f(x) with positive or",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "y = af(x)",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "y = f(x) + a",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "c",
+                  "text": "y = f(x+a)",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "d",
+                  "text": "y = f(ax)\nCompositions of these transformations. Knowledge and use of the notation f (g (x)).",
+                  "children": []
+                }
+              ],
+              "text": "negative value of a as represented by:"
+            },
+            {
+              "type": "topic",
+              "code": "MM8.3",
+              "title": "Understand how altering the values of m and c affects the graph of y = mx + c",
+              "children": []
+            },
+            {
+              "type": "topic",
+              "code": "MM8.4",
+              "title": "Understand how altering the values of a, b and c in y = a(x+b)2 + c affects the",
+              "children": [],
+              "text": "corresponding graph."
+            },
+            {
+              "type": "topic",
+              "code": "MM8.5",
+              "title": "Use differentiation to help determine the shape of the graph of a given function, including:",
+              "children": [
+                {
+                  "type": "bullet",
+                  "label": "a",
+                  "text": "finding stationary points (excluding inflexions)",
+                  "children": []
+                },
+                {
+                  "type": "bullet",
+                  "label": "b",
+                  "text": "when the graph is increasing or decreasing",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "topic",
+              "code": "MM8.6",
+              "title": "Use algebraic techniques to determine where the graph of a function intersects the",
+              "children": [],
+              "text": "coordinate axes; appreciate the possible numbers of real roots that a general polynomial\ncan possess."
+            },
+            {
+              "type": "topic",
+              "code": "MM8.7",
+              "title": "Geometric interpretation of algebraic solutions of equations; relationship between the",
+              "children": [],
+              "text": "intersections of two graphs and the solutions of the corresponding simultaneous\nequations."
+            }
+          ],
+          "topic_count": 39
+        },
+        {
+          "type": "page_marker",
+          "value": 5
+        },
+        {
+          "type": "page_marker",
+          "value": 3
+        },
+        {
+          "type": "page_marker",
+          "value": 43
+        },
+        {
+          "type": "page_marker",
+          "value": 3
+        },
+        {
+          "type": "page_marker",
+          "value": 44
+        },
+        {
+          "type": "page_marker",
+          "value": 2
+        },
+        {
+          "type": "page_marker",
+          "value": 1
+        },
+        {
+          "type": "page_marker",
+          "value": 2
+        },
+        {
+          "type": "page_marker",
+          "value": 45
+        },
+        {
+          "type": "page_marker",
+          "value": 2
+        },
+        {
+          "type": "page_marker",
+          "value": 1
+        },
+        {
+          "type": "page_marker",
+          "value": 5
+        },
+        {
+          "type": "page_marker",
+          "value": 5
+        },
+        {
+          "type": "page_marker",
+          "value": 2
+        },
+        {
+          "type": "page_marker",
+          "value": 5
+        },
+        {
+          "type": "page_marker",
+          "value": 2
+        },
+        {
+          "type": "page_marker",
+          "value": 4
+        },
+        {
+          "type": "page_marker",
+          "value": 3
+        },
+        {
+          "type": "page_marker",
+          "value": 3
+        },
+        {
+          "type": "page_marker",
+          "value": 46
+        }
+      ]
+    }
+  ]
+}

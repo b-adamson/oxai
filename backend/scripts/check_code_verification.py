@@ -17,8 +17,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from src.services.answer_match import match_value_to_options
-from src.services.code_sandbox import execute_verification_code
+from src.utils.answer_match import match_value_to_options
+from src.utils.code_sandbox import execute_verification_code
 
 BOLD = '\033[1m'
 GREEN = '\033[32m'

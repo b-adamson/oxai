@@ -12,14 +12,17 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
+from dotenv import load_dotenv
 from openai import OpenAI
 
-from src.services.answer_match import match_value_to_options
-from src.services.code_sandbox import execute_verification_code
-from src.services.example_index import QuestionExampleIndex, corpus_fingerprint
+from src.utils.answer_match import match_value_to_options
+from src.utils.code_sandbox import execute_verification_code
+from src.utils.example_index import QuestionExampleIndex, corpus_fingerprint
 from src.services.generate_diagram import DiagramGenerationService, DiagramSettings
 from src.services.generation_session import GenerationSession
 from src.figures.figure_router import process_figures
+
+load_dotenv()
 
 LOGGER = logging.getLogger('oxai.generate_question')
 OPTION_LABELS = ['A', 'B', 'C', 'D', 'E']
@@ -44,6 +47,55 @@ def _safe_json_dumps(obj: Any) -> str:
 
 def _load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding='utf-8'))
+
+
+def _load_syllabus(syllabus_path: Path) -> Dict[str, List[str]]:
+    """Parse ESAT_syllabus.json and return topic codes+titles keyed by subject."""
+    _SECTION_MAP = {
+        'MATHEMATICS 1': 'math',
+        'MATHEMATICS 2': 'math',
+        'BIOLOGY': 'biology',
+        'CHEMISTRY': 'chemistry',
+        'PHYSICS': 'physics',
+    }
+    result: Dict[str, List[str]] = {}
+
+    try:
+        data = json.loads(syllabus_path.read_text(encoding='utf-8'))
+    except Exception as exc:
+        LOGGER.warning('Could not load syllabus from %s: %s', syllabus_path, exc)
+        return result
+
+    def collect_topics(nodes: list) -> List[str]:
+        topics: List[str] = []
+        for node in nodes:
+            if not isinstance(node, dict):
+                continue
+            if node.get('type') == 'topic':
+                code = (node.get('code') or '').strip()
+                title = (node.get('title') or '').strip().rstrip(',').rstrip(':')
+                if code and title:
+                    topics.append(f'{code}: {title}')
+            topics.extend(collect_topics(node.get('children', [])))
+        return topics
+
+    def walk(nodes: list) -> None:
+        for node in nodes:
+            if not isinstance(node, dict):
+                continue
+            if node.get('type') == 'section':
+                key = (node.get('title') or '').strip().upper()
+                subject = _SECTION_MAP.get(key)
+                if subject:
+                    topics = collect_topics(node.get('children', []))
+                    if subject not in result:
+                        result[subject] = []
+                    result[subject].extend(topics)
+                    LOGGER.info('Syllabus: loaded %d topics for %s (section=%s)', len(topics), subject, key)
+            walk(node.get('children', []))
+
+    walk(data.get('children', []))
+    return result
 
 
 def load_questions(processed_dir: Path) -> List[Dict[str, Any]]:
@@ -154,11 +206,12 @@ class GenerationSettings:
     openai_model_draft: str = os.getenv('OPENAI_MODEL_DRAFT', 'gpt-5.5')
     openai_model_image: str = os.getenv('OPENAI_IMAGE_MODEL', 'gpt-image-2')
     temperature: float = 0.7
-    max_output_tokens: int = 3000
+    reasoning_effort: str = os.getenv('REASONING_EFFORT', 'none')
+    max_output_tokens: Optional[int] = int(os.getenv('MAX_OUTPUT_TOKENS')) if os.getenv('MAX_OUTPUT_TOKENS') else None
     repair_max_output_tokens: int = 1200
     examples: int = 3
     # Code-execution verification of calculation questions
-    enable_code_verification: bool = os.getenv('ENABLE_CODE_VERIFICATION', '0').lower() not in ('0', 'false')
+    enable_code_verification: bool = os.getenv('ENABLE_CODE_VERIFICATION', '1').lower() not in ('0', 'false')
     code_exec_timeout_s: float = float(os.getenv('CODE_EXEC_TIMEOUT_S', '5'))
     code_exec_max_mem_mb: int = int(os.getenv('CODE_EXEC_MAX_MEM_MB', '512'))
     code_exec_max_code_len: int = int(os.getenv('CODE_EXEC_MAX_CODE_LEN', '4000'))
@@ -236,27 +289,15 @@ class RecentQuestionStore:
 class QuestionGenerationService:
     """Generates fresh questions from the bank plus GPT."""
 
-    _TOPIC_LIST: Dict[str, str] = {
-        'math': (
-            'algebra, functions and graphs, coordinate geometry, geometry, trigonometry, '
-            'exponentials and logarithms, sequences and series, vectors, probability, statistics'
-        ),
-        'physics': (
-            'mechanics, electricity, waves, thermal physics, radioactivity, electromagnetism, atomic physics'
-        ),
-        'chemistry': (
-            'atomic structure, bonding, stoichiometry, energetics, kinetics, equilibrium, acids and bases, '
-            'organic chemistry, electrochemistry'
-        ),
-        'biology': (
-            'cell biology, biochemistry, genetics, physiology, ecology'
-        ),
-    }
-
     def __init__(self, settings: GenerationSettings, logger: Optional[logging.Logger] = None) -> None:
         self.settings = settings
         self.logger = logger or LOGGER
         self.client = OpenAI()
+        self._syllabus = _load_syllabus(settings.processed_dir / 'ESAT_syllabus.json')
+        self.logger.info(
+            'reasoning=%s  max_output_tokens=%s  syllabus subjects=%s',
+            settings.reasoning_effort, settings.max_output_tokens, list(self._syllabus.keys()),
+        )
         self.recent_questions = RecentQuestionStore(
             self.settings.generated_dir / 'recent_question_signatures.sqlite',
             maxlen=self.settings.recent_signature_limit,
@@ -324,7 +365,7 @@ class QuestionGenerationService:
         instructions: str,
         payload: Dict[str, Any],
         schema: Dict[str, Any],
-        max_output_tokens: int,
+        max_output_tokens: Optional[int] = None,
     ) -> Dict[str, Any]:
         """Call the OpenAI Responses API and return the parsed result.
 
@@ -333,17 +374,25 @@ class QuestionGenerationService:
         OpenAI's automatic prompt caching applies to the prefix, keeping cost
         flat rather than growing with each question in a session.
         """
+        user_content = json.dumps(payload, ensure_ascii=False, indent=2)
         self.logger.info(
-            '[openai] responses.create  model=%s  schema=%s  max_tokens=%d',
-            model, schema['name'], max_output_tokens,
+            '[openai] responses.create  model=%s  schema=%s  max_tokens=%s  '
+            'instructions_chars=%d  payload_chars=%d',
+            model, schema['name'], max_output_tokens if max_output_tokens is not None else 'unlimited',
+            len(instructions), len(user_content),
         )
+        self.logger.debug('[openai] instructions:\n%s', instructions)
+        if self.logger.isEnabledFor(logging.DEBUG):
+            _loggable = {k: f'[{len(v)} examples omitted]' if k == 'style_examples' else v for k, v in payload.items()}
+            self.logger.debug('[openai] payload:\n%s', json.dumps(_loggable, ensure_ascii=False, indent=2))
         t0 = time.perf_counter()
-        response = self.client.responses.create(
+        create_kwargs: Dict[str, Any] = dict(
             model=model,
             input=[
                 {'role': 'developer', 'content': instructions},
-                {'role': 'user', 'content': json.dumps(payload, ensure_ascii=False, indent=2)},
+                {'role': 'user', 'content': user_content},
             ],
+            reasoning={'effort': self.settings.reasoning_effort},
             text={
                 'format': {
                     'type': 'json_schema',
@@ -352,18 +401,48 @@ class QuestionGenerationService:
                     'strict': True,
                 }
             },
-            max_output_tokens=max_output_tokens,
         )
+        if max_output_tokens is not None:
+            create_kwargs['max_output_tokens'] = max_output_tokens
+        response = self.client.responses.create(**create_kwargs)
+        elapsed = time.perf_counter() - t0
         usage = getattr(response, 'usage', None)
-        self.logger.info(
-            '[openai] responses.create done  schema=%s  elapsed=%.2fs  tokens=in:%s/out:%s/max:%d',
-            schema['name'],
-            time.perf_counter() - t0,
-            getattr(usage, 'input_tokens', '?'),
-            getattr(usage, 'output_tokens', '?'),
-            max_output_tokens,
+        raw_text = self._response_text(response)
+        cached_tokens = getattr(usage, 'input_tokens_details', None)
+        cached_count = getattr(cached_tokens, 'cached_tokens', '?') if cached_tokens else '?'
+        out_tokens = getattr(usage, 'output_tokens', None)
+        truncated = (
+            isinstance(out_tokens, int)
+            and max_output_tokens is not None
+            and out_tokens >= max_output_tokens
         )
-        return json.loads(self._response_text(response))
+        self.logger.info(
+            '[openai] responses.create done  schema=%s  elapsed=%.2fs  '
+            'tokens=in:%s(cached:%s)/out:%s/max:%s  output_chars=%d%s',
+            schema['name'],
+            elapsed,
+            getattr(usage, 'input_tokens', '?'),
+            cached_count,
+            out_tokens if out_tokens is not None else '?',
+            max_output_tokens if max_output_tokens is not None else 'unlimited',
+            len(raw_text),
+            '  TRUNCATED' if truncated else '',
+        )
+        if truncated:
+            self.logger.warning(
+                '[openai] output hit token limit (%d) — JSON likely truncated. '
+                'Set MAX_OUTPUT_TOKENS higher or unset it entirely.',
+                max_output_tokens,
+            )
+        self.logger.debug('[openai] raw output:\n%s', raw_text)
+        try:
+            return json.loads(raw_text)
+        except json.JSONDecodeError as exc:
+            if truncated:
+                raise ValueError(
+                    f'Output truncated at token limit ({max_output_tokens}): {exc}'
+                ) from exc
+            raise
 
     # ------------------------------------------------------------------
     # Schemas
@@ -465,10 +544,11 @@ class QuestionGenerationService:
                     'validation': {
                         'type': 'object',
                         'additionalProperties': False,
-                        'required': ['answer_label', 'answer_text'],
+                        'required': ['answer_label', 'answer_text', 'worked_solution'],
                         'properties': {
                             'answer_label': {'type': ['string', 'null'], 'enum': OPTION_LABELS + [None]},
                             'answer_text': {'type': ['string', 'null']},
+                            'worked_solution': {'type': ['string', 'null']},
                         },
                     },
                 },
@@ -501,25 +581,109 @@ class QuestionGenerationService:
         subject: str,
         want_diagram: bool,
         force_diagram: bool = False,
-        prior_coverage_summary: str = '',
-        avoid_topics: Optional[List[str]] = None,
-        similar_to_context: Optional[str] = None,
     ) -> str:
-        topic_list = self._TOPIC_LIST.get(subject.lower().strip(), 'the relevant syllabus topics')
+        """Return a static system prompt for the given (subject, diagram) config.
+
+        Dynamic per-call fields (avoid_topics, prior_coverage_summary,
+        similar_to_context) are intentionally excluded — they live in the user
+        payload so the developer message stays identical across calls and
+        OpenAI's automatic prefix caching can apply.
+        """
+        syllabus_topics = self._syllabus.get(subject.lower().strip(), [])
         extra = self.settings.extra_instructions or ''
+
+        if syllabus_topics:
+            syllabus_block = (
+                f'SYLLABUS — {subject.upper()}\n'
+                'Generate questions ONLY on topics listed below. Do not invent or use any topic not on this list.\n'
+                + '\n'.join(syllabus_topics)
+                + '\n'
+            )
+        else:
+            syllabus_block = (
+                f'SUBJECT COVERAGE\n'
+                f'Generate questions covering the standard {subject} syllabus for NSAA/ESAT.\n'
+            )
+
         base = (
-            'You are generating a brand new NSAA/ESAT-style multiple-choice question. '
-            'Use the provided examples only for style, tone, and level — do not copy their wording or structure. '
-            'Return only JSON that matches the schema. '
-            'Make the question concise, on-topic, and realistically exam-like. '
-            'Provide exactly five options labeled A-E. '
-            'Solve the question internally before writing it so the correct option is genuinely right. '
-            f'Rotate broadly across the subject syllabus: {topic_list}. '
-            'Avoid defaulting to the same topic or question shape repeatedly. '
-            'For Mathematics, do not use calculus, integration, or differentiation unless the topic explicitly calls for it. '
+            'You are generating a brand new NSAA/ESAT-style multiple-choice question for the Cambridge Natural '
+            'Sciences Admissions Assessment (NSAA) or the Engineering and Science Admissions Test (ESAT). '
+            'These are highly competitive pre-interview admissions tests for Cambridge University. '
+            'Questions are multiple-choice with exactly five options (A–E), one definitively correct. '
+            'The style is terse, precise, and unambiguous — no waffle, no hints toward the answer, '
+            'no redundant preamble. Every word in the stem must earn its place. '
+            '\n\n'
+            'STYLE RULES\n'
+            '- Use the provided style_examples only for tone, difficulty calibration, and format reference. '
+            'Do not copy wording, numbers, or scenario from any example.\n'
+            '- Distractors must be plausible and arise from common errors or misconceptions, not random values.\n'
+            '- The stem must be self-contained: a student should not need external knowledge beyond the syllabus.\n'
+            '- Avoid trivial questions that can be answered by elimination without working.\n'
+            '- Vary archetypes: definition recall, manipulation, multi-step calculation, conceptual reasoning, '
+            'data interpretation, estimation.\n'
+            '- Never default to the same topic or archetype on back-to-back questions.\n'
+            '- The user message may name a specific topic — honour it, but choose a fresh subtopic or scenario.\n'
+            '- For Mathematics: do not use calculus, integration, or differentiation unless the requested '
+            'topic code explicitly requires it. Prefer algebraic and combinatorial approaches.\n'
+            '\n'
+            + syllabus_block +
+            '\n'
+            'DIFFICULTY CALIBRATION\n'
+            'Difficulty is an integer 1–5 supplied in the user message.\n'
+            '  1 — single-step, direct application of a definition or formula.\n'
+            '  2 — two-step, straightforward manipulation or substitution.\n'
+            '  3 — multi-step, requires chaining two or more ideas; some ingenuity helpful.\n'
+            '  4 — non-obvious setup, requires insight or elegant reformulation.\n'
+            '  5 — olympiad-adjacent, unexpected trick or deep conceptual point required.\n'
+            'Match the requested difficulty faithfully — do not round down for safety.\n'
+            '\n'
+            'LATEX RULES\n'
+            'Every mathematical expression, variable, unit, and equation MUST be typeset in LaTeX. No exceptions.\n'
+            '  - Inline math: $...$ — e.g. "$x^2 + y^2 = r^2$", "$v = u + at$"\n'
+            '  - Display math: $$...$$ for standalone equations.\n'
+            '  - Variables: always $x$, $t$, $m$, $v$ — never bare letters.\n'
+            '  - Units: "$\\\\text{m s}^{-1}$", "$\\\\text{kg}$", "$\\\\text{J mol}^{-1}$"\n'
+            '  - Chemical formulas: "$\\\\mathrm{H_2O}$", "$\\\\mathrm{CO_2}$"\n'
+            '  - Reactions: "$\\\\mathrm{CuO + H_2 \\\\rightarrow Cu + H_2O}$"\n'
+            '  - Degrees: "$90^{\\\\circ}$"\n'
+            '  - Scientific notation: "$3.0 \\\\times 10^{8}$"\n'
+            '  - Fractions in options: $\\\\dfrac{a}{b}$ (display-size).\n'
+            '  - Plain prose words ("five options", "two dice") do NOT need LaTeX.\n'
+            '  - Never write a number followed by a unit in plain text — always "$3.0\\ \\\\text{m s}^{-1}$".\n'
+            '  - Never mix LaTeX and plain text for the same quantity.\n'
+            '\n'
+            'QUESTION DESIGN ORDER — follow this sequence strictly:\n'
+            '  1. Pick a specific, clean answer value (a number, expression, or letter that will become the correct option).\n'
+            '  2. Work backwards: design a stem whose constraints uniquely determine that value.\n'
+            '  3. Verify your stem is self-consistent — substitute your answer back in and confirm it satisfies every condition.\n'
+            '  4. Write four plausible distractors arising from realistic errors (wrong formula, sign slip, order-of-operations mistake).\n'
+            '  5. Only then write validation.worked_solution showing the full derivation.\n'
+            'Never design forward (invent constraints and hope they yield a clean answer). '
+            'If at step 3 you discover the stem is inconsistent, redesign from step 1 — do not proceed.\n'
+            '\n'
+            'WORKED SOLUTION\n'
+            'Write your complete step-by-step working in validation.worked_solution (LaTeX throughout). '
+            'The solution must derive the answer from first principles — show every step a student would need. '
+            'Full derivation with intermediate steps; flag common errors where relevant. '
+            'validation.answer_label MUST match the option your solution arrives at.\n'
+            '\n'
+            'OUTPUT SCHEMA\n'
+            'Return only valid JSON matching the schema — no markdown fences, no prose outside the JSON.\n'
+            'Fields content.topic, content.subtopic, content.archetype: use lowercase snake_case strings.\n'
+            'content.requires_diagram: true only if a figure is genuinely essential to answer the question.\n'
+            'content.requires_calculation: true if numerical or algebraic manipulation is required.\n'
+            'validation.answer_label: the letter (A–E) of the single correct option.\n'
+            'validation.answer_text: copy the option text verbatim, character-for-character.\n'
+            'validation.worked_solution: full step-by-step solution as described above.\n'
+            '\n'
+            'DYNAMIC GUIDANCE\n'
+            'The user message contains per-request fields: avoid_topics, topic, difficulty, style_examples, '
+            'and optionally prior_coverage_summary and similar_to_context. '
+            'Follow all dynamic guidance faithfully.\n'
         )
         if self.settings.enable_code_verification:
             base += (
+                '\nCODE VERIFICATION\n'
                 'If content.requires_calculation is true, you MUST provide generation.solution_code: '
                 'a self-contained Python 3 snippet that computes the answer purely from the data given in the stem. '
                 'The code must NOT reference the answer options, the letters A-E, or your chosen answer in any way. '
@@ -529,38 +693,28 @@ class QuestionGenerationService:
                 'For numeric answers assign a plain number without units, expressed in the same unit the options use. '
                 'For exact symbolic answers (surds, fractions, pi) assign a sympy expression. '
                 'The value of RESULT must equal the option you mark in validation.answer_label. '
-                'If content.requires_calculation is false, set generation.solution_code to null. '
+                'If content.requires_calculation is false, set generation.solution_code to null.\n'
             )
-        base += (
-            'All mathematical expressions, variables, and numbers used in equations must be typeset in LaTeX. '
-            'Use $...$ for inline math. '
-            'For example: "$x^2 + y^2$" not "x^2 + y^2"; "$2H_2O$" for chemical formulas; '
-            '"$\\\\mathrm{CuO + H_2 \\\\rightarrow Cu + H_2O}$" for chemical equations. '
-            'Use $^\\\\circ$ for degrees; $\\\\times 10^{n}$ for scientific notation. '
-            'Plain prose numbers (e.g. "five options") do NOT need LaTeX. '
-        )
-        if prior_coverage_summary:
-            base += f'\n{prior_coverage_summary}. '
-        if avoid_topics:
-            base += f'Avoid these recently overused topics: {", ".join(avoid_topics)}. '
         if force_diagram:
             base += (
-                'This question must require a figure. '
-                'Set content.requires_diagram=true and include at least one entry in prompt.figures. '
-                'The stem must refer to the figure. '
+                '\nDIAGRAM REQUIREMENT\n'
+                'This question MUST include a figure — content.requires_diagram=true. '
+                'Include at least one entry in prompt.figures and reference it in the stem. '
                 'Choose figure_type: "table" for data tables; "simple_graph" for charts/plots with numeric series; '
                 '"complex_diagram" for geometric figures, circuit diagrams, or freeform images. '
-                'Populate only the fields relevant to the chosen type; set unrelated fields to null. '
+                'Populate only the fields relevant to the chosen type; set unrelated fields to null.\n'
             )
         elif not want_diagram:
-            base += 'Do not include a required diagram. Set content.requires_diagram=false and prompt.figures=[]. '
+            base += (
+                '\nNO DIAGRAM\n'
+                'Do not include a figure. Set content.requires_diagram=false and prompt.figures=[].\n'
+            )
         else:
             base += (
-                'You may include a figure if it genuinely helps. '
-                'Use "table" for data tables, "simple_graph" for charts/plots, "complex_diagram" for geometric images. '
+                '\nDIAGRAM OPTIONAL\n'
+                'Include a figure only if it genuinely aids understanding. '
+                'Use "table" for data tables, "simple_graph" for charts/plots, "complex_diagram" for geometric images.\n'
             )
-        if similar_to_context:
-            base += '\n\n' + similar_to_context
         return base + extra
 
     def _repair_instructions(self) -> str:
@@ -752,10 +906,20 @@ class QuestionGenerationService:
             else:
                 expected = str(options[idx].get('text', ''))
                 if not isinstance(ans_text, str) or ans_text.strip() != expected.strip():
+                    self.logger.warning(
+                        '[validate] answer_text mismatch for label=%s  '
+                        'expected=%r  got=%r',
+                        ans_label, expected, ans_text,
+                    )
                     issues.append('validation.answer_text does not match answer_label')
 
         if content.get('requires_diagram') and not isinstance(prompt.get('figures', []), list):
             issues.append('figures missing for diagram question')
+
+        if issues:
+            self.logger.info('[validate] %d issue(s): %s', len(issues), '; '.join(issues))
+        else:
+            self.logger.debug('[validate] passed cleanly')
 
         return issues
 
@@ -764,14 +928,18 @@ class QuestionGenerationService:
     # ------------------------------------------------------------------
 
     def _repair_question(self, draft: Dict[str, Any], issues: List[str]) -> Dict[str, Any]:
+        self.logger.warning('[repair] REPAIR TRIGGERED  issues=%s', issues)
         repair_payload = {'task': 'repair_question', 'issues': issues, 'draft_question': draft}
-        return self._call_structured(
+        t0 = time.perf_counter()
+        result = self._call_structured(
             model=self.settings.openai_model_draft,
             instructions=self._repair_instructions(),
             payload=repair_payload,
             schema=self._repair_schema(),
             max_output_tokens=self.settings.repair_max_output_tokens,
         )
+        self.logger.warning('[repair] repair call done  elapsed=%.2fs', time.perf_counter() - t0)
+        return result
 
     def _maybe_generate_diagram(self, draft: Dict[str, Any], want_diagram: bool, force_diagram: bool = False) -> None:
         t0 = time.perf_counter()
@@ -900,17 +1068,20 @@ class QuestionGenerationService:
         )
 
     def _finalize_question(self, draft: Dict[str, Any], want_diagram: bool, force_diagram: bool) -> Dict[str, Any]:
+        t_finalize = time.perf_counter()
         draft = self._normalize_question(draft)
         issues = self._validate_question(draft)
 
         if issues:
-            self.logger.info('Draft validation issues: %s', '; '.join(issues))
             repaired = self._repair_question(draft, issues)
             draft = self._normalize_question(repaired)
-            issues = self._validate_question(draft)
-
-        if issues:
-            raise ValueError('Generated question still failed validation: ' + '; '.join(issues))
+            post_repair_issues = self._validate_question(draft)
+            if post_repair_issues:
+                self.logger.error(
+                    '[finalize] still failing after repair: %s', '; '.join(post_repair_issues)
+                )
+                raise ValueError('Generated question still failed validation: ' + '; '.join(post_repair_issues))
+            self.logger.info('[finalize] repair resolved all issues')
 
         validation = draft.setdefault('validation', {})
         if validation.get('answer_label') not in OPTION_LABELS:
@@ -918,7 +1089,13 @@ class QuestionGenerationService:
         idx = OPTION_LABELS.index(validation['answer_label'])
         validation['answer_text'] = draft['prompt']['options'][idx]['text']
 
-        if bool(draft.get('content', {}).get('requires_calculation')) and self.settings.enable_code_verification:
+        requires_calc = bool(draft.get('content', {}).get('requires_calculation'))
+        self.logger.debug(
+            '[finalize] requires_calculation=%s  code_verification_enabled=%s',
+            requires_calc, self.settings.enable_code_verification,
+        )
+
+        if requires_calc and self.settings.enable_code_verification:
             # Sets status='verified' + verified_by + evidence, or raises
             # VerificationError -> outer retry loop drafts afresh. No repair:
             # a wrong computed answer means the whole question is suspect.
@@ -926,7 +1103,11 @@ class QuestionGenerationService:
         else:
             validation['status'] = 'verified'
 
+        t_diag = time.perf_counter()
         self._maybe_generate_diagram(draft, want_diagram=want_diagram, force_diagram=force_diagram)
+        self.logger.debug('[finalize] diagram step elapsed=%.2fs', time.perf_counter() - t_diag)
+
+        self.logger.info('[finalize] total elapsed=%.2fs', time.perf_counter() - t_finalize)
         return self._normalize_question(draft)
 
     def _check_duplicate(self, draft: Dict[str, Any], max_rounds: int, round_idx: int) -> bool:
@@ -966,9 +1147,13 @@ class QuestionGenerationService:
         effective_topic = topic if topic is not None else index.sample_topic(subject)
         avoid_topics = session.coverage.recent_topics(subject, n=4)
 
+        # Select up to 50 topic-aware examples per call. When a specific topic is
+        # requested the selection strongly favours questions from that topic; when
+        # no topic is given it draws broadly from the subject. This runs in <1 ms
+        # against the pre-built index so there is no latency cost.
         chosen = index.get_examples(
             subject, effective_topic, difficulty,
-            self.settings.examples,
+            k=50,
             archetype=archetype,
             want_diagram=want_diagram or force_diagram,
         )
@@ -977,35 +1162,54 @@ class QuestionGenerationService:
             subject=subject,
             want_diagram=want_diagram,
             force_diagram=force_diagram,
-            prior_coverage_summary=prior_summary,
-            avoid_topics=avoid_topics,
-            similar_to_context=similar_to_context,
         )
 
         payload: Dict[str, Any] = {
-            'request_nonce': uuid.uuid4().hex[:8],
             'task': 'draft_question',
             'subject': subject,
             'topic': effective_topic,
             'difficulty': difficulty,
             'want_diagram': want_diagram,
             'force_diagram': force_diagram,
-            'avoid_topics': avoid_topics,
-            'style_examples': [compact_example(q) for q in chosen],
             'output_rules': {
                 'exactly_five_options': True,
                 'labels': OPTION_LABELS,
                 'stem_contains_no_answer_choices': True,
                 'must_require_diagram': force_diagram,
             },
+            'style_examples': [compact_example(q) for q in chosen],
+            'avoid_topics': avoid_topics,
         }
+        if prior_summary:
+            payload['prior_coverage_summary'] = prior_summary
         if similar_to_context:
             payload['similar_to_context'] = similar_to_context
+        payload['request_nonce'] = uuid.uuid4().hex[:8]
 
-        max_rounds = 2
+        max_rounds = 3
         last_error: Optional[Exception] = None
+        t_total = time.perf_counter()
+
+        self.logger.info(
+            '[generate] START  subject=%s  topic=%s  difficulty=%d  '
+            'want_diagram=%s  force_diagram=%s  examples=%d  session=%s',
+            subject, effective_topic, difficulty,
+            want_diagram, force_diagram, len(chosen), session.session_id,
+        )
+        self.logger.debug(
+            '[generate] avoid_topics=%s  prior_summary=%r',
+            avoid_topics, prior_summary[:120] if prior_summary else '',
+        )
+
+        payload_bytes = len(json.dumps(payload, ensure_ascii=False).encode())
+        self.logger.info(
+            '[generate] payload  style_examples=%d  payload_kb=%.1f',
+            len(chosen), payload_bytes / 1024,
+        )
 
         for round_idx in range(1, max_rounds + 1):
+            t_round = time.perf_counter()
+            self.logger.info('[generate] round %d/%d', round_idx, max_rounds)
             try:
                 draft_raw = self._call_structured(
                     model=self.settings.openai_model_draft,
@@ -1016,6 +1220,38 @@ class QuestionGenerationService:
                 )
                 self._add_hint_fields(draft_raw, subject, effective_topic, difficulty)
                 draft = self._normalize_question(draft_raw)
+
+                raw_topic = (draft.get('content') or {}).get('topic')
+                raw_answer = (draft.get('validation') or {}).get('answer_label')
+                raw_ans_text = (draft.get('validation') or {}).get('answer_text', '')
+                raw_requires_calc = (draft.get('content') or {}).get('requires_calculation')
+                self.logger.info(
+                    '[generate] draft received  topic=%s  answer_label=%s  '
+                    'requires_calculation=%s  answer_text_chars=%d',
+                    raw_topic, raw_answer, raw_requires_calc,
+                    len(str(raw_ans_text)) if raw_ans_text else 0,
+                )
+
+                # Detect self-reported inconsistency in the worked solution.
+                # The model sometimes correctly identifies its own question is broken
+                # but fills in an answer_label anyway. Discard early without wasting
+                # a repair round on verification.
+                worked_sol = (draft.get('validation') or {}).get('worked_solution') or ''
+                _INCONSISTENCY_MARKERS = (
+                    'not among the options',
+                    'no valid option',
+                    'inconsistent',
+                    'stem as written',
+                    'stem-options',
+                    'no option',
+                )
+                if any(m in worked_sol.lower() for m in _INCONSISTENCY_MARKERS):
+                    self.logger.warning(
+                        '[generate] self-reported inconsistency in worked_solution (round %d) — discarding draft',
+                        round_idx,
+                    )
+                    raise ValueError('Model self-reported question inconsistency in worked_solution')
+
                 draft = self._finalize_question(draft, want_diagram=want_diagram, force_diagram=force_diagram)
 
                 sig = question_signature(draft)
@@ -1029,11 +1265,23 @@ class QuestionGenerationService:
                 actual_topic = (draft.get('content') or {}).get('topic', effective_topic)
                 actual_archetype = (draft.get('content') or {}).get('archetype')
                 session.record_call(None, subject, actual_topic, difficulty, actual_archetype)
+
+                self.logger.info(
+                    '[generate] SUCCESS  subject=%s  topic=%s  archetype=%s  '
+                    'round=%d  round_elapsed=%.2fs  total_elapsed=%.2fs',
+                    subject, actual_topic, actual_archetype,
+                    round_idx,
+                    time.perf_counter() - t_round,
+                    time.perf_counter() - t_total,
+                )
                 return draft
 
             except Exception as exc:
                 last_error = exc
-                self.logger.warning('Session generation round %d/%d failed: %s', round_idx, max_rounds, exc)
+                self.logger.warning(
+                    '[generate] round %d/%d FAILED  elapsed=%.2fs  error=%s',
+                    round_idx, max_rounds, time.perf_counter() - t_round, exc,
+                )
 
         raise RuntimeError(f'Failed to generate question: {last_error}')
 
@@ -1127,29 +1375,28 @@ class QuestionGenerationService:
             archetype=archetype, want_diagram=want_diagram or force_diagram,
         )
         payload = {
-            'request_nonce': uuid.uuid4().hex,
             'task': 'draft_question',
             'subject': subject,
             'topic': effective_topic,
             'difficulty': difficulty,
             'want_diagram': want_diagram,
             'force_diagram': force_diagram,
-            'style_examples': [compact_example(q) for q in chosen],
             'output_rules': {
                 'exactly_five_options': True,
                 'labels': OPTION_LABELS,
                 'stem_contains_no_answer_choices': True,
                 'must_require_diagram': force_diagram,
             },
+            'style_examples': [compact_example(q) for q in chosen],
         }
         if similar_to_context:
             payload['similar_to_context'] = similar_to_context
+        payload['request_nonce'] = uuid.uuid4().hex[:8]
 
         instructions = self._draft_instructions(
             subject=subject,
             want_diagram=want_diagram,
             force_diagram=force_diagram,
-            similar_to_context=similar_to_context,
         )
 
         last_error: Optional[Exception] = None
@@ -1159,7 +1406,7 @@ class QuestionGenerationService:
 
         for round_idx in range(1, max_rounds + 1):
             try:
-                draft_raw, _ = self._call_structured(
+                draft_raw = self._call_structured(
                     model=self.settings.openai_model_draft,
                     instructions=instructions,
                     payload=payload,

@@ -49,11 +49,29 @@ function renderMixedText(text: string): string {
 function renderInlineMath(text: string): string {
   const INLINE_RE = /\$((?:[^$]|\\.)+?)\$|\\\((.+?)\\\)/g;
 
-  return text.replace(INLINE_RE, (_, g1, g2) => {
-    const latex = g1 ?? g2;
-    return katex.renderToString(latex, {
+  let result = '';
+  let pos = 0;
+  let m: RegExpExecArray | null;
+
+  INLINE_RE.lastIndex = 0;
+  while ((m = INLINE_RE.exec(text)) !== null) {
+    if (pos < m.index) result += renderPlainText(text.slice(pos, m.index));
+    result += katex.renderToString(m[1] ?? m[2], {
       displayMode: false,
       throwOnError: false,
     });
-  });
+    pos = m.index + m[0].length;
+  }
+  result += renderPlainText(text.slice(pos));
+  return result;
+}
+
+function renderPlainText(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\*\*(.+?)\*\*/gs, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/gs, '<em>$1</em>')
+    .replace(/\n/g, '<br>');
 }

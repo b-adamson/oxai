@@ -42,11 +42,11 @@ const DIFFICULTY_OPTIONS: { label: string; value: DifficultyPreset }[] = [
 const PAST_PAPER_YEARS = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024];
 
 const MODULE_COLORS: Record<string, { bg: string; text: string; ring: string; dot: string; bar: string }> = {
-  Mathematics:           { bg: 'bg-blue-50',    text: 'text-blue-700',   ring: 'ring-blue-300',   dot: 'bg-blue-400',   bar: 'bg-blue-400' },
-  Physics:               { bg: 'bg-green-50',   text: 'text-green-700',  ring: 'ring-green-300',  dot: 'bg-green-400',  bar: 'bg-green-400' },
-  Chemistry:             { bg: 'bg-amber-50',   text: 'text-amber-700',  ring: 'ring-amber-300',  dot: 'bg-amber-400',  bar: 'bg-amber-400' },
-  Biology:               { bg: 'bg-emerald-50', text: 'text-emerald-700',ring: 'ring-emerald-300',dot: 'bg-emerald-400',bar: 'bg-emerald-400' },
-  'Advanced Mathematics':{ bg: 'bg-purple-50',  text: 'text-purple-700', ring: 'ring-purple-300', dot: 'bg-purple-400', bar: 'bg-purple-400' },
+  Mathematics:           { bg: 'bg-blue-50 dark:bg-blue-950/30',    text: 'text-blue-700 dark:text-blue-300',   ring: 'ring-blue-300 dark:ring-blue-700',   dot: 'bg-blue-400',   bar: 'bg-blue-400' },
+  Physics:               { bg: 'bg-green-50 dark:bg-green-950/30',   text: 'text-green-700 dark:text-green-300',  ring: 'ring-green-300 dark:ring-green-700',  dot: 'bg-green-400',  bar: 'bg-green-400' },
+  Chemistry:             { bg: 'bg-amber-50 dark:bg-amber-950/30',   text: 'text-amber-700 dark:text-amber-300',  ring: 'ring-amber-300 dark:ring-amber-700',  dot: 'bg-amber-400',  bar: 'bg-amber-400' },
+  Biology:               { bg: 'bg-emerald-50 dark:bg-emerald-950/30', text: 'text-emerald-700 dark:text-emerald-300',ring: 'ring-emerald-300 dark:ring-emerald-700',dot: 'bg-emerald-400',bar: 'bg-emerald-400' },
+  'Advanced Mathematics':{ bg: 'bg-purple-50 dark:bg-purple-950/30',  text: 'text-purple-700 dark:text-purple-300', ring: 'ring-purple-300 dark:ring-purple-700', dot: 'bg-purple-400', bar: 'bg-purple-400' },
 };
 
 // ── Timer helpers ──────────────────────────────────────────────
@@ -76,10 +76,10 @@ function formatTime(ms: number): string {
 }
 
 function timerColor(ms: number): string {
-  if (ms === Infinity) return 'text-gray-700';
+  if (ms === Infinity) return 'text-gray-700 dark:text-gray-300';
   if (ms < 5 * 60 * 1000) return 'text-red-600 font-bold animate-pulse';
   if (ms < 30 * 60 * 1000) return 'text-amber-600 font-semibold';
-  return 'text-gray-700';
+  return 'text-gray-700 dark:text-gray-300';
 }
 
 function stubBlueprint(modules: string[], bankFraction: number, difficulty: DifficultyPreset): PaperBlueprint {
@@ -529,9 +529,9 @@ export default function PaperModePage() {
     const tooManyJobs = activePapers.length >= MAX_ACTIVE_JOBS;
 
     return (
-      <div className="min-h-screen bg-gray-50 p-4 pb-12">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-950 p-4 pb-12">
         <div className="max-w-xl mx-auto">
-          <h1 className="text-2xl font-bold text-gray-900 mt-6 mb-1">ESAT Paper Mode</h1>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mt-6 mb-1">ESAT Paper Mode</h1>
           <p className="text-sm text-gray-500 mb-6">
             60 questions across 3 modules · Mathematics is mandatory
           </p>
@@ -539,7 +539,7 @@ export default function PaperModePage() {
           {/* Saved papers */}
           {savedPapers.length > 0 && (
             <section className="mb-6">
-              <h2 className="text-sm font-semibold text-gray-700 mb-2">Your saved papers</h2>
+              <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Your saved papers</h2>
               <div className="space-y-2">
                 {savedPapers.map((sess) => {
                   const mods = sess.modules ?? [];
@@ -553,7 +553,7 @@ export default function PaperModePage() {
                   return (
                     <div
                       key={sess.session_id}
-                      className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-4 py-3"
+                      className="flex items-center gap-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3"
                     >
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
@@ -575,7 +575,7 @@ export default function PaperModePage() {
                           )}
                         </div>
                         <div className="mt-1 flex items-center gap-2">
-                          <div className="flex-1 bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                          <div className="flex-1 bg-gray-100 dark:bg-gray-800 rounded-full h-1.5 overflow-hidden">
                             <div
                               className="bg-accent h-1.5 rounded-full"
                               style={{ width: `${pct}%` }}
@@ -608,7 +608,7 @@ export default function PaperModePage() {
 
           {/* Max jobs warning */}
           {tooManyJobs && (
-            <div className="mb-5 p-3 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-700">
+            <div className="mb-5 p-3 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-xl text-sm text-amber-700 dark:text-amber-400">
               You have {MAX_ACTIVE_JOBS} active papers. Resume or abandon one before starting a new paper.
             </div>
           )}
@@ -616,7 +616,7 @@ export default function PaperModePage() {
           {/* Module selection */}
           <section className="mb-5">
             <div className="flex items-center justify-between mb-2">
-              <h2 className="text-sm font-semibold text-gray-700">Select modules</h2>
+              <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Select modules</h2>
               <span
                 className={`text-xs font-medium px-2 py-0.5 rounded-full ${
                   canStart
@@ -628,14 +628,14 @@ export default function PaperModePage() {
               </span>
             </div>
             <div className="space-y-2">
-              <div className="flex items-center gap-3 px-4 py-3 bg-blue-50 border-2 border-blue-200 rounded-xl">
+              <div className="flex items-center gap-3 px-4 py-3 bg-blue-50 dark:bg-blue-950/20 border-2 border-blue-200 dark:border-blue-800 rounded-xl">
                 <div className="w-5 h-5 rounded bg-blue-500 flex items-center justify-center flex-shrink-0">
                   <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-sm font-semibold text-blue-800">Mathematics</span>
-                <span className="ml-auto text-xs text-blue-500 font-medium">20 questions · mandatory</span>
+                <span className="text-sm font-semibold text-blue-800 dark:text-blue-300">Mathematics</span>
+                <span className="ml-auto text-xs text-blue-500 dark:text-blue-400 font-medium">20 questions · mandatory</span>
               </div>
               {OPTIONAL_MODULES.map((mod) => {
                 const selected = selectedOptional.includes(mod);
@@ -656,13 +656,13 @@ export default function PaperModePage() {
                       selected
                         ? `${colors.bg} border-current ${colors.text}`
                         : disabled
-                        ? 'bg-gray-50 border-gray-200 text-gray-400 cursor-not-allowed'
-                        : 'bg-white border-gray-200 text-gray-700 hover:border-gray-300'
+                        ? 'bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-600 cursor-not-allowed'
+                        : 'bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'
                     }`}
                   >
                     <div
                       className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
-                        selected ? 'bg-current border-current' : 'border-gray-300'
+                        selected ? 'bg-current border-current' : 'border-gray-300 dark:border-gray-600'
                       }`}
                     >
                       {selected && (
@@ -681,7 +681,7 @@ export default function PaperModePage() {
 
           {/* Source split */}
           <section className="mb-5">
-            <h2 className="text-sm font-semibold text-gray-700 mb-2">Question source</h2>
+            <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Question source</h2>
             <div className="grid grid-cols-5 gap-1.5">
               {SOURCE_OPTIONS.map((opt) => (
                 <button
@@ -690,7 +690,7 @@ export default function PaperModePage() {
                   className={`py-2 px-1 rounded-lg border text-xs font-medium text-center transition-colors leading-tight ${
                     bankFraction === opt.bankFraction
                       ? 'bg-accent text-white border-accent'
-                      : 'bg-white text-gray-600 border-gray-300 hover:border-gray-400'
+                      : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500'
                   }`}
                 >
                   {opt.label}
@@ -701,7 +701,7 @@ export default function PaperModePage() {
 
           {/* Difficulty */}
           <section className="mb-5">
-            <h2 className="text-sm font-semibold text-gray-700 mb-2">Difficulty</h2>
+            <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Difficulty</h2>
             <div className="grid grid-cols-4 gap-2">
               {DIFFICULTY_OPTIONS.map((opt) => (
                 <button
@@ -710,7 +710,7 @@ export default function PaperModePage() {
                   className={`py-2 px-3 rounded-lg border text-sm font-medium transition-colors ${
                     difficulty === opt.value
                       ? 'bg-accent text-white border-accent'
-                      : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
+                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500'
                   }`}
                 >
                   {opt.label}
@@ -721,20 +721,20 @@ export default function PaperModePage() {
 
           {/* Exam settings */}
           <section className="mb-5">
-            <h2 className="text-sm font-semibold text-gray-700 mb-2">Exam settings</h2>
-            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
+            <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Exam settings</h2>
+            <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
               {/* Exam mode toggle */}
               <button
                 onClick={() => setExamMode((v) => !v)}
-                className="w-full flex items-center justify-between px-4 py-3 hover:bg-gray-50 transition-colors"
+                className="w-full flex items-center justify-between px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
               >
                 <div className="text-left">
-                  <div className="text-sm font-medium text-gray-800">Exam mode</div>
+                  <div className="text-sm font-medium text-gray-800 dark:text-gray-200">Exam mode</div>
                   <div className="text-xs text-gray-400 mt-0.5">2-hour timer · no live feedback</div>
                 </div>
                 <div
                   className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                    examMode ? 'bg-accent' : 'bg-gray-200'
+                    examMode ? 'bg-accent' : 'bg-gray-200 dark:bg-gray-700'
                   }`}
                 >
                   <span
@@ -747,11 +747,11 @@ export default function PaperModePage() {
 
               {/* Custom settings when exam mode is off */}
               {!examMode && (
-                <div className="border-t border-gray-100 px-4 py-3 space-y-3">
+                <div className="border-t border-gray-100 dark:border-gray-800 px-4 py-3 space-y-3">
                   {/* Timer */}
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm text-gray-700">Countdown timer</div>
+                      <div className="text-sm text-gray-700 dark:text-gray-300">Countdown timer</div>
                       {customTimerEnabled && (
                         <div className="flex items-center gap-1.5 mt-1">
                           <input
@@ -762,7 +762,7 @@ export default function PaperModePage() {
                             onChange={(e) =>
                               setCustomTimerMinutes(Math.max(5, Math.min(300, Number(e.target.value))))
                             }
-                            className="w-16 border border-gray-300 rounded px-2 py-1 text-sm text-center text-gray-800"
+                            className="w-16 border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm text-center text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800"
                           />
                           <span className="text-xs text-gray-400">minutes</span>
                         </div>
@@ -771,7 +771,7 @@ export default function PaperModePage() {
                     <button
                       onClick={() => setCustomTimerEnabled((v) => !v)}
                       className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                        customTimerEnabled ? 'bg-accent' : 'bg-gray-200'
+                        customTimerEnabled ? 'bg-accent' : 'bg-gray-200 dark:bg-gray-700'
                       }`}
                     >
                       <span
@@ -785,13 +785,13 @@ export default function PaperModePage() {
                   {/* Live solution */}
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm text-gray-700">Live feedback</div>
+                      <div className="text-sm text-gray-700 dark:text-gray-300">Live feedback</div>
                       <div className="text-xs text-gray-400">Show correct/wrong after each answer</div>
                     </div>
                     <button
                       onClick={() => setCustomLiveSolution((v) => !v)}
                       className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                        customLiveSolution ? 'bg-accent' : 'bg-gray-200'
+                        customLiveSolution ? 'bg-accent' : 'bg-gray-200 dark:bg-gray-700'
                       }`}
                     >
                       <span
@@ -805,13 +805,13 @@ export default function PaperModePage() {
                   {/* Enable solutions */}
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm text-gray-700">Solutions</div>
+                      <div className="text-sm text-gray-700 dark:text-gray-300">Solutions</div>
                       <div className="text-xs text-gray-400">Allow generating worked solutions</div>
                     </div>
                     <button
                       onClick={() => setCustomEnableSolution((v) => !v)}
                       className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                        customEnableSolution ? 'bg-accent' : 'bg-gray-200'
+                        customEnableSolution ? 'bg-accent' : 'bg-gray-200 dark:bg-gray-700'
                       }`}
                     >
                       <span
@@ -825,13 +825,13 @@ export default function PaperModePage() {
                   {/* Enable hints */}
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm text-gray-700">Hints</div>
+                      <div className="text-sm text-gray-700 dark:text-gray-300">Hints</div>
                       <div className="text-xs text-gray-400">Allow requesting hints during the paper</div>
                     </div>
                     <button
                       onClick={() => setCustomEnableHints((v) => !v)}
                       className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                        customEnableHints ? 'bg-accent' : 'bg-gray-200'
+                        customEnableHints ? 'bg-accent' : 'bg-gray-200 dark:bg-gray-700'
                       }`}
                     >
                       <span
@@ -845,13 +845,13 @@ export default function PaperModePage() {
                   {/* Enable tutor */}
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm text-gray-700">AI Tutor</div>
+                      <div className="text-sm text-gray-700 dark:text-gray-300">AI Tutor</div>
                       <div className="text-xs text-gray-400">Allow asking the tutor for guidance</div>
                     </div>
                     <button
                       onClick={() => setCustomEnableTutor((v) => !v)}
                       className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                        customEnableTutor ? 'bg-accent' : 'bg-gray-200'
+                        customEnableTutor ? 'bg-accent' : 'bg-gray-200 dark:bg-gray-700'
                       }`}
                     >
                       <span
@@ -870,14 +870,14 @@ export default function PaperModePage() {
           <section className="mb-6">
             <button
               onClick={() => setShowAdvanced((v) => !v)}
-              className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700 transition-colors"
+              className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
             >
               <span className={`transition-transform ${showAdvanced ? 'rotate-90' : ''}`}>▶</span>
               Advanced options
             </button>
             {showAdvanced && (
-              <div className="mt-3 p-4 bg-gray-50 rounded-xl border border-gray-200">
-                <p className="text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">
+              <div className="mt-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                <p className="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wide">
                   Exclude past paper years
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -893,8 +893,8 @@ export default function PaperModePage() {
                       }
                       className={`px-3 py-1.5 rounded-lg border text-sm font-medium transition-colors ${
                         excludedYears.includes(year)
-                          ? 'bg-red-100 border-red-300 text-red-700'
-                          : 'bg-white border-gray-300 text-gray-600 hover:border-gray-400'
+                          ? 'bg-red-100 dark:bg-red-950/30 border-red-300 dark:border-red-700 text-red-700 dark:text-red-400'
+                          : 'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-500'
                       }`}
                     >
                       {year}
@@ -916,7 +916,7 @@ export default function PaperModePage() {
 
           {/* Summary badge */}
           {canStart && (
-            <div className="mb-4 p-3 bg-white border border-gray-200 rounded-xl text-sm text-gray-600">
+            <div className="mb-4 p-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm text-gray-600 dark:text-gray-400">
               <div className="flex flex-wrap gap-2 mb-2">
                 {allModules.map((m) => {
                   const c = MODULE_COLORS[m];
@@ -966,15 +966,15 @@ export default function PaperModePage() {
     const counts = slotCounts(slots);
     const pct = Math.round((readyCount / PRELOAD_COUNT) * 100);
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 w-full max-w-sm text-center">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex items-center justify-center p-4">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-8 w-full max-w-sm text-center">
           <div className="text-3xl mb-4 animate-pulse">📄</div>
-          <h2 className="text-lg font-semibold text-gray-800 mb-1">Assembling paper…</h2>
+          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1">Assembling paper…</h2>
           <p className="text-sm text-gray-500 mb-1">{modules.join(' · ')}</p>
           <p className="text-xs text-gray-400 mb-5">
             Loading first {PRELOAD_COUNT} questions before you start
           </p>
-          <div className="bg-gray-100 rounded-full h-2 overflow-hidden mb-2">
+          <div className="bg-gray-100 dark:bg-gray-800 rounded-full h-2 overflow-hidden mb-2">
             <div
               className="bg-accent h-2 rounded-full transition-all duration-500"
               style={{ width: `${Math.min(pct, 100)}%` }}
@@ -1022,12 +1022,12 @@ export default function PaperModePage() {
       const reviewAnswer = slot ? (submittedAnswers[slot.slot_id] ?? null) : null;
 
       return (
-        <div className="min-h-screen bg-gray-50">
-          <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-4 py-2.5">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
+          <div className="sticky top-0 z-10 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 py-2.5">
             <div className="max-w-3xl mx-auto flex items-center gap-3">
               <button
                 onClick={() => setReviewQuestionIdx(null)}
-                className="text-sm text-gray-600 hover:text-gray-800 flex items-center gap-1"
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 flex items-center gap-1"
               >
                 ← Back to summary
               </button>
@@ -1063,7 +1063,7 @@ export default function PaperModePage() {
                 totalQuestions={slots.length}
               />
             ) : (
-              <div className="bg-white rounded-xl border border-gray-200 p-8 text-center text-gray-400 text-sm">
+              <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-8 text-center text-gray-400 text-sm">
                 Question not available
               </div>
             )}
@@ -1071,7 +1071,7 @@ export default function PaperModePage() {
               <button
                 onClick={() => setReviewQuestionIdx((i) => Math.max(0, (i ?? 0) - 1))}
                 disabled={reviewQuestionIdx === 0}
-                className="flex-1 py-2.5 border border-gray-300 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50 disabled:opacity-30 transition-colors"
+                className="flex-1 py-2.5 border border-gray-300 dark:border-gray-700 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-30 transition-colors"
               >
                 ← Previous
               </button>
@@ -1080,7 +1080,7 @@ export default function PaperModePage() {
                   setReviewQuestionIdx((i) => Math.min(slots.length - 1, (i ?? 0) + 1))
                 }
                 disabled={reviewQuestionIdx === slots.length - 1}
-                className="flex-1 py-2.5 border border-gray-300 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50 disabled:opacity-30 transition-colors"
+                className="flex-1 py-2.5 border border-gray-300 dark:border-gray-700 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-30 transition-colors"
               >
                 Next →
               </button>
@@ -1092,17 +1092,17 @@ export default function PaperModePage() {
 
     // Summary + review grid
     return (
-      <div className="min-h-screen bg-gray-50 p-4 pb-12">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-950 p-4 pb-12">
         <div className="max-w-2xl mx-auto">
           {/* Score card */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-8 text-center mb-5">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 text-center mb-5">
             {timedOut && (
-              <div className="mb-3 text-sm text-amber-600 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
+              <div className="mb-3 text-sm text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg px-3 py-2">
                 Time&apos;s up — paper auto-submitted
               </div>
             )}
             <div className="text-4xl mb-3">{pct >= 70 ? '🎉' : pct >= 50 ? '📝' : '📚'}</div>
-            <h2 className="text-xl font-bold text-gray-900 mb-1">Paper submitted</h2>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Paper submitted</h2>
             <p
               className={`text-4xl font-bold mt-2 ${
                 pct >= 70
@@ -1140,7 +1140,7 @@ export default function PaperModePage() {
                   className={`flex items-center gap-3 px-4 py-2.5 rounded-xl ${c.bg}`}
                 >
                   <span className={`text-sm font-semibold ${c.text} w-40`}>{mod}</span>
-                  <div className="flex-1 bg-white rounded-full h-2 overflow-hidden">
+                  <div className="flex-1 bg-white dark:bg-gray-800 rounded-full h-2 overflow-hidden">
                     <div
                       className={`h-2 rounded-full ${c.bar}`}
                       style={{ width: `${modPct}%` }}
@@ -1156,8 +1156,8 @@ export default function PaperModePage() {
           </div>
 
           {/* Question review grid */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-4 mb-5">
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 p-4 mb-5">
+            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
               Review questions — click to see solution
             </h3>
             <div className="space-y-3">
@@ -1190,10 +1190,10 @@ export default function PaperModePage() {
                             }
                             className={`w-8 h-8 rounded-lg text-xs font-bold transition-colors hover:opacity-80 ${
                               unanswered
-                                ? 'bg-gray-100 text-gray-400'
+                                ? 'bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-500'
                                 : correct
-                                ? 'bg-emerald-100 text-emerald-700'
-                                : 'bg-red-100 text-red-600'
+                                ? 'bg-emerald-100 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400'
+                                : 'bg-red-100 dark:bg-red-950/30 text-red-600 dark:text-red-400'
                             }`}
                           >
                             {i + 1}
@@ -1228,9 +1228,9 @@ export default function PaperModePage() {
   const currentModuleColors = MODULE_COLORS[currentModule] ?? MODULE_COLORS['Mathematics'];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-4 py-2.5">
+      <div className="sticky top-0 z-10 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 py-2.5">
         <div className="max-w-3xl mx-auto flex items-center gap-3 flex-wrap">
           <div className="flex gap-1.5 flex-wrap">
             {modules.map((m) => {
@@ -1256,14 +1256,14 @@ export default function PaperModePage() {
 
             {/* Live score (only if live solution enabled) */}
             {paperLiveSolution && totalAnswered > 0 && (
-              <span className="text-sm text-gray-600">
-                <span className="font-semibold text-emerald-600">{totalCorrect}</span>
+              <span className="text-sm text-gray-600 dark:text-gray-400">
+                <span className="font-semibold text-emerald-600 dark:text-emerald-400">{totalCorrect}</span>
                 /{totalAnswered}
               </span>
             )}
 
             {!paperLiveSolution && totalAnswered > 0 && (
-              <span className="text-sm text-gray-500">{totalAnswered} answered</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">{totalAnswered} answered</span>
             )}
 
             <QueueStatus slots={slots} compact />
@@ -1277,7 +1277,7 @@ export default function PaperModePage() {
 
             <button
               onClick={handleExit}
-              className="text-xs text-gray-500 hover:text-gray-700 border border-gray-300 rounded px-2 py-1"
+              className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 border border-gray-300 dark:border-gray-700 rounded px-2 py-1"
             >
               Exit
             </button>
@@ -1286,7 +1286,7 @@ export default function PaperModePage() {
       </div>
 
       {/* Module-grouped question nav */}
-      <div className="bg-white border-b border-gray-100 px-4 py-2 overflow-x-auto">
+      <div className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 px-4 py-2 overflow-x-auto">
         <div className="max-w-3xl mx-auto space-y-1.5">
           {modules.map((mod, modIdx) => {
             const modSlots = slots.slice(
@@ -1323,10 +1323,10 @@ export default function PaperModePage() {
                             : answered
                             ? `${c.bg} ${c.text}`
                             : slot.status === 'ready'
-                            ? 'bg-gray-50 text-gray-500'
+                            ? 'bg-gray-50 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
                             : slot.status === 'generating'
-                            ? 'bg-amber-50 text-amber-400 animate-pulse'
-                            : 'bg-gray-100 text-gray-300'
+                            ? 'bg-amber-50 dark:bg-amber-950/20 text-amber-400 animate-pulse'
+                            : 'bg-gray-100 dark:bg-gray-800 text-gray-300 dark:text-gray-600'
                         }`}
                       >
                         {i + 1}
@@ -1356,13 +1356,13 @@ export default function PaperModePage() {
         )}
 
         {isWaiting ? (
-          <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
+          <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-12 text-center">
             <div className="text-3xl mb-3 animate-pulse">⚡</div>
-            <div className="text-sm text-gray-500">Generating question {currentIdx + 1}…</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400">Generating question {currentIdx + 1}…</div>
           </div>
         ) : currentSlot?.status === 'failed' ? (
-          <div className="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
-            <p className="text-sm text-red-600">Failed to generate this question.</p>
+          <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900 rounded-xl p-6 text-center">
+            <p className="text-sm text-red-600 dark:text-red-400">Failed to generate this question.</p>
           </div>
         ) : currentQuestion ? (
           <QuestionCard
@@ -1399,7 +1399,7 @@ export default function PaperModePage() {
             <button
               onClick={() => handleNavigate(Math.max(0, currentIdx - 1))}
               disabled={currentIdx === 0}
-              className="flex-1 py-2.5 border border-gray-300 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50 disabled:opacity-30 transition-colors"
+              className="flex-1 py-2.5 border border-gray-300 dark:border-gray-700 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-30 transition-colors"
             >
               ← Previous
             </button>
@@ -1413,7 +1413,7 @@ export default function PaperModePage() {
             ) : (
               <button
                 onClick={() => handleNavigate(Math.min(slots.length - 1, currentIdx + 1))}
-                className="flex-1 py-2.5 border border-gray-300 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors"
+                className="flex-1 py-2.5 border border-gray-300 dark:border-gray-700 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
               >
                 Next →
               </button>
@@ -1430,13 +1430,13 @@ export default function PaperModePage() {
         const firstUnanswered = unansweredSlots[0]?.idx ?? null;
         return (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
-            <div className="bg-white rounded-2xl shadow-xl max-w-sm w-full p-6">
-              <h3 className="text-base font-bold text-gray-900 mb-1">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl max-w-sm w-full p-6">
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1">
                 {unansweredSlots.length} question{unansweredSlots.length !== 1 ? 's' : ''} unanswered
               </h3>
-              <p className="text-sm text-gray-500 mb-4">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                 You haven&apos;t answered questions:{' '}
-                <span className="font-medium text-gray-700">
+                <span className="font-medium text-gray-700 dark:text-gray-300">
                   {unansweredSlots.map(({ idx }) => idx + 1).join(', ')}
                 </span>
               </p>
@@ -1460,7 +1460,7 @@ export default function PaperModePage() {
                 </button>
                 <button
                   onClick={() => setShowSubmitWarning(false)}
-                  className="w-full py-2 text-sm text-gray-500 hover:text-gray-700 transition-colors"
+                  className="w-full py-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
                 >
                   Go back
                 </button>

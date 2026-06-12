@@ -34,8 +34,8 @@ sys.path.insert(0, str(ROOT))
 
 from dotenv import load_dotenv
 
-from src.services.answer_match import match_value_to_options
-from src.services.code_sandbox import execute_verification_code
+from src.utils.answer_match import match_value_to_options
+from src.utils.code_sandbox import execute_verification_code
 from src.services.generate_question import load_questions
 
 BOLD = '\033[1m'

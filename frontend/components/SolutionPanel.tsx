@@ -4,6 +4,109 @@ import { MathText } from './MathText';
 import type { SolutionRecord, QuestionRecord } from '@/lib/types';
 import { api } from '@/lib/api';
 
+// ── Shared streaming display used by both this panel and the landing carousel ─
+interface StreamingTextProps {
+  text: string;
+  className?: string;
+}
+
+type Seg = { type: 'text'; content: string } | { type: 'math'; content: string; display: boolean };
+
+// Split visible text into plain-text and complete math segments.
+// Incomplete $...$ (no closing delimiter yet) stays as plain text.
+function parseSegments(text: string): Seg[] {
+  const segs: Seg[] = [];
+  let i = 0;
+  let start = 0;
+
+  while (i < text.length) {
+    if (text[i] === '$') {
+      const display = text[i + 1] === '$';
+      const delim = display ? '$$' : '$';
+      const from = i + delim.length;
+      const close = text.indexOf(delim, from);
+      if (close !== -1) {
+        if (i > start) segs.push({ type: 'text', content: text.slice(start, i) });
+        segs.push({ type: 'math', content: text.slice(from, close), display });
+        i = close + delim.length;
+        start = i;
+        continue;
+      }
+    }
+    i++;
+  }
+
+  if (start < text.length) segs.push({ type: 'text', content: text.slice(start) });
+  return segs;
+}
+
+const CHARS_PER_TICK = 3;
+const TICK_MS = 16;
+const FADE_WINDOW = 9;
+
+export function StreamingText({ text, className }: StreamingTextProps) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(0);
+    let cur = 0;
+    const id = setInterval(() => {
+      cur = Math.min(cur + CHARS_PER_TICK, text.length);
+      setCount(cur);
+      if (cur >= text.length) clearInterval(id);
+    }, TICK_MS);
+    return () => clearInterval(id);
+  }, [text]);
+
+  const visible = text.slice(0, count);
+  const done = count >= text.length;
+  const segs = parseSegments(visible);
+
+  return (
+    <div className={className} style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+      {segs.map((seg, idx) => {
+        if (seg.type === 'math') {
+          // Complete math expression — render with KaTeX, no fade needed
+          const raw = seg.display ? `$$${seg.content}$$` : `$${seg.content}$`;
+          return seg.display
+            ? <MathText key={idx} text={raw} block />
+            : <MathText key={idx} text={raw} />;
+        }
+
+        const isLast = idx === segs.length - 1;
+        if (!isLast || done) {
+          // Stable text — no animation
+          return <span key={idx}>{seg.content}</span>;
+        }
+
+        // Last text segment while streaming — fade in the trailing chars
+        const stableEnd = Math.max(0, seg.content.length - FADE_WINDOW);
+        const stable = seg.content.slice(0, stableEnd);
+        const fading = seg.content.slice(stableEnd).split('');
+        return (
+          <span key={idx}>
+            {stable}
+            {fading.map((ch, i) => (
+              <span key={i} style={{ animation: 'fadeCharIn 0.18s ease-out both' }}>
+                {ch}
+              </span>
+            ))}
+          </span>
+        );
+      })}
+      {!done && (
+        <span style={{
+          display: 'inline-block', width: '2px', height: '1em',
+          background: 'currentColor', opacity: 0.6, marginLeft: '1px',
+          verticalAlign: 'middle', animation: 'blink 1s step-start infinite',
+        }} />
+      )}
+    </div>
+  );
+}
+
+// ── Full solution panel (used in quick-fire / paper mode) ─────────────────
+
 interface SolutionPanelProps {
   question: QuestionRecord;
   solution: SolutionRecord | undefined;
@@ -12,11 +115,10 @@ interface SolutionPanelProps {
   onSolutionGenerated: (sol: SolutionRecord) => void;
 }
 
-export function SolutionPanel({ question, solution, revealed, onReveal, onSolutionGenerated }: SolutionPanelProps) {
+export function SolutionPanel({ question, solution, revealed, onSolutionGenerated }: SolutionPanelProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Auto-fetch when revealed externally (e.g. via action bar) before fetchSolution is called
   useEffect(() => {
     if (revealed && !solution && !loading) {
       fetchSolution();
@@ -24,15 +126,22 @@ export function SolutionPanel({ question, solution, revealed, onReveal, onSoluti
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [revealed]);
 
-  async function handleReveal() {
-    onReveal();
-    if (!solution && !loading) {
-      await fetchSolution();
-    }
-  }
-
   async function fetchSolution() {
     if (!question.answer_label) return;
+
+    if (question.worked_solution) {
+      const record: SolutionRecord = {
+        question_id: question.question_id,
+        worked_solution: question.worked_solution,
+        final_answer_label: question.answer_label,
+        requires_diagram: false,
+        diagram_url: null,
+        generated_at: Date.now(),
+      };
+      onSolutionGenerated(record);
+      return;
+    }
+
     setLoading(true);
     setError(null);
     try {
@@ -62,57 +171,51 @@ export function SolutionPanel({ question, solution, revealed, onReveal, onSoluti
     }
   }
 
-  if (!revealed) {
-    return (
-      <button
-        onClick={handleReveal}
-        className="flex items-center gap-2 text-sm text-indigo-700 hover:text-indigo-900 border border-indigo-300 hover:border-indigo-400 px-3 py-2 rounded-lg bg-indigo-50 hover:bg-indigo-100 transition-colors"
-      >
-        📋 Reveal worked solution
-      </button>
-    );
-  }
+  if (!revealed) return null;
 
   return (
-    <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
-      <div className="text-xs font-semibold text-indigo-600 uppercase tracking-wide mb-3">
-        Worked Solution
+    <div className="rounded-xl border border-accent/20 bg-accent/5 dark:bg-accent/10 overflow-hidden">
+      <div className="px-4 py-2.5 border-b border-accent/10 bg-accent/5 flex items-center gap-2">
+        <span className="text-xs font-bold uppercase tracking-wide text-accent">Worked Solution</span>
+        {loading && <span className="w-1.5 h-3.5 bg-accent rounded-sm animate-pulse inline-block" />}
       </div>
 
-      {loading && (
-        <div className="flex items-center gap-2 text-sm text-gray-500">
-          <span className="animate-spin inline-block">⟳</span> Generating solution…
-        </div>
-      )}
-
-      {error && (
-        <div className="space-y-2">
-          <p className="text-sm text-red-500">{error}</p>
-          <button onClick={fetchSolution} className="text-sm text-indigo-600 underline">
-            Try again
-          </button>
-        </div>
-      )}
-
-      {solution && !loading && (
-        <div className="space-y-3">
-          <div className="text-sm text-emerald-700 font-semibold">
-            Answer: {solution.final_answer_label}
+      <div className="px-4 py-4">
+        {loading && (
+          <div className="flex items-center gap-2 text-sm text-gray-500">
+            <span className="animate-spin inline-block text-accent">⟳</span>
+            <span>Generating solution…</span>
           </div>
-          <MathText
-            text={solution.worked_solution}
-            block
-            className="text-sm text-gray-800 leading-relaxed prose prose-sm max-w-none"
-          />
-          {solution.diagram_url && (
-            <img
-              src={solution.diagram_url}
-              alt="Solution diagram"
-              className="max-w-full max-h-64 rounded border border-indigo-200 mt-2"
+        )}
+
+        {error && (
+          <div className="space-y-2">
+            <p className="text-sm text-red-500">{error}</p>
+            <button onClick={fetchSolution} className="text-sm text-accent underline">
+              Try again
+            </button>
+          </div>
+        )}
+
+        {solution && !loading && (
+          <div className="space-y-3">
+            <div className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">
+              Answer: {solution.final_answer_label}
+            </div>
+            <StreamingText
+              text={solution.worked_solution}
+              className="text-sm text-gray-900 dark:text-gray-100 leading-relaxed"
             />
-          )}
-        </div>
-      )}
+            {solution.diagram_url && (
+              <img
+                src={solution.diagram_url}
+                alt="Solution diagram"
+                className="max-w-full max-h-64 rounded border border-accent/20 mt-2"
+              />
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -30,14 +30,14 @@ export function QueueStatus({ slots, label, compact = false }: QueueStatusProps)
           </span>
         )}
         {readyCount === 0 && generatingCount === 0 && (
-          <span className="text-gray-400">Loading queue…</span>
+          <span className="text-gray-400">Loading queueâ€¦</span>
         )}
       </div>
     );
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg px-4 py-3">
+    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3">
       {label && <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">{label}</div>}
       <div className="flex flex-wrap gap-3 text-sm">
         <Stat label="Ready" value={readyCount} color="emerald" pulse={false} />
@@ -52,10 +52,10 @@ export function QueueStatus({ slots, label, compact = false }: QueueStatusProps)
 
 function Stat({ label, value, color, pulse }: { label: string; value: number; color: string; pulse: boolean }) {
   const colorMap: Record<string, string> = {
-    emerald: 'text-emerald-700 bg-emerald-50',
-    amber: 'text-amber-700 bg-amber-50',
-    red: 'text-red-700 bg-red-50',
-    gray: 'text-gray-600 bg-gray-50',
+    emerald: 'text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/30',
+    amber: 'text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30',
+    red: 'text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-950/30',
+    gray: 'text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-800',
   };
   return (
     <div className={`flex items-center gap-1.5 px-2 py-1 rounded ${colorMap[color] ?? colorMap.gray}`}>

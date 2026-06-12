@@ -1,37 +1,83 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════════════════
+   ACCENT / THEME — edit hex values here to retheme the whole site
+   ═══════════════════════════════════════════════════════════════ */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111827;
+  --accent:        #2d8cf0;
+  --accent-light:  #5aa9f7;
+  --accent-dark:   #1a6dcf;
+  --accent-pale:   #e8f3fd;
+
+  /* SVG chart colours */
+  --chart-bg:    #f8fafc;
+  --chart-grid:  #e2e8f0;
+  --chart-axis:  #334155;
+  --chart-tick:  #64748b;
+  --chart-label: #1e293b;
+  --chart-hint:  #94a3b8;
 }
 
+html.dark {
+  --background: #060b14;
+  --foreground: #e8f4ff;
+  --accent-pale:   #0d1f3c;
+
+  /* SVG chart colours — dark */
+  --chart-bg:    #0f172a;
+  --chart-grid:  #1e293b;
+  --chart-axis:  #94a3b8;
+  --chart-tick:  #64748b;
+  --chart-label: #e2e8f0;
+  --chart-hint:  #475569;
+}
+
+/* Non-inline so opacity modifiers (bg-accent/20 etc.) work */
+@theme {
+  --color-accent:       #2d8cf0;
+  --color-accent-light: #5aa9f7;
+  --color-accent-dark:  #1a6dcf;
+  --color-accent-pale:  #e8f3fd;
+}
+
+/* Inline for CSS-var-backed tokens */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-accent: #2c4a8a;
-  --color-accent-light: #3a5caa;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/*
+ * Class-based dark mode variant.
+ * Using :is() (not :where()) so the variant selector has higher specificity
+ * than plain Tailwind utilities like bg-white, letting dark:bg-* win the cascade.
+ */
+@custom-variant dark (&:is(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+  overflow-anchor: none;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/*
-  KaTeX uses border-bottom for the vinculum (horizontal bar in fractions and
-  sqrt). Tailwind's * { border: 0 solid } resets border-width to 0, so we
-  must restore it for KaTeX internal line elements.
-*/
+/* Streaming text char fade-in */
+@keyframes fadeCharIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes blink {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 0; }
+}
+
+/* KaTeX vinculum fix */
 .katex .frac-line,
 .katex .overline-line,
 .katex .underline-line,
@@ -41,52 +87,25 @@ body {
   border-bottom-width: 1px;
 }
 
-.option-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.9rem;
+/* Scroll reveal animations */
+@keyframes fadeSlideInLeft {
+  from { opacity: 0; transform: translateX(-48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeSlideInRight {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-.option-badge {
-  width: 2rem;
-  height: 2rem;
-  flex: 0 0 2rem;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.options-grid {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.option {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.85rem;
-}
-
+/* Legacy dev-page styles */
+.options-grid { display: grid; gap: 0.75rem; }
 .option-letter {
-  width: 2rem;
-  height: 2rem;
-  flex: 0 0 2rem;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  background: #dbeafe;
-  color: #1e3a8a;
-  margin-top: 0.7rem;
+  width: 2rem; height: 2rem; flex: 0 0 2rem;
+  border-radius: 999px; display: flex; align-items: center;
+  justify-content: center; font-weight: 800;
+  background: #dbeafe; color: #1e3a8a; margin-top: 0.7rem;
 }
-
 .option-text {
-  flex: 1;
-  line-height: 1.7;
-  border: 1px solid #e2e8f0;
-  border-radius: 1rem;
-  background: #fff;
-  padding: 0.9rem 1rem;
+  flex: 1; line-height: 1.7; border: 1px solid #e2e8f0;
+  border-radius: 1rem; background: #fff; padding: 0.9rem 1rem;
 }

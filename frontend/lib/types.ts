@@ -62,6 +62,7 @@ export interface QuestionRecord {
   figures: FigureSpec[];
   answer_label: string | null;
   answer_text: string | null;
+  worked_solution: string | null;
   has_diagram: boolean;
   diagram_url: string | null;
   tags: string[];

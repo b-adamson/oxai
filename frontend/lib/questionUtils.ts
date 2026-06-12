@@ -58,6 +58,16 @@ export function difficultyLabel(d: number): string {
   return ['', 'Easy', 'Easy-Med', 'Medium', 'Med-Hard', 'Hard'][d] ?? 'Unknown';
 }
 
+/** Display subject name with British spelling */
+export function displaySubject(subject: string): string {
+  const s = subject.toLowerCase();
+  if (s.startsWith('math')) return 'Maths';
+  if (s.startsWith('phys')) return 'Physics';
+  if (s.startsWith('chem')) return 'Chemistry';
+  if (s.startsWith('bio')) return 'Biology';
+  return subject.charAt(0).toUpperCase() + subject.slice(1);
+}
+
 /** Subject colour class */
 export function subjectColor(subject: string): string {
   const s = subject.toLowerCase();

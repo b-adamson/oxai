@@ -336,6 +336,19 @@ class QuestionExampleIndex:
 
         return [self.questions[idx] for idx in chosen]
 
+    def get_broad_examples(self, subject: str, n: int = 50) -> List[Dict[str, Any]]:
+        """Return up to n examples for a subject from the broad bucket, randomized.
+
+        Used to preload a fixed example pool into a session so every call in
+        that session receives the same stable block (maximising prompt-cache hits).
+        """
+        subj_key = subject.lower().strip()
+        bucket = list(self._buckets.get((subj_key, None, None), []))
+        if not bucket:
+            bucket = list(self._buckets.get((None, None, None), []))
+        random.shuffle(bucket)
+        return [self.questions[idx] for idx in bucket[:n]]
+
     def sample_topic(self, subject: str) -> Optional[str]:
         """
         Weighted-randomly sample a topic for the given subject, proportional to

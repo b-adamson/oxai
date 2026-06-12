@@ -16,3 +16,5 @@ backend/generated/
 # Supabase CLI local artifacts
 supabase/.temp/
 supabase/.branches/
+
+CLAUDE.md

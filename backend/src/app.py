@@ -2,12 +2,13 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
+from fastapi import BackgroundTasks, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -17,11 +18,13 @@ from src.services.generate_hint import HintGenerationService, HintSettings
 from src.services.generate_question import GenerationSettings, QuestionGenerationService, load_questions
 from src.services.generate_solution import SolutionGenerationService, SolutionSettings
 from src.services.generation_session import SessionManager
+from src.utils.supabase_writer import upsert_question as _supabase_upsert_question, is_enabled as _db_write_enabled
 
 load_dotenv()
 
+_LOG_LEVEL = logging.DEBUG if os.getenv('DEBUG', '0').lower() in ('1', 'true') else logging.INFO
 logging.basicConfig(
-    level=logging.INFO,
+    level=_LOG_LEVEL,
     format='%(asctime)s %(levelname)s %(name)s: %(message)s',
 )
 LOGGER = logging.getLogger('oxai.backend')
@@ -235,8 +238,9 @@ def list_papers():
     return {'papers': load_manifest()}
 
 
+
 @app.post('/generate-question')
-def generate_question_endpoint(req: GenerateRequest):
+def generate_question_endpoint(req: GenerateRequest, background_tasks: BackgroundTasks):
     try:
         service: QuestionGenerationService = app.state.question_service
         mgr: SessionManager = app.state.session_manager
@@ -252,6 +256,8 @@ def generate_question_endpoint(req: GenerateRequest):
             force_diagram=req.force_diagram,
             archetype=req.archetype,
         )
+        if _db_write_enabled():
+            background_tasks.add_task(_supabase_upsert_question, question)
         return question
     except HTTPException:
         raise
@@ -260,12 +266,14 @@ def generate_question_endpoint(req: GenerateRequest):
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
+
 @app.post('/generate-batch')
-def generate_batch_endpoint(req: BatchGenerateRequest):
+def generate_batch_endpoint(req: BatchGenerateRequest, background_tasks: BackgroundTasks):
     """Batch generation for database population.
 
     Generates n questions for the given subject in a single session so each
     question chains from the previous one (cheaper, more diverse).
+    When DB_WRITE_ENABLED=1, each question is upserted to Supabase in the background.
     """
     try:
         service: QuestionGenerationService = app.state.question_service
@@ -281,6 +289,9 @@ def generate_batch_endpoint(req: BatchGenerateRequest):
             difficulty=req.difficulty,
             want_diagram=req.want_diagram,
         )
+        if _db_write_enabled():
+            for q in questions:
+                background_tasks.add_task(_supabase_upsert_question, q)
         return {
             'questions': questions,
             'generated': len(questions),

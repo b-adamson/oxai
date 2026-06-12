@@ -69,10 +69,10 @@ function formatTime(ms: number): string {
 }
 
 function timerColor(ms: number): string {
-  if (ms === Infinity) return 'text-gray-700';
+  if (ms === Infinity) return 'text-gray-700 dark:text-gray-300';
   if (ms < 5 * 60 * 1000) return 'text-red-600 font-bold animate-pulse';
   if (ms < 30 * 60 * 1000) return 'text-amber-600 font-semibold';
-  return 'text-gray-700';
+  return 'text-gray-700 dark:text-gray-300';
 }
 
 type Phase = 'config' | 'active' | 'report';
@@ -311,9 +311,9 @@ export default function QuickModePage() {
   // ── Config screen ──────────────────────────────────────────────
   if (phase === 'config') {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 w-full max-w-lg">
-          <h1 className="text-2xl font-bold text-gray-900 mb-1">Quick Mode</h1>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex items-center justify-center p-4">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-8 w-full max-w-lg">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Quick Mode</h1>
           <p className="text-sm text-gray-500 mb-6">Endless adaptive questions.</p>
 
           <div className="space-y-5">
@@ -336,14 +336,14 @@ export default function QuickModePage() {
             />
 
             {/* Options */}
-            <div className="border border-gray-200 rounded-xl overflow-hidden">
-              <div className="px-4 py-2.5 bg-gray-50 border-b border-gray-200">
-                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Options</span>
+            <div className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+              <div className="px-4 py-2.5 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+                <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Options</span>
               </div>
-              <div className="divide-y divide-gray-100">
+              <div className="divide-y divide-gray-100 dark:divide-gray-800">
                 <div className="px-4 py-3 flex items-center justify-between gap-3">
                   <div>
-                    <div className="text-sm text-gray-800">Timer</div>
+                    <div className="text-sm text-gray-800 dark:text-gray-200">Timer</div>
                     {timerEnabled && (
                       <div className="flex items-center gap-1.5 mt-1">
                         <input
@@ -354,7 +354,7 @@ export default function QuickModePage() {
                           onChange={(e) =>
                             setTimerMinutes(Math.max(5, Math.min(300, Number(e.target.value))))
                           }
-                          className="w-16 border border-gray-300 rounded px-2 py-1 text-sm text-center text-gray-800"
+                          className="w-16 border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm text-center text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800"
                         />
                         <span className="text-xs text-gray-500">minutes</span>
                       </div>
@@ -364,21 +364,21 @@ export default function QuickModePage() {
                 </div>
                 <div className="px-4 py-3 flex items-center justify-between gap-3">
                   <div>
-                    <div className="text-sm text-gray-800">Solutions</div>
+                    <div className="text-sm text-gray-800 dark:text-gray-200">Solutions</div>
                     <div className="text-xs text-gray-400">Worked solution button</div>
                   </div>
                   <Toggle value={enableSolution} onChange={setEnableSolution} />
                 </div>
                 <div className="px-4 py-3 flex items-center justify-between gap-3">
                   <div>
-                    <div className="text-sm text-gray-800">Hints</div>
+                    <div className="text-sm text-gray-800 dark:text-gray-200">Hints</div>
                     <div className="text-xs text-gray-400">Step-by-step hints</div>
                   </div>
                   <Toggle value={enableHints} onChange={setEnableHints} />
                 </div>
                 <div className="px-4 py-3 flex items-center justify-between gap-3">
                   <div>
-                    <div className="text-sm text-gray-800">AI Tutor</div>
+                    <div className="text-sm text-gray-800 dark:text-gray-200">AI Tutor</div>
                     <div className="text-xs text-gray-400">Ask the tutor for guidance</div>
                   </div>
                   <Toggle value={enableTutor} onChange={setEnableTutor} />
@@ -407,13 +407,13 @@ export default function QuickModePage() {
     const timeStr = elapsedMin > 0 ? `${elapsedMin}m ${elapsedS}s` : `${elapsedSec}s`;
 
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 w-full max-w-sm">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex items-center justify-center p-4">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-8 w-full max-w-sm">
           <div className="text-center mb-6">
             <div className="text-4xl mb-2">
               {accuracy >= 80 ? '🎉' : accuracy >= 60 ? '👍' : '📚'}
             </div>
-            <h2 className="text-xl font-bold text-gray-900">Session complete</h2>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Session complete</h2>
             <p className="text-sm text-gray-500 mt-1">{sessionSubject}</p>
           </div>
           <div className="grid grid-cols-2 gap-3 mb-6">
@@ -436,7 +436,7 @@ export default function QuickModePage() {
             </button>
             <button
               onClick={handleRestart}
-              className="w-full text-sm text-gray-500 hover:text-gray-700 transition-colors py-2"
+              className="w-full text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors py-2"
             >
               Back to config
             </button>
@@ -452,10 +452,10 @@ export default function QuickModePage() {
     currentSlot.status === 'generating';
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-4 py-2.5 flex items-center gap-3">
-        <span className="font-semibold text-gray-800 text-sm">Quick Mode</span>
-        <span className="text-gray-300">·</span>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
+      <div className="sticky top-0 z-10 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 py-2.5 flex items-center gap-3">
+        <span className="font-semibold text-gray-800 dark:text-gray-200 text-sm">Quick Mode</span>
+        <span className="text-gray-300 dark:text-gray-700">·</span>
         <span className="text-sm text-gray-500 truncate max-w-[180px]">{sessionSubject}</span>
         <div className="ml-auto flex items-center gap-4">
           {sessionTimerEnabled && sessionTimerTargetMs !== null && (
@@ -463,7 +463,7 @@ export default function QuickModePage() {
               {formatTime(timerRemaining)}
             </span>
           )}
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-gray-600 dark:text-gray-400">
             <span className="font-semibold text-emerald-600">{totalCorrect}</span>
             <span className="text-gray-400">/{totalAnswered}</span>
             {streak >= 3 && (
@@ -473,7 +473,7 @@ export default function QuickModePage() {
           <QueueStatus slots={slots} compact />
           <button
             onClick={handleEnd}
-            className="text-xs text-gray-500 hover:text-gray-700 border border-gray-300 rounded px-2 py-1 transition-colors"
+            className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 border border-gray-300 dark:border-gray-600 rounded px-2 py-1 transition-colors"
           >
             End
           </button>
@@ -482,13 +482,13 @@ export default function QuickModePage() {
 
       <div className="max-w-2xl mx-auto p-4 space-y-4 pb-8">
         {isWaiting ? (
-          <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
+          <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-12 text-center">
             <div className="text-3xl mb-3 animate-pulse">⚡</div>
             <div className="text-sm text-gray-500">Generating question…</div>
             <QueueStatus slots={slots} label="Queue" />
           </div>
         ) : currentSlot?.status === 'failed' ? (
-          <div className="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
+          <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-xl p-6 text-center">
             <p className="text-sm text-red-600 mb-3">Failed to generate question.</p>
             <button onClick={handleNext} className="text-sm text-red-600 underline">
               Skip →
@@ -579,7 +579,7 @@ function SubjectTopicSelector({
     <div className="space-y-3">
       {/* Subject chips */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1.5">Subjects</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Subjects</label>
         <div className="grid grid-cols-2 gap-2">
           {SUBJECTS.map((subject) => (
             <button
@@ -588,7 +588,7 @@ function SubjectTopicSelector({
               className={`py-2 px-3 rounded-lg border text-sm font-medium transition-colors text-left flex items-center gap-2 ${
                 active.has(subject)
                   ? 'bg-accent text-white border-accent'
-                  : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
+                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500'
               }`}
             >
               {active.has(subject) && <span className="text-xs opacity-80">✓</span>}
@@ -606,9 +606,9 @@ function SubjectTopicSelector({
         const allSelected = config.topics === null;
 
         return (
-          <div key={config.subject} className="border border-gray-200 rounded-xl overflow-hidden">
-            <div className="px-4 py-2 bg-gray-50 border-b border-gray-100 flex items-center">
-              <span className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
+          <div key={config.subject} className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+            <div className="px-4 py-2 bg-gray-50 dark:bg-gray-800 border-b border-gray-100 dark:border-gray-800 flex items-center">
+              <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
                 {config.subject}
               </span>
             </div>
@@ -625,7 +625,7 @@ function SubjectTopicSelector({
                       className={`flex-1 min-w-0 py-1 rounded text-xs font-medium border transition-colors ${
                         config.difficulty === d
                           ? 'bg-accent text-white border-accent'
-                          : 'bg-white text-gray-600 border-gray-300 hover:border-gray-400'
+                          : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500'
                       }`}
                     >
                       {DIFFICULTY_LABELS[d]}
@@ -638,7 +638,7 @@ function SubjectTopicSelector({
               <div>
                 <button
                   onClick={() => toggleTopicExpand(config.subject)}
-                  className="flex items-center gap-1 text-xs text-gray-500 hover:text-gray-800 transition-colors"
+                  className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
                 >
                   <span
                     className="inline-block transition-transform duration-150"
@@ -684,8 +684,8 @@ function SubjectTopicSelector({
                             onClick={() => toggleTopic(config.subject, topic)}
                             className={`px-2.5 py-1 rounded-full border text-xs transition-colors ${
                               selected
-                                ? 'bg-blue-50 border-accent/40 text-accent font-medium'
-                                : 'bg-white border-gray-200 text-gray-500 hover:border-gray-400'
+                                ? 'bg-blue-50 dark:bg-blue-950/30 border-accent/40 text-accent font-medium'
+                                : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:border-gray-400 dark:hover:border-gray-600'
                             }`}
                           >
                             {topic}
@@ -711,7 +711,7 @@ function Toggle({ value, onChange }: { value: boolean; onChange: (v: boolean) =>
     <button
       onClick={() => onChange(!value)}
       className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors ${
-        value ? 'bg-accent' : 'bg-gray-200'
+        value ? 'bg-accent' : 'bg-gray-200 dark:bg-gray-700'
       }`}
     >
       <span
@@ -736,7 +736,7 @@ function PickerGroup({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-700 mb-1.5">{label}</label>
+      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">{label}</label>
       <div className="grid grid-cols-2 gap-2">
         {options.map((opt) => (
           <button
@@ -745,7 +745,7 @@ function PickerGroup({
             className={`py-2 px-3 rounded-lg border text-sm font-medium transition-colors ${
               value === opt
                 ? 'bg-accent text-white border-accent'
-                : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
+                : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500'
             }`}
           >
             {opt}
@@ -759,14 +759,14 @@ function PickerGroup({
 function StatBox({
   label,
   value,
-  valueClass = 'text-gray-900',
+  valueClass = 'text-gray-900 dark:text-white',
 }: {
   label: string;
   value: string;
   valueClass?: string;
 }) {
   return (
-    <div className="bg-gray-50 rounded-xl p-3 text-center">
+    <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-3 text-center">
       <div className={`text-2xl font-bold ${valueClass}`}>{value}</div>
       <div className="text-xs text-gray-500 mt-0.5">{label}</div>
     </div>

@@ -54,6 +54,7 @@ export function normaliseQuestion(raw: Record<string, any>, mode: 'quick' | 'pap
       }),
     answer_label: validation.answer_label ?? null,
     answer_text: validation.answer_text ?? null,
+    worked_solution: validation.worked_solution ?? null,
     has_diagram: Boolean(content.requires_diagram || metadata.diagram_required),
     diagram_url: (() => {
       // Check metadata first

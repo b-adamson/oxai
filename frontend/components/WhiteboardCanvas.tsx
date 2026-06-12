@@ -536,7 +536,10 @@ export const WhiteboardCanvas = forwardRef<WhiteboardHandle, WhiteboardCanvasPro
       const dy = pos.y - drag.startMouseY;
       const MIN = 20;
 
-      let { x, y, w, h } = drag;
+      let x = drag.startX;
+      let y = drag.startY;
+      let w = drag.startW;
+      let h = drag.startH;
 
       if (drag.mode === 'move') {
         x = drag.startX + dx;

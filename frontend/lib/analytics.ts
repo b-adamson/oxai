@@ -4,6 +4,11 @@ const WEAK_THRESHOLD = 0.6;
 const STRONG_THRESHOLD = 0.8;
 const RECENT_N = 10;
 
+/** Canonical topic name: lowercase, underscores→spaces, collapsed whitespace */
+function normalizeTopic(t: string): string {
+  return t.toLowerCase().replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 /** Compute mastery statistics from all stored attempts */
 export function computeMastery(attempts: AttemptRecord[]): MasteryStats {
   if (attempts.length === 0) {
@@ -53,10 +58,12 @@ export function computeMastery(attempts: AttemptRecord[]): MasteryStats {
     }
   }
 
-  // Per-topic breakdown
+  // Per-topic breakdown — normalise keys so "summary_statistics" and
+  // "Summary Statistics" merge into the same "summary statistics" bucket.
   const topicMap: Record<string, AttemptRecord[]> = {};
   for (const a of answered) {
-    const key = a.topic ?? '__unknown__';
+    const raw = a.topic ?? '__unknown__';
+    const key = raw === '__unknown__' ? raw : normalizeTopic(raw);
     if (!topicMap[key]) topicMap[key] = [];
     topicMap[key].push(a);
   }

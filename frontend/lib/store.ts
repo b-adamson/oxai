@@ -19,6 +19,12 @@ import type {
   WhiteboardState,
 } from './types';
 
+/** Canonical topic name: lowercase, underscores→spaces, collapsed whitespace */
+function normalizeTopic(t: string | null | undefined): string | null {
+  if (!t) return null;
+  return t.toLowerCase().replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 // ── Raw question from backend → QuestionRecord ────────────────
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function normaliseQuestion(raw: Record<string, any>, mode: 'quick' | 'paper' | null, sourceType: 'bank' | 'fresh_ai'): QuestionRecord {
@@ -35,8 +41,8 @@ export function normaliseQuestion(raw: Record<string, any>, mode: 'quick' | 'pap
     source_type: sourceType,
     paper_source: paperSource,
     subject: content.subject ?? 'math',
-    topic: content.topic ?? null,
-    subtopic: content.subtopic ?? null,
+    topic: normalizeTopic(content.topic),
+    subtopic: normalizeTopic(content.subtopic),
     archetype: content.archetype ?? null,
     difficulty: content.difficulty ?? 2,
     stem: prompt.stem ?? '',

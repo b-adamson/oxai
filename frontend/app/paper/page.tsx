@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useStore } from '@/lib/store';
 import { planEsatPaperSlots, startBackgroundGeneration, slotCounts } from '@/lib/queue';
 import { QuestionCard } from '@/components/QuestionCard';
+import { PaperExport } from '@/components/PaperExport';
 import { QueueStatus } from '@/components/QueueStatus';
 import type {
   PaperSlot,
@@ -1207,6 +1208,13 @@ export default function PaperModePage() {
             </div>
           </div>
 
+          <PaperExport
+            slots={slots}
+            modules={modules}
+            questions={questions}
+            durationSeconds={paperTimerSeconds}
+          />
+
           <button
             onClick={() => {
               setPhase('config');
@@ -1214,7 +1222,7 @@ export default function PaperModePage() {
               setSlots([]);
               setModules([]);
             }}
-            className="w-full bg-accent hover:bg-accent-light text-white font-semibold py-3 rounded-xl transition-colors"
+            className="w-full mt-3 bg-accent hover:bg-accent-light text-white font-semibold py-3 rounded-xl transition-colors"
           >
             New Paper
           </button>

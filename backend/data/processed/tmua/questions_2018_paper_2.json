@@ -1,0 +1,1301 @@
+{
+  "meta": {
+    "exam": "TMUA",
+    "label": "TMUA 2018 Paper 2",
+    "year": 2018,
+    "paper": "2",
+    "count": 20,
+    "sections": [
+      "A"
+    ]
+  },
+  "paper": {
+    "source": "TMUA 2018 Paper 2",
+    "questions": [
+      {
+        "question_id": "TMUA_2018_paper_2_01",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 1,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "calculus",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The function $f$ is given, for $x > 0$, by\n\\[\nf(x)=\\frac{x^3-4x}{2\\sqrt{x}}\n\\]\nFind the value of $f'(4)$.",
+          "options": [
+            {
+              "label": "A",
+              "text": "3"
+            },
+            {
+              "label": "B",
+              "text": "9"
+            },
+            {
+              "label": "C",
+              "text": "9.5"
+            },
+            {
+              "label": "D",
+              "text": "12"
+            },
+            {
+              "label": "E",
+              "text": "39.5"
+            },
+            {
+              "label": "F",
+              "text": "88"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_02",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 2,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "algebra",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Find the value of the constant term in the expansion of\n\\[\n\\left(x^6-\\frac{1}{x^2}\\right)^{12}\n\\]",
+          "options": [
+            {
+              "label": "A",
+              "text": "-495"
+            },
+            {
+              "label": "B",
+              "text": "-220"
+            },
+            {
+              "label": "C",
+              "text": "-66"
+            },
+            {
+              "label": "D",
+              "text": "66"
+            },
+            {
+              "label": "E",
+              "text": "220"
+            },
+            {
+              "label": "F",
+              "text": "495"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_03",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 3,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "proof_and_logic",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Consider the following statement:\n\nA car journey consists of two parts. In the first part, the average speed is $u$ km/h. In the second part, the average speed is $v$ km/h. Hence the average speed for the whole journey is $\\frac{1}{2}(u+v)$ km/h.\n\nWhich of the following examples of car journeys provide(s) a counterexample to the statement?\n\nI  In the first part of the journey, the car travels at a constant speed of 50 km/h for 100 km. In the second part of the journey, the car travels at a constant speed of 40 km/h for 100 km.\n\nII  In the first part of the journey, the car travels at a constant speed of 50 km/h for one hour. In the second part of the journey, the car travels at a constant speed of 40 km/h for one hour.\n\nIII  In the first part of the journey, the car travels at a constant speed of 50 km/h for 80 km. In the second part of the journey, the car travels at a constant speed of 40 km/h for 100 km.",
+          "options": [
+            {
+              "label": "A",
+              "text": "none of them"
+            },
+            {
+              "label": "B",
+              "text": "I only"
+            },
+            {
+              "label": "C",
+              "text": "II only"
+            },
+            {
+              "label": "D",
+              "text": "III only"
+            },
+            {
+              "label": "E",
+              "text": "I and II only"
+            },
+            {
+              "label": "F",
+              "text": "I and III only"
+            },
+            {
+              "label": "G",
+              "text": "II and III only"
+            },
+            {
+              "label": "H",
+              "text": "I, II and III"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_04",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 4,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "trigonometry",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The non-zero real number $c$ is such that the equation $\\cos x=c$ has two solutions for $0 < x < \\frac{3}{2}\\pi$.\n\nHow many solutions of the equation $\\cos^2 2x=c^2$ are there in the range $0 < x < \\frac{3}{2}\\pi$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "2"
+            },
+            {
+              "label": "B",
+              "text": "3"
+            },
+            {
+              "label": "C",
+              "text": "4"
+            },
+            {
+              "label": "D",
+              "text": "6"
+            },
+            {
+              "label": "E",
+              "text": "7"
+            },
+            {
+              "label": "F",
+              "text": "8"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_05",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 5,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "proof_and_logic",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The two diagonals of the quadrilateral $Q$ are perpendicular.\n\nConsider the following statements:\n\nI  One of the diagonals of $Q$ is a line of symmetry of $Q$.\n\nII  The midpoints of the sides of $Q$ are the vertices of a square.\n\nWhich of these statements is/are necessarily true for the quadrilateral $Q$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "neither of them"
+            },
+            {
+              "label": "B",
+              "text": "I only"
+            },
+            {
+              "label": "C",
+              "text": "II only"
+            },
+            {
+              "label": "D",
+              "text": "I and II"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_06",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 6,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "functions",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Which one of the following functions provides a counterexample to the statement:\n\nif $f'(x) > 0$ for all real $x$, then $f(x) > 0$ for all real $x$.",
+          "options": [
+            {
+              "label": "A",
+              "text": "$f(x)=x^2+1$"
+            },
+            {
+              "label": "B",
+              "text": "$f(x)=x^2-1$"
+            },
+            {
+              "label": "C",
+              "text": "$f(x)=x^3+x+1$"
+            },
+            {
+              "label": "D",
+              "text": "$f(x)=1-x$"
+            },
+            {
+              "label": "E",
+              "text": "$f(x)=2^x$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_07",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 7,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "sequences_and_series",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Sequence 1 is an arithmetic progression with first term 11 and common difference 3.\n\nSequence 2 is an arithmetic progression with first term 2 and common difference 5.\n\nSome numbers that appear in Sequence 1 also appear in Sequence 2. Let $N$ be the 20th such number.\n\nWhat is the remainder when $N$ is divided by 7?",
+          "options": [
+            {
+              "label": "A",
+              "text": "0"
+            },
+            {
+              "label": "B",
+              "text": "1"
+            },
+            {
+              "label": "C",
+              "text": "2"
+            },
+            {
+              "label": "D",
+              "text": "3"
+            },
+            {
+              "label": "E",
+              "text": "4"
+            },
+            {
+              "label": "F",
+              "text": "5"
+            },
+            {
+              "label": "G",
+              "text": "6"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_08",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 8,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "proof_and_logic",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 5,
+          "requires_diagram": true,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The diagram shows an example of a mountain profile.\n\nThis consists of upstrokes which go upwards from left to right, and downstrokes which go downwards from left to right. The example shown has six upstrokes and six downstrokes. The horizontal line at the bottom is known as sea level.\n\nA mountain profile of order $n$ consists of $n$ upstrokes and $n$ downstrokes, with the condition that the profile begins and ends at sea level and never goes below sea level (although it might reach sea level at any point). So the example shown is a mountain profile of order 6.\n\nMountain profiles can be coded by using $U$ to indicate an upstroke and $D$ to indicate a downstroke. The example shown has the code $UDUUUDUDDUDD$. A sequence of $U$'s and $D$'s obtained from a mountain profile in this way is known as a valid code.\n\nWhich of the following statements is/are true?\n\nI  If a valid code is written in reverse order, the result is always a valid code.\n\nII  If each $U$ in a valid code is replaced by $D$ and each $D$ by $U$, the result is always a valid code.\n\nIII  If $U$ is added at the beginning of a valid code and $D$ is added at the end of the code, the result is always a valid code.",
+          "options": [
+            {
+              "label": "A",
+              "text": "none of them"
+            },
+            {
+              "label": "B",
+              "text": "I only"
+            },
+            {
+              "label": "C",
+              "text": "II only"
+            },
+            {
+              "label": "D",
+              "text": "III only"
+            },
+            {
+              "label": "E",
+              "text": "I and II only"
+            },
+            {
+              "label": "F",
+              "text": "I and III only"
+            },
+            {
+              "label": "G",
+              "text": "II and III only"
+            },
+            {
+              "label": "H",
+              "text": "I, II and III"
+            }
+          ],
+          "figures": [
+            {
+              "figure_type": "complex_diagram",
+              "caption": "Mountain profile diagram",
+              "diagram_prompt": "A mountain profile drawn as a polyline of straight segments above a dashed horizontal sea-level line. The profile starts at sea level, alternates six upstrokes and six downstrokes, and ends at sea level. Include small labels to the right reading 'upstroke:' with an upward-sloping segment and 'downstroke:' with a downward-sloping segment.",
+              "table_headers": null,
+              "table_rows": null,
+              "table_row_labels": null,
+              "graph_type": null,
+              "graph_title": null,
+              "graph_x_label": null,
+              "graph_y_label": null,
+              "graph_x_labels": null,
+              "graph_series": null,
+              "graph_x_min": null,
+              "graph_x_max": null,
+              "graph_y_min": null,
+              "graph_y_max": null,
+              "url": null
+            }
+          ]
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_09",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 9,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "proof_and_logic",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Consider the following attempt to solve the equation $4x\\sqrt{2x-1}=10x-5$:\n\n\\[\n4x\\sqrt{2x-1}=10x-5\n\\]\n\\[\n4x\\sqrt{2x-1}=5(2x-1) \\qquad (\\mathrm{I})\n\\]\n\\[\n16x^2(2x-1)=25(2x-1)^2 \\qquad (\\mathrm{II})\n\\]\n\\[\n16x^2=25(2x-1) \\qquad (\\mathrm{III})\n\\]\n\\[\n16x^2-50x+25=0 \\qquad (\\mathrm{IV})\n\\]\n\\[\n(8x-5)(2x-5)=0 \\qquad (\\mathrm{V})\n\\]\nThe solutions of the original equation are $x=\\frac{5}{8}$ and $x=\\frac{5}{2}$.\n\nWhich one of the following is true?",
+          "options": [
+            {
+              "label": "A",
+              "text": "The solution is correct."
+            },
+            {
+              "label": "B",
+              "text": "Only one of $x=\frac{5}{8}$ and $x=\frac{5}{2}$ is correct and the error arises as a result of step (II)."
+            },
+            {
+              "label": "C",
+              "text": "Only one of $x=\frac{5}{8}$ and $x=\frac{5}{2}$ is correct and the error arises as a result of step (III)."
+            },
+            {
+              "label": "D",
+              "text": "Only one of $x=\frac{5}{8}$ and $x=\frac{5}{2}$ is correct and the error arises as a result of step (IV)."
+            },
+            {
+              "label": "E",
+              "text": "There is another value of $x$ that satisfies the original equation and the error arises as a result of step (II)."
+            },
+            {
+              "label": "F",
+              "text": "There is another value of $x$ that satisfies the original equation and the error arises as a result of step (III)."
+            },
+            {
+              "label": "G",
+              "text": "There is another value of $x$ that satisfies the original equation and the error arises as a result of step (IV)."
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_10",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 10,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "proof_and_logic",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The function $f(x)$ is defined for all real numbers.\n\nConsider the following three conditions, where $a$ is a real constant:\n\nI  $f(a-x)=f(a+x)$ for all real $x$.\n\nII  $f(2a-x)=f(x)$ for all real $x$.\n\nIII  $f(a-x)=f(x)$ for all real $x$.\n\nWhich of these conditions is/are necessary and sufficient for the graph of $y=f(x)$ to have reflection symmetry in the line $x=a$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "yes / yes / yes"
+            },
+            {
+              "label": "B",
+              "text": "yes / yes / no"
+            },
+            {
+              "label": "C",
+              "text": "yes / no / yes"
+            },
+            {
+              "label": "D",
+              "text": "yes / no / no"
+            },
+            {
+              "label": "E",
+              "text": "no / yes / yes"
+            },
+            {
+              "label": "F",
+              "text": "no / yes / no"
+            },
+            {
+              "label": "G",
+              "text": "no / no / yes"
+            },
+            {
+              "label": "H",
+              "text": "no / no / no"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_11",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 11,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "logarithms_and_exponentials",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Consider the equation $2^x=mx+c$, where $m$ and $c$ are real constants.\n\nWhich of the following statements is/are true?\n\nI  The equation has a negative real solution only if $c>1$.\n\nII  The equation has two distinct real solutions if $c>1$.\n\nIII  The equation has two distinct positive real solutions if and only if $c\\leq 1$.",
+          "options": [
+            {
+              "label": "A",
+              "text": "none of them"
+            },
+            {
+              "label": "B",
+              "text": "I only"
+            },
+            {
+              "label": "C",
+              "text": "II only"
+            },
+            {
+              "label": "D",
+              "text": "III only"
+            },
+            {
+              "label": "E",
+              "text": "I and II only"
+            },
+            {
+              "label": "F",
+              "text": "I and III only"
+            },
+            {
+              "label": "G",
+              "text": "II and III only"
+            },
+            {
+              "label": "H",
+              "text": "I, II and III"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_12",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 12,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "number_theory",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 5,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Consider the following statement:\n\nFor any positive integer $N$ there is a positive integer $K$ such that $N(Km+1)-1$ is not prime for any positive integer $m$.\n\nWhich one of the following is the negation of this statement?",
+          "options": [
+            {
+              "label": "A",
+              "text": "For any positive integer $N$ there is a positive integer $K$ such that there is a positive integer $m$ for which $N(Km+1)-1$ is prime."
+            },
+            {
+              "label": "B",
+              "text": "For any positive integer $N$ there is a positive integer $K$ such that there is a positive integer $m$ for which $N(Km+1)-1$ is not prime."
+            },
+            {
+              "label": "C",
+              "text": "For any positive integer $N$ there is a positive integer $K$ such that for any positive integer $m$, $N(Km+1)-1$ is not prime."
+            },
+            {
+              "label": "D",
+              "text": "For any positive integer $N$, any positive integer $K$ and any positive integer $m$, $N(Km+1)-1$ is not prime."
+            },
+            {
+              "label": "E",
+              "text": "There is a positive integer $N$ such that for any positive integer $K$ there is a positive integer $m$ for which $N(Km+1)-1$ is not prime."
+            },
+            {
+              "label": "F",
+              "text": "There is a positive integer $N$ such that for any positive integer $K$ there is a positive integer $m$ for which $N(Km+1)-1$ is prime."
+            },
+            {
+              "label": "G",
+              "text": "There is a positive integer $N$ such that for any positive integer $K$ and any positive integer $m$, $N(Km+1)-1$ is prime."
+            },
+            {
+              "label": "H",
+              "text": "There is a positive integer $N$ and a positive integer $K$ for which there is no positive integer $m$ for which $N(Km+1)-1$ is prime."
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_13",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 13,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "proof_and_logic",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The following is an attempted proof of the conjecture:\n\nif $\\tan\\theta > 0$, then $\\sin\\theta + \\cos\\theta > 1$.\n\nSuppose $\\tan\\theta > 0$, so in particular $\\cos\\theta \\neq 0$.\n\nSince $\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta}$, then $\\sin\\theta\\cos\\theta = \\tan\\theta\\cos^2\\theta > 0$. \\qquad (I)\n\nIt follows that $1+2\\sin\\theta\\cos\\theta > 1$. \\qquad (II)\n\nTherefore $\\sin^2\\theta + 2\\sin\\theta\\cos\\theta + \\cos^2\\theta > 1$, \\qquad (III)\n\nwhich factorises to give $(\\sin\\theta+\\cos\\theta)^2 > 1$. \\qquad (IV)\n\nTherefore $\\sin\\theta + \\cos\\theta > 1$. \\qquad (V)\n\nWhich one of the following is the case?",
+          "options": [
+            {
+              "label": "A",
+              "text": "The proof is correct."
+            },
+            {
+              "label": "B",
+              "text": "The proof is incorrect, and the first error occurs in line (I)."
+            },
+            {
+              "label": "C",
+              "text": "The proof is incorrect, and the first error occurs in line (II)."
+            },
+            {
+              "label": "D",
+              "text": "The proof is incorrect, and the first error occurs in line (III)."
+            },
+            {
+              "label": "E",
+              "text": "The proof is incorrect, and the first error occurs in line (IV)."
+            },
+            {
+              "label": "F",
+              "text": "The proof is incorrect, and the first error occurs in line (V)."
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_14",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 14,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "trigonometry",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "In the triangle $PQR$, $PR=2$, $QR=p$ and $\\angle RPQ=30^\\circ$.\n\nWhat is the set of all the values of $p$ for which this information uniquely determines the length of $PQ$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "$p=1$"
+            },
+            {
+              "label": "B",
+              "text": "$p=\\sqrt{3}$"
+            },
+            {
+              "label": "C",
+              "text": "$1\\leq p<2$"
+            },
+            {
+              "label": "D",
+              "text": "$\\sqrt{3}\\leq p<2$"
+            },
+            {
+              "label": "E",
+              "text": "$p=1$ or $p\\geq 2$"
+            },
+            {
+              "label": "F",
+              "text": "$p=\\sqrt{3}$ or $p\\geq 2$"
+            },
+            {
+              "label": "G",
+              "text": "$p<2$"
+            },
+            {
+              "label": "H",
+              "text": "$p\\geq 2$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_15",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 15,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "calculus",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "It is given that $f(x)=x^3+3qx^2+2$, where $q$ is a real constant.\n\nThe equation $f(x)=0$ has 3 distinct real roots.\n\nWhich of the following statements is/are necessarily true?\n\nI  The equation $f(x)+1=0$ has 3 distinct real roots.\n\nII  The equation $f(x+1)=0$ has 3 distinct real roots.\n\nIII  The equation $f(-x)-1=0$ has 3 distinct real roots.",
+          "options": [
+            {
+              "label": "A",
+              "text": "none of them"
+            },
+            {
+              "label": "B",
+              "text": "I only"
+            },
+            {
+              "label": "C",
+              "text": "II only"
+            },
+            {
+              "label": "D",
+              "text": "III only"
+            },
+            {
+              "label": "E",
+              "text": "I and II only"
+            },
+            {
+              "label": "F",
+              "text": "I and III only"
+            },
+            {
+              "label": "G",
+              "text": "II and III only"
+            },
+            {
+              "label": "H",
+              "text": "I, II and III"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_16",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 16,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "sequences_and_series",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "In this question, $x_1, x_2, x_3, \\ldots$ is an arithmetic progression, all of whose terms are integers.\n\nLet $n$ be a positive integer. If the median of the first $n$ terms of the sequence is an integer, which of the following three statements must be true?\n\nI  The median of the first $n+2$ terms is an integer.\n\nII  The median of the first $2n$ terms is an integer.\n\nIII  The median of $x_2, x_4, x_6, \\ldots, x_{2n}$ is an integer.",
+          "options": [
+            {
+              "label": "A",
+              "text": "none of them"
+            },
+            {
+              "label": "B",
+              "text": "I only"
+            },
+            {
+              "label": "C",
+              "text": "II only"
+            },
+            {
+              "label": "D",
+              "text": "III only"
+            },
+            {
+              "label": "E",
+              "text": "I and II only"
+            },
+            {
+              "label": "F",
+              "text": "I and III only"
+            },
+            {
+              "label": "G",
+              "text": "II and III only"
+            },
+            {
+              "label": "H",
+              "text": "I, II and III"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_17",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 17,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "number_theory",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "A positive integer is called a squaresum if and only if it can be written as the sum of the squares of two integers. For example, 61 and 9 are both squaresums since $61=5^2+6^2$ and $9=3^2+0^2$.\n\nA prime number is called awkward if and only if it has a remainder of 3 when divided by 4. For example, 23 is awkward since $23=5\\times 4+3$.\n\nA (true) theorem due to Fermat states that:\n\nA positive integer is a squaresum if and only if each of its awkward prime factors occurs to an even power in its prime factorisation.\n\nIt follows that $5\\times 23^2$ is a squaresum, since 23 occurs to the power 2, but $5\\times 23^3$ is not, since 23 occurs to the power 3.\n\nWhich one of the following statements is not true?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Every square number is a squaresum."
+            },
+            {
+              "label": "B",
+              "text": "If $N$ and $M$ are squaresums, then so is $NM$."
+            },
+            {
+              "label": "C",
+              "text": "If $NM$ is a squaresum, then $N$ and $M$ are squaresums."
+            },
+            {
+              "label": "D",
+              "text": "If $N$ is not a squaresum, then $kN$ is a squaresum for some number $k$ which is a product of awkward primes."
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_18",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 18,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "polynomials",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "$f(x)$ is a polynomial function defined for all real $x$.\n\nWhich of the following is a necessary condition for the inequality\n\\[\n\\frac{f(a)+f(b)}{2} \\geq f\\left(\\frac{a+b}{2}\\right)\n\\]\nto be true for all real numbers $a$ and $b$ with $a < b$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "$f(x) \\geq 0$ for all real $x$"
+            },
+            {
+              "label": "B",
+              "text": "$f'(x) \\geq 0$ for all real $x$"
+            },
+            {
+              "label": "C",
+              "text": "$f''(x) \\geq 0$ for all real $x$"
+            },
+            {
+              "label": "D",
+              "text": "$f(x) \\leq 0$ for all real $x$"
+            },
+            {
+              "label": "E",
+              "text": "$f'(x) \\leq 0$ for all real $x$"
+            },
+            {
+              "label": "F",
+              "text": "$f''(x) \\leq 0$ for all real $x$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_19",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 19,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "inequalities",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Three real numbers $x$, $y$ and $z$ satisfy $x > y > z > 1$.\n\nWhich one of the following statements must be true?",
+          "options": [
+            {
+              "label": "A",
+              "text": "$\frac{2^{z+1}}{2^x} > \frac{2^x+2^z}{2^y}$"
+            },
+            {
+              "label": "B",
+              "text": "$2 > \frac{3^x+3^z}{3^y}$"
+            },
+            {
+              "label": "C",
+              "text": "$\frac{2\times 5^x}{5^z} > \frac{5^x+5^z}{5^y}$"
+            },
+            {
+              "label": "D",
+              "text": "$2 < \frac{7^x+7^z}{7^y}$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_paper_2_20",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 20,
+          "page": null,
+          "source_pdf": "questions_2018_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "algebra",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "It is given that the equation $\\sqrt{x+p}+\\sqrt{x}=p$ has at least one real solution for $x$, where $p$ is a real constant.\n\nWhat is the complete set of possible values for $p$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "$p=0$ or $p=1$"
+            },
+            {
+              "label": "B",
+              "text": "$p=0$ or $p\\geq 1$"
+            },
+            {
+              "label": "C",
+              "text": "$p\\geq -x$"
+            },
+            {
+              "label": "D",
+              "text": "$p\\geq \\sqrt{x}$"
+            },
+            {
+              "label": "E",
+              "text": "$p\\geq 0$"
+            },
+            {
+              "label": "F",
+              "text": "$p\\geq 1$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      }
+    ]
+  }
+}

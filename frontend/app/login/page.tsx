@@ -111,7 +111,8 @@ function LoginForm() {
             {mode === 'sign_up' && (
               <input
                 type="text"
-                placeholder="Name (optional)"
+                required
+                placeholder="Username"
                 className="rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-accent/40"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}

@@ -101,12 +101,20 @@ def _load_syllabus(syllabus_path: Path) -> Dict[str, List[str]]:
 def load_questions(processed_dir: Path) -> List[Dict[str, Any]]:
     questions: List[Dict[str, Any]] = []
     for path in sorted(processed_dir.rglob('*.json')):
+        if path.name == 'manifest.json':
+            continue
         try:
             data = _load_json(path)
         except Exception:
             continue
         if isinstance(data, dict) and isinstance(data.get('questions'), list):
+            # Flat format: {questions: [...]}
             for q in data['questions']:
+                if isinstance(q, dict):
+                    questions.append(q)
+        elif isinstance(data, dict) and isinstance((data.get('paper') or {}).get('questions'), list):
+            # Nested canonical format: {meta: ..., paper: {source, questions: [...]}}
+            for q in data['paper']['questions']:
                 if isinstance(q, dict):
                     questions.append(q)
         elif isinstance(data, dict) and 'question_id' in data:

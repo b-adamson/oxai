@@ -1,77 +1,65 @@
 {
   "meta": {
     "exam": "TMUA",
-    "label": "TMUA 2022 Paper 1",
-    "year": 2022,
-    "paper": "1",
+    "label": "TMUA 2019 Paper 2",
+    "year": 2019,
+    "paper": "2",
     "count": 20,
     "sections": [
       "A"
     ]
   },
   "paper": {
-    "source": "TMUA 2022 Paper 1",
+    "source": "TMUA 2019 Paper 2",
     "questions": [
       {
-        "question_id": "TMUA_2022_p1_01",
+        "question_id": "TMUA_2019_2_01",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
           "question_number": 1,
-          "page": 3,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "trigonometry",
+          "topic": "algebra",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 4,
+          "difficulty": 3,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "How many real solutions are there to the equation $2\\cos^4\\theta - 5\\cos^2\\theta + 3 = 0$ in the interval $0 \\leq \\theta \\leq 2\\pi$?",
+          "stem": "Find the coefficient of the $x^4$ term in the expansion of $x^2\\left(2x+\\frac{1}{x}\\right)^6$.",
           "options": [
             {
               "label": "A",
-              "text": "1"
+              "text": "15"
             },
             {
               "label": "B",
-              "text": "2"
+              "text": "30"
             },
             {
               "label": "C",
-              "text": "3"
+              "text": "60"
             },
             {
               "label": "D",
-              "text": "4"
+              "text": "120"
             },
             {
               "label": "E",
-              "text": "5"
-            },
-            {
-              "label": "F",
-              "text": "6"
-            },
-            {
-              "label": "G",
-              "text": "7"
-            },
-            {
-              "label": "H",
-              "text": "8"
+              "text": "240"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "C",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -82,57 +70,57 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_02",
+        "question_id": "TMUA_2019_2_02",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
           "question_number": 2,
-          "page": 4,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "coordinate_geometry",
+          "topic": "polynomials",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 4,
+          "difficulty": 3,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "Find the complete set of values of $p$ for which the equation $x^2 - 2px + y^2 - 6y - p^2 + 8p + 9 = 0$ describes a circle in the $xy$-plane.",
+          "stem": "$(2x+1)$ and $(x-2)$ are factors of $2x^3+px^2+q$. What is the value of $2p+q$?",
           "options": [
             {
               "label": "A",
-              "text": "$p < -\\frac{9}{4}$"
+              "text": "-10"
             },
             {
               "label": "B",
-              "text": "$0 < p < 4$"
+              "text": "-\\frac{38}{5}"
             },
             {
               "label": "C",
-              "text": "$-1 < p < 9$"
+              "text": "-\\frac{22}{3}"
             },
             {
               "label": "D",
-              "text": "$p < 0$ or $p > 4$"
+              "text": "\\frac{22}{3}"
             },
             {
               "label": "E",
-              "text": "$p < -1$ or $p > 9$"
+              "text": "\\frac{38}{5}"
             },
             {
               "label": "F",
-              "text": "all real values of $p$"
+              "text": "10"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "D",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -143,159 +131,27 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_03",
+        "question_id": "TMUA_2019_2_03",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
           "question_number": 3,
-          "page": 5,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "calculus",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 4,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Given the following statements about a function $f$:\n\n- $f''(x)=a$ for all $x$\n- $f(0)=1$, $f(1)=2$\n- $\\int_0^1 f(x)\\,dx = 1$\n\nfind the value of $a$.",
-          "options": [
-            {
-              "label": "A",
-              "text": "$-6$"
-            },
-            {
-              "label": "B",
-              "text": "$-3$"
-            },
-            {
-              "label": "C",
-              "text": "$-2$"
-            },
-            {
-              "label": "D",
-              "text": "$2$"
-            },
-            {
-              "label": "E",
-              "text": "$3$"
-            },
-            {
-              "label": "F",
-              "text": "$6$"
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "F",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_04",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 4,
-          "page": 6,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "coordinate_geometry",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 4,
-          "requires_diagram": true,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "These sectors of circles are similar. The arc length of the smaller sector is 6. The difference between the areas of the sectors is 21. Find the positive difference between the perimeters of the sectors.",
-          "options": [
-            {
-              "label": "A",
-              "text": "4.5"
-            },
-            {
-              "label": "B",
-              "text": "7"
-            },
-            {
-              "label": "C",
-              "text": "8"
-            },
-            {
-              "label": "D",
-              "text": "9"
-            },
-            {
-              "label": "E",
-              "text": "10.5"
-            },
-            {
-              "label": "F",
-              "text": "14"
-            },
-            {
-              "label": "G",
-              "text": "15"
-            }
-          ],
-          "figures": [
-            {
-              "figure_id": "q04_sector_diagram",
-              "type": "diagram",
-              "src": "4.png"
-            }
-          ]
-        },
-        "validation": {
-          "answer_label": "C",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_05",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 5,
-          "page": 7,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
           "topic": "proof_and_logic",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 4,
+          "difficulty": 3,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "A straight line $L$ passes through $(1,2)$. Let $P$ be the statement: if the $y$-intercept of $L$ is negative, then the $x$-intercept of $L$ is positive. Which of the following statements must be true?\n\nI $P$\nII the converse of $P$\nIII the contrapositive of $P$",
+          "stem": "$a$, $b$ and $c$ are real numbers. Given that $ab=ac$, which of the following statements must be true? I $a=0$ II $b=0$ or $c=0$ III $b=c$",
           "options": [
             {
               "label": "A",
@@ -333,7 +189,7 @@
           "figures": []
         },
         "validation": {
-          "answer_label": "H",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -344,68 +200,15 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_06",
+        "question_id": "TMUA_2019_2_04",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
-          "question_number": 6,
-          "page": 8,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "proof_and_logic",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 3,
-          "requires_diagram": false,
-          "requires_calculation": false
-        },
-        "prompt": {
-          "stem": "A list consists of $n$ integers. Consider the following statements:\n\nP: $n$ is odd.\nQ: The median of the list is one of the numbers in the list.\n\nWhich one of the following is true?",
-          "options": [
-            {
-              "label": "A",
-              "text": "P is necessary and sufficient for Q."
-            },
-            {
-              "label": "B",
-              "text": "P is necessary but not sufficient for Q."
-            },
-            {
-              "label": "C",
-              "text": "P is sufficient but not necessary for Q."
-            },
-            {
-              "label": "D",
-              "text": "P is not necessary and not sufficient for Q."
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "F",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_07",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 7,
-          "page": 9,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 4,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
@@ -417,41 +220,45 @@
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "Consider the following claim:\nThe difference between two consecutive positive cube numbers is always prime.\n\nHere is an attempted proof of this claim:\n\nI $ (x + 1)^3 = x^3 + 3x^2 + 3x + 1 $\n\nII Taking $x$ to be a positive integer, the difference between two consecutive cube numbers can be expressed as $(x + 1)^3 - x^3 = 3x^2 + 3x + 1$\n\nIII It is impossible to factorise $3x^2 + 3x + 1$ into two linear factors with integer coefficients because its discriminant is negative.\n\nIV Therefore for every positive integer value of $x$ the integer $3x^2 + 3x + 1$ cannot be factorised.\n\nV Hence, the difference between two consecutive cube numbers will always be prime.\n\nWhich of the following best describes this proof?",
+          "stem": "Consider the following conjecture: If $N$ is a positive integer that consists of the digit 1 followed by an odd number of 0 digits and then a final digit 1, then $N$ is a prime number. Here are three numbers: I $N=101$ (which is a prime number) II $N=1001$ (which equals $7\\times11\\times13$) III $N=10001$ (which equals $73\\times137$) Which of these provide(s) a counterexample to the conjecture?",
           "options": [
             {
               "label": "A",
-              "text": "The proof is completely correct, and the claim is true."
+              "text": "none of them"
             },
             {
               "label": "B",
-              "text": "The proof is completely correct, but there are counterexamples to the claim."
+              "text": "I only"
             },
             {
               "label": "C",
-              "text": "The proof is wrong, and the first error occurs on line I."
+              "text": "II only"
             },
             {
               "label": "D",
-              "text": "The proof is wrong, and the first error occurs on line II."
+              "text": "III only"
             },
             {
               "label": "E",
-              "text": "The proof is wrong, and the first error occurs on line III."
+              "text": "I and II only"
             },
             {
               "label": "F",
-              "text": "The proof is wrong, and the first error occurs on line IV."
+              "text": "I and III only"
             },
             {
               "label": "G",
-              "text": "The proof is wrong, and the first error occurs on line V."
+              "text": "II and III only"
+            },
+            {
+              "label": "H",
+              "text": "I, II and III"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "E",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -462,57 +269,49 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_08",
+        "question_id": "TMUA_2019_2_05",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
-          "question_number": 8,
-          "page": 10,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 5,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
           "topic": "proof_and_logic",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 5,
+          "difficulty": 3,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "A selection, $S$, of $n$ terms is taken from the arithmetic sequence $1, 4, 7, 10, \\ldots, 70$. Consider the following statement:\n\n(*) There are two distinct terms in $S$ whose sum is 74.\n\nWhat is the smallest value of $n$ for which (*) is necessarily true?",
+          "stem": "Consider the following statement about the positive integers $a$, $b$ and $n$: $(*)$: $ab$ is divisible by $n$. The condition `either $a$ or $b$ is divisible by $n$' is:",
           "options": [
             {
               "label": "A",
-              "text": "12"
+              "text": "necessary but not sufficient for $(*)$"
             },
             {
               "label": "B",
-              "text": "13"
+              "text": "sufficient but not necessary for $(*)$"
             },
             {
               "label": "C",
-              "text": "14"
+              "text": "necessary and sufficient for $(*)$"
             },
             {
               "label": "D",
-              "text": "21"
-            },
-            {
-              "label": "E",
-              "text": "22"
-            },
-            {
-              "label": "F",
-              "text": "23"
+              "text": "not necessary and not sufficient for $(*)$"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "B",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -523,15 +322,133 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_09",
+        "question_id": "TMUA_2019_2_06",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
-          "question_number": 9,
-          "page": 11,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 6,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "trigonometry",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "A student attempts to solve the equation $\\cos x+\\sin x\\tan x=2\\sin x-1$ in the range $0\\leq x\\leq 2\\pi$. The student's attempt is as follows: $\\cos x+\\sin x\\tan x=2\\sin x-1$ So $\\cos x-\\sin x+\\sin x\\tan x-\\sin x=-1$ (I) So $(\\sin x-\\cos x)(\\tan x-1)=-1$ (II) So $\\sin x-\\cos x=-1$ or $\\tan x-1=-1$ (III) So $(\\sin x-\\cos x)^2=1$ or $\\tan x=0$ (IV) So $2\\sin x\\cos x=0$ or $\\tan x=0$ (V) So $x=0,\\ \\frac{\\pi}{2},\\ \\pi,\\ \\frac{3\\pi}{2},\\ 2\\pi$ (VI) Which of the following best describes this attempt?",
+          "options": [
+            {
+              "label": "A",
+              "text": "It is completely correct"
+            },
+            {
+              "label": "B",
+              "text": "It is incorrect, and the first error occurs on line (I)"
+            },
+            {
+              "label": "C",
+              "text": "It is incorrect, and the first error occurs on line (II)"
+            },
+            {
+              "label": "D",
+              "text": "It is incorrect, and the first error occurs on line (III)"
+            },
+            {
+              "label": "E",
+              "text": "It is incorrect, and the first error is that extra solutions were introduced on line (IV)"
+            },
+            {
+              "label": "F",
+              "text": "It is incorrect, and the first error is that extra solutions were introduced on line (V)"
+            },
+            {
+              "label": "G",
+              "text": "It is incorrect, and the first error is not eliminating the values where $\tan x$ is undefined on line (VI)"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2019_2_07",
+        "source": {
+          "exam": "TMUA",
+          "year": 2019,
+          "paper": "2",
+          "section": "A",
+          "question_number": 7,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "proof_and_logic",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "For which one of the following statements can the fact that $12^2+16^2=20^2$ be used to produce a counterexample?",
+          "options": [
+            {
+              "label": "A",
+              "text": "If $a$, $b$ and $c$ are positive integers which satisfy the equation $a^2+b^2=c^2$, and the three numbers have no common divisor, then two of them are odd and the other is even."
+            },
+            {
+              "label": "B",
+              "text": "The equation $a^4+b^2=c^2$ has no solutions for which $a$, $b$ and $c$ are positive integers."
+            },
+            {
+              "label": "C",
+              "text": "The equation $a^4+b^4=c^4$ has no solutions for which $a$, $b$ and $c$ are positive integers."
+            },
+            {
+              "label": "D",
+              "text": "If $a$, $b$ and $c$ are positive integers which satisfy the equation $a^2+b^2=c^2$, then one is the arithmetic mean of the other two."
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2019_2_08",
+        "source": {
+          "exam": "TMUA",
+          "year": 2019,
+          "paper": "2",
+          "section": "A",
+          "question_number": 8,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
@@ -543,72 +460,7 @@
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "Consider the following statement:\n\n(*) For all real numbers $x$, if $x < k$ then $x^2 < k$\n\nWhat is the complete set of values of $k$ for which (*) is true?",
-          "options": [
-            {
-              "label": "A",
-              "text": "no real numbers"
-            },
-            {
-              "label": "B",
-              "text": "$k > 0$"
-            },
-            {
-              "label": "C",
-              "text": "$k < 1$"
-            },
-            {
-              "label": "D",
-              "text": "$k \\leq 1$"
-            },
-            {
-              "label": "E",
-              "text": "$0 < k < 1$"
-            },
-            {
-              "label": "F",
-              "text": "$0 < k \\leq 1$"
-            },
-            {
-              "label": "G",
-              "text": "all real numbers"
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "E",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_10",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 10,
-          "page": 12,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "proof_and_logic",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 3,
-          "requires_diagram": false,
-          "requires_calculation": false
-        },
-        "prompt": {
-          "stem": "Which of the following statements is/are true?\n\nI For all real numbers $x$ and for all positive integers $n$, $x < n$\nII For all real numbers $x$, there exists a positive integer $n$ such that $x < n$\nIII There exists a real number $x$ such that for all positive integers $n$, $x < n$",
+          "stem": "$a$, $b$ and $c$ are real numbers with $a<b<c<0$. Which of the following statements must be true? I $ac<ab<a^2$ II $b(c+a)>0$ III $\\frac{c}{b}>\\frac{a}{b}$",
           "options": [
             {
               "label": "A",
@@ -646,7 +498,7 @@
           "figures": []
         },
         "validation": {
-          "answer_label": "C",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -657,88 +509,19 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_11",
+        "question_id": "TMUA_2019_2_09",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
-          "question_number": 11,
-          "page": 13,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 9,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "logarithms_and_exponentials",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 3,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Evaluate $\\sum_{n=1}^{100} \\log_{10}(3^{1-n})$.",
-          "options": [
-            {
-              "label": "A",
-              "text": "$-4950\\log_{10}3$"
-            },
-            {
-              "label": "B",
-              "text": "$4950\\log_{10}3$"
-            },
-            {
-              "label": "C",
-              "text": "$-5050\\log_{10}3$"
-            },
-            {
-              "label": "D",
-              "text": "$5050\\log_{10}3$"
-            },
-            {
-              "label": "E",
-              "text": "$1 - 4950\\log_{10}3$"
-            },
-            {
-              "label": "F",
-              "text": "$1 + 4950\\log_{10}3$"
-            },
-            {
-              "label": "G",
-              "text": "$1 - 5050\\log_{10}3$"
-            },
-            {
-              "label": "H",
-              "text": "$1 + 5050\\log_{10}3$"
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "A",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_12",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 12,
-          "page": 14,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "functions",
+          "topic": "proof_and_logic",
           "subtopic": null,
           "archetype": null,
           "difficulty": 4,
@@ -746,33 +529,37 @@
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "A family of quadratic curves is given by $y_k = 2\\left(x - \\frac{k}{2}\\right)^2 + \\frac{k^2}{2} + 4k + 3$ where $k$ is any real number and $y_k$ is a function of $x$. All these curves are sketched, and the point with the lowest $y$-coordinate among all the curves $y_k$ is $(a,b)$. Find the value of $a+b$.",
+          "stem": "A large circular table has 40 chairs round it. What is the smallest number of people who can be sitting at the table already such that the next person to sit down must sit next to someone?",
           "options": [
             {
               "label": "A",
-              "text": "$-1$"
+              "text": "9"
             },
             {
               "label": "B",
-              "text": "$-3$"
+              "text": "10"
             },
             {
               "label": "C",
-              "text": "$-5$"
+              "text": "13"
             },
             {
               "label": "D",
-              "text": "$-7$"
+              "text": "14"
             },
             {
               "label": "E",
-              "text": "$-9$"
+              "text": "19"
+            },
+            {
+              "label": "F",
+              "text": "20"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "D",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -783,65 +570,118 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_13",
+        "question_id": "TMUA_2019_2_10",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
-          "question_number": 13,
-          "page": 15,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 10,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "algebra",
+          "topic": "proof_and_logic",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 5,
+          "difficulty": 3,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "Given that $(a^3 + \\frac{2}{b^3})(\\frac{2}{a^3} - b^3) = \\sqrt{2}$ where $a$ and $b$ are real numbers, what is the least value of $ab$?",
+          "stem": "$PQRS$ is a quadrilateral, labelled anticlockwise. Which one of the following is a necessary but not sufficient condition for $PQRS$ to be a parallelogram?",
           "options": [
             {
               "label": "A",
-              "text": "$-\\sqrt{2}$"
+              "text": "$PQ=SR$ and $PS$ is parallel to $QR$"
             },
             {
               "label": "B",
-              "text": "$\\sqrt{2}$"
+              "text": "$PQ=SR$ and $PQ$ is parallel to $SR$"
             },
             {
               "label": "C",
-              "text": "$-2\\sqrt{2}$"
+              "text": "$PQ=QR=SR=PS$"
             },
             {
               "label": "D",
-              "text": "$2\\sqrt{2}$"
+              "text": "$PR=QS$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2019_2_11",
+        "source": {
+          "exam": "TMUA",
+          "year": 2019,
+          "paper": "2",
+          "section": "A",
+          "question_number": 11,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "sequences_and_series",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "An arithmetic series has $n$ terms, all of which are integers. The sum of the series is $20$. Which of the following statements must be true? I The first term of the series is even. II $n$ is even. III The common difference is even.",
+          "options": [
+            {
+              "label": "A",
+              "text": "none of them"
+            },
+            {
+              "label": "B",
+              "text": "I only"
+            },
+            {
+              "label": "C",
+              "text": "II only"
+            },
+            {
+              "label": "D",
+              "text": "III only"
             },
             {
               "label": "E",
-              "text": "$-\\frac{\\sqrt{2}}{2}$"
+              "text": "I and II only"
             },
             {
               "label": "F",
-              "text": "$\\frac{\\sqrt{2}}{2}$"
+              "text": "I and III only"
             },
             {
               "label": "G",
-              "text": "$-2^{1/6}$"
+              "text": "II and III only"
             },
             {
               "label": "H",
-              "text": "$2^{1/6}$"
+              "text": "I, II and III"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "A",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -852,57 +692,57 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_14",
+        "question_id": "TMUA_2019_2_12",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
-          "question_number": 14,
-          "page": 16,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 12,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "coordinate_geometry",
+          "topic": "probability_and_statistics",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 5,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "A circle has centre $O$ and radius 6. $P$, $Q$ and $R$ are points on the circumference with angle $POQ \\geq \\frac{\\pi}{2}$. The area of the triangle $POQ$ is $9\\sqrt{3}$. What is the greatest possible area of triangle $PRQ$?",
+          "stem": "Most students in a large college study Mathematics. A teacher chooses three different students at random, one after the other. Consider these three probabilities: $R=\\mathrm{P}(\\text{At least one of the students chosen studies Mathematics})$ $S=\\mathrm{P}(\\text{The second student chosen studies Mathematics})$ $T=\\mathrm{P}(\\text{All three of the students chosen study Mathematics})$ Which of the following is true?",
           "options": [
             {
               "label": "A",
-              "text": "$18 + 9\\sqrt{3}$"
+              "text": "$R<S<T$"
             },
             {
               "label": "B",
-              "text": "$18\\sqrt{3}$"
+              "text": "$R<T<S$"
             },
             {
               "label": "C",
-              "text": "$27 + 9\\sqrt{3}$"
+              "text": "$S<R<T$"
             },
             {
               "label": "D",
-              "text": "$27\\sqrt{3}$"
+              "text": "$S<T<R$"
             },
             {
               "label": "E",
-              "text": "$36 + 9\\sqrt{3}$"
+              "text": "$T<R<S$"
             },
             {
               "label": "F",
-              "text": "$36\\sqrt{3}$"
+              "text": "$T<S<R$"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "D",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -913,15 +753,15 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_15",
+        "question_id": "TMUA_2019_2_13",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
-          "question_number": 15,
-          "page": 17,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 13,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
@@ -933,45 +773,29 @@
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "A rectangle is drawn in the region enclosed by the curves $p$ and $q$, where $p(x)=8-2x^2$ and $q(x)=x^2-2$ such that the sides of the rectangle are parallel to the $x$- and $y$-axes. What is the maximum possible area of the rectangle?",
+          "stem": "A student approximates the integral $\\int_a^b \\sin^2 x\\,dx$ using the trapezium rule with 4 strips. The resulting approximation is an overestimate. Which of the following is/are necessarily true? I If the student approximates $\\int_{-b}^{-a} \\sin^2 x\\,dx$ in the same way, the result will be an overestimate. II If the student approximates $\\int_a^b \\cos^2 x\\,dx$ in the same way, the result will be an underestimate.",
           "options": [
             {
               "label": "A",
-              "text": "$\\frac{26}{9}$"
+              "text": "neither of them"
             },
             {
               "label": "B",
-              "text": "$\\frac{52}{9}$"
+              "text": "I only"
             },
             {
               "label": "C",
-              "text": "$\\frac{4\\sqrt{6}}{3}$"
+              "text": "II only"
             },
             {
               "label": "D",
-              "text": "$\\frac{8\\sqrt{6}}{3}$"
-            },
-            {
-              "label": "E",
-              "text": "$4\\sqrt{2}$"
-            },
-            {
-              "label": "F",
-              "text": "$8\\sqrt{2}$"
-            },
-            {
-              "label": "G",
-              "text": "$\\frac{20\\sqrt{10}}{9}$"
-            },
-            {
-              "label": "H",
-              "text": "$\\frac{40\\sqrt{10}}{9}$"
+              "text": "I and II"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "H",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -982,57 +806,65 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_16",
+        "question_id": "TMUA_2019_2_14",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
-          "question_number": 16,
-          "page": 18,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 14,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "trigonometry",
+          "topic": "polynomials",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 5,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "The solutions to $7x^4 - 6x^2 + 1 = 0$ are $\\pm \\cos\\theta$ and $\\pm \\cos\\beta$. Which one of the following equations has solutions $\\pm \\sin\\theta$ and $\\pm \\sin\\beta$?",
+          "stem": "Consider the following statements about the polynomial $p(x)$, where $a<b$: I $p(a)\\leq p(b)$ II $p'(a)\\leq p'(b)$ III $p''(a)\\leq p''(b)$ Which of these statements is a necessary condition for $p(x)$ to be increasing for $a\\leq x\\leq b$?",
           "options": [
             {
               "label": "A",
-              "text": "$7x^4 - 8x^2 - 5 = 0$"
+              "text": "none of them"
             },
             {
               "label": "B",
-              "text": "$7x^4 - 8x^2 + 2 = 0$"
+              "text": "I only"
             },
             {
               "label": "C",
-              "text": "$7x^4 - 6x^2 - 2 = 0$"
+              "text": "II only"
             },
             {
               "label": "D",
-              "text": "$7x^4 - 6x^2 + 1 = 0$"
+              "text": "III only"
             },
             {
               "label": "E",
-              "text": "$7x^4 + 6x^2 - 1 = 0$"
+              "text": "I and II only"
             },
             {
               "label": "F",
-              "text": "$7x^4 + 6x^2 + 5 = 0$"
+              "text": "I and III only"
+            },
+            {
+              "label": "G",
+              "text": "II and III only"
+            },
+            {
+              "label": "H",
+              "text": "I, II and III"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "B",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -1043,19 +875,76 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_17",
+        "question_id": "TMUA_2019_2_15",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
-          "question_number": 17,
-          "page": 19,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 15,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "trigonometry",
+          "topic": "logarithms_and_exponentials",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The numbers $a$, $b$ and $c$ are each greater than $1$. The following logarithms are all to the same base: $\\log(ab^2c)=7$ $\\log(a^2bc^2)=11$ $\\log(a^2b^2c^3)=15$ What is this base?",
+          "options": [
+            {
+              "label": "A",
+              "text": "$a$"
+            },
+            {
+              "label": "B",
+              "text": "$b$"
+            },
+            {
+              "label": "C",
+              "text": "$c$"
+            },
+            {
+              "label": "D",
+              "text": "It is possible to determine the base, but the base is not $a$, $b$ or $c$."
+            },
+            {
+              "label": "E",
+              "text": "There is insufficient information given to determine the base."
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2019_2_16",
+        "source": {
+          "exam": "TMUA",
+          "year": 2019,
+          "paper": "2",
+          "section": "A",
+          "question_number": 16,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "algebra",
           "subtopic": null,
           "archetype": null,
           "difficulty": 4,
@@ -1063,43 +952,51 @@
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "Find the complete set of values of $x$ for which there are two non-congruent triangles with the side lengths and angle as shown in the diagram.",
+          "stem": "The graph of the quadratic $y=px^2+qx+p$ where $p>0$, intersects the $x$-axis at two distinct points. In which one of the following graphs does the shaded region show the complete set of possible values that $p$ and $q$ could take?",
           "options": [
             {
               "label": "A",
-              "text": "$1 < x < 3$"
+              "text": ""
             },
             {
               "label": "B",
-              "text": "$1 < x < 4$"
+              "text": ""
             },
             {
               "label": "C",
-              "text": "$1 < x < 5$"
+              "text": ""
             },
             {
               "label": "D",
-              "text": "$3 < x < 4$"
+              "text": ""
             },
             {
               "label": "E",
-              "text": "$3 < x < 5$"
+              "text": ""
             },
             {
               "label": "F",
-              "text": "$4 < x < 5$"
+              "text": ""
+            },
+            {
+              "label": "G",
+              "text": ""
+            },
+            {
+              "label": "H",
+              "text": ""
             }
           ],
           "figures": [
             {
-              "figure_id": "q17_triangle_diagram",
-              "type": "diagram",
-              "src": "17.png"
+              "figure_id": "q16_graphs",
+              "type": "graph",
+              "src": "images_2019_paper_2/16.png"
             }
           ]
         },
         "validation": {
-          "answer_label": "D",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -1110,57 +1007,118 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_18",
+        "question_id": "TMUA_2019_2_17",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
+          "section": "A",
+          "question_number": 17,
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "proof_and_logic",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 5,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "A multiple-choice test question offered the following four options relating to a certain statement: A The statement is true if and only if $x>1$ B The statement is true if $x>1$ C The statement is true if and only if $x>2$ D The statement is true if $x>2$ Given that exactly one of these options was correct, which one was it?",
+          "options": [
+            {
+              "label": "A",
+              "text": "The statement is true if and only if $x>1$"
+            },
+            {
+              "label": "B",
+              "text": "The statement is true if $x>1$"
+            },
+            {
+              "label": "C",
+              "text": "The statement is true if and only if $x>2$"
+            },
+            {
+              "label": "D",
+              "text": "The statement is true if $x>2$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2019_2_18",
+        "source": {
+          "exam": "TMUA",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
           "question_number": 18,
-          "page": 20,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "functions",
+          "topic": "inequalities",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 5,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "It is given that $f(x)=x^2(x-1)^2(x-2)$ and $g(x)=-p(x-q)^2(x-r)^2$ where $p$, $q$ and $r$ are positive and $q<r$. Find the set of values of $q$ and $r$ that guarantees the greatest number of distinct real solutions of the equation $f(x)=g(x)$ for all $p$.",
+          "stem": "Consider the following inequality: $(*)$: $a|x|+1\\leq |x-2|$ where $a$ is a real constant. Which one of the following describes the complete set of values of $a$ such that $(*)$ is true for all real $x$?",
           "options": [
             {
               "label": "A",
-              "text": "$q<1$ and $r<1$"
+              "text": "$a\\leq \\frac{3}{2}$"
             },
             {
               "label": "B",
-              "text": "$q<1$ and $1<r<2$"
+              "text": "$a\\leq 1$"
             },
             {
               "label": "C",
-              "text": "$q<1$ and $r>2$"
+              "text": "$a\\leq \\frac{1}{2}$"
             },
             {
               "label": "D",
-              "text": "$1<q<2$ and $1<r<2$"
+              "text": "$a\\leq 0$"
             },
             {
               "label": "E",
-              "text": "$1<q<2$ and $r>2$"
+              "text": "$a\\leq -\\frac{1}{2}$"
             },
             {
               "label": "F",
-              "text": "$q>2$ and $r>2$"
+              "text": "$a\\leq -1$"
+            },
+            {
+              "label": "G",
+              "text": "$a\\leq -\\frac{3}{2}$"
+            },
+            {
+              "label": "H",
+              "text": "There are no such values of $a$."
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "B",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -1171,57 +1129,61 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_19",
+        "question_id": "TMUA_2019_2_19",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
           "question_number": 19,
-          "page": 21,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "probability_and_statistics",
+          "topic": "algebra",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 5,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "Circle $C_1$ is defined as $x^2 + y^2 = 25$. A second circle $C_2$ has radius 4 and centre $(a,b)$ where $-2 \\leq a \\leq 2$ and $-3 \\leq b \\leq 3$. If the centre of $C_2$ is equally likely to be located anywhere within the given range, what is the probability that $C_2$ intersects $C_1$?",
+          "stem": "Find the value of the expression $\\sqrt{8-4\\sqrt{2}+1}+\\sqrt{9-12\\sqrt{2}+8}$.",
           "options": [
             {
               "label": "A",
-              "text": "$\\frac{1}{25}$"
+              "text": "$\\sqrt{26-16\\sqrt{2}}$"
             },
             {
               "label": "B",
-              "text": "$\\frac{9}{25}$"
+              "text": "$4\\sqrt{2}-4$"
             },
             {
               "label": "C",
-              "text": "$\\frac{16}{25}$"
+              "text": "-2"
             },
             {
               "label": "D",
-              "text": "$\\frac{6-\\pi}{6}$"
+              "text": "$4-4\\sqrt{2}$"
             },
             {
               "label": "E",
-              "text": "$\\frac{16-\\pi}{24}$"
+              "text": "2"
             },
             {
               "label": "F",
-              "text": "$\\frac{24-\\pi}{24}$"
+              "text": "$\\sqrt{26-4\\sqrt{2}}$"
+            },
+            {
+              "label": "G",
+              "text": "1"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "F",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -1232,53 +1194,61 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_20",
+        "question_id": "TMUA_2019_2_20",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
+          "year": 2019,
+          "paper": "2",
           "section": "A",
           "question_number": 20,
-          "page": 22,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "page": null,
+          "source_pdf": "2019_paper_2.pdf"
         },
         "content": {
           "subject": "math",
           "topic": "functions",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 5,
+          "difficulty": 3,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "$n$ is the number of points of intersection of the graphs $y = |x^2 - a^2|$ and $y = a^2|x - 1|$ where $a$ is a real number. What is the smallest value of $n$ that is not possible?",
+          "stem": "When the graph of the function $y=f(x)$, defined on the real numbers, is reflected in the $y$-axis and then translated by 2 units in the negative $x$-direction, the result is the graph of the function $y=g(x)$. When the graph of the same function $y=f(x)$ is translated by 2 units in the negative $x$-direction and then reflected in the $y$-axis, the result is the graph of the function $y=h(x)$. Which one of the following conditions on $y=f(x)$ is necessary and sufficient for the functions $g(x)$ and $h(x)$ to be identical?",
           "options": [
             {
               "label": "A",
-              "text": "$n=1$"
+              "text": "$f(x)=f(x+2)$ for all $x$"
             },
             {
               "label": "B",
-              "text": "$n=2$"
+              "text": "$f(x)=f(x+4)$ for all $x$"
             },
             {
               "label": "C",
-              "text": "$n=3$"
+              "text": "$f(x)=f(x+8)$ for all $x$"
             },
             {
               "label": "D",
-              "text": "$n=4$"
+              "text": "$f(x)=f(-x)$ for all $x$"
             },
             {
               "label": "E",
-              "text": "$n=5$"
+              "text": "$f(x)=f(2-x)$ for all $x$"
+            },
+            {
+              "label": "F",
+              "text": "$f(x)=f(4-x)$ for all $x$"
+            },
+            {
+              "label": "G",
+              "text": "$f(x)=f(8-x)$ for all $x$"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "B",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"

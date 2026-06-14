@@ -222,22 +222,132 @@ export function planPaperSlots(blueprint: PaperBlueprint): PaperSlot[] {
   });
 }
 
+// ── TMUA slot planners ────────────────────────────────────────
+
+/** 'TMUA Paper 1' or 'TMUA Paper 2' — used as slot.subject for TMUA slots */
+export type TmuaPaperSelection = 'paper1' | 'paper2' | 'full';
+
+function _tmuaPaperLabel(sel: TmuaPaperSelection): string[] {
+  if (sel === 'paper1') return ['TMUA Paper 1'];
+  if (sel === 'paper2') return ['TMUA Paper 2'];
+  return ['TMUA Paper 1', 'TMUA Paper 2'];
+}
+
+/**
+ * Plan 20 or 40 slots for a TMUA sitting.
+ * Paper 1 or Paper 2 = 20 questions; Full Sitting = 40 (P1 then P2).
+ * No diagrams — TMUA is text-only MCQ.
+ */
+export function planTmuaPaperSlots(
+  selection: TmuaPaperSelection,
+  bankFraction: number,
+  difficultyPreset: DifficultyPreset,
+  excludedYears: number[] = [],
+): PaperSlot[] {
+  const range = ESAT_DIFFICULTY_RANGES[difficultyPreset] ?? [2, 4];
+  const bankPerPaper = Math.round(Math.max(0, Math.min(1, bankFraction)) * QUESTIONS_PER_MODULE);
+  const papers = _tmuaPaperLabel(selection);
+  const slots: PaperSlot[] = [];
+
+  papers.forEach((paper, paperIdx) => {
+    const sourceTypes: SourceType[] = [
+      ...Array(bankPerPaper).fill('bank' as SourceType),
+      ...Array(QUESTIONS_PER_MODULE - bankPerPaper).fill('fresh_ai' as SourceType),
+    ];
+    for (let k = sourceTypes.length - 1; k > 0; k--) {
+      const j = Math.floor(Math.random() * (k + 1));
+      [sourceTypes[k], sourceTypes[j]] = [sourceTypes[j], sourceTypes[k]];
+    }
+    for (let i = 0; i < QUESTIONS_PER_MODULE; i++) {
+      const difficulty = blueprintDifficulty(i, QUESTIONS_PER_MODULE, range) as Difficulty;
+      slots.push({
+        slot_id: uuidv4(),
+        position: paperIdx * QUESTIONS_PER_MODULE + i,
+        subject: paper,
+        topic: null,
+        subtopic: null,
+        difficulty,
+        diagram_requirement: 'never',
+        source_type: sourceTypes[i],
+        status: 'planned',
+        question_id: null,
+        retry_count: 0,
+        error: null,
+        excluded_years: excludedYears.length > 0 ? excludedYears : undefined,
+      });
+    }
+  });
+  return slots;
+}
+
+/**
+ * Plan quick-mode slots for TMUA. Paper is picked randomly when 'mixed'.
+ */
+export function planTmuaQuickSlots(
+  paper: 'paper1' | 'paper2' | 'mixed',
+  bankFraction: number,
+  count: number,
+  startPosition = 0,
+): PaperSlot[] {
+  const papers = paper === 'paper1' ? ['TMUA Paper 1']
+    : paper === 'paper2' ? ['TMUA Paper 2']
+    : ['TMUA Paper 1', 'TMUA Paper 2'];
+  return Array.from({ length: count }, (_, i) => {
+    const subject = papers[Math.floor(Math.random() * papers.length)];
+    const difficulty = (2 + Math.floor(Math.random() * 3)) as Difficulty; // 2–4
+    const source_type: SourceType = bankFraction === 0 ? 'fresh_ai'
+      : bankFraction === 1 ? 'bank'
+      : Math.random() < bankFraction ? 'bank' : 'fresh_ai';
+    return {
+      slot_id: uuidv4(),
+      position: startPosition + i,
+      subject,
+      topic: null,
+      subtopic: null,
+      difficulty,
+      diagram_requirement: 'never' as const,
+      source_type,
+      status: 'planned' as const,
+      question_id: null,
+      retry_count: 0,
+      error: null,
+    };
+  });
+}
+
+// ── TMUA slot helpers ─────────────────────────────────────────
+
+function isTmuaSlot(slot: PaperSlot): boolean {
+  return typeof slot.subject === 'string' && slot.subject.startsWith('TMUA Paper');
+}
+
+function tmuaPaperNum(subject: string): '1' | '2' {
+  return subject.trim().endsWith('2') ? '2' : '1';
+}
+
 // ── Question generation for a slot ────────────────────────────
 
 export async function generateForSlot(
   slot: PaperSlot,
   usedBankIds?: Set<string>,
 ): Promise<{ slot: PaperSlot; question: QuestionRecord }> {
+  const tmua = isTmuaSlot(slot);
+  const aiSubject = tmua ? 'Mathematics' : slot.subject;
+  const bankExam = tmua ? 'TMUA' : undefined;
+  const bankPaper = tmua ? tmuaPaperNum(slot.subject) : undefined;
+
   // Try bank first for bank/either slots
   if (slot.source_type === 'bank' || slot.source_type === 'either') {
     try {
       const result = await api.bankQuestions({
-        subject: slot.subject,
+        subject: tmua ? 'math' : slot.subject,
         topic: slot.topic,
         difficulty: slot.difficulty,
         limit: 30,
         exclude_ids: usedBankIds ? Array.from(usedBankIds) : [],
         excluded_years: slot.excluded_years,
+        exam: bankExam,
+        tmua_paper: bankPaper,
       });
       if (result.questions.length > 0) {
         const raw = result.questions[Math.floor(Math.random() * result.questions.length)];
@@ -260,7 +370,7 @@ export async function generateForSlot(
   // 'required' → must have diagram; 'allowed' → model decides; 'never' → no diagram.
   const want_diagram = slot.diagram_requirement !== 'never';
   const raw = await api.generateQuestion({
-    subject: slot.subject,
+    subject: aiSubject,
     topic: slot.topic,
     difficulty: slot.difficulty,
     examples: 3,

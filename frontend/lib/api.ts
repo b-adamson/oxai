@@ -92,6 +92,8 @@ export interface BankQueryParams {
   limit?: number;
   exclude_ids?: string[];
   excluded_years?: number[];
+  exam?: string;        // e.g. 'TMUA' — omit for ESAT/NSAA
+  tmua_paper?: string;  // '1' or '2'
 }
 
 export type SolutionResponse = {

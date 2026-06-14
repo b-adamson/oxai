@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { SyncManager } from "@/components/SyncManager";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
+import { NavAuth } from "@/components/NavAuth";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -36,12 +37,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             Paper Mode
           </Link>
           <DarkModeToggle />
-          <Link
-            href="/quick"
-            className="text-sm font-semibold bg-accent text-white px-4 py-1.5 rounded-full hover:bg-accent-light transition-colors shrink-0"
-          >
-            Get Started
-          </Link>
+          <NavAuth />
         </nav>
         <div className="flex-1 flex flex-col">{children}</div>
       </body>

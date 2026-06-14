@@ -25,10 +25,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "calculus",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 3,
           "requires_diagram": false,
           "requires_calculation": true
         },
@@ -82,10 +82,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "algebra",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": true
         },
@@ -139,10 +139,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "proof_and_logic",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 3,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -208,10 +208,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "coordinate_geometry",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -265,10 +265,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "proof_and_logic",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -334,10 +334,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "proof_and_logic",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 3,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -387,10 +387,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "proof_and_logic",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -452,10 +452,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "proof_and_logic",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 5,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -513,10 +513,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "inequalities",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -578,10 +578,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "proof_and_logic",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 3,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -647,10 +647,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "coordinate_geometry",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 3,
           "requires_diagram": true,
           "requires_calculation": false
         },
@@ -710,10 +710,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "calculus",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 5,
           "requires_diagram": false,
           "requires_calculation": true
         },
@@ -771,10 +771,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "algebra",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -832,10 +832,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "inequalities",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -897,10 +897,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "logarithms_and_exponentials",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 5,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -966,10 +966,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "sequences_and_series",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 5,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -1035,10 +1035,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "proof_and_logic",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -1092,10 +1092,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "functions",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 5,
           "requires_diagram": true,
           "requires_calculation": false
         },
@@ -1167,10 +1167,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "proof_and_logic",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": false
         },
@@ -1224,10 +1224,10 @@
         },
         "content": {
           "subject": "math",
-          "topic": null,
+          "topic": "functions",
           "subtopic": null,
           "archetype": null,
-          "difficulty": null,
+          "difficulty": 5,
           "requires_diagram": false,
           "requires_calculation": false
         },

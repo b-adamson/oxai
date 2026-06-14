@@ -1,737 +1,376 @@
 {
-  "meta": {
-    "exam": "TMUA",
-    "label": "TMUA 2021 Paper 2",
-    "year": 2021,
-    "paper": "2",
-    "count": 20,
-    "sections": [
-      "A"
-    ]
-  },
-  "paper": {
-    "source": "TMUA 2021 Paper 2",
-    "questions": [
-      {
-        "question_id": "TMUA_2021_paper_2_01",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 1,
-          "page": 3,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+  "exam": "TMUA",
+  "year": 2021,
+  "paper": 2,
+  "questions": [
+    {
+      "number": 1,
+      "image": "1.png",
+      "type": "multiple_choice",
+      "prompt": "Find the value of \\int_1^4 \\left(3\\sqrt{x} + \\frac{4}{x^2}\\right)\\,dx.",
+      "options": {
+        "A": "-0.75",
+        "B": "7.125",
+        "C": "11",
+        "D": "17",
+        "E": "18",
+        "F": "21.875",
+        "G": "34.5"
+      },
+      "topic": "calculus",
+      "difficulty": 3
+    },
+    {
+      "number": 2,
+      "image": "2.png",
+      "type": "multiple_choice",
+      "prompt": "A(0, 2) and C(4, 0) are opposite vertices of the square ABCD. What is the equation of the straight line through B and D?",
+      "options": {
+        "A": "y = -2x + 5",
+        "B": "y = -1/2 x - 3",
+        "C": "y = -1/2 x + 2",
+        "D": "y = x",
+        "E": "y = 2x - 3",
+        "F": "y = 2x + 2"
+      },
+      "topic": "coordinate_geometry",
+      "difficulty": 3
+    },
+    {
+      "number": 3,
+      "image": "3.png",
+      "type": "multiple_choice",
+      "prompt": "A student is chosen at random from a class. Each student is equally likely to be chosen. Which of the following conditions is/are necessary for the probability that the student wears glasses to equal 4/15?\n\nI  Exactly 11 students in the class do not wear glasses.\nII The number of students in the class is divisible by 3.\nIII The class contains 30 students, and 8 of them wear glasses.",
+      "options": {
+        "A": "none of them",
+        "B": "I only",
+        "C": "II only",
+        "D": "III only",
+        "E": "I and II only",
+        "F": "I and III only",
+        "G": "II and III only",
+        "H": "I, II and III"
+      },
+      "topic": "probability_and_statistics",
+      "difficulty": 3
+    },
+    {
+      "number": 4,
+      "image": "4.png",
+      "type": "multiple_choice",
+      "prompt": "Consider the following claim about positive integers a, b and c: if a is a factor of bc, then a is a factor of b or a is a factor of c. Which of the following provide(s) a counterexample to this claim?\n\nI   a = 5, b = 10, c = 20\nII  a = 8, b = 4, c = 4\nIII a = 6, b = 7, c = 12",
+      "options": {
+        "A": "none of them",
+        "B": "I only",
+        "C": "II only",
+        "D": "III only",
+        "E": "I and II only",
+        "F": "I and III only",
+        "G": "II and III only",
+        "H": "I, II and III"
+      },
+      "topic": "proof_and_logic",
+      "difficulty": 3
+    },
+    {
+      "number": 5,
+      "image": "5.png",
+      "type": "multiple_choice",
+      "prompt": "On which line is the first error in the following argument?\n\nA  sin^2 x + cos^2 x = 1 for all values of x.\nB  Therefore cos x = sqrt(1 - sin^2 x) for all values of x.\nC  Hence 1 + cos x = 1 + sqrt(1 - sin^2 x) for all values of x.\nD  Thus (1 + cos x)^2 = (1 + sqrt(1 - sin^2 x))^2 for all values of x.\nE  Substituting x = pi gives 0 = 4.",
+      "options": {
+        "A": "A",
+        "B": "B",
+        "C": "C",
+        "D": "D",
+        "E": "E"
+      },
+      "topic": "proof_and_logic",
+      "difficulty": 3
+    },
+    {
+      "number": 6,
+      "image": "6.png",
+      "type": "multiple_choice",
+      "prompt": "Consider the following two statements about the polynomial f(x):\n\nP: f(x) = 0 for exactly three real values of x\nQ: f'(x) = 0 for exactly two real values of x\n\nWhich one of the following is correct?",
+      "options": {
+        "A": "P is necessary but not sufficient for Q.",
+        "B": "P is sufficient but not necessary for Q.",
+        "C": "P is necessary and sufficient for Q.",
+        "D": "P is not necessary and not sufficient for Q."
+      },
+      "topic": "proof_and_logic",
+      "difficulty": 4
+    },
+    {
+      "number": 7,
+      "image": "7.png",
+      "type": "multiple_choice",
+      "prompt": "A circle has equation (x - 9)^2 + (y + 2)^2 = 4. A square has vertices at (1, 0), (1, 2), (-1, 2) and (-1, 0). A straight line bisects both the area of the circle and the area of the square. What is the x-coordinate of the point where this straight line meets the x-axis?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "4.5",
+        "E": "5",
+        "F": "6",
+        "G": "The straight line is not uniquely determined by the information given, so there is more than one possible point of intersection.",
+        "H": "There is no straight line that bisects both the area of the circle and the area of the square."
+      },
+      "topic": "coordinate_geometry",
+      "difficulty": 4
+    },
+    {
+      "number": 8,
+      "image": "8.png",
+      "type": "multiple_choice",
+      "prompt": "Consider the following statement about the polynomial p(x), where a and b are real numbers with a < b:\n\n(*) There exists a number c with a < c < b such that p'(c) = 0.\n\nWhich one of the following is true?",
+      "options": {
+        "A": "The condition p(a) = p(b) is necessary and sufficient for (*).",
+        "B": "The condition p(a) = p(b) is necessary but not sufficient for (*).",
+        "C": "The condition p(a) = p(b) is sufficient but not necessary for (*).",
+        "D": "The condition p(a) = p(b) is not necessary and not sufficient for (*)."
+      },
+      "topic": "proof_and_logic",
+      "difficulty": 3
+    },
+    {
+      "number": 9,
+      "image": "9.png",
+      "type": "multiple_choice",
+      "prompt": "Consider the following statements about a polynomial f(x):\n\nI   f(x) = px^3 + qx^2 + rx + s, where p != 0.\nII  There is a real number t for which f'(t) = 0.\nIII There are real numbers u and v for which f(u)f(v) < 0.\n\nWhich of these statements is/are sufficient for the equation f(x) = 0 to have a real solution?",
+      "options": {
+        "A": {
+          "I": "Yes",
+          "II": "Yes",
+          "III": "Yes"
         },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
+        "B": {
+          "I": "Yes",
+          "II": "Yes",
+          "III": "No"
         },
-        "prompt": {
-          "stem": "Find the value of \u222b(1 to 4) (3*x^(1/4) + x^2/4) dx",
-          "options": [],
-          "figures": []
+        "C": {
+          "I": "Yes",
+          "II": "No",
+          "III": "Yes"
         },
-        "validation": {
-          "answer_label": "D",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
+        "D": {
+          "I": "Yes",
+          "II": "No",
+          "III": "No"
         },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
+        "E": {
+          "I": "No",
+          "II": "Yes",
+          "III": "Yes"
+        },
+        "F": {
+          "I": "No",
+          "II": "Yes",
+          "III": "No"
+        },
+        "G": {
+          "I": "No",
+          "II": "No",
+          "III": "Yes"
+        },
+        "H": {
+          "I": "No",
+          "II": "No",
+          "III": "No"
         }
       },
-      {
-        "question_id": "TMUA_2021_paper_2_02",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 2,
-          "page": 4,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "A(0,2) and C(4,0) are opposite vertices of the square ABCD. What is the equation of the straight line through B and D?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "E",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
+      "topic": "proof_and_logic",
+      "difficulty": 4
+    },
+    {
+      "number": 10,
+      "image": "10.png",
+      "type": "multiple_choice",
+      "prompt": "The first seven terms of a sequence of positive integers are:\n\nu1 = 15\nu2 = 21\nu3 = 30\nu4 = 37\nu5 = 44\nu6 = 51\nu7 = 59\n\nConsider the following statement about this sequence:\n\n(*) If n is a prime number, then u_n is a multiple of 3 or u_n is a multiple of 5.\n\nWhat is the smallest value of n that provides a counterexample to (*)?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5",
+        "F": "6",
+        "G": "7"
       },
-      {
-        "question_id": "TMUA_2021_paper_2_03",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 3,
-          "page": 5,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "A student is chosen at random from a class... probability wears glasses equals 4/15. Which conditions are necessary?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "C",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
+      "topic": "sequences_and_series",
+      "difficulty": 4
+    },
+    {
+      "number": 11,
+      "image": "11.png",
+      "type": "multiple_choice",
+      "prompt": "A student attempts to solve the following problem, where a and b are non-zero real numbers: Show that if a^2 - 4b^3 >= 0 then there exist real numbers x and y such that a = xy(x + y) and b = xy. Consider the following attempt:\n\n(I)   (x - y)^2 >= 0\n(II)  so x^2 + y^2 - 2xy >= 0\n(III) so (x + y)^2 - 4xy >= 0\n(IV)  so x^2y^2(x + y)^2 - 4x^3y^3 >= 0\n(V)   so a^2 - 4b^3 >= 0\n\nWhich of the following best describes this attempt?",
+      "options": {
+        "A": "It is completely correct.",
+        "B": "It is incorrect, but it would be correct if written in the reverse order.",
+        "C": "It is incorrect, but the student has correctly proved the converse.",
+        "D": "It is incorrect because there is an error in line (II).",
+        "E": "It is incorrect because there is an error in line (III).",
+        "F": "It is incorrect because there is an error in line (IV)."
       },
-      {
-        "question_id": "TMUA_2021_paper_2_04",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 4,
-          "page": 6,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Counterexample to: if a is a factor of bc, then a is a factor of b or c.",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "C",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
+      "topic": "proof_and_logic",
+      "difficulty": 4
+    },
+    {
+      "number": 12,
+      "image": "12.png",
+      "type": "multiple_choice",
+      "prompt": "Which of the following statements about polynomials f and g is/are true?\n\nI   If f(x) >= g(x) for all x >= 0, then ∫_0^x f(t) dt >= ∫_0^x g(t) dt for all x >= 0.\nII  If f(x) >= g(x) for all x >= 0, then f'(x) >= g'(x) for all x >= 0.\nIII If f'(x) >= g'(x) for all x >= 0, then f(x) >= g(x) for all x >= 0.",
+      "options": {
+        "A": "none of them",
+        "B": "I only",
+        "C": "II only",
+        "D": "III only",
+        "E": "I and II only",
+        "F": "I and III only",
+        "G": "II and III only",
+        "H": "I, II and III"
       },
-      {
-        "question_id": "TMUA_2021_paper_2_05",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 5,
-          "page": 7,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "On which line is the first error in the argument?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "B",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
+      "topic": "proof_and_logic",
+      "difficulty": 4
+    },
+    {
+      "number": 13,
+      "image": "13.png",
+      "type": "multiple_choice",
+      "prompt": "A region R in the (x, y)-plane is defined by the simultaneous inequalities\n\ny - x < 3\ny - x^2 < 1\n\nWhich of the following statements is/are true for every point in R?\n\nI   -1 < x < 2\nII  (y - x)(y - x^2) < 3\nIII y < 5",
+      "options": {
+        "A": "none of them",
+        "B": "I only",
+        "C": "II only",
+        "D": "III only",
+        "E": "I and II only",
+        "F": "I and III only",
+        "G": "II and III only",
+        "H": "I, II and III"
       },
-      {
-        "question_id": "TMUA_2021_paper_2_06",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 6,
-          "page": 8,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Statements P and Q about polynomial roots and stationary points. Which is correct?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "D",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
+      "topic": "coordinate_geometry",
+      "difficulty": 4
+    },
+    {
+      "number": 14,
+      "image": "14.png",
+      "type": "multiple_choice",
+      "prompt": "Consider the following simultaneous equations, where p is a real number:\n\np 2^x + log_2 y = 2\n2^x + log_2 y = 1\n\nWhat is the complete range of p for which these simultaneous equations have a real solution (x, y)?",
+      "options": {
+        "A": "p < 1",
+        "B": "p != 1",
+        "C": "p > 1",
+        "D": "p < 1 or p > 2",
+        "E": "p != 1 and p < 2",
+        "F": "p > 1 and p < 2",
+        "G": "p > 2",
+        "H": "All real values of p"
       },
-      {
-        "question_id": "TMUA_2021_paper_2_07",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 7,
-          "page": 9,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Circle and square given. A straight line bisects both areas. Find x-coordinate where it meets x-axis.",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "B",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
+      "topic": "logarithms_and_exponentials",
+      "difficulty": 4
+    },
+    {
+      "number": 15,
+      "image": "15.png",
+      "type": "multiple_choice",
+      "prompt": "A circle has equation x^2 + ax + y^2 + by + c = 0, where a, b and c are non-zero real constants. Which one of the following is a necessary and sufficient condition for the circle to be tangent to the y-axis?",
+      "options": {
+        "A": "a^2 = 4c",
+        "B": "b^2 = 4c",
+        "C": "a/2 = sqrt((a^2 + b^2)/4 - c)",
+        "D": "b/2 = sqrt((a^2 + b^2)/4 - c)",
+        "E": "-a/2 = sqrt((a^2 + b^2)/4 - c)",
+        "F": "-b/2 = sqrt((a^2 + b^2)/4 - c)"
       },
-      {
-        "question_id": "TMUA_2021_paper_2_08",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 8,
-          "page": 10,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Statement (*) There exists c with a<c<b such that p(c)=0. Which is true about p(a)=p(b)?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "C",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
+      "topic": "coordinate_geometry",
+      "difficulty": 3
+    },
+    {
+      "number": 16,
+      "image": "16.png",
+      "type": "multiple_choice",
+      "prompt": "p and q are real numbers, and the equation x|x| = px + q has exactly k distinct real solutions for x. Which one of the following is the complete list of possible values for k?",
+      "options": {
+        "A": "0, 1, 2",
+        "B": "0, 1, 2, 3",
+        "C": "0, 1, 2, 3, 4",
+        "D": "0, 2, 4",
+        "E": "1, 2, 3",
+        "F": "1, 2, 3, 4"
       },
-      {
-        "question_id": "TMUA_2021_paper_2_09",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 9,
-          "page": 11,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Which statements are sufficient for f(x)=0 to have a real solution?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "C",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
+      "topic": "functions",
+      "difficulty": 5
+    },
+    {
+      "number": 17,
+      "image": "17.png",
+      "type": "multiple_choice",
+      "prompt": "Consider the following functions defined for x > 1:\n\nf(x) = log_2(log_2 sqrt{x})\ng(x) = log_2(sqrt{log_2 x})\n\nWhich one of the following is true for all values of x > 1?",
+      "options": {
+        "A": "0 <= f(x) <= g(x) or g(x) <= f(x) <= 0",
+        "B": "0 <= g(x) <= f(x) or f(x) <= g(x) <= 0",
+        "C": "1/2 <= f(x) <= g(x) or g(x) <= f(x) <= 1/2",
+        "D": "1/2 <= g(x) <= f(x) or f(x) <= g(x) <= 1/2",
+        "E": "1 <= f(x) <= g(x) or g(x) <= f(x) <= 1",
+        "F": "1 <= g(x) <= f(x) or f(x) <= g(x) <= 1"
       },
-      {
-        "question_id": "TMUA_2021_paper_2_10",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 10,
-          "page": 12,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Sequence given. Smallest n providing counterexample to statement (*).",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "E",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
+      "topic": "logarithms_and_exponentials",
+      "difficulty": 4
+    },
+    {
+      "number": 18,
+      "image": "18.png",
+      "type": "multiple_choice",
+      "prompt": "A student chooses two distinct real numbers x and y with 0 < x < y < 1. The student then attempts to draw a triangle ABC with AB = 1, sin A = x and sin B = y. Which of the following statements is/are correct?\n\nI   For some choice of x and y, there is exactly one triangle the student could draw.\nII  For some choice of x and y, there are exactly two different triangles the student could draw.\nIII For some choice of x and y, there are exactly three different triangles the student could draw.\n\n(Note that congruent triangles are considered to be the same.)",
+      "options": {
+        "A": "none of them",
+        "B": "I only",
+        "C": "II only",
+        "D": "III only",
+        "E": "I and II only",
+        "F": "I and III only",
+        "G": "II and III only",
+        "H": "I, II and III"
       },
-      {
-        "question_id": "TMUA_2021_paper_2_11",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 11,
-          "page": 13,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Student proof attempt regarding a^2\u22124b^3\u22650. Best description?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "C",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
+      "topic": "coordinate_geometry",
+      "difficulty": 4
+    },
+    {
+      "number": 19,
+      "image": "19.png",
+      "type": "multiple_choice",
+      "prompt": "The angle theta can take any of the values 1°, 2°, 3°, ..., 359°, 360°. For how many of these values of theta is it true that\n\nsin theta sqrt(1 + sin theta) sqrt(1 - sin theta) + cos theta sqrt(1 + cos theta) sqrt(1 - cos theta) = 0?",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "4",
+        "E": "93",
+        "F": "182",
+        "G": "271",
+        "H": "360"
       },
-      {
-        "question_id": "TMUA_2021_paper_2_12",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 12,
-          "page": 14,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Which statements about polynomials f and g are true?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "B",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
+      "topic": "trigonometry",
+      "difficulty": 4
+    },
+    {
+      "number": 20,
+      "image": "20.png",
+      "type": "multiple_choice",
+      "prompt": "A sequence of functions f1, f2, f3, ... is defined by\n\nf1(x) = |x|\nf_{n+1}(x) = |f_n(x) + x| for n >= 1\n\nFind the value of ∫_{-1}^1 f_{199}(x) dx.",
+      "options": {
+        "A": "0",
+        "B": "0.5",
+        "C": "1",
+        "D": "49.5",
+        "E": "50",
+        "F": "99",
+        "G": "99.5",
+        "H": "100"
       },
-      {
-        "question_id": "TMUA_2021_paper_2_13",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 13,
-          "page": 15,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Region R defined by inequalities. Which statements true for every point?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "A",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2021_paper_2_14",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 14,
-          "page": 16,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Simultaneous equations p^2 x + log2 y =2 and 2x+log2 y=1. Range of p?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "C",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2021_paper_2_15",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 15,
-          "page": 17,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Circle x^2+ax+y^2+by+c=0. Necessary and sufficient condition for tangency to y-axis?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "B",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2021_paper_2_16",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 16,
-          "page": 18,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "x|x|=px+q has exactly k distinct real solutions. Possible values of k?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "E",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2021_paper_2_17",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 17,
-          "page": 19,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Functions involving nested logs. Which statement true for all x>1?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "F",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2021_paper_2_18",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 18,
-          "page": 20,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Triangle with AB=1, sinA=x, sinB=y, 0<x<y<1. Which statements correct?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "C",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2021_paper_2_19",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 19,
-          "page": 21,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "For how many \u03b8\u2208{1\u00b0,2\u00b0,...,360\u00b0} does the given surd-trig equation equal 0?",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "F",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2021_paper_2_20",
-        "source": {
-          "exam": "TMUA",
-          "year": 2021,
-          "paper": "Paper 2",
-          "section": "A",
-          "question_number": 20,
-          "page": 22,
-          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": null,
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": null,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Functions fn defined recursively. Find \u222b(-1 to1) f99(x) dx.",
-          "options": [],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "E",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      }
-    ]
-  }
+      "topic": "functions",
+      "difficulty": 5
+    }
+  ]
 }

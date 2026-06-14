@@ -3,7 +3,7 @@ import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { v4 as uuidv4 } from 'uuid';
 import { useStore } from '@/lib/store';
-import { planMultiSubjectQuickSlots, startBackgroundGeneration } from '@/lib/queue';
+import { planMultiSubjectQuickSlots, planTmuaQuickSlots, startBackgroundGeneration } from '@/lib/queue';
 import { QuestionCard } from '@/components/QuestionCard';
 import { QueueStatus } from '@/components/QueueStatus';
 import { ReportQuestionButton } from '@/components/ReportQuestionButton';
@@ -92,6 +92,8 @@ function QuickModeInner() {
   const searchParams = useSearchParams();
   const reviewId = searchParams.get('review');
   // Config options
+  const [examType, setExamType] = useState<'ESAT' | 'TMUA'>('ESAT');
+  const [tmuaPaper, setTmuaPaper] = useState<'paper1' | 'paper2' | 'mixed'>('mixed');
   const [subjectConfigs, setSubjectConfigs] = useState<SubjectTopicConfig[]>([
     { subject: 'Mathematics', difficulty: 'realistic', topics: null },
   ]);
@@ -131,6 +133,8 @@ function QuickModeInner() {
   const didAutoEndRef = useRef(false);
   const sessionSubjectConfigsRef = useRef<SubjectTopicConfig[]>([]);
   const sessionBankFractionRef = useRef(0.5);
+  const sessionExamTypeRef = useRef<'ESAT' | 'TMUA'>('ESAT');
+  const sessionTmuaPaperRef = useRef<'paper1' | 'paper2' | 'mixed'>('mixed');
 
   // Store selectors
   const questions = useStore((s) => s.questions);
@@ -223,8 +227,12 @@ function QuickModeInner() {
   function handleStart() {
     sessionSubjectConfigsRef.current = [...subjectConfigs];
     sessionBankFractionRef.current = bankFraction;
+    sessionExamTypeRef.current = examType;
+    sessionTmuaPaperRef.current = tmuaPaper;
 
-    const initial = planMultiSubjectQuickSlots(subjectConfigs, bankFraction, PRELOAD, 0);
+    const initial = examType === 'TMUA'
+      ? planTmuaQuickSlots(tmuaPaper, bankFraction, PRELOAD, 0)
+      : planMultiSubjectQuickSlots(subjectConfigs, bankFraction, PRELOAD, 0);
     const now = Date.now();
 
     setSlots(initial);
@@ -238,7 +246,13 @@ function QuickModeInner() {
     setStartTime(now);
     setSessionStartMs(now);
 
-    setSessionSubject(subjectConfigs.map((c) => c.subject).join(' · '));
+    setSessionSubject(
+      examType === 'TMUA'
+        ? tmuaPaper === 'paper1' ? 'TMUA · Paper 1'
+          : tmuaPaper === 'paper2' ? 'TMUA · Paper 2'
+          : 'TMUA · Mixed'
+        : subjectConfigs.map((c) => c.subject).join(' · ')
+    );
     setSessionTimerEnabled(timerEnabled);
     setSessionTimerTargetMs(timerEnabled ? now + timerMinutes * 60 * 1000 : null);
     setSessionEnableSolution(enableSolution);
@@ -311,13 +325,10 @@ function QuickModeInner() {
       .slice(nextPos)
       .filter((s) => s.status !== 'answered' && s.status !== 'failed');
 
-    if (remaining.length < BUFFER && sessionSubjectConfigsRef.current.length > 0) {
-      const more = planMultiSubjectQuickSlots(
-        sessionSubjectConfigsRef.current,
-        sessionBankFractionRef.current,
-        PRELOAD,
-        slots.length,
-      );
+    if (remaining.length < BUFFER) {
+      const more = sessionExamTypeRef.current === 'TMUA'
+        ? planTmuaQuickSlots(sessionTmuaPaperRef.current, sessionBankFractionRef.current, PRELOAD, slots.length)
+        : planMultiSubjectQuickSlots(sessionSubjectConfigsRef.current, sessionBankFractionRef.current, PRELOAD, slots.length);
       setSlots((prev) => [...prev, ...more]);
       launchGeneration(more);
     }
@@ -369,10 +380,55 @@ function QuickModeInner() {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex items-center justify-center p-4">
         <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-8 w-full max-w-lg">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Quick Mode</h1>
-          <p className="text-sm text-gray-500 mb-6">Endless adaptive questions.</p>
+          <p className="text-sm text-gray-500 mb-4">Endless adaptive questions.</p>
 
           <div className="space-y-5">
-            <SubjectTopicSelector configs={subjectConfigs} onChange={setSubjectConfigs} />
+            {/* Exam selector */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Exam</label>
+              <div className="grid grid-cols-2 gap-2">
+                {(['ESAT', 'TMUA'] as const).map((e) => (
+                  <button
+                    key={e}
+                    onClick={() => setExamType(e)}
+                    className={`py-2 px-3 rounded-lg border text-sm font-semibold transition-colors ${
+                      examType === e
+                        ? 'bg-accent text-white border-accent'
+                        : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 hover:border-gray-400'
+                    }`}
+                  >
+                    {e}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {examType === 'TMUA' ? (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Paper</label>
+                <div className="grid grid-cols-3 gap-2">
+                  {([
+                    { value: 'paper1', label: 'Paper 1' },
+                    { value: 'paper2', label: 'Paper 2' },
+                    { value: 'mixed',  label: 'Mixed' },
+                  ] as const).map(({ value, label }) => (
+                    <button
+                      key={value}
+                      onClick={() => setTmuaPaper(value)}
+                      className={`py-2 rounded-lg border text-sm font-medium transition-colors ${
+                        tmuaPaper === value
+                          ? 'bg-accent text-white border-accent'
+                          : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600 hover:border-gray-400'
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <SubjectTopicSelector configs={subjectConfigs} onChange={setSubjectConfigs} />
+            )}
 
             <PickerGroup
               label="Question source"

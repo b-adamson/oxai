@@ -25,6 +25,7 @@ function Dashboard() {
   const initialTab = (searchParams.get('tab') as Tab) ?? 'home';
   const [tab, setTab] = useState<Tab>(initialTab);
   const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [displayName, setDisplayName] = useState<string | null>(null);
   const [authReady, setAuthReady] = useState(false);
 
   const attempts = useStore(s => s.attempts);
@@ -37,10 +38,12 @@ function Dashboard() {
     if (!supabase) { setAuthReady(true); return; }
     supabase.auth.getUser().then(({ data }) => {
       setUserEmail(data.user?.email ?? null);
+      setDisplayName(data.user?.user_metadata?.display_name ?? null);
       setAuthReady(true);
     });
     const { data: sub } = supabase.auth.onAuthStateChange((_, session) => {
       setUserEmail(session?.user?.email ?? null);
+      setDisplayName(session?.user?.user_metadata?.display_name ?? null);
     });
     return () => sub.subscription.unsubscribe();
   }, []);
@@ -58,10 +61,11 @@ function Dashboard() {
         {/* Header */}
         <div className="flex items-start justify-between mb-2">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
-            {userEmail && (
-              <p className="text-sm text-gray-400 dark:text-gray-500 mt-0.5">{userEmail}</p>
-            )}
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+              {userEmail
+                ? `Hello, ${displayName ?? userEmail.split('@')[0]}`
+                : 'Dashboard'}
+            </h1>
           </div>
           {isGuest && (
             <Link
@@ -104,7 +108,7 @@ function Dashboard() {
 
       <div className="max-w-4xl mx-auto px-4 py-6 pb-16">
         {tab === 'home' && (
-          <HomeTab mastery={mastery} attempts={sortedAttempts} questions={questions} isGuest={isGuest} authReady={authReady} />
+          <HomeTab mastery={mastery} attempts={sortedAttempts} questions={questions} isGuest={isGuest} authReady={authReady} displayName={displayName} />
         )}
         {tab === 'history' && (
           <HistoryTab attempts={sortedAttempts} questions={questions} tutorThreads={tutorThreads} />
@@ -120,13 +124,14 @@ function Dashboard() {
 // ── Home tab ───────────────────────────────────────────────────────────────────
 
 function HomeTab({
-  mastery, attempts, questions, isGuest, authReady,
+  mastery, attempts, questions, isGuest, authReady, displayName,
 }: {
   mastery: MasteryStats;
   attempts: AttemptRecord[];
   questions: Record<string, QuestionRecord>;
   isGuest: boolean;
   authReady: boolean;
+  displayName: string | null;
 }) {
   const router = useRouter();
   const recentlyMissed = useMemo(

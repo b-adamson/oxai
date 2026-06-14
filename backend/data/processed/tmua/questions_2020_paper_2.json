@@ -1,0 +1,317 @@
+{
+  "paper": "TMUA 2020 Paper 2",
+  "questions": [
+    {
+      "question_number": 1,
+      "image": "1.png",
+      "prompt": "Find the complete set of values of k for which the line y = x - 2 crosses or touches the curve y = x^2 + kx + 2",
+      "options": {
+        "A": "-1 <= k <= 3",
+        "B": "-3 <= k <= 5",
+        "C": "-4 <= k <= 4",
+        "D": "k <= -1 or k >= 3",
+        "E": "k <= -3 or k >= 5",
+        "F": "k <= -4 or k >= 4"
+      },
+      "topic": "coordinate_geometry",
+      "difficulty": 3
+    },
+    {
+      "question_number": 2,
+      "image": "2.png",
+      "prompt": "Given that tan θ = 2 and 180° < θ < 360°, find the value of cos θ",
+      "options": {
+        "A": "√3",
+        "B": "-√3",
+        "C": "√3/2",
+        "D": "-√3/2",
+        "E": "√5/5",
+        "F": "-√5/5",
+        "G": "2√5/5",
+        "H": "-2√5/5"
+      },
+      "topic": "trigonometry",
+      "difficulty": 3
+    },
+    {
+      "question_number": 3,
+      "image": "3.png",
+      "prompt": "A student makes the following claim:\n\nFor all integers n, the expression 4((9n + 1)/2 - (3n - 1)/2) is divisible by 3.\n\nHere is the student's argument:\n\n4((9n + 1)/2 - (3n - 1)/2) = 2(2((9n + 1)/2 - (3n - 1)/2)) (I)\n= 2(9n + 1 - 3n - 1) (II)\n= 2(6n) (III)\n= 12n (IV)\n= 3(4n) (V)\nwhich is always a multiple of 3. (VI)\n\nSo the expression 4((9n + 1)/2 - (3n - 1)/2) is always divisible by 3.\n\nWhich one of the following is true?",
+      "options": {
+        "A": "The argument is correct.",
+        "B": "The argument is incorrect, and the first error occurs on line (I).",
+        "C": "The argument is incorrect, and the first error occurs on line (II).",
+        "D": "The argument is incorrect, and the first error occurs on line (III).",
+        "E": "The argument is incorrect, and the first error occurs on line (IV).",
+        "F": "The argument is incorrect, and the first error occurs on line (V).",
+        "G": "The argument is incorrect, and the first error occurs on line (VI)."
+      },
+      "topic": "proof_and_logic",
+      "difficulty": 3
+    },
+    {
+      "question_number": 4,
+      "image": "4.png",
+      "prompt": "Consider the following statement:\n\nEvery positive integer N that is greater than 6 can be written as the sum of two non-prime integers that are greater than 1.\n\nWhich of the following is/are counterexample(s) to this statement?\n\nI   N = 5\nII  N = 7\nIII N = 9",
+      "options": {
+        "A": "none of them",
+        "B": "I only",
+        "C": "II only",
+        "D": "III only",
+        "E": "I and II only",
+        "F": "I and III only",
+        "G": "II and III only",
+        "H": "I, II and III"
+      },
+      "topic": "proof_and_logic",
+      "difficulty": 3
+    },
+    {
+      "question_number": 5,
+      "image": "5.png",
+      "prompt": "Which one of the following shows the graph of y = 2^x / (1 + 2^x)\n\n(Dotted lines indicate asymptotes.)",
+      "options": {
+        "A": "graph A",
+        "B": "graph B",
+        "C": "graph C",
+        "D": "graph D",
+        "E": "graph E",
+        "F": "graph F"
+      },
+      "topic": "functions",
+      "difficulty": 3
+    },
+    {
+      "question_number": 6,
+      "image": "6.png",
+      "prompt": "The function f(x) is defined for all real values of x.\n\nWhich of the following conditions on f(x) is/are necessary to ensure that\n\n∫[-5 to 0] f(x) dx = ∫[0 to 5] f(x) dx\n\nCondition I:   f(x) = f(-x) for -5 <= x <= 5\nCondition II:  f(x) = c for -5 <= x <= 5, where c is a constant\nCondition III: f(x) = -f(-x) for -5 <= x <= 5",
+      "options": {
+        "A": "none of them",
+        "B": "I only",
+        "C": "II only",
+        "D": "III only",
+        "E": "I and II only",
+        "F": "I and III only",
+        "G": "II and III only",
+        "H": "I, II and III"
+      },
+      "topic": "proof_and_logic",
+      "difficulty": 3
+    },
+    {
+      "question_number": 7,
+      "image": "7.png",
+      "prompt": "Consider the following conditions on a parallelogram PQRS, labelled anticlockwise:\n\nI    length of PQ = length of QR\nII   The diagonal PR intersects the diagonal QS at right angles\nIII  ∠PQR = ∠QRS\n\nWhich of these conditions is/are individually sufficient for the parallelogram PQRS to be a square?",
+      "options": {
+        "A": "Condition I is sufficient: yes / Condition II is sufficient: yes / Condition III is sufficient: yes",
+        "B": "Condition I is sufficient: yes / Condition II is sufficient: yes / Condition III is sufficient: no",
+        "C": "Condition I is sufficient: yes / Condition II is sufficient: no / Condition III is sufficient: yes",
+        "D": "Condition I is sufficient: yes / Condition II is sufficient: no / Condition III is sufficient: no",
+        "E": "Condition I is sufficient: no / Condition II is sufficient: yes / Condition III is sufficient: yes",
+        "F": "Condition I is sufficient: no / Condition II is sufficient: yes / Condition III is sufficient: no",
+        "G": "Condition I is sufficient: no / Condition II is sufficient: no / Condition III is sufficient: yes",
+        "H": "Condition I is sufficient: no / Condition II is sufficient: no / Condition III is sufficient: no"
+      },
+      "topic": "proof_and_logic",
+      "difficulty": 3
+    },
+    {
+      "question_number": 8,
+      "image": "8.png",
+      "prompt": "A student is asked to prove whether the following statement (*) is true or false:\n\n(*) For all real numbers a and b, |a + b| < |a| + |b|\n\nThe student's proof is as follows:\n\nStatement (*) is false. A counterexample is a = 3, b = 4, as |3 + 4| = 7 and |3| + |4| = 7, but 7 < 7 is false.\n\nWhich of the following best describes the student's proof?",
+      "options": {
+        "A": "The statement (*) is true, and the student's proof is not correct.",
+        "B": "The statement (*) is false, but the student's proof is not correct: the counterexample is not valid.",
+        "C": "The statement (*) is false, but the student's proof is not correct: the student needs to give all the values of a and b where |a + b| < |a| + |b| is false.",
+        "D": "The statement (*) is false, but the student's proof is not correct: the student should have instead stated that for all real numbers a and b, |a + b| <= |a| + |b|.",
+        "E": "The statement (*) is false, and the student's proof is fully correct."
+      },
+      "topic": "proof_and_logic",
+      "difficulty": 3
+    },
+    {
+      "question_number": 9,
+      "image": "9.png",
+      "prompt": "A student wishes to evaluate the function f(x) = x sin x, where x is in radians, but has a calculator that only works in degrees.\n\nWhat could the student type into their calculator to correctly evaluate f(4)?",
+      "options": {
+        "A": "(π × 4 ÷ 180) × sin(4)",
+        "B": "(π × 4 ÷ 180) × sin(π × 4 ÷ 180)",
+        "C": "4 × sin(π × 4 ÷ 180)",
+        "D": "(180 × 4 ÷ π) × sin(4)",
+        "E": "(180 × 4 ÷ π) × sin(180 × 4 ÷ π)",
+        "F": "4 × sin(180 × 4 ÷ π)"
+      },
+      "topic": "functions",
+      "difficulty": 4
+    },
+    {
+      "question_number": 10,
+      "image": "10.png",
+      "prompt": "The real numbers a, b, c and d satisfy both\n\n0 < a + b < c + d\n\nand\n0 < a + c < b + d\n\nWhich of the following inequalities must be true?\n\nI    a < d\nII   b < c\nIII  a + b + c + d > 0",
+      "options": {
+        "A": "none of them",
+        "B": "I only",
+        "C": "II only",
+        "D": "III only",
+        "E": "I and II only",
+        "F": "I and III only",
+        "G": "II and III only",
+        "H": "I, II and III"
+      },
+      "topic": "inequalities",
+      "difficulty": 4
+    },
+    {
+      "question_number": 11,
+      "image": "11.png",
+      "prompt": "A spiral line is drawn as shown.\n\nThis spiral pattern continues indefinitely.\n\nWhich one of the following points is not on the spiral line?",
+      "options": {
+        "A": "(99, 100)",
+        "B": "(99, -100)",
+        "C": "(-99, 100)",
+        "D": "(-99, -100)",
+        "E": "(100, 99)",
+        "F": "(100, -99)",
+        "G": "(-100, 99)",
+        "H": "(-100, -99)"
+      },
+      "topic": "sequences_and_series",
+      "difficulty": 4
+    },
+    {
+      "question_number": 12,
+      "image": "12.png",
+      "prompt": "Which one of A–F correctly completes the following statement?\n\nGiven that a < b, and f(x) > 0 for all x with a < x < b, the trapezium rule produces an overestimate for ∫[a to b] f(x) dx ...",
+      "options": {
+        "A": "... if f'(x) > 0 and f''(x) < 0 for all x with a < x < b",
+        "B": "... only if f'(x) > 0 and f''(x) < 0 for all x with a < x < b",
+        "C": "... if and only if f'(x) > 0 and f''(x) < 0 for all x with a < x < b",
+        "D": "... if f'(x) < 0 and f''(x) > 0 for all x with a < x < b",
+        "E": "... only if f'(x) < 0 and f''(x) > 0 for all x with a < x < b",
+        "F": "... if and only if f'(x) < 0 and f''(x) > 0 for all x with a < x < b"
+      },
+      "topic": "proof_and_logic",
+      "difficulty": 3
+    },
+    {
+      "question_number": 13,
+      "image": "13.png",
+      "prompt": "f(x) is a function for which\n\n∫[0 to 3] (f(x))^2 dx + ∫[0 to 3] f(x) dx = ∫[0 to 1] f(x) dx\n\nWhich of the following claims about f(x) is/are necessarily true?\n\nI    f(x) <= 0 for some x with 1 <= x <= 3\nII   ∫[0 to 3] f(x) dx <= ∫[0 to 1] f(x) dx",
+      "options": {
+        "A": "neither of them",
+        "B": "I only",
+        "C": "II only",
+        "D": "I and II"
+      },
+      "topic": "calculus",
+      "difficulty": 4
+    },
+    {
+      "question_number": 14,
+      "image": "14.png",
+      "prompt": "An arithmetic sequence T has first term a and common difference d, where a and d are non-zero integers.\n\nProperty P is:\n\nFor some positive integer m, the sum of the first m terms of the sequence is equal to the sum of the first 2m terms of the sequence.\n\nFor example, when a = 11 and d = -2, the sequence T has property P, because\n\n11 + 9 + 7 + 5 = 11 + 9 + 7 + 5 + 3 + 1 + (-1) + (-3)\n\ni.e. the sum of the first 4 terms equals the sum of the first 8 terms.\n\nWhich of the following statements is/are true?\n\nI    For T to have property P, it is sufficient that ad < 0.\nII   For T to have property P, it is necessary that d is even.",
+      "options": {
+        "A": "neither of them",
+        "B": "I only",
+        "C": "II only",
+        "D": "I and II"
+      },
+      "topic": "sequences_and_series",
+      "difficulty": 4
+    },
+    {
+      "question_number": 15,
+      "image": "15.png",
+      "prompt": "Which one of the following is a necessary and sufficient condition for\n\n∑[k=1 to n] sin(kπ/3) = √3/2\n\nto be true?",
+      "options": {
+        "A": "n = 1",
+        "B": "n is a multiple of 3",
+        "C": "n is a multiple of 6",
+        "D": "n is 1 more than a multiple of 3",
+        "E": "n is 1 more than a multiple of 6",
+        "F": "n is 1 more than a multiple of 6 or n is 2 more than a multiple of 6"
+      },
+      "topic": "trigonometry",
+      "difficulty": 4
+    },
+    {
+      "question_number": 16,
+      "image": "16.png",
+      "prompt": "The Fundamental Theorem of Calculus (FTC) tells us that for any polynomial f:\n\n d/dx (∫[0 to x] f(t) dt) = f(x)\n\nA student calculates d/dx (∫[x to 2x] t^2 dt) as follows:\n\n(I)   ∫[x to 2x] t^2 dt = ∫[0 to 2x] t^2 dt - ∫[0 to x] t^2 dt\n(II)  By FTC, d/dx (∫[0 to x] t^2 dt) = x^2\n(III) By FTC, d/dx (∫[0 to 2x] t^2 dt) = (2x)^2 = 4x^2\n(IV)  So d/dx (∫[x to 2x] t^2 dt) = 4x^2 - x^2\n(V)   giving d/dx (∫[x to 2x] t^2 dt) = 3x^2\n\nWhich of the following best describes the student's calculation?",
+      "options": {
+        "A": "The calculation is completely correct.",
+        "B": "The calculation is incorrect, and the first error occurs on line (I).",
+        "C": "The calculation is incorrect, and the first error occurs on line (II).",
+        "D": "The calculation is incorrect, and the first error occurs on line (III).",
+        "E": "The calculation is incorrect, and the first error occurs on line (IV).",
+        "F": "The calculation is incorrect, and the first error occurs on line (V)."
+      },
+      "topic": "calculus",
+      "difficulty": 4
+    },
+    {
+      "question_number": 17,
+      "image": "17.png",
+      "prompt": "A set of six distinct integers is split into two sets of three.\n\nThe first set of three integers has a mean of 10 and a median of 8.\n\nThe second set of three integers has a mean of 12 and a median of 9.\n\nWhat is the smallest possible range of the set of all six integers?",
+      "options": {
+        "A": "8",
+        "B": "10",
+        "C": "11",
+        "D": "12",
+        "E": "14",
+        "F": "15"
+      },
+      "topic": "probability_and_statistics",
+      "difficulty": 4
+    },
+    {
+      "question_number": 18,
+      "image": "18.png",
+      "prompt": "In this question, f(x) = ax^3 + bx^2 + cx + d and g(x) = px^3 + qx^2 + rx + s are cubic polynomials.\n\nIf f(x) - g(x) > 0 for every real x, which of the following is/are necessarily true?\n\nI    a > p\nII   if b = q then c = r\nIII  d > s",
+      "options": {
+        "A": "none of them",
+        "B": "I only",
+        "C": "II only",
+        "D": "III only",
+        "E": "I and II only",
+        "F": "I and III only",
+        "G": "II and III only",
+        "H": "I, II and III"
+      },
+      "topic": "polynomials",
+      "difficulty": 4
+    },
+    {
+      "question_number": 19,
+      "image": "19.png",
+      "prompt": "Nine people are sitting in the squares of a 3 by 3 grid, one in each square, as shown. Two people are called neighbours if they are sitting in squares that share a side. (People in diagonally adjacent squares, which only have a point in common, are not called neighbours.)\n\nEach of the nine people in the grid is either a truth-teller who always tells the truth, or a liar who always lies.\n\nEvery person in the grid says: 'My neighbours are all liars'.\n\nGiven only this information, what are the smallest number and the largest number of people who could be telling the truth?",
+      "options": {
+        "A": "smallest 1, largest 4",
+        "B": "smallest 2, largest 4",
+        "C": "smallest 2, largest 5",
+        "D": "smallest 3, largest 4",
+        "E": "smallest 3, largest 5",
+        "F": "smallest 4, largest 4",
+        "G": "smallest 4, largest 5",
+        "H": "smallest 5, largest 5"
+      },
+      "topic": "proof_and_logic",
+      "difficulty": 5
+    },
+    {
+      "question_number": 20,
+      "image": "20.png",
+      "prompt": "x is a real number and f is a function.\n\nGiven that exactly one of the following statements is true, which one is it?",
+      "options": {
+        "A": "x >= 0 only if f(x) < 0",
+        "B": "x < 0 if f(x) >= 0",
+        "C": "x >= 0 only if f(x) >= 0",
+        "D": "f(x) < 0 if x < 0",
+        "E": "f(x) >= 0 only if x >= 0",
+        "F": "f(x) >= 0 if and only if x < 0"
+      },
+      "topic": "proof_and_logic",
+      "difficulty": 5
+    }
+  ]
+}

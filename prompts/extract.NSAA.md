@@ -264,3 +264,8 @@ Instructions:
 
 Schema and figure type rules are above — paste this entire document into the ChatGPT conversation before sending the prompt, or attach it as a file.
 ```
+i may attach every question of the pdf as an image to help you out
+
+please entitle the created full json schema file you create as 
+
+questions_2020_paper_1.json

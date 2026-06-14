@@ -72,7 +72,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "calculus",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_practice2_02",
@@ -134,7 +136,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "calculus",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_practice2_03",
@@ -204,7 +208,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "trigonometry",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_practice2_04",
@@ -270,7 +276,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "probability_and_statistics",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_practice2_05",
@@ -336,7 +344,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "proof_and_logic",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_practice2_06",
@@ -414,7 +424,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "calculus",
+      "difficulty": 5
     },
     {
       "question_id": "TMUA_practice2_07",
@@ -492,7 +504,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "logarithms_and_exponentials",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_practice2_08",
@@ -570,7 +584,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "inequalities",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_practice2_09",
@@ -722,7 +738,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "proof_and_logic",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_practice2_10",
@@ -792,7 +810,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "proof_and_logic",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_practice2_11",
@@ -870,7 +890,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "polynomials",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_practice2_12",
@@ -940,7 +962,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "sequences_and_series",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_practice2_13",
@@ -1010,7 +1034,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "proof_and_logic",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_practice2_14",
@@ -1076,7 +1102,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "polynomials",
+      "difficulty": 5
     },
     {
       "question_id": "TMUA_practice2_15",
@@ -1142,7 +1170,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "algebra",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_practice2_16",
@@ -1214,7 +1244,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "coordinate_geometry",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_practice2_17",
@@ -1292,7 +1324,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "trigonometry",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_practice2_18",
@@ -1362,7 +1396,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "proof_and_logic",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_practice2_19",
@@ -1442,7 +1478,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "proof_and_logic",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_practice2_20",
@@ -1520,7 +1558,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "algebra",
+      "difficulty": 3
     }
   ]
 }

@@ -74,7 +74,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "algebra",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_02",
@@ -148,7 +150,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "trigonometry",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_03",
@@ -214,7 +218,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "coordinate_geometry",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_04",
@@ -280,7 +286,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "inequalities",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_05",
@@ -350,7 +358,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "logarithms_and_exponentials",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_06",
@@ -416,7 +426,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "polynomials",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_07",
@@ -486,7 +498,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "probability_and_statistics",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_08",
@@ -564,7 +578,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "logarithms_and_exponentials",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_09",
@@ -700,7 +716,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "algebra",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_10",
@@ -762,7 +780,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "functions",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_specimen1_11",
@@ -828,7 +848,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "logarithms_and_exponentials",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_12",
@@ -894,7 +916,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "coordinate_geometry",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_13",
@@ -960,7 +984,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "algebra",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_specimen1_14",
@@ -1026,7 +1052,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "logarithms_and_exponentials",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_15",
@@ -1092,7 +1120,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "calculus",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_16",
@@ -1170,7 +1200,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "logarithms_and_exponentials",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_specimen1_17",
@@ -1236,7 +1268,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "algebra",
+      "difficulty": 3
     },
     {
       "question_id": "TMUA_specimen1_18",
@@ -1310,7 +1344,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "trigonometry",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_specimen1_19",
@@ -1372,7 +1408,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "sequences_and_series",
+      "difficulty": 4
     },
     {
       "question_id": "TMUA_specimen1_20",
@@ -1446,7 +1484,9 @@
           "math"
         ]
       },
-      "data_quality_notes": []
+      "data_quality_notes": [],
+      "topic": "algebra",
+      "difficulty": 5
     }
   ]
 }

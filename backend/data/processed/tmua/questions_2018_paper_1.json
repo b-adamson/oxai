@@ -1,8 +1,8 @@
 {
   "meta": {
     "exam": "TMUA",
-    "label": "TMUA 2022 Paper 1",
-    "year": 2022,
+    "label": "TMUA 2018 Paper 1",
+    "year": 2018,
     "paper": "1",
     "count": 20,
     "sections": [
@@ -10,190 +10,64 @@
     ]
   },
   "paper": {
-    "source": "TMUA 2022 Paper 1",
+    "source": "TMUA 2018 Paper 1",
     "questions": [
       {
-        "question_id": "TMUA_2022_p1_01",
+        "question_id": "TMUA_2018_01",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
+          "year": 2018,
           "paper": "Paper 1",
           "section": "A",
           "question_number": 1,
-          "page": 3,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "trigonometry",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 4,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "How many real solutions are there to the equation $2\\cos^4\\theta - 5\\cos^2\\theta + 3 = 0$ in the interval $0 \\leq \\theta \\leq 2\\pi$?",
-          "options": [
-            {
-              "label": "A",
-              "text": "1"
-            },
-            {
-              "label": "B",
-              "text": "2"
-            },
-            {
-              "label": "C",
-              "text": "3"
-            },
-            {
-              "label": "D",
-              "text": "4"
-            },
-            {
-              "label": "E",
-              "text": "5"
-            },
-            {
-              "label": "F",
-              "text": "6"
-            },
-            {
-              "label": "G",
-              "text": "7"
-            },
-            {
-              "label": "H",
-              "text": "8"
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "C",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_02",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 2,
-          "page": 4,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "coordinate_geometry",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 4,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Find the complete set of values of $p$ for which the equation $x^2 - 2px + y^2 - 6y - p^2 + 8p + 9 = 0$ describes a circle in the $xy$-plane.",
-          "options": [
-            {
-              "label": "A",
-              "text": "$p < -\\frac{9}{4}$"
-            },
-            {
-              "label": "B",
-              "text": "$0 < p < 4$"
-            },
-            {
-              "label": "C",
-              "text": "$-1 < p < 9$"
-            },
-            {
-              "label": "D",
-              "text": "$p < 0$ or $p > 4$"
-            },
-            {
-              "label": "E",
-              "text": "$p < -1$ or $p > 9$"
-            },
-            {
-              "label": "F",
-              "text": "all real values of $p$"
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "D",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_03",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 3,
-          "page": 5,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "page": 1,
+          "source_pdf": "2018_paper_1.pdf"
         },
         "content": {
           "subject": "math",
           "topic": "calculus",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 4,
+          "difficulty": 3,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "Given the following statements about a function $f$:\n\n- $f''(x)=a$ for all $x$\n- $f(0)=1$, $f(1)=2$\n- $\\int_0^1 f(x)\\,dx = 1$\n\nfind the value of $a$.",
+          "stem": "Find the value of $\\int_1^4 \\frac{3-2x}{x\\sqrt{x}}\\,dx$",
           "options": [
             {
               "label": "A",
-              "text": "$-6$"
+              "text": "$-\\frac{13}{2}$"
             },
             {
               "label": "B",
-              "text": "$-3$"
+              "text": "$-\\frac{85}{16}$"
             },
             {
               "label": "C",
-              "text": "$-2$"
+              "text": "$-\\frac{13}{8}$"
             },
             {
               "label": "D",
-              "text": "$2$"
+              "text": "$-1$"
             },
             {
               "label": "E",
-              "text": "$3$"
+              "text": "$-\\frac{1}{4}$"
             },
             {
               "label": "F",
-              "text": "$6$"
+              "text": "$\\frac{7}{4}$"
+            },
+            {
+              "label": "G",
+              "text": "$7$"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "F",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -204,618 +78,100 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_04",
+        "question_id": "TMUA_2018_02",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
+          "year": 2018,
           "paper": "Paper 1",
           "section": "A",
-          "question_number": 4,
-          "page": 6,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 2,
+          "page": 2,
+          "source_pdf": "2018_paper_1.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "sequences_and_series",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "An arithmetic progression has first term $a$ and common difference $d$. The sum of the first 5 terms is equal to the sum of the first 8 terms. Which one of the following expresses the relationship between $a$ and $d$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "$a=-\\frac{38}{3}d$"
+            },
+            {
+              "label": "B",
+              "text": "$a=-7d$"
+            },
+            {
+              "label": "C",
+              "text": "$a=-6d$"
+            },
+            {
+              "label": "D",
+              "text": "$a=6d$"
+            },
+            {
+              "label": "E",
+              "text": "$a=7d$"
+            },
+            {
+              "label": "F",
+              "text": "$a=\\frac{38}{3}d$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_03",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 1",
+          "section": "A",
+          "question_number": 3,
+          "page": 3,
+          "source_pdf": "2018_paper_1.pdf"
         },
         "content": {
           "subject": "math",
           "topic": "coordinate_geometry",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 4,
-          "requires_diagram": true,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "These sectors of circles are similar. The arc length of the smaller sector is 6. The difference between the areas of the sectors is 21. Find the positive difference between the perimeters of the sectors.",
-          "options": [
-            {
-              "label": "A",
-              "text": "4.5"
-            },
-            {
-              "label": "B",
-              "text": "7"
-            },
-            {
-              "label": "C",
-              "text": "8"
-            },
-            {
-              "label": "D",
-              "text": "9"
-            },
-            {
-              "label": "E",
-              "text": "10.5"
-            },
-            {
-              "label": "F",
-              "text": "14"
-            },
-            {
-              "label": "G",
-              "text": "15"
-            }
-          ],
-          "figures": [
-            {
-              "figure_id": "q04_sector_diagram",
-              "type": "diagram",
-              "src": "4.png"
-            }
-          ]
-        },
-        "validation": {
-          "answer_label": "C",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_05",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 5,
-          "page": 7,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "proof_and_logic",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 4,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "A straight line $L$ passes through $(1,2)$. Let $P$ be the statement: if the $y$-intercept of $L$ is negative, then the $x$-intercept of $L$ is positive. Which of the following statements must be true?\n\nI $P$\nII the converse of $P$\nIII the contrapositive of $P$",
-          "options": [
-            {
-              "label": "A",
-              "text": "none of them"
-            },
-            {
-              "label": "B",
-              "text": "I only"
-            },
-            {
-              "label": "C",
-              "text": "II only"
-            },
-            {
-              "label": "D",
-              "text": "III only"
-            },
-            {
-              "label": "E",
-              "text": "I and II only"
-            },
-            {
-              "label": "F",
-              "text": "I and III only"
-            },
-            {
-              "label": "G",
-              "text": "II and III only"
-            },
-            {
-              "label": "H",
-              "text": "I, II and III"
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "H",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_06",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 6,
-          "page": 8,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "proof_and_logic",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 3,
-          "requires_diagram": false,
-          "requires_calculation": false
-        },
-        "prompt": {
-          "stem": "A list consists of $n$ integers. Consider the following statements:\n\nP: $n$ is odd.\nQ: The median of the list is one of the numbers in the list.\n\nWhich one of the following is true?",
-          "options": [
-            {
-              "label": "A",
-              "text": "P is necessary and sufficient for Q."
-            },
-            {
-              "label": "B",
-              "text": "P is necessary but not sufficient for Q."
-            },
-            {
-              "label": "C",
-              "text": "P is sufficient but not necessary for Q."
-            },
-            {
-              "label": "D",
-              "text": "P is not necessary and not sufficient for Q."
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "F",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_07",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 7,
-          "page": 9,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "proof_and_logic",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 4,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Consider the following claim:\nThe difference between two consecutive positive cube numbers is always prime.\n\nHere is an attempted proof of this claim:\n\nI $ (x + 1)^3 = x^3 + 3x^2 + 3x + 1 $\n\nII Taking $x$ to be a positive integer, the difference between two consecutive cube numbers can be expressed as $(x + 1)^3 - x^3 = 3x^2 + 3x + 1$\n\nIII It is impossible to factorise $3x^2 + 3x + 1$ into two linear factors with integer coefficients because its discriminant is negative.\n\nIV Therefore for every positive integer value of $x$ the integer $3x^2 + 3x + 1$ cannot be factorised.\n\nV Hence, the difference between two consecutive cube numbers will always be prime.\n\nWhich of the following best describes this proof?",
-          "options": [
-            {
-              "label": "A",
-              "text": "The proof is completely correct, and the claim is true."
-            },
-            {
-              "label": "B",
-              "text": "The proof is completely correct, but there are counterexamples to the claim."
-            },
-            {
-              "label": "C",
-              "text": "The proof is wrong, and the first error occurs on line I."
-            },
-            {
-              "label": "D",
-              "text": "The proof is wrong, and the first error occurs on line II."
-            },
-            {
-              "label": "E",
-              "text": "The proof is wrong, and the first error occurs on line III."
-            },
-            {
-              "label": "F",
-              "text": "The proof is wrong, and the first error occurs on line IV."
-            },
-            {
-              "label": "G",
-              "text": "The proof is wrong, and the first error occurs on line V."
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "E",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_08",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 8,
-          "page": 10,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "proof_and_logic",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 5,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "A selection, $S$, of $n$ terms is taken from the arithmetic sequence $1, 4, 7, 10, \\ldots, 70$. Consider the following statement:\n\n(*) There are two distinct terms in $S$ whose sum is 74.\n\nWhat is the smallest value of $n$ for which (*) is necessarily true?",
-          "options": [
-            {
-              "label": "A",
-              "text": "12"
-            },
-            {
-              "label": "B",
-              "text": "13"
-            },
-            {
-              "label": "C",
-              "text": "14"
-            },
-            {
-              "label": "D",
-              "text": "21"
-            },
-            {
-              "label": "E",
-              "text": "22"
-            },
-            {
-              "label": "F",
-              "text": "23"
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "B",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_09",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 9,
-          "page": 11,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "inequalities",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 4,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Consider the following statement:\n\n(*) For all real numbers $x$, if $x < k$ then $x^2 < k$\n\nWhat is the complete set of values of $k$ for which (*) is true?",
-          "options": [
-            {
-              "label": "A",
-              "text": "no real numbers"
-            },
-            {
-              "label": "B",
-              "text": "$k > 0$"
-            },
-            {
-              "label": "C",
-              "text": "$k < 1$"
-            },
-            {
-              "label": "D",
-              "text": "$k \\leq 1$"
-            },
-            {
-              "label": "E",
-              "text": "$0 < k < 1$"
-            },
-            {
-              "label": "F",
-              "text": "$0 < k \\leq 1$"
-            },
-            {
-              "label": "G",
-              "text": "all real numbers"
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "E",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_10",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 10,
-          "page": 12,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "proof_and_logic",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 3,
-          "requires_diagram": false,
-          "requires_calculation": false
-        },
-        "prompt": {
-          "stem": "Which of the following statements is/are true?\n\nI For all real numbers $x$ and for all positive integers $n$, $x < n$\nII For all real numbers $x$, there exists a positive integer $n$ such that $x < n$\nIII There exists a real number $x$ such that for all positive integers $n$, $x < n$",
-          "options": [
-            {
-              "label": "A",
-              "text": "none of them"
-            },
-            {
-              "label": "B",
-              "text": "I only"
-            },
-            {
-              "label": "C",
-              "text": "II only"
-            },
-            {
-              "label": "D",
-              "text": "III only"
-            },
-            {
-              "label": "E",
-              "text": "I and II only"
-            },
-            {
-              "label": "F",
-              "text": "I and III only"
-            },
-            {
-              "label": "G",
-              "text": "II and III only"
-            },
-            {
-              "label": "H",
-              "text": "I, II and III"
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "C",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_11",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 11,
-          "page": 13,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "logarithms_and_exponentials",
-          "subtopic": null,
-          "archetype": null,
           "difficulty": 3,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "Evaluate $\\sum_{n=1}^{100} \\log_{10}(3^{1-n})$.",
+          "stem": "Find the shortest distance between the two circles with equations:\\[(x+2)^2+(y-3)^2=18\\]\\[(x-7)^2+(y+6)^2=2\\]",
           "options": [
             {
               "label": "A",
-              "text": "$-4950\\log_{10}3$"
+              "text": "$0$"
             },
             {
               "label": "B",
-              "text": "$4950\\log_{10}3$"
+              "text": "$4$"
             },
             {
               "label": "C",
-              "text": "$-5050\\log_{10}3$"
-            },
-            {
-              "label": "D",
-              "text": "$5050\\log_{10}3$"
-            },
-            {
-              "label": "E",
-              "text": "$1 - 4950\\log_{10}3$"
-            },
-            {
-              "label": "F",
-              "text": "$1 + 4950\\log_{10}3$"
-            },
-            {
-              "label": "G",
-              "text": "$1 - 5050\\log_{10}3$"
-            },
-            {
-              "label": "H",
-              "text": "$1 + 5050\\log_{10}3$"
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "A",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_12",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 12,
-          "page": 14,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "functions",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 4,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "A family of quadratic curves is given by $y_k = 2\\left(x - \\frac{k}{2}\\right)^2 + \\frac{k^2}{2} + 4k + 3$ where $k$ is any real number and $y_k$ is a function of $x$. All these curves are sketched, and the point with the lowest $y$-coordinate among all the curves $y_k$ is $(a,b)$. Find the value of $a+b$.",
-          "options": [
-            {
-              "label": "A",
-              "text": "$-1$"
-            },
-            {
-              "label": "B",
-              "text": "$-3$"
-            },
-            {
-              "label": "C",
-              "text": "$-5$"
-            },
-            {
-              "label": "D",
-              "text": "$-7$"
-            },
-            {
-              "label": "E",
-              "text": "$-9$"
-            }
-          ],
-          "figures": []
-        },
-        "validation": {
-          "answer_label": "D",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_13",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 13,
-          "page": 15,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "algebra",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 5,
-          "requires_diagram": false,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Given that $(a^3 + \\frac{2}{b^3})(\\frac{2}{a^3} - b^3) = \\sqrt{2}$ where $a$ and $b$ are real numbers, what is the least value of $ab$?",
-          "options": [
-            {
-              "label": "A",
-              "text": "$-\\sqrt{2}$"
-            },
-            {
-              "label": "B",
-              "text": "$\\sqrt{2}$"
-            },
-            {
-              "label": "C",
-              "text": "$-2\\sqrt{2}$"
+              "text": "$16$"
             },
             {
               "label": "D",
@@ -823,25 +179,13 @@
             },
             {
               "label": "E",
-              "text": "$-\\frac{\\sqrt{2}}{2}$"
-            },
-            {
-              "label": "F",
-              "text": "$\\frac{\\sqrt{2}}{2}$"
-            },
-            {
-              "label": "G",
-              "text": "$-2^{1/6}$"
-            },
-            {
-              "label": "H",
-              "text": "$2^{1/6}$"
+              "text": "$5\\sqrt{2}$"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "A",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -852,57 +196,61 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_14",
+        "question_id": "TMUA_2018_04",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
+          "year": 2018,
           "paper": "Paper 1",
           "section": "A",
-          "question_number": 14,
-          "page": 16,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 4,
+          "page": 4,
+          "source_pdf": "2018_paper_1.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "coordinate_geometry",
+          "topic": "algebra",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 5,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "A circle has centre $O$ and radius 6. $P$, $Q$ and $R$ are points on the circumference with angle $POQ \\geq \\frac{\\pi}{2}$. The area of the triangle $POQ$ is $9\\sqrt{3}$. What is the greatest possible area of triangle $PRQ$?",
+          "stem": "Consider the simultaneous equations\\[3x^2+2xy=4\\]\\[x+y=a\\] where $a$ is a real constant. Find the complete set of values of $a$ for which the equations have two distinct real solutions for $x$.",
           "options": [
             {
               "label": "A",
-              "text": "$18 + 9\\sqrt{3}$"
+              "text": "There are no values of $a$."
             },
             {
               "label": "B",
-              "text": "$18\\sqrt{3}$"
+              "text": "$-2<a<2$"
             },
             {
               "label": "C",
-              "text": "$27 + 9\\sqrt{3}$"
+              "text": "$-1<a<1$"
             },
             {
               "label": "D",
-              "text": "$27\\sqrt{3}$"
+              "text": "$a=0$"
             },
             {
               "label": "E",
-              "text": "$36 + 9\\sqrt{3}$"
+              "text": "$a<-1\\ \\mathrm{or}\\ a>1$"
             },
             {
               "label": "F",
-              "text": "$36\\sqrt{3}$"
+              "text": "$a<-2\\ \\mathrm{or}\\ a>2$"
+            },
+            {
+              "label": "G",
+              "text": "All real values of $a$."
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "D",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -913,15 +261,251 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_15",
+        "question_id": "TMUA_2018_05",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
+          "year": 2018,
           "paper": "Paper 1",
           "section": "A",
-          "question_number": 15,
-          "page": 17,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 5,
+          "page": 5,
+          "source_pdf": "2018_paper_1.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "polynomials",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The function $f$ is defined by $f(x)=x^3+ax^2+bx+c$. $a$, $b$ and $c$ take the values 1, 2 and 3 with no two of them being equal and not necessarily in this order. The remainder when $f(x)$ is divided by $(x+2)$ is $R$. The remainder when $f(x)$ is divided by $(x+3)$ is $S$. What is the largest possible value of $R-S$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "$-26$"
+            },
+            {
+              "label": "B",
+              "text": "$5$"
+            },
+            {
+              "label": "C",
+              "text": "$7$"
+            },
+            {
+              "label": "D",
+              "text": "$17$"
+            },
+            {
+              "label": "E",
+              "text": "$29$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_06",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 1",
+          "section": "A",
+          "question_number": 6,
+          "page": 6,
+          "source_pdf": "2018_paper_1.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "trigonometry",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Find the number of solutions of the equation $x\\sin 2x=\\cos 2x$ with $0\\leq x\\leq 2\\pi$.",
+          "options": [
+            {
+              "label": "A",
+              "text": "$0$"
+            },
+            {
+              "label": "B",
+              "text": "$1$"
+            },
+            {
+              "label": "C",
+              "text": "$2$"
+            },
+            {
+              "label": "D",
+              "text": "$3$"
+            },
+            {
+              "label": "E",
+              "text": "$4$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_07",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 1",
+          "section": "A",
+          "question_number": 7,
+          "page": 7,
+          "source_pdf": "2018_paper_1.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "algebra",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The non-zero constant $k$ is chosen so that the coefficients of $x^6$ in the expansions of $(1+kx^2)^7$ and $(k+x)^{10}$ are equal. What is the value of $k$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "$\\frac{1}{6}$"
+            },
+            {
+              "label": "B",
+              "text": "$6$"
+            },
+            {
+              "label": "C",
+              "text": "$\\frac{\\sqrt{6}}{6}$"
+            },
+            {
+              "label": "D",
+              "text": "$\\sqrt{6}$"
+            },
+            {
+              "label": "E",
+              "text": "$\\frac{\\sqrt{30}}{30}$"
+            },
+            {
+              "label": "F",
+              "text": "$\\sqrt{30}$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_08",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 1",
+          "section": "A",
+          "question_number": 8,
+          "page": 8,
+          "source_pdf": "2018_paper_1.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "sequences_and_series",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The sum to infinity of a geometric progression is 6. The sum to infinity of the squares of each term in the progression is 12. Find the sum to infinity of the cubes of each term in the progression.",
+          "options": [
+            {
+              "label": "A",
+              "text": "$8$"
+            },
+            {
+              "label": "B",
+              "text": "$18$"
+            },
+            {
+              "label": "C",
+              "text": "$24$"
+            },
+            {
+              "label": "D",
+              "text": "$\\frac{216}{7}$"
+            },
+            {
+              "label": "E",
+              "text": "$72$"
+            },
+            {
+              "label": "F",
+              "text": "$216$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_09",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 1",
+          "section": "A",
+          "question_number": 9,
+          "page": 9,
+          "source_pdf": "2018_paper_1.pdf"
         },
         "content": {
           "subject": "math",
@@ -933,45 +517,37 @@
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "A rectangle is drawn in the region enclosed by the curves $p$ and $q$, where $p(x)=8-2x^2$ and $q(x)=x^2-2$ such that the sides of the rectangle are parallel to the $x$- and $y$-axes. What is the maximum possible area of the rectangle?",
+          "stem": "Find the complete set of values of the constant $c$ for which the cubic equation $2x^3-3x^2-12x+c=0$ has three distinct real solutions.",
           "options": [
             {
               "label": "A",
-              "text": "$\\frac{26}{9}$"
+              "text": "$-20<c<7$"
             },
             {
               "label": "B",
-              "text": "$\\frac{52}{9}$"
+              "text": "$-7<c<20$"
             },
             {
               "label": "C",
-              "text": "$\\frac{4\\sqrt{6}}{3}$"
+              "text": "$c>7$"
             },
             {
               "label": "D",
-              "text": "$\\frac{8\\sqrt{6}}{3}$"
+              "text": "$c>-7$"
             },
             {
               "label": "E",
-              "text": "$4\\sqrt{2}$"
+              "text": "$c<20$"
             },
             {
               "label": "F",
-              "text": "$8\\sqrt{2}$"
-            },
-            {
-              "label": "G",
-              "text": "$\\frac{20\\sqrt{10}}{9}$"
-            },
-            {
-              "label": "H",
-              "text": "$\\frac{40\\sqrt{10}}{9}$"
+              "text": "$c<-20$"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "H",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -982,19 +558,141 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_16",
+        "question_id": "TMUA_2018_10",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
+          "year": 2018,
           "paper": "Paper 1",
           "section": "A",
-          "question_number": 16,
-          "page": 18,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "question_number": 10,
+          "page": 10,
+          "source_pdf": "2018_paper_1.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "trigonometry",
+          "topic": "inequalities",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "$x$ and $y$ satisfy $|2-x|\\leq 6$ and $|y+2|\\leq 4$. What is the greatest possible value of $|xy|$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "$16$"
+            },
+            {
+              "label": "B",
+              "text": "$24$"
+            },
+            {
+              "label": "C",
+              "text": "$32$"
+            },
+            {
+              "label": "D",
+              "text": "$40$"
+            },
+            {
+              "label": "E",
+              "text": "$48$"
+            },
+            {
+              "label": "F",
+              "text": "There is no greatest possible value."
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_11",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 1",
+          "section": "A",
+          "question_number": 11,
+          "page": 11,
+          "source_pdf": "2018_paper_1.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "calculus",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The line $y=mx+5$, where $m>0$, is normal to the curve $y=10-x^2$ at the point $(p,q)$. What is the value of $p$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "$\\frac{\\sqrt{2}}{6}$"
+            },
+            {
+              "label": "B",
+              "text": "$-\\frac{\\sqrt{2}}{6}$"
+            },
+            {
+              "label": "C",
+              "text": "$\\frac{3\\sqrt{2}}{2}$"
+            },
+            {
+              "label": "D",
+              "text": "$-\\frac{3\\sqrt{2}}{2}$"
+            },
+            {
+              "label": "E",
+              "text": "$\\sqrt{5}$"
+            },
+            {
+              "label": "F",
+              "text": "$-\\sqrt{5}$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_12",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 1",
+          "section": "A",
+          "question_number": 12,
+          "page": 12,
+          "source_pdf": "2018_paper_1.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "calculus",
           "subtopic": null,
           "archetype": null,
           "difficulty": 5,
@@ -1002,37 +700,37 @@
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "The solutions to $7x^4 - 6x^2 + 1 = 0$ are $\\pm \\cos\\theta$ and $\\pm \\cos\\beta$. Which one of the following equations has solutions $\\pm \\sin\\theta$ and $\\pm \\sin\\beta$?",
+          "stem": "A curve has equation $y=f(x)$, where $f(x)=x(x-p)(x-q)(r-x)$ with $0<p<q<r$. You are given that:\\\\[\\int_0^r f(x)\\,dx=0\\\\]\\\\[\\int_0^q f(x)\\,dx=-2\\\\]\\\\[\\int_p^r f(x)\\,dx=-3\\\\] What is the total area enclosed by the curve and the $x$-axis for $0\\leq x\\leq r$?",
           "options": [
             {
               "label": "A",
-              "text": "$7x^4 - 8x^2 - 5 = 0$"
+              "text": "$0$"
             },
             {
               "label": "B",
-              "text": "$7x^4 - 8x^2 + 2 = 0$"
+              "text": "$1$"
             },
             {
               "label": "C",
-              "text": "$7x^4 - 6x^2 - 2 = 0$"
+              "text": "$4$"
             },
             {
               "label": "D",
-              "text": "$7x^4 - 6x^2 + 1 = 0$"
+              "text": "$5$"
             },
             {
               "label": "E",
-              "text": "$7x^4 + 6x^2 - 1 = 0$"
+              "text": "$6$"
             },
             {
               "label": "F",
-              "text": "$7x^4 + 6x^2 + 5 = 0$"
+              "text": "$10$"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "B",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -1043,15 +741,322 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_17",
+        "question_id": "TMUA_2018_13",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
+          "year": 2018,
+          "paper": "Paper 1",
+          "section": "A",
+          "question_number": 13,
+          "page": 13,
+          "source_pdf": "2018_paper_1.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "calculus",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": true,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The function $f(x)$ has derivative $f'(x)$. The diagram below shows the graph of $y=f'(x)$. Which point corresponds to a local minimum of $f(x)$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "A"
+            },
+            {
+              "label": "B",
+              "text": "B"
+            },
+            {
+              "label": "C",
+              "text": "C"
+            },
+            {
+              "label": "D",
+              "text": "D"
+            },
+            {
+              "label": "E",
+              "text": "E"
+            },
+            {
+              "label": "F",
+              "text": "F"
+            }
+          ],
+          "figures": [
+            {
+              "figure_id": "q13_graph",
+              "type": "graph",
+              "src": "13.png"
+            }
+          ]
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_14",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 1",
+          "section": "A",
+          "question_number": 14,
+          "page": 14,
+          "source_pdf": "2018_paper_1.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "logarithms_and_exponentials",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The line $y=mx+4$ passes through the points $(3,\\log_2 p)$ and $(\\log_2 p,4)$. What are the possible values of $p$?",
+          "options": [
+            {
+              "label": "A",
+              "text": "$p=1\\ \\text{and}\\ p=4$"
+            },
+            {
+              "label": "B",
+              "text": "$p=1\\ \\text{and}\\ p=16$"
+            },
+            {
+              "label": "C",
+              "text": "$p=\\frac14\\ \\text{and}\\ p=4$"
+            },
+            {
+              "label": "D",
+              "text": "$p=\\frac14\\ \\text{and}\\ p=64$"
+            },
+            {
+              "label": "E",
+              "text": "$p=\\frac1{64}\\ \\text{and}\\ p=4$"
+            },
+            {
+              "label": "F",
+              "text": "$p=\\frac1{64}\\ \\text{and}\\ p=16$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_15",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 1",
+          "section": "A",
+          "question_number": 15,
+          "page": 15,
+          "source_pdf": "2018_paper_1.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "logarithms_and_exponentials",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 4,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Find the sum of the real solutions of the equation: $3^x-(\\sqrt{3})^{x+4}+20=0$",
+          "options": [
+            {
+              "label": "A",
+              "text": "$1$"
+            },
+            {
+              "label": "B",
+              "text": "$4$"
+            },
+            {
+              "label": "C",
+              "text": "$9$"
+            },
+            {
+              "label": "D",
+              "text": "$\\log_3 20$"
+            },
+            {
+              "label": "E",
+              "text": "$2\\log_3 20$"
+            },
+            {
+              "label": "F",
+              "text": "$4\\log_3 20$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_16",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 1",
+          "section": "A",
+          "question_number": 16,
+          "page": 16,
+          "source_pdf": "2018_paper_1.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "calculus",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 5,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "The curve $C$ has equation $y=x^2+bx+2$, where $b\\geq 0$. Find the value of $b$ that minimises the distance between the origin and the stationary point of the curve $C$.",
+          "options": [
+            {
+              "label": "A",
+              "text": "$b=0$"
+            },
+            {
+              "label": "B",
+              "text": "$b=1$"
+            },
+            {
+              "label": "C",
+              "text": "$b=2$"
+            },
+            {
+              "label": "D",
+              "text": "$b=\\frac{\\sqrt{6}}{2}$"
+            },
+            {
+              "label": "E",
+              "text": "$b=\\sqrt{2}$"
+            },
+            {
+              "label": "F",
+              "text": "$b=\\sqrt{6}$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_17",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
           "paper": "Paper 1",
           "section": "A",
           "question_number": 17,
-          "page": 19,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "page": 17,
+          "source_pdf": "2018_paper_1.pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": "probability_and_statistics",
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": 3,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "There are two sets of data: the mean of the first set is 15, and the mean of the second set is 20. One of the pieces of data from the first set is exchanged with one of the pieces of data from the second set. As a result, the mean of the first set of data increases from 15 to 16, and the mean of the second set of data decreases from 20 to 17. What is the mean of the set made by combining all the data?",
+          "options": [
+            {
+              "label": "A",
+              "text": "$16\\frac14$"
+            },
+            {
+              "label": "B",
+              "text": "$16\\frac13$"
+            },
+            {
+              "label": "C",
+              "text": "$16\\frac12$"
+            },
+            {
+              "label": "D",
+              "text": "$16\\frac23$"
+            },
+            {
+              "label": "E",
+              "text": "$16\\frac34$"
+            }
+          ],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": null,
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2018_18",
+        "source": {
+          "exam": "TMUA",
+          "year": 2018,
+          "paper": "Paper 1",
+          "section": "A",
+          "question_number": 18,
+          "page": 18,
+          "source_pdf": "2018_paper_1.pdf"
         },
         "content": {
           "subject": "math",
@@ -1059,108 +1064,37 @@
           "subtopic": null,
           "archetype": null,
           "difficulty": 4,
-          "requires_diagram": true,
-          "requires_calculation": true
-        },
-        "prompt": {
-          "stem": "Find the complete set of values of $x$ for which there are two non-congruent triangles with the side lengths and angle as shown in the diagram.",
-          "options": [
-            {
-              "label": "A",
-              "text": "$1 < x < 3$"
-            },
-            {
-              "label": "B",
-              "text": "$1 < x < 4$"
-            },
-            {
-              "label": "C",
-              "text": "$1 < x < 5$"
-            },
-            {
-              "label": "D",
-              "text": "$3 < x < 4$"
-            },
-            {
-              "label": "E",
-              "text": "$3 < x < 5$"
-            },
-            {
-              "label": "F",
-              "text": "$4 < x < 5$"
-            }
-          ],
-          "figures": [
-            {
-              "figure_id": "q17_triangle_diagram",
-              "type": "diagram",
-              "src": "17.png"
-            }
-          ]
-        },
-        "validation": {
-          "answer_label": "D",
-          "answer_text": null,
-          "worked_solution": null,
-          "status": "unverified"
-        },
-        "metadata": {
-          "estimated_time_seconds": null,
-          "tags": []
-        }
-      },
-      {
-        "question_id": "TMUA_2022_p1_18",
-        "source": {
-          "exam": "TMUA",
-          "year": 2022,
-          "paper": "Paper 1",
-          "section": "A",
-          "question_number": 18,
-          "page": 20,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
-        },
-        "content": {
-          "subject": "math",
-          "topic": "functions",
-          "subtopic": null,
-          "archetype": null,
-          "difficulty": 5,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "It is given that $f(x)=x^2(x-1)^2(x-2)$ and $g(x)=-p(x-q)^2(x-r)^2$ where $p$, $q$ and $r$ are positive and $q<r$. Find the set of values of $q$ and $r$ that guarantees the greatest number of distinct real solutions of the equation $f(x)=g(x)$ for all $p$.",
+          "stem": "What is the smallest positive value of $a$ for which the line $x=a$ is a line of symmetry of the graph of $y=\\sin\\left(2x-\\frac{4\\pi}{3}\\right)$?",
           "options": [
             {
               "label": "A",
-              "text": "$q<1$ and $r<1$"
+              "text": "$\\frac{\\pi}{12}$"
             },
             {
               "label": "B",
-              "text": "$q<1$ and $1<r<2$"
+              "text": "$\\frac{5\\pi}{12}$"
             },
             {
               "label": "C",
-              "text": "$q<1$ and $r>2$"
+              "text": "$\\frac{7\\pi}{12}$"
             },
             {
               "label": "D",
-              "text": "$1<q<2$ and $1<r<2$"
+              "text": "$\\frac{11\\pi}{12}$"
             },
             {
               "label": "E",
-              "text": "$1<q<2$ and $r>2$"
-            },
-            {
-              "label": "F",
-              "text": "$q>2$ and $r>2$"
+              "text": "$\\frac{19\\pi}{12}$"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "B",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -1171,57 +1105,57 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_19",
+        "question_id": "TMUA_2018_19",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
+          "year": 2018,
           "paper": "Paper 1",
           "section": "A",
           "question_number": 19,
-          "page": 21,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "page": 19,
+          "source_pdf": "2018_paper_1.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "probability_and_statistics",
+          "topic": "trigonometry",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 5,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "Circle $C_1$ is defined as $x^2 + y^2 = 25$. A second circle $C_2$ has radius 4 and centre $(a,b)$ where $-2 \\leq a \\leq 2$ and $-3 \\leq b \\leq 3$. If the centre of $C_2$ is equally likely to be located anywhere within the given range, what is the probability that $C_2$ intersects $C_1$?",
+          "stem": "A triangle $ABC$ is to be drawn with $AB=10\\text{cm}$, $BC=7\\text{cm}$ and the angle at $A$ equal to $\\theta$, where $\\theta$ is a certain specified angle. Of the two possible triangles that could be drawn, the larger triangle has three times the area of the smaller one. What is the value of $\\cos\\theta$?",
           "options": [
             {
               "label": "A",
-              "text": "$\\frac{1}{25}$"
+              "text": "$\\frac57$"
             },
             {
               "label": "B",
-              "text": "$\\frac{9}{25}$"
+              "text": "$\\frac{151}{200}$"
             },
             {
               "label": "C",
-              "text": "$\\frac{16}{25}$"
+              "text": "$\\frac{2\\sqrt{2}}{5}$"
             },
             {
               "label": "D",
-              "text": "$\\frac{6-\\pi}{6}$"
+              "text": "$\\frac{\\sqrt{17}}{5}$"
             },
             {
               "label": "E",
-              "text": "$\\frac{16-\\pi}{24}$"
+              "text": "$\\frac{\\sqrt{51}}{8}$"
             },
             {
               "label": "F",
-              "text": "$\\frac{24-\\pi}{24}$"
+              "text": "$\\frac{\\sqrt{34}}{8}$"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "F",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"
@@ -1232,53 +1166,57 @@
         }
       },
       {
-        "question_id": "TMUA_2022_p1_20",
+        "question_id": "TMUA_2018_20",
         "source": {
           "exam": "TMUA",
-          "year": 2022,
+          "year": 2018,
           "paper": "Paper 1",
           "section": "A",
           "question_number": 20,
-          "page": 22,
-          "source_pdf": "TMUA 2022 Paper 1.pdf"
+          "page": 20,
+          "source_pdf": "2018_paper_1.pdf"
         },
         "content": {
           "subject": "math",
-          "topic": "functions",
+          "topic": "trigonometry",
           "subtopic": null,
           "archetype": null,
-          "difficulty": 5,
+          "difficulty": 4,
           "requires_diagram": false,
           "requires_calculation": true
         },
         "prompt": {
-          "stem": "$n$ is the number of points of intersection of the graphs $y = |x^2 - a^2|$ and $y = a^2|x - 1|$ where $a$ is a real number. What is the smallest value of $n$ that is not possible?",
+          "stem": "Find the value of $\\sin^2 0^\\circ+\\sin^2 1^\\circ+\\sin^2 2^\\circ+\\sin^2 3^\\circ+\\cdots+\\sin^2 87^\\circ+\\sin^2 88^\\circ+\\sin^2 89^\\circ+\\sin^2 90^\\circ$",
           "options": [
             {
               "label": "A",
-              "text": "$n=1$"
+              "text": "$0.5$"
             },
             {
               "label": "B",
-              "text": "$n=2$"
+              "text": "$1$"
             },
             {
               "label": "C",
-              "text": "$n=3$"
+              "text": "$1.5$"
             },
             {
               "label": "D",
-              "text": "$n=4$"
+              "text": "$45$"
             },
             {
               "label": "E",
-              "text": "$n=5$"
+              "text": "$45.5$"
+            },
+            {
+              "label": "F",
+              "text": "$46$"
             }
           ],
           "figures": []
         },
         "validation": {
-          "answer_label": "B",
+          "answer_label": null,
           "answer_text": null,
           "worked_solution": null,
           "status": "unverified"

@@ -158,6 +158,8 @@ class BankQueryRequest(BaseModel):
     limit: int = Field(20, ge=1, le=100)
     exclude_ids: list[str] = Field(default_factory=list)
     excluded_years: list[int] = Field(default_factory=list)
+    exam: Optional[str] = None       # e.g. 'TMUA' or 'NSAA'; None = non-TMUA only
+    tmua_paper: Optional[str] = None  # '1' or '2'
 
 
 def paper_id_from_file(file_path: str) -> str:
@@ -239,8 +241,10 @@ app.mount('/diagrams', StaticFiles(directory=str(DIAGRAM_DIR)), name='diagrams')
 
 
 def _bank_questions() -> list[dict]:
-    service: QuestionGenerationService = app.state.question_service
-    return service._get_questions()
+    questions: list[dict] = []
+    for exam_dir in EXAM_DIRS:
+        questions.extend(load_questions(exam_dir))
+    return questions
 
 
 @app.get('/papers')
@@ -389,6 +393,47 @@ def ask_tutor_endpoint(req: TutorRequest):
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
+def _normalise_paper_questions(questions: list[dict], *, exam: str, year: 'int | None', paper: str) -> list[dict]:
+    """Normalise questions to canonical {question_id, source, content, prompt:{stem, options}} format."""
+    result = []
+    for idx, q in enumerate(questions):
+        prompt = q.get('prompt')
+        # Already canonical: prompt is a dict with 'stem'
+        if isinstance(prompt, dict) and 'stem' in prompt:
+            result.append(q)
+            continue
+
+        stem: str = prompt if isinstance(prompt, str) else (q.get('question') or q.get('stem') or '')
+
+        raw_opts = q.get('options', {})
+        if isinstance(raw_opts, dict):
+            options = [{'label': k, 'text': str(v)} for k, v in raw_opts.items()]
+        else:
+            options = list(raw_opts)
+
+        qnum: int = q.get('number') or q.get('question_number') or idx + 1
+        year_str = str(year) if year else 'xx'
+        qid = q.get('question_id') or f"{exam}_{year_str}_p{paper}_{qnum:02d}"
+
+        result.append({
+            'question_id': qid,
+            'source': {
+                'exam': exam,
+                'year': year,
+                'paper': f'Paper {paper}',
+                'section': 'A',
+                'question_number': qnum,
+            },
+            'content': {
+                'subject': 'math',
+                'topic': q.get('topic'),
+                'difficulty': q.get('difficulty'),
+            },
+            'prompt': {'stem': stem, 'options': options},
+        })
+    return result
+
+
 @app.get('/papers/{paper_id}')
 def get_paper(paper_id: str):
     papers = load_manifest()
@@ -409,6 +454,13 @@ def get_paper(paper_id: str):
     # Unwrap nested format: {meta: ..., paper: {source, questions: [...]}}
     if 'paper' in paper and 'questions' not in paper:
         paper = paper['paper']
+
+    paper['questions'] = _normalise_paper_questions(
+        paper.get('questions', []),
+        exam=str(paper_meta.get('exam', 'UNKNOWN')),
+        year=paper_meta.get('year'),
+        paper=str(paper_meta.get('paper', '1')),
+    )
 
     return {'paper': paper, 'meta': paper_meta}
 
@@ -500,12 +552,33 @@ def bank_questions_endpoint(req: BankQueryRequest, background_tasks: BackgroundT
             return {'questions': results, 'total': len(results)}
 
         # ── Local file fallback (no Supabase configured) ───────────────────
+        req_exam = req.exam.upper() if req.exam else None
         questions = _bank_questions()
+        import random as _random
+        _random.shuffle(questions)
         filtered: List[Dict[str, Any]] = []
         for q in questions:
             if q.get('question_id') in req.exclude_ids:
                 continue
-            c = q.get('content', {})
+            src = q.get('source') or {}
+            c = q.get('content') or {}
+
+            # Exam filter: when requesting TMUA, require it; otherwise exclude TMUA
+            q_exam = str(src.get('exam') or '').upper()
+            if req_exam:
+                if q_exam != req_exam:
+                    continue
+            else:
+                if q_exam == 'TMUA':
+                    continue
+
+            # TMUA paper filter
+            if req.tmua_paper:
+                q_paper = str(src.get('paper') or '')
+                # Match '1', 'Paper 1' against tmua_paper='1' (or '2')
+                if req.tmua_paper not in q_paper:
+                    continue
+
             if req_subject and _normalise_subject(str(c.get('subject', ''))) != req_subject:
                 continue
             if req.topic and str(c.get('topic', '')).lower() != req.topic.lower():
@@ -517,7 +590,6 @@ def bank_questions_endpoint(req: BankQueryRequest, background_tasks: BackgroundT
                 except Exception:
                     pass
             if req.excluded_years:
-                src = q.get('source', {})
                 try:
                     q_year = int(src.get('year') or 0)
                 except Exception:

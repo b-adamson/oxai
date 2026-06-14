@@ -18,6 +18,87 @@
     "sections": ["A"]
   },
   {
+    "file": "data/processed/tmua/questions_2017_paper_1.json",
+    "label": "TMUA 2017 Paper 1",
+    "year": 2017,
+    "exam": "TMUA",
+    "paper": "1",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_2017_paper_2.json",
+    "label": "TMUA 2017 Paper 2",
+    "year": 2017,
+    "exam": "TMUA",
+    "paper": "2",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_2018_paper_1.json",
+    "label": "TMUA 2018 Paper 1",
+    "year": 2018,
+    "exam": "TMUA",
+    "paper": "1",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_2018_paper_2.json",
+    "label": "TMUA 2018 Paper 2",
+    "year": 2018,
+    "exam": "TMUA",
+    "paper": "2",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_2019_paper_1.json",
+    "label": "TMUA 2019 Paper 1",
+    "year": 2019,
+    "exam": "TMUA",
+    "paper": "1",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_2019_paper_2.json",
+    "label": "TMUA 2019 Paper 2",
+    "year": 2019,
+    "exam": "TMUA",
+    "paper": "2",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_2020_paper_1.json",
+    "label": "TMUA 2020 Paper 1",
+    "year": 2020,
+    "exam": "TMUA",
+    "paper": "1",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_2020_paper_2.json",
+    "label": "TMUA 2020 Paper 2",
+    "year": 2020,
+    "exam": "TMUA",
+    "paper": "2",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_2021_paper_1.json",
+    "label": "TMUA 2021 Paper 1",
+    "year": 2021,
+    "exam": "TMUA",
+    "paper": "1",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
     "file": "data/processed/tmua/questions_2021_paper_2.json",
     "label": "TMUA 2021 Paper 2",
     "year": 2021,

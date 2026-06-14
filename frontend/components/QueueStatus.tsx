@@ -30,7 +30,7 @@ export function QueueStatus({ slots, label, compact = false }: QueueStatusProps)
           </span>
         )}
         {readyCount === 0 && generatingCount === 0 && (
-          <span className="text-gray-400">Loading queueâ€¦</span>
+          <span className="text-gray-400">Loading queue...</span>
         )}
       </div>
     );

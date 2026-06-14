@@ -191,7 +191,7 @@ export const WhiteboardCanvas = forwardRef<WhiteboardHandle, WhiteboardCanvasPro
 
     // UI
     const [fullscreen, setFullscreen] = useState(false);
-    const [sidebarOpen, setSidebarOpen] = useState(true);
+    // sidebarOpen removed — columns control their own open state
     const [sidebarWidth, setSidebarWidth] = useState(320);
     const sidebarResizeRef = useRef({ dragging: false, startX: 0, startW: 320 });
 
@@ -781,7 +781,6 @@ export const WhiteboardCanvas = forwardRef<WhiteboardHandle, WhiteboardCanvasPro
       </div>
     );
 
-    const sidebarZoom = Math.max(0.8, Math.min(1.4, sidebarWidth / 320));
 
     if (fullscreen) {
       return (
@@ -801,26 +800,15 @@ export const WhiteboardCanvas = forwardRef<WhiteboardHandle, WhiteboardCanvasPro
                   onPointerMove={(e) => {
                     if (!sidebarResizeRef.current.dragging) return;
                     const dx = sidebarResizeRef.current.startX - e.clientX;
-                    setSidebarWidth(Math.min(800, Math.max(200, sidebarResizeRef.current.startW + dx)));
+                    setSidebarWidth(Math.min(1400, Math.max(200, sidebarResizeRef.current.startW + dx)));
                   }}
                   onPointerUp={() => { sidebarResizeRef.current.dragging = false; }}
                   onPointerLeave={() => { sidebarResizeRef.current.dragging = false; }}
                 />
-                <div className="flex flex-col bg-white dark:bg-gray-900 shrink-0" style={{ width: sidebarOpen ? sidebarWidth : 32 }}>
-                  <button
-                    onClick={() => setSidebarOpen((o) => !o)}
-                    title={sidebarOpen ? 'Collapse panel' : 'Expand panel'}
-                    className="self-start m-1 w-6 h-6 rounded flex items-center justify-center text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm font-bold"
-                  >
-                    {sidebarOpen ? '›' : '‹'}
-                  </button>
-                  {sidebarOpen && (
-                    <div className="flex-1 overflow-y-auto">
-                      <div style={{ zoom: sidebarZoom, padding: '0.75rem' }}>
-                        {fullscreenSidebar}
-                      </div>
-                    </div>
-                  )}
+                <div className="flex flex-col bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-700 shrink-0 overflow-hidden" style={{ width: sidebarWidth }}>
+                  <div className="flex-1 min-h-0 flex flex-col overflow-hidden">
+                    {fullscreenSidebar}
+                  </div>
                 </div>
               </>
             )}

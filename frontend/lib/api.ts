@@ -81,6 +81,8 @@ export interface TutorParams {
   whiteboard_snapshot?: string | null;
   /** Number of strokes on the board (lightweight signal of content density) */
   whiteboard_stroke_count?: number;
+  /** OpenAI response ID from the previous turn — enables stateful session (skips resending full history) */
+  previous_response_id?: string | null;
 }
 
 export interface BankQueryParams {
@@ -103,7 +105,7 @@ export type SolutionResponse = {
 export type TutorResponse = {
   response: string;
   response_type: string;
-  /** Structured annotations the tutor wants to render on the whiteboard */
+  response_id?: string;
   annotations?: TutorAnnotation[];
 };
 

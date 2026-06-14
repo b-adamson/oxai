@@ -42,55 +42,72 @@ function parseSegments(text: string): Seg[] {
 
 const CHARS_PER_TICK = 3;
 const TICK_MS = 16;
-const FADE_WINDOW = 9;
+const CHAR_FADE_MS = 4000;   // how long each char takes to fully fade in
+const CHAR_STAGGER_MS = 400; // delay between consecutive char starts
+const FADE_WINDOW = 20;     // how many trailing chars are in the fading zone
+
+function inlineMarkdown(text: string): string {
+  return text
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/\*\*(.+?)\*\*/gs, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/gs, '<em>$1</em>')
+    .replace(/\n/g, '<br>');
+}
+
+// Tracks texts that have already been fully streamed, so remounting skips animation
+const _completedTexts = new Set<string>();
 
 export function StreamingText({ text, className }: StreamingTextProps) {
-  const [count, setCount] = useState(0);
+  const key = text.slice(0, 120);
+  const [count, setCount] = useState(() => _completedTexts.has(key) ? text.length : 0);
 
   useEffect(() => {
+    if (_completedTexts.has(key)) {
+      setCount(text.length);
+      return;
+    }
     setCount(0);
     let cur = 0;
     const id = setInterval(() => {
       cur = Math.min(cur + CHARS_PER_TICK, text.length);
       setCount(cur);
-      if (cur >= text.length) clearInterval(id);
+      if (cur >= text.length) {
+        _completedTexts.add(key);
+        clearInterval(id);
+      }
     }, TICK_MS);
     return () => clearInterval(id);
-  }, [text]);
+  }, [text, key]);
 
-  const visible = text.slice(0, count);
   const done = count >= text.length;
-  const segs = parseSegments(visible);
+  // Stable = chars that have already passed through the fade window
+  const fadeStart = done ? count : Math.max(0, count - FADE_WINDOW);
+  const stableText = text.slice(0, fadeStart);
+  const fadingChars = done ? [] : text.slice(fadeStart, count).split('');
+  const stableSegs = parseSegments(stableText);
+  const windowLen = fadingChars.length;
 
   return (
     <div className={className} style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
-      {segs.map((seg, idx) => {
+      {stableSegs.map((seg, idx) => {
         if (seg.type === 'math') {
-          // Complete math expression — render with KaTeX, no fade needed
           const raw = seg.display ? `$$${seg.content}$$` : `$${seg.content}$`;
           return seg.display
             ? <MathText key={idx} text={raw} block />
             : <MathText key={idx} text={raw} />;
         }
-
-        const isLast = idx === segs.length - 1;
-        if (!isLast || done) {
-          // Stable text — no animation
-          return <span key={idx}>{seg.content}</span>;
-        }
-
-        // Last text segment while streaming — fade in the trailing chars
-        const stableEnd = Math.max(0, seg.content.length - FADE_WINDOW);
-        const stable = seg.content.slice(0, stableEnd);
-        const fading = seg.content.slice(stableEnd).split('');
+        return <span key={idx} dangerouslySetInnerHTML={{ __html: inlineMarkdown(seg.content) }} />;
+      })}
+      {fadingChars.map((ch, i) => {
+        // i=0 is oldest char in window, i=windowLen-1 is newest.
+        // Use negative delay so older chars appear further into their fade.
+        const elapsed = (windowLen - 1 - i) * CHAR_STAGGER_MS;
         return (
-          <span key={idx}>
-            {stable}
-            {fading.map((ch, i) => (
-              <span key={i} style={{ animation: 'fadeCharIn 0.18s ease-out both' }}>
-                {ch}
-              </span>
-            ))}
+          <span
+            key={fadeStart + i}
+            style={{ animation: `fadeCharIn ${CHAR_FADE_MS}ms ease-out -${elapsed}ms both` }}
+          >
+            {ch}
           </span>
         );
       })}

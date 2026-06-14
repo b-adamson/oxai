@@ -20,7 +20,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 ROOT = Path(__file__).resolve().parent.parent
-PROCESSED_DIR = ROOT / 'data' / 'processed'
+PROCESSED_DIR = ROOT / 'data' / 'processed' / 'nsaa'
 
 BOLD = '\033[1m'
 GREEN = '\033[32m'

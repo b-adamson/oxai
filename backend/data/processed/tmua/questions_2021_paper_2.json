@@ -1,0 +1,737 @@
+{
+  "meta": {
+    "exam": "TMUA",
+    "label": "TMUA 2021 Paper 2",
+    "year": 2021,
+    "paper": "2",
+    "count": 20,
+    "sections": [
+      "A"
+    ]
+  },
+  "paper": {
+    "source": "TMUA 2021 Paper 2",
+    "questions": [
+      {
+        "question_id": "TMUA_2021_paper_2_01",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 1,
+          "page": 3,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Find the value of \u222b(1 to 4) (3*x^(1/4) + x^2/4) dx",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "D",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_02",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 2,
+          "page": 4,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "A(0,2) and C(4,0) are opposite vertices of the square ABCD. What is the equation of the straight line through B and D?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "E",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_03",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 3,
+          "page": 5,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "A student is chosen at random from a class... probability wears glasses equals 4/15. Which conditions are necessary?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "C",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_04",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 4,
+          "page": 6,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Counterexample to: if a is a factor of bc, then a is a factor of b or c.",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "C",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_05",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 5,
+          "page": 7,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "On which line is the first error in the argument?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "B",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_06",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 6,
+          "page": 8,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Statements P and Q about polynomial roots and stationary points. Which is correct?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "D",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_07",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 7,
+          "page": 9,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Circle and square given. A straight line bisects both areas. Find x-coordinate where it meets x-axis.",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "B",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_08",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 8,
+          "page": 10,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Statement (*) There exists c with a<c<b such that p(c)=0. Which is true about p(a)=p(b)?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "C",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_09",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 9,
+          "page": 11,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Which statements are sufficient for f(x)=0 to have a real solution?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "C",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_10",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 10,
+          "page": 12,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Sequence given. Smallest n providing counterexample to statement (*).",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "E",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_11",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 11,
+          "page": 13,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Student proof attempt regarding a^2\u22124b^3\u22650. Best description?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "C",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_12",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 12,
+          "page": 14,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Which statements about polynomials f and g are true?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "B",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_13",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 13,
+          "page": 15,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Region R defined by inequalities. Which statements true for every point?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "A",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_14",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 14,
+          "page": 16,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Simultaneous equations p^2 x + log2 y =2 and 2x+log2 y=1. Range of p?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "C",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_15",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 15,
+          "page": 17,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Circle x^2+ax+y^2+by+c=0. Necessary and sufficient condition for tangency to y-axis?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "B",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_16",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 16,
+          "page": 18,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "x|x|=px+q has exactly k distinct real solutions. Possible values of k?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "E",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_17",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 17,
+          "page": 19,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Functions involving nested logs. Which statement true for all x>1?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "F",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_18",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 18,
+          "page": 20,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Triangle with AB=1, sinA=x, sinB=y, 0<x<y<1. Which statements correct?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "C",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_19",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 19,
+          "page": 21,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "For how many \u03b8\u2208{1\u00b0,2\u00b0,...,360\u00b0} does the given surd-trig equation equal 0?",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "F",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      },
+      {
+        "question_id": "TMUA_2021_paper_2_20",
+        "source": {
+          "exam": "TMUA",
+          "year": 2021,
+          "paper": "Paper 2",
+          "section": "A",
+          "question_number": 20,
+          "page": 22,
+          "source_pdf": "TMUA 2021 Paper 2(2).pdf"
+        },
+        "content": {
+          "subject": "math",
+          "topic": null,
+          "subtopic": null,
+          "archetype": null,
+          "difficulty": null,
+          "requires_diagram": false,
+          "requires_calculation": true
+        },
+        "prompt": {
+          "stem": "Functions fn defined recursively. Find \u222b(-1 to1) f99(x) dx.",
+          "options": [],
+          "figures": []
+        },
+        "validation": {
+          "answer_label": "E",
+          "answer_text": null,
+          "worked_solution": null,
+          "status": "unverified"
+        },
+        "metadata": {
+          "estimated_time_seconds": null,
+          "tags": []
+        }
+      }
+    ]
+  }
+}

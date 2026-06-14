@@ -1,11 +1,14 @@
 'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import { v4 as uuidv4 } from 'uuid';
 import { useStore } from '@/lib/store';
+import { getSupabaseBrowserClient } from '@/lib/supabase/client';
 import { planEsatPaperSlots, startBackgroundGeneration, slotCounts } from '@/lib/queue';
 import { QuestionCard } from '@/components/QuestionCard';
 import { PaperExport } from '@/components/PaperExport';
 import { QueueStatus } from '@/components/QueueStatus';
+import { ReportQuestionButton } from '@/components/ReportQuestionButton';
 import type {
   PaperSlot,
   PaperSession,
@@ -110,6 +113,17 @@ function stubBlueprint(modules: string[], bankFraction: number, difficulty: Diff
 type Phase = 'config' | 'loading' | 'paper' | 'review';
 
 export default function PaperModePage() {
+  const router = useRouter();
+
+  // Auth gate — paper mode requires sign-in
+  useEffect(() => {
+    const supabase = getSupabaseBrowserClient();
+    if (!supabase) return; // no Supabase configured, allow through
+    supabase.auth.getUser().then(({ data }) => {
+      if (!data.user) router.replace('/login?next=/paper');
+    });
+  }, [router]);
+
   // Config
   const [selectedOptional, setSelectedOptional] = useState<string[]>([]);
   const [bankFraction, setBankFraction] = useState(0.5);
@@ -1403,28 +1417,39 @@ export default function PaperModePage() {
 
         {/* Navigation */}
         {!isWaiting && currentSlot?.status !== 'failed' && (
-          <div className="flex gap-3">
-            <button
-              onClick={() => handleNavigate(Math.max(0, currentIdx - 1))}
-              disabled={currentIdx === 0}
-              className="flex-1 py-2.5 border border-gray-300 dark:border-gray-700 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-30 transition-colors"
-            >
-              ← Previous
-            </button>
-            {isLastQuestion ? (
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-3">
               <button
-                onClick={handleSubmitRequest}
-                className="flex-1 py-2.5 bg-accent hover:bg-accent-light text-white rounded-xl text-sm font-semibold transition-colors"
+                onClick={() => handleNavigate(Math.max(0, currentIdx - 1))}
+                disabled={currentIdx === 0}
+                className="flex-1 py-2.5 border border-gray-300 dark:border-gray-700 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-30 transition-colors"
               >
-                Submit
+                ← Previous
               </button>
-            ) : (
-              <button
-                onClick={() => handleNavigate(Math.min(slots.length - 1, currentIdx + 1))}
-                className="flex-1 py-2.5 border border-gray-300 dark:border-gray-700 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-              >
-                Next →
-              </button>
+              {isLastQuestion ? (
+                <button
+                  onClick={handleSubmitRequest}
+                  className="flex-1 py-2.5 bg-accent hover:bg-accent-light text-white rounded-xl text-sm font-semibold transition-colors"
+                >
+                  Submit
+                </button>
+              ) : (
+                <button
+                  onClick={() => handleNavigate(Math.min(slots.length - 1, currentIdx + 1))}
+                  className="flex-1 py-2.5 border border-gray-300 dark:border-gray-700 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                >
+                  Next →
+                </button>
+              )}
+            </div>
+            {currentSlot && submittedAnswers[currentSlot.slot_id] && currentQuestion && (
+              <div className="flex justify-end">
+                <ReportQuestionButton
+                  questionId={currentQuestion.question_id}
+                  questionStem={currentQuestion.stem}
+                  workedSolution={currentSlot.question_id ? solutions[currentSlot.question_id]?.worked_solution ?? undefined : undefined}
+                />
+              </div>
             )}
           </div>
         )}

@@ -1,0 +1,1526 @@
+{
+  "source": "TMUA Practice Paper 2",
+  "source_pdf": "raw/tmua_practice_paper2.pdf",
+  "extraction_version": "2.0",
+  "question_count": 20,
+  "questions": [
+    {
+      "question_id": "TMUA_practice2_01",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 1,
+        "page": 3,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "calculus",
+        "subtopic": "integration",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Find the value of $\\int_1^2 \\left(x^2 - \\dfrac{4}{x^2}\\right)^2\\,dx$",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{43}{15}$"
+          },
+          {
+            "label": "B",
+            "text": "$3$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{97}{15}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{103}{15}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{163}{15}$"
+          },
+          {
+            "label": "F",
+            "text": "$18$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q01",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "$\\dfrac{43}{15}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_02",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 2,
+        "page": 3,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "calculus",
+        "subtopic": "differentiation",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "$f(x)=\\dfrac{(x^2+5)(2x)}{\\sqrt[4]{x^3}},\\ x>0$. Which one of the following is equal to $f'(x)$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$8x^{\\frac{9}{4}}+\\dfrac{40}{3}x^{\\frac{1}{4}}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{9}{2}x^{\\frac{5}{4}}+\\dfrac{5}{2}x^{-\\frac{3}{4}}$"
+          },
+          {
+            "label": "C",
+            "text": "$8x^{\\frac{9}{4}}+\\dfrac{40}{3}x^{-\\frac{1}{4}}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{8}{13}x^{\\frac{13}{4}}+8x^{\\frac{5}{4}}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q02",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$\\dfrac{9}{2}x^{\\frac{5}{4}}+\\dfrac{5}{2}x^{-\\frac{3}{4}}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_03",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 3,
+        "page": 4,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "trigonometry",
+        "subtopic": "trigonometric equations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "What is the value, in radians, of the largest angle $x$ in the range $0 \\leq x \\leq 2\\pi$ that satisfies the equation $8\\sin^2 x + 4\\cos^2 x = 7$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{2\\pi}{3}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{5\\pi}{6}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{4\\pi}{3}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{5\\pi}{3}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{7\\pi}{4}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{11\\pi}{6}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q03",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$\\dfrac{5\\pi}{3}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_04",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 4,
+        "page": 4,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "logic",
+        "subtopic": "deduction",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Five sealed urns, labelled $P$, $Q$, $R$, $S$, and $T$, each contain the same (non-zero) number of balls. The following statements are attached to the urns.\n\nUrn P: This urn contains one or four balls.\nUrn Q: This urn contains two or four balls.\nUrn R: This urn contains more than two balls and fewer than five balls.\nUrn S: This urn contains one or two balls.\nUrn T: This urn contains fewer than three balls.\n\nExactly one of the urns has a true statement attached to it.\n\nWhich urn is it?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Urn P"
+          },
+          {
+            "label": "B",
+            "text": "Urn Q"
+          },
+          {
+            "label": "C",
+            "text": "Urn R"
+          },
+          {
+            "label": "D",
+            "text": "Urn S"
+          },
+          {
+            "label": "E",
+            "text": "Urn T"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q04",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "Urn R",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_05",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 5,
+        "page": 5,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "number theory",
+        "subtopic": "primes",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Consider the statement:\n\n(*) A whole number $n$ is prime if it is 1 less or 5 less than a multiple of 6.\n\nHow many counterexamples to (*) are there in the range $0 < n < 50$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "2"
+          },
+          {
+            "label": "B",
+            "text": "3"
+          },
+          {
+            "label": "C",
+            "text": "4"
+          },
+          {
+            "label": "D",
+            "text": "5"
+          },
+          {
+            "label": "E",
+            "text": "6"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q05",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "$4$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_06",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 6,
+        "page": 6,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "sequences",
+        "subtopic": "function sequences",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The sequence of functions $f_1(x), f_2(x), f_3(x), \\ldots$ is defined as follows:\n\n$f_1(x)=x^{10}$\n$f_{n+1}(x)=x f_n'(x)$ for $n \\geq 1$\n\nwhere $f_n'(x)=\\dfrac{d f_n(x)}{dx}$.\n\nFind the value of $\\sum_{n=1}^{20} f_n(x)$",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{x^{10}(x^{20}-1)}{x-1}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{x^{10}(x^{21}-1)}{x-1}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\left(\\dfrac{10^{20}-1}{9}\\right)x^{10}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\left(\\dfrac{10^{21}-1}{9}\\right)x^{10}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\left(\\dfrac{(10x)^{20}-1}{10x-1}\\right)x^{10}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\left(\\dfrac{(10x)^{21}-1}{10x-1}\\right)x^{10}$"
+          },
+          {
+            "label": "G",
+            "text": "$x^{10}+x^9+\\cdots+x+1$"
+          },
+          {
+            "label": "H",
+            "text": "$x^{10}+10x^9+(10\\times 9)x^8+\\cdots+(10\\times 9\\times \\cdots \\times 2)x+(10\\times 9\\times \\cdots \\times 2\\times 1)$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q06",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "$\\left(\\dfrac{10^{20}-1}{9}\\right)x^{10}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_07",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 7,
+        "page": 7,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "logarithms",
+        "subtopic": "proof",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The four real numbers $a$, $b$, $c$, and $d$ are all greater than 1.\n\nSuppose that they satisfy the equation $\\log_c d = (\\log_a b)^2$.\n\nUse some of the lines given to construct a proof that, in this case, it follows that\n\n$(*)\\ \\log_b d = (\\log_a b)(\\log_a c)$.",
+        "options": [
+          {
+            "label": "A",
+            "text": "(1). Then (2), so (6), so (8), so (7), and therefore (4), hence (*) as required."
+          },
+          {
+            "label": "B",
+            "text": "(1). Then (2), so (7), so (8), so (6), and therefore (4), hence (*) as required."
+          },
+          {
+            "label": "C",
+            "text": "(1). Then (3), so (5), so (9), so (7), and therefore (4), hence (*) as required."
+          },
+          {
+            "label": "D",
+            "text": "(1). Then (3), so (7), so (9), so (5), and therefore (4), hence (*) as required."
+          },
+          {
+            "label": "E",
+            "text": "(1). Then (4), so (5), so (9), so (7), and therefore (3), hence (*) as required."
+          },
+          {
+            "label": "F",
+            "text": "(1). Then (4), so (6), so (8), so (7), and therefore (2), hence (*) as required."
+          },
+          {
+            "label": "G",
+            "text": "(1). Then (4), so (7), so (8), so (6), and therefore (2), hence (*) as required."
+          },
+          {
+            "label": "H",
+            "text": "(1). Then (4), so (7), so (9), so (5), and therefore (3), hence (*) as required."
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q07",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "(1). Then (3), so (5), so (9), so (7), and therefore (4), hence (*) as required.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_08",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 8,
+        "page": 8,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "inequalities",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A region is defined by the inequalities $x+y>6$ and $x-y>-4$.\n\nConsider the three statements:\n\n1. $x>1$\n2. $y>5$\n3. $(x+y)(x-y)>-24$\n\nWhich of the above statements is/are true for every point in the region?",
+        "options": [
+          {
+            "label": "A",
+            "text": "none"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q08",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "1 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_09",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 9,
+        "page": 9,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "geometry",
+        "subtopic": "congruence",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Triangles $ABC$ and $XYZ$ have the same area.\n\nWhich of these extra conditions, taken independently, would imply that they are congruent?\n\n(1) $AB = XY$ and $BC = YZ$\n(2) $AB = XY$ and $\\angle ABC = \\angle XYZ$\n(3) $\\angle ABC = \\angle XYZ$ and $\\angle BCA = \\angle YZX$",
+        "options": [
+          {
+            "label": "A",
+            "text": "See table row A"
+          },
+          {
+            "label": "B",
+            "text": "See table row B"
+          },
+          {
+            "label": "C",
+            "text": "See table row C"
+          },
+          {
+            "label": "D",
+            "text": "See table row D"
+          },
+          {
+            "label": "E",
+            "text": "See table row E"
+          },
+          {
+            "label": "F",
+            "text": "See table row F"
+          },
+          {
+            "label": "G",
+            "text": "See table row G"
+          },
+          {
+            "label": "H",
+            "text": "See table row H"
+          }
+        ],
+        "figures": [
+          {
+            "figure_type": "table",
+            "caption": "",
+            "diagram_prompt": null,
+            "table_headers": [
+              "Condition (1)",
+              "Condition (2)",
+              "Condition (3)"
+            ],
+            "table_rows": [
+              [
+                "Does not imply congruent",
+                "Does not imply congruent",
+                "Does not imply congruent"
+              ],
+              [
+                "Does not imply congruent",
+                "Does not imply congruent",
+                "Implies congruent"
+              ],
+              [
+                "Does not imply congruent",
+                "Implies congruent",
+                "Does not imply congruent"
+              ],
+              [
+                "Does not imply congruent",
+                "Implies congruent",
+                "Implies congruent"
+              ],
+              [
+                "Implies congruent",
+                "Does not imply congruent",
+                "Does not imply congruent"
+              ],
+              [
+                "Implies congruent",
+                "Does not imply congruent",
+                "Implies congruent"
+              ],
+              [
+                "Implies congruent",
+                "Implies congruent",
+                "Does not imply congruent"
+              ],
+              [
+                "Implies congruent",
+                "Implies congruent",
+                "Implies congruent"
+              ]
+            ],
+            "table_row_labels": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "H"
+            ],
+            "graph_type": null,
+            "graph_title": null,
+            "graph_x_label": null,
+            "graph_y_label": null,
+            "graph_x_labels": null,
+            "graph_series": null,
+            "graph_x_min": null,
+            "graph_x_max": null,
+            "graph_y_min": null,
+            "graph_y_max": null,
+            "url": null
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q09",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "See table row D",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_10",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 10,
+        "page": 10,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "inequalities",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "In this question $x$ and $y$ are non-zero real numbers.\n\nWhich one of the following is sufficient to conclude that $x<y$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$x^4<y^4$"
+          },
+          {
+            "label": "B",
+            "text": "$y^4<x^4$"
+          },
+          {
+            "label": "C",
+            "text": "$x^{-1}<y^{-1}$"
+          },
+          {
+            "label": "D",
+            "text": "$y^{-1}<x^{-1}$"
+          },
+          {
+            "label": "E",
+            "text": "$x^{\\frac{3}{5}}<y^{\\frac{3}{5}}$"
+          },
+          {
+            "label": "F",
+            "text": "$y^{\\frac{3}{5}}<x^{\\frac{3}{5}}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q10",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "$x^{\\frac{3}{5}}<y^{\\frac{3}{5}}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_11",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 11,
+        "page": 11,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "polynomials",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "$f(x)$ is a polynomial with real coefficients.\n\nThe equation $f(x)=0$ has exactly two real roots, $x=-p$ and $x=p$, where $p>0$.\n\nConsider the following three statements:\n\n1. $f'(x)=0$ for exactly one value of $x$ between $-p$ and $p$\n2. The area between the curve $y=f(x)$, the $x$-axis and the lines $x=-p$ and $x=p$ is given by $2\\int_0^p f(x)\\,dx$\n3. The graph of $y=-f(-x)$ intersects the $x$-axis at the points $x=-p$ and $x=p$ only\n\nWhich of the above statements must be true?",
+        "options": [
+          {
+            "label": "A",
+            "text": "none"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q11",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_12",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 12,
+        "page": 12,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "sequences",
+        "subtopic": "arithmetic sequences",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The first term of an arithmetic sequence is $a$ and the common difference is $d$.\nThe sum of the first $n$ terms is denoted by $S_n$.\n\nIf $S_8>3S_6$, what can be deduced about the sign of $a$ and the sign of $d$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "both $a$ and $d$ are negative"
+          },
+          {
+            "label": "B",
+            "text": "$a$ is positive, $d$ is negative"
+          },
+          {
+            "label": "C",
+            "text": "$a$ is negative, $d$ is positive"
+          },
+          {
+            "label": "D",
+            "text": "$a$ is negative, but the sign of $d$ cannot be deduced"
+          },
+          {
+            "label": "E",
+            "text": "$d$ is negative, but the sign of $a$ cannot be deduced"
+          },
+          {
+            "label": "F",
+            "text": "neither the sign of $a$ nor the sign of $d$ can be deduced"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q12",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "neither the sign of $a$ nor the sign of $d$ can be deduced",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_13",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 13,
+        "page": 13,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "number theory",
+        "subtopic": "divisibility",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "In this question, $a$, $b$, and $c$ are positive integers.\n\nThe following is an attempted proof of the false statement:\n\nIf $a$ divides $bc$, then $a$ divides $b$ or $a$ divides $c$.\n\n['$a$ divides $bc$' means '$a$ is a factor of $bc$']\n\nWhich line contains the error in this proof?\n\n1. The statement is equivalent to 'if $a$ does not divide $b$ and $a$ does not divide $c$\n   then $a$ does not divide $bc$. '\n2. Suppose $a$ does not divide $b$ and $a$ does not divide $c$. Then the remainder when\n   dividing $b$ by $a$ is $r$, where $0<r<a$, and the remainder when dividing $c$ by $a$ is\n   $s$, where $0<s<a$.\n3. So $b=ax+r$ and $c=ay+s$ for some integers $x$ and $y$.\n4. Thus $bc=a(axy+xs+yr)+rs$.\n5. So the remainder when dividing $bc$ by $a$ is $rs$.\n6. Since $r>0$ and $s>0$, it follows that $rs>0$.\n7. Hence $a$ does not divide $bc$.",
+        "options": [
+          {
+            "label": "A",
+            "text": "Line 1"
+          },
+          {
+            "label": "B",
+            "text": "Line 2"
+          },
+          {
+            "label": "C",
+            "text": "Line 3"
+          },
+          {
+            "label": "D",
+            "text": "Line 4"
+          },
+          {
+            "label": "E",
+            "text": "Line 5"
+          },
+          {
+            "label": "F",
+            "text": "Line 6"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q13",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "Line 5",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_14",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 14,
+        "page": 14,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "polynomials",
+        "archetype": null,
+        "difficulty": 4,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "$f(x)=ax^4+bx^3+cx^2+dx+e$, where $a$, $b$, $c$, $d$, and $e$ are real numbers.\n\nSuppose $f(x)=1$ has $p$ distinct real solutions, $f(x)=2$ has $q$ distinct real solutions, $f(x)=3$ has $r$ distinct real solutions, and $f(x)=4$ has $s$ distinct real solutions.\n\nWhich one of the following is not possible?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$p=1$, $q=2$, $r=4$ and $s=3$"
+          },
+          {
+            "label": "B",
+            "text": "$p=1$, $q=3$, $r=2$ and $s=4$"
+          },
+          {
+            "label": "C",
+            "text": "$p=1$, $q=4$, $r=3$ and $s=2$"
+          },
+          {
+            "label": "D",
+            "text": "$p=2$, $q=4$, $r=3$ and $s=1$"
+          },
+          {
+            "label": "E",
+            "text": "$p=4$, $q=3$, $r=2$ and $s=1$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q14",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "$p=4$, $q=3$, $r=2$ and $s=1$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_15",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 15,
+        "page": 14,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "quadratic equations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Consider the quadratic $f(x)=x^2-2px+q$ and the statement:\n\n(*) $f(x)=0$ has two real roots whose difference is greater than 2 and less than 4.\n\nWhich one of the following statements is true if and only if (*) is true?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$q<p^2<q+4$"
+          },
+          {
+            "label": "B",
+            "text": "$\\sqrt{q+1}<p<\\sqrt{q+4}$"
+          },
+          {
+            "label": "C",
+            "text": "$q-3\\leq p^2-4\\leq q$"
+          },
+          {
+            "label": "D",
+            "text": "$q<p^2-1<q+3$"
+          },
+          {
+            "label": "E",
+            "text": "$q-2<p^2-3<q+2$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q15",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$q<p^2-1<q+3$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_16",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 16,
+        "page": 15,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "geometry",
+        "subtopic": "trapezium",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "In the figure, $PQRS$ is a trapezium with $PQ$ parallel to $SR$.\n\nThe diagonals of the trapezium meet at $X$.\n\n$U$ lies on $SP$ and $T$ lies on $RQ$ such that $UT$ is a line segment through $X$ parallel to $PQ$.\n\nThe length of $PQ$ is 12 cm and the length of $SR$ is 3 cm.\n\nWhat, in centimetres, is the length of $UT$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "4.2"
+          },
+          {
+            "label": "B",
+            "text": "4.5"
+          },
+          {
+            "label": "C",
+            "text": "4.8"
+          },
+          {
+            "label": "D",
+            "text": "5.25"
+          },
+          {
+            "label": "E",
+            "text": "6"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q16_diagram",
+            "type": "diagram",
+            "src": "images_practice_paper_2/16.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q16",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "4.8",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_17",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 17,
+        "page": 16,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "trigonometry",
+        "subtopic": "simultaneous equations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Consider these simultaneous equations, where $c$ is a constant:\n\n$y=3\\sin x+2$\n$y=x+c$\n\nWhich of the following statements is/are true?\n\n1. For some value of $c$: there is exactly one solution with $0 \\leq x \\leq \\pi$ and there is at least one solution with $-\\pi < x < 0$.\n2. For some value of $c$: there is exactly one solution with $0 \\leq x \\leq \\pi$ and there are no solutions with $-\\pi < x < 0$.\n3. For some value of $c$: there is exactly one solution with $0 \\leq x \\leq \\pi$ and there are no solutions with $x>\\pi$.",
+        "options": [
+          {
+            "label": "A",
+            "text": "none"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q17",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "H",
+        "answer_text": "1, 2 and 3",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_18",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 18,
+        "page": 17,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "calculus",
+        "subtopic": "definite integrals",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Consider this statement about a function $f(x)$:\n\n(*) If $(f(x))^2 \\leq 1$ for all $-1 \\leq x \\leq 1$ then $\\int_{-1}^1 (f(x))^2\\,dx \\leq \\int_{-1}^1 f(x)\\,dx$\n\nWhich one of the following functions provides a counterexample to (*)?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$f(x)=x+\\dfrac{1}{2}$"
+          },
+          {
+            "label": "B",
+            "text": "$f(x)=x-\\dfrac{1}{2}$"
+          },
+          {
+            "label": "C",
+            "text": "$f(x)=x+x^3$"
+          },
+          {
+            "label": "D",
+            "text": "$f(x)=x-x^3$"
+          },
+          {
+            "label": "E",
+            "text": "$f(x)=x^2+x^4$"
+          },
+          {
+            "label": "F",
+            "text": "$f(x)=x^2-x^4$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q18",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$f(x)=x-x^3$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_19",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 19,
+        "page": 18,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "geometry",
+        "subtopic": "3D shapes",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Some identical unit cubes are used to construct a three-dimensional object by gluing them together face to face.\n\nSketches of this object are made by looking at it from the right-hand side, from the front and from above. These sketches are called the side elevation, the front elevation, and the plan view respectively.\n\nHow many cubes were used to construct the object?",
+        "options": [
+          {
+            "label": "A",
+            "text": "exactly 6"
+          },
+          {
+            "label": "B",
+            "text": "either 6 or 7"
+          },
+          {
+            "label": "C",
+            "text": "exactly 7"
+          },
+          {
+            "label": "D",
+            "text": "either 7 or 8"
+          },
+          {
+            "label": "E",
+            "text": "exactly 8"
+          },
+          {
+            "label": "F",
+            "text": "either 8 or 9"
+          },
+          {
+            "label": "G",
+            "text": "exactly 9"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q19_diagram",
+            "type": "diagram",
+            "src": "images_practice_paper_2/19.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q19",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "G",
+        "answer_text": "exactly 9",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_practice2_20",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 20,
+        "page": 19,
+        "source_pdf": "raw/tmua_practice_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "geometry",
+        "subtopic": "regular polygons",
+        "archetype": null,
+        "difficulty": 4,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Each interior angle of a regular polygon with $n$ sides is $\\dfrac{3}{4}$ of each interior angle of a second regular polygon with $m$ sides.\n\nHow many pairs of positive integers $n$ and $m$ are there for which this statement is true?",
+        "options": [
+          {
+            "label": "A",
+            "text": "none"
+          },
+          {
+            "label": "B",
+            "text": "1"
+          },
+          {
+            "label": "C",
+            "text": "2"
+          },
+          {
+            "label": "D",
+            "text": "3"
+          },
+          {
+            "label": "E",
+            "text": "4"
+          },
+          {
+            "label": "F",
+            "text": "5"
+          },
+          {
+            "label": "G",
+            "text": "6"
+          },
+          {
+            "label": "H",
+            "text": "infinitely many"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q20",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "4",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    }
+  ]
+}

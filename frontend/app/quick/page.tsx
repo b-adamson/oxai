@@ -1,10 +1,13 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { v4 as uuidv4 } from 'uuid';
 import { useStore } from '@/lib/store';
 import { planMultiSubjectQuickSlots, startBackgroundGeneration } from '@/lib/queue';
 import { QuestionCard } from '@/components/QuestionCard';
 import { QueueStatus } from '@/components/QueueStatus';
+import { ReportQuestionButton } from '@/components/ReportQuestionButton';
+import { displaySubject } from '@/lib/questionUtils';
 import type {
   PaperSlot,
   DifficultyPreset,
@@ -78,6 +81,16 @@ function timerColor(ms: number): string {
 type Phase = 'config' | 'active' | 'report';
 
 export default function QuickModePage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50 dark:bg-gray-950" />}>
+      <QuickModeInner />
+    </Suspense>
+  );
+}
+
+function QuickModeInner() {
+  const searchParams = useSearchParams();
+  const reviewId = searchParams.get('review');
   // Config options
   const [subjectConfigs, setSubjectConfigs] = useState<SubjectTopicConfig[]>([
     { subject: 'Mathematics', difficulty: 'realistic', topics: null },
@@ -129,10 +142,52 @@ export default function QuickModePage() {
   const addHint = useStore((s) => s.addHint);
   const addSolution = useStore((s) => s.addSolution);
   const addTutorMessage = useStore((s) => s.addTutorMessage);
+  const clearTutorThread = useStore((s) => s.clearTutorThread);
 
   useEffect(() => {
     return () => { stopGenRef.current?.(); };
   }, []);
+
+  // Review mode: jump straight to active phase with the requested question
+  useEffect(() => {
+    if (!reviewId) return;
+    const q = questions[reviewId];
+    if (!q) return;
+    const reviewSlot: PaperSlot = {
+      slot_id: uuidv4(),
+      position: 0,
+      subject: q.subject,
+      topic: q.topic,
+      subtopic: q.subtopic,
+      difficulty: q.difficulty,
+      diagram_requirement: 'never',
+      source_type: 'bank',
+      status: 'ready',
+      question_id: reviewId,
+      retry_count: 0,
+      error: null,
+    };
+    setSlots([reviewSlot]);
+    setCurrentPos(0);
+    setSubmittedAnswer(null);
+    setSolutionRevealed(false);
+    setTotalAnswered(0);
+    setTotalCorrect(0);
+    setStreak(0);
+    setBestStreak(0);
+    setStartTime(Date.now());
+    setSessionStartMs(Date.now());
+    setSessionSubject(q.subject ?? 'Mathematics');
+    setSessionTimerEnabled(false);
+    setSessionTimerTargetMs(null);
+    setSessionEnableSolution(true);
+    setSessionEnableHints(true);
+    setSessionEnableTutor(true);
+    didAutoEndRef.current = false;
+    setPhase('active');
+  // Only run once on mount — reviewId won't change
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reviewId]);
 
   const timerRemaining = useCountdown(sessionTimerTargetMs);
 
@@ -414,7 +469,7 @@ export default function QuickModePage() {
               {accuracy >= 80 ? '🎉' : accuracy >= 60 ? '👍' : '📚'}
             </div>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">Session complete</h2>
-            <p className="text-sm text-gray-500 mt-1">{sessionSubject}</p>
+            <p className="text-sm text-gray-500 mt-1">{displaySubject(sessionSubject)}</p>
           </div>
           <div className="grid grid-cols-2 gap-3 mb-6">
             <StatBox label="Answered" value={String(totalAnswered)} />
@@ -452,11 +507,12 @@ export default function QuickModePage() {
     currentSlot.status === 'generating';
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
-      <div className="sticky top-0 z-10 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 py-2.5 flex items-center gap-3">
+    <div className="flex flex-col bg-gray-50 dark:bg-gray-950">
+      {/* Quick-mode nav bar */}
+      <div className="shrink-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 py-2.5 flex items-center gap-3">
         <span className="font-semibold text-gray-800 dark:text-gray-200 text-sm">Quick Mode</span>
         <span className="text-gray-300 dark:text-gray-700">·</span>
-        <span className="text-sm text-gray-500 truncate max-w-[180px]">{sessionSubject}</span>
+        <span className="text-sm text-gray-500 truncate max-w-[180px]">{displaySubject(sessionSubject)}</span>
         <div className="ml-auto flex items-center gap-4">
           {sessionTimerEnabled && sessionTimerTargetMs !== null && (
             <span className={`text-sm font-mono ${timerColor(timerRemaining)}`}>
@@ -480,48 +536,62 @@ export default function QuickModePage() {
         </div>
       </div>
 
-      <div className="max-w-2xl mx-auto p-4 space-y-4 pb-8">
+      {/* Content area */}
+      <div className="flex flex-col max-w-7xl w-full mx-auto p-4 gap-3">
         {isWaiting ? (
-          <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-12 text-center">
-            <div className="text-3xl mb-3 animate-pulse">⚡</div>
-            <div className="text-sm text-gray-500">Generating question…</div>
-            <QueueStatus slots={slots} label="Queue" />
+          <div className="flex-1 flex items-center justify-center">
+            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-12 text-center">
+              <div className="text-3xl mb-3 animate-pulse">⚡</div>
+              <div className="text-sm text-gray-500">Generating question…</div>
+              <QueueStatus slots={slots} label="Queue" />
+            </div>
           </div>
         ) : currentSlot?.status === 'failed' ? (
-          <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-xl p-6 text-center">
-            <p className="text-sm text-red-600 mb-3">Failed to generate question.</p>
-            <button onClick={handleNext} className="text-sm text-red-600 underline">
-              Skip →
-            </button>
+          <div className="flex-1 flex items-center justify-center">
+            <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-xl p-6 text-center">
+              <p className="text-sm text-red-600 mb-3">Failed to generate question.</p>
+              <button onClick={handleNext} className="text-sm text-red-600 underline">Skip →</button>
+            </div>
           </div>
         ) : currentQuestion ? (
           <>
-            <QuestionCard
-              question={currentQuestion}
-              hints={currentHints}
-              solution={currentSolution}
-              tutorMessages={currentTutorMessages}
-              submittedAnswer={submittedAnswer}
-              solutionRevealed={solutionRevealed}
-              hideSolution={!sessionEnableSolution}
-              hideHints={!sessionEnableHints}
-              hideTutor={!sessionEnableTutor}
-              onAnswer={handleAnswer}
-              onHintAdded={(h) => addHint(h)}
-              onSolutionRevealed={() => setSolutionRevealed(true)}
-              onSolutionGenerated={(s) => addSolution(s)}
-              onTutorMessage={(m) => addTutorMessage(currentQuestion.question_id, m)}
-              onSimilarQuestion={submittedAnswer !== null ? handleSimilarQuestion : undefined}
-              questionNumber={totalAnswered + (submittedAnswer ? 0 : 1)}
-              startTime={startTime}
-            />
+            <div>
+              <QuestionCard
+                question={currentQuestion}
+                hints={currentHints}
+                solution={currentSolution}
+                tutorMessages={currentTutorMessages}
+                submittedAnswer={submittedAnswer}
+                solutionRevealed={solutionRevealed}
+                hideSolution={!sessionEnableSolution}
+                hideHints={!sessionEnableHints}
+                hideTutor={!sessionEnableTutor}
+                onAnswer={handleAnswer}
+                onHintAdded={(h) => addHint(h)}
+                onSolutionRevealed={() => setSolutionRevealed(true)}
+                onSolutionGenerated={(s) => addSolution(s)}
+                onTutorMessage={(m) => addTutorMessage(currentQuestion.question_id, m)}
+                onClearTutorMessages={() => clearTutorThread(currentQuestion.question_id)}
+                onSimilarQuestion={submittedAnswer !== null ? handleSimilarQuestion : undefined}
+                questionNumber={totalAnswered + (submittedAnswer ? 0 : 1)}
+                startTime={startTime}
+                layout="two-column"
+              />
+            </div>
             {submittedAnswer !== null && (
-              <button
-                onClick={handleNext}
-                className="w-full bg-accent hover:bg-accent-light text-white font-semibold py-3 rounded-xl transition-colors"
-              >
-                Next Question →
-              </button>
+              <div className="shrink-0 flex gap-3 items-center">
+                <button
+                  onClick={handleNext}
+                  className="flex-1 bg-accent hover:bg-accent-light text-white font-semibold py-3 rounded-xl transition-colors"
+                >
+                  Next Question →
+                </button>
+                <ReportQuestionButton
+                  questionId={currentQuestion.question_id}
+                  questionStem={currentQuestion.stem}
+                  workedSolution={currentSolution?.worked_solution ?? undefined}
+                />
+              </div>
             )}
           </>
         ) : null}

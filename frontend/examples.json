@@ -1,378 +1,398 @@
 {
   "question_count": 7,
   "questions": [
-   {
-  "question_id": "FRONT_01",
-  "source": {
-    "exam": "FRONTEND_DEMO",
-    "year": 2026,
-    "paper": "Advertising example set",
-    "section": "A",
-    "question_number": 1,
-    "source_pdf": "frontend_examples.json"
-  },
-  "content": {
-    "subject": "physics",
-    "topic": "mechanics",
-    "subtopic": "projectile motion and momentum",
-    "archetype": "graph-derived kinematics with collision reasoning",
-    "difficulty": 4,
-    "requires_diagram": false,
-    "requires_calculation": true
-  },
-  "prompt": {
-    "stem": "The graph shows the trajectory of a projectile of mass 2m, launched from level ground. Air resistance is negligible.\n\nAt the instant when the projectile is at x = 60 m, it breaks into two fragments of equal mass. Immediately after the break-up, one fragment is instantaneously at rest.\n\nWhat is the speed of the other fragment immediately after the break-up?\n\nTake g = 10 m s$^{-2}$.",
-    "options": [
-      {
-        "label": "A",
-        "text": "$10\\sqrt{5}$ m s$^{-1}$"
+    {
+      "question_id": "FRONT_01",
+      "source": {
+        "exam": "FRONTEND_DEMO",
+        "year": 2026,
+        "paper": "Advertising example set",
+        "section": "A",
+        "question_number": 1,
+        "source_pdf": "frontend_examples.json"
       },
-      {
-        "label": "B",
-        "text": "$20\\sqrt{2}$ m s$^{-1}$"
+      "content": {
+        "subject": "physics",
+        "topic": "mechanics",
+        "subtopic": "projectile motion and momentum",
+        "archetype": "graph-derived kinematics with collision reasoning",
+        "difficulty": 4,
+        "requires_diagram": false,
+        "requires_calculation": true
       },
-      {
-        "label": "C",
-        "text": "$20\\sqrt{5}$ m s$^{-1}$"
-      },
-      {
-        "label": "D",
-        "text": "$40$ m s$^{-1}$"
-      },
-      {
-        "label": "E",
-        "text": "$50$ m s$^{-1}$"
-      }
-    ],
-    "figures": [
-      {
-        "figure_id": "q01_projectile_graph",
-        "figure_type": "simple_graph",
-        "caption": "Trajectory of the projectile before it breaks up.",
-        "diagram_prompt": null,
-        "table_headers": null,
-        "table_rows": null,
-        "table_row_labels": null,
-        "graph_type": "line",
-        "graph_title": "Projectile trajectory",
-        "graph_x_label": "horizontal displacement / m",
-        "graph_y_label": "height / m",
-        "graph_x_labels": [],
-        "graph_series": [
+      "prompt": {
+        "stem": "The graph shows the trajectory of a projectile of mass 2m, launched from level ground. Air resistance is negligible.\n\nAt the instant when the projectile is at x = 60 m, it breaks into two fragments of equal mass. Immediately after the break-up, one fragment is instantaneously at rest.\n\nWhat is the speed of the other fragment immediately after the break-up?\n\nTake g = 10 m s$^{-2}$.",
+        "options": [
           {
-            "name": "trajectory",
-            "x_values": [0, 10, 20, 30, 40, 50, 60, 70, 80],
-            "y_values": [0, 8.75, 15, 18.75, 20, 18.75, 15, 8.75, 0]
+            "label": "A",
+            "text": "$10\\sqrt{5}$ m s$^{-1}$"
+          },
+          {
+            "label": "B",
+            "text": "$20\\sqrt{2}$ m s$^{-1}$"
+          },
+          {
+            "label": "C",
+            "text": "$20\\sqrt{5}$ m s$^{-1}$"
+          },
+          {
+            "label": "D",
+            "text": "$40$ m s$^{-1}$"
+          },
+          {
+            "label": "E",
+            "text": "$50$ m s$^{-1}$"
           }
         ],
-        "graph_x_min": 0,
-        "graph_x_max": 80,
-        "graph_y_min": 0,
-        "graph_y_max": 22
-      }
-    ]
-  },
-  "generation": {
-    "template_id": "demo_physics_projectile_graph_001",
-    "template_version": "1.0",
-    "parameters": {},
-    "solution_steps": [
-      "Infer the projectile trajectory equation from the graph.",
-      "Compare the graph equation with the standard projectile equation.",
-      "Find the velocity components at x = 60 m.",
-      "Use conservation of momentum during the break-up."
-    ],
-    "distractor_strategy": [
-      "using the projectile speed before break-up as the final fragment speed",
-      "using only the horizontal component of velocity",
-      "forgetting that the original projectile has mass 2m",
-      "treating the break-up as an elastic collision",
-      "reading the graph as a displacement-time graph rather than a trajectory"
-    ]
-  },
-  "validation": {
-    "answer_label": "C",
-    "answer_text": "$20\\sqrt{5}$ m s$^{-1}$",
-    "status": "verified",
-    "worked_solution": "From the graph, the projectile passes through (0,0), (40,20), and (80,0). The trajectory is therefore symmetric, with maximum height 20 m at x = 40 m.\n\nA quadratic matching the graph is\n$y = x - \\dfrac{x^2}{80}$.\n\nFor projectile motion,\n$y = \\dfrac{u_y}{u_x}x - \\dfrac{g}{2u_x^2}x^2$.\n\nComparing coefficients gives\n$\\dfrac{u_y}{u_x}=1$, so $u_y=u_x$, and\n$\\dfrac{g}{2u_x^2}=\\dfrac{1}{80}$.\n\nWith $g=10$,\n$\\dfrac{10}{2u_x^2}=\\dfrac{1}{80}$,\nso $u_x^2=400$ and $u_x=20$ m s$^{-1}$.\n\nHence $u_y=20$ m s$^{-1}$.\n\nAt x = 60 m, the time elapsed is\n$t=\\dfrac{x}{u_x}=\\dfrac{60}{20}=3$ s.\n\nThe vertical velocity is then\n$v_y=u_y-gt=20-10\\times3=-10$ m s$^{-1}$.\n\nThe horizontal velocity remains\n$v_x=20$ m s$^{-1}$.\n\nSo the velocity of the projectile immediately before break-up has magnitude\n$\\sqrt{20^2+(-10)^2}=\\sqrt{500}=10\\sqrt{5}$ m s$^{-1}$.\n\nMomentum is conserved during the break-up. Before the break-up, the projectile has mass $2m$, so its momentum is $2m\\mathbf{v}$.\n\nAfter the break-up, one fragment of mass $m$ is instantaneously at rest. If the other fragment has velocity $\\mathbf{V}$, then\n$m\\mathbf{V}=2m\\mathbf{v}$,\nso $\\mathbf{V}=2\\mathbf{v}$.\n\nTherefore the speed of the moving fragment is\n$2\\times10\\sqrt{5}=20\\sqrt{5}$ m s$^{-1}$."
-  },
-  "metadata": {
-    "estimated_time_seconds": 240,
-    "tags": [
-      "physics",
-      "mechanics",
-      "projectile motion",
-      "momentum",
-      "graph interpretation"
-    ]
-  },
-  "data_quality_notes": []
-},
-   {
-  "question_id": "FRONT_02",
-  "source": {
-    "exam": "FRONTEND_DEMO",
-    "year": 2026,
-    "paper": "Advertising example set",
-    "section": "A",
-    "question_number": 2,
-    "source_pdf": "frontend_examples.json"
-  },
-  "content": {
-    "subject": "math",
-    "topic": "geometry",
-    "subtopic": "circles and tangents",
-    "archetype": "circle tangent geometry",
-    "difficulty": 4,
-    "requires_diagram": true,
-    "requires_calculation": true
-  },
-  "prompt": {
-    "stem": "A circle has centre O and radius 10 cm.\n\nAB is a chord of the circle with AB = 12 cm.\n\nThe tangents to the circle at A and B meet at T.\n\nA smaller circle lies inside triangle TAB. It is tangent to TA and TB, and is externally tangent to the original circle.\n\nWhat is the radius of the smaller circle?",
-    "options": [
-      {
-        "label": "A",
-        "text": "$1$ cm"
+        "figures": [
+          {
+            "figure_id": "q01_projectile_graph",
+            "figure_type": "simple_graph",
+            "caption": "Trajectory of the projectile before it breaks up.",
+            "diagram_prompt": null,
+            "table_headers": null,
+            "table_rows": null,
+            "table_row_labels": null,
+            "graph_type": "line",
+            "graph_title": "Projectile trajectory",
+            "graph_x_label": "horizontal displacement / m",
+            "graph_y_label": "height / m",
+            "graph_x_labels": [],
+            "graph_series": [
+              {
+                "name": "trajectory",
+                "x_values": [
+                  0,
+                  10,
+                  20,
+                  30,
+                  40,
+                  50,
+                  60,
+                  70,
+                  80
+                ],
+                "y_values": [
+                  0,
+                  8.75,
+                  15,
+                  18.75,
+                  20,
+                  18.75,
+                  15,
+                  8.75,
+                  0
+                ]
+              }
+            ],
+            "graph_x_min": 0,
+            "graph_x_max": 80,
+            "graph_y_min": 0,
+            "graph_y_max": 22
+          }
+        ]
       },
-      {
-        "label": "B",
-        "text": "$\\dfrac{20}{19}$ cm"
+      "generation": {
+        "template_id": "demo_physics_projectile_graph_001",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [
+          "Infer the projectile trajectory equation from the graph.",
+          "Compare the graph equation with the standard projectile equation.",
+          "Find the velocity components at x = 60 m.",
+          "Use conservation of momentum during the break-up."
+        ],
+        "distractor_strategy": [
+          "using the projectile speed before break-up as the final fragment speed",
+          "using only the horizontal component of velocity",
+          "forgetting that the original projectile has mass 2m",
+          "treating the break-up as an elastic collision",
+          "reading the graph as a displacement-time graph rather than a trajectory"
+        ]
       },
-      {
-        "label": "C",
-        "text": "$\\dfrac{10}{9}$ cm"
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "$20\\sqrt{5}$ m s$^{-1}$",
+        "status": "verified",
+        "worked_solution": "From the graph, the projectile passes through (0,0), (40,20), and (80,0). The trajectory is therefore symmetric, with maximum height 20 m at x = 40 m.\n\nA quadratic matching the graph is\n$y = x - \\dfrac{x^2}{80}$.\n\nFor projectile motion,\n$y = \\dfrac{u_y}{u_x}x - \\dfrac{g}{2u_x^2}x^2$.\n\nComparing coefficients gives\n$\\dfrac{u_y}{u_x}=1$, so $u_y=u_x$, and\n$\\dfrac{g}{2u_x^2}=\\dfrac{1}{80}$.\n\nWith $g=10$,\n$\\dfrac{10}{2u_x^2}=\\dfrac{1}{80}$,\nso $u_x^2=400$ and $u_x=20$ m s$^{-1}$.\n\nHence $u_y=20$ m s$^{-1}$.\n\nAt x = 60 m, the time elapsed is\n$t=\\dfrac{x}{u_x}=\\dfrac{60}{20}=3$ s.\n\nThe vertical velocity is then\n$v_y=u_y-gt=20-10\\times3=-10$ m s$^{-1}$.\n\nThe horizontal velocity remains\n$v_x=20$ m s$^{-1}$.\n\nSo the velocity of the projectile immediately before break-up has magnitude\n$\\sqrt{20^2+(-10)^2}=\\sqrt{500}=10\\sqrt{5}$ m s$^{-1}$.\n\nMomentum is conserved during the break-up. Before the break-up, the projectile has mass $2m$, so its momentum is $2m\\mathbf{v}$.\n\nAfter the break-up, one fragment of mass $m$ is instantaneously at rest. If the other fragment has velocity $\\mathbf{V}$, then\n$m\\mathbf{V}=2m\\mathbf{v}$,\nso $\\mathbf{V}=2\\mathbf{v}$.\n\nTherefore the speed of the moving fragment is\n$2\\times10\\sqrt{5}=20\\sqrt{5}$ m s$^{-1}$."
       },
-      {
-        "label": "D",
-        "text": "$\\dfrac{5}{4}$ cm"
+      "metadata": {
+        "estimated_time_seconds": 240,
+        "tags": [
+          "physics",
+          "mechanics",
+          "projectile motion",
+          "momentum",
+          "graph interpretation"
+        ]
       },
-      {
-        "label": "E",
-        "text": "$\\dfrac{3}{2}$ cm"
-      }
-    ],
-    "figures": [
-      {
-        "figure_id": "q02_circle_tangent_diagram",
-        "figure_type": "complex_diagram",
-        "url": "/q01_graph.png",
-        "caption": "A circle with chord AB, tangents at A and B meeting at T, and a smaller circle tangent to both tangents and to the original circle.",
-        "diagram_prompt": "Draw a clean black-and-white geometry diagram. Show a large circle with centre O. Draw a horizontal chord AB near the top of the circle, labelled AB = 12 cm. Draw tangents at A and B meeting above the circle at point T, forming triangle TAB. Show a smaller circle inside triangle TAB, centred on the symmetry line OT, tangent to both sides TA and TB, and externally tangent to the large circle near its top. Label the large circle radius as 10 cm. Mark OA and OB as radii if useful. Do not add the answer or any extra measurements.",
-        "table_headers": null,
-        "table_rows": null,
-        "table_row_labels": null,
-        "graph_type": null,
-        "graph_title": null,
-        "graph_x_label": null,
-        "graph_y_label": null,
-        "graph_x_labels": null,
-        "graph_series": null,
-        "graph_x_min": null,
-        "graph_x_max": null,
-        "graph_y_min": null,
-        "graph_y_max": null
-      }
-    ]
-  },
-  "generation": {
-    "template_id": "demo_math_circle_tangent_002",
-    "template_version": "1.0",
-    "parameters": {},
-    "solution_steps": [
-      "Use symmetry to locate the centre of the smaller circle on OT.",
-      "Find the distance from O to chord AB.",
-      "Use right-triangle geometry to find OT and the angle between OT and a tangent.",
-      "Relate the smaller radius to its distance from T and its tangency to the original circle."
-    ],
-    "distractor_strategy": [
-      "using the incircle of triangle TAB instead of the required circle",
-      "confusing internal and external tangency",
-      "using AB as a diameter",
-      "using the distance from O to AB as OT",
-      "forgetting that the centre of the smaller circle lies on the angle bisector OT"
-    ]
-  },
-  "validation": {
-    "answer_label": "C",
-    "answer_text": "$\\dfrac{10}{9}$ cm",
-    "status": "verified",
-    "worked_solution": "Let M be the midpoint of AB. Since O lies on the perpendicular bisector of chord AB, OM is perpendicular to AB.\n\nAB = 12 cm, so AM = 6 cm. Since OA = 10 cm,\n$OM = \\sqrt{10^2 - 6^2} = \\sqrt{100 - 36} = 8$ cm.\n\nThe tangents at A and B meet at T, and by symmetry O, M and T lie on the same line.\n\nIn right triangle OAT, OA is perpendicular to TA. Also, using the tangent-chord symmetry, triangle OAT has OA = 10 and the distance from O to chord AB is 8. Equivalently, the tangent intersection satisfies\n$OT = \\dfrac{10^2}{8} = \\dfrac{25}{2}$ cm.\n\nLet the radius of the smaller circle be r, and let its centre be S. Since it is tangent to both TA and TB, S lies on the angle bisector OT.\n\nBecause the smaller circle is externally tangent to the original circle and lies between O and T,\n$OS = 10 + r$.\n\nTherefore\n$TS = OT - OS = \\dfrac{25}{2} - (10+r) = \\dfrac{5}{2} - r$.\n\nNow find the angle between OT and TA. In right triangle OAT,\n$\\sin \\angle ATO = \\dfrac{OA}{OT} = \\dfrac{10}{25/2} = \\dfrac{4}{5}$.\n\nThe perpendicular distance from S to TA is the radius r of the smaller circle, so\n$r = TS \\sin \\angle ATO$.\n\nThus\n$r = \\left(\\dfrac{5}{2} - r\\right)\\dfrac{4}{5}$.\n\nSo\n$5r = 10 - 4r$,\n$9r = 10$,\nand therefore\n$r = \\dfrac{10}{9}$ cm."
-  },
-  "metadata": {
-    "estimated_time_seconds": 240,
-    "tags": [
-      "math",
-      "geometry",
-      "circle geometry",
-      "tangents",
-      "power of a point",
-      "similar triangles"
-    ]
-  },
-  "data_quality_notes": []
-},
-  {
-  "question_id": "FRONT_03",
-  "source": {
-    "exam": "FRONTEND_DEMO",
-    "year": 2026,
-    "paper": "Advertising example set",
-    "section": "A",
-    "question_number": 3,
-    "source_pdf": "frontend_examples.json"
-  },
-  "content": {
-    "subject": "biology",
-    "topic": "genetics",
-    "subtopic": "Hardy-Weinberg equilibrium and selection",
-    "archetype": "population genetics with viability selection",
-    "difficulty": 5,
-    "requires_diagram": false,
-    "requires_calculation": true
-  },
-  "prompt": {
-    "stem": "In a large randomly mating population, a rare genetic disorder is caused by being homozygous for a recessive allele a.\n\nAt birth, 16% of individuals in one generation are affected by the disorder.\n\nAll affected individuals die before reaching reproductive age. All unaffected individuals have equal reproductive success.\n\nAssume no mutation, no migration, and random mating among the surviving adults.\n\nWhat proportion of individuals at birth in the next generation will be affected?",
-    "options": [
-      {
-        "label": "A",
-        "text": "$\\dfrac{1}{49}$"
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "FRONT_02",
+      "source": {
+        "exam": "FRONTEND_DEMO",
+        "year": 2026,
+        "paper": "Advertising example set",
+        "section": "A",
+        "question_number": 2,
+        "source_pdf": "frontend_examples.json"
       },
-      {
-        "label": "B",
-        "text": "$\\dfrac{4}{49}$"
+      "content": {
+        "subject": "math",
+        "topic": "geometry",
+        "subtopic": "circles and tangents",
+        "archetype": "circle tangent geometry",
+        "difficulty": 4,
+        "requires_diagram": true,
+        "requires_calculation": true
       },
-      {
-        "label": "C",
-        "text": "$\\dfrac{2}{7}$"
+      "prompt": {
+        "stem": "A circle has centre O and radius 10 cm.\n\nAB is a chord of the circle with AB = 12 cm.\n\nThe tangents to the circle at A and B meet at T.\n\nA smaller circle lies inside triangle TAB. It is tangent to TA and TB, and is externally tangent to the original circle.\n\nWhat is the radius of the smaller circle?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$1$ cm"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{20}{19}$ cm"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{10}{9}$ cm"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{5}{4}$ cm"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{3}{2}$ cm"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q02_circle_tangent_diagram",
+            "figure_type": "complex_diagram",
+            "url": "/q01_graph.png",
+            "caption": "A circle with chord AB, tangents at A and B meeting at T, and a smaller circle tangent to both tangents and to the original circle.",
+            "diagram_prompt": "Draw a clean black-and-white geometry diagram. Show a large circle with centre O. Draw a horizontal chord AB near the top of the circle, labelled AB = 12 cm. Draw tangents at A and B meeting above the circle at point T, forming triangle TAB. Show a smaller circle inside triangle TAB, centred on the symmetry line OT, tangent to both sides TA and TB, and externally tangent to the large circle near its top. Label the large circle radius as 10 cm. Mark OA and OB as radii if useful. Do not add the answer or any extra measurements.",
+            "table_headers": null,
+            "table_rows": null,
+            "table_row_labels": null,
+            "graph_type": null,
+            "graph_title": null,
+            "graph_x_label": null,
+            "graph_y_label": null,
+            "graph_x_labels": null,
+            "graph_series": null,
+            "graph_x_min": null,
+            "graph_x_max": null,
+            "graph_y_min": null,
+            "graph_y_max": null
+          }
+        ]
       },
-      {
-        "label": "D",
-        "text": "$\\dfrac{8}{49}$"
+      "generation": {
+        "template_id": "demo_math_circle_tangent_002",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [
+          "Use symmetry to locate the centre of the smaller circle on OT.",
+          "Find the distance from O to chord AB.",
+          "Use right-triangle geometry to find OT and the angle between OT and a tangent.",
+          "Relate the smaller radius to its distance from T and its tangency to the original circle."
+        ],
+        "distractor_strategy": [
+          "using the incircle of triangle TAB instead of the required circle",
+          "confusing internal and external tangency",
+          "using AB as a diameter",
+          "using the distance from O to AB as OT",
+          "forgetting that the centre of the smaller circle lies on the angle bisector OT"
+        ]
       },
-      {
-        "label": "E",
-        "text": "$\\dfrac{16}{49}$"
-      }
-    ],
-    "figures": []
-  },
-  "generation": {
-    "template_id": "demo_biology_selection_003",
-    "template_version": "1.0",
-    "parameters": {},
-    "solution_steps": [
-      "Use Hardy-Weinberg equilibrium to find the initial allele frequency.",
-      "Remove homozygous recessive individuals before reproduction.",
-      "Renormalise the allele frequency among surviving adults.",
-      "Use random mating among survivors to find the affected proportion in the next generation."
-    ],
-    "distractor_strategy": [
-      "using the original allele frequency again in the next generation",
-      "forgetting to renormalise after affected individuals die",
-      "confusing carrier frequency with recessive allele frequency",
-      "assuming the disorder disappears after one generation",
-      "using the survivor fraction as the affected fraction"
-    ]
-  },
-  "validation": {
-    "answer_label": "B",
-    "answer_text": "$\\dfrac{4}{49}$",
-    "status": "verified",
-    "worked_solution": "Let the frequency of allele a at birth in the first generation be q.\n\nSince affected individuals are aa, the affected proportion at birth is q^2.\n\nSo q^2 = 0.16, giving q = 0.4 and p = 0.6.\n\nAt birth, the genotype frequencies are:\nAA = p^2 = 0.36,\nAa = 2pq = 0.48,\naa = q^2 = 0.16.\n\nAll aa individuals die before reproduction, so only AA and Aa individuals reproduce.\n\nThe total surviving fraction is\n0.36 + 0.48 = 0.84.\n\nAmong the surviving adults, the frequency of allele a is contributed only by the heterozygotes:\nq' = 0.48 / (2 x 0.84) = 0.48 / 1.68 = 2/7.\n\nThe surviving adults mate randomly, so the affected proportion at birth in the next generation is\n(q')^2 = (2/7)^2 = 4/49."
-  },
-  "metadata": {
-    "estimated_time_seconds": 210,
-    "tags": [
-      "biology",
-      "genetics",
-      "Hardy-Weinberg equilibrium",
-      "selection",
-      "population genetics"
-    ]
-  },
-  "data_quality_notes": []
-},
-  {
-  "question_id": "FRONT_04",
-  "source": {
-    "exam": "FRONTEND_DEMO",
-    "year": 2026,
-    "paper": "Advertising example set",
-    "section": "A",
-    "question_number": 4,
-    "source_pdf": "frontend_examples.json"
-  },
-  "content": {
-    "subject": "physics",
-    "topic": "electricity",
-    "subtopic": "capacitors and energy",
-    "archetype": "energy accounting in a charging capacitor",
-    "difficulty": 4,
-    "requires_diagram": false,
-    "requires_calculation": true
-  },
-  "prompt": {
-    "stem": "A capacitor of capacitance C is initially uncharged.\n\nIt is connected in series with a resistor R and an ideal battery of emf V.\n\nAt a certain instant during charging, the current in the circuit has fallen to one third of its initial value.\n\nAt this instant, what fraction of the total energy supplied by the battery so far has been dissipated as thermal energy in the resistor?",
-    "options": [
-      {
-        "label": "A",
-        "text": "$\\dfrac{1}{3}$"
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "$\\dfrac{10}{9}$ cm",
+        "status": "verified",
+        "worked_solution": "Let M be the midpoint of AB. Since O lies on the perpendicular bisector of chord AB, OM is perpendicular to AB.\n\nAB = 12 cm, so AM = 6 cm. Since OA = 10 cm,\n$OM = \\sqrt{10^2 - 6^2} = \\sqrt{100 - 36} = 8$ cm.\n\nThe tangents at A and B meet at T, and by symmetry O, M and T lie on the same line.\n\nIn right triangle OAT, OA is perpendicular to TA. Also, using the tangent-chord symmetry, triangle OAT has OA = 10 and the distance from O to chord AB is 8. Equivalently, the tangent intersection satisfies\n$OT = \\dfrac{10^2}{8} = \\dfrac{25}{2}$ cm.\n\nLet the radius of the smaller circle be r, and let its centre be S. Since it is tangent to both TA and TB, S lies on the angle bisector OT.\n\nBecause the smaller circle is externally tangent to the original circle and lies between O and T,\n$OS = 10 + r$.\n\nTherefore\n$TS = OT - OS = \\dfrac{25}{2} - (10+r) = \\dfrac{5}{2} - r$.\n\nNow find the angle between OT and TA. In right triangle OAT,\n$\\sin \\angle ATO = \\dfrac{OA}{OT} = \\dfrac{10}{25/2} = \\dfrac{4}{5}$.\n\nThe perpendicular distance from S to TA is the radius r of the smaller circle, so\n$r = TS \\sin \\angle ATO$.\n\nThus\n$r = \\left(\\dfrac{5}{2} - r\\right)\\dfrac{4}{5}$.\n\nSo\n$5r = 10 - 4r$,\n$9r = 10$,\nand therefore\n$r = \\dfrac{10}{9}$ cm."
       },
-      {
-        "label": "B",
-        "text": "$\\dfrac{1}{2}$"
+      "metadata": {
+        "estimated_time_seconds": 240,
+        "tags": [
+          "math",
+          "geometry",
+          "circle geometry",
+          "tangents",
+          "power of a point",
+          "similar triangles"
+        ]
       },
-      {
-        "label": "C",
-        "text": "$\\dfrac{2}{3}$"
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "FRONT_03",
+      "source": {
+        "exam": "FRONTEND_DEMO",
+        "year": 2026,
+        "paper": "Advertising example set",
+        "section": "A",
+        "question_number": 3,
+        "source_pdf": "frontend_examples.json"
       },
-      {
-        "label": "D",
-        "text": "$\\dfrac{3}{4}$"
+      "content": {
+        "subject": "biology",
+        "topic": "genetics",
+        "subtopic": "Hardy-Weinberg equilibrium and selection",
+        "archetype": "population genetics with viability selection",
+        "difficulty": 5,
+        "requires_diagram": false,
+        "requires_calculation": true
       },
-      {
-        "label": "E",
-        "text": "$\\dfrac{5}{6}$"
-      }
-    ],
-    "figures": []
-  },
-  "generation": {
-    "template_id": "demo_physics_capacitor_energy_004",
-    "template_version": "1.0",
-    "parameters": {},
-    "solution_steps": [
-      "Relate the current to the charge already stored on the capacitor.",
-      "Calculate the energy supplied by the battery up to that instant.",
-      "Calculate the energy stored in the capacitor.",
-      "Subtract to find the energy dissipated in the resistor."
-    ],
-    "distractor_strategy": [
-      "assuming the dissipated fraction is the same as the current fraction",
-      "using final capacitor energy instead of energy at the instant",
-      "forgetting that the battery supplies energy Vq",
-      "confusing charge fraction with energy fraction",
-      "assuming energy is shared equally throughout the charging process"
-    ]
-  },
-  "validation": {
-    "answer_label": "C",
-    "answer_text": "$\\dfrac{2}{3}$",
-    "status": "verified",
-    "worked_solution": "Initially, the capacitor is uncharged, so the initial current is $I_0 = V/R$.\n\nAt any instant during charging, the current is\n$I = \\dfrac{V - q/C}{R}$,\nwhere q is the charge on the capacitor.\n\nWe are told that $I = I_0/3$, so\n$\\dfrac{V - q/C}{R} = \\dfrac{1}{3}\\dfrac{V}{R}$.\n\nThus\n$V - \\dfrac{q}{C} = \\dfrac{V}{3}$,\nso\n$\\dfrac{q}{C} = \\dfrac{2V}{3}$,\nand therefore\n$q = \\dfrac{2CV}{3}$.\n\nThe energy supplied by the battery so far is\n$E_{\\text{supplied}} = Vq = V\\times \\dfrac{2CV}{3} = \\dfrac{2CV^2}{3}$.\n\nThe energy stored in the capacitor at this instant is\n$E_{\\text{stored}} = \\dfrac{q^2}{2C}$.\n\nSubstituting $q = \\dfrac{2CV}{3}$ gives\n$E_{\\text{stored}} = \\dfrac{1}{2C}\\left(\\dfrac{2CV}{3}\\right)^2 = \\dfrac{2CV^2}{9}$.\n\nSo the energy dissipated in the resistor is\n$E_{\\text{dissipated}} = E_{\\text{supplied}} - E_{\\text{stored}} = \\dfrac{2CV^2}{3} - \\dfrac{2CV^2}{9} = \\dfrac{4CV^2}{9}$.\n\nThe required fraction is therefore\n$\\dfrac{E_{\\text{dissipated}}}{E_{\\text{supplied}}} = \\dfrac{4CV^2/9}{2CV^2/3} = \\dfrac{2}{3}$."
-  },
-  "metadata": {
-    "estimated_time_seconds": 210,
-    "tags": [
-      "physics",
-      "electricity",
-      "capacitors",
-      "energy",
-      "charging circuits"
-    ]
-  },
-  "data_quality_notes": []
-},
+      "prompt": {
+        "stem": "In a large randomly mating population, a rare genetic disorder is caused by being homozygous for a recessive allele a.\n\nAt birth, 16% of individuals in one generation are affected by the disorder.\n\nAll affected individuals die before reaching reproductive age. All unaffected individuals have equal reproductive success.\n\nAssume no mutation, no migration, and random mating among the surviving adults.\n\nWhat proportion of individuals at birth in the next generation will be affected?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{1}{49}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{4}{49}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{2}{7}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{8}{49}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{16}{49}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "demo_biology_selection_003",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [
+          "Use Hardy-Weinberg equilibrium to find the initial allele frequency.",
+          "Remove homozygous recessive individuals before reproduction.",
+          "Renormalise the allele frequency among surviving adults.",
+          "Use random mating among survivors to find the affected proportion in the next generation."
+        ],
+        "distractor_strategy": [
+          "using the original allele frequency again in the next generation",
+          "forgetting to renormalise after affected individuals die",
+          "confusing carrier frequency with recessive allele frequency",
+          "assuming the disorder disappears after one generation",
+          "using the survivor fraction as the affected fraction"
+        ]
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$\\dfrac{4}{49}$",
+        "status": "verified",
+        "worked_solution": "Let the frequency of allele $a$ at birth in the first generation be $q$.\n\nSince affected individuals are $aa$, the affected proportion at birth is $q^2$.\n\nSo $q^2 = 0.16$, giving $q = 0.4$ and $p = 0.6$.\n\nAt birth, the genotype frequencies are:\n$AA = p^2 = 0.36$,\n$Aa = 2pq = 0.48$,\n$aa = q^2 = 0.16$.\n\nAll $aa$ individuals die before reproduction, so only $AA$ and $Aa$ individuals reproduce.\n\nThe total surviving fraction is\n$0.36 + 0.48 = 0.84$.\n\nAmong the surviving adults, the frequency of allele $a$ is contributed only by the heterozygotes:\n$q' = \\dfrac{0.48}{2 \\times 0.84} = \\dfrac{0.48}{1.68} = \\dfrac{2}{7}$.\n\nThe surviving adults mate randomly, so the affected proportion at birth in the next generation is\n$(q')^2 = \\left(\\dfrac{2}{7}\\right)^2 = \\dfrac{4}{49}$."
+      },
+      "metadata": {
+        "estimated_time_seconds": 210,
+        "tags": [
+          "biology",
+          "genetics",
+          "Hardy-Weinberg equilibrium",
+          "selection",
+          "population genetics"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "FRONT_04",
+      "source": {
+        "exam": "FRONTEND_DEMO",
+        "year": 2026,
+        "paper": "Advertising example set",
+        "section": "A",
+        "question_number": 4,
+        "source_pdf": "frontend_examples.json"
+      },
+      "content": {
+        "subject": "physics",
+        "topic": "electricity",
+        "subtopic": "capacitors and energy",
+        "archetype": "energy accounting in a charging capacitor",
+        "difficulty": 4,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A capacitor of capacitance C is initially uncharged.\n\nIt is connected in series with a resistor R and an ideal battery of emf V.\n\nAt a certain instant during charging, the current in the circuit has fallen to one third of its initial value.\n\nAt this instant, what fraction of the total energy supplied by the battery so far has been dissipated as thermal energy in the resistor?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{1}{3}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{1}{2}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{2}{3}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{3}{4}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{5}{6}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "demo_physics_capacitor_energy_004",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [
+          "Relate the current to the charge already stored on the capacitor.",
+          "Calculate the energy supplied by the battery up to that instant.",
+          "Calculate the energy stored in the capacitor.",
+          "Subtract to find the energy dissipated in the resistor."
+        ],
+        "distractor_strategy": [
+          "assuming the dissipated fraction is the same as the current fraction",
+          "using final capacitor energy instead of energy at the instant",
+          "forgetting that the battery supplies energy Vq",
+          "confusing charge fraction with energy fraction",
+          "assuming energy is shared equally throughout the charging process"
+        ]
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "$\\dfrac{2}{3}$",
+        "status": "verified",
+        "worked_solution": "Initially, the capacitor is uncharged, so the initial current is $I_0 = V/R$.\n\nAt any instant during charging, the current is\n$I = \\dfrac{V - q/C}{R}$,\nwhere q is the charge on the capacitor.\n\nWe are told that $I = I_0/3$, so\n$\\dfrac{V - q/C}{R} = \\dfrac{1}{3}\\dfrac{V}{R}$.\n\nThus\n$V - \\dfrac{q}{C} = \\dfrac{V}{3}$,\nso\n$\\dfrac{q}{C} = \\dfrac{2V}{3}$,\nand therefore\n$q = \\dfrac{2CV}{3}$.\n\nThe energy supplied by the battery so far is\n$E_{\\text{supplied}} = Vq = V\\times \\dfrac{2CV}{3} = \\dfrac{2CV^2}{3}$.\n\nThe energy stored in the capacitor at this instant is\n$E_{\\text{stored}} = \\dfrac{q^2}{2C}$.\n\nSubstituting $q = \\dfrac{2CV}{3}$ gives\n$E_{\\text{stored}} = \\dfrac{1}{2C}\\left(\\dfrac{2CV}{3}\\right)^2 = \\dfrac{2CV^2}{9}$.\n\nSo the energy dissipated in the resistor is\n$E_{\\text{dissipated}} = E_{\\text{supplied}} - E_{\\text{stored}} = \\dfrac{2CV^2}{3} - \\dfrac{2CV^2}{9} = \\dfrac{4CV^2}{9}$.\n\nThe required fraction is therefore\n$\\dfrac{E_{\\text{dissipated}}}{E_{\\text{supplied}}} = \\dfrac{4CV^2/9}{2CV^2/3} = \\dfrac{2}{3}$."
+      },
+      "metadata": {
+        "estimated_time_seconds": 210,
+        "tags": [
+          "physics",
+          "electricity",
+          "capacitors",
+          "energy",
+          "charging circuits"
+        ]
+      },
+      "data_quality_notes": []
+    },
     {
       "question_id": "FRONT_05",
       "source": {
@@ -433,11 +453,15 @@
         "answer_label": "C",
         "answer_text": "0.59 mol dm$^{-3}$",
         "status": "verified",
-        "worked_solution": "Let x be the amount of N2O4 that dissociates, in mol dm^-3. Then at equilibrium: [N2O4] = 1 - x and [NO2] = 2x. Using Kc = [NO2]^2 / [N2O4] gives 0.50 = (2x)^2 / (1 - x) = 4x^2 / (1 - x). So 8x^2 + x - 1 = 0. Solving gives x = (-1 + sqrt(33)) / 16 ≈ 0.296. Therefore [NO2] = 2x ≈ 0.593 mol dm^-3. So the equilibrium concentration is 0.59 mol dm^-3."
+        "worked_solution": "Let $x$ be the amount of $\\text{N}_2\\text{O}_4$ that dissociates, in $\\text{mol dm}^{-3}$. Then at equilibrium: $[\\text{N}_2\\text{O}_4] = 1 - x$ and $[\\text{NO}_2] = 2x$. Using $K_c = \\dfrac{[\\text{NO}_2]^2}{[\\text{N}_2\\text{O}_4]}$ gives $0.50 = \\dfrac{(2x)^2}{1 - x} = \\dfrac{4x^2}{1 - x}$. So $8x^2 + x - 1 = 0$. Solving gives $x = \\dfrac{-1 + \\sqrt{33}}{16} \\approx 0.296$. Therefore $[\\text{NO}_2] = 2x \\approx 0.593\\ \\text{mol dm}^{-3}$. So the equilibrium concentration is $0.59\\ \\text{mol dm}^{-3}$."
       },
       "metadata": {
         "estimated_time_seconds": 180,
-        "tags": ["chemistry", "equilibrium", "ICE table"]
+        "tags": [
+          "chemistry",
+          "equilibrium",
+          "ICE table"
+        ]
       },
       "data_quality_notes": []
     },
@@ -461,7 +485,7 @@
         "requires_calculation": true
       },
       "prompt": {
-        "stem": "Let x be a positive number such that\n\nx + 1/x = 3.\n\nWhat is the value of\n\nx^5 + 1/x^5?",
+        "stem": "Let $x$ be a positive number such that\n\n$$x + \\dfrac{1}{x} = 3.$$\n\nWhat is the value of\n\n$$x^5 + \\dfrac{1}{x^5}?$$",
         "options": [
           {
             "label": "A",
@@ -501,11 +525,15 @@
         "answer_label": "D",
         "answer_text": "123",
         "status": "verified",
-        "worked_solution": "Let a_n = x^n + x^-n. Given x + x^-1 = 3, we have a_1 = 3 and a_0 = 2. Use the recurrence a_(n+1) = 3a_n - a_(n-1), which follows from multiplying a_n by x + x^-1. Then a_2 = 3 x 3 - 2 = 7, a_3 = 3 x 7 - 3 = 18, a_4 = 3 x 18 - 7 = 47, and a_5 = 3 x 47 - 18 = 123. So x^5 + x^-5 = 123."
+        "worked_solution": "Let $a_n = x^n + x^{-n}$. Given $x + x^{-1} = 3$, we have $a_1 = 3$ and $a_0 = 2$. Use the recurrence $a_{n+1} = 3a_n - a_{n-1}$, which follows from multiplying $a_n$ by $x + x^{-1}$. Then $a_2 = 3 \\times 3 - 2 = 7$, $a_3 = 3 \\times 7 - 3 = 18$, $a_4 = 3 \\times 18 - 7 = 47$, and $a_5 = 3 \\times 47 - 18 = 123$. So $x^5 + x^{-5} = 123$."
       },
       "metadata": {
         "estimated_time_seconds": 180,
-        "tags": ["math", "algebra", "recurrences"]
+        "tags": [
+          "math",
+          "algebra",
+          "recurrences"
+        ]
       },
       "data_quality_notes": []
     },
@@ -533,23 +561,23 @@
         "options": [
           {
             "label": "A",
-            "text": "7/16"
+            "text": "$\\dfrac{7}{16}$"
           },
           {
             "label": "B",
-            "text": "25/48"
+            "text": "$\\dfrac{25}{48}$"
           },
           {
             "label": "C",
-            "text": "1/2"
+            "text": "$\\dfrac{1}{2}$"
           },
           {
             "label": "D",
-            "text": "13/24"
+            "text": "$\\dfrac{13}{24}$"
           },
           {
             "label": "E",
-            "text": "2/3"
+            "text": "$\\dfrac{2}{3}$"
           }
         ],
         "figures": []
@@ -569,11 +597,15 @@
         "answer_label": "B",
         "answer_text": "25/48",
         "status": "verified",
-        "worked_solution": "Write each die score as a power of 2 times an odd number. On one roll: 1, 3, 5 contribute no factor of 2; 2 and 6 contribute one factor of 2; 4 contributes two factors of 2. The product is a multiple of 8 if the total power of 2 is at least 3. Count the complement: total power of 2 less than 3. There are 3 odd faces, 2 faces with one factor of 2, and 1 face with two factors of 2. Total outcomes = 6^4 = 1296. Power 0: all four rolls odd, 3^4 = 81. Power 1: exactly one roll contributes one factor of 2, 4 x 2 x 3^3 = 216. Power 2 can happen in two ways: one roll is 4 and the other three are odd, 4 x 1 x 3^3 = 108; or two rolls contribute one factor of 2 and the other two are odd, C(4,2) x 2^2 x 3^2 = 216. So the complement has 81 + 216 + 108 + 216 = 621 outcomes. Hence favourable outcomes = 1296 - 621 = 675. Therefore the probability is 675/1296 = 25/48."
+        "worked_solution": "Write each die score as a power of 2 times an odd number. On one roll: 1, 3, 5 contribute no factor of 2; 2 and 6 contribute one factor of 2; 4 contributes two factors of 2. The product is a multiple of 8 if the total power of 2 is at least 3. Count the complement: total power of 2 less than 3. There are 3 odd faces, 2 faces with one factor of 2, and 1 face with two factors of 2.\n\nTotal outcomes $= 6^4 = 1296$.\nPower 0: all four rolls odd, $3^4 = 81$.\nPower 1: exactly one roll contributes one factor of 2, $4 \\times 2 \\times 3^3 = 216$.\nPower 2 can happen two ways: one roll is 4 and the other three are odd, $4 \\times 1 \\times 3^3 = 108$; or two rolls each contribute one factor of 2 and the other two are odd, $\\binom{4}{2} \\times 2^2 \\times 3^2 = 216$.\n\nSo the complement has $81 + 216 + 108 + 216 = 621$ outcomes. Hence favourable outcomes $= 1296 - 621 = 675$. Therefore the probability is $\\dfrac{675}{1296} = \\dfrac{25}{48}$."
       },
       "metadata": {
         "estimated_time_seconds": 180,
-        "tags": ["math", "probability", "combinatorics"]
+        "tags": [
+          "math",
+          "probability",
+          "combinatorics"
+        ]
       },
       "data_quality_notes": []
     }

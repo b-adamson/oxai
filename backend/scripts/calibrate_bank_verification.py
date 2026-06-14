@@ -179,7 +179,7 @@ class Calibrator:
 
 
 def eligible_questions(subject: Optional[str], year: Optional[int] = None) -> List[Dict[str, Any]]:
-    questions = load_questions(ROOT / 'data' / 'processed')
+    questions = load_questions(ROOT / 'data' / 'processed' / 'nsaa')
     out = []
     for q in questions:
         c = q.get('content', {})

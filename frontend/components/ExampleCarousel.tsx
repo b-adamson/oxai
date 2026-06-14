@@ -1,5 +1,6 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { MathText } from './MathText';
 import { FigureRenderer } from './FigureRenderer';
 import { StreamingText } from './SolutionPanel';
@@ -87,8 +88,11 @@ function CarouselSolutionPanel({ solution }: { solution: string }) {
 
 // ── Card ──────────────────────────────────────────────────────────────────
 function ExampleCard({ q }: { q: ExampleQuestion }) {
+  const router = useRouter();
   const [selected, setSelected] = useState<string | null>(null);
   const [solutionOpen, setSolutionOpen] = useState(false);
+
+  function goToPricing() { router.push('/#pricing'); }
 
   const correctLabel = q.validation.answer_label;
   const isAnswered = selected !== null;
@@ -181,6 +185,22 @@ function ExampleCard({ q }: { q: ExampleQuestion }) {
         {solutionOpen && q.validation.worked_solution && (
           <CarouselSolutionPanel solution={q.validation.worked_solution} />
         )}
+
+        {/* Locked hint button */}
+        <button
+          onClick={goToPricing}
+          className="w-full text-sm font-medium py-2 rounded-xl border border-amber-300 text-amber-600 dark:border-amber-700 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors flex items-center justify-center gap-2"
+        >
+          <span>🔒</span> Get a hint
+        </button>
+
+        {/* Locked Ask Tutor */}
+        <button
+          onClick={goToPricing}
+          className="w-full text-sm font-medium py-2 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
+        >
+          <span>🔒</span> Ask Tutor
+        </button>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT))
 from src.utils.example_index import QuestionExampleIndex
 from src.services.generate_question import choose_examples, load_questions
 
-PROCESSED_DIR = ROOT / 'data' / 'processed'
+PROCESSED_DIR = ROOT / 'data' / 'processed' / 'nsaa'
 
 BOLD = '\033[1m'
 GREEN = '\033[32m'

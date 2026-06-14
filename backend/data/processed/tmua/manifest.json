@@ -1,0 +1,65 @@
+[
+  {
+    "file": "data/processed/tmua/questions_practice_paper_1.json",
+    "label": "TMUA Practice Paper 1",
+    "year": null,
+    "exam": "TMUA",
+    "paper": "1",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_practice_paper_2.json",
+    "label": "TMUA Practice Paper 2",
+    "year": null,
+    "exam": "TMUA",
+    "paper": "2",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_2021_paper_2.json",
+    "label": "TMUA 2021 Paper 2",
+    "year": 2021,
+    "exam": "TMUA",
+    "paper": "2",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_2022_paper_1.json",
+    "label": "TMUA 2022 Paper 1",
+    "year": 2022,
+    "exam": "TMUA",
+    "paper": "1",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_2022_paper_2.json",
+    "label": "TMUA 2022 Paper 2",
+    "year": 2022,
+    "exam": "TMUA",
+    "paper": "2",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_spec_paper_1.json",
+    "label": "TMUA Specimen Paper 1",
+    "year": null,
+    "exam": "TMUA",
+    "paper": "1",
+    "count": 20,
+    "sections": ["A"]
+  },
+  {
+    "file": "data/processed/tmua/questions_spec_paper_2.json",
+    "label": "TMUA Specimen Paper 2",
+    "year": null,
+    "exam": "TMUA",
+    "paper": "2",
+    "count": 20,
+    "sections": ["A"]
+  }
+]

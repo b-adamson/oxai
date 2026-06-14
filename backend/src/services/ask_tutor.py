@@ -4,7 +4,7 @@ import json
 import logging
 import os
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
 from openai import OpenAI
@@ -14,7 +14,7 @@ LOGGER = logging.getLogger('oxai.ask_tutor')
 
 @dataclass
 class TutorSettings:
-    model: str = os.getenv('OPENAI_MODEL_DRAFT', 'gpt-5.2')
+    model: str = field(default_factory=lambda: os.getenv('OPENAI_MODEL_DRAFT', 'gpt-5.2'))
     temperature: float = 0.7
     max_output_tokens: int = 600
 
@@ -134,79 +134,110 @@ class TutorService:
         hints_shown: int,
         whiteboard_enabled: bool = False,
         whiteboard_snapshot: Optional[str] = None,
+        previous_response_id: Optional[str] = None,
     ) -> Dict[str, Any]:
-        context: Dict[str, Any] = {
-            'question': {
-                'stem': stem,
-                'options': options,
-                'subject': subject,
-                'topic': topic,
-                'subtopic': subtopic,
-                'difficulty': difficulty,
-            }
-        }
-        if solution_available and worked_solution:
-            context['worked_solution'] = worked_solution
-
         # Strip data URL prefix from snapshot so we have raw base64
         image_b64: Optional[str] = None
-        if whiteboard_enabled and whiteboard_snapshot:
+        if whiteboard_snapshot:
             image_b64 = whiteboard_snapshot.split(',', 1)[-1] if ',' in whiteboard_snapshot else whiteboard_snapshot
 
-        # Build input: system instructions + question context + interleaved chat history
-        input_messages: List[Dict] = [
-            {
-                'role': 'developer',
-                'content': self._instructions(
-                    solution_available=solution_available,
-                    hints_shown=hints_shown,
-                    whiteboard_enabled=whiteboard_enabled,
-                ),
-            },
-            {
-                'role': 'user',
-                'content': f'Question context:\n{json.dumps(context, ensure_ascii=False, indent=2)}',
-            },
-        ]
-
-        for i, msg in enumerate(chat_history):
-            api_role = 'assistant' if msg.get('role') == 'tutor' else 'user'
-            is_last = i == len(chat_history) - 1
-
-            if is_last and image_b64 and api_role == 'user':
-                # Attach the whiteboard snapshot to the student's latest message
-                input_messages.append({
-                    'role': 'user',
-                    'content': [
-                        {
-                            'type': 'input_image',
-                            'image_url': f'data:image/png;base64,{image_b64}',
-                        },
-                        {
-                            'type': 'input_text',
-                            'text': msg.get('text', ''),
-                        },
-                    ],
-                })
-            else:
-                input_messages.append({'role': api_role, 'content': msg.get('text', '')})
-
         schema = self._schema()
-        self.logger.info('[openai] responses.create  model=%s  schema=tutor_response  history_len=%d', self.settings.model, len(chat_history))
-        t0 = time.perf_counter()
-        response = self.client.responses.create(
-            model=self.settings.model,
-            input=input_messages,
-            text={
-                'format': {
-                    'type': 'json_schema',
-                    'name': schema['name'],
-                    'schema': schema['schema'],
-                    'strict': True,
-                }
-            },
-            max_output_tokens=self.settings.max_output_tokens,
-        )
-        self.logger.info('[openai] responses.create done  schema=tutor_response  elapsed=%.2fs', time.perf_counter() - t0)
 
-        return json.loads(self._response_text(response))
+        if previous_response_id and chat_history:
+            # Session continuation — only send the new user message; context is cached
+            last_msg = chat_history[-1]
+            if image_b64:
+                user_content: Any = [
+                    {'type': 'input_image', 'image_url': f'data:image/png;base64,{image_b64}'},
+                    {'type': 'input_text', 'text': last_msg.get('text', '')},
+                ]
+            else:
+                user_content = last_msg.get('text', '')
+            input_messages: List[Dict] = [{'role': 'user', 'content': user_content}]
+            self.logger.info(
+                '[openai] responses.create (session)  model=%s  prev=%s  board=%s',
+                self.settings.model, previous_response_id[:8], bool(image_b64),
+            )
+            t0 = time.perf_counter()
+            response = self.client.responses.create(
+                model=self.settings.model,
+                previous_response_id=previous_response_id,
+                input=input_messages,
+                text={
+                    'format': {
+                        'type': 'json_schema',
+                        'name': schema['name'],
+                        'schema': schema['schema'],
+                        'strict': True,
+                    }
+                },
+                max_output_tokens=self.settings.max_output_tokens,
+            )
+        else:
+            # Full context — first message in session
+            context: Dict[str, Any] = {
+                'question': {
+                    'stem': stem,
+                    'options': options,
+                    'subject': subject,
+                    'topic': topic,
+                    'subtopic': subtopic,
+                    'difficulty': difficulty,
+                }
+            }
+            if solution_available and worked_solution:
+                context['worked_solution'] = worked_solution
+
+            input_messages = [
+                {
+                    'role': 'developer',
+                    'content': self._instructions(
+                        solution_available=solution_available,
+                        hints_shown=hints_shown,
+                        whiteboard_enabled=whiteboard_enabled,
+                    ),
+                },
+                {
+                    'role': 'user',
+                    'content': f'Question context:\n{json.dumps(context, ensure_ascii=False, indent=2)}',
+                },
+            ]
+
+            for i, msg in enumerate(chat_history):
+                api_role = 'assistant' if msg.get('role') == 'tutor' else 'user'
+                is_last = i == len(chat_history) - 1
+
+                if is_last and image_b64 and api_role == 'user':
+                    input_messages.append({
+                        'role': 'user',
+                        'content': [
+                            {'type': 'input_image', 'image_url': f'data:image/png;base64,{image_b64}'},
+                            {'type': 'input_text', 'text': msg.get('text', '')},
+                        ],
+                    })
+                else:
+                    input_messages.append({'role': api_role, 'content': msg.get('text', '')})
+
+            self.logger.info(
+                '[openai] responses.create (new)  model=%s  history_len=%d  board=%s',
+                self.settings.model, len(chat_history), bool(image_b64),
+            )
+            t0 = time.perf_counter()
+            response = self.client.responses.create(
+                model=self.settings.model,
+                input=input_messages,
+                text={
+                    'format': {
+                        'type': 'json_schema',
+                        'name': schema['name'],
+                        'schema': schema['schema'],
+                        'strict': True,
+                    }
+                },
+                max_output_tokens=self.settings.max_output_tokens,
+            )
+
+        self.logger.info('[openai] responses.create done  elapsed=%.2fs', time.perf_counter() - t0)
+        result = json.loads(self._response_text(response))
+        result['response_id'] = response.id
+        return result

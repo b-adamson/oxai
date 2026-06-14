@@ -33,16 +33,16 @@ function LoginForm() {
 
   if (!supabase) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-[#f5f5f0] p-6">
-        <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
-          <h1 className="text-lg font-bold text-slate-900">Accounts not configured</h1>
-          <p className="mt-2 text-sm text-slate-500">
+      <main className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-gray-950 p-6">
+        <div className="w-full max-w-sm rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-8 text-center shadow-sm">
+          <h1 className="text-lg font-bold text-gray-900 dark:text-white">Accounts not configured</h1>
+          <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
             Supabase environment variables are missing, so the app is running in
             guest mode. Progress is stored in this browser only.
           </p>
           <Link
             href="/"
-            className="mt-6 inline-block rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+            className="mt-6 inline-block rounded-md bg-accent px-4 py-2 text-sm font-semibold text-white hover:bg-accent-light"
           >
             Continue as guest
           </Link>
@@ -97,22 +97,22 @@ function LoginForm() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#f5f5f0] p-6">
+    <main className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-gray-950 p-6">
       <div className="w-full max-w-sm">
         <div className="mb-6 text-center">
-          <h1 className="text-2xl font-bold text-slate-900">oxAI</h1>
-          <p className="mt-1 text-sm text-slate-500">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">OxAI</h1>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
             {mode === 'sign_in' ? 'Sign in to sync your progress' : 'Create an account'}
           </p>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 shadow-sm">
           <form onSubmit={submit} className="grid gap-3">
             {mode === 'sign_up' && (
               <input
                 type="text"
                 placeholder="Name (optional)"
-                className="rounded-md border border-slate-300 px-3 py-2 text-sm text-gray-800"
+                className="rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-accent/40"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
               />
@@ -121,7 +121,7 @@ function LoginForm() {
               type="email"
               required
               placeholder="Email"
-              className="rounded-md border border-slate-300 px-3 py-2 text-sm text-gray-800"
+              className="rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-accent/40"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -130,48 +130,48 @@ function LoginForm() {
               required
               minLength={6}
               placeholder="Password"
-              className="rounded-md border border-slate-300 px-3 py-2 text-sm text-gray-800"
+              className="rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-accent/40"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            {error && <p className="text-xs text-red-500">{error}</p>}
-            {notice && <p className="text-xs text-emerald-600">{notice}</p>}
+            {error && <p className="text-xs text-red-500 dark:text-red-400">{error}</p>}
+            {notice && <p className="text-xs text-emerald-600 dark:text-emerald-400">{notice}</p>}
 
             <button
               type="submit"
               disabled={loading}
-              className="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
+              className="rounded-lg bg-accent hover:bg-accent-light px-4 py-2.5 text-sm font-semibold text-white disabled:opacity-50 transition-colors"
             >
               {loading ? 'Working…' : mode === 'sign_in' ? 'Sign in' : 'Sign up'}
             </button>
           </form>
 
-          <div className="my-4 flex items-center gap-3 text-[10px] uppercase tracking-widest text-slate-400">
-            <div className="h-px flex-1 bg-slate-200" />
+          <div className="my-4 flex items-center gap-3 text-[10px] uppercase tracking-widest text-gray-400 dark:text-gray-600">
+            <div className="h-px flex-1 bg-gray-200 dark:bg-gray-700" />
             or
-            <div className="h-px flex-1 bg-slate-200" />
+            <div className="h-px flex-1 bg-gray-200 dark:bg-gray-700" />
           </div>
 
           <button
             onClick={signInWithGoogle}
-            className="w-full rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+            className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2.5 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
           >
             Continue with Google
           </button>
 
-          <p className="mt-4 text-center text-xs text-slate-500">
+          <p className="mt-4 text-center text-xs text-gray-500 dark:text-gray-400">
             {mode === 'sign_in' ? (
               <>
                 No account?{' '}
-                <button className="font-semibold text-blue-600" onClick={() => setMode('sign_up')}>
+                <button className="font-semibold text-accent hover:text-accent-light" onClick={() => setMode('sign_up')}>
                   Sign up
                 </button>
               </>
             ) : (
               <>
                 Already registered?{' '}
-                <button className="font-semibold text-blue-600" onClick={() => setMode('sign_in')}>
+                <button className="font-semibold text-accent hover:text-accent-light" onClick={() => setMode('sign_in')}>
                   Sign in
                 </button>
               </>
@@ -179,8 +179,8 @@ function LoginForm() {
           </p>
         </div>
 
-        <p className="mt-4 text-center text-xs text-slate-400">
-          <Link href="/" className="hover:text-slate-600">
+        <p className="mt-4 text-center text-xs text-gray-400 dark:text-gray-600">
+          <Link href="/" className="hover:text-gray-600 dark:hover:text-gray-400 transition-colors">
             Continue as guest →
           </Link>
         </p>

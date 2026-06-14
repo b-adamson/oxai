@@ -4,7 +4,7 @@ import json
 import logging
 import os
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
 from openai import OpenAI
@@ -39,7 +39,7 @@ LEVEL_INSTRUCTIONS = {
 
 @dataclass
 class HintSettings:
-    model: str = os.getenv('OPENAI_MODEL_DRAFT', 'gpt-5.2')
+    model: str = field(default_factory=lambda: os.getenv('OPENAI_MODEL_DRAFT', 'gpt-5.2'))
     temperature: float = 0.5
     max_output_tokens: int = 300
 

@@ -1,0 +1,1461 @@
+{
+  "source": "TMUA Practice Paper 1",
+  "source_pdf": "raw/tmua_practice_paper_1.pdf",
+  "extraction_version": "2.0",
+  "question_count": 20,
+  "questions": [
+    {
+      "question_id": "TMUA_practice1_01",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 1,
+        "page": 3,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "binomial expansion",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "It is given that the expansion of $(ax + b)^3$ is $8x^3 - px^2 + 18x - 3\\sqrt{3}$, where $a$, $b$ and $p$ are real constants. What is the value of $p$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$-12\\sqrt{3}$"
+          },
+          {
+            "label": "B",
+            "text": "$-6\\sqrt{3}$"
+          },
+          {
+            "label": "C",
+            "text": "$-4\\sqrt{3}$"
+          },
+          {
+            "label": "D",
+            "text": "$-\\sqrt{3}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\sqrt{3}$"
+          },
+          {
+            "label": "F",
+            "text": "$4\\sqrt{3}$"
+          },
+          {
+            "label": "G",
+            "text": "$6\\sqrt{3}$"
+          },
+          {
+            "label": "H",
+            "text": "$12\\sqrt{3}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q01",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_02",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 2,
+        "page": 3,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "factorisation",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The expression $3x^3 + 13x^2 + 8x + a$, where $a$ is a constant, has $(x + 2)$ as a factor. Which one of the following is a complete factorisation of the expression?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$(x + 2)(x - 1)(3x - 2)$"
+          },
+          {
+            "label": "B",
+            "text": "$(x + 2)(x + 1)(3x - 2)$"
+          },
+          {
+            "label": "C",
+            "text": "$(x + 2)(x + 1)(3x + 2)$"
+          },
+          {
+            "label": "D",
+            "text": "$(x + 2)(x - 3)(3x + 2)$"
+          },
+          {
+            "label": "E",
+            "text": "$(x + 2)(x + 3)(3x - 2)$"
+          },
+          {
+            "label": "F",
+            "text": "$(x + 2)(x + 3)(3x + 2)$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q02",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_03",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 3,
+        "page": 4,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "calculus",
+        "subtopic": "normal to a curve",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A line is drawn normal to the curve $y = \\dfrac{2}{x^2}$ at the point on the curve where $x = 1$. This line cuts the $x$-axis at $P$ and the $y$-axis at $Q$. The length of $PQ$ is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{3\\sqrt{5}}{2}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{3\\sqrt{17}}{4}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{7\\sqrt{17}}{4}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{35}{4}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{35\\sqrt{5}}{2}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{3\\sqrt{17}}{2}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q03",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_04",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 4,
+        "page": 4,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "sequences",
+        "subtopic": "series sum",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The sequence $a_n$ is defined by the rule: $a_n = (-1)^n - (-1)^{n-1} + (-1)^{n+2}$ for $n \\ge 1$. Find the value of $\\sum_{n=1}^{39} a_n$.",
+        "options": [
+          {
+            "label": "A",
+            "text": "$-39$"
+          },
+          {
+            "label": "B",
+            "text": "$-3$"
+          },
+          {
+            "label": "C",
+            "text": "$-1$"
+          },
+          {
+            "label": "D",
+            "text": "$0$"
+          },
+          {
+            "label": "E",
+            "text": "$1$"
+          },
+          {
+            "label": "F",
+            "text": "$3$"
+          },
+          {
+            "label": "G",
+            "text": "$39$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q04",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_05",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 5,
+        "page": 5,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "calculus",
+        "subtopic": "area under curve",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "What is the total area enclosed between the curve $y = x^2 - 1$, the $x$-axis and the lines $x = -2$ and $x = 2$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{4}{3}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{8}{3}$"
+          },
+          {
+            "label": "C",
+            "text": "$4$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{16}{3}$"
+          },
+          {
+            "label": "E",
+            "text": "$12$"
+          },
+          {
+            "label": "F",
+            "text": "$16$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q05",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_06",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 6,
+        "page": 5,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "probability",
+        "subtopic": "mixtures",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "P, Q, and R are each mixtures of red and white paint. The percentage by volume of red paint in P is 30%. The percentage by volume of red paint in Q is 20%. The mixtures P, Q, and R are combined in the proportion 12 : 5 : 3 respectively. If the resulting mixture contains 25% by volume of red paint, what percentage by volume of mixture R is red paint?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$25\\%$"
+          },
+          {
+            "label": "B",
+            "text": "$23\\%$"
+          },
+          {
+            "label": "C",
+            "text": "$13 \\dfrac{1}{3}\\%$"
+          },
+          {
+            "label": "D",
+            "text": "$19 \\dfrac{1}{2}\\%$"
+          },
+          {
+            "label": "E",
+            "text": "$9 \\dfrac{3}{4}\\%$"
+          },
+          {
+            "label": "F",
+            "text": "It is impossible to achieve this result."
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q06",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_07",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 7,
+        "page": 6,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "probability",
+        "subtopic": "conditional probability",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "60% of a sports club's members are women and the remainder are men. This sports club offers the opportunity to play tennis or cricket. Every member plays exactly one of the two sports. $\\dfrac{2}{5}$ of the male members of the club play cricket; $\\dfrac{2}{3}$ of the cricketing members of the club are women. What is the probability that a member of the club, chosen at random, is a woman who plays tennis?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{1}{5}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{7}{25}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{1}{3}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{11}{25}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{3}{5}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q07",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_08",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 8,
+        "page": 6,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "trigonometry",
+        "subtopic": "trigonometric equation",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Find the maximum angle $x$ in the range $0^\\circ \\le x \\le 360^\\circ$ which satisfies the equation $\\cos^2(2x) + \\sqrt{3}\\sin(2x) - \\dfrac{7}{4} = 0$.",
+        "options": [
+          {
+            "label": "A",
+            "text": "$30^\\circ$"
+          },
+          {
+            "label": "B",
+            "text": "$60^\\circ$"
+          },
+          {
+            "label": "C",
+            "text": "$120^\\circ$"
+          },
+          {
+            "label": "D",
+            "text": "$150^\\circ$"
+          },
+          {
+            "label": "E",
+            "text": "$210^\\circ$"
+          },
+          {
+            "label": "F",
+            "text": "$240^\\circ$"
+          },
+          {
+            "label": "G",
+            "text": "$300^\\circ$"
+          },
+          {
+            "label": "H",
+            "text": "$330^\\circ$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q08",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_09",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 9,
+        "page": 7,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "geometry",
+        "subtopic": "circle transformations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The line segment joining the points $(3, 3)$ and $(7, 5)$ is a diameter of a circle. This circle is translated by 3 units in the negative $x$-direction, then reflected in the $x$-axis, and then enlarged by a scale factor of 4 about the centre of the resulting circle. The equation of the final circle is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$(x - 2)^2 + (y - 4)^2 = 320$"
+          },
+          {
+            "label": "B",
+            "text": "$(x - 2)^2 + (y + 4)^2 = 320$"
+          },
+          {
+            "label": "C",
+            "text": "$(x - 2)^2 + (y - 4)^2 = 80$"
+          },
+          {
+            "label": "D",
+            "text": "$(x - 2)^2 + (y + 4)^2 = 80$"
+          },
+          {
+            "label": "E",
+            "text": "$(x - 2)^2 + (y - 4)^2 = 20$"
+          },
+          {
+            "label": "F",
+            "text": "$(x - 2)^2 + (y + 4)^2 = 20$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q09",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_10",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 10,
+        "page": 7,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "trigonometry",
+        "subtopic": "equations with tangent",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "How many solutions does the equation $x\tan x = 1$ have in the interval $-2\\pi \\le x \\le 2\\pi$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$0$"
+          },
+          {
+            "label": "B",
+            "text": "$1$"
+          },
+          {
+            "label": "C",
+            "text": "$2$"
+          },
+          {
+            "label": "D",
+            "text": "$3$"
+          },
+          {
+            "label": "E",
+            "text": "$4$"
+          },
+          {
+            "label": "F",
+            "text": "$5$"
+          },
+          {
+            "label": "G",
+            "text": "$6$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q10",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_11",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 11,
+        "page": 8,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "exponential equations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The real roots of the equation $4^{2x} + 12 = 2^{2x+3}$ are $p$ and $q$, where $p > q$. The value of $p - q$ can be expressed as",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{3}{4}$"
+          },
+          {
+            "label": "B",
+            "text": "$1$"
+          },
+          {
+            "label": "C",
+            "text": "$4$"
+          },
+          {
+            "label": "D",
+            "text": "$-\\dfrac{1}{2} + \\log_{10}\\dfrac{3}{2}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{\\log_{10} 3}{\\log_{10} 4}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{\\log_{10} 3}{\\log_{10} 2}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q11",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Option D transcription may be ambiguous in the source image; transcribed as displayed.",
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_12",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 12,
+        "page": 9,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "geometry",
+        "subtopic": "optimization in solids",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A right circular cylinder is contained within a sphere of radius 5 cm in such a way that the whole of the circumferences of both ends of the cylinder are in contact with the sphere. The diagram shows a planar cross section through the centre of the sphere and cylinder. Find, in cubic centimetres, the maximum possible volume of the cylinder.",
+        "options": [
+          {
+            "label": "A",
+            "text": "$250\\pi$"
+          },
+          {
+            "label": "B",
+            "text": "$500\\pi$"
+          },
+          {
+            "label": "C",
+            "text": "$1000\\pi$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{250\\sqrt{3}}{3}\\pi$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{500\\sqrt{3}}{9}\\pi$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{1000\\sqrt{3}}{9}\\pi$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q12_diagram",
+            "type": "diagram",
+            "src": "images_practice_paper_1/12.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q12",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_13",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 13,
+        "page": 10,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "polynomial roots",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "How many real roots does the equation $3x^5 - 10x^3 - 120x + 30 = 0$ have?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$1$"
+          },
+          {
+            "label": "B",
+            "text": "$2$"
+          },
+          {
+            "label": "C",
+            "text": "$3$"
+          },
+          {
+            "label": "D",
+            "text": "$4$"
+          },
+          {
+            "label": "E",
+            "text": "$5$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q13",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_14",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 14,
+        "page": 10,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "sequences",
+        "subtopic": "geometric series",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The terms of an infinite series $S$ are formed by adding together the corresponding terms in two infinite geometric series, $T$ and $U$. The first term of $T$ and the first term of $U$ are each 4. In order, the first three terms of the combined series $S$ are 8, 3, and $\\dfrac{5}{4}$. What is the sum to infinity of $S$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{32}{5}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{20}{3}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{64}{5}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{40}{3}$"
+          },
+          {
+            "label": "E",
+            "text": "$16$"
+          },
+          {
+            "label": "F",
+            "text": "$32$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q14",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_15",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 15,
+        "page": 11,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "calculus",
+        "subtopic": "gradient optimisation",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The least possible value of the gradient of the curve $y = (2x + a)(x - 2a)^2$ at the point where $x = 1$, as $a$ varies, is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$-\\dfrac{49}{4}$"
+          },
+          {
+            "label": "B",
+            "text": "$-8$"
+          },
+          {
+            "label": "C",
+            "text": "$-\\dfrac{25}{4}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{7}{4}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{47}{16}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q15",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_16",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 16,
+        "page": 11,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "logarithmic equations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Given the simultaneous equations $\\log_{10} 2 + \\log_{10}(y - 1) = 2\\log_{10} x$ and $\\log_{10}(y + 3 - 3x) = 0$, the values of $y$ are",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{5}{2} \\pm \\dfrac{3\\sqrt{5}}{2}$"
+          },
+          {
+            "label": "B",
+            "text": "$3 \\pm \\sqrt{3}$"
+          },
+          {
+            "label": "C",
+            "text": "$7 \\pm 3\\sqrt{3}$"
+          },
+          {
+            "label": "D",
+            "text": "$3, 9$"
+          },
+          {
+            "label": "E",
+            "text": "$1, 13$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q16",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_17",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 17,
+        "page": 12,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "trigonometry",
+        "subtopic": "trigonometric inequalities",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "It is given that $y = (1 + 2\\cos x)\\cos 2x$ for $0 < x < \\pi$. The complete set of values of $x$ for which $y$ is negative is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$0 < x < \\dfrac{\\pi}{4},\\ \\dfrac{2\\pi}{3} < x < \\dfrac{3\\pi}{4}$"
+          },
+          {
+            "label": "B",
+            "text": "$0 < x < \\dfrac{\\pi}{4},\\ \\dfrac{3\\pi}{4} < x < \\pi$"
+          },
+          {
+            "label": "C",
+            "text": "$0 < x < \\dfrac{2\\pi}{3},\\ \\dfrac{3\\pi}{4} < x < \\pi$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{\\pi}{4} < x < \\dfrac{2\\pi}{3},\\ \\dfrac{3\\pi}{4} < x < \\pi$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{\\pi}{4} < x < \\dfrac{2\\pi}{3}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{\\pi}{4} < x < \\dfrac{3\\pi}{4}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q17",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_18",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 18,
+        "page": 12,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "calculus",
+        "subtopic": "monotonicity",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The function $\\dfrac{1-x}{\\sqrt[3]{x^2}}$ is defined for all $x \ne 0$. The complete set of values of $x$ for which the function is decreasing is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$x \\le -2,\\ x > 0$"
+          },
+          {
+            "label": "B",
+            "text": "$-2 \\le x < 0$"
+          },
+          {
+            "label": "C",
+            "text": "$x \\le 1,\\ x \ne 0$"
+          },
+          {
+            "label": "D",
+            "text": "$x \\ge 1$"
+          },
+          {
+            "label": "E",
+            "text": "$-2 \\le x \\le 1,\\ x \ne 0$"
+          },
+          {
+            "label": "F",
+            "text": "$x \\le -2,\\ x \\ge 1$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q18",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_19",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 19,
+        "page": 13,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "binomial coefficients",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The coefficient of $x^3$ in the expansion of $(1 + 2x + 3x^2)^6$ is equal to twice the coefficient of $x^4$ in the expansion of $(1 - ax^2)^5$. Find all possible values of the constant $a$.",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\pm 2\\sqrt{2}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\pm \\sqrt{17}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\pm \\sqrt{34}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\pm 2\\sqrt{17}$"
+          },
+          {
+            "label": "E",
+            "text": "There are no possible values of $a$."
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q19",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    },
+    {
+      "question_id": "TMUA_practice1_20",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 20,
+        "page": 14,
+        "source_pdf": "raw/tmua_practice_paper_1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "geometry",
+        "subtopic": "shortest path on polyhedron",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The diagram shows a square-based pyramid with base $PQRS$ and vertex $O$. All the edges of the pyramid are of length 20 metres. [diagram not to scale] Find the shortest distance, in metres, along the outer surface of the pyramid from $P$ to the midpoint of $OR$.",
+        "options": [
+          {
+            "label": "A",
+            "text": "$10\\sqrt{5 - 2\\sqrt{3}}$"
+          },
+          {
+            "label": "B",
+            "text": "$10\\sqrt{3}$"
+          },
+          {
+            "label": "C",
+            "text": "$10\\sqrt{5}$"
+          },
+          {
+            "label": "D",
+            "text": "$10\\sqrt{7}$"
+          },
+          {
+            "label": "E",
+            "text": "$10\\sqrt{5 + 2\\sqrt{3}}$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q20_diagram",
+            "type": "diagram",
+            "src": "images_practice_paper_1/20.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q20",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "",
+        "answer_text": "",
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Answer label/text not extracted from the source paper; validation left unverified."
+      ]
+    }
+  ]
+}

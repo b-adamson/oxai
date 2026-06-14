@@ -15,6 +15,8 @@ interface TutorChatProps {
   getWhiteboardSnapshot?: () => string | null;
   whiteboardStrokeCount?: number;
   onAnnotations?: (annotations: TutorAnnotation[]) => void;
+  fillHeight?: boolean;
+  hideHeader?: boolean;
 }
 
 export function TutorChat({
@@ -27,6 +29,8 @@ export function TutorChat({
   getWhiteboardSnapshot,
   whiteboardStrokeCount = 0,
   onAnnotations,
+  fillHeight = false,
+  hideHeader = false,
 }: TutorChatProps) {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -35,15 +39,23 @@ export function TutorChat({
   const [streamingIdx, setStreamingIdx] = useState<number | null>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const prevLengthRef = useRef(messages.length);
+  // Session state — avoids resending full history on every turn
+  const sessionIdRef = useRef<string | null>(null);
+  const lastSentStrokeCountRef = useRef<number>(-1);
 
   useEffect(() => {
-    if (messages.length > prevLengthRef.current && messagesContainerRef.current) {
+    const prev = prevLengthRef.current;
+    if (messages.length > prev && messagesContainerRef.current) {
       const el = messagesContainerRef.current;
       el.scrollTop = el.scrollHeight;
-      // find the newly arrived tutor message (search from the end)
-      for (let i = messages.length - 1; i >= prevLengthRef.current; i--) {
+      for (let i = messages.length - 1; i >= prev; i--) {
         if (messages[i].role === 'tutor') { setStreamingIdx(i); break; }
       }
+    }
+    // Clear was triggered when messages drops back to 0
+    if (prev > 0 && messages.length === 0) {
+      sessionIdRef.current = null;
+      lastSentStrokeCountRef.current = -1;
     }
     prevLengthRef.current = messages.length;
   }, [messages]);
@@ -58,9 +70,13 @@ export function TutorChat({
     setLoading(true);
     setError(null);
 
-    // Only share board context when the checkbox is on AND there's actual drawing
-    const sendBoard = boardContextOn && whiteboardEnabled && whiteboardStrokeCount > 0;
+    // Only send whiteboard when board context is on AND strokes changed since last send
+    const boardActive = boardContextOn && whiteboardEnabled && whiteboardStrokeCount > 0;
+    const boardChanged = whiteboardStrokeCount !== lastSentStrokeCountRef.current;
+    const sendBoard = boardActive && boardChanged;
     const snapshot = sendBoard && getWhiteboardSnapshot ? getWhiteboardSnapshot() : null;
+
+    const prevSessionId = sessionIdRef.current;
 
     try {
       const result = await api.askTutor({
@@ -74,12 +90,17 @@ export function TutorChat({
         solution_available: Boolean(solution),
         worked_solution: solution?.worked_solution ?? null,
         hints_shown: hints.length,
-        ...(sendBoard && {
+        previous_response_id: prevSessionId,
+        ...(boardActive && {
           whiteboard_enabled: true,
-          whiteboard_snapshot: snapshot,
+          whiteboard_snapshot: sendBoard ? snapshot : null,
           whiteboard_stroke_count: whiteboardStrokeCount,
         }),
       });
+
+      // Advance session state
+      sessionIdRef.current = result.response_id ?? null;
+      if (sendBoard) lastSentStrokeCountRef.current = whiteboardStrokeCount;
 
       const tutorMsg: TutorChatMessage = {
         role: 'tutor',
@@ -93,6 +114,8 @@ export function TutorChat({
         onAnnotations(result.annotations);
       }
     } catch (e) {
+      // Reset session on failure so next attempt sends full context
+      sessionIdRef.current = null;
       setError(e instanceof Error ? e.message : 'Tutor unavailable');
     } finally {
       setLoading(false);
@@ -113,40 +136,44 @@ export function TutorChat({
   const sendBoardContext = boardContextOn && whiteboardEnabled && whiteboardStrokeCount > 0;
 
   return (
-    <div className="flex flex-col bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-gray-700 rounded-lg overflow-hidden">
-      <div className="px-3 py-2 bg-slate-100 dark:bg-gray-800 border-b border-slate-200 dark:border-gray-700 flex items-center gap-2">
-        <span className="text-xs font-semibold text-slate-600 dark:text-gray-400 uppercase tracking-wide">
-          Ask the Tutor
-        </span>
-        {whiteboardEnabled && (
-          <label className="flex items-center gap-1.5 ml-auto cursor-pointer select-none">
-            <input
-              type="checkbox"
-              checked={boardContextOn}
-              onChange={(e) => setBoardContextOn(e.target.checked)}
-              className="w-3.5 h-3.5 accent-amber-500 cursor-pointer"
-            />
-            <span className={`text-xs font-medium ${boardContextOn ? 'text-amber-700 dark:text-amber-400' : 'text-gray-400 dark:text-gray-500'}`}>
-              Board context {boardContextOn ? 'on' : 'off'}
-            </span>
-          </label>
-        )}
-      </div>
+    <div className={`flex flex-col bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-gray-700 rounded-lg overflow-hidden ${fillHeight ? 'flex-1 min-h-0' : ''}`}>
+      {!hideHeader && (
+        <div className="shrink-0 px-3 py-2 bg-slate-100 dark:bg-gray-800 border-b border-slate-200 dark:border-gray-700 flex items-center gap-2">
+          <span className="text-xs font-semibold text-slate-600 dark:text-gray-400 uppercase tracking-wide">
+            Ask the Tutor
+          </span>
+          {whiteboardEnabled && (
+            <label className="flex items-center gap-1.5 ml-auto cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={boardContextOn}
+                onChange={(e) => setBoardContextOn(e.target.checked)}
+                className="w-3.5 h-3.5 accent-amber-500 cursor-pointer"
+              />
+              <span className={`text-xs font-medium ${boardContextOn ? 'text-amber-700 dark:text-amber-400' : 'text-gray-400 dark:text-gray-500'}`}>
+                Board context {boardContextOn ? 'on' : 'off'}
+              </span>
+            </label>
+          )}
+        </div>
+      )}
 
-      <div ref={messagesContainerRef} className="flex-1 overflow-y-auto p-3 space-y-3 max-h-80 min-h-24">
+      <div ref={messagesContainerRef} className={`overflow-y-auto p-3 space-y-3 ${fillHeight ? 'flex-1 min-h-0' : 'max-h-80 min-h-24'}`}>
         {messages.length === 0 && (
-          <p className="text-xs text-gray-400 italic text-center mt-4">
-            {whiteboardEnabled
-              ? sendBoardContext
-                ? 'Your whiteboard will be shared with each message.'
-                : 'Ask any question — enable board context to share your working.'
-              : "Ask any question about this problem. The tutor won't reveal the answer directly."}
-          </p>
+          <div className="text-xs text-gray-400 italic text-center mt-4 space-y-1">
+            <p>Ask any question about this problem.</p>
+            {whiteboardEnabled && (
+              <p>{sendBoardContext ? 'Your whiteboard will be shared with each message.' : 'Enable board context to share your working with the tutor.'}</p>
+            )}
+            {whiteboardEnabled && (
+              <p className="text-gray-300 dark:text-gray-600">Tip: you can paste or drag images onto the whiteboard.</p>
+            )}
+          </div>
         )}
         {messages.map((msg, i) => (
-          <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+          <div key={i} className={`flex min-w-0 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
             <div
-              className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${
+              className={`min-w-0 max-w-[85%] rounded-lg px-3 py-2 text-sm overflow-x-auto ${
                 msg.role === 'user'
                   ? 'bg-accent text-white'
                   : 'bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 text-gray-800 dark:text-gray-100'
@@ -161,7 +188,7 @@ export function TutorChat({
               {msg.role === 'tutor' && i === streamingIdx ? (
                 <StreamingText text={msg.text} className="leading-relaxed" />
               ) : (
-                <MathText text={msg.text} className="leading-relaxed" />
+                <MathText text={msg.text} className="leading-relaxed" forceInline />
               )}
             </div>
           </div>

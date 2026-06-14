@@ -1,0 +1,1410 @@
+{
+  "source": "TMUA Specimen Paper 2",
+  "source_pdf": "raw/tmua_specimen_paper2.pdf",
+  "extraction_version": "2.0",
+  "question_count": 20,
+  "questions": [
+    {
+      "question_id": "TMUA_specimen2_01",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 1,
+        "page": 3,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "geometry",
+        "subtopic": "circle equations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The radius of the circle $2x^2 + 2y^2 - 8x + 12y + 15 = 0$ is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\sqrt{\\dfrac{5}{2}}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\sqrt{\\dfrac{11}{2}}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\sqrt{\\dfrac{41}{2}}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\sqrt{37}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\sqrt{67}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q01",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$\\sqrt{\\dfrac{11}{2}}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_02",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 2,
+        "page": 3,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "calculus",
+        "subtopic": "differentiation",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The gradient of the curve $y = \\dfrac{(3x - 2)^2}{x\\sqrt{x}}$ at the point where $x = 2$ is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{3}{2}\\sqrt{2}$"
+          },
+          {
+            "label": "B",
+            "text": "$3\\sqrt{2}$"
+          },
+          {
+            "label": "C",
+            "text": "$4\\sqrt{2}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{9}{2}\\sqrt{2}$"
+          },
+          {
+            "label": "E",
+            "text": "$6\\sqrt{2}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q02",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "$3\\sqrt{2}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_03",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 3,
+        "page": 4,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "equation solving",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Consider the following attempt to solve an equation. The steps have been numbered for reference. Which one of the following statements is true?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Both $-4$ and $-1$ are solutions of the equation."
+          },
+          {
+            "label": "B",
+            "text": "Neither $-4$ nor $-1$ are solutions of the equation."
+          },
+          {
+            "label": "C",
+            "text": "One solution is correct and the incorrect solution arises as a result of step (1)."
+          },
+          {
+            "label": "D",
+            "text": "One solution is correct and the incorrect solution arises as a result of step (2)."
+          },
+          {
+            "label": "E",
+            "text": "One solution is correct and the incorrect solution arises as a result of step (3)."
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q03",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "One solution is correct and the incorrect solution arises as a result of step (1).",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_04",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 4,
+        "page": 5,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "logic",
+        "subtopic": "counterexample",
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A set of five cards each have a letter printed on their front and a number printed on their back, as follows:\nWhich one of the five cards ($A$, $B$, $C$, $D$ or $E$) provides a counterexample to the following statement?\n\nEvery card that has a vowel on its front has an even number on its back.",
+        "options": [
+          {
+            "label": "A",
+            "text": "Card A"
+          },
+          {
+            "label": "B",
+            "text": "Card B"
+          },
+          {
+            "label": "C",
+            "text": "Card C"
+          },
+          {
+            "label": "D",
+            "text": "Card D"
+          },
+          {
+            "label": "E",
+            "text": "Card E"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q04",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "Card A",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_05",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 5,
+        "page": 5,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "logarithms",
+        "subtopic": "approximation",
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Using the observation that $2^5 \\approx 3^3$, it is possible to deduce that $\\log_3 2$ is approximately",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{3}{5}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{2}{3}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{3}{2}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{5}{3}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{1}{2}$"
+          },
+          {
+            "label": "F",
+            "text": "$2$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q05",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "$\\dfrac{3}{5}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_06",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 6,
+        "page": 6,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "measurement",
+        "subtopic": "bounds",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The area of a rectangle is measured to be $5600\\text{ cm}^2$ correct to 2 significant figures.\nThe width of the rectangle is measured to be 80 cm correct to the nearest centimetre.\nWhich one of the following expressions gives the greatest possible height of the rectangle?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$70.5\\text{ cm}$"
+          },
+          {
+            "label": "B",
+            "text": "$75\\text{ cm}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{5650}{85}\\text{ cm}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{5650}{80.5}\\text{ cm}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{5650}{75}\\text{ cm}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{5650}{79.5}\\text{ cm}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q06",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "F",
+        "answer_text": "$\\dfrac{5650}{79.5}\\text{ cm}$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_07",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 7,
+        "page": 7,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "implicit curves",
+        "archetype": null,
+        "difficulty": 4,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Which one of the following is a sketch of the graph $(x + y)(x^2 - xy + y^2) = 1?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sketch A"
+          },
+          {
+            "label": "B",
+            "text": "Sketch B"
+          },
+          {
+            "label": "C",
+            "text": "Sketch C"
+          },
+          {
+            "label": "D",
+            "text": "Sketch D"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q07_diagram",
+            "type": "graph",
+            "src": "images_spec_paper_2/7.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q07",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "Sketch C",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_08",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 8,
+        "page": 8,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "number theory",
+        "subtopic": "divisibility",
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Consider the following statement about the positive integer $n$:\n\nStatement (*): The sum of the four consecutive integers, the smallest of which is $n$,\nis a multiple of 6.\n\nWhich one of the following is true?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Statement (*) is true for all values of $n$."
+          },
+          {
+            "label": "B",
+            "text": "Statement (*) is true for all values of $n$ which are odd, but not for any other values of $n$."
+          },
+          {
+            "label": "C",
+            "text": "Statement (*) is true for all values of $n$ which are multiples of 3, but not for any other values of $n$."
+          },
+          {
+            "label": "D",
+            "text": "Statement (*) is true for all values of $n$ which are multiples of 6, but not for any other values of $n$."
+          },
+          {
+            "label": "E",
+            "text": "Statement (*) is not true for any value of $n$."
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q08",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "Statement (*) is true for all values of $n$ which are multiples of 3, but not for any other values of $n$.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_09",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 9,
+        "page": 8,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "logic",
+        "subtopic": "quantifiers",
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Consider the statement about Fred:\n\n(*) Every day next week, Fred will do at least one maths problem.\n\nIf statement (*) is not true, which of the following is certainly true?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Every day next week, Fred will do more than one maths problem."
+          },
+          {
+            "label": "B",
+            "text": "Some day next week, Fred will do more than one maths problem."
+          },
+          {
+            "label": "C",
+            "text": "On no day next week will Fred do more than one maths problem."
+          },
+          {
+            "label": "D",
+            "text": "Every day next week, Fred will do no maths problems."
+          },
+          {
+            "label": "E",
+            "text": "Some day next week, Fred will do no maths problems."
+          },
+          {
+            "label": "F",
+            "text": "On no day next week will Fred do no maths problems."
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q09",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "Some day next week, Fred will do no maths problems.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_10",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 10,
+        "page": 9,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "logarithms",
+        "subtopic": "graphs",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Which one of the following is a sketch of the graph of $y = \\log_x 2$ for $x > 1$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Sketch A"
+          },
+          {
+            "label": "B",
+            "text": "Sketch B"
+          },
+          {
+            "label": "C",
+            "text": "Sketch C"
+          },
+          {
+            "label": "D",
+            "text": "Sketch D"
+          },
+          {
+            "label": "E",
+            "text": "Sketch E"
+          },
+          {
+            "label": "F",
+            "text": "Sketch F"
+          }
+        ],
+        "figures": [
+          {
+            "figure_id": "q10_diagram",
+            "type": "graph",
+            "src": "images_spec_paper_2/10.png"
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q10",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "Sketch E",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_11",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 11,
+        "page": 10,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "functions",
+        "subtopic": "comparison",
+        "archetype": null,
+        "difficulty": 2,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Which one of the following numbers is largest in value?\n(All angles are given in radians.)",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\tan\\left(\\dfrac{3\\pi}{4}\\right)$"
+          },
+          {
+            "label": "B",
+            "text": "$\\log_{10} 100$"
+          },
+          {
+            "label": "C",
+            "text": "$\\sin^{10}\\left(\\dfrac{\\pi}{2}\\right)$"
+          },
+          {
+            "label": "D",
+            "text": "$\\log_2 10$"
+          },
+          {
+            "label": "E",
+            "text": "$(\\sqrt{2} - 1)^{10}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q11",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "$\\log_2 10$",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_12",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 12,
+        "page": 10,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "polynomials",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A polynomial $p(x)$ has the property that $p(1) = 2$.\nWhich one of the following can be deduced from this?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$p(x) = (x - 1)q(x) + 2$ for some polynomial $q(x)$."
+          },
+          {
+            "label": "B",
+            "text": "$p(x) = (x + 1)q(x) + 2$ for some polynomial $q(x)$."
+          },
+          {
+            "label": "C",
+            "text": "$p(x) = (x - 1)q(x) - 2$ for some polynomial $q(x)$."
+          },
+          {
+            "label": "D",
+            "text": "$p(x) = (x + 1)q(x) - 2$ for some polynomial $q(x)$."
+          },
+          {
+            "label": "E",
+            "text": "$p(x) = (x - 2)q(x) + 1$ for some polynomial $q(x)$."
+          },
+          {
+            "label": "F",
+            "text": "$p(x) = (x + 2)q(x) + 1$ for some polynomial $q(x)$."
+          },
+          {
+            "label": "G",
+            "text": "$p(x) = (x - 2)q(x) - 1$ for some polynomial $q(x)$."
+          },
+          {
+            "label": "H",
+            "text": "$p(x) = (x + 2)q(x) - 1$ for some polynomial $q(x)$."
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q12",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "$p(x) = (x - 1)q(x) + 2$ for some polynomial $q(x)$.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_13",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 13,
+        "page": 11,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "combinatorics",
+        "subtopic": "partial orders",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Five runners competed in a race: Fred, George, Hermione, Lavender, and Ron.\nFred beat George.\nHermione beat Lavender.\nLavender beat George.\nRon beat George.\nAssuming there were no ties, how many possible finishing orders could there have been, given only this information?",
+        "options": [
+          {
+            "label": "A",
+            "text": "1"
+          },
+          {
+            "label": "B",
+            "text": "6"
+          },
+          {
+            "label": "C",
+            "text": "12"
+          },
+          {
+            "label": "D",
+            "text": "18"
+          },
+          {
+            "label": "E",
+            "text": "24"
+          },
+          {
+            "label": "F",
+            "text": "120"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q13",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "C",
+        "answer_text": "12",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_14",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 14,
+        "page": 11,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "polynomial turning points",
+        "archetype": null,
+        "difficulty": 4,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The graph of the polynomial function\n$y = ax^5 + bx^4 + cx^3 + dx^2 + ex + f$,\nis sketched, where $a$, $b$, $c$, $d$, $e$, and $f$ are real constants with $a \\neq 0$.\nWhich one of the following is not possible?",
+        "options": [
+          {
+            "label": "A",
+            "text": "The graph has two local minima and two local maxima."
+          },
+          {
+            "label": "B",
+            "text": "The graph has one local minimum and two local maxima."
+          },
+          {
+            "label": "C",
+            "text": "The graph has one local minimum and one local maximum."
+          },
+          {
+            "label": "D",
+            "text": "The graph has no local minima or local maxima."
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q14",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "The graph has one local minimum and two local maxima.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_15",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 15,
+        "page": 12,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "inequalities",
+        "subtopic": "sign analysis",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "For any real numbers $a$, $b$, and $c$ where $a \\geq b$, consider these three statements:\n1 $-b \\geq -a$\n2 $a^2 + b^2 \\geq 2ab$\n3 $ac \\geq bc$\nWhich of the statements 1, 2, and 3 must be true?",
+        "options": [
+          {
+            "label": "A",
+            "text": "none"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "1 and 2 only"
+          },
+          {
+            "label": "F",
+            "text": "1 and 3 only"
+          },
+          {
+            "label": "G",
+            "text": "2 and 3 only"
+          },
+          {
+            "label": "H",
+            "text": "1, 2 and 3"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q15",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "1 and 2 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_16",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 16,
+        "page": 12,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "sequences",
+        "subtopic": "recurrence relations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The sequence $a_n$ is given by the rule:\n\n$a_1 = 2$\n$a_{n+1} = a_n + (-1)^n$ for $n \\geq 1$\nWhat is\n$\\sum_{n=1}^{100} a_n$",
+        "options": [
+          {
+            "label": "A",
+            "text": "150"
+          },
+          {
+            "label": "B",
+            "text": "250"
+          },
+          {
+            "label": "C",
+            "text": "$-4750$"
+          },
+          {
+            "label": "D",
+            "text": "5150"
+          },
+          {
+            "label": "E",
+            "text": "$4\\left(1 - \\left(\\dfrac{1}{2}\\right)^{100}\\right)$"
+          },
+          {
+            "label": "F",
+            "text": "$4\\left(\\left(\\dfrac{3}{2}\\right)^{100} - 1\\right)$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q16",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "A",
+        "answer_text": "150",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_17",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 17,
+        "page": 13,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "logic",
+        "subtopic": "negation",
+        "archetype": null,
+        "difficulty": 4,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Let $S$ be a set of positive integers, for example $S$ could consist of 3, 4, and 8.\nA positive integer $n$ is called an $S$-number if and only if for every factor $m$ of $n$ with $m > 1$,\nthe number $m$ is a multiple of some number in $S$.\nSo in the above example, 9 is an $S$-number; this is because the factors of 9 greater than 1\nare 3 and 9, and each of these is a multiple of 3.\n\nPositive integer $n$ is therefore not an $S$-number if and only if",
+        "options": [
+          {
+            "label": "A",
+            "text": "for every (positive) factor $m$ of $n$ with $m > 1$, there is a number in $S$ which is not a factor of $m$."
+          },
+          {
+            "label": "B",
+            "text": "for every (positive) factor $m$ of $n$ with $m > 1$, there is no number in $S$ which is a factor of $m$."
+          },
+          {
+            "label": "C",
+            "text": "for every (positive) factor $m$ of $n$ with $m > 1$, every number in $S$ is a factor of $m$."
+          },
+          {
+            "label": "D",
+            "text": "for some (positive) factor $m$ of $n$ with $m > 1$, there is a number in $S$ which is not a factor of $m$."
+          },
+          {
+            "label": "E",
+            "text": "for some (positive) factor $m$ of $n$ with $m > 1$, there is no number in $S$ which is a factor of $m$."
+          },
+          {
+            "label": "F",
+            "text": "for some (positive) factor $m$ of $n$ with $m > 1$, every number in $S$ is a factor of $m$."
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q17",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "E",
+        "answer_text": "for some (positive) factor $m$ of $n$ with $m > 1$, there is no number in $S$ which is a factor of $m$.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_18",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 18,
+        "page": 14,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "statistics",
+        "subtopic": "median and range",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A group of five numbers are such that:\n- their mean is $0$\n- their range is $20$\nWhat is the largest possible median of the five numbers?",
+        "options": [
+          {
+            "label": "A",
+            "text": "0"
+          },
+          {
+            "label": "B",
+            "text": "4"
+          },
+          {
+            "label": "C",
+            "text": "$4\\dfrac{1}{2}$"
+          },
+          {
+            "label": "D",
+            "text": "$6\\dfrac{1}{2}$"
+          },
+          {
+            "label": "E",
+            "text": "8"
+          },
+          {
+            "label": "F",
+            "text": "20"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q18",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "4",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_19",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 19,
+        "page": 15,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "cubic equations and roots",
+        "archetype": null,
+        "difficulty": 4,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The positive real numbers $a$, $b$, and $c$ are such that the equation\n$x^3 + ax^2 = bx + c$\nhas three real roots, one positive and two negative.\nWhich one of the following correctly describes the real roots of the equation\n$x^3 + c = ax^2 + bx$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "It has three real roots, one positive and two negative."
+          },
+          {
+            "label": "B",
+            "text": "It has three real roots, two positive and one negative."
+          },
+          {
+            "label": "C",
+            "text": "It has three real roots, but their signs differ depending on $a$, $b$, and $c$."
+          },
+          {
+            "label": "D",
+            "text": "It has exactly one real root, which is positive."
+          },
+          {
+            "label": "E",
+            "text": "It has exactly one real root, which is negative."
+          },
+          {
+            "label": "F",
+            "text": "It has exactly one real root, whose sign differs depending on $a$, $b$, and $c$."
+          },
+          {
+            "label": "G",
+            "text": "The number of real roots can be one or three, but the number of roots differs depending on $a$, $b$, and $c$."
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q19",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "B",
+        "answer_text": "It has three real roots, two positive and one negative.",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen2_20",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 2",
+        "section": "A",
+        "question_number": 20,
+        "page": 16,
+        "source_pdf": "raw/tmua_specimen_paper2.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "logic",
+        "subtopic": "truth values",
+        "archetype": null,
+        "difficulty": 4,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Five logicians each make a statement, as follows:\nMr P: Of these five statements, an odd number are true.\nMs Q: Both statements made by women are true.\nMr R: My first name is Robert and Mr P’s statement is true.\nMs S: Exactly one statement made by a man is true.\nMr T: Neither statement made by a woman is true.\nHow many of the five statements can be simultaneously true?",
+        "options": [
+          {
+            "label": "A",
+            "text": "none"
+          },
+          {
+            "label": "B",
+            "text": "1 only"
+          },
+          {
+            "label": "C",
+            "text": "2 only"
+          },
+          {
+            "label": "D",
+            "text": "3 only"
+          },
+          {
+            "label": "E",
+            "text": "4 only"
+          },
+          {
+            "label": "F",
+            "text": "none or 1 only"
+          },
+          {
+            "label": "G",
+            "text": "1 or 2 only"
+          },
+          {
+            "label": "H",
+            "text": "2 or 3 only"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q20",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": "D",
+        "answer_text": "3 only",
+        "status": "verified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": [
+        "Mr R's self-reference to being Robert was treated as a fixed true condition in the intended puzzle reading."
+      ]
+    }
+  ]
+}

@@ -4,12 +4,17 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Script from "next/script";
 import { TutorChat } from "@/components/TutorChat";
 import { AccountChip } from "@/components/AccountChip";
+import { FigureRenderer } from "@/components/FigureRenderer";
+import type { FigureSpec } from "@/lib/types";
 import { useStore, normaliseQuestion } from "@/lib/store";
 import { migrateLegacySessions } from "@/lib/migrateLegacy";
 import type { HintRecord, QuestionRecord, SolutionRecord, TutorChatMessage } from "@/lib/types";
 
-type Mode = "training" | "generated";
-type PaperMeta = { id: string; exam: string; year: number; paper: string; count: number; file: string; };
+type Mode = "training" | "generated" | "reports";
+type QuestionReport = { id: string; created_at: string; question_id: string; user_id: string | null; error_title: string; error_body: string | null; question_stem: string | null; worked_solution: string | null; status: string; };
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type DbRow = { question_id: string; subject: string; topic: string | null; difficulty: number | null; archetype: string | null; origin: string | null; created_at: string; payload: Record<string, any> | null; };
+type PaperMeta = { id: string; label?: string; exam: string; year: number | null; paper: string; count: number; file: string; };
 type Question = {
   question_id?: string;
   source?: { section?: string; question_number?: number; page?: number };
@@ -127,6 +132,13 @@ export default function DevPage() {
   const [tutorOpen, setTutorOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [mathJaxReady, setMathJaxReady] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [currentFigures, setCurrentFigures] = useState<any[]>([]);
+  const [reports, setReports] = useState<QuestionReport[]>([]);
+  const [reportsLoading, setReportsLoading] = useState(false);
+  const [expandedReport, setExpandedReport] = useState<string | null>(null);
+  const [dbLoading, setDbLoading] = useState(false);
+  const [dbRefreshKey, setDbRefreshKey] = useState(0);
 
   const questions = questionSet?.questions || [];
   const sectionQuestions = useMemo(() => {
@@ -172,8 +184,45 @@ export default function DevPage() {
   }, [paperId, mode]);
 
   useEffect(() => {
-    if (mode === "generated") { setQuestionSet(null); setError(""); setContentLoading(false); }
+    if (mode === "reports") {
+      setReportsLoading(true);
+      fetch("/api/question-reports")
+        .then(r => r.json())
+        .then(d => setReports(d.reports ?? []))
+        .catch(() => setReports([]))
+        .finally(() => setReportsLoading(false));
+    }
   }, [mode]);
+
+  useEffect(() => {
+    if (mode !== "generated") return;
+    setDbLoading(true);
+    setError("");
+    fetch(`/api/generated-questions?subject=${genSubject}`, { cache: "no-store" })
+      .then(r => r.json())
+      .then(d => {
+        const qs: Question[] = (d.questions ?? []).map((row: DbRow) => {
+          const p = row.payload ?? {};
+          return {
+            question_id: row.question_id,
+            content: p.content ?? { subject: row.subject, topic: row.topic, difficulty: row.difficulty, archetype: row.archetype },
+            prompt: p.prompt,
+            validation: p.validation,
+            metadata: p.metadata,
+            source: p.source,
+          };
+        });
+        if (qs.length > 0) {
+          setQuestionSet({ questions: qs, sourceLabel: `Generated · ${genSubject}` });
+          setSelectedSection("A");
+          setSelectedIndex(0);
+        } else {
+          setQuestionSet({ questions: [], sourceLabel: `Generated · ${genSubject}` });
+        }
+      })
+      .catch(() => setError("Could not load generated questions."))
+      .finally(() => setDbLoading(false));
+  }, [mode, genSubject, dbRefreshKey]);
 
   useEffect(() => {
     if (selectedIndex >= sectionQuestions.length && sectionQuestions.length > 0) setSelectedIndex(0);
@@ -197,11 +246,16 @@ export default function DevPage() {
   }, [currentQuestionKey]);
 
   useEffect(() => {
+    setCurrentFigures(currentQuestion?.prompt?.figures ?? []);
+  }, [currentQuestionKey]);
+
+  useEffect(() => {
     if (!contentRef.current || !currentQuestion) return;
     const subject = normalizeSubject(currentQuestion.content?.subject);
     const stars = "★".repeat(currentQuestion.content?.difficulty || 0).padEnd(5, "☆");
+    const escHtml = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     const optionsHtml = currentQuestion.prompt?.options?.map(opt =>
-      `<div style="display:flex;align-items:flex-start;gap:.85rem;margin-bottom:.75rem;"><div style="width:2rem;height:2rem;flex:0 0 2rem;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:800;background:#dbeafe;color:#1e3a8a;margin-top:.7rem;">${opt.label}</div><div style="flex:1;line-height:1.7;border:1px solid #e2e8f0;border-radius:1rem;background:#fff;padding:.9rem 1rem;">${opt.text}</div></div>`
+      `<div style="display:flex;align-items:flex-start;gap:.85rem;margin-bottom:.75rem;"><div style="width:2rem;height:2rem;flex:0 0 2rem;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:800;background:#dbeafe;color:#1e3a8a;margin-top:.7rem;">${opt.label}</div><div style="flex:1;line-height:1.7;border:1px solid #e2e8f0;border-radius:1rem;background:#fff;padding:.9rem 1rem;">${escHtml(opt.text)}</div></div>`
     ).join("") || "";
     contentRef.current.innerHTML = `<div style="font-size:.75rem;font-weight:700;color:#64748b;margin-bottom:1rem;">${currentQuestion.question_id || ""} &nbsp;·&nbsp; ${subject} &nbsp;·&nbsp; ${stars}</div><div style="font-size:.95rem;line-height:1.7;">${stemToHtml(currentQuestion.prompt?.stem)}</div><div style="margin-top:1rem;">${optionsHtml}</div>`;
     if (!mathJaxReady) return;
@@ -215,10 +269,8 @@ export default function DevPage() {
       const res = await fetch("/api/generate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ subject: genSubject, topic: genTopic || null, difficulty: genDifficulty, want_diagram: genForceDiagram, force_diagram: genForceDiagram }) });
       if (!res.ok) { const err = await res.json().catch(() => ({})); throw new Error(err.error || `Generation failed (${res.status})`); }
       const question = await res.json();
-      if (question.question_id) { useStore.getState().addQuestion(normaliseQuestion(question, null, "fresh_ai")); setRecentSessions(listRecentGenerated()); }
-      setQuestionSet({ questions: [question], sourceLabel: "Generated" });
-      setSelectedSection(question.source?.section || "A");
-      setSelectedIndex(0);
+      if (question.question_id) { useStore.getState().addQuestion(normaliseQuestion(question, null, "fresh_ai")); }
+      setDbRefreshKey(k => k + 1);
     } catch (err) { setGenerateError(err instanceof Error ? err.message : "Generation failed."); }
     finally { setGenerating(false); }
   }
@@ -291,12 +343,13 @@ export default function DevPage() {
                 <select className="rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm" value={mode} onChange={(e) => setMode(e.target.value as Mode)}>
                   <option value="training">Training data</option>
                   <option value="generated">Generated question</option>
+                  <option value="reports">Error reports</option>
                 </select>
                 {mode === "training" ? (
                   <>
                     <label className="text-[10px] uppercase tracking-widest text-slate-400">Paper</label>
                     <select className="rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm" value={paperId} onChange={(e) => setPaperId(e.target.value)}>
-                      {papers.map((p) => <option key={p.id} value={p.id}>{p.exam} {p.year} — Paper {p.paper} ({p.count})</option>)}
+                      {papers.map((p) => <option key={p.id} value={p.id}>{p.label || `${p.exam} ${p.year ?? ''} Paper ${p.paper}`} ({p.count})</option>)}
                     </select>
                   </>
                 ) : (
@@ -316,26 +369,14 @@ export default function DevPage() {
                       <input type="checkbox" checked={genForceDiagram} onChange={(e) => setGenForceDiagram(e.target.checked)} className="accent-blue-500" />
                       <span className="text-xs text-slate-300">Force diagram</span>
                     </label>
-                    <button className="mt-1 rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white disabled:opacity-50" disabled={generating} onClick={handleGenerate}>
+                    <button className="mt-1 rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white disabled:opacity-50" disabled={generating || dbLoading} onClick={handleGenerate}>
                       {generating ? "Generating…" : "Generate question"}
                     </button>
                     {generateError && <p className="text-xs text-red-400">{generateError}</p>}
-                    {recentSessions.length > 0 && (
-                      <div className="mt-2 border-t border-slate-700 pt-3">
-                        <label className="text-[10px] uppercase tracking-widest text-slate-400">Recent</label>
-                        <div className="mt-2 flex flex-col gap-1">
-                          {recentSessions.slice(0, 5).map((q, i) => (
-                            <button key={q.question_id || i} className="rounded-md bg-slate-800 px-3 py-2 text-left text-xs text-slate-300 hover:bg-slate-700 truncate" onClick={() => { setQuestionSet({ questions: [q], sourceLabel: "Generated" }); setSelectedSection(q.source?.section || "A"); setSelectedIndex(0); }}>
-                              {q.content?.subject} · {q.content?.topic || "No topic"} · ★{q.content?.difficulty ?? "?"}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
                   </>
                 )}
               </div>
-              <div className="mt-3 text-xs text-slate-400">{papersLoading ? "Loading papers…" : questionSet ? `${questionSet.sourceLabel} · ${questions.length} question(s)` : "No questions loaded"}</div>
+              <div className="mt-3 text-xs text-slate-400">{dbLoading ? "Loading from DB…" : papersLoading ? "Loading papers…" : questionSet ? `${questionSet.sourceLabel} · ${questions.length} question(s)` : "No questions loaded"}</div>
             </div>
             <div className="flex border-b border-slate-700">
               {[...new Set(questions.map(sectionOf))].map((s) => (
@@ -345,14 +386,14 @@ export default function DevPage() {
               ))}
             </div>
             <div className="h-[calc(100vh-180px)] overflow-y-auto p-2">
+              {dbLoading && mode === "generated" && <p className="text-xs text-slate-400 px-2 py-4">Loading…</p>}
               {sectionQuestions.map((q, i) => (
                 <button key={q.question_id || i} onClick={() => setSelectedIndex(i)} className={`mb-1 flex w-full items-center gap-3 rounded-md px-3 py-2 text-left ${i === selectedIndex ? "bg-blue-700" : "bg-slate-800"}`}>
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-700 text-xs font-bold">{questionNumber(q, i)}</div>
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-700 text-xs font-bold">{mode === "generated" ? i + 1 : questionNumber(q, i)}</div>
                   <div className="min-w-0 flex-1">
-                    <div className="truncate text-sm font-semibold">Q{questionNumber(q, i)}</div>
-                    <div className="truncate text-[11px] text-slate-400">{q.content?.topic || ""}</div>
+                    <div className="truncate text-xs font-semibold">{q.content?.topic || q.content?.archetype || "No topic"}</div>
+                    <div className="truncate text-[11px] text-slate-400">{"★".repeat(q.content?.difficulty || 0)} {q.question_id}</div>
                   </div>
-                  <div className="text-[10px] uppercase text-slate-300">{normalizeSubject(q.content?.subject).slice(0, 4)}</div>
                 </button>
               ))}
             </div>
@@ -360,9 +401,52 @@ export default function DevPage() {
 
           <section className="flex-1 overflow-y-auto p-8">
             <div className="max-w-4xl">
-              {contentLoading ? <div className="text-slate-500">Loading…</div> : error ? <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-red-700">{error}</div> : currentQuestion ? (
+              {mode === "reports" ? (
+                <div>
+                  <h2 className="text-lg font-bold text-slate-800 mb-4">Error Reports {reports.length > 0 && <span className="text-sm font-normal text-slate-500">({reports.length})</span>}</h2>
+                  {reportsLoading ? <p className="text-slate-500">Loading…</p> : reports.length === 0 ? <p className="text-slate-400 text-sm">No reports yet.</p> : (
+                    <div className="flex flex-col gap-3">
+                      {reports.map(r => (
+                        <div key={r.id} className="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+                          <button className="w-full text-left px-5 py-4 flex items-start justify-between gap-4 hover:bg-slate-50" onClick={() => setExpandedReport(expandedReport === r.id ? null : r.id)}>
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-2 mb-1">
+                                <span className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded-full ${r.status === 'open' ? 'bg-red-100 text-red-700' : r.status === 'resolved' ? 'bg-green-100 text-green-700' : 'bg-slate-100 text-slate-500'}`}>{r.status}</span>
+                                <span className="text-xs font-semibold text-slate-700">{r.error_title}</span>
+                              </div>
+                              <p className="text-xs text-slate-400 font-mono truncate">{r.question_id}</p>
+                            </div>
+                            <span className="text-xs text-slate-400 shrink-0">{new Date(r.created_at).toLocaleDateString()}</span>
+                          </button>
+                          {expandedReport === r.id && (
+                            <div className="border-t border-slate-100 px-5 py-4 text-sm space-y-3">
+                              {r.error_body && <div><p className="text-[10px] uppercase font-semibold text-slate-400 mb-1">Details</p><p className="text-slate-700">{r.error_body}</p></div>}
+                              {r.question_stem && <div><p className="text-[10px] uppercase font-semibold text-slate-400 mb-1">Question stem</p><p className="text-slate-600 text-xs leading-relaxed bg-slate-50 rounded-lg p-3 font-mono">{r.question_stem}</p></div>}
+                              {r.worked_solution && <div><p className="text-[10px] uppercase font-semibold text-slate-400 mb-1">Worked solution</p><p className="text-slate-600 text-xs leading-relaxed bg-slate-50 rounded-lg p-3 whitespace-pre-wrap">{r.worked_solution}</p></div>}
+                              <p className="text-[10px] text-slate-400">User: {r.user_id ?? 'guest'} · {new Date(r.created_at).toLocaleString()}</p>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : contentLoading ? <div className="text-slate-500">Loading…</div> : error ? <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-red-700">{error}</div> : currentQuestion ? (
                 <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                   <div id="question-content" ref={contentRef} />
+                  {currentFigures.length > 0 && (
+                    <div className="my-4 flex flex-col items-center gap-4">
+                      {currentFigures.map((fig, i) => {
+                        if (fig.figure_type === 'table' || fig.figure_type === 'complex_diagram') {
+                          return <FigureRenderer key={i} spec={fig as FigureSpec} />;
+                        }
+                        if (fig.src) {
+                          return <img key={i} src={fig.src} alt={fig.figure_id || 'figure'} className="max-w-full rounded border border-slate-200" />;
+                        }
+                        return null;
+                      })}
+                    </div>
+                  )}
                   <div className="mt-6 flex gap-3">
                     <button className="rounded-md border px-4 py-2 disabled:opacity-40" disabled={selectedIndex === 0} onClick={() => navigate(-1)}>Previous</button>
                     <button className="rounded-md border px-4 py-2 disabled:opacity-40" disabled={selectedIndex === sectionQuestions.length - 1} onClick={() => navigate(1)}>Next</button>

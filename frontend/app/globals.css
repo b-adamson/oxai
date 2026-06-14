@@ -67,6 +67,17 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Scrollbar theming — webkit (Chrome/Safari/Edge) */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+html.dark ::-webkit-scrollbar-thumb { background: #374151; }
+html.dark ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+/* Firefox */
+* { scrollbar-width: thin; scrollbar-color: #d1d5db transparent; }
+html.dark * { scrollbar-color: #374151 transparent; }
+
 /* Streaming text char fade-in */
 @keyframes fadeCharIn {
   from { opacity: 0; }

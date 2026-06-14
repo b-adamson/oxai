@@ -176,7 +176,7 @@ def run_live(n: int) -> None:
     from src.services.generate_question import GenerationSettings, QuestionGenerationService
 
     settings = GenerationSettings(
-        processed_dir=ROOT / 'data' / 'processed',
+        processed_dir=ROOT / 'data' / 'processed' / 'nsaa',
         generated_dir=ROOT / 'generated',
         diagram_dir=ROOT / 'generated' / 'diagrams',
         enable_image_generation=False,

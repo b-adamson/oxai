@@ -6,7 +6,7 @@ import logging
 import os
 import time
 import uuid
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -18,8 +18,8 @@ LOGGER = logging.getLogger('oxai.generate_solution')
 @dataclass
 class SolutionSettings:
     diagram_dir: Path
-    model: str = os.getenv('OPENAI_MODEL_DRAFT', 'gpt-5.2')
-    image_model: str = os.getenv('OPENAI_IMAGE_MODEL', 'gpt-image-2')
+    model: str = field(default_factory=lambda: os.getenv('OPENAI_MODEL_DRAFT', 'gpt-5.2'))
+    image_model: str = field(default_factory=lambda: os.getenv('OPENAI_IMAGE_MODEL', 'gpt-image-2'))
     temperature: float = 0.3
     max_output_tokens: int = 1200
     review_max_output_tokens: int = 500

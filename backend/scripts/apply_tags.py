@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-DATA_DIR = Path(__file__).parent.parent / "data" / "processed"
+DATA_DIR = Path(__file__).parent.parent / "data" / "processed" / "nsaa"
 
 TAGS = {
     # ── 2016 ──────────────────────────────────────────────────────────────────

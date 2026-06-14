@@ -18,7 +18,12 @@ from src.services.generate_hint import HintGenerationService, HintSettings
 from src.services.generate_question import GenerationSettings, QuestionGenerationService, load_questions
 from src.services.generate_solution import SolutionGenerationService, SolutionSettings
 from src.services.generation_session import SessionManager
-from src.utils.supabase_writer import upsert_question as _supabase_upsert_question, is_enabled as _db_write_enabled
+from src.utils.supabase_writer import (
+    upsert_question as _supabase_upsert_question,
+    query_questions as _supabase_query,
+    get_all_question_metadata as _supabase_inventory,
+    is_enabled as _db_enabled,
+)
 
 load_dotenv()
 
@@ -45,8 +50,9 @@ def _normalise_subject(s: str) -> str:
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-PROCESSED_DIR = BASE_DIR / 'data' / 'processed'
-MANIFEST_PATH = PROCESSED_DIR / 'manifest.json'
+PROCESSED_BASE_DIR = BASE_DIR / 'data' / 'processed'
+PROCESSED_DIR = PROCESSED_BASE_DIR / 'nsaa'
+EXAM_DIRS = [PROCESSED_BASE_DIR / d for d in ('nsaa', 'tmua') if (PROCESSED_BASE_DIR / d).exists()]
 GENERATED_DIR = BASE_DIR / 'generated'
 DIAGRAM_DIR = GENERATED_DIR / 'diagrams'
 
@@ -110,6 +116,7 @@ class TutorRequest(BaseModel):
     whiteboard_enabled: bool = False
     whiteboard_snapshot: Optional[str] = None  # base64 PNG data URL
     whiteboard_stroke_count: int = 0
+    previous_response_id: Optional[str] = None
 
 
 class SolutionOption(BaseModel):
@@ -158,22 +165,24 @@ def paper_id_from_file(file_path: str) -> str:
 
 
 def load_manifest() -> list[dict]:
-    if not MANIFEST_PATH.exists():
-        raise HTTPException(status_code=404, detail='Manifest not found')
-
-    try:
-        manifest = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
-    except json.JSONDecodeError as exc:
-        raise HTTPException(status_code=500, detail=f'Manifest is invalid JSON: {exc}') from exc
-
-    if not isinstance(manifest, list):
-        raise HTTPException(status_code=500, detail='Manifest must be a list')
-
     papers: list[dict] = []
-    for item in manifest:
-        if not isinstance(item, dict) or 'file' not in item:
+    for exam_dir in EXAM_DIRS:
+        manifest_path = exam_dir / 'manifest.json'
+        if not manifest_path.exists():
             continue
-        papers.append({**item, 'id': paper_id_from_file(str(item['file']))})
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+        except json.JSONDecodeError:
+            LOGGER.warning('Skipping invalid manifest: %s', manifest_path)
+            continue
+        if not isinstance(manifest, list):
+            continue
+        for item in manifest:
+            if not isinstance(item, dict) or 'file' not in item:
+                continue
+            papers.append({**item, 'id': paper_id_from_file(str(item['file']))})
+    if not papers:
+        raise HTTPException(status_code=404, detail='No manifests found')
     return papers
 
 
@@ -224,6 +233,7 @@ app.add_middleware(
     allow_headers=['*'],
 )
 
+app.mount('/images/tmua', StaticFiles(directory=str(PROCESSED_BASE_DIR / 'tmua')), name='images_tmua')
 app.mount('/images', StaticFiles(directory=str(PROCESSED_DIR)), name='images')
 app.mount('/diagrams', StaticFiles(directory=str(DIAGRAM_DIR)), name='diagrams')
 
@@ -256,8 +266,11 @@ def generate_question_endpoint(req: GenerateRequest, background_tasks: Backgroun
             force_diagram=req.force_diagram,
             archetype=req.archetype,
         )
-        if _db_write_enabled():
-            background_tasks.add_task(_supabase_upsert_question, question)
+        if _db_enabled():
+            background_tasks.add_task(
+                _supabase_upsert_question, question,
+                PROCESSED_DIR, DIAGRAM_DIR, 'generated',
+            )
         return question
     except HTTPException:
         raise
@@ -289,9 +302,12 @@ def generate_batch_endpoint(req: BatchGenerateRequest, background_tasks: Backgro
             difficulty=req.difficulty,
             want_diagram=req.want_diagram,
         )
-        if _db_write_enabled():
+        if _db_enabled():
             for q in questions:
-                background_tasks.add_task(_supabase_upsert_question, q)
+                background_tasks.add_task(
+                    _supabase_upsert_question, q,
+                    PROCESSED_DIR, DIAGRAM_DIR, 'generated',
+                )
         return {
             'questions': questions,
             'generated': len(questions),
@@ -363,6 +379,7 @@ def ask_tutor_endpoint(req: TutorRequest):
             hints_shown=req.hints_shown,
             whiteboard_enabled=req.whiteboard_enabled,
             whiteboard_snapshot=req.whiteboard_snapshot,
+            previous_response_id=req.previous_response_id,
         )
         return result
     except HTTPException:
@@ -388,6 +405,10 @@ def get_paper(paper_id: str):
         paper = json.loads(paper_path.read_text(encoding='utf-8'))
     except json.JSONDecodeError as exc:
         raise HTTPException(status_code=500, detail=f'Paper file is invalid JSON: {exc}') from exc
+
+    # Unwrap nested format: {meta: ..., paper: {source, questions: [...]}}
+    if 'paper' in paper and 'questions' not in paper:
+        paper = paper['paper']
 
     return {'paper': paper, 'meta': paper_meta}
 
@@ -423,10 +444,63 @@ def generate_similar_endpoint(req: GenerateSimilarRequest):
 
 
 @app.post('/bank-questions')
-def bank_questions_endpoint(req: BankQueryRequest):
+def bank_questions_endpoint(req: BankQueryRequest, background_tasks: BackgroundTasks):
     try:
-        questions = _bank_questions()
         req_subject = _normalise_subject(req.subject) if req.subject else None
+
+        if _db_enabled():
+            # ── Supabase path ──────────────────────────────────────────────
+            results = _supabase_query(
+                subject=req_subject,
+                topic=req.topic,
+                difficulty=req.difficulty,
+                exclude_ids=req.exclude_ids,
+                limit=req.limit,
+            )
+
+            # Filter excluded years (past papers carry source.year)
+            if req.excluded_years and results:
+                def _year(q: dict) -> int:
+                    try:
+                        return int((q.get('source') or {}).get('year') or 0)
+                    except Exception:
+                        return 0
+                results = [q for q in results if _year(q) not in req.excluded_years]
+
+            # If the bank is dry for this combo, generate fresh AI questions
+            if not results:
+                LOGGER.info(
+                    'bank-questions: DB empty for subject=%s topic=%s diff=%s — generating',
+                    req_subject, req.topic, req.difficulty,
+                )
+                service: QuestionGenerationService = app.state.question_service
+                mgr: SessionManager = app.state.session_manager
+                session, prior_summary = mgr.get_or_create(req_subject or 'math', mode='live')
+                n_to_gen = min(req.limit, 3)
+                for _ in range(n_to_gen):
+                    try:
+                        q = service.generate_with_session(
+                            session=session,
+                            prior_summary=prior_summary,
+                            subject=req_subject or 'math',
+                            topic=req.topic,
+                            difficulty=req.difficulty or 2,
+                            want_diagram=False,
+                            force_diagram=False,
+                        )
+                        results.append(q)
+                        background_tasks.add_task(
+                            _supabase_upsert_question, q,
+                            PROCESSED_DIR, DIAGRAM_DIR, 'generated',
+                        )
+                    except Exception:
+                        LOGGER.exception('bank-questions: fallback generation failed')
+                        break
+
+            return {'questions': results, 'total': len(results)}
+
+        # ── Local file fallback (no Supabase configured) ───────────────────
+        questions = _bank_questions()
         filtered: List[Dict[str, Any]] = []
         for q in questions:
             if q.get('question_id') in req.exclude_ids:
@@ -453,8 +527,8 @@ def bank_questions_endpoint(req: BankQueryRequest):
             filtered.append(q)
             if len(filtered) >= req.limit:
                 break
-
         return {'questions': filtered, 'total': len(filtered)}
+
     except HTTPException:
         raise
     except Exception as exc:
@@ -462,14 +536,20 @@ def bank_questions_endpoint(req: BankQueryRequest):
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
-@app.get('/inventory')
-def inventory_endpoint():
-    try:
-        questions = _bank_questions()
-        subjects: Dict[str, Any] = {}
-
-        for q in questions:
-            c = q.get('content', {})
+def _build_inventory(rows: list[dict]) -> dict:
+    """Aggregate question metadata rows into the inventory structure."""
+    subjects: Dict[str, Any] = {}
+    for row in rows:
+        # Rows from Supabase have flat fields; local questions have content{}
+        if 'subject' in row and 'content' not in row:
+            subj = str(row.get('subject') or 'unknown').lower()
+            topic = str(row.get('topic') or '') or 'general'
+            difficulty = row.get('difficulty')
+            subtopic = None
+            has_diagram = False
+            archetype = None
+        else:
+            c = row.get('content', {})
             subj = str(c.get('subject', 'unknown')).lower()
             topic = str(c.get('topic', '')) or 'general'
             subtopic = c.get('subtopic')
@@ -477,40 +557,47 @@ def inventory_endpoint():
             has_diagram = bool(c.get('requires_diagram', False))
             archetype = c.get('archetype')
 
-            if subj not in subjects:
-                subjects[subj] = {'subject': subj, 'total': 0, 'topics': {}, 'difficulty_distribution': {}}
+        if subj not in subjects:
+            subjects[subj] = {'subject': subj, 'total': 0, 'topics': {}, 'difficulty_distribution': {}}
+        subj_data = subjects[subj]
+        subj_data['total'] += 1
+        diff_key = str(difficulty) if difficulty is not None else 'unknown'
+        subj_data['difficulty_distribution'][diff_key] = subj_data['difficulty_distribution'].get(diff_key, 0) + 1
 
-            subj_data = subjects[subj]
-            subj_data['total'] += 1
+        if topic not in subj_data['topics']:
+            subj_data['topics'][topic] = {
+                'topic': topic, 'subtopics': {}, 'count': 0,
+                'difficulty_counts': {}, 'has_diagrams': False, 'archetypes': [],
+            }
+        topic_data = subj_data['topics'][topic]
+        topic_data['count'] += 1
+        if has_diagram:
+            topic_data['has_diagrams'] = True
+        if difficulty is not None:
+            dk = str(difficulty)
+            topic_data['difficulty_counts'][dk] = topic_data['difficulty_counts'].get(dk, 0) + 1
+        if archetype and archetype not in topic_data['archetypes']:
+            topic_data['archetypes'].append(archetype)
+        if subtopic:
+            topic_data['subtopics'][subtopic] = topic_data['subtopics'].get(subtopic, 0) + 1
 
-            diff_key = str(difficulty) if difficulty is not None else 'unknown'
-            subj_data['difficulty_distribution'][diff_key] = subj_data['difficulty_distribution'].get(diff_key, 0) + 1
+    for subj_data in subjects.values():
+        subj_data['topics'] = list(subj_data['topics'].values())
+    return subjects
 
-            if topic not in subj_data['topics']:
-                subj_data['topics'][topic] = {
-                    'topic': topic,
-                    'subtopics': {},
-                    'count': 0,
-                    'difficulty_counts': {},
-                    'has_diagrams': False,
-                    'archetypes': [],
-                }
 
-            topic_data = subj_data['topics'][topic]
-            topic_data['count'] += 1
-            if has_diagram:
-                topic_data['has_diagrams'] = True
-            if difficulty is not None:
-                dk = str(difficulty)
-                topic_data['difficulty_counts'][dk] = topic_data['difficulty_counts'].get(dk, 0) + 1
-            if archetype and archetype not in topic_data['archetypes']:
-                topic_data['archetypes'].append(archetype)
-            if subtopic:
-                topic_data['subtopics'][subtopic] = topic_data['subtopics'].get(subtopic, 0) + 1
+@app.get('/inventory')
+def inventory_endpoint():
+    try:
+        if _db_enabled():
+            rows = _supabase_inventory()
+            if rows:
+                subjects = _build_inventory(rows)
+                return {'subjects': subjects, 'total': len(rows), 'scanned_at': None}
 
-        for subj_data in subjects.values():
-            subj_data['topics'] = list(subj_data['topics'].values())
-
+        # Fallback to local files
+        questions = _bank_questions()
+        subjects = _build_inventory(questions)
         return {'subjects': subjects, 'total': len(questions), 'scanned_at': None}
     except HTTPException:
         raise

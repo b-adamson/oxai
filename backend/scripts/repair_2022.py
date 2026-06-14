@@ -22,7 +22,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 ROOT = Path(__file__).resolve().parent.parent
-TARGET = ROOT / 'data' / 'processed' / 'questions_2022.json'
+TARGET = ROOT / 'data' / 'processed' / 'nsaa' / 'questions_2022.json'
 
 
 def opts(*texts: str) -> List[Dict[str, str]]:

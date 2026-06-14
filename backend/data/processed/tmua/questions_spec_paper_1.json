@@ -1,0 +1,1452 @@
+{
+  "source": {
+    "exam": "TMUA",
+    "year": null,
+    "paper": "Paper 1",
+    "source_pdf": "raw/tmua_specimen_paper1.pdf"
+  },
+  "questions": [
+    {
+      "question_id": "TMUA_specimen1_01",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 1,
+        "page": 3,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "simultaneous equations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The sum of the two values of $x$ that satisfy the simultaneous equations $x - 3y + 1 = 0$ and $3x^2 - 7yx = 5$ is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$-8.5$"
+          },
+          {
+            "label": "B",
+            "text": "$-7.5$"
+          },
+          {
+            "label": "C",
+            "text": "$-1.5$"
+          },
+          {
+            "label": "D",
+            "text": "$3.5$"
+          },
+          {
+            "label": "E",
+            "text": "$4.5$"
+          },
+          {
+            "label": "F",
+            "text": "$5$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q01",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_02",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 2,
+        "page": 3,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "trigonometry",
+        "subtopic": "trigonometric equations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The number of solutions in the interval $0 \\leq \\theta \\leq 4\\pi$ of the equation $\\sin^2\\theta + 3\\cos\\theta = 3$ is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$0$"
+          },
+          {
+            "label": "B",
+            "text": "$1$"
+          },
+          {
+            "label": "C",
+            "text": "$2$"
+          },
+          {
+            "label": "D",
+            "text": "$3$"
+          },
+          {
+            "label": "E",
+            "text": "$4$"
+          },
+          {
+            "label": "F",
+            "text": "$5$"
+          },
+          {
+            "label": "G",
+            "text": "$6$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q02",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_03",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 3,
+        "page": 4,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "geometry",
+        "subtopic": "perpendicular bisectors",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The perpendicular bisector of the line segment joining the points $(2,-6)$ and $(5,4)$ cuts the $x$-axis at the point with $x$-coordinate",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{1}{20}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{1}{6}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{1}{3}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{19}{5}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{41}{6}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q03",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_04",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 4,
+        "page": 4,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "inequalities",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The complete set of values of $x$ for which $(x^2 - 1)(x - 2) > 0$ is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$x < -1,\\ 1 < x < 2$"
+          },
+          {
+            "label": "B",
+            "text": "$x < -1,\\ x > 2$"
+          },
+          {
+            "label": "C",
+            "text": "$-1 < x < 2$"
+          },
+          {
+            "label": "D",
+            "text": "$x < 1,\\ x > 2$"
+          },
+          {
+            "label": "E",
+            "text": "$-1 < x < 1,\\ x > 2$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q04",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_05",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 5,
+        "page": 5,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "functions",
+        "subtopic": "inverse functions",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Given that $y = -\\log_{10}(1-x)$ for $x < 1$, find $x$ in terms of $y$.",
+        "options": [
+          {
+            "label": "A",
+            "text": "$x = -\\dfrac{1}{\\log_{10}(1-y)}$"
+          },
+          {
+            "label": "B",
+            "text": "$x = 1 + \\log_{10} y$"
+          },
+          {
+            "label": "C",
+            "text": "$x = 1 - \\log_{10} y$"
+          },
+          {
+            "label": "D",
+            "text": "$x = 1 - 10^{-y}$"
+          },
+          {
+            "label": "E",
+            "text": "$x = 10^{-y} - 1$"
+          },
+          {
+            "label": "F",
+            "text": "$x = 10^{1-y}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q05",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_06",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 6,
+        "page": 5,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "factor theorem",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "It is given that $x + 2$ is a factor of $x^3 + 4cx^2 + x(c + 1)^2 - 6$. The sum of the possible values of $c$ is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$-10$"
+          },
+          {
+            "label": "B",
+            "text": "$-6$"
+          },
+          {
+            "label": "C",
+            "text": "$0$"
+          },
+          {
+            "label": "D",
+            "text": "$6$"
+          },
+          {
+            "label": "E",
+            "text": "$10$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q06",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_07",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 7,
+        "page": 6,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "probability",
+        "subtopic": "without replacement",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A bag contains $n$ red balls, $n$ yellow balls, and $n$ blue balls. One ball is selected at random and not replaced. A second ball is then selected at random and not replaced. Each ball is equally likely to be chosen. The probability that the two balls are not the same colour is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{n-1}{3n-1}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{2n-2}{3n-1}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{2n}{3n-1}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{(n-1)^3}{27(3n-1)^3}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{3(n-1)}{3n-1}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{n^3}{27(3n-1)^3}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q07",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_08",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 8,
+        "page": 7,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "logarithms",
+        "subtopic": "indices",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Given that $a^x b^{2x} c^{3x} = 2$, where $a$, $b$, and $c$ are positive real numbers, then $x =$",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\log_{10}\\left(\\dfrac{2}{a+2b+3c}\\right)$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{\\log_{10}2}{\\log_{10}(a+2b+3c)}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{2}{\\log_{10}(a+2b+3c)}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{2}{a+2b+3c}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\log_{10}\\left(\\dfrac{2}{ab^2c^3}\\right)$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{\\log_{10}2}{\\log_{10}(ab^2c^3)}$"
+          },
+          {
+            "label": "G",
+            "text": "$\\dfrac{2}{\\log_{10}(ab^2c^3)}$"
+          },
+          {
+            "label": "H",
+            "text": "$\\dfrac{2}{ab^2c^3}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q08",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_09",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 9,
+        "page": 7,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "quadratic equations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The roots of the equation $2x^2 - 11x + c = 0$ differ by 2. The value of $c$ is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{105}{8}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{113}{8}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{117}{8}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{119}{8}$"
+          }
+        ],
+        "figures": [
+          {
+            "figure_type": "table",
+            "caption": "",
+            "diagram_prompt": null,
+            "table_headers": [
+              "Condition (1)",
+              "Condition (2)",
+              "Condition (3)"
+            ],
+            "table_rows": [
+              [
+                "Does not imply congruent",
+                "Does not imply congruent",
+                "Does not imply congruent"
+              ],
+              [
+                "Does not imply congruent",
+                "Does not imply congruent",
+                "Implies congruent"
+              ],
+              [
+                "Does not imply congruent",
+                "Implies congruent",
+                "Does not imply congruent"
+              ],
+              [
+                "Does not imply congruent",
+                "Implies congruent",
+                "Implies congruent"
+              ],
+              [
+                "Implies congruent",
+                "Does not imply congruent",
+                "Does not imply congruent"
+              ],
+              [
+                "Implies congruent",
+                "Does not imply congruent",
+                "Implies congruent"
+              ],
+              [
+                "Implies congruent",
+                "Implies congruent",
+                "Does not imply congruent"
+              ],
+              [
+                "Implies congruent",
+                "Implies congruent",
+                "Implies congruent"
+              ]
+            ],
+            "table_row_labels": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "H"
+            ],
+            "graph_type": null,
+            "graph_title": null,
+            "graph_x_label": null,
+            "graph_y_label": null,
+            "graph_x_labels": null,
+            "graph_series": null,
+            "graph_x_min": null,
+            "graph_x_max": null,
+            "graph_y_min": null,
+            "graph_y_max": null,
+            "url": null
+          }
+        ]
+      },
+      "generation": {
+        "template_id": "math_q09",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_10",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 10,
+        "page": 8,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "trigonometry",
+        "subtopic": "graph transformations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The curve $y = \\cos x$ is reflected in the line $y = 1$ and the resulting curve is then translated by $\\dfrac{\\pi}{4}$ units in the positive $x$-direction. The equation of this new curve is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$y = 2 + \\cos\\left(x + \\dfrac{\\pi}{4}\\right)$"
+          },
+          {
+            "label": "B",
+            "text": "$y = 2 + \\cos\\left(x - \\dfrac{\\pi}{4}\\right)$"
+          },
+          {
+            "label": "C",
+            "text": "$y = 2 - \\cos\\left(x + \\dfrac{\\pi}{4}\\right)$"
+          },
+          {
+            "label": "D",
+            "text": "$y = 2 - \\cos\\left(x - \\dfrac{\\pi}{4}\\right)$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q10",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_11",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 11,
+        "page": 8,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "exponential equations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The sum of the roots of the equation $2^{2x} - 8\\times 2^x + 15 = 0$ is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$3$"
+          },
+          {
+            "label": "B",
+            "text": "$8$"
+          },
+          {
+            "label": "C",
+            "text": "$2\\log_{10}2$"
+          },
+          {
+            "label": "D",
+            "text": "$\\log_{10}\\left(\\dfrac{15}{4}\\right)$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{\\log_{10}15}{\\log_{10}2}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q11",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_12",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 12,
+        "page": 9,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "geometry",
+        "subtopic": "prisms",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The cross-section of a triangular prism is an equilateral triangle with side $2x\\text{ cm}$. The length of the prism is $d\\text{ cm}$. Let the total surface area of the prism be $T\\text{ cm}^2$. Given that the volume of the prism is $T\\text{ cm}^3$, which one of the following is an expression for $d$ in terms of $x$?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{x}{2x-3}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{3x}{3x-2\\sqrt{3}}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{2x}{x-4\\sqrt{3}}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{2x}{x-2\\sqrt{3}}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{2x}{x-\\sqrt{3}}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q12",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_13",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 13,
+        "page": 9,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "quartic equations",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "How many real roots does the equation $x^4 - 4x^3 + 4x^2 - 10 = 0$ have?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$0$"
+          },
+          {
+            "label": "B",
+            "text": "$1$"
+          },
+          {
+            "label": "C",
+            "text": "$2$"
+          },
+          {
+            "label": "D",
+            "text": "$3$"
+          },
+          {
+            "label": "E",
+            "text": "$4$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q13",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_14",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 14,
+        "page": 10,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "functions",
+        "subtopic": "log-log graphs",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "$a$, $b$, $x$, and $y$ are real and positive. $a$ and $b$ are constants. $x$ and $y$ are related. A graph of $\\log y$ against $\\log x$ is drawn. For which one of the following relationships will this graph be a straight line?",
+        "options": [
+          {
+            "label": "A",
+            "text": "$y^b = a^x$"
+          },
+          {
+            "label": "B",
+            "text": "$y = ab^x$"
+          },
+          {
+            "label": "C",
+            "text": "$y^2 = a + x^b$"
+          },
+          {
+            "label": "D",
+            "text": "$y = ax^b$"
+          },
+          {
+            "label": "E",
+            "text": "$y^x = a^b$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q14",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_15",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 15,
+        "page": 10,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "calculus",
+        "subtopic": "definite integrals",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The smallest possible value of $\\int_0^1 (x-a)^2\\,dx$ as $a$ varies is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{1}{12}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{1}{3}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{1}{2}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{7}{12}$"
+          },
+          {
+            "label": "E",
+            "text": "$2$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q15",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_16",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 16,
+        "page": 11,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "number theory",
+        "subtopic": "integer exponents",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "Given that $c$ and $d$ are non-zero integers, the expression $\\dfrac{10^{c-2d}\\times 20^{2c+d}}{8^c\\times 125^{c+d}}$ is an integer if",
+        "options": [
+          {
+            "label": "A",
+            "text": "$c < 0$"
+          },
+          {
+            "label": "B",
+            "text": "$d < 0$"
+          },
+          {
+            "label": "C",
+            "text": "$c < 0$ and $d < 0$"
+          },
+          {
+            "label": "D",
+            "text": "$c < 0$ and $d > 0$"
+          },
+          {
+            "label": "E",
+            "text": "$c > 0$ and $d < 0$"
+          },
+          {
+            "label": "F",
+            "text": "$c > 0$ and $d > 0$"
+          },
+          {
+            "label": "G",
+            "text": "$d > 0$"
+          },
+          {
+            "label": "H",
+            "text": "$c > 0$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q16",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_17",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 17,
+        "page": 11,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "quadratic discriminant",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "For what values of the non-zero real number $a$ does the quadratic equation $ax^2 + (a - 2)x = 2$ have real distinct roots?",
+        "options": [
+          {
+            "label": "A",
+            "text": "All values of $a$"
+          },
+          {
+            "label": "B",
+            "text": "$a = -2$"
+          },
+          {
+            "label": "C",
+            "text": "$a > -2$"
+          },
+          {
+            "label": "D",
+            "text": "$a \\neq -2$"
+          },
+          {
+            "label": "E",
+            "text": "No values of $a$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q17",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_18",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 18,
+        "page": 12,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "trigonometry",
+        "subtopic": "inequalities",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The angle $x$ is measured in radians and is such that $0 \\leq x \\leq \\pi$. The total length of any intervals for which $-1 \\leq \\tan x \\leq 1$ and $\\sin 2x \\geq 0.5$ is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{\\pi}{12}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\dfrac{\\pi}{6}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\dfrac{\\pi}{4}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\dfrac{\\pi}{3}$"
+          },
+          {
+            "label": "E",
+            "text": "$\\dfrac{5\\pi}{12}$"
+          },
+          {
+            "label": "F",
+            "text": "$\\dfrac{\\pi}{2}$"
+          },
+          {
+            "label": "G",
+            "text": "$\\dfrac{5\\pi}{6}$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q18",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_19",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 19,
+        "page": 12,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "sequences",
+        "subtopic": "geometric series",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": true,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "A geometric series has first term 4 and common ratio $r$, where $0 < r < 1$. The first, second, and fourth terms of this geometric series form three successive terms of an arithmetic series. The sum to infinity of the geometric series is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\dfrac{1}{2}(\\sqrt{5}-1)$"
+          },
+          {
+            "label": "B",
+            "text": "$2(3-\\sqrt{5})$"
+          },
+          {
+            "label": "C",
+            "text": "$2(1+\\sqrt{5})$"
+          },
+          {
+            "label": "D",
+            "text": "$2(3+\\sqrt{5})$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q19",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    },
+    {
+      "question_id": "TMUA_specimen1_20",
+      "source": {
+        "exam": "TMUA",
+        "year": null,
+        "paper": "Paper 1",
+        "section": "A",
+        "question_number": 20,
+        "page": 13,
+        "source_pdf": "raw/tmua_specimen_paper1.pdf"
+      },
+      "content": {
+        "subject": "math",
+        "topic": "algebra",
+        "subtopic": "binomial expansion",
+        "archetype": null,
+        "difficulty": 3,
+        "requires_diagram": false,
+        "requires_calculation": true
+      },
+      "prompt": {
+        "stem": "The coefficient of $x^2$ in the expansion of $(4 - x^2)\\left[(1 + 2x + 3x^2)^6 - (1 + 4x^3)^5\\right]$ is",
+        "options": [
+          {
+            "label": "A",
+            "text": "$28$"
+          },
+          {
+            "label": "B",
+            "text": "$72$"
+          },
+          {
+            "label": "C",
+            "text": "$78$"
+          },
+          {
+            "label": "D",
+            "text": "$192$"
+          },
+          {
+            "label": "E",
+            "text": "$240$"
+          },
+          {
+            "label": "F",
+            "text": "$310$"
+          },
+          {
+            "label": "G",
+            "text": "$312$"
+          }
+        ],
+        "figures": []
+      },
+      "generation": {
+        "template_id": "math_q20",
+        "template_version": "1.0",
+        "parameters": {},
+        "solution_steps": [],
+        "distractor_strategy": []
+      },
+      "validation": {
+        "answer_label": null,
+        "answer_text": null,
+        "status": "unverified"
+      },
+      "metadata": {
+        "estimated_time_seconds": null,
+        "tags": [
+          "math"
+        ]
+      },
+      "data_quality_notes": []
+    }
+  ]
+}

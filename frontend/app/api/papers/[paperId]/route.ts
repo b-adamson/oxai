@@ -21,10 +21,16 @@ export async function GET(
 
   // Rewrite figure src paths to go through the Next.js image proxy
   if (Array.isArray(data.paper?.questions)) {
+    const exam: string = data.meta?.exam ?? '';
+    const imgPrefix = exam === 'TMUA' ? '/api/images/tmua' : '/api/images';
     for (const q of data.paper.questions) {
       for (const fig of q.prompt?.figures ?? []) {
         if (fig.src && !fig.src.startsWith("/api/")) {
-          fig.src = `/api/images/${fig.src}`;
+          fig.src = `${imgPrefix}/${fig.src}`;
+        }
+        // complex_diagram uses .url instead of .src
+        if (fig.url && fig.url.startsWith('/images/')) {
+          fig.url = fig.url.replace('/images/', '/api/images/');
         }
       }
     }
